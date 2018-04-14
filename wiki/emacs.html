@@ -1,0 +1,3032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Emacs</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8fe639c">1. Tmp</a></li>
+<li><a href="#org1bef564">2. buffer</a></li>
+<li><a href="#orga9e12ac">3. Getting Help</a></li>
+<li><a href="#orgfcf2800">4. Configuration</a></li>
+<li><a href="#org6c206f6">5. Window and Frame</a>
+<ul>
+<li><a href="#org7f448b4">5.1. window manage</a></li>
+<li><a href="#org021f6f2">5.2. dired</a></li>
+<li><a href="#org8dc3288">5.3. packages</a></li>
+</ul>
+</li>
+<li><a href="#org3068834">6. File Operation</a></li>
+<li><a href="#org3d52426">7. Editing</a>
+<ul>
+<li><a href="#org68cd47f">7.1. text transformation</a></li>
+<li><a href="#orged77a5c">7.2. killing</a></li>
+<li><a href="#org0132d2c">7.3. spell checking</a></li>
+<li><a href="#org92455ae">7.4. Replace regexp for multiple files inside project</a></li>
+</ul>
+</li>
+<li><a href="#org7d748f6">8. Programming</a></li>
+<li><a href="#orge5addb3">9. Remote</a></li>
+<li><a href="#orgd8d764d">10. Moving</a></li>
+<li><a href="#org0a54f2a">11. Navigating</a>
+<ul>
+<li><a href="#org7dd619b">11.1. marking</a></li>
+<li><a href="#orgceed42b">11.2. register</a></li>
+<li><a href="#org8a30af1">11.3. Tags</a></li>
+</ul>
+</li>
+<li><a href="#orgaf11c90">12. Special Modes</a>
+<ul>
+<li><a href="#org6a05404">12.1. Tex Mode</a></li>
+</ul>
+</li>
+<li><a href="#orgd7b13dc">13. Variables</a>
+<ul>
+<li><a href="#org9bbe704">13.1. File Local Variable</a></li>
+<li><a href="#orge5c5f56">13.2. Directory Local Variable</a></li>
+</ul>
+</li>
+<li><a href="#orgf6d0976">14. Advanced Topics</a>
+<ul>
+<li><a href="#orgb305f92">14.1. Info</a>
+<ul>
+<li><a href="#org511a0a3">14.1.1. Operations</a></li>
+</ul>
+</li>
+<li><a href="#org71ad0f7">14.2. Babel</a></li>
+</ul>
+</li>
+<li><a href="#orgb69d748">15. Plugins</a>
+<ul>
+<li><a href="#org15cd5fb">15.1. ERC</a></li>
+<li><a href="#org20e6af3">15.2. Flycheck</a></li>
+<li><a href="#org7472e0e">15.3. AUCTex</a></li>
+<li><a href="#orgff85b90">15.4. DocView</a>
+<ul>
+<li><a href="#org5886ae4">15.4.1. navigation</a></li>
+</ul>
+</li>
+<li><a href="#org97af8f6">15.5. pdf-tools</a>
+<ul>
+<li><a href="#orgc6fd337">15.5.1. Installation</a></li>
+<li><a href="#orgda5ae21">15.5.2. key binding</a></li>
+</ul>
+</li>
+<li><a href="#org713620a">15.6. Paredit</a></li>
+<li><a href="#org65c34a7">15.7. Magit</a></li>
+<li><a href="#orgdfa27be">15.8. Speedbar</a>
+<ul>
+<li><a href="#org241b1f2">15.8.1. Buffer Mode</a></li>
+</ul>
+</li>
+<li><a href="#org1fbc7b4">15.9. EDBI</a>
+<ul>
+<li><a href="#org4398909">15.9.1. Database View</a></li>
+<li><a href="#orgf6cd444">15.9.2. Table definition View</a></li>
+<li><a href="#org8bf0ec0">15.9.3. Query Editor</a></li>
+<li><a href="#org40f9e0c">15.9.4. Query Result Viewer</a></li>
+</ul>
+</li>
+<li><a href="#orgeca8452">15.10. EMMS</a>
+<ul>
+<li><a href="#orge1d8b26">15.10.1. Add files into playlist</a></li>
+<li><a href="#orgf9eb647">15.10.2. Interactive control in playlist mode</a></li>
+<li><a href="#org4c91e22">15.10.3. Edit the tags:</a></li>
+<li><a href="#org4c22b61">15.10.4. Smart Browser</a>
+<ul>
+<li><a href="#org9982c9c">15.10.4.1. <span class="todo TODO">TODO</span> when I start emacs, it can find all the music, how did it remember?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfcbe49d">16. Gnus</a>
+<ul>
+<li><a href="#orgd6b3717">16.1. Gmail Setup</a></li>
+<li><a href="#org0a153e1">16.2. Mail</a></li>
+<li><a href="#org423967d">16.3. gmane news group setting</a></li>
+<li><a href="#orgc3e3b42">16.4. Usage</a>
+<ul>
+<li><a href="#orgc56d39c">16.4.1. Server buffer</a></li>
+<li><a href="#orgc1d4889">16.4.2. Group Buffer:</a></li>
+<li><a href="#orga98d4e3">16.4.3. Summary and Article buffer</a></li>
+<li><a href="#orgb2330e2">16.4.4. Message buffer</a></li>
+</ul>
+</li>
+<li><a href="#orgf8cce45">16.5. Scoring</a></li>
+</ul>
+</li>
+<li><a href="#orgf22cf96">17. Elisp</a>
+<ul>
+<li><a href="#org6efbfe9">17.1. IO</a></li>
+<li><a href="#orgf02f8c5">17.2. Symbol</a></li>
+<li><a href="#org9de5b4f">17.3. Regular Expression</a></li>
+<li><a href="#orgc6e6391">17.4. Lisp Common Sense</a></li>
+<li><a href="#org4f1ad30">17.5. string</a></li>
+<li><a href="#org65ee4b2">17.6. list</a></li>
+<li><a href="#org35299de">17.7. Sequence</a></li>
+<li><a href="#orgc231a82">17.8. Hash Table</a></li>
+<li><a href="#org4e9643e">17.9. Function</a></li>
+<li><a href="#org7f83c94">17.10. Macro</a></li>
+<li><a href="#org5572466">17.11. Control Structure</a></li>
+<li><a href="#org9891104">17.12. Packages</a>
+<ul>
+<li><a href="#orgcdc85ec">17.12.1. Dash.el</a></li>
+<li><a href="#org8974e4b">17.12.2. s.el</a></li>
+<li><a href="#orge57bea2">17.12.3. cl-lib.el loop</a>
+<ul>
+<li><a href="#org8c31bf7">17.12.3.1. general loop form</a></li>
+<li><a href="#orge7ddd56">17.12.3.2. for clauses</a></li>
+<li><a href="#org41f6484">17.12.3.3. iteration clauses</a></li>
+<li><a href="#orgd35667e">17.12.3.4. accumulation clauses</a></li>
+<li><a href="#orgd852faf">17.12.3.5. Other clauses</a></li>
+</ul>
+</li>
+<li><a href="#orgefb3579">17.12.4. cl-lib other</a></li>
+</ul>
+</li>
+<li><a href="#org310899e">17.13. Debugging</a>
+<ul>
+<li><a href="#org00780d5">17.13.1. lisp debugger</a></li>
+<li><a href="#org6c4ba43">17.13.2. Edebug</a>
+<ul>
+<li><a href="#orgf115cd4">17.13.2.1. breakpoints</a></li>
+<li><a href="#org10fd262">17.13.2.2. Moving of point</a></li>
+<li><a href="#orgc97c26f">17.13.2.3. executions</a></li>
+<li><a href="#org7e8dc30">17.13.2.4. evaluation</a></li>
+<li><a href="#orgdd77aab">17.13.2.5. other commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org52c8743">17.14. Unit Testing</a>
+<ul>
+<li><a href="#org05cb4fd">17.14.1. Write test</a></li>
+<li><a href="#org0897761">17.14.2. Run test</a></li>
+</ul>
+</li>
+<li><a href="#org2ed2bbd">17.15. Some random code snippets</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgccedce0">17.15.0.1. Url retrieval</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbd34fb5">17.16. Emacs Related</a>
+<ul>
+<li><a href="#org4895dbd">17.16.1. Buffer</a></li>
+<li><a href="#orged0acf5">17.16.2. Position</a></li>
+<li><a href="#org4133889">17.16.3. Marker</a></li>
+<li><a href="#orgb489ad5">17.16.4. Process</a></li>
+<li><a href="#org6a46a9a">17.16.5. File System Related</a>
+<ul>
+<li><a href="#orge54a38c">17.16.5.1. Traversing</a></li>
+<li><a href="#orgb334d56">17.16.5.2. Predicates</a></li>
+</ul>
+</li>
+<li><a href="#org45b9aef">17.16.6. Other</a>
+<ul>
+<li><a href="#orga7d4267">17.16.6.1. make-obsolete-variable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc14de76">18. Reference</a></li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li><a href="elisp.html">Emacs Lisp</a></li>
+<li><a href="elisp-emacs.html">Emacs Part of Elisp</a></li>
+</ul>
+
+
+<div id="outline-container-org8fe639c" class="outline-2">
+<h2 id="org8fe639c"><span class="section-number-2">1</span> Tmp</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><code>toggle-truncate-lines</code>: some file format, e.g. txt, will have a
+line wrap at the end of the screen. This might be annoying, and
+toggle this will truncate the line.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1bef564" class="outline-2">
+<h2 id="org1bef564"><span class="section-number-2">2</span> buffer</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><code>list-face-displays</code></li>
+<li><code>fill-region</code></li>
+</ul>
+<ul class="org-ul">
+<li>count-matches</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga9e12ac" class="outline-2">
+<h2 id="orga9e12ac"><span class="section-number-2">3</span> Getting Help</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><code>describe-key-briefly</code>: defaults to <code>C-h c</code>, return the command name of a key stroke.</li>
+<li><code>where-is</code>: defaults to <code>C-h w</code>, return the current shortcut for a command</li>
+<li><code>info</code>: defaults to <code>C-h i</code>, open the built-in info reader.</li>
+<li><code>view-echo-area-messages</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfcf2800" class="outline-2">
+<h2 id="orgfcf2800"><span class="section-number-2">4</span> Configuration</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+To configure a specific key map.
+Note that the <code>global-set-key</code> will <i>not</i> overwrite a specific key map,
+because the specific one has a higher priority.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">  (define-key org-mode-map (kbd <span style="color: #8b2252;">"C-j"</span>) (<span style="color: #a020f0;">lambda</span>()
+                                         (<span style="color: #a020f0;">interactive</span>)
+                                         (join-line -1)))
+</pre>
+</div>
+
+<p>
+Package installation is done by the built-in package management.
+Be sure to add it into the start script to be able to automatically install it for a new build of emacs.
+</p>
+
+<ul class="org-ul">
+<li><code>list-package</code>: open the package page. Use <code>U x</code> to update all available.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6c206f6" class="outline-2">
+<h2 id="org6c206f6"><span class="section-number-2">5</span> Window and Frame</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org7f448b4" class="outline-3">
+<h3 id="org7f448b4"><span class="section-number-3">5.1</span> window manage</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><code>balance-window</code></li>
+<li><code>toggle-window-split</code></li>
+<li><code>enlarge-window</code></li>
+<li><code>shrink-window</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org021f6f2" class="outline-3">
+<h3 id="org021f6f2"><span class="section-number-3">5.2</span> dired</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li><code>dired-next-subdir</code></li>
+<li><code>dired-prev-subdir</code></li>
+<li><code>dired-tree-up</code></li>
+<li><code>dired-tree-down</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8dc3288" class="outline-3">
+<h3 id="org8dc3288"><span class="section-number-3">5.3</span> packages</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+In <code>*package*</code> buffer, <code>Ux</code> to update all packages.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3068834" class="outline-2">
+<h2 id="org3068834"><span class="section-number-2">6</span> File Operation</h2>
+<div class="outline-text-2" id="text-6">
+<dl class="org-dl">
+<dt><code>revert-buffer</code></dt><dd>Replace current buffer text with the text of the visited file on disk. I.e. Reload file.</dd>
+<dt><code>recover-file</code></dt><dd>recover from <code>#xxx#</code> file.</dd>
+<dt><code>read-only-mode</code></dt><dd>disable it to edit read only files</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org3d52426" class="outline-2">
+<h2 id="org3d52426"><span class="section-number-2">7</span> Editing</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org68cd47f" class="outline-3">
+<h3 id="org68cd47f"><span class="section-number-3">7.1</span> text transformation</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li><code>replace-rectangle</code></li>
+<li><code>upcase-word</code></li>
+<li><code>downcase-word</code></li>
+<li><code>transpose-words</code></li>
+<li><code>transpose-lines</code></li>
+</ul>
+<p>
+To insert a control sequence, use <code>C-q xxx</code>.
+</p>
+<ul class="org-ul">
+<li><code>capitalize-word</code></li>
+
+<li><code>fill-paragraph</code> (M-q)</li>
+<li><code>fill-region</code></li>
+<li><code>auto-fill-mode</code></li>
+</ul>
+
+<p>
+When replace-string, use <code>C-q C-j</code> to represent newline.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orged77a5c" class="outline-3">
+<h3 id="orged77a5c"><span class="section-number-3">7.2</span> killing</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li><code>zap-to-char</code></li>
+<li><code>zap-up-to-char</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0132d2c" class="outline-3">
+<h3 id="org0132d2c"><span class="section-number-3">7.3</span> spell checking</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+Use <code>ispell</code>, and <code>flycheck</code> to check on-the-fly. Check emacs manual for detail.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org92455ae" class="outline-3">
+<h3 id="org92455ae"><span class="section-number-3">7.4</span> Replace regexp for multiple files inside project</h3>
+<div class="outline-text-3" id="text-7-4">
+<ol class="org-ol">
+<li><code>find-name-dired</code>, select the root directory, and provide a pattern for files</li>
+<li>press <code>t</code> to toggle mark all files</li>
+<li>press Q for query and replace in files, and provide regexp and replacement</li>
+<li>proceed each of the match by: <code>SPC</code> to confirm, and <code>n</code> to skip to next.</li>
+<li>Finally all files are not saved. To save that, <code>C-x s</code> will prompt
+all file and wait for your confirm by <code>y</code>. To avoid hitting <code>y</code> many
+times, use <code>C-x s !</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7d748f6" class="outline-2">
+<h2 id="org7d748f6"><span class="section-number-2">8</span> Programming</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li><code>checkdoc</code>: check the warnings in doc string. It can also fix it: <code>C-h f</code>.</li>
+<li><code>C-x C-e</code>: evaluate</li>
+<li><code>C-u C-x C-e</code>: evaluate and insert result</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge5addb3" class="outline-2">
+<h2 id="orge5addb3"><span class="section-number-2">9</span> Remote</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Use <code>tramp</code> can easily work with remote machine. It is shipped with
+Emacs. To use it, simply <code>C-x C-f</code> and enter <code>/user@host:</code>, Emacs will
+prompt password. <code>user@</code> is optional. Do not use fancy shell prompt,
+otherwise tramp might hang. You can also enter <code>/su::</code> to edit as
+root for local files.
+</p>
+
+<p>
+You can use <code>helm</code> no problem, and you can also enter the remote
+shell.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd8d764d" class="outline-2">
+<h2 id="orgd8d764d"><span class="section-number-2">10</span> Moving</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Defun movement:
+</p>
+<dl class="org-dl">
+<dt><code>C-M-a</code></dt><dd>move to the beginning of defun</dd>
+<dt><code>C-M-e</code></dt><dd>move to the end of defun</dd>
+<dt><code>C-M-h</code></dt><dd>mark defun</dd>
+<dt><code>C-M-x</code></dt><dd>evaluate defun</dd>
+</dl>
+
+<p>
+Sexp movement
+</p>
+<dl class="org-dl">
+<dt><code>C-M-f</code></dt><dd>move forward a sexp</dd>
+<dt><code>C-M-b</code></dt><dd>move backward a sexp</dd>
+<dt><code>C-M-k</code></dt><dd>kill a sexp</dd>
+<dt><code>C-M-&lt;SPC&gt;</code></dt><dd>mark following sexp</dd>
+<dt><code>C-M-n</code></dt><dd>move to the next sexp</dd>
+<dt><code>C-M-p</code></dt><dd>move to the previous sexp</dd>
+</dl>
+
+<p>
+Other
+</p>
+<dl class="org-dl">
+<dt><code>C-M-t</code></dt><dd>transpose expressions</dd>
+<dt><code>C-M-u</code></dt><dd>move up parenthesis</dd>
+<dt><code>C-M-d</code></dt><dd>move down parenthesis</dd>
+<dt><code>M-m</code></dt><dd>back-to-indentation</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org0a54f2a" class="outline-2">
+<h2 id="org0a54f2a"><span class="section-number-2">11</span> Navigating</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li><code>forward-sexp</code>: forward semantic block</li>
+<li><code>backward-sexp</code></li>
+<li><code>org-forward-heading-same-level</code>: <code>C-c C-f</code></li>
+<li><code>org-backword-heading-same-level</code>: <code>C-c C-b</code></li>
+</ul>
+</div>
+<div id="outline-container-org7dd619b" class="outline-3">
+<h3 id="org7dd619b"><span class="section-number-3">11.1</span> marking</h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li><code>exhange-point-and-mark</code></li>
+<li><code>mark-word</code></li>
+<li><code>mark-sexp</code></li>
+<li><code>mark-paragraph</code></li>
+<li><code>mark-defun</code></li>
+<li><code>mark-page</code></li>
+<li><code>mark-whole-buffer</code></li>
+<li><code>point-to-register</code>: save ppposition in a register</li>
+<li><code>jump-to-register</code></li>
+<li><code>set-mark-command</code>: C-SPC, set mark, and activate it</li>
+<li><code>C-SPC C-SPC</code>: set mark, but not activate it.</li>
+<li><code>C-u C-SPC</code>: pop to previous mark in mark ring. current is stored at the end of mark ring(rotating)</li>
+<li><code>pop-global-mark</code>: will store both position and buffer</li>
+</ul>
+
+<p>
+All events that set the mark:
+</p>
+<ul class="org-ul">
+<li><code>C-SPC C-SPC</code></li>
+<li><code>C-w</code></li>
+<li>search</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgceed42b" class="outline-3">
+<h3 id="orgceed42b"><span class="section-number-3">11.2</span> register</h3>
+<div class="outline-text-3" id="text-11-2">
+<ul class="org-ul">
+<li><code>jump-to-register</code>: the register can store a file</li>
+<li><code>copy-to-register</code></li>
+<li><code>insert-register</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8a30af1" class="outline-3">
+<h3 id="org8a30af1"><span class="section-number-3">11.3</span> Tags</h3>
+<div class="outline-text-3" id="text-11-3">
+<ul class="org-ul">
+<li><code>helm-etags-select</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaf11c90" class="outline-2">
+<h2 id="orgaf11c90"><span class="section-number-2">12</span> Special Modes</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-org6a05404" class="outline-3">
+<h3 id="org6a05404"><span class="section-number-3">12.1</span> Tex Mode</h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li><code>tex-validate-region</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd7b13dc" class="outline-2">
+<h2 id="orgd7b13dc"><span class="section-number-2">13</span> Variables</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org9bbe704" class="outline-3">
+<h3 id="org9bbe704"><span class="section-number-3">13.1</span> File Local Variable</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+On first line, emacs will try to find
+</p>
+<pre class="example">
+-*- mode: Lisp; fill-column: 75; comment-column: 50; -*-=
+</pre>
+
+<p>
+<code>mode</code> defines the major mode for this file, while unlimited
+numbers of variables follows, separated by <code>;</code> Emacs looks for
+local variable specifications in the second line if the first line
+specifies an interpreter, e.g. <i>shebang</i>.
+</p>
+
+<p>
+A second way to specify file local variable is to have a "local
+variables list" near the end of the file (no more than 3000
+characters from the end of the file).  The <code>Local Variables:</code> and
+<code>End:</code> will be matched literally.
+</p>
+
+<pre class="example">
+This     /* Local Variables:  */
+Is       /* mode: c           */
+Garbage  /* comment-column: 0 */
+Data     /* End:              */
+</pre>
+
+<p>
+You can also interactively add by <code>add-file-local-variable</code>, reload
+the variable by <code>revert-buffer</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge5c5f56" class="outline-3">
+<h3 id="orge5c5f56"><span class="section-number-3">13.2</span> Directory Local Variable</h3>
+<div class="outline-text-3" id="text-13-2">
+<p>
+Put <code>.dir-locals.el</code> at the root directory, and it will be in effect for all the files under that directory, recursively.
+It should be an associate list, the car can be either a mode name (or <code>nil</code> applies to all modes) indicating the variables are for that mode,
+or a sub-directory name to apply only in that directory.
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">  ((nil . ((indent-tabs-mode . t)
+           (fill-column . 80)))
+   (c-mode . ((c-file-style . <span style="color: #8b2252;">"BSD"</span>)
+              (subdirs . nil)))
+   (<span style="color: #8b2252;">"src/imported"</span>
+    . ((nil . ((change-log-default-name
+                . <span style="color: #8b2252;">"ChangeLog.local"</span>))))))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf6d0976" class="outline-2">
+<h2 id="orgf6d0976"><span class="section-number-2">14</span> Advanced Topics</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+<div id="outline-container-orgb305f92" class="outline-3">
+<h3 id="orgb305f92"><span class="section-number-3">14.1</span> Info</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+Info is a document system.
+It is closely bundled with emacs, so I put it here.
+To install some new info document in the system,
+issue the following commands (using <code>gnu-c-manual</code> as an example):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">download the gnu-c-manual code</span>
+make gnu-c-manual.info
+mv gnu-c-manual.info /usr/local/share/info
+<span style="color: #483d8b;">cd</span> /usr/local/share/info
+sudo install-info --info-file=gnu-c-manual.info --info-dir=.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org511a0a3" class="outline-4">
+<h4 id="org511a0a3"><span class="section-number-4">14.1.1</span> Operations</h4>
+<div class="outline-text-4" id="text-14-1-1">
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">key</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">SPC</td>
+<td class="org-left">page down, can cross node</td>
+</tr>
+
+<tr>
+<td class="org-left">BACKSPACE</td>
+<td class="org-left">page up, can cross node</td>
+</tr>
+
+<tr>
+<td class="org-left">M-n</td>
+<td class="org-left"><code>clone-buffer</code>, create a new independent info window</td>
+</tr>
+
+<tr>
+<td class="org-left">n</td>
+<td class="org-left">next node on same level</td>
+</tr>
+
+<tr>
+<td class="org-left">p</td>
+<td class="org-left">previous</td>
+</tr>
+
+<tr>
+<td class="org-left">]</td>
+<td class="org-left">next node regardless of level</td>
+</tr>
+
+<tr>
+<td class="org-left">[</td>
+<td class="org-left">previous</td>
+</tr>
+
+<tr>
+<td class="org-left">u</td>
+<td class="org-left">up node</td>
+</tr>
+
+<tr>
+<td class="org-left">l</td>
+<td class="org-left">back</td>
+</tr>
+
+<tr>
+<td class="org-left">r</td>
+<td class="org-left">forward</td>
+</tr>
+
+<tr>
+<td class="org-left">m</td>
+<td class="org-left"><code>Info-menu</code>, convenient for search node title</td>
+</tr>
+
+<tr>
+<td class="org-left">s</td>
+<td class="org-left">TODO search  a text in the whole info file</td>
+</tr>
+
+<tr>
+<td class="org-left">i</td>
+<td class="org-left">TODO search indices only</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71ad0f7" class="outline-3">
+<h3 id="org71ad0f7"><span class="section-number-3">14.2</span> Babel</h3>
+<div class="outline-text-3" id="text-14-2">
+<p>
+How to write a <code>ob-xxx.el</code> file?
+</p>
+
+<ul class="org-ul">
+<li>search org-mode babel, you will get a link: <a href="http://orgmode.org/worg/org-contrib/babel/">http://orgmode.org/worg/org-contrib/babel/</a></li>
+<li>In this link, there's a "languages" link. <a href="http://orgmode.org/worg/org-contrib/babel/languages.html">http://orgmode.org/worg/org-contrib/babel/languages.html</a></li>
+<li>Under "Develop support for new languages" section, there's link to ob-template.el: <a href="http://orgmode.org/w/worg.git/blob/HEAD:/org-contrib/babel/ob-template.el">http://orgmode.org/w/worg.git/blob/HEAD:/org-contrib/babel/ob-template.el</a></li>
+<li>follow instruction to modify it.</li>
+</ul>
+
+<p>
+some good example to look at: ob-plantuml.el, ob-C.el
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb69d748" class="outline-2">
+<h2 id="orgb69d748"><span class="section-number-2">15</span> Plugins</h2>
+<div class="outline-text-2" id="text-15">
+</div>
+<div id="outline-container-org15cd5fb" class="outline-3">
+<h3 id="org15cd5fb"><span class="section-number-3">15.1</span> ERC</h3>
+<div class="outline-text-3" id="text-15-1">
+<ul class="org-ul">
+<li><code>erc</code>: connect</li>
+<li><code>erc-iswitch</code>: <code>C-c C-b</code></li>
+<li><code>erc-join-channel</code>: <code>C-c C-j</code></li>
+<li><code>erc-save-buffer-in-logs</code>: <code>C-c C-l</code></li>
+<li><code>erc-channel-names</code>: <code>C-c C-n</code>: run <code>/names #channel</code> command in the
+current channel.</li>
+<li><code>erc-part-from-channel</code>: <code>C-c C-p</code>: leave the channel</li>
+<li><code>erc-quit-server</code>: <code>C-c C-q</code>: disconnect server</li>
+</ul>
+
+<p>
+IRC commands
+</p>
+<ul class="org-ul">
+<li>identify: <code>/msg NickServ identify &lt;password&gt;</code></li>
+<li>join: <code>/join #linux</code></li>
+<li>register: <code>/msg NickServ register &lt;psssword&gt; &lt;email&gt;</code></li>
+<li>private talking: <code>/query &lt;nick&gt;</code>. Only registered people can be
+queried</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org20e6af3" class="outline-3">
+<h3 id="org20e6af3"><span class="section-number-3">15.2</span> Flycheck</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+The default (at least the one I'm using) for C/C++ is <code>c/c++-clang</code>.
+</p>
+
+<ul class="org-ul">
+<li><code>flycheck-describe-checker</code></li>
+<li><code>flycheck-list-errors</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7472e0e" class="outline-3">
+<h3 id="org7472e0e"><span class="section-number-3">15.3</span> AUCTex</h3>
+<div class="outline-text-3" id="text-15-3">
+<ul class="org-ul">
+<li><code>C-c C-c</code>: tex-compile</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgff85b90" class="outline-3">
+<h3 id="orgff85b90"><span class="section-number-3">15.4</span> DocView</h3>
+<div class="outline-text-3" id="text-15-4">
+<p>
+Can view pdf in emacs. It is convenient to use the same keybinding for <code>tex-compile</code>:
+when you press <code>C-c C-c</code> the second time after compilation, it will default to <code>\doc-view</code>.
+</p>
+</div>
+
+<div id="outline-container-org5886ae4" class="outline-4">
+<h4 id="org5886ae4"><span class="section-number-4">15.4.1</span> navigation</h4>
+<div class="outline-text-4" id="text-15-4-1">
+<ul class="org-ul">
+<li><code>C-p</code> <code>C-n</code> <code>C-b</code> <code>C-f</code> still works</li>
+<li><code>+</code> and <code>-</code> to adjust scale</li>
+<li><code>n</code> and <code>p</code> for page navigation</li>
+<li><code>space</code> and <code>delete</code> to page up and down across pages</li>
+<li><code>M-&lt;</code> and <code>M-&gt;</code> still works</li>
+<li><code>M-g M-g</code> works as jump to page</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org97af8f6" class="outline-3">
+<h3 id="org97af8f6"><span class="section-number-3">15.5</span> pdf-tools</h3>
+<div class="outline-text-3" id="text-15-5">
+<p>
+The doc view produce very blur text. The pdf-view-mode provided by pdf-tools solved this.
+Also, this package is said to open pdf on demand. It seems to solve my concern for pdf greatly.
+</p>
+
+<p>
+Extra bonus:
+</p>
+<ul class="org-ul">
+<li>search in text</li>
+<li>view and edit annotations!</li>
+</ul>
+
+
+<p>
+<a href="http://emacs.stackexchange.com/questions/19686/how-to-use-pdf-tools-pdf-view-mode-in-emacs">http://emacs.stackexchange.com/questions/19686/how-to-use-pdf-tools-pdf-view-mode-in-emacs</a>
+</p>
+</div>
+
+
+<div id="outline-container-orgc6fd337" class="outline-4">
+<h4 id="orgc6fd337"><span class="section-number-4">15.5.1</span> Installation</h4>
+<div class="outline-text-4" id="text-15-5-1">
+<pre class="example">
+sudo aptitude install libpng-dev libz-dev 
+sudo aptitude install libpoppler-glib-dev 
+sudo aptitude install libpoppler-private-dev
+sudo aptitude install imagemagick
+</pre>
+
+<pre class="example">
+cd /path/to/pdf-tools
+make install-server-deps # optional
+make -s
+make install-package
+# or M-x package-install-file RET pdf-tools-${VERSION}.tar RET
+</pre>
+
+<p>
+activate in emacs by <code>(pdf-tools-install)</code>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgda5ae21" class="outline-4">
+<h4 id="orgda5ae21"><span class="section-number-4">15.5.2</span> key binding</h4>
+<div class="outline-text-4" id="text-15-5-2">
+<ul class="org-ul">
+<li><code>o</code>: open outline</li>
+<li><code>Q</code>: kill buffer</li>
+<li><code>q</code>: kill window</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org713620a" class="outline-3">
+<h3 id="org713620a"><span class="section-number-3">15.6</span> Paredit</h3>
+<div class="outline-text-3" id="text-15-6">
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">command</th>
+<th scope="col" class="org-left">Key</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">paredit-forward-slurp-sexp</td>
+<td class="org-left">C-)</td>
+<td class="org-left">enclose the next into this sexp</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-forward-barf-sexp</td>
+<td class="org-left">C-}</td>
+<td class="org-left">exclude</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-backward-slurp-sexp</td>
+<td class="org-left">C-(</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-backward-barf-sexp</td>
+<td class="org-left">C-{</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">paredit-wrap-round</td>
+<td class="org-left">M-(</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-join-sexp</td>
+<td class="org-left">M-J</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-splice-sexp</td>
+<td class="org-left">M-s</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-split-sexp</td>
+<td class="org-left">M-S</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-raise-sexp</td>
+<td class="org-left">M-r</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">paredit-convolute-sexp</td>
+<td class="org-left">M-?</td>
+<td class="org-left">exchange child and parent</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org65c34a7" class="outline-3">
+<h3 id="org65c34a7"><span class="section-number-3">15.7</span> Magit</h3>
+<div class="outline-text-3" id="text-15-7">
+<p>
+<code>C-x g</code> to enter, and
+</p>
+<ul class="org-ul">
+<li><code>c c</code> to commmit</li>
+<li><code>c a</code> to amend commit</li>
+<li><code>P u</code> to push</li>
+<li><code>F u</code> to pull</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdfa27be" class="outline-3">
+<h3 id="orgdfa27be"><span class="section-number-3">15.8</span> Speedbar</h3>
+<div class="outline-text-3" id="text-15-8">
+<p>
+This is strictly not a plugin. Toggle by <code>speedbar</code>.
+</p>
+
+<dl class="org-dl">
+<dt>q</dt><dd>quit</dd>
+<dt>g</dt><dd>refresh</dd>
+<dt>t</dt><dd>toggle slowbar mode, which stop update until activate</dd>
+<dt>n,p</dt><dd>next, previous</dd>
+<dt>M-n,M-p</dt><dd>restricted next/previous. Will 1) skip subdirectory, and
+2) will not leave subdirectory</dd>
+<dt>f</dt><dd>file mode</dd>
+<dt>b</dt><dd>buffer mode</dd>
+<dt>r</dt><dd>previous mode</dd>
+
+<dt>=</dt><dd>expand</dd>
+<dt>-</dt><dd>hide</dd>
+<dt>RET</dt><dd>open</dd>
+</dl>
+</div>
+
+
+<div id="outline-container-org241b1f2" class="outline-4">
+<h4 id="org241b1f2"><span class="section-number-4">15.8.1</span> Buffer Mode</h4>
+<div class="outline-text-4" id="text-15-8-1">
+<dl class="org-dl">
+<dt>k</dt><dd>kill the buffer</dd>
+<dt>r</dt><dd>revert the buffer</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1fbc7b4" class="outline-3">
+<h3 id="org1fbc7b4"><span class="section-number-3">15.9</span> EDBI</h3>
+<div class="outline-text-3" id="text-15-9">
+<p>
+This is database viewer for MySQL, Sqlite, Postgresql.
+</p>
+
+<p>
+Install <code>edbi</code> and <code>edbi-sqlite</code> package and run as root:
+</p>
+
+<pre class="example">
+cpan RPC::EPC::Service DBI DBD::SQLite DBD::Pg DBD::mysql
+</pre>
+
+<p>
+Run <code>edbi-sqlite</code> to open a sqlite database. This will open <i>database view</i>.
+</p>
+
+<p>
+To sum up:
+</p>
+<dl class="org-dl">
+<dt>n/p</dt><dd>nav rows</dd>
+<dt>c</dt><dd>query editor</dd>
+<dt>C-c C-c</dt><dd>execute</dd>
+<dt>q</dt><dd>quit</dd>
+<dt>RET</dt><dd>go into</dd>
+<dt>SPC</dt><dd>display info</dd>
+<dt>V</dt><dd>show table data</dd>
+</dl>
+</div>
+
+<div id="outline-container-org4398909" class="outline-4">
+<h4 id="org4398909"><span class="section-number-4">15.9.1</span> Database View</h4>
+<div class="outline-text-4" id="text-15-9-1">
+<dl class="org-dl">
+<dt>n/p</dt><dd>nav rows</dd>
+<dt>c</dt><dd>switch to query editor buffer</dd>
+<dt>RET</dt><dd>show table data</dd>
+<dt>SPC</dt><dd>show table definition</dd>
+<dt>q</dt><dd>quit and disconnenct</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgf6cd444" class="outline-4">
+<h4 id="orgf6cd444"><span class="section-number-4">15.9.2</span> Table definition View</h4>
+<div class="outline-text-4" id="text-15-9-2">
+<dl class="org-dl">
+<dt>n/p</dt><dd></dd>
+
+<dt>c</dt><dd></dd>
+
+<dt>V</dt><dd>show table data</dd>
+<dt>q</dt><dd>kill buffer</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org8bf0ec0" class="outline-4">
+<h4 id="org8bf0ec0"><span class="section-number-4">15.9.3</span> Query Editor</h4>
+<div class="outline-text-4" id="text-15-9-3">
+<dl class="org-dl">
+<dt>C-c C-c</dt><dd>execute</dd>
+<dt>C-c q</dt><dd>kill buffer</dd>
+<dt>M-p/n</dt><dd>SQL history back/forward</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org40f9e0c" class="outline-4">
+<h4 id="org40f9e0c"><span class="section-number-4">15.9.4</span> Query Result Viewer</h4>
+<div class="outline-text-4" id="text-15-9-4">
+<dl class="org-dl">
+<dt>n/p</dt><dd></dd>
+
+<dt>SPC</dt><dd>display whole data at current cell, hit SPC again to dismiss</dd>
+<dt>q</dt><dd>quit</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgeca8452" class="outline-3">
+<h3 id="orgeca8452"><span class="section-number-3">15.10</span> EMMS</h3>
+<div class="outline-text-3" id="text-15-10">
+</div>
+<div id="outline-container-orge1d8b26" class="outline-4">
+<h4 id="orge1d8b26"><span class="section-number-4">15.10.1</span> Add files into playlist</h4>
+<div class="outline-text-4" id="text-15-10-1">
+<ul class="org-ul">
+<li>emms-add-file</li>
+<li>emms-add-directory</li>
+<li>emms-add-directory-tree (recursive)</li>
+<li>emms-add-playlist (m3u)</li>
+<li>emms-add-find: use regexp with find</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf9eb647" class="outline-4">
+<h4 id="orgf9eb647"><span class="section-number-4">15.10.2</span> Interactive control in playlist mode</h4>
+<div class="outline-text-4" id="text-15-10-2">
+<ul class="org-ul">
+<li>emms-start</li>
+<li>emms-stop (s)</li>
+<li>emms-next (n)</li>
+<li>emms-previous</li>
+<li>emms-shuffle</li>
+<li>emms-pause (P)</li>
+<li>emms-random (r): go to a randomly selected track in the playlist</li>
+<li>emms-sort</li>
+<li>emms-show (f): show the current track in minibuffer</li>
+<li>emms-seek-forward (&gt;)</li>
+<li>emms-seek-backward (&lt;)</li>
+<li>emms-playlist-mode-center-current (c): center the current song</li>
+<li>emms-playlist-mode-play-smart (RET): play the song under cursor</li>
+<li>emms-playlist-mode-bury-buffer (q): bury buffer</li>
+<li>emms-playlist-mode-clear (C)</li>
+</ul>
+
+<p>
+In playlist mode, you can kill and yank as normal, use <code>C-j</code> to insert
+newline.
+</p>
+
+<p>
+In addition to the default playlist, we also have the markable
+playlist. The <code>emms-mark-mode</code> and <code>emms-mark-mode-disable</code> can switch
+between them. In the mark mode, you can:
+</p>
+<ul class="org-ul">
+<li>emms-mark-forward (m)</li>
+<li>emms-mark-unmark-all (U)</li>
+<li>emms-mark-toggle (t)</li>
+<li>emms-mark-unmark-forward (u)</li>
+<li>emms-mark-regexp (% m)</li>
+</ul>
+
+<p>
+When tracks are marked, you can
+</p>
+<ul class="org-ul">
+<li>emms-mark-delete-marked-tracks (D)</li>
+<li>emms-mark-kill-marked-tracks (K): like D, but put into kill ring, so
+we can yank it back</li>
+<li>emms-mark-copy-marked-tracks: just kill, ready for yank</li>
+</ul>
+
+
+<p>
+Play Property
+</p>
+<ul class="org-ul">
+<li><code>emms-repeat-playlist</code>: variable, non-nil means repeat the playlist</li>
+<li><code>emms-toggle-repeat-playlist</code>: change <code>emms-repeat-playlist</code></li>
+<li><code>emms-toggle-random-playlist</code>: random</li>
+</ul>
+
+<p>
+Play list
+</p>
+<ul class="org-ul">
+<li><code>emms-playlist-new</code></li>
+<li><code>emms-playlist-save</code> (C-x C-s): just use m3u format</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4c91e22" class="outline-4">
+<h4 id="org4c91e22"><span class="section-number-4">15.10.3</span> Edit the tags:</h4>
+<div class="outline-text-4" id="text-15-10-3">
+<ul class="org-ul">
+<li>emms-tag-editor-edit (E): need to have software support. E.g
+<code>mp3info</code></li>
+<li>emms-tag-editor-rename-format: this variable controls how to
+generate file name from meta data, nice!</li>
+<li>emms-tag-editor-rename: this function perform file renaming
+according to above format</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4c22b61" class="outline-4">
+<h4 id="org4c22b61"><span class="section-number-4">15.10.4</span> Smart Browser</h4>
+<div class="outline-text-4" id="text-15-10-4">
+<p>
+<code>emms-smart-browse</code> to enter the smart browsing page.
+</p>
+</div>
+<div id="outline-container-org9982c9c" class="outline-5">
+<h5 id="org9982c9c"><span class="section-number-5">15.10.4.1</span> <span class="todo TODO">TODO</span> when I start emacs, it can find all the music, how did it remember?</h5>
+<div class="outline-text-5" id="text-15-10-4-1">
+<p>
+In browser, you can update by relist the browser
+</p>
+<ul class="org-ul">
+<li>emms-browse-by-artist (b 1)</li>
+<li>emms-browse-by-album</li>
+<li>emms-browse-by-genre</li>
+<li>emms-browse-by-year</li>
+</ul>
+
+<p>
+Interact:
+</p>
+<ul class="org-ul">
+<li>emms-browser-add-tracks (RET)</li>
+<li>emms-browser-add-tracks-and-play (C-j)</li>
+<li>emms-browser-toggle-subitems (SPC): toggle subitems</li>
+<li>emms-browser-collapse-all (1)</li>
+<li>2: expand one level</li>
+<li>3: expand two levels</li>
+<li>4: expand three levels</li>
+<li>emms-browser-clear-playlist (C): also clear the playlist, but use capital</li>
+<li>E: expand everything</li>
+<li>d: visit the current directory</li>
+<li>r: jump to a random track</li>
+<li>/: search</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfcbe49d" class="outline-2">
+<h2 id="orgfcbe49d"><span class="section-number-2">16</span> Gnus</h2>
+<div class="outline-text-2" id="text-16">
+<blockquote>
+<p>
+In emacs, &lt;DEL&gt; means backspace, &lt;delete&gt; means the delete key.
+</p>
+</blockquote>
+</div>
+
+
+<div id="outline-container-orgd6b3717" class="outline-3">
+<h3 id="orgd6b3717"><span class="section-number-3">16.1</span> Gmail Setup</h3>
+<div class="outline-text-3" id="text-16-1">
+<p>
+Add the credential information to <code>~/.authinfo</code>
+</p>
+
+<pre class="example">
+machine imap.gmail.com login &lt;username&gt; password &lt;password&gt; port 993
+machine smtp.gmail.com login &lt;username&gt; password &lt;password&gt; port 587
+</pre>
+
+<p>
+To configure multiple IMAP client for gnus:
+</p>
+<pre class="example">
+machine gmail login XXX@gmail.com password &lt;PASSWORD&gt; port 993
+machine cymail login XXX@iastate.edu password &lt;PASSWORD&gt; port 993
+</pre>
+
+<p>
+Add the following into <code>.gnus</code>
+</p>
+
+<pre class="example">
+(setq user-mail-address "lihebi.emacs@gmail.com"
+      user-full-name "Hebi Li")
+
+(setq gnus-select-method
+      '(nnimap "gmail"
+	       (nnimap-address "imap.gmail.com")  ; it could also be imap.googlemail.com if that's your server.
+	       (nnimap-server-port "imaps")
+	       (nnimap-stream ssl)))
+
+(setq smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
+
+
+;; send mail using gmail smtp, no require for installation of sendmail or something
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "lihebi.emacs@gmail.com" nil))
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      starttls-use-gnutls t)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0a153e1" class="outline-3">
+<h3 id="org0a153e1"><span class="section-number-3">16.2</span> Mail</h3>
+<div class="outline-text-3" id="text-16-2">
+<p>
+To start a mail, use <code>compose-mail (C-x m)</code>. This will drop you to a
+<code>message</code> buffer, with <code>message-mode</code>.
+</p>
+
+<ul class="org-ul">
+<li><code>message-send-and-exit (C-c C-c)</code>: send it</li>
+</ul>
+
+<p>
+Actually when <code>gnus</code> is set up, simply type <code>m</code> to compose email.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org423967d" class="outline-3">
+<h3 id="org423967d"><span class="section-number-3">16.3</span> gmane news group setting</h3>
+<div class="outline-text-3" id="text-16-3">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #a020f0;">setq</span> gnus-default-nntp-server <span style="color: #8b2252;">"news.gmane.org"</span>)
+(<span style="color: #a020f0;">setq</span> gnus-select-method '(nntp <span style="color: #8b2252;">"news.gmane.org"</span>))
+(<span style="color: #a020f0;">setq</span> gnus-use-adaptive-scoring t)
+(add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc3e3b42" class="outline-3">
+<h3 id="orgc3e3b42"><span class="section-number-3">16.4</span> Usage</h3>
+<div class="outline-text-3" id="text-16-4">
+<p>
+Inside emacs, run <code>gnus</code> command. This brings the <code>*Group*</code>
+buffer. You will see the list of groups, use <code>&lt;spc&gt;</code> or <code>&lt;enter&gt;</code> to
+enter the group. As usual, <code>g</code> to refresh. <code>q</code> for quit.
+</p>
+
+<p>
+In general in all buffers, the important keybindings are: <code>c</code> for
+catch up current item, <code>n</code> and <code>p</code> for next or previous <b>unread</b>
+articles <code>N</code> and <code>P</code> for actually next and previous article, <code>m</code> for
+create new message, <code>a</code> for creating new post, <code>r</code> for reply without
+cite, <code>R</code> for reply with cite, <code>t</code> for toggle some mode.
+</p>
+</div>
+
+<div id="outline-container-orgc56d39c" class="outline-4">
+<h4 id="orgc56d39c"><span class="section-number-4">16.4.1</span> Server buffer</h4>
+<div class="outline-text-4" id="text-16-4-1">
+<p>
+From group buffer, type <code>^</code> to enter server buffer. Use <code>&lt;space&gt;</code> (NOT
+<code>&lt;enter&gt;</code>!) to browse the groups of it, and subscribe via <code>u</code>. To
+unsubscribe, type <code>u</code> again. Actually after unsubscribe, the group
+still shows up in the group buffer, with <code>U</code> mark. To <i>really</i> remove
+it, use <code>C-k</code> (<code>gnus-group-kill-group</code>) on it <i>in the group
+buffer</i>. Oh, just noticed this is just kill-line command, so you can
+yank it back via <code>C-y</code> (<code>gnus-group-yank-group</code>). Likewise, kill a
+region also works as expect.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc1d4889" class="outline-4">
+<h4 id="orgc1d4889"><span class="section-number-4">16.4.2</span> Group Buffer:</h4>
+<div class="outline-text-4" id="text-16-4-2">
+<p>
+Finding the groups
+</p>
+<ul class="org-ul">
+<li><code>gnus-group-browse-foreign-server</code> (<code>B</code>): use <code>nntp</code> as back-end and
+<code>news.gmane.org</code> as address.</li>
+<li><code>gnus-group-list-active (A A)</code>: List all groups that are available
+from the server(s).</li>
+<li><code>gnus-group-unsubscribe-current-group (u)</code>: toggle subscription of
+the group</li>
+<li><b><code>gnus-group-list-groups (l)</code></b>: list only subscribed ones with
+unread articles</li>
+<li><b><code>gnus-group-list-all-groups (L)</code></b>: show all subscribed groups</li>
+<li><code>gnus-group-make-rss-group (G R)</code>: paste the rss feed url to add RSS
+feeds</li>
+<li><code>gnus-group-jump-to-group (j)</code>: jump to a group by entering name,
+this works for non-listing groups.</li>
+<li><code>gnus-group-make-rss-group (G R)</code>: prompt to enter the RSS url. It
+is the link of the rss page of a blog,
+e.g. <a href="https://danluu.com/atom.xml">https://danluu.com/atom.xml</a></li>
+</ul>
+
+
+<p>
+Management
+</p>
+<ul class="org-ul">
+<li><code>gnus-group-catchup-current (c)</code>: mark all unread articles in the
+group under cursor as read</li>
+<li><code>gnus-group-catchup-current-all (C)</code>: mark all <del>unread</del> articles in
+the group under cursor as read</li>
+<li><code>gnus-group-mail (m)</code>: create a new message</li>
+<li><code>gnus-group-post-news (a)</code>: create a new post</li>
+<li><code>gnus-group-enter-server-mode (^)</code>: enter server buffer</li>
+</ul>
+
+
+<p>
+Since we like organizing, there's a topic mode, enabled by <code>t</code>. After
+that, you will have a bunch of command prefixed with <code>T</code>. Topic mode
+group subscriptions into categories.
+</p>
+
+<ul class="org-ul">
+<li><code>gnus-topic-mode (t)</code>: toggle topic minor mode.</li>
+<li><code>gnus-topic-create-topic (T n)</code>: create a new topic</li>
+<li><code>gnus-topic-indent (&lt;TAB&gt;)</code>: indent current topic</li>
+<li><code>gnus-topic-unindent (M-&lt;TAB&gt;)</code>: unindent</li>
+<li><code>gnus-topic-delete (T &lt;Del&gt;)</code>: delete topic under cursor</li>
+</ul>
+
+<p>
+You generally just kill (C-k) and yank (C-y) to organize the groups
+into specific topics. UPDATE: Don't use C-k C-y, it seems to cause
+bug, that cannot save the configuration. Use the following instead.
+</p>
+
+<ul class="org-ul">
+<li><code>gnus-topic-move-group (T m)</code>: move the group under cursor to a
+topic</li>
+</ul>
+
+<p>
+When topic mode is enabled, &lt;enter&gt; and &lt;space&gt; on a topic line will
+fold or unfold it. So you don't really need the following commands.
+</p>
+<ul class="org-ul">
+<li><code>gnus-topic-hide-topic (T h)</code>:</li>
+<li><code>gnus-topic-show-topic (T s)</code>:</li>
+</ul>
+
+<p>
+Groups can be combined into virtual groups. This is very helpful for
+reading emails. For gmail, the inbox will not show <b>my</b> interactions,
+that is in <code>Sent Mail</code>. So on Group buffer, create a virtual group by
+<code>gnus-group-make-empty-virtual (G V)</code> and edit it via
+<code>gnus-group-edit-group-method (M-e)</code> with regular expression like
+this:
+</p>
+
+<pre class="example">
+(nnvirtual "nnimap\\+cymail:INBOX\\|nnimap\\+cymail:.*/Sent Mail")
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orga98d4e3" class="outline-4">
+<h4 id="orga98d4e3"><span class="section-number-4">16.4.3</span> Summary and Article buffer</h4>
+<div class="outline-text-4" id="text-16-4-3">
+<p>
+This will list all the mails. <code>&lt;RET&gt;</code> to enter a specific mail.  The
+following commands work in both buffers.
+</p>
+
+<ul class="org-ul">
+<li><code>gnus-summary-next-unread-article (n)</code>: next unread article</li>
+<li><code>gnus-summary-prev-unread-article (p)</code>: previous unread article</li>
+<li><code>gnus-summary-next-article (N)</code>: next article</li>
+<li><code>gnus-summary-prev-article (P)</code>: previous article</li>
+<li><code>gnus-summary-next-page (&lt;SPC&gt;)</code>: scroll down, move to next unread
+article when at bottom</li>
+<li><code>gnus-summary-prev-page (&lt;DEL&gt; or &lt;BACKSPACE&gt;)</code>: scroll up, but will
+not move article</li>
+<li><code>gnus-summary-expand-window (=)</code>: this expand the summary buffer,
+very handy (instead of switch to summary and C-x 1).</li>
+</ul>
+
+<p>
+Replying
+</p>
+<ul class="org-ul">
+<li><code>gnus-summary-followup-with-original (F)</code>: follow-up to group and
+cite the article</li>
+<li><code>gnus-summary-followup (f)</code>: follow-up to group without citing the
+article</li>
+<li><code>gnus-summary-reply-with-original (R)</code>: reply by mail and cite the
+article</li>
+<li><code>gnus-summary-reply-with-original (r)</code>: reply by mail without cite
+the article</li>
+<li><code>message-forward-show-mml (C-c C-f)</code>: forward to another person</li>
+<li><code>gnus-summary-mail-other-window (m)</code>: new mail</li>
+<li><code>gnus-summary-post-news (a)</code>: new post</li>
+</ul>
+
+<p>
+Management
+</p>
+<ul class="org-ul">
+<li><code>gnus-summary-catchup-and-exit (c)</code>: catchup ALL in the buffer</li>
+<li><code>gnus-summary-toggle-header (t)</code>: toggle all headers (a lot of MIME
+information)</li>
+<li><b><code>gnus-summary-insert-old-articles (/ o)</code></b>: show all read articles</li>
+<li><code>gnus-summary-rescore (V R)</code>: recompute the score. Score is computed
+by emacs rules. This can be explicitly set, or affected by some
+operations. For example, when you mark an article as read while
+didn't really read it, the related ones are marked like this.</li>
+<li><code>gnus-sticky-article (A S)</code>: normally the article and summary buffer
+is reused, that means you cannot put two mails side-by-side. This
+command make the current article buffer un-reusable for doing that.</li>
+</ul>
+
+<p>
+Threading
+</p>
+<ul class="org-ul">
+<li><b><code>gnus-summary-toggle-threads (T T)</code></b>: toggle threading (flat style
+or thread style)</li>
+<li><b><code>gnus-summary-refer-thread (A T)</code></b>: display the full thread</li>
+<li><b><code>gnus-summary-refer-parent-article (^)</code></b>: fetch parent article</li>
+<li><code>gnus-summary-top-thread (T o)</code>: go to the top of this thread</li>
+<li><code>gnus-summary-kill-thread (T k)</code>: mark whole thread as read</li>
+</ul>
+
+<p>
+Scores are computed for each article, for the sake of making important
+ones stand out.
+</p>
+<ul class="org-ul">
+<li><code>gnus-summary-lower-score (L)</code>: create low score</li>
+<li><code>gnus-summary-increase-score (I)</code>: create high score</li>
+</ul>
+
+<p>
+Article will have marks to indicate the status of them. The followings
+are read marks:
+</p>
+<ul class="org-ul">
+<li><code>r</code>: marked as read by <code>d</code> command</li>
+<li><code>R</code>: actually been read</li>
+<li><code>O</code>: stands for old, marked as read in previous session</li>
+<li><code>Y</code>: having a too low score</li>
+<li><code>C</code>: marked as catchup</li>
+</ul>
+
+<p>
+Other marks:
+</p>
+<ul class="org-ul">
+<li><code>!</code>: tick, i.e. important, and will always show</li>
+<li><code>?</code>: dormant for now. This will show up whenever there are
+follow-ups.</li>
+<li><code>A</code>: this article has been replied or followed-up by
+me. <code>gnus-replied-mark</code>, this variable has a default value of 65,
+the ASCII for "A".</li>
+<li><code>F</code>: this article has been forwarded</li>
+<li><code>*</code>: this article is stored in cache</li>
+<li><code>S</code>: this article is saved</li>
+<li><code>#</code>: the process mark. This is similar to <code>m</code> in dired: you select
+some articles, and process them at the same time, using some
+commands.</li>
+<li><code>.</code>: gnus-unseen-mark, this article hasn't been seen before by the
+user. What does this mean??</li>
+</ul>
+
+<p>
+The following commands interact with marks
+</p>
+<ul class="org-ul">
+<li><code>gnus-summary-clear-mark-forward (M c)</code>: clear mark</li>
+<li><code>gnus-summary-mark-as-read-forward (d)</code>: mark as read.</li>
+<li><code>gnus-summary-tick-article-forward (!)</code>: mark as important.</li>
+<li><code>gnus-summary-mark-as-dormant (?)</code>: mark as dormant.</li>
+<li><code>gnus-summary-set-bookmark (M b)</code>: set a bookmark in the <b>current
+article</b>. This seems to be a position inside a long article. Gnus
+will jump to this bookmark the next time it encounters the article.</li>
+<li><code>gnus-summary-remove-bookmark (M B)</code>: remove the bookmark from
+current article.</li>
+<li><code>gnus-summary-mark-as-processable (#)</code>: mark the current article the
+process mark</li>
+<li><code>gnus-summary-unmark-as-processable (M-#)</code>: remove the process mark</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb2330e2" class="outline-4">
+<h4 id="orgb2330e2"><span class="section-number-4">16.4.4</span> Message buffer</h4>
+<div class="outline-text-4" id="text-16-4-4">
+<p>
+This is pretty standard: <code>C-c C-c</code> for send, <code>C-c C-k</code> for kill. What
+is not standard though is <code>C-c C-d</code> for draft, <code>C-c C-m f</code> to attach
+file.
+</p>
+
+<p>
+During editing a message, you can just save it normally, and it will
+be in the draft group. The next time you enter draft, type <code>D e</code>
+(<code>gnus-draft-edit-message</code>) in draft summary buffer, you will resume
+to editing. Rejected articles will also be in draft group.
+</p>
+
+<p>
+There are some commands for jumping around the buffer, and edit the
+headers.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf8cce45" class="outline-3">
+<h3 id="orgf8cce45"><span class="section-number-3">16.5</span> Scoring</h3>
+<div class="outline-text-3" id="text-16-5">
+<p>
+To mark a score for an article:
+</p>
+<ol class="org-ol">
+<li>how: <code>I</code> for increase or <code>L</code> for lower.</li>
+<li>what:
+<ul class="org-ul">
+<li><code>a</code> for author</li>
+<li><code>s</code> for subject line</li>
+</ul></li>
+<li>match type:
+<ul class="org-ul">
+<li><code>e</code> exact match</li>
+<li><code>f</code> fuzzy</li>
+</ul></li>
+<li>expiring
+<ul class="org-ul">
+<li><code>t</code>: temporary</li>
+<li><code>p</code>: permanent</li>
+<li><code>i</code>: immediate, i.e. in effect right now, before even save the
+file</li>
+</ul></li>
+</ol>
+
+<p>
+So what I want is actually <code>I a f p</code>. The scoring file is stored by
+default at <code>~/News/&lt;group-name&gt;.SCORE</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf22cf96" class="outline-2">
+<h2 id="orgf22cf96"><span class="section-number-2">17</span> Elisp</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+In emacs lisp intro, the Robert J. Chassell quoted the following.
+</p>
+
+<blockquote>
+<p>
+I prefer to learn from reference manuals.  I “dive into” each
+paragraph, and “come up for air” between paragraphs.
+</p>
+
+<p>
+When I get to the end of a paragraph, I assume that that subject is
+done, finished, that I know everything I need (with the possible
+exception of the case when the next paragraph starts talking about it
+in more detail).  I expect that a well written reference manual will
+not have a lot of redundancy, and that it will have excellent pointers
+to the (one) place where the information I want is.
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-org6efbfe9" class="outline-3">
+<h3 id="org6efbfe9"><span class="section-number-3">17.1</span> IO</h3>
+<div class="outline-text-3" id="text-17-1">
+<p>
+<code>princ</code> is for human, it print object without quotes. <code>print</code> is the
+most verbose, print quotes and newlines. <code>prin1</code> omit the newlines.
+If you just evaluate the print, the result is the object being
+printing, so the echo area will have two copy of the object.
+</p>
+
+<p>
+<code>message</code> accepts only string, and used inclusively on echo area.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf02f8c5" class="outline-3">
+<h3 id="orgf02f8c5"><span class="section-number-3">17.2</span> Symbol</h3>
+<div class="outline-text-3" id="text-17-2">
+<p>
+Since elisp is lisp-1, a symbol can be both variable and a function at
+the same time.  Macros and functions use the same namespace.
+</p>
+
+<p>
+Elisp use nil in three ways: the symbol, the logical false, and the
+empty list.
+</p>
+
+<p>
+Elisp also has <code>#'</code>, but instead of syntax, it is the read syntax of
+quoting for function, i.e. <code>function</code>.
+</p>
+
+<p>
+Elisp by default uses <b>dynamic binding</b> and dynamic extent for local
+variables. This means, the variable refers to the most recent local
+binding, and a binding exists all the way as long as the binding form
+is executing (e.g. body of let). <code>setq</code> works on the most recent
+binding.
+</p>
+
+<p>
+Thus, when using a local dynamic binding, always make sure (by
+yourself, unfortunately) the variable is bound. When really using
+global variable, <b>declare</b> it at the top, via <code>defvar</code> and
+<code>defconst</code>. <code>defvar</code> will initialize the variable if it is originally
+<i>void</i>, while <code>defconst</code> will unconditionally initialize it. Other
+than that, there's no difference, the compiler will not complain if
+you changed the constant. The variable will be marked as "special",
+meaning that it will always have dynamic binding.  There's a third way
+to create global binding, the <code>defcustom</code>. It is used to create
+<i>customizable variable</i>, also called <i>user option</i>. It is special in
+that, it is shown in customize interface, and the <code>defcustom</code> will
+specify how it should be displayed, and what values to take.
+</p>
+
+<p>
+On the other hand, lexical scope establish lexical binding, and has
+indefinite extent. This means the variable has to refer to a binding
+that is lexical written in scope. The binding is available even
+outside the execution of the binding form, and construct a closure.
+To enable lexical binding, you have to set buffer-local variable
+<code>lexical-binding</code> to non-nil. Even after this, special variables are
+still dynamic binding.
+</p>
+
+<p>
+Emacs supports another binding, called buffer-local binding. As name
+suggests, the binding is in effect when that buffer is the current
+buffer, and goes out of effect when it is not. This is most useful in
+major modes. Two ways can make buffer-local
+variable. <code>make-local-variable</code> set the variable to local to current
+buffer, while <code>make-variable-buffer-local</code> set a variable buffer-local
+in all buffers.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9de5b4f" class="outline-3">
+<h3 id="org9de5b4f"><span class="section-number-3">17.3</span> Regular Expression</h3>
+<div class="outline-text-3" id="text-17-3">
+<p>
+You can use basic <code>.*+?</code>, as well as non-greedy counter part <code>*?</code>,
+<code>+?</code>, <code>??</code>.
+</p>
+
+<p>
+Bracket is special in elisp regex. Character classes can be used
+inside <code>[]</code>. E.g. <code>[[:ascii:]]</code>.  Possible values include
+</p>
+<ul class="org-ul">
+<li>ascii: 0-127</li>
+<li>alnum: letter or digit</li>
+<li>alpha: letter</li>
+<li>blank: space and tab</li>
+<li>digit: 0-9</li>
+<li>lower: lower case</li>
+<li>upper</li>
+<li>punct</li>
+<li>space: white space</li>
+<li>word: same as <code>\w</code></li>
+</ul>
+
+<p>
+Parenthesis and braces are not special, thus can be used
+literally. When using for grouping, they need to be escaped for
+capturing, otherwise it is literal. Non-capturing group is also
+supported by <code>\(?:\)</code>. <code>\1</code> for back reference.
+</p>
+
+<p>
+Back slash some code has special meanings. e.g. <code>\w</code> <code>\b</code>. The
+uppercase is negation.
+</p>
+<ul class="org-ul">
+<li><code>\w</code>: word</li>
+<li><code>\b</code>:</li>
+<li><code>\s-</code>: whitespace</li>
+<li><code>\sw</code>: \w</li>
+<li><code>\s.</code>: punctuation</li>
+</ul>
+
+<p>
+When constructing regexp that match string literals, you can use
+<code>regexp-quote</code> and <code>regexp-opt</code> to avoid getting specially
+interpreted. <code>regexp-quote</code> returns a regular expression, whose only
+exact match is string. <code>regexp-opt</code> returns an <i>efficient</i> regular
+expression, that will matches any of the strings supplied.
+</p>
+
+<p>
+The mostly used functions are <code>re-search-forward</code> and backward. It
+search in the buffer. You can also search in a string by
+<code>string-match</code> or <code>string-match-p</code>. They will set <i>match data</i>.  
+</p>
+
+<p>
+After search, you can retrieve the previous match data by
+<code>match-string</code> and <code>match-string-no-property</code> (for clean string). You
+can also use <code>match-beginning</code> and <code>match-end</code> to get the position of
+the match instead of content.
+</p>
+
+<p>
+Finally, <code>replace-regexp-in-string</code> replaces all matches in a string.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc6e6391" class="outline-3">
+<h3 id="orgc6e6391"><span class="section-number-3">17.4</span> Lisp Common Sense</h3>
+<div class="outline-text-3" id="text-17-4">
+<p>
+<code>eq</code>, <code>equal</code>, <code>=</code> are available.
+</p>
+
+<p>
+Numeric function:
+</p>
+<ul class="org-ul">
+<li>comparison: <code>max</code>, <code>min</code>, <code>abs</code></li>
+<li>rounding: <code>truncate</code>, <code>floor</code>, <code>ceiling</code>, <code>round</code></li>
+<li>arithmetic: <code>%</code>, <code>mod</code></li>
+<li>bit-wise: <code>lsh</code>, <code>ash</code>, <code>logand</code>, <code>logior</code>, <code>logxor</code>, <code>lognot</code></li>
+<li>math: <code>expt</code>, <code>exp</code>, <code>sin</code>, <code>cos</code>, <code>log</code>, <code>sqrt</code></li>
+<li>random: <code>random</code></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org4f1ad30" class="outline-3">
+<h3 id="org4f1ad30"><span class="section-number-3">17.5</span> string</h3>
+<div class="outline-text-3" id="text-17-5">
+<p>
+Creating string by <code>make-string</code>. Most likely we are creating from
+existing strings, e.g. <code>substring</code>, <code>concat</code>, <code>split-string</code>.  String
+are compared using <code>string=</code>, <code>string&lt;</code> (no <code>string&gt;</code>?).  Converted by
+<code>number-to-string</code>, <code>string-to-number</code>, and casing operations
+<code>downcase</code>, <code>upcase</code>, <code>capitalize</code>.
+</p>
+
+<p>
+Of course, the most powerful string construction function is
+formating, with <code>foramt</code>, and <code>format-message</code>. The format string
+follows C style though, using <code>%s</code> as printed representation
+(<code>princ</code>), <code>%S</code> for <code>prin1</code>, <code>%c</code> for character, 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org65ee4b2" class="outline-3">
+<h3 id="org65ee4b2"><span class="section-number-3">17.6</span> list</h3>
+<div class="outline-text-3" id="text-17-6">
+<p>
+List is defined as the last cdr to be <code>nil</code>.  If the last is not nil,
+it is called <i>dotted list</i> instead of <i>improper list</i>.
+</p>
+
+<ul class="org-ul">
+<li>append: the interesting part is, all arguments except the last one
+are copied.  If you want to force copy the last one as well, add a
+<code>nil</code> as the last of append.</li>
+<li>reverse</li>
+</ul>
+
+<p>
+list generation:
+</p>
+<ul class="org-ul">
+<li>number-sequence: inclusive from a to b</li>
+</ul>
+
+<p>
+Apart from <code>car</code> and <code>cdr</code>, elisp has <code>car-safe</code> and <code>cdr-safe</code>, that,
+if the argument is not a cons cell, return nil.  <code>nth</code>, <code>nthcdr</code>,
+<code>last</code> are available.
+</p>
+
+<p>
+<i>destructive</i> means the cdr of the cons cells are modified.
+</p>
+
+<p>
+<code>pop</code> and <code>push</code> is destructive. <code>pop</code> will return the car of the
+list. <code>push</code> is the counter part for <code>cons</code> onto the
+list. <code>add-to-list</code> only adds if the element is not there
+already. There are also very bare-bone functions <code>setcar</code> and
+<code>setcdr</code>. Note that <code>sort</code> is also destructive.
+</p>
+
+<p>
+List can be, of course, used as set. <code>member</code> does predicate, <code>remove</code>
+removes item from set, <code>delete</code> destructively removes. They use
+<code>equal</code>, but have <code>eq</code> counter parts obviously. Finally, <code>delete-dups</code>
+remove duplication.
+</p>
+
+<p>
+Association list is same as scheme, a list of pairs. <code>assoc</code> can be
+used to retrieve by <code>car</code>, while <code>rassoc</code> retrieve by <code>cdr</code>.
+</p>
+
+<p>
+Property list is a flat list. The odd elements are property name, and
+the even elements are values.  The property names <i>must</i> be unique.
+The order of the "pairs" does not matter. <code>plist-get</code> and <code>plist-put</code>
+modify the list. <code>plist-member</code> is useful because it can distinguish
+the missing property and the property with value "nil"
+</p>
+
+<p>
+A symbol can have a property list. It has a simpler syntax, <code>get</code> and
+<code>put</code> with the symbol as argument. <code>symbol-plist</code> can retrieve the
+plist from symbol, <code>setplist</code> gives a plist to a symbol.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org35299de" class="outline-3">
+<h3 id="org35299de"><span class="section-number-3">17.7</span> Sequence</h3>
+<div class="outline-text-3" id="text-17-7">
+<p>
+Sequence is more general than list, specifically it also covers array.
+<code>elt</code> is used to retrieve from sequence by position. <code>copy-sequence</code>
+creates new sequence, but the elements are not copied.
+</p>
+
+<p>
+Array is fixed length sequence, can be vector or string. <code>make-vector</code>
+or <code>vector</code> constructs vector, and <code>aref</code> and <code>aset</code> access it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc231a82" class="outline-3">
+<h3 id="orgc231a82"><span class="section-number-3">17.8</span> Hash Table</h3>
+<div class="outline-text-3" id="text-17-8">
+<p>
+<code>make-hash-table</code> constructs a table, and access by <code>gethash</code>,
+<code>puthash</code>, <code>remhash</code>, <code>clrhash</code>. Hash table can be counted by
+<code>hash-table-count</code> instead of <code>length</code>, iterated by <code>maphash</code> instead
+of <code>map</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4e9643e" class="outline-3">
+<h3 id="org4e9643e"><span class="section-number-3">17.9</span> Function</h3>
+<div class="outline-text-3" id="text-17-9">
+<p>
+Functions are defined by following.  To specify optional argument, use
+<code>&amp;optional</code> before all optional arguments. Collect rest arguments by
+putting <code>&amp;rest</code> before the <b>final</b> argument.  A lambda expression
+evaluates to a function object.
+</p>
+
+<pre class="example">
+(defun name (var ...) body ...)
+(lambda (arg ...) body ...)
+(required-var ...
+   [&amp;optional op-var ...]
+   [&amp;rest rest-var])
+</pre>
+
+<p>
+<code>apply</code> append the arguments into a list, and call the function with
+the splice of list as arguments. The last argument must be a
+list. <code>funcall</code> just call with the rest arguments.
+</p>
+
+<p>
+<code>mapcar</code> is the typical map, return the list. <code>mapc</code> is used for side
+effect. <code>mapconcat</code> is a shorthand for concatenate the result as a
+string.
+</p>
+
+
+<p>
+A function with <code>(interactive)</code> is a <i>command</i>, i.e. it can be
+executed with M-x. This apply to both defun and lambda. Although
+interactive is often used without argument, it can actually do very
+interesting staff. It basically defines what kind of arguments the
+user should provide to the command. Most likely, it is a multi-line
+string containing key code of what kind of values to expect, and
+prompt string. The numeric prefix argument "p" is just one of them,
+and it can differentiate <code>C-u</code> prefix of the command.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7f83c94" class="outline-3">
+<h3 id="org7f83c94"><span class="section-number-3">17.10</span> Macro</h3>
+<div class="outline-text-3" id="text-17-10">
+<p>
+<code>defmacro name (args) body...</code>
+</p>
+
+<p>
+The macro is very simple: leave the arguments <i>as is</i> and put them
+into the macro body to form an expression. The expression is then
+evaluated for result.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5572466" class="outline-3">
+<h3 id="org5572466"><span class="section-number-3">17.11</span> Control Structure</h3>
+<div class="outline-text-3" id="text-17-11">
+<p>
+Sequential structure has <code>progn</code>, <code>prog1</code>, <code>prog2</code>.
+</p>
+
+<p>
+<code>if</code>, <code>when</code>, <code>unless</code>, <code>not</code>, <code>and</code>, <code>or</code> are common.
+</p>
+
+<p>
+<code>cond</code> takes the following form
+</p>
+<pre class="example">
+(cond (condition body ...) ...)
+</pre>
+
+<p>
+<code>pcase</code> takes
+</p>
+<pre class="example">
+(pcase exp (pat code ...) ...)
+</pre>
+
+<p>
+Loops takes follows. There's no mention what is the return of
+while. <code>dolist</code> does return the value of result, defaults to
+nil. <code>dotimes</code> bind var to <code>[0,count)</code>.
+</p>
+
+<pre class="example">
+(while condition forms ...)
+(dolist (var list [result]) body ...)
+(dotimes (var count [result]) body ...)
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org9891104" class="outline-3">
+<h3 id="org9891104"><span class="section-number-3">17.12</span> Packages</h3>
+<div class="outline-text-3" id="text-17-12">
+</div>
+<div id="outline-container-orgcdc85ec" class="outline-4">
+<h4 id="orgcdc85ec"><span class="section-number-4">17.12.1</span> Dash.el</h4>
+<div class="outline-text-4" id="text-17-12-1">
+<p>
+<a href="https://github.com/magnars/dash.el">https://github.com/magnars/dash.el</a>
+</p>
+
+<p>
+This is a collection of list libraries.
+</p>
+
+<ul class="org-ul">
+<li><p>
+<code>-map</code> takes a function to map over the list,
+the anaphoric form with double dashes executed with <code>it</code> exposed as the list item. 
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp"> <span style="color: #b22222;">;; </span><span style="color: #b22222;">normal version</span>
+ (-map (<span style="color: #a020f0;">lambda</span> (n) (* n n)) '(1 2 3 4))
+ <span style="color: #b22222;">;; </span><span style="color: #b22222;">also works for defun, of course</span>
+ (<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">square</span> (n) (* n n))
+ (-map 'square '(1 2 3 4))
+ <span style="color: #b22222;">;; </span><span style="color: #b22222;">anaphoric version</span>
+ (<span style="color: #a020f0;">--map</span> (* it it) '(1 2 3 4))
+</pre>
+</div></li>
+
+<li><code>-update-at</code>: <code>(-update-at N FUNC LIST)</code> Return a list with element at Nth position in LIST replaced with `(func (nth n list))`.</li>
+<li><code>-flatten</code>: <code>(-flatten L)</code>: Take a nested list L and return its contents as a single, flat list.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8974e4b" class="outline-4">
+<h4 id="org8974e4b"><span class="section-number-4">17.12.2</span> s.el</h4>
+<div class="outline-text-4" id="text-17-12-2">
+<p>
+<a href="https://github.com/magnars/s.el">https://github.com/magnars/s.el</a>
+</p>
+
+<p>
+The string manipulation library
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge57bea2" class="outline-4">
+<h4 id="orge57bea2"><span class="section-number-4">17.12.3</span> cl-lib.el loop</h4>
+<div class="outline-text-4" id="text-17-12-3">
+<p>
+This package ports many common lisp facilities into elisp,
+most importantly, the loop facility.
+So this section, at least for now, focus on <code>cl-loop</code>.
+</p>
+</div>
+
+<div id="outline-container-org8c31bf7" class="outline-5">
+<h5 id="org8c31bf7"><span class="section-number-5">17.12.3.1</span> general loop form</h5>
+<div class="outline-text-5" id="text-17-12-3-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #a020f0;">cl-loop</span> clauses...)
+</pre>
+</div>
+<p>
+The clauses can be:
+</p>
+<ul class="org-ul">
+<li>for clauses</li>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge7ddd56" class="outline-5">
+<h5 id="orge7ddd56"><span class="section-number-5">17.12.3.2</span> for clauses</h5>
+<div class="outline-text-5" id="text-17-12-3-2">
+<dl class="org-dl">
+<dt><code>for VAR from FROM to TO by STEP</code></dt><dd><ul class="org-ul">
+<li><code>FROM</code> defaults to 0. <code>STEP</code> must be positive and default to 1.</li>
+<li>inclusive <code>[from,to]</code></li>
+<li><code>from</code> can be <code>upfrom</code> and <code>downfrom</code>. I think it is wired to use this.</li>
+<li><code>to</code> can be <code>upto</code> and <code>downto</code>. This makes more sense.</li>
+<li><code>above</code> and <code>below</code> can be used, but <i>exclusive</i>. e.g. <code>for var below 10</code></li>
+</ul></dd>
+<dt><code>for VAR in LIST by FUNCTION</code></dt><dd><code>FUNCTION</code> is used to traverse the list, defaults to <code>cdr</code></dd>
+<dt><code>for VAR on LIST by FUNCTION</code></dt><dd><code>VAR</code> is bound to the cons cell of the list instead of the element.</dd>
+<dt><code>for VAR across ARRAY</code></dt><dd>iterates all elements of array</dd>
+<dt><code>for VAR = EXPR1 then EXPR2</code></dt><dd>this is the most general form.
+The <code>VAR</code> is bound to <code>EXPR1</code> initially, and will be set by evaluating <code>EXPR2</code> in successive iterations.
+<code>EXPR2</code> can refer the old <code>VAR</code></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org41f6484" class="outline-5">
+<h5 id="org41f6484"><span class="section-number-5">17.12.3.3</span> iteration clauses</h5>
+<div class="outline-text-5" id="text-17-12-3-3">
+<dl class="org-dl">
+<dt><code>repeat integer</code></dt><dd>repeat the loop how many times</dd>
+<dt><code>while condition</code></dt><dd>stops the loop when the condition becomes nil</dd>
+<dt><code>until condition</code></dt><dd></dd>
+
+<dt><code>always condition</code></dt><dd>like while except it returns <code>nil</code>, and <code>finally</code> clauses are not executed.</dd>
+<dt><code>never condition</code></dt><dd>counter part for <code>always</code></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgd35667e" class="outline-5">
+<h5 id="orgd35667e"><span class="section-number-5">17.12.3.4</span> accumulation clauses</h5>
+<div class="outline-text-5" id="text-17-12-3-4">
+<dl class="org-dl">
+<dt><code>collect form</code></dt><dd>collect into a list and return the list in the end</dd>
+<dt><code>append form</code></dt><dd>collect the lists into a list by appending, and return it in the end</dd>
+<dt><code>concat form</code></dt><dd>for string only</dd>
+<dt><code>count form</code></dt><dd>count how many times form evaluates to non-nil.</dd>
+<dt><code>sum form</code></dt><dd>sum all the values</dd>
+<dt><code>maximize form</code></dt><dd>get the max. If the form is never executed, result is <i>undefined</i></dd>
+<dt><code>minimize form</code></dt><dd></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgd852faf" class="outline-5">
+<h5 id="orgd852faf"><span class="section-number-5">17.12.3.5</span> Other clauses</h5>
+<div class="outline-text-5" id="text-17-12-3-5">
+<dl class="org-dl">
+<dt><code>with var = value</code></dt><dd>set the value one-time at the beginning of the loop.
+Often used as return variable.
+<b>The spaces around <code>=</code> is essential!</b>.</dd>
+<dt><code>if condition clause [else clause]</code></dt><dd></dd>
+
+<dt><code>when condition clause</code></dt><dd>same as if</dd>
+<dt><code>unless condition clause</code></dt><dd>similar</dd>
+<dt><code>initially [do] forms...</code></dt><dd>execute before the loop begins, but after the <code>for</code> and <code>with</code> variable bindings. <code>do</code> is optional.</dd>
+<dt><code>finally [do] forms...</code></dt><dd>execute after the loop finishes</dd>
+<dt><code>finally return form</code></dt><dd>finally return it &#x2026;</dd>
+<dt><code>do forms...</code></dt><dd>execute as an implicit <code>progn</code> in the body</dd>
+<dt><code>return form</code></dt><dd>this is often used in <code>if</code> or <code>unless</code>, because put it in top level will cause the loop always execute only once.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgefb3579" class="outline-4">
+<h4 id="orgefb3579"><span class="section-number-4">17.12.4</span> cl-lib other</h4>
+<div class="outline-text-4" id="text-17-12-4">
+<p>
+Of course, cl-lib provides much more than just loops &#x2026;
+</p>
+<dl class="org-dl">
+<dt><code>incf PLACE</code></dt><dd>is <code>i++</code></dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org310899e" class="outline-3">
+<h3 id="org310899e"><span class="section-number-3">17.13</span> Debugging</h3>
+<div class="outline-text-3" id="text-17-13">
+</div>
+<div id="outline-container-org00780d5" class="outline-4">
+<h4 id="org00780d5"><span class="section-number-4">17.13.1</span> lisp debugger</h4>
+<div class="outline-text-4" id="text-17-13-1">
+<p>
+The simplest debugger is called <code>lisp debugger</code>.
+You can turn on the <code>debug-or-error</code> flag,
+but I found inserting the <code>(debug)</code> command useful.
+Simply insert <code>(debug)</code> where you want program to suspend, and run it.
+You will enter the debugger at that point.
+In the debugger buffer, the following commands are available:
+</p>
+<dl class="org-dl">
+<dt><code>c</code></dt><dd>continue run program</dd>
+<dt><code>d</code></dt><dd>step</dd>
+<dt><code>e</code></dt><dd>evaluate an prompt expression</dd>
+<dt><code>R</code></dt><dd>like <code>e</code>, but also save the result in <code>*Debugger-record*</code></dd>
+<dt><code>q</code></dt><dd>quit</dd>
+<dt><code>v</code></dt><dd>toggle display of local variables ???</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org6c4ba43" class="outline-4">
+<h4 id="org6c4ba43"><span class="section-number-4">17.13.2</span> Edebug</h4>
+<div class="outline-text-4" id="text-17-13-2">
+<p>
+For this to work, first you need to instrument the code.
+You can instrument the defun by <code>C-u C-M-x</code>.
+Actually this is adding a prefix before <code>eval-defun</code>,
+which instrument, and then evaluate the defun.
+</p>
+
+<p>
+After instrumentation, running the defun will cause the program to stop at the first <i>stop point</i> of the function.
+The <i>stop points</i> are
+</p>
+<ul class="org-ul">
+<li>before and after each subexpression that is a list</li>
+<li>after each variable reference</li>
+</ul>
+</div>
+
+<div id="outline-container-orgf115cd4" class="outline-5">
+<h5 id="orgf115cd4"><span class="section-number-5">17.13.2.1</span> breakpoints</h5>
+<div class="outline-text-5" id="text-17-13-2-1">
+<dl class="org-dl">
+<dt><code>b</code></dt><dd>set a breakpoint</dd>
+<dt><code>u</code></dt><dd>unset a breakpoint</dd>
+<dt><code>x CONDITION</code></dt><dd>set a conditional breakpoint</dd>
+</dl>
+
+<p>
+You can also set the <i>source breakpoints</i>, by adding <code>(edebug)</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org10fd262" class="outline-5">
+<h5 id="org10fd262"><span class="section-number-5">17.13.2.2</span> Moving of point</h5>
+<div class="outline-text-5" id="text-17-13-2-2">
+<dl class="org-dl">
+<dt><code>B</code></dt><dd>move point to the next breakpoint</dd>
+<dt><code>w</code></dt><dd>move point back to the current stop point</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgc97c26f" class="outline-5">
+<h5 id="orgc97c26f"><span class="section-number-5">17.13.2.3</span> executions</h5>
+<div class="outline-text-5" id="text-17-13-2-3">
+<dl class="org-dl">
+<dt><code>&lt;SPC&gt;</code></dt><dd>run to next stop point</dd>
+<dt><code>g</code></dt><dd>execute until next breakpoint</dd>
+<dt><code>q</code></dt><dd>exit</dd>
+<dt><code>S</code></dt><dd>stop and wait for Edebug commands</dd>
+<dt><code>n</code></dt><dd>evaluate a sexp and stop at stop point</dd>
+<dt><code>t</code></dt><dd><i>trace</i>, pause one second at each stop point &#x2026;</dd>
+<dt><code>T</code></dt><dd>rapid trace. Update the display at each stop point but don't actually pause &#x2026;</dd>
+<dt><code>c</code></dt><dd>pause one second at each breakpoint</dd>
+<dt><code>C</code></dt><dd>rapid continue.</dd>
+<dt><code>G</code></dt><dd>run and ignore breakpoints (but you can stop it by <code>S</code>)</dd>
+
+<dt><code>h</code></dt><dd>proceed to the stop point near the point &#x2026;</dd>
+<dt><code>f</code></dt><dd>run one expression</dd>
+<dt><code>o</code></dt><dd>step out the containing expression</dd>
+<dt><code>i</code></dt><dd>step in</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org7e8dc30" class="outline-5">
+<h5 id="org7e8dc30"><span class="section-number-5">17.13.2.4</span> evaluation</h5>
+<div class="outline-text-5" id="text-17-13-2-4">
+<dl class="org-dl">
+<dt><code>e EXP</code></dt><dd>evaluate a prompt expression</dd>
+<dt><code>C-x C-e</code></dt><dd>evaluate an expression at point</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgdd77aab" class="outline-5">
+<h5 id="orgdd77aab"><span class="section-number-5">17.13.2.5</span> other commands</h5>
+<div class="outline-text-5" id="text-17-13-2-5">
+<dl class="org-dl">
+<dt><code>?</code></dt><dd>show help</dd>
+<dt><code>r</code></dt><dd>redisplay the most recent sexp result</dd>
+<dt><code>d</code></dt><dd>display the backtrace</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org52c8743" class="outline-3">
+<h3 id="org52c8743"><span class="section-number-3">17.14</span> Unit Testing</h3>
+<div class="outline-text-3" id="text-17-14">
+<p>
+Use <code>ert</code> for unit testing.
+</p>
+</div>
+
+<div id="outline-container-org05cb4fd" class="outline-4">
+<h4 id="org05cb4fd"><span class="section-number-4">17.14.1</span> Write test</h4>
+<div class="outline-text-4" id="text-17-14-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #a020f0;">ert-deftest</span> <span style="color: #0000ff;">addition-test</span>()
+  <span style="color: #8b2252;">"Outline docstring."</span>
+  (should (= (+ 1 2) 4)))
+</pre>
+</div>
+
+<p>
+The family of functions:
+</p>
+<ul class="org-ul">
+<li><code>should</code></li>
+<li><code>shoult-not</code></li>
+<li><code>should-error</code></li>
+</ul>
+
+<p>
+expected failure:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #a020f0;">ert-deftest</span> <span style="color: #0000ff;">addition-test</span>()
+  <span style="color: #8b2252;">"Outline docstring."</span>
+  <span style="color: #483d8b;">:expected-result</span> <span style="color: #483d8b;">:failed</span>
+  (should (= (+ 1 2) 4)))
+</pre>
+</div>
+
+<p>
+skip test
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #a020f0;">ert-deftest</span> <span style="color: #0000ff;">addition-test</span>()
+  <span style="color: #8b2252;">"Outline docstring."</span>
+  (slip-unless (<span style="color: #a020f0;">featurep</span> '<span style="color: #008b8b;">dbusbind</span>'))
+  (should (= (+ 1 2) 4)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0897761" class="outline-4">
+<h4 id="org0897761"><span class="section-number-4">17.14.2</span> Run test</h4>
+<div class="outline-text-4" id="text-17-14-2">
+<p>
+<code>M-x ert</code> will run it. The selector of test accept some more fancy staff like regular expression matching.
+But in the case of scratch testing, I need to evaluate the deftest and then call <code>ert</code>.
+</p>
+
+<p>
+The nice thing is it supports interactive debugging.
+In the ert buffer, the following commands are available:
+</p>
+<dl class="org-dl">
+<dt><code>r</code></dt><dd>re-run the test</dd>
+<dt><code>.</code></dt><dd>jump to the source code of this test</dd>
+<dt><code>b</code></dt><dd>show back-trace</dd>
+<dt><code>m</code></dt><dd>show the message this test printed</dd>
+<dt><code>d</code></dt><dd>re-run the test with debugger enabled</dd>
+<dt>instrumentation</dt><dd>go to source code, type <code>C-u C-M-x</code>, and re-run the test. You are able to step!</dd>
+</dl>
+
+<p>
+Also, select test by this:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(ert-run-test (ert-get-test 'my-defined-test))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2ed2bbd" class="outline-3">
+<h3 id="org2ed2bbd"><span class="section-number-3">17.15</span> Some random code snippets</h3>
+<div class="outline-text-3" id="text-17-15">
+<div class="org-src-container">
+<pre class="src src-elisp">(cl-prettyprint (font-family-list)) <span style="color: #b22222;">;; </span><span style="color: #b22222;">see all font family available on this system</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgccedce0" class="outline-5">
+<h5 id="orgccedce0"><span class="section-number-5">17.15.0.1</span> Url retrieval</h5>
+<div class="outline-text-5" id="text-17-15-0-1">
+<div class="org-src-container">
+<pre class="src src-elisp">  (<span style="color: #a020f0;">with-current-buffer</span> (url-retrieve-synchronously <span style="color: #8b2252;">"http://scholar.google.com/scholar?q=segmented symbolic analysis"</span>)
+    (goto-char (point-min))
+    (kill-ring-save (point-min) (point-max))
+    )
+  (<span style="color: #a020f0;">let</span> ((framed-url (match-string 1)))
+    (<span style="color: #a020f0;">with-current-buffer</span> (url-retrieve-synchronously framed-url)
+      (goto-char (point-min))
+      (<span style="color: #a020f0;">when</span> (re-search-forward <span style="color: #8b2252;">"&lt;frame src=\"</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">http[[:ascii:]]*?</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;">\""</span>)
+        (match-string 1))))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgbd34fb5" class="outline-3">
+<h3 id="orgbd34fb5"><span class="section-number-3">17.16</span> Emacs Related</h3>
+<div class="outline-text-3" id="text-17-16">
+</div>
+<div id="outline-container-org4895dbd" class="outline-4">
+<h4 id="org4895dbd"><span class="section-number-4">17.16.1</span> Buffer</h4>
+<div class="outline-text-4" id="text-17-16-1">
+<ul class="org-ul">
+<li><code>with-temp-buffer</code>
+<code>(with-temp-buffer &amp;rest BODY)</code> Create a temporary buffer, and evaluate BODY there like <code>progn</code>.</li>
+
+<li><code>(insert-file-contents FILENAME &amp;optional VISIT BEG END REPLACE)</code>: Insert contents of file FILENAME after point.</li>
+<li><code>(secure-hash ALGORITHM OBJECT &amp;optional START END BINARY)</code>: the object can be a buffer.
+This can be used to compare if a file has changed.</li>
+<li><code>(current-buffer)</code>: Return the current buffer as a Lisp object.</li>
+<li><code>(message FORMAT-STRING &amp;rest ARGS)</code>: Display a message at the bottom of the screen.</li>
+</ul>
+
+<p>
+There will be many buffers in an Emacs session, and the
+<code>current-buffer</code> returns the current one, which is the default target
+for most commands. When you want to make something interesting to some
+other buffer, you will need to <code>set-buffer</code> to set that buffer
+current. You will likely want to switch back to the original buffer
+after those operations, for that, don't use <code>set-buffer</code> to set back,
+because it is not error-safe. Instead, use <code>save-current-buffer</code>, or
+better <code>with-current-buffer</code>. <code>with-temp-buffer</code> don't need a provided
+buffer object, but creates a temporary one. The temporary buffer will
+be killed at the end of execution of body. All of these 3 form does
+not display the buffer, just make it current.
+</p>
+
+<p>
+A buffer has a name, retrieved by <code>buffer-name</code>. The name can be set
+using <code>rename-buffer</code>. Buffers can be obtained by name via
+<code>get-buffer</code>.  Buffers are also likely to be associated with a file,
+and the non-directory file name is <code>buffer-file-name</code>. You can also
+get the buffer using the file name via <code>get-file-buffer</code>. Since it
+just the filename, there must be multiple ones, and this function
+returns the first.
+</p>
+
+<p>
+To create a buffer, use <code>get-buffer-create</code>, which returns the new
+buffer, or an existing buffer. It does not make that buffer current.
+Create a new unique buffer name by <code>generate-new-buffer-name</code>. It is
+not typically directly used though. The function <code>generate-new-buffer</code>
+uses that function to generate new name (by post-fixing &lt;N&gt;), if the
+provided name is in use.
+</p>
+
+<p>
+Obtain all the live buffers using <code>buffer-list</code>. The order of list
+matters. The newly created buffer is added to the end of list, the
+current displayed buffer moves to the front. When a buffer is buried,
+it is moved to the end. <code>other-buffer</code> returns the first in the list
+that is not current one. <code>last-buffer</code> returns the last (end) in the
+list. <code>bury-buffer</code> and <code>unbury-buffer</code> moves a buffer to the end and
+switch buffer to the last buffer respectively. A buffer is killed by
+<code>kill-buffer</code>, in which case it is removed from the list.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orged0acf5" class="outline-4">
+<h4 id="orged0acf5"><span class="section-number-4">17.16.2</span> Position</h4>
+<div class="outline-text-4" id="text-17-16-2">
+<p>
+A position is the index in a buffer. There of course will be a
+character before and one after the position. When we say "at
+position", we mean after position. Position in a buffer starts from 1,
+while position in a string starts from 0.
+</p>
+
+<p>
+The point is the current cursor position. <code>point</code> returns the current
+point, <code>point-min</code> and <code>point-max</code> returns the beginning and end
+point.
+</p>
+
+<p>
+There are many commands to move point. <code>goto-char</code> moves by position,
+and all other commands build upon it. I'm omitting the opposite
+version, e.g. forward v.s. backward, up v.s. down., beginning v.s. end
+</p>
+<ul class="org-ul">
+<li>moves by characters: <code>forward-char</code></li>
+<li>moves by word: <code>forward-word</code></li>
+<li>buffer: <code>beginning-of-buffer</code> moves to <code>point-min</code></li>
+<li>line: <code>beginning-of-line</code> and <code>end-of-line</code>, <code>forward-line</code> and
+<code>backward-line</code></li>
+<li>screen: you can also count the current vertical screen lines, and
+move the corresponding lines accordingly.</li>
+<li>balanced expression: <code>forward-list</code>, <code>up-list</code>, <code>forward-sexp</code>,
+<code>end-of-defun</code></li>
+<li>skipping: <code>skip-chars-forward</code> skips over a list of chars
+represented by a pattern string. It is like regular expression, but
+is put implicitly inside brackets. Thus you can use for example
+<code>"a-zA-Z"</code>.</li>
+</ul>
+
+<p>
+It is useful to temporarily move to some position, do some tasks, and
+move back. It is called <i>execursion</i>, and is done via
+<code>save-execursion</code>.
+</p>
+
+<p>
+Narrowing works with two positions. <code>narrow-to-region</code> does the
+narrowing, and <code>widen</code> undoes it. This creates the following effects:
+</p>
+<ol class="org-ol">
+<li>determine the accessible portion of the buffer, but don't alter the
+position of the actual buffer.</li>
+<li>The point cannot move outside the positions</li>
+<li>no texts outside are displayed</li>
+<li>most (?) functions refuse to operate on outside text</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org4133889" class="outline-4">
+<h4 id="org4133889"><span class="section-number-4">17.16.3</span> Marker</h4>
+<div class="outline-text-4" id="text-17-16-3">
+<p>
+A marker has two component: the buffer it is in, and the position in
+the buffer. They can be retrieved by <code>marker-position</code> and
+<code>marker-buffer</code>.
+</p>
+
+<p>
+The position is updated automatically when the text changes. The
+invariant is the surrounding two characters. The updating of marker
+position takes time, especially there are a lot of them. Thus, remove
+the marker if you know you won't use if any more.
+</p>
+
+<p>
+You can make a marker by 4 functions, which differs only its initial
+point. <code>make-marker</code>, <code>point-marker</code>, <code>point-min-marker</code>,
+<code>point-max-marker</code>. You can also <code>copy-markder</code> from existing one. A
+marker can be moved by <code>set-marker</code>.
+</p>
+
+<p>
+There's one special marker, designated <i>the mark</i>, <b>whose position</b> is
+returned by <code>mark</code>. To return the actual marker, use <code>mark-marker</code>,
+but this is dangerous, try to avoid it. The mark is mainly used to
+provide a default region for a command. The text between point and the
+mark is called <i>the region</i>. The beginning and end of it can be
+obtained by <code>region-beginning</code> and <code>region-end</code>. When using
+<code>(interactive)</code> to define a command, the <code>"r"</code> code will give the
+command two numeric values as the (point) and the mark, the smaller
+first. This region is used for most region based command by
+default.
+</p>
+
+<p>
+Some command will set the mark, and when it does this, it will
+typically save the old mark on the <i>mark ring</i>.  <code>set-mark</code> set the
+position of the mark, but it is not commonly used, because it discard
+the previous mark. Instead, <code>push-mark</code> and <code>pop-mark</code> handles the
+mark ring automatically.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb489ad5" class="outline-4">
+<h4 id="orgb489ad5"><span class="section-number-4">17.16.4</span> Process</h4>
+<div class="outline-text-4" id="text-17-16-4">
+<p>
+Elisp can create async or sync processes. There are three primitives
+to create subprocess: <code>make-process</code> for async, <code>call-process</code> and
+<code>call-process-region</code> for sync. All others are built upon them.
+</p>
+
+<p>
+To get a list of current live async processes, use
+<code>list-processes</code>. This seems to be for display purpose, and
+<code>process-list</code> seems to return process objects. You can also get
+process by its name via <code>get-process</code>. Process information can be
+retrieved by <code>process-command</code>, <code>process-id</code>, <code>process-name</code>,
+<code>process-status</code>, <code>process-live-p</code>, <code>process-type</code>,
+<code>process-exit-status</code>.
+</p>
+
+<p>
+You also want to communicate with the subprocess: either send input,
+receive output, or send signals. To send string as input, use
+<code>process-send-string</code>, <code>process-send-region</code>, <code>process-send-eof</code>. To
+send signals, use <code>interrupt-process</code>, <code>kill-process</code>, <code>quit-process</code>,
+<code>stop-process</code>, <code>continue-process</code>, or the general one
+<code>signal-process</code>.
+</p>
+
+<p>
+The output of a subprocess is inserted into a associated buffer,
+called the <i>process buffer</i>. This buffer serves two purposes: receive
+the output, and kill the process by kill the buffer. <code>process-buffer</code>
+returns the buffer with a particular process, and <code>get-buffer-process</code>
+returns the process object associated with the buffer. The position to
+insert is determined by the process mark, which is always set to the
+end of the buffer. You can set process buffer by <code>set-process-buffer</code>.
+</p>
+
+<p>
+Network connection is also represented by a process object, but it is
+not a child process, has no process id, cannot be killed or sent
+signal. You can only send and receive data, or close the
+connection. <code>make-network-process</code> creates network connection. It
+seems to be a primitive, able to create TCP, UDP, or a
+server. Alternatively, <code>open-network-stream</code> creates TCP specifically.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6a46a9a" class="outline-4">
+<h4 id="org6a46a9a"><span class="section-number-4">17.16.5</span> File System Related</h4>
+<div class="outline-text-4" id="text-17-16-5">
+</div>
+<div id="outline-container-orge54a38c" class="outline-5">
+<h5 id="orge54a38c"><span class="section-number-5">17.16.5.1</span> Traversing</h5>
+<div class="outline-text-5" id="text-17-16-5-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(directory-files DIRECTORY <span style="color: #228b22;">&amp;optional</span> FULL MATCH NOSORT)
+</pre>
+</div>
+
+<p>
+Return a list of names of files in DIRECTORY.
+</p>
+
+<p>
+Usage example:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(bib-files (directory-files bib-dir t <span style="color: #8b2252;">".*\.bib$"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb334d56" class="outline-5">
+<h5 id="orgb334d56"><span class="section-number-5">17.16.5.2</span> Predicates</h5>
+<div class="outline-text-5" id="text-17-16-5-2">
+<p>
+<code>directory-files</code> will throw error if the directory does not exist.
+So a safe way is to check if the directory exists first.
+This predicate does this:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(file-exists-p FILENAME)
+</pre>
+</div>
+<p>
+Directory is also a file.
+</p>
+
+<p>
+Other predicates includes:
+</p>
+<pre class="example">
+file-readable-p
+file-executable-p
+file-writable-p
+file-accessible-directory-p
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org45b9aef" class="outline-4">
+<h4 id="org45b9aef"><span class="section-number-4">17.16.6</span> Other</h4>
+<div class="outline-text-4" id="text-17-16-6">
+<ul class="org-ul">
+<li><code>(defalias SYMBOL DEFINITION &amp;optional DOCSTRING)</code>: Set SYMBOL's function definition to DEFINITION.
+E.g. <code>(defalias 'helm-bibtex-get-value 'bibtex-completion-get-value)</code>,
+serves as a temporary patch for <code>helm-bibtex</code> update its API to <code>bibtex-completion</code></li>
+</ul>
+</div>
+
+<div id="outline-container-orga7d4267" class="outline-5">
+<h5 id="orga7d4267"><span class="section-number-5">17.16.6.1</span> make-obsolete-variable</h5>
+<div class="outline-text-5" id="text-17-16-6-1">
+<p>
+<code>(make-obsolete-variable OBSOLETE-NAME CURRENT-NAME WHEN &amp;optional ACCESS-TYPE)</code>
+</p>
+
+<p>
+Make the byte-compiler warn that OBSOLETE-NAME is obsolete.
+</p>
+
+<p>
+<code>helm-bibte</code> used it when it refactored the "helm" part off into a module,
+to support different backend other than <code>helm</code>.
+As a result, most <code>helm-bibtex-</code> prefixes are changed to <code>bibtex-completion-</code> ones.
+But they want the end user's configuration will not break,
+and at the same time warn them to update to the new name.
+Here's the code, and the last line is what actually uses the function.
+The actual effect is the user's configuration will be marked as warning,
+the mini-buffer will describe the obsolete detail.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">  (<span style="color: #a020f0;">cl-loop</span>
+   for var in '(<span style="color: #8b2252;">"bibliography"</span> <span style="color: #8b2252;">"library-path"</span> <span style="color: #8b2252;">"pdf-open-function"</span>
+                <span style="color: #8b2252;">"pdf-symbol"</span> <span style="color: #8b2252;">"format-citation-functions"</span> <span style="color: #8b2252;">"notes-path"</span>
+                <span style="color: #8b2252;">"notes-template-multiple-files"</span>
+                <span style="color: #8b2252;">"notes-template-one-file"</span> <span style="color: #8b2252;">"notes-key-pattern"</span>
+                <span style="color: #8b2252;">"notes-extension"</span> <span style="color: #8b2252;">"notes-symbol"</span> <span style="color: #8b2252;">"fallback-options"</span>
+                <span style="color: #8b2252;">"browser-function"</span> <span style="color: #8b2252;">"additional-search-fields"</span>
+                <span style="color: #8b2252;">"no-export-fields"</span> <span style="color: #8b2252;">"cite-commands"</span>
+                <span style="color: #8b2252;">"cite-default-command"</span>
+                <span style="color: #8b2252;">"cite-prompt-for-optional-arguments"</span>
+                <span style="color: #8b2252;">"cite-default-as-initial-input"</span> <span style="color: #8b2252;">"pdf-field"</span>)
+   for oldvar = (intern (concat <span style="color: #8b2252;">"helm-bibtex-"</span> var))
+   for newvar = (intern (concat <span style="color: #8b2252;">"bibtex-completion-"</span> var))
+   do
+   (<span style="color: #a020f0;">defvaralias</span> <span style="color: #a0522d;">newvar</span> oldvar)
+   (make-obsolete-variable oldvar newvar <span style="color: #8b2252;">"2016-03-20"</span>))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgc14de76" class="outline-2">
+<h2 id="orgc14de76"><span class="section-number-2">18</span> Reference</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+Sacha's super long Emacs Config: <a href="http://pages.sachachua.com/.emacs.d/Sacha.html">http://pages.sachachua.com/.emacs.d/Sacha.html</a>
+Some emacs.d I started with <a href="https://github.com/jordonbiondo/.emacs.d/blob/master/init.el">https://github.com/jordonbiondo/.emacs.d/blob/master/init.el</a>
+C++ IDE and some tutorials: <a href="http://tuhdo.github.io/">http://tuhdo.github.io/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

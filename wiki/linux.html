@@ -1,0 +1,3714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Linux</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd03b67c">1. Installation</a></li>
+<li><a href="#org59bdfd9">2. Network</a>
+<ul>
+<li><a href="#org0cb0c95">2.1. Wireless Networking</a>
+<ul>
+<li><a href="#org7f8c030">2.1.1. General DHCPCD</a></li>
+<li><a href="#orgd312684">2.1.2. iw</a></li>
+<li><a href="#orgdc4592d">2.1.3. wpa<sub>supplicant</sub></a>
+<ul>
+<li><a href="#org81e147f">2.1.3.1. Configuration</a></li>
+<li><a href="#orgfc18877">2.1.3.2. Connect</a></li>
+<li><a href="#org0f097d9">2.1.3.3. Obtain IP</a></li>
+<li><a href="#org9cdf989">2.1.3.4. To Sum Up</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0755a5b">2.2. VPN</a>
+<ul>
+<li><a href="#org35fc702">2.2.1. L2tp, IPSec</a></li>
+<li><a href="#org84bf053">2.2.2. OpenVPN</a>
+<ul>
+<li><a href="#orgd574eb4">2.2.2.1. Server Setup</a></li>
+<li><a href="#orgac337bc">2.2.2.2. Client Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org19e56db">3. App</a>
+<ul>
+<li><a href="#org58daa77">3.1. mplayer</a></li>
+<li><a href="#orgb0d8297">3.2. youtube-dl</a></li>
+<li><a href="#orgb191802">3.3. chrome extensions</a></li>
+<li><a href="#orga864b86">3.4. VNC</a></li>
+<li><a href="#orgfd96218">3.5. Remove viewer</a></li>
+<li><a href="#org2c9cf12">3.6. mpd</a></li>
+<li><a href="#org14755ee">3.7. fontforge</a></li>
+<li><a href="#org18df9c3">3.8. tmux</a></li>
+</ul>
+</li>
+<li><a href="#orga3a1630">4. Window System</a>
+<ul>
+<li><a href="#org0e58106">4.1. xkill</a></li>
+<li><a href="#orgf211f14">4.2. Display Manager</a></li>
+<li><a href="#orgff24282">4.3. screen</a></li>
+<li><a href="#org76b6336">4.4. cursor</a></li>
+<li><a href="#org580bf82">4.5. Natural Scrolling</a></li>
+<li><a href="#org8fa94f2">4.6. ratpoison</a></li>
+<li><a href="#orgbb2087b">4.7. StumpWM</a>
+<ul>
+<li><a href="#orgc8f290a">4.7.1. Installation</a>
+<ul>
+<li><a href="#org872914f">4.7.1.1. A better way to install stumpwm</a></li>
+<li><a href="#org2f4a77b">4.7.1.2. Live Debugging</a></li>
+</ul>
+</li>
+<li><a href="#org46c4ea6">4.7.2. General</a>
+<ul>
+<li><a href="#orgd8cb25a">4.7.2.1. Get Help</a></li>
+</ul>
+</li>
+<li><a href="#org55a0a72">4.7.3. Window</a></li>
+<li><a href="#orgb9bc5d3">4.7.4. Frame</a></li>
+<li><a href="#org09829c7">4.7.5. Groups</a></li>
+<li><a href="#orgb77be78">4.7.6. Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf7f6dc1">5. System Management</a>
+<ul>
+<li><a href="#orgb9d6af9">5.1. Power Management</a></li>
+<li><a href="#org0332cef">5.2. Booting</a></li>
+<li><a href="#orgd330140">5.3. User Management</a></li>
+<li><a href="#org22f71ed">5.4. File Management</a>
+<ul>
+<li><a href="#org87bd224">5.4.1. Swap File</a></li>
+<li><a href="#org5ecb08c">5.4.2. Back Up &amp; Syncing</a></li>
+<li><a href="#org86782ce">5.4.3. MIME</a></li>
+</ul>
+</li>
+<li><a href="#orgcb61e26">5.5. LVM</a></li>
+<li><a href="#org99facc0">5.6. Monitor the system information</a></li>
+<li><a href="#orgabd7381">5.7. Extending a logical volume</a></li>
+<li><a href="#org4f242a1">5.8. Reduce a logical volume</a></li>
+</ul>
+</li>
+<li><a href="#org99c1675">6. Arch Linux</a>
+<ul>
+<li><a href="#org3dcc065">6.1. Installation</a>
+<ul>
+<li><a href="#orgb24c2ff">6.1.1. Verify UEFI</a></li>
+<li><a href="#org2d444c3">6.1.2. System clock</a></li>
+<li><a href="#org6758e3e">6.1.3. Partition</a></li>
+<li><a href="#org361a11b">6.1.4. Select mirror</a></li>
+<li><a href="#orge32e2a1">6.1.5. Install base system</a></li>
+<li><a href="#org631ce94">6.1.6. chroot</a></li>
+<li><a href="#orgd0b4054">6.1.7. Configure</a></li>
+<li><a href="#org3c7afb2">6.1.8. Config</a></li>
+<li><a href="#orgd3f83a5">6.1.9. Dual boot with Windows</a></li>
+</ul>
+</li>
+<li><a href="#org595802d">6.2. Pacman</a></li>
+<li><a href="#orgc325568">6.3. AUR</a></li>
+</ul>
+</li>
+<li><a href="#org0ba65dc">7. CentOS</a></li>
+<li><a href="#org15aa6c6">8. Debian</a>
+<ul>
+<li><a href="#orga757635">8.1. Package</a></li>
+<li><a href="#org148b82c">8.2. Configuration</a>
+<ul>
+<li><a href="#org0bbbb13">8.2.1. update-alternatives</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0c8bae0">9. Docker</a>
+<ul>
+<li><a href="#orgf8504a7">9.1. Compose</a>
+<ul>
+<li><a href="#org07866ab">9.1.1. service</a></li>
+<li><a href="#orgffb8952">9.1.2. <span class="todo TODO">TODO</span> volumes</a></li>
+<li><a href="#orgf6657a0">9.1.3. <span class="todo TODO">TODO</span> network</a></li>
+</ul>
+</li>
+<li><a href="#org3fde81c">9.2. Network</a></li>
+<li><a href="#org52f48f7">9.3. Volume</a>
+<ul>
+<li><a href="#org9de60ca">9.3.1. Create Volume</a></li>
+<li><a href="#orgdd5721c">9.3.2. Mount volume to a container</a></li>
+<li><a href="#orgb6bbd4c">9.3.3. Manipulate Volume</a>
+<ul>
+<li><a href="#org87ae3c1">9.3.3.1. <span class="todo TODO">TODO</span> Will it be updated or not?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3f35270">9.4. General operations</a>
+<ul>
+<li><a href="#orge9e12dc">9.4.1. Docker stop</a></li>
+</ul>
+</li>
+<li><a href="#org3c6f9ae">9.5. Remove sudo</a></li>
+<li><a href="#orgd205887">9.6. Dockerfile</a>
+<ul>
+<li><a href="#org7bc2cb9">9.6.1. Commands</a></li>
+</ul>
+</li>
+<li><a href="#orgfaa550e">9.7. <span class="todo TODO">TODO</span> Docker hub</a></li>
+<li><a href="#org3ffaa60">9.8. Tricks</a></li>
+<li><a href="#orgd4a21c2">9.9. Trouble Shooting</a>
+<ul>
+<li><a href="#org0840a1a">9.9.1. I have to type double C-p to take effect</a></li>
+<li><a href="#org89b35d4">9.9.2. Docker exec tty is not a real tty</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb1047a4">10. Unix Programming</a>
+<ul>
+<li><a href="#orgd33dcdb">10.1. Low-level IO</a>
+<ul>
+<li><a href="#org9d0c0d3">10.1.1. open</a></li>
+<li><a href="#orgcb01f18">10.1.2. close</a></li>
+<li><a href="#org2976cae">10.1.3. read</a></li>
+<li><a href="#org2c9a054">10.1.4. write</a></li>
+<li><a href="#org0bc4435">10.1.5. fdopen</a></li>
+<li><a href="#orgc536d44">10.1.6. fileno</a></li>
+<li><a href="#orge201dfe">10.1.7. fd<sub>set</sub></a></li>
+<li><a href="#org537837b">10.1.8. select - synchronous I/O multiplexing</a></li>
+<li><a href="#org2647d0c">10.1.9. sync</a></li>
+<li><a href="#orgc559e3b">10.1.10. dup</a></li>
+</ul>
+</li>
+<li><a href="#orga5795e7">10.2. Date and Time</a>
+<ul>
+<li><a href="#org4988144">10.2.1. struct timeval</a></li>
+<li><a href="#orge2f569f">10.2.2. struct timespec</a></li>
+<li><a href="#org95a1aee">10.2.3. difftime</a></li>
+<li><a href="#orgb4fdb45">10.2.4. time<sub>t</sub></a></li>
+<li><a href="#org3805ad9">10.2.5. alarm</a>
+<ul>
+<li><a href="#org8ff2936">10.2.5.1. struct itimerval</a></li>
+<li><a href="#org105d4ed">10.2.5.2. setitimer</a></li>
+<li><a href="#orgb1c04e9">10.2.5.3. getitimer(int which, struct itimerval *old)</a></li>
+<li><a href="#orgaeb2b75">10.2.5.4. alarm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9491f71">10.3. Process</a>
+<ul>
+<li><a href="#org95396e3">10.3.1. system</a></li>
+<li><a href="#org206d6a5">10.3.2. getpid</a></li>
+<li><a href="#org6e6a794">10.3.3. fork</a></li>
+<li><a href="#org7eb1276">10.3.4. pipe</a></li>
+<li><a href="#org64f8a96">10.3.5. exec</a></li>
+<li><a href="#orgb80073d">10.3.6. wait</a>
+<ul>
+<li><a href="#org5d4d8fd">10.3.6.1. Status</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd4b16b6">10.4. Unix Signal Handling</a>
+<ul>
+<li><a href="#org3924b6a">10.4.1. Ordinary signal handling</a></li>
+<li><a href="#org6f84dbb">10.4.2. SIGSEGV handling</a>
+<ul>
+<li><a href="#orgebb55c8">10.4.2.1. Motivation</a></li>
+<li><a href="#org3e11d85">10.4.2.2. a new stack</a></li>
+<li><a href="#org12931d3">10.4.2.3. libsigsegv</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org16594cd">10.5. pThread</a>
+<ul>
+<li><a href="#org072bf71">10.5.1. Create threads</a></li>
+<li><a href="#orgc26598f">10.5.2. Join and Detach</a></li>
+</ul>
+</li>
+<li><a href="#org2ef5805">10.6. Other</a></li>
+</ul>
+</li>
+<li><a href="#org59dd672">11. Shell Utilities</a>
+<ul>
+<li><a href="#org3d57b66">11.1. Patch System</a></li>
+<li><a href="#org0bc9511">11.2. tr: translate characters</a></li>
+<li><a href="#orgf750409">11.3. uniq: report or filter out repeated lines in a file</a></li>
+<li><a href="#org9880852">11.4. Find</a></li>
+</ul>
+</li>
+<li><a href="#orgae5975c">12. Trouble Shooting</a>
+<ul>
+<li><a href="#org91ceef1">12.1. Cannot su root</a></li>
+<li><a href="#orgaed7c5b">12.2. in docker, cannot open chromium</a></li>
+<li><a href="#org6c32e20">12.3. Encoding</a></li>
+<li><a href="#orgeaffead">12.4. Cannot open shared library</a></li>
+<li><a href="#org8ce3b0b">12.5. auto expansion error for latex font</a></li>
+<li><a href="#org0568a45">12.6. time not up-to-date</a></li>
+<li><a href="#org58ad8ff">12.7. backlight on TP25</a></li>
+<li><a href="#orgbfc5179">12.8. xinit won't start</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd03b67c" class="outline-2">
+<h2 id="orgd03b67c"><span class="section-number-2">1</span> Installation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+On windows, you need <code>unetbootin</code>. On linux:
+</p>
+
+<pre class="example">
+dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx &amp;&amp; sync
+# restore
+dd count=1 bs=512 if=/dev/zero of=/dev/sdx &amp;&amp; sync
+</pre>
+
+<p>
+On Mac:
+</p>
+<pre class="example">
+hdiutil convert -format UDRW -o ~/path/to/target.img ~/path/to/ubuntu.iso
+diskutil list, insert usb, diskutil list =&gt; /dev/disk1
+diskutil unmountDisk /dev/diskN
+sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
+diskutil eject /dev/diskN
+</pre>
+
+<p>
+Create MacOS LiveUSB
+</p>
+<pre class="example">
+sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia \
+--volume /Volumes/Untitled \
+--applicationpath /Applications/InstallXXX.app \
+--nointeraction
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org59bdfd9" class="outline-2">
+<h2 id="org59bdfd9"><span class="section-number-2">2</span> Network</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+When using docker container, host system cannot resolve the name of
+container to the specific IP. I have to specify it manually. To
+resolve a name to IP address, you can add it into
+<code>/etc/hosts</code>. E.g. at the end of the file, add:
+</p>
+
+<pre class="example">
+172.18.0.2 srcml-server-container
+</pre>
+
+<p>
+In Arch, <code>ifconfig</code> is in <code>net-tools</code> package, and is deprecated. Use
+<code>ip</code> instead:
+</p>
+
+<pre class="example">
+ip addr show &lt;dev&gt;
+ip link # show links
+ip link show &lt;dev&gt;
+</pre>
+</div>
+
+<div id="outline-container-org0cb0c95" class="outline-3">
+<h3 id="org0cb0c95"><span class="section-number-3">2.1</span> Wireless Networking</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org7f8c030" class="outline-4">
+<h4 id="org7f8c030"><span class="section-number-4">2.1.1</span> General DHCPCD</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+DHCP is not enabled by default. It is the philloshophy for Arch:
+installing a package will not enable any service. Enable it by;
+</p>
+
+<pre class="example">
+systemctl enable dhcpcd
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orgd312684" class="outline-4">
+<h4 id="orgd312684"><span class="section-number-4">2.1.2</span> iw</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>iw dev: list dev</li>
+<li>iw dev &lt;interface&gt; link: show status</li>
+<li>ip link set &lt;interface&gt; up: up the interface</li>
+<li>ip link show &lt;interface&gt;: if you see &lt;UP&gt; in the output, the interface is up</li>
+<li>iw dev interface scan: scan for network</li>
+<li>iw dev &lt;interface&gt; connect "SSID": connect to open network</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdc4592d" class="outline-4">
+<h4 id="orgdc4592d"><span class="section-number-4">2.1.3</span> wpa<sub>supplicant</sub></h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+<code>iw</code> can only connect to public network. This is used to connect
+WPA2/WEP encrypted network.
+</p>
+</div>
+
+<div id="outline-container-org81e147f" class="outline-5">
+<h5 id="org81e147f"><span class="section-number-5">2.1.3.1</span> Configuration</h5>
+<div class="outline-text-5" id="text-2-1-3-1">
+<p>
+The config file (e.g. <code>/etc/wpa_supplicant/example.conf</code>) can be
+generated in two ways: using <code>wpa_cli</code> or <code>use wpa_passphrase</code>.
+<code>wpa_cli</code> is interactive, and has commands <code>scan</code>, <code>add_network</code>,
+<code>save_config</code>.
+</p>
+
+<pre class="example">
+wpa_passphrase MYSSID &lt;passphrase&gt; &gt; /path/to/example.conf
+</pre>
+
+<p>
+Inside this file, there's a network section. The <code>ssid</code> is a quoted
+SSID name, while <code>psk</code> is unquoted encrypted phrase. The psk can also
+be quoted clear password.  If the network is open, you can use
+<code>key_mgmt=NONE</code> in place of <code>psk</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfc18877" class="outline-5">
+<h5 id="orgfc18877"><span class="section-number-5">2.1.3.2</span> Connect</h5>
+<div class="outline-text-5" id="text-2-1-3-2">
+<pre class="example">
+wpa_supplicant -B -i &lt;interface&gt; -c &lt;(wpa_passphrase &lt;MYSSID&gt; &lt;passphrase&gt;)
+</pre>
+<p>
+connect to a WPA/WEP protected network
+</p>
+<ul class="org-ul">
+<li>-b: fork into background</li>
+<li>-i interface</li>
+<li>-c: path to configuration file.</li>
+</ul>
+
+<p>
+Alternatively, you can use the config file
+</p>
+<pre class="example">
+wpa_supplicant -B -i &lt;interface&gt; -c /path/to/example.conf
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0f097d9" class="outline-5">
+<h5 id="org0f097d9"><span class="section-number-5">2.1.3.3</span> Obtain IP</h5>
+<div class="outline-text-5" id="text-2-1-3-3">
+<p>
+After this, you need to get IP address by the "usual" way, e.g.
+</p>
+<pre class="example">
+dhcpcd &lt;interface&gt;
+</pre>
+
+<p>
+It seems that we should enable the service:
+</p>
+<ul class="org-ul">
+<li>wpa<sub>supplicant</sub>@&lt;interface&gt;</li>
+<li>dhcpcd@&lt;interface&gt;</li>
+</ul>
+
+<p>
+Also, dhcpcd has a hook that can launch wpa<sub>supplicant</sub> implicitly.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9cdf989" class="outline-5">
+<h5 id="org9cdf989"><span class="section-number-5">2.1.3.4</span> To Sum Up</h5>
+<div class="outline-text-5" id="text-2-1-3-4">
+<p>
+Find the interface by <code>iw dev</code>. Say it is <code>wlp4s0</code>.
+</p>
+
+<p>
+Create config file <code>/etc/wpa_supplicant/wpa_supplicant-wlp4s0.conf</code>:
+</p>
+
+<pre class="example">
+  network={
+          ssid="MYSSID"
+          psk="clear passwd"
+          psk=fjiewjilajdsf8345j38osfj
+  }
+
+  network={
+          ssid="2NDSSID"
+          key_mgmt=NONE
+  }
+</pre>
+
+<p>
+Enable <code>wpa_supplicant@wlp4s0</code> and <code>dhcpcd@wlp4s0</code> (or just <code>dhcpcd</code>)
+</p>
+
+
+<p>
+To change another wifi, kill the server and use another one
+</p>
+<pre class="example">
+sudo killall wpa_supplicant
+wpa_supplicant -B -i wlp4s0 -c /path/to/wifi.conf
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org0755a5b" class="outline-3">
+<h3 id="org0755a5b"><span class="section-number-3">2.2</span> VPN</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org35fc702" class="outline-4">
+<h4 id="org35fc702"><span class="section-number-4">2.2.1</span> L2tp, IPSec</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<pre class="example">
+apt-get purge "lxc-docker*"
+apt-get purge "docker.io*"
+apt-get update
+apt-get install apt-transport-https ca-certificates gnupg2
+sudo apt-key adv \
+       --keyserver hkp://ha.pool.sks-keyservers.net:80 \
+       --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+</pre>
+
+<pre class="example">
+deb https://apt.dockerproject.org/repo debian-jessie main
+</pre>
+
+<pre class="example">
+apt-get update
+apt-cache policy docker-engine
+apt-get update
+apt-get install docker-engine
+service docker start
+docker run hello-world
+
+</pre>
+
+<p>
+<a href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients.md">https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients.md</a>
+<a href="https://hub.docker.com/r/fcojean/l2tp-ipsec-vpn-server/">https://hub.docker.com/r/fcojean/l2tp-ipsec-vpn-server/</a>
+</p>
+
+<pre class="example">
+docker pull fcojean/l2tp-ipsec-vpn-server
+
+</pre>
+
+<p>
+vpn.env
+</p>
+
+<pre class="example">
+VPN_IPSEC_PSK=&lt;IPsec pre-shared key&gt;
+VPN_USER_CREDENTIAL_LIST=[{"login":"userTest1","password":"test1"},{"login":"userTest2","password":"test2"}]
+</pre>
+
+<pre class="example">
+modprobe af_key
+docker run \
+    --name l2tp-ipsec-vpn-server \
+    --env-file ./vpn.env \
+    -p 500:500/udp \
+    -p 4500:4500/udp \
+    -v /lib/modules:/lib/modules:ro \
+    -d --privileged \
+    fcojean/l2tp-ipsec-vpn-server
+</pre>
+
+<pre class="example">
+docker logs l2tp-ipsec-vpn-server
+docker exec -it l2tp-ipsec-vpn-server ipsec status
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org84bf053" class="outline-4">
+<h4 id="org84bf053"><span class="section-number-4">2.2.2</span> OpenVPN</h4>
+<div class="outline-text-4" id="text-2-2-2">
+</div>
+<div id="outline-container-orgd574eb4" class="outline-5">
+<h5 id="orgd574eb4"><span class="section-number-5">2.2.2.1</span> Server Setup</h5>
+<div class="outline-text-5" id="text-2-2-2-1">
+<p>
+<a href="https://github.com/kylemanna/docker-openvpn">https://github.com/kylemanna/docker-openvpn</a>
+It is very interesting to use docker this way.
+</p>
+
+<p>
+The persisit is the storage, which is mounted on /etc/openvpn, serving
+as the configuration.  Each time, create a new docker container
+mounting the same storage. Each step write to the configuration.
+</p>
+
+<pre class="example">
+OVPN_DATA="ovpn-data-example"
+docker volume create --name $OVPN_DATA
+docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
+docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
+</pre>
+
+<p>
+It is easy to run the server itself. This time use -d option to make
+it a daemon.
+</p>
+<pre class="example">
+docker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+</pre>
+
+<p>
+It is also easy to create certificate on-the-go. For that, create new
+container to create and retrieve the certificate.
+</p>
+
+<pre class="example">
+docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
+docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient CLIENTNAME &gt; CLIENTNAME.ovpn
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgac337bc" class="outline-5">
+<h5 id="orgac337bc"><span class="section-number-5">2.2.2.2</span> Client Setup</h5>
+<div class="outline-text-5" id="text-2-2-2-2">
+<p>
+On arch, copy hebi.ovpn to /etc/openvpn/client/hebi.conf. Then the
+service openvpn-client@hebi will be available for systemd. On ubuntu,
+the path is /etc/openvpn/hebi.conf, with service openvpn@hebi.
+Start the service will forward traffic.
+</p>
+
+<p>
+It is likely that you can connect, can ping any IP address, but cannot
+resolve names. You can even use <code>drill @8.8.8.8 google.com</code> to resolve
+the name on the way.
+</p>
+
+<p>
+The trick is to push resolv conf of local machine to remote. First
+install <code>openresolv</code> and (aur) <code>openvpn-update-resolv-conf</code>. Add the
+following to the end of hebi.conf file:
+</p>
+
+<pre class="example">
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+</pre>
+
+<p>
+For ubuntu the openvpn package already contains the file. Just modify
+the conf file.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org19e56db" class="outline-2">
+<h2 id="org19e56db"><span class="section-number-2">3</span> App</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org58daa77" class="outline-3">
+<h3 id="org58daa77"><span class="section-number-3">3.1</span> mplayer</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Interactive controls:
+</p>
+<ul class="org-ul">
+<li>Forward/Backward: LEFT/RIGHT (10s), UP/DOWN (1m), PGUP/PGDWN (10m)</li>
+<li>Playback speed: <code>[]</code> (10%), <code>{}</code> (50%), backspace (reset)</li>
+<li><code>/*</code>: volume</li>
+</ul>
+
+<p>
+When changing the speed, the pitch changed. To disable this, start
+mplayer by <code>mplayer -af scaletempo</code>.  To stretch the images to full
+screen, pass the <code>-zoom</code> option when starting.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb0d8297" class="outline-3">
+<h3 id="orgb0d8297"><span class="section-number-3">3.2</span> youtube-dl</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+When downloading a playlist, you can make the template to number the
+files
+</p>
+<pre class="example">
+youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" &lt;playlist_link&gt;
+</pre>
+
+<p>
+Download music only:
+</p>
+<pre class="example">
+youtube-dl --extract-audio --audio-format flac &lt;url&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb191802" class="outline-3">
+<h3 id="orgb191802"><span class="section-number-3">3.3</span> chrome extensions</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li><code>html5outliner</code>: give you a toc of the page. VERY NICE!</li>
+<li id="<code>markdown here</code>">render for email</li>
+<li><code>unblockyouku</code></li>
+<li><code>adblock</code></li>
+<li id="<code>sight</code> &amp; <code>syntaxtic</code>">syntax highlighter</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga864b86" class="outline-3">
+<h3 id="orga864b86"><span class="section-number-3">3.4</span> VNC</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+I use tigervnc because it seems to be fast.
+</p>
+
+<ul class="org-ul">
+<li>vncpasswd: set the password</li>
+<li>vncserver&amp;: start the server.
+<ul class="org-ul">
+<li>It is started in :1 by default, so connect it with
+<code>vncviewer &lt;ip&gt;:1</code></li>
+<li>On mac, the docker bridge network does not work, so you cannot
+connect to the contianer by IP addr. In this case, map the
+port 5901. 5900+N is the default VNC port.</li>
+<li>vncserver -kill :1 will kill the vncserver</li>
+<li>vncserver :2 will open :2</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfd96218" class="outline-3">
+<h3 id="orgfd96218"><span class="section-number-3">3.5</span> Remove viewer</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+The lab machines are accessed via spice. The client for spice is
+virt-viewer. It can be installed through package manager. The actual
+client is called remote-viewer, which is shipped with virt-viewer. So
+the command to connect to the .vv file: <code>remove-viewer console.vv</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2c9cf12" class="outline-3">
+<h3 id="org2c9cf12"><span class="section-number-3">3.6</span> mpd</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+music play daemon
+</p>
+
+<p>
+To start:
+</p>
+<pre class="example">
+mkdir -p ~/.config/mpd
+cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
+mkdir ~/.mpd/playlists
+</pre>
+
+<pre class="example">
+# Required files
+db_file            "~/.mpd/database"
+log_file           "~/.mpd/log"
+
+# Optional
+music_directory    "~/music"
+playlist_directory "~/.mpd/playlists"
+pid_file           "~/.mpd/pid"
+state_file         "~/.mpd/state"
+sticker_file       "~/.mpd/sticker.sql"
+
+# uncomment pulse audio section
+audio_output {
+	type		"pulse"
+	name		"My Pulse Output"
+}
+</pre>
+
+<p>
+Start mpd by:
+</p>
+<pre class="example">
+systemctl --user start mpd
+systemctl --user enable mpd
+</pre>
+
+<p>
+The client cantata can be used to create list. stumpwm-contrib has a
+mpd client. mpc is a command line client.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org14755ee" class="outline-3">
+<h3 id="org14755ee"><span class="section-number-3">3.7</span> fontforge</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+How I made the WenQuanYi Micro Hei ttf font (clx-truetype only
+recognizes ttf, not ttc):
+</p>
+
+<ul class="org-ul">
+<li>input: ttc file</li>
+<li>Tool: fontforge</li>
+</ul>
+
+<p>
+Open ttc file, select one, generate font, choose truetype
+The validation failed, but doesn't matter
+</p>
+</div>
+</div>
+
+<div id="outline-container-org18df9c3" class="outline-3">
+<h3 id="org18df9c3"><span class="section-number-3">3.8</span> tmux</h3>
+<div class="outline-text-3" id="text-3-8">
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">start a new session, with the session name set to "helium"</span>
+tmux new -s helium
+<span style="color: #b22222;"># </span><span style="color: #b22222;">attach, and the target is "helium"</span>
+tmux a -t helium
+</pre>
+</div>
+
+
+<p>
+Some default commands (all after prefix key):
+</p>
+<ul class="org-ul">
+<li>!: break the current pane into another window</li>
+<li><code>:</code>: prompt command</li>
+<li>q: briefly display pane index (1,2,etc)</li>
+</ul>
+
+
+<p>
+Commands
+</p>
+<ul class="org-ul">
+<li>select-layout even-horizontal: balance window horizontally</li>
+<li>last-window: jump to last active window</li>
+<li>new-window</li>
+<li>detach</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga3a1630" class="outline-2">
+<h2 id="orga3a1630"><span class="section-number-2">4</span> Window System</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org0e58106" class="outline-3">
+<h3 id="org0e58106"><span class="section-number-3">4.1</span> xkill</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Kill all Xorg instances
+</p>
+<pre class="example">
+pkill -15 Xorg
+</pre>
+
+<p>
+If using kill:
+</p>
+<pre class="example">
+ps -ef | grep Xorg # find the pid
+kill -9 &lt;PID&gt;
+</pre>
+
+<p>
+The xkill is not working properly, giving me "unable to find display"
+error.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf211f14" class="outline-3">
+<h3 id="orgf211f14"><span class="section-number-3">4.2</span> Display Manager</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Install xdm. It will use the file <code>$HOME/.xsession</code>, so
+</p>
+<pre class="example">
+ln -s $HOME/.xinitrc $HOME/.xsession
+</pre>
+
+<p>
+Change default desktop environment:
+</p>
+<ul class="org-ul">
+<li>GNome: gdm</li>
+<li>KDE: kdm</li>
+<li>lxfe: lightdm</li>
+</ul>
+
+<p>
+Change (three approaches):
+</p>
+<ol class="org-ol">
+<li>edit <code>/etc/X11/default-display-manager</code>: I think we'd better use update-alternative</li>
+<li><code>sudo dpkg-reconfigure gdm</code></li>
+<li><code>update-alternatives --config x-window-manage</code></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgff24282" class="outline-3">
+<h3 id="orgff24282"><span class="section-number-3">4.3</span> screen</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Multi screen, stumpwm detect as one.  Install <code>xdpyinfo</code>. It is used
+to detect the heads.
+</p>
+
+<p>
+check the screen resolution:
+</p>
+<pre class="example">
+xdpyinfo | grep -B 2 resolution
+</pre>
+
+<p>
+Multiple Display:
+</p>
+
+<pre class="example">
+# Mirror display
+sudo xrandr --output HDMI-2 --same-as eDP-1
+sudo xrandr --output HDMI-2 --off
+</pre>
+
+<p>
+Rotate
+</p>
+<pre class="example">
+xrandr --output HDMI-1 --rotate left
+</pre>
+
+<p>
+Chagne resolution
+</p>
+<pre class="example">
+xrandr --output HDMI-1 --mode 1920x1080
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org76b6336" class="outline-3">
+<h3 id="org76b6336"><span class="section-number-3">4.4</span> cursor</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+Install xcursor-themes:
+</p>
+<pre class="example">
+aptitude install xcursor-themes
+aptitude show xcursor-themes # here it will output the themes name
+</pre>
+
+<p>
+In <code>.Xresources</code>:
+</p>
+<pre class="example">
+Xcursor.theme: redglass
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org580bf82" class="outline-3">
+<h3 id="org580bf82"><span class="section-number-3">4.5</span> Natural Scrolling</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+The old solution is to swap the pointer button "4" and "5", by
+<code>xmodmap</code> or <code>xinput</code>:
+</p>
+
+<pre class="example">
+xmodmap -e "pointer = 1 2 3 4 5"
+xinput --set-button-map 10 1 2 3 5 4
+</pre>
+
+<p>
+The 10 is the id, to find it out, run xinput without argument.
+</p>
+
+<p>
+But this way is deprecated, as of chromium 49 and above, it does not work any more.
+So use the xinput way to <i>set the property</i>:
+</p>
+
+<pre class="example">
+xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
+</pre>
+
+<p>
+I'm using logitech G900 and the property might be different. It works!
+</p>
+
+<p>
+Not sure if the xinput command should be run each time the system
+boots. That would be hard for specifying ID.
+</p>
+
+<p>
+The detail is, you can do this:
+</p>
+
+<pre class="example">
+xinput # show a list of devices
+xinput list-props &lt;ID&gt; # list of properties
+xinput set-prop &lt;deviceID&gt; &lt;propID&gt; &lt;value&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8fa94f2" class="outline-3">
+<h3 id="org8fa94f2"><span class="section-number-3">4.6</span> ratpoison</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+This is actually a wonderful WM.  To start:
+</p>
+
+<pre class="example">
+aptitude install ratpoison
+</pre>
+
+<p>
+In <code>.xinitrc</code>:
+</p>
+
+<pre class="example">
+exec ratpoison
+</pre>
+
+<ul class="org-ul">
+<li><code>C-t ?</code> to show the help</li>
+</ul>
+
+<p>
+actually <code>C-t</code> is the prefix of every command, <code>C-g</code> to abort.
+</p>
+<ul class="org-ul">
+<li><code>C-t :</code>: type command</li>
+<li><code>C-t !</code>: run shell command</li>
+<li><code>C-t .</code>: open menu</li>
+<li><code>C-t c</code>: open terminal</li>
+</ul>
+
+
+<p>
+HOWEVER, this is pretty old, and it cause the screen to go brighter
+and darker back and force.  Fortunately the stumpwm is very like this
+one, but
+</p>
+<ol class="org-ol">
+<li>actively maintained on github.</li>
+<li>written in common lisp</li>
+</ol>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbb2087b" class="outline-3">
+<h3 id="orgbb2087b"><span class="section-number-3">4.7</span> StumpWM</h3>
+<div class="outline-text-3" id="text-4-7">
+</div>
+<div id="outline-container-orgc8f290a" class="outline-4">
+<h4 id="orgc8f290a"><span class="section-number-4">4.7.1</span> Installation</h4>
+<div class="outline-text-4" id="text-4-7-1">
+<p>
+In order to use <code>ttf-fonts</code> module, the lisp <code>clx-truetype</code> package needs to be installed.
+Install the slime IDE for emacs, install quicklisp, then install it using quicklisp.
+Follow the description in lisp wiki page.
+</p>
+</div>
+
+<div id="outline-container-org872914f" class="outline-5">
+<h5 id="org872914f"><span class="section-number-5">4.7.1.1</span> A better way to install stumpwm</h5>
+<div class="outline-text-5" id="text-4-7-1-1">
+<ul class="org-ul">
+<li>This seems a better way to install stumpwm <code>(ql:quickload
+  "stumpwm")</code></li>
+</ul>
+<p>
+But this require the .xinitrc to be
+</p>
+<pre class="example">
+exec sbcl --load /path/to/startstump
+</pre>
+<p>
+with startstump
+</p>
+<pre class="example">
+(require :stumpwm)
+(stumpwm:stumpwm)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2f4a77b" class="outline-5">
+<h5 id="org2f4a77b"><span class="section-number-5">4.7.1.2</span> Live Debugging</h5>
+<div class="outline-text-5" id="text-4-7-1-2">
+<p>
+To debug it live, you might need this in .stumpwmrc:
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">  (<span style="color: #a020f0;">in-package</span> <span style="color: #483d8b;">:stumpwm</span>)
+
+  (<span style="color: #a020f0;">require</span> <span style="color: #008b8b;">:swank</span>)
+  (swank-loader:init)
+  (swank:create-server <span style="color: #483d8b;">:port</span> 4004
+                       <span style="color: #483d8b;">:style</span> swank:*communication-style*
+                       <span style="color: #483d8b;">:dont-close</span> t)
+</pre>
+</div>
+
+<p>
+The above wont work unless swank is installed:
+</p>
+<pre class="example">
+(ql:quickload "swank")
+</pre>
+
+<p>
+The port is actually interesting. Here it is set to 4004, and the
+slime in Emacs defaults to 4005, thus they wont mess up. The trick to
+connect to stumpwm is to use <code>slime-connect</code> and put 4004 for the port
+prompt.
+</p>
+
+<p>
+So acutally if you just want to live debug, just install swank and
+</p>
+<pre class="example">
+(require 'swank)
+(swank:create-server)
+</pre>
+
+<p>
+Note lastly that to install using quickload, you need permission. So
+</p>
+
+<pre class="example">
+sudo sbcl --load /usr/lib/quicklisp/setup
+</pre>
+
+<p>
+To test if it works, you should be able to switch to stumpwm namespace
+and operate the window, like this:
+</p>
+
+<pre class="example">
+(in-package :stumpwm)
+(stumpwm:select-window-by-number 2)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org46c4ea6" class="outline-4">
+<h4 id="org46c4ea6"><span class="section-number-4">4.7.2</span> General</h4>
+<div class="outline-text-4" id="text-4-7-2">
+<p>
+Same as ratpoison:
+</p>
+<ul class="org-ul">
+<li><code>C-t C-h</code>: show help</li>
+<li><code>C-t !</code>: run shell command</li>
+<li><code>C-t c</code> terminal</li>
+<li><code>C-t e</code>: open emacs!</li>
+<li><code>C-t ;</code>: type a command</li>
+<li><code>C-t :</code>: eval</li>
+<li><code>C-t C-g</code>: abort</li>
+<li><code>C-t a</code>: display time</li>
+<li><code>C-t t</code>: send C-t</li>
+<li><code>C-t m</code>: display last message</li>
+</ul>
+</div>
+
+<div id="outline-container-orgd8cb25a" class="outline-5">
+<h5 id="orgd8cb25a"><span class="section-number-5">4.7.2.1</span> Get Help</h5>
+<div class="outline-text-5" id="text-4-7-2-1">
+<ul class="org-ul">
+<li><code>C-t h k</code>: from key binding to command: <code>describe-key</code></li>
+<li><code>C-t h w</code>: from command to key binding: <code>where-is</code></li>
+<li><code>C-t h c</code>: describe command</li>
+<li><code>C-t h f</code>: describe function</li>
+<li><code>C-t h v</code>: describe variable</li>
+
+<li><code>mode-line</code>: start mode-line</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55a0a72" class="outline-4">
+<h4 id="org55a0a72"><span class="section-number-4">4.7.3</span> Window</h4>
+<div class="outline-text-4" id="text-4-7-3">
+<ul class="org-ul">
+<li><code>C-t n</code></li>
+<li><code>C-t p</code></li>
+<li><code>C-t &lt;double-quote&gt;</code></li>
+<li><code>C-t w</code> list all windows</li>
+<li><code>C-t k</code> kill current frame (K to force quit)</li>
+<li><code>C-t #</code> toggle mark of current window</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb9bc5d3" class="outline-4">
+<h4 id="orgb9bc5d3"><span class="section-number-4">4.7.4</span> Frame</h4>
+<div class="outline-text-4" id="text-4-7-4">
+<ul class="org-ul">
+<li><code>C-t s</code>: hsplit</li>
+<li><code>C-t S</code>: vsplit</li>
+<li><code>C-t Q</code>: kill other frames, only retains this one</li>
+<li><code>C-t r</code>: resize, can use <code>C-n</code>, <code>C-p</code> interactively</li>
+<li><code>C-t +</code>: balance frame</li>
+<li><code>C-t o</code>: next frame</li>
+<li><code>C-t -</code>: show desktop</li>
+</ul>
+
+<p>
+Other commands
+</p>
+<dl class="org-dl">
+<dt><code>remove-split</code></dt><dd>to remove the current frame</dd>
+<dt><code>fclear</code></dt><dd>clear the current frame, show the desktop</dd>
+</dl>
+
+<p>
+To resize frames interactively, <code>C-t r</code> and then use the arrows.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09829c7" class="outline-4">
+<h4 id="org09829c7"><span class="section-number-4">4.7.5</span> Groups</h4>
+<div class="outline-text-4" id="text-4-7-5">
+<p>
+Shortcuts:
+</p>
+<ul class="org-ul">
+<li><code>C-t g c</code>: create: <code>gnew</code>. Also available for float: <code>gnew-float</code></li>
+<li><code>C-t g n</code>: next</li>
+<li><code>C-t g o</code>: <code>gother</code></li>
+<li><code>C-t g p</code>: previous</li>
+<li><code>C-t g &lt;double-quote&gt;</code>: interactively select groups: <code>grouplist</code></li>
+<li><code>C-t g k</code>: kill current group, move windows to next group: <code>gkill</code></li>
+<li><code>C-t g r</code>: rename current group: <code>grename</code></li>
+<li><code>C-t G</code>: display all groups and their windows</li>
+<li><code>C-t g g</code>: show list of group</li>
+<li><code>C-t g m</code>: move current window to group X</li>
+<li><code>C-t g &lt;d&gt;</code>: go to group &lt;d&gt;</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb77be78" class="outline-4">
+<h4 id="orgb77be78"><span class="section-number-4">4.7.6</span> Configuration</h4>
+<div class="outline-text-4" id="text-4-7-6">
+<pre class="example">
+(stumpwm:define-key stumpwm:*root-map* (stumpwm:kbd "C-z") "echo Zzzzz...")
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf7f6dc1" class="outline-2">
+<h2 id="orgf7f6dc1"><span class="section-number-2">5</span> System Management</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgb9d6af9" class="outline-3">
+<h3 id="orgb9d6af9"><span class="section-number-3">5.1</span> Power Management</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Power management is done through <code>systmed</code> can handle it, by <code>acpid</code>.
+The configure file is <code>/etc/systemd/logind.conf</code>.  <code>man logind.conf</code>
+for details.  <i>hibernate</i> will save to disk, while <i>suspend</i> save to
+ram.  Both of them will resume to the current status.
+</p>
+
+<pre class="example">
+HandlePowerKey=hibernate
+HandleLidSwitch=suspend
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0332cef" class="outline-3">
+<h3 id="org0332cef"><span class="section-number-3">5.2</span> Booting</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+The grub2 menu configure file is located at <code>/boot/grub/grub.cfg</code>.  It
+is generated by <code>/usr/sbin/update-grub</code> (8) using templates from
+<code>/etc/grub.d/*</code> and settings from <code>/etc/default/grub</code>.
+</p>
+
+<p>
+The default run level is 2 (multi-user mode), corresponding to
+<code>/etc/rc2.d/XXX</code> scripts. Those scripts starts with "S" or "K" meaning
+<code>start</code> or <code>stop</code> sent to <code>systemd</code> utility.  Those scripts are symbol
+linked to <code>../init.d/xxx</code>.  By default there's no difference between
+level 2 to 5. Run level 0 means half, S means single user mode, 6
+means reboot.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd330140" class="outline-3">
+<h3 id="orgd330140"><span class="section-number-3">5.3</span> User Management</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+The account will use the values on command line, <b>plus</b> the default
+value for system. A group will also be created by default.
+</p>
+
+<ul class="org-ul">
+<li><code>-g GROUP</code>: specify the initial login group. Typically <b>just ignore</b>
+this, the default value will be used.</li>
+<li><code>-G group1,group2,...</code>: additional groups. You might want: <code>video</code>,
+<code>audio</code>, <code>wheel</code></li>
+<li><code>-m</code>: create home if it does not exists</li>
+<li><code>-s SHELL</code>: use this shell. Typically just ignore this, the system
+will choose for you.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org22f71ed" class="outline-3">
+<h3 id="org22f71ed"><span class="section-number-3">5.4</span> File Management</h3>
+<div class="outline-text-3" id="text-5-4">
+</div>
+<div id="outline-container-org87bd224" class="outline-4">
+<h4 id="org87bd224"><span class="section-number-4">5.4.1</span> Swap File</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<p>
+A swap file can also be used as swap memory. When doing linking, the
+<code>ld</code> might fail because of lack of memory.
+</p>
+
+<p>
+Check the current swap:
+</p>
+<pre class="example">
+swapon -s
+</pre>
+
+<p>
+Create swap file:
+</p>
+<pre class="example">
+dd if=/dev/zero of=/path/to/extraswap bs=1M count=4096
+mkswap /path/to/extraswap
+</pre>
+
+<pre class="example">
+swapon /path/to/extraswap
+swapoff /path/to/extraswap
+</pre>
+
+<p>
+This will not be in effect after reboot. To automatically swap it on, in <code>/etc/fstab</code>
+</p>
+<pre class="example">
+/path/to/extraswap none swap sw 0 0
+</pre>
+</div>
+</div>
+<div id="outline-container-org5ecb08c" class="outline-4">
+<h4 id="org5ecb08c"><span class="section-number-4">5.4.2</span> Back Up &amp; Syncing</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<p>
+<code>rsync</code> commnad is used to sync from source to destination. It does
+not perform double way transfer. It decides a change if either of
+these happens:
+</p>
+<ul class="org-ul">
+<li>size change</li>
+<li>last-modified time</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org86782ce" class="outline-4">
+<h4 id="org86782ce"><span class="section-number-4">5.4.3</span> MIME</h4>
+<div class="outline-text-4" id="text-5-4-3">
+<p>
+check the MIME of a file.
+</p>
+<pre class="example">
+file --mime /path/to/file
+</pre>
+
+<p>
+On debian, the mapping from suffix to MIME type is <code>/etc/mime.types</code>.
+</p>
+
+<p>
+Create default application for <code>xdg-open</code>
+</p>
+<pre class="example">
+mkdir ~/.local/share/applications
+xdg-mime default firefox.desktop application/pdf
+</pre>
+
+<p>
+~/.local/share/applications/mimeapps.list
+</p>
+<pre class="example">
+[Default Applications]
+application/pdf=firefox-esr.desktop
+</pre>
+
+<p>
+<code>/usr/share/applications/*.desktop</code> are files define for each
+application.
+</p>
+
+<p>
+On Debian, you can also do this:
+</p>
+<pre class="example">
+update-alternative --config x-terminal-emulator
+update-alternative --config x-www-browser
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgcb61e26" class="outline-3">
+<h3 id="orgcb61e26"><span class="section-number-3">5.5</span> LVM</h3>
+</div>
+
+<div id="outline-container-org99facc0" class="outline-3">
+<h3 id="org99facc0"><span class="section-number-3">5.6</span> Monitor the system information</h3>
+<div class="outline-text-3" id="text-5-6">
+<pre class="example">
+lvs
+vgs
+pvs
+df -h
+vgdisplay
+lvdisplay /dev/debian-vg/home
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgabd7381" class="outline-3">
+<h3 id="orgabd7381"><span class="section-number-3">5.7</span> Extending a logical volume</h3>
+<div class="outline-text-3" id="text-5-7">
+<pre class="example">
+lvextend -L10G /dev/debian-vg/tmp # to 10G
+lvextend -L+1G /dev/debian-vg/tmp # + 1G
+resize2fs /dev/debian-vg/tmp
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org4f242a1" class="outline-3">
+<h3 id="org4f242a1"><span class="section-number-3">5.8</span> Reduce a logical volume</h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+The home is 890G.
+</p>
+
+<pre class="example">
+umount -v /home
+# check
+e2fsck -ff /dev/debian-vg/home
+resize2fs /dev/debian-vg/home 400G
+lvreduce -L -490G /dev/debian-vg/home
+lvdisplay /dev/debian-vg/home
+resize2fs /dev/debian-vg/home
+mount /dev/debian-vg/home /home
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org99c1675" class="outline-2">
+<h2 id="org99c1675"><span class="section-number-2">6</span> Arch Linux</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org3dcc065" class="outline-3">
+<h3 id="org3dcc065"><span class="section-number-3">6.1</span> Installation</h3>
+<div class="outline-text-3" id="text-6-1">
+</div>
+<div id="outline-container-orgb24c2ff" class="outline-4">
+<h4 id="orgb24c2ff"><span class="section-number-4">6.1.1</span> Verify UEFI</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<p>
+Nowadays (start from 2017) Arch only supports 64 bits &#x2026; and seems to
+prefer UEFI .. Fine
+</p>
+
+<p>
+First, verify the boot mode to be UEFI by checking
+the following folder exists
+</p>
+<pre class="example">
+ls /sys/firmware/efi/efivars
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2d444c3" class="outline-4">
+<h4 id="org2d444c3"><span class="section-number-4">6.1.2</span> System clock</h4>
+<div class="outline-text-4" id="text-6-1-2">
+<pre class="example">
+timedatectl set-ntp true
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6758e3e" class="outline-4">
+<h4 id="org6758e3e"><span class="section-number-4">6.1.3</span> Partition</h4>
+<div class="outline-text-4" id="text-6-1-3">
+<pre class="example">
+parted /dev/sda mklabel gpt
+parted /dev/sda mkpart ESP fat32 1MiB 513MiB
+parted /dev/sda set 1 boot on
+parted /dev/sda mkpart primary linux-swap 513MiB 5GiB
+parted /dev/sda mkpart primary ext4 5GiB 100%
+</pre>
+
+<p>
+This creates
+</p>
+<dl class="org-dl">
+<dt>sda1</dt><dd><code>/boot</code> the EFI System Partition (ESP), swp, and a root</dd>
+<dt>sda2</dt><dd>swap</dd>
+<dt>sda3</dt><dd><code>/</code></dd>
+</dl>
+
+<p>
+Format:
+</p>
+<pre class="example">
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda3
+</pre>
+
+<p>
+Mount
+</p>
+<pre class="example">
+mount /dev/sda3 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org361a11b" class="outline-4">
+<h4 id="org361a11b"><span class="section-number-4">6.1.4</span> Select mirror</h4>
+<div class="outline-text-4" id="text-6-1-4">
+<p>
+look into <code>/etc/pacman.d/mirrorlist</code> and modify if necessary. The order
+matters. The file will be copied to new system.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge32e2a1" class="outline-4">
+<h4 id="orge32e2a1"><span class="section-number-4">6.1.5</span> Install base system</h4>
+<div class="outline-text-4" id="text-6-1-5">
+<pre class="example">
+pacstrap /mnt base
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org631ce94" class="outline-4">
+<h4 id="org631ce94"><span class="section-number-4">6.1.6</span> chroot</h4>
+<div class="outline-text-4" id="text-6-1-6">
+<pre class="example">
+genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+arch-chroot /mnt
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd0b4054" class="outline-4">
+<h4 id="orgd0b4054"><span class="section-number-4">6.1.7</span> Configure</h4>
+<div class="outline-text-4" id="text-6-1-7">
+<p>
+Now we are in the new system.
+</p>
+
+<pre class="example">
+ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
+hwclock --systohc
+</pre>
+
+<p>
+Uncomment <code>en_US.UTF-8 UTF-8</code> inside <code>/etc/locale.gen</code> and run
+</p>
+<pre class="example">
+locale-gen
+</pre>
+
+<p>
+Set <code>LANG</code> in <code>/etc/locale.conf</code>
+</p>
+
+<pre class="example">
+LANG=en_US.UTF-8
+</pre>
+
+<p>
+Set hostname in <code>/etc/hostname</code>
+</p>
+<pre class="example">
+myhostname
+</pre>
+
+<p>
+Set root password
+</p>
+<pre class="example">
+passwd
+</pre>
+
+<p>
+Install grub
+</p>
+<pre class="example">
+pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=myarch
+grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
+
+<p>
+Before reboot, it is good to make sure the network will work, by
+installing some networking packages:
+</p>
+<ul class="org-ul">
+<li><code>dialog</code></li>
+<li><code>wpa_suppliant</code></li>
+<li><code>iw</code></li>
+</ul>
+
+<p>
+Now reboot
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org3c7afb2" class="outline-4">
+<h4 id="org3c7afb2"><span class="section-number-4">6.1.8</span> Config</h4>
+<div class="outline-text-4" id="text-6-1-8">
+<p>
+Install the packages, and config the system using my scripts:
+</p>
+<ul class="org-ul">
+<li>setup-quicklisp</li>
+<li>setup-git</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgd3f83a5" class="outline-4">
+<h4 id="orgd3f83a5"><span class="section-number-4">6.1.9</span> Dual boot with Windows</h4>
+<div class="outline-text-4" id="text-6-1-9">
+<p>
+The only difference is that, you do not need to create the EFI boot
+partition, but use the existing one. Just mount it to boot. The rest
+is the same.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org595802d" class="outline-3">
+<h3 id="org595802d"><span class="section-number-3">6.2</span> Pacman</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Option
+</p>
+<dl class="org-dl">
+<dt>S</dt><dd>sync, a.k.a install</dd>
+<dt>Q</dt><dd>query</dd>
+</dl>
+
+<p>
+Parameter:
+</p>
+<dl class="org-dl">
+<dt>s</dt><dd>search</dd>
+<dt>y</dt><dd>fetch new package list. Usually use with <code>u</code></dd>
+<dt>u</dt><dd>update all packages</dd>
+<dt>i</dt><dd>more information</dd>
+<dt>l</dt><dd>location of files</dd>
+</dl>
+
+<p>
+Typical usage:
+</p>
+<dl class="org-dl">
+<dt>Syu</dt><dd>update whole system</dd>
+<dt>S</dt><dd>install package</dd>
+<dt>R</dt><dd>remove package</dd>
+<dt>Rs</dt><dd>remove package and its unused dependencies</dd>
+<dt>Ss</dt><dd>search package</dd>
+<dt>Qi</dt><dd>show description of a package</dd>
+
+<dt>&#x2013;noconfirm</dt><dd>use in script</dd>
+<dt>&#x2013;needed</dt><dd>do not install the installed again</dd>
+</dl>
+
+<p>
+Pacman will store all previously downloaded packages. So when you find
+your /var/cache/pacman so big, consider clean them up using:
+</p>
+
+<pre class="example">
+paccache -rk 1
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc325568" class="outline-3">
+<h3 id="orgc325568"><span class="section-number-3">6.3</span> AUR</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Have to search through its web interface. Find the git download link
+and clone it. It is pullable.
+</p>
+
+<p>
+Go into the folder and
+</p>
+<pre class="example">
+makepkg -si
+</pre>
+
+<p>
+<code>-s</code> alone will build it, with <code>i</code> to install it after build. The
+dependencies are automatically installed if can be found by pacman. If
+it is also on AUR, you have to install manually.
+</p>
+
+<p>
+The md5sum line can be skipped for some package. Just replace the
+md5sum value inside the quotes with <code>'SKIP'</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0ba65dc" class="outline-2">
+<h2 id="org0ba65dc"><span class="section-number-2">7</span> CentOS</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+On installing a new instance of CentOS, issue the following commands:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">check the sshd status</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">should use opensshd</span>
+service status sshd
+<span style="color: #b22222;"># </span><span style="color: #b22222;">add user, -m means create home folder</span>
+useradd -m myname
+<span style="color: #b22222;"># </span><span style="color: #b22222;">oh, wait, I forget to add myself to wheel</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">-a means append, if no -a, the -G will accept a comma separated list, overwrite the previous setting</span>
+usermod -aG wheel myname
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org15aa6c6" class="outline-2">
+<h2 id="org15aa6c6"><span class="section-number-2">8</span> Debian</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-orga757635" class="outline-3">
+<h3 id="orga757635"><span class="section-number-3">8.1</span> Package</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li><code>/etc/apt/sources.list</code></li>
+<li><code>/var/cache/apt/archives/</code></li>
+</ul>
+
+<p>
+<code>netselect-apt</code> to select the fastest source!
+</p>
+
+<p>
+dist-upgrade
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">cp /etc/apt/sources.list{,.bak}
+sed -i -e <span style="color: #8b2252;">'s/ \(stable\|wheezy\)/ testing/ig'</span> /etc/apt/sources.list
+apt-get update
+apt-get --download-only dist-upgrade
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Dangerous</span>
+apt-get dist-upgrade
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>dpkg-reconfigure</code> reconfigure a installed package</li>
+<li><code>defconf-show</code> show the current configuration of a package</li>
+</ul>
+
+<p>
+Another part is the <code>main</code>.  If you want some 3rd party contributor
+packages, add <code>contrib</code> after <code>main</code>.  If you further want some
+non-free packages, add also <code>non-free</code>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org148b82c" class="outline-3">
+<h3 id="org148b82c"><span class="section-number-3">8.2</span> Configuration</h3>
+<div class="outline-text-3" id="text-8-2">
+</div>
+<div id="outline-container-org0bbbb13" class="outline-4">
+<h4 id="org0bbbb13"><span class="section-number-4">8.2.1</span> update-alternatives</h4>
+<div class="outline-text-4" id="text-8-2-1">
+<p>
+Options:
+</p>
+<ul class="org-ul">
+<li><code>--config</code>: show options and select configuration interactively</li>
+<li><code>--display</code>: show the options</li>
+</ul>
+
+<p>
+Some examples:
+</p>
+<ul class="org-ul">
+<li><code>update-alternatives --config desktop-background</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org0c8bae0" class="outline-2">
+<h2 id="org0c8bae0"><span class="section-number-2">9</span> Docker</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Install <code>docker</code> package and start the service by
+</p>
+<pre class="example">
+systemctl start docker
+systemctl enable docker
+</pre>
+
+<p>
+We can build Debian image easily on Arch:
+</p>
+
+<pre class="example">
+mkdir jessie-chroot
+# debootstrap jessie ./jessie-chroot http://http.debian.net/debian/
+# cd jessie-chroot
+# tar cpf - . | docker import - debian
+# docker run -t -i --rm debian /bin/bash
+</pre>
+
+<p>
+Re-launch a stopped container can be done by <code>docker start
+&lt;container&gt;</code> and will be detached by default if it is run by that.
+</p>
+
+<p>
+You can assign a name to the container so that you can better remember
+and reference it.
+</p>
+</div>
+
+<div id="outline-container-orgf8504a7" class="outline-3">
+<h3 id="orgf8504a7"><span class="section-number-3">9.1</span> Compose</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+It is installed seperately with docker.
+</p>
+
+<p>
+It must be run inside the folder containing <code>docker-compose.yml</code>
+</p>
+
+<p>
+Commands
+</p>
+<ul class="org-ul">
+<li>docker-compose up: up the service. It will not exit. Use C-c to exit
+and the <code>docker-compose down</code> command will be sent.
+<ul class="org-ul">
+<li>The second time you up the compose, it will not up, but update
+current. If all current are up to date, nothing will happen.</li>
+</ul></li>
+<li>docker-compose up -d: up the service and exit. You need to shutdown
+it maually</li>
+<li>docker-compose down: shutdown the services</li>
+</ul>
+
+<p>
+A sample compose file:
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #a0522d;">version</span>: <span style="color: #8b2252;">'2'</span>
+<span style="color: #a0522d;">services</span>:
+  <span style="color: #a0522d;">srcml-server-container</span>:
+    <span style="color: #a0522d;">image</span>: <span style="color: #8b2252;">"lihebi/srcml-server"</span>
+  <span style="color: #a0522d;">helium</span>:
+    <span style="color: #a0522d;">image</span>: <span style="color: #8b2252;">"lihebi/arch-helium"</span>
+    <span style="color: #a0522d;">tty</span>: <span style="color: #008b8b;">true</span>
+    <span style="color: #a0522d;">volumes</span>:
+      - data:/data
+  <span style="color: #a0522d;">benchmark-downloader</span>:
+    <span style="color: #b22222;"># </span><span style="color: #b22222;">this is used to download benchmarks to the shared volume</span>
+    <span style="color: #a0522d;">image</span>: <span style="color: #8b2252;">"lihebi/benchmark-downloader"</span>
+    <span style="color: #a0522d;">tty</span>: <span style="color: #008b8b;">true</span>
+    <span style="color: #a0522d;">volumes</span>:
+      - data:/data
+<span style="color: #a0522d;">volumes</span>:
+  <span style="color: #b22222;"># </span><span style="color: #b22222;">create a volume with default</span>
+  <span style="color: #a0522d;">data</span>:
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org07866ab" class="outline-4">
+<h4 id="org07866ab"><span class="section-number-4">9.1.1</span> service</h4>
+<div class="outline-text-4" id="text-9-1-1">
+<p>
+A service is a container. Setting tty to true to prevent it from
+stopping. That is the same effect when you pass <code>-t</code> to <code>docker run</code>.
+</p>
+
+<p>
+The containers can be seen by docker ps, with names prefixed and
+suffixed by <code>compose_XXX_1</code>
+</p>
+
+<p>
+Change to the container will not preserve after the compose down. The
+containers will be deleted. Next up will create new containers.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgffb8952" class="outline-4">
+<h4 id="orgffb8952"><span class="section-number-4">9.1.2</span> <span class="todo TODO">TODO</span> volumes</h4>
+<div class="outline-text-4" id="text-9-1-2">
+<p>
+Under any volume, if <code>external</code> option is set to <code>true</code>, docker
+compose will find it outside, and signal error if it does not exist.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf6657a0" class="outline-4">
+<h4 id="orgf6657a0"><span class="section-number-4">9.1.3</span> <span class="todo TODO">TODO</span> network</h4>
+<div class="outline-text-4" id="text-9-1-3">
+<p>
+Once the compose is up, docker create a bridge network called
+<code>compose_default</code>. All services (containers) are attached to that.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3fde81c" class="outline-3">
+<h3 id="org3fde81c"><span class="section-number-3">9.2</span> Network</h3>
+<div class="outline-text-3" id="text-9-2">
+<ul class="org-ul">
+<li>docker network ls</li>
+<li>docker network inspect &lt;network-name&gt;</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org52f48f7" class="outline-3">
+<h3 id="org52f48f7"><span class="section-number-3">9.3</span> Volume</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+A volume must be locally available if you create a <code>local</code> volume.
+</p>
+</div>
+<div id="outline-container-org9de60ca" class="outline-4">
+<h4 id="org9de60ca"><span class="section-number-4">9.3.1</span> Create Volume</h4>
+<div class="outline-text-4" id="text-9-3-1">
+<p>
+You can create a volume like this:
+</p>
+<pre class="example">
+docker volume create hello
+</pre>
+
+<p>
+Volumes can also be created upon creating a container.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdd5721c" class="outline-4">
+<h4 id="orgdd5721c"><span class="section-number-4">9.3.2</span> Mount volume to a container</h4>
+<div class="outline-text-4" id="text-9-3-2">
+<p>
+You have to mount at the time you create the container. You cannot
+remount anything to it without commiting it to an image and create
+again. 
+</p>
+
+<pre class="example">
+docker run -v /mnt &lt;image&gt;
+docker run -v my-named-vol:/mnt &lt;image&gt;
+docker run -v /absolute/path/to/host/local/path:/mnt/in/container &lt;image&gt;
+</pre>
+
+<p>
+If only inner path is provided, the volume will still be created, but
+with a long named directory under <code>/var/lib/docker/volumes</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb6bbd4c" class="outline-4">
+<h4 id="orgb6bbd4c"><span class="section-number-4">9.3.3</span> Manipulate Volume</h4>
+<div class="outline-text-4" id="text-9-3-3">
+<p>
+The volumes will never be automatically deleted, even if the container is deleted.
+</p>
+</div>
+
+<div id="outline-container-org87ae3c1" class="outline-5">
+<h5 id="org87ae3c1"><span class="section-number-5">9.3.3.1</span> <span class="todo TODO">TODO</span> Will it be updated or not?</h5>
+<div class="outline-text-5" id="text-9-3-3-1">
+<pre class="example">
+docker volume inspect &lt;volume-full-name&gt;
+docker volume ls
+docker volume prune # remove all unused volumes
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org3f35270" class="outline-3">
+<h3 id="org3f35270"><span class="section-number-3">9.4</span> General operations</h3>
+<div class="outline-text-3" id="text-9-4">
+<dl class="org-dl">
+<dt>docker images</dt><dd>list images</dd>
+<dt>docker images &lt;name&gt;</dt><dd>list images whose name is "name" (can have different) tags</dd>
+<dt>docker run [option] &lt;image&gt; /bin/bash</dt><dd>run a <b>fresh</b> container based on the image.
+<dl class="org-dl">
+<dt>-i</dt><dd>interactive</dd>
+<dt>-d</dt><dd>detach (opposite to -i)</dd>
+<dt>-t</dt><dd>assign a tty. Even when using -d, you need this.</dd>
+<dt>-p &lt;port&gt;</dt><dd>export the port &lt;port&gt; of the container. The host
+port will be randomly assigned. Running <code>docker ps</code>
+will show the port binding information.  If the port
+is not set when running a container, you have to
+commit it, and run it again to assign a port or
+another port.</dd>
+<dt>-v /volumn</dt><dd>create a mount at /volumn</dd>
+<dt>-v /local/dir:/mnt</dt><dd>mount local dir to the /mnt in
+container. The default is read-write mode, if you want read
+only, do this: <code>-v /local/dir:/mnt:ro</code>. The local dir must be
+ABSOLUTE path.</dd>
+</dl></dd>
+<dt>docker exec &lt;ID&gt; echo "hello"</dt><dd>run some command with arguments on the already run container &lt;ID&gt;
+<ul class="org-ul">
+<li>ID can be the UUID or container name</li>
+<li>you can use -it as well, e.g. docker exec -it &lt;ID&gt; /bin/bash</li>
+</ul></dd>
+<dt>docker start &lt;ID&gt;</dt><dd>start an already stopped container</dd>
+<dt>docker diff &lt;ID&gt;</dt><dd>show the difference made from the base image</dd>
+<dt>docker commit &lt;ID&gt; lihebi/my-container</dt><dd>create a new image based on the container &lt;ID&gt;</dd>
+<dt>docker login</dt><dd>login so that you can push</dd>
+<dt>docker push lihebi/my-container</dt><dd>push to docker hub</dd>
+<dt>docker pull lihebi/my-container</dt><dd>pull from the internet</dd>
+</dl>
+
+<p>
+Alternatively, you can write a Dockerfile to specify how to build a image.
+</p>
+
+<pre class="example">
+FROM ubuntu 15.04
+RUN ech o"hello" &gt; /tmp/newfile
+</pre>
+
+<p>
+In the folder containing Dockerfile, run to build the image:
+</p>
+<pre class="example">
+docker build -t my-ubuntu .
+</pre>
+
+<p>
+use &#x2013;no-cache to avoid using cache
+</p>
+
+<dl class="org-dl">
+<dt>docker history &lt;image&gt;</dt><dd>show which layers are used to create &lt;image&gt;</dd>
+</dl>
+</div>
+
+<div id="outline-container-orge9e12dc" class="outline-4">
+<h4 id="orge9e12dc"><span class="section-number-4">9.4.1</span> Docker stop</h4>
+<div class="outline-text-4" id="text-9-4-1">
+<p>
+docker stop will send SIGTERM to the app, then wait for it to stop. The default wait time is 10 seconds. You can change this by
+</p>
+<pre class="example">
+docker stop -t 1 &lt;container-ID&gt;
+</pre>
+<p>
+This will change the timeout to be 1 second.
+</p>
+
+<p>
+The reason for a container to resist stopping may be it ignores the
+SIGTERM request. Python did this, so for a python program, you should
+handle this signal yourself:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">  <span style="color: #a020f0;">import</span> sys
+  <span style="color: #a020f0;">import</span> signal
+
+  <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">handler</span>(signum, frame):
+      sys.<span style="color: #008b8b;">exit</span>(1)
+
+  <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">main</span>():
+      signal.signal(signal.SIGTERM, hanlder)
+      <span style="color: #b22222;"># </span><span style="color: #b22222;">your app</span>
+</pre>
+</div>
+
+
+<p>
+Next thing is the entry point and commands. If you use shell form, it
+is started by sh -c, and shell will not pass the signal to the app
+either. So change it to json form.
+</p>
+
+<p>
+Finally, <code>docker stop</code> tries to terminate the app gracefully by
+sending SIGTERM, you can choose to force kill using <code>docker kill</code>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c6f9ae" class="outline-3">
+<h3 id="org3c6f9ae"><span class="section-number-3">9.5</span> Remove sudo</h3>
+<div class="outline-text-3" id="text-9-5">
+<pre class="example">
+sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+sudo service docker restart
+newgrp docker
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd205887" class="outline-3">
+<h3 id="orgd205887"><span class="section-number-3">9.6</span> Dockerfile</h3>
+<div class="outline-text-3" id="text-9-6">
+<p>
+I'm trying a docker file for srcml container. 
+</p>
+<pre class="example">
+FROM debian
+RUN apt-get -y update &amp; apt-get install -y libarchive-dev libcurl4-openssl-dev
+RUN wget http://131.123.42.38/lmcrs/beta/srcML-Ubuntu14.04-64.deb srcml.deb
+RUN dpkg -i srcml.deb
+</pre>
+</div>
+
+<div id="outline-container-org7bc2cb9" class="outline-4">
+<h4 id="org7bc2cb9"><span class="section-number-4">9.6.1</span> Commands</h4>
+<div class="outline-text-4" id="text-9-6-1">
+<ul class="org-ul">
+<li>FROM: a base image</li>
+<li>ENV key=value</li>
+<li>ADD: <code>ADD &lt;src&gt; .. &lt;dst&gt;</code> The difference from copy:
+<ul class="org-ul">
+<li>ADD allows src to be url</li>
+<li>ADD will decompress an archive</li>
+</ul></li>
+<li>COPY: <code>COPY &lt;src&gt; .. &lt;dst&gt;</code> all srcs on the local machine will be
+copied to dst in the image. The src can use wildcards. The src
+cannot be out of the current build directory, e.g. <code>..</code> is not
+valid.</li>
+<li>USER: <code>USER daemon</code> The USER instruction sets the user name or UID
+to use when running the image and for any RUN, CMD and ENTRYPOINT
+instructions that follow it in the Dockerfile.</li>
+<li>WORKDIR: The WORKDIR instruction sets the working directory for any
+RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in
+the Dockerfile
+<ul class="org-ul">
+<li>if it does not exist, it will be created</li>
+<li>it can be used multiple times, if it is relative, it is relative
+to the previous WORKDIR</li>
+</ul></li>
+<li>ENTRYPOINT ["executable", "param1", "param2"]: configure the
+container to be run as an executable.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfaa550e" class="outline-3">
+<h3 id="orgfaa550e"><span class="section-number-3">9.7</span> <span class="todo TODO">TODO</span> Docker hub</h3>
+<div class="outline-text-3" id="text-9-7">
+<p>
+When pushing and pulling, what exactly happens?
+</p>
+
+<pre class="example">
+docker tag local-image lihebi/my-image
+docker push lihebi/my-image
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3ffaa60" class="outline-3">
+<h3 id="org3ffaa60"><span class="section-number-3">9.8</span> Tricks</h3>
+<div class="outline-text-3" id="text-9-8">
+<p>
+Stop all containers
+</p>
+<blockquote>
+<p>
+docker stop $(docker ps -a -q)
+</p>
+</blockquote>
+
+<p>
+Remove all containers (will not remove non-stopped ones, but give errors)
+</p>
+<blockquote>
+<p>
+docker rm $(docker ps -a -q)
+</p>
+</blockquote>
+</div>
+</div>
+
+
+<div id="outline-container-orgd4a21c2" class="outline-3">
+<h3 id="orgd4a21c2"><span class="section-number-3">9.9</span> Trouble Shooting</h3>
+<div class="outline-text-3" id="text-9-9">
+</div>
+<div id="outline-container-org0840a1a" class="outline-4">
+<h4 id="org0840a1a"><span class="section-number-4">9.9.1</span> I have to type double C-p to take effect</h4>
+<div class="outline-text-4" id="text-9-9-1">
+<p>
+<code>C-p C-q</code> is the default binding for detaching a container. This
+blocks C-p, I have to type it twice, must change.  In
+<code>~/.docker/config.json</code>, add:
+</p>
+
+<pre class="example">
+{
+"detachKeys": "ctrl-],ctrl-["
+}
+</pre>
+
+<p>
+Restart docker daemon to take effect. This can also be set by
+<code>--detach-keys</code> option.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org89b35d4" class="outline-4">
+<h4 id="org89b35d4"><span class="section-number-4">9.9.2</span> Docker exec tty is not a real tty</h4>
+<div class="outline-text-4" id="text-9-9-2">
+<p>
+I cannot connect to emacs server through emacsclient -t, and error
+message is terminal is not found. You can not open tmux also. But the
+problem does not appear when using docker run command.
+</p>
+
+<p>
+The solution is when starting a exec command, use script to run bash:
+</p>
+
+<pre class="example">
+docker exec -it my-container script -q -c "/bin/bash" /dev/null
+docker exec -it my-container env TERM=xterm script -q -c "/bin/bash" /dev/null
+</pre>
+
+<p>
+The TERM is not necessary here because in my case docker always set it
+to xterm. I actually change it to screen-256color in my bashrc file to
+get the correct colors.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb1047a4" class="outline-2">
+<h2 id="orgb1047a4"><span class="section-number-2">10</span> Unix Programming</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<a href="http://pubs.opengroup.org/onlinepubs/9699919799/">POSIX</a> defines
+ the operating system interface. The starndard contains volumes:
+</p>
+<ul class="org-ul">
+<li>Base Definition: convention, regular expression, headers</li>
+<li>System Interfaces: system calls</li>
+<li>Shell &amp; Utilities: shell command language and shell utilities</li>
+<li>Rationale</li>
+</ul>
+
+<p>
+I found most of them are not that interesting, except Base Definition
+section 9 regular expression. This definition is used by many shell
+utilities such as awk.
+</p>
+</div>
+
+<div id="outline-container-orgd33dcdb" class="outline-3">
+<h3 id="orgd33dcdb"><span class="section-number-3">10.1</span> Low-level IO</h3>
+<div class="outline-text-3" id="text-10-1">
+</div>
+<div id="outline-container-org9d0c0d3" class="outline-4">
+<h4 id="org9d0c0d3"><span class="section-number-4">10.1.1</span> open</h4>
+<div class="outline-text-4" id="text-10-1-1">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">open</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">filename</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">flags</span>[, <span style="color: #228b22;">mode_t</span> <span style="color: #a0522d;">mode</span>])
+</pre>
+</div>
+
+<p>
+Create and return a file descriptor.
+</p>
+</div>
+</div>
+<div id="outline-container-orgcb01f18" class="outline-4">
+<h4 id="orgcb01f18"><span class="section-number-4">10.1.2</span> close</h4>
+<div class="outline-text-4" id="text-10-1-2">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">close</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>file descriptor is deallocated</li>
+<li>if all file descriptors associated with a pipe are closed, any
+unread data is discarded.</li>
+</ul>
+<p>
+Return
+</p>
+<ul class="org-ul">
+<li>0 on success, -1 on failure</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2976cae" class="outline-4">
+<h4 id="org2976cae"><span class="section-number-4">10.1.3</span> read</h4>
+<div class="outline-text-4" id="text-10-1-3">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">read</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>, <span style="color: #228b22;">void</span> *<span style="color: #a0522d;">buffer</span>, <span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">size</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>read <i>up to</i> size bytes, store result in buffer.</li>
+</ul>
+<p>
+Return
+</p>
+<ul class="org-ul">
+<li>number of bytes actually read.</li>
+<li>return 0 means EOF</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2c9a054" class="outline-4">
+<h4 id="org2c9a054"><span class="section-number-4">10.1.4</span> write</h4>
+<div class="outline-text-4" id="text-10-1-4">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">ssize_t</span> <span style="color: #0000ff;">write</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>, <span style="color: #a020f0;">const</span> <span style="color: #228b22;">void</span> *<span style="color: #a0522d;">buffer</span>, <span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">size</span>)
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>write up to size bytes from buffer to the file descriptor.</li>
+</ul>
+<p>
+Return
+</p>
+<ul class="org-ul">
+<li>number of bytes actually written</li>
+<li>-1 on failure</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0bc4435" class="outline-4">
+<h4 id="org0bc4435"><span class="section-number-4">10.1.5</span> fdopen</h4>
+<div class="outline-text-4" id="text-10-1-5">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">FILE</span> *<span style="color: #0000ff;">fdopen</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>, <span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">opentype</span>)
+</pre>
+</div>
+
+<p>
+from file descriptor, get the stream
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc536d44" class="outline-4">
+<h4 id="orgc536d44"><span class="section-number-4">10.1.6</span> fileno</h4>
+<div class="outline-text-4" id="text-10-1-6">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">fileno</span>(<span style="color: #228b22;">FILE</span> *<span style="color: #a0522d;">stream</span>)
+</pre>
+</div>
+
+<p>
+from stream to file descriptor
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge201dfe" class="outline-4">
+<h4 id="orge201dfe"><span class="section-number-4">10.1.7</span> fd<sub>set</sub></h4>
+<div class="outline-text-4" id="text-10-1-7">
+<p>
+This is a bit array.
+</p>
+<ul class="org-ul">
+<li>FD<sub>ZERO</sub>(&amp;fdset): initialise fdset to empty</li>
+<li>FD<sub>CLR</sub>(fd, &amp;fdset): remove fd from the set</li>
+<li>FD<sub>SET</sub>(fd, &amp;fdset): add fd to the set</li>
+<li>FD<sub>ISSET</sub>(fd, &amp;fdset): return non-0 if fd is in set</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org537837b" class="outline-4">
+<h4 id="org537837b"><span class="section-number-4">10.1.8</span> select - synchronous I/O multiplexing</h4>
+<div class="outline-text-4" id="text-10-1-8">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">select</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nfds</span>, <span style="color: #228b22;">fd_set</span> *<span style="color: #a0522d;">readfds</span>, <span style="color: #228b22;">fd_set</span> *<span style="color: #a0522d;">writefds</span>, <span style="color: #228b22;">fd_set</span> *<span style="color: #a0522d;">errorfds</span>, <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">timeval</span> *<span style="color: #a0522d;">timeout</span>)
+</pre>
+</div>
+
+<p>
+Block until at least one fd is true for specific condition, unless timeout.
+</p>
+
+<p>
+Params
+</p>
+<ul class="org-ul">
+<li>nfds: the range of file descriptors to be tested. Should be the
+largest one in the sets + 1. But just pass <code>FD_SETSIZE</code>.</li>
+<li>readfds: watch for read. can be NULL.</li>
+<li>writefds: watch for write. can be NULL.</li>
+<li>errorfds: watch for error. can be NULL.</li>
+<li>timeout:
+<ul class="org-ul">
+<li>NULL: no timeout, block forever</li>
+<li>0: return immediately. Used for test file descriptors</li>
+</ul></li>
+</ul>
+<p>
+Return:
+</p>
+<ul class="org-ul">
+<li>if timeout, return 0</li>
+<li>the sets are modified. Those in sets are those ready</li>
+<li>return the number of ready file descriptors in all sets</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #a0522d;">fd</span>;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">init fd</span>
+
+<span style="color: #228b22;">fd_set</span> <span style="color: #a0522d;">set</span>;
+FD_ZERO(&amp;set)
+FD_SET(fd, &amp;set);
+
+<span style="color: #a020f0;">struct</span> <span style="color: #228b22;">timeval</span> <span style="color: #a0522d;">timeout</span>;
+timeout.tv_sec = 1;
+timeout.tv_usec = 0;
+
+select(FD_SETSIZE, &amp;set, <span style="color: #008b8b;">NULL</span>, <span style="color: #008b8b;">NULL</span>, &amp;timeout);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2647d0c" class="outline-4">
+<h4 id="org2647d0c"><span class="section-number-4">10.1.9</span> sync</h4>
+<div class="outline-text-4" id="text-10-1-9">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">void</span> <span style="color: #0000ff;">sync</span>(<span style="color: #228b22;">void</span>) <span style="color: #b22222;">// </span><span style="color: #b22222;">sync all dirty files</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">fsync</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>) <span style="color: #b22222;">// </span><span style="color: #b22222;">sync only that file</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc559e3b" class="outline-4">
+<h4 id="orgc559e3b"><span class="section-number-4">10.1.10</span> dup</h4>
+<div class="outline-text-4" id="text-10-1-10">
+<p>
+You can create a new descriptor to refer to the same file. They
+</p>
+<ul class="org-ul">
+<li>share file position</li>
+<li>share status flag</li>
+<li>seperate descriptor flags</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">dup</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">old</span>)
+<span style="color: #b22222;">// </span><span style="color: #b22222;">same as</span>
+fcntl(old, F_DUPFD, 0)
+</pre>
+</div>
+
+<p>
+Copy old to the first available descriptor number.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">dup2</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">old</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">new</span>)
+<span style="color: #b22222;">// </span><span style="color: #b22222;">same as</span>
+close(new)
+fcntl(old, F_DUPFD, new)
+</pre>
+</div>
+
+<p>
+If old is invalid, it does nothing (does not close <code>new</code>)!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga5795e7" class="outline-3">
+<h3 id="orga5795e7"><span class="section-number-3">10.2</span> Date and Time</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>calendar time: absolute time, e.g. 2017/6/29</li>
+<li>interval: between two calendar times</li>
+<li>elapsed time: length of interval</li>
+<li>amount of time: sum of elapsed times</li>
+<li>period: elapsed time between two events</li>
+<li>CPU time: like calendar time, but relative to process, i.e. when the
+process run on CPU</li>
+<li>Processor time: amount of time a CPU is in use.</li>
+</ul>
+</div>
+
+<div id="outline-container-org4988144" class="outline-4">
+<h4 id="org4988144"><span class="section-number-4">10.2.1</span> struct timeval</h4>
+<div class="outline-text-4" id="text-10-2-1">
+<ul class="org-ul">
+<li>time<sub>t</sub> tv<sub>sec</sub>: seconds</li>
+<li>long int tv<sub>usec</sub>: micro seconds, must be less than 1 million</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge2f569f" class="outline-4">
+<h4 id="orge2f569f"><span class="section-number-4">10.2.2</span> struct timespec</h4>
+<div class="outline-text-4" id="text-10-2-2">
+<ul class="org-ul">
+<li>time<sub>t</sub> tv<sub>sec</sub></li>
+<li>long int tv<sub>nsec</sub>: nanoseconds. Must be less than 1 billion</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org95a1aee" class="outline-4">
+<h4 id="org95a1aee"><span class="section-number-4">10.2.3</span> difftime</h4>
+<div class="outline-text-4" id="text-10-2-3">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">double</span> <span style="color: #0000ff;">difftime</span> (<span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">time1</span>, <span style="color: #228b22;">time_t</span> <span style="color: #a0522d;">time0</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb4fdb45" class="outline-4">
+<h4 id="orgb4fdb45"><span class="section-number-4">10.2.4</span> time<sub>t</sub></h4>
+<div class="outline-text-4" id="text-10-2-4">
+<p>
+On GNU it is long int. It should be the seconds elapsed since 00:00:00
+Jan 1 1970, Coordinated Universal Time.
+</p>
+
+<p>
+get current calenddar time:
+</p>
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">time_t</span> <span style="color: #0000ff;">time</span>(<span style="color: #228b22;">time_t</span> *<span style="color: #a0522d;">result</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3805ad9" class="outline-4">
+<h4 id="org3805ad9"><span class="section-number-4">10.2.5</span> alarm</h4>
+<div class="outline-text-4" id="text-10-2-5">
+</div>
+<div id="outline-container-org8ff2936" class="outline-5">
+<h5 id="org8ff2936"><span class="section-number-5">10.2.5.1</span> struct itimerval</h5>
+<div class="outline-text-5" id="text-10-2-5-1">
+<ul class="org-ul">
+<li>struct timeval it<sub>interval</sub>: 0 to send alarm once, non-zero to send every interval</li>
+<li>struct timeval it<sub>value</sub>: time left to alarm. If 0, the alarm is disabled</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org105d4ed" class="outline-5">
+<h5 id="org105d4ed"><span class="section-number-5">10.2.5.2</span> setitimer</h5>
+<div class="outline-text-5" id="text-10-2-5-2">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">setitimer</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">which</span>, <span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">itimerval</span> *<span style="color: #a0522d;">new</span>, <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">itimerval</span> *<span style="color: #a0522d;">old</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>which: ITIMER<sub>REAL</sub>, ITIMER<sub>VIRTUAL</sub>, ITIMER<sub>PROF</sub></li>
+<li>new: set to new</li>
+<li>old: if not NULL, fill with old value</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb1c04e9" class="outline-5">
+<h5 id="orgb1c04e9"><span class="section-number-5">10.2.5.3</span> getitimer(int which, struct itimerval *old)</h5>
+<div class="outline-text-5" id="text-10-2-5-3">
+<p>
+get the timer
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaeb2b75" class="outline-5">
+<h5 id="orgaeb2b75"><span class="section-number-5">10.2.5.4</span> alarm</h5>
+<div class="outline-text-5" id="text-10-2-5-4">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #0000ff;">alarm</span>(<span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">seconds</span>)
+</pre>
+</div>
+<p>
+To cancel existing alarm, use alarm(0).
+Return:
+</p>
+<ul class="org-ul">
+<li>0: no previous alarm</li>
+<li>non-0: the remaining value of previous alarm</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-C">  <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span>
+  <span style="color: #0000ff;">alarm</span> (<span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">seconds</span>)
+  {
+    <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">itimerval</span> <span style="color: #a0522d;">old</span>, <span style="color: #a0522d;">new</span>;
+    new.it_interval.tv_usec = 0;
+    new.it_interval.tv_sec = 0;
+    new.it_value.tv_usec = 0;
+    new.it_value.tv_sec = (<span style="color: #228b22;">long</span> <span style="color: #228b22;">int</span>) seconds;
+    <span style="color: #a020f0;">if</span> (setitimer (ITIMER_REAL, &amp;new, &amp;old) &lt; 0)
+      <span style="color: #a020f0;">return</span> 0;
+    <span style="color: #a020f0;">else</span>
+      <span style="color: #a020f0;">return</span> old.it_value.tv_sec;
+  }
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9491f71" class="outline-3">
+<h3 id="org9491f71"><span class="section-number-3">10.3</span> Process</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+Three steps
+</p>
+<ul class="org-ul">
+<li>create child process</li>
+<li>run an executable</li>
+<li>coordinate the results with parent</li>
+</ul>
+</div>
+<div id="outline-container-org95396e3" class="outline-4">
+<h4 id="org95396e3"><span class="section-number-4">10.3.1</span> system</h4>
+<div class="outline-text-4" id="text-10-3-1">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">system</span>(<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">command</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>use <code>sh</code> to execute, and search in $PATH</li>
+<li>return -1 on error</li>
+<li>return the status code for the child</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org206d6a5" class="outline-4">
+<h4 id="org206d6a5"><span class="section-number-4">10.3.2</span> getpid</h4>
+<div class="outline-text-4" id="text-10-3-2">
+<ul class="org-ul">
+<li>pid<sub>t</sub> getpid(void): return PID of current process</li>
+<li>pid<sub>t</sub> getppid(void): PID of parent process</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6e6a794" class="outline-4">
+<h4 id="org6e6a794"><span class="section-number-4">10.3.3</span> fork</h4>
+<div class="outline-text-4" id="text-10-3-3">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">fork</span>(<span style="color: #228b22;">void</span>)
+</pre>
+</div>
+
+<p>
+return
+</p>
+<ul class="org-ul">
+<li>0 in child</li>
+<li>child's PID in parent</li>
+<li>-1 on error</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7eb1276" class="outline-4">
+<h4 id="org7eb1276"><span class="section-number-4">10.3.4</span> pipe</h4>
+<div class="outline-text-4" id="text-10-3-4">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">pipe</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">filedes</span>[2])
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Create a pipie and puts the filedes[0] for reading, filedes[1] for writing</li>
+</ul>
+<p>
+Return:
+</p>
+<ul class="org-ul">
+<li>0 on success, -1 on failure</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org64f8a96" class="outline-4">
+<h4 id="org64f8a96"><span class="section-number-4">10.3.5</span> exec</h4>
+<div class="outline-text-4" id="text-10-3-5">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">execv</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">filename</span>, <span style="color: #228b22;">char</span> *<span style="color: #a020f0;">const</span> <span style="color: #a0522d;">argv</span>[])
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">execl</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">filename</span>, <span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">arg0</span>, ...)
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">execve</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">filename</span>, <span style="color: #228b22;">char</span> *<span style="color: #a020f0;">const</span> <span style="color: #a0522d;">argv</span>[], <span style="color: #228b22;">char</span> *<span style="color: #a020f0;">const</span> <span style="color: #a0522d;">env</span>[])
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">execle</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">filename</span>, <span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">arg0</span>, ..., <span style="color: #228b22;">char</span> *<span style="color: #a020f0;">const</span> <span style="color: #a0522d;">env</span>[])
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">execvp</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">filename</span>, <span style="color: #228b22;">char</span> *<span style="color: #a020f0;">const</span> <span style="color: #a0522d;">argv</span>[])
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">execlp</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">filename</span>, <span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">arg0</span>, ...)
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>execv: the last of argv array must be NULL. All strings are null-terminated.</li>
+<li>execl: argv are seperated, the last one must be NULL</li>
+<li>execve: provide env</li>
+<li>execle</li>
+<li>execvp: find filename in $PATH</li>
+<li>execlp</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb80073d" class="outline-4">
+<h4 id="orgb80073d"><span class="section-number-4">10.3.6</span> wait</h4>
+<div class="outline-text-4" id="text-10-3-6">
+<p>
+This should be used in parent process.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">waitpid</span>(<span style="color: #228b22;">pid_t</span> <span style="color: #a0522d;">pid</span>, <span style="color: #228b22;">int</span> *<span style="color: #a0522d;">status_ptr</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">options</span>)
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>pid:
+<ul class="org-ul">
+<li>positive: the pid for a child process</li>
+<li>-1 (WAIT<sub>ANY</sub>): any child process</li>
+<li>0 (WAIT<sub>MYPGRP</sub>): any child process that has the same <i>process group ID</i> as the parent</li>
+<li>-pgid (any other negative value): any child process having the
+<i>process group ID</i> as gpid</li>
+</ul></li>
+<li>options: OR of the following
+<ul class="org-ul">
+<li>WNOHANG: no hang: the parent process should not wait</li>
+<li>WUNTRACED: report stopped process as well as the terminated ones</li>
+</ul></li>
+<li>return: PID of the child process that is reporting</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #228b22;">pid_t</span> <span style="color: #0000ff;">wait</span>(<span style="color: #228b22;">int</span> *<span style="color: #a0522d;">status_ptr</span>)
+</pre>
+</div>
+
+<p>
+<code>wait(&amp;status)</code> is same as <code>waitpid(-1, &amp;status, 0)</code>
+</p>
+</div>
+
+<div id="outline-container-org5d4d8fd" class="outline-5">
+<h5 id="org5d4d8fd"><span class="section-number-5">10.3.6.1</span> Status</h5>
+<div class="outline-text-5" id="text-10-3-6-1">
+<p>
+The signature is <code>int NAME(int status)</code>.
+</p>
+<ul class="org-ul">
+<li>WIFEXITED: if exited: return non-0 if child terminated normally with exit</li>
+<li>WEXITSTATUS: exit status: if above true, this is the low-order 8
+bits of the exit code</li>
+<li>WIFSIGNALED: if signaled: non-0 if the process terminated because it
+receives a signal that was not handled</li>
+<li>WTERMSIG: term sig: if above true, return that signal number</li>
+<li>WCOREDUMP: core dump: non-0 if the child process terminated and
+produce a core dump</li>
+<li>WIFSTOPPED: if stopped: if the child process stopped</li>
+<li>WSTOPSIG: stop sig: if above true, return the signal number that
+cause the child to stop</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org6201c31"></a><span class="todo TODO">TODO</span> What is the difference between terminate and stop?<br /></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd4b16b6" class="outline-3">
+<h3 id="orgd4b16b6"><span class="section-number-3">10.4</span> Unix Signal Handling</h3>
+<div class="outline-text-3" id="text-10-4">
+</div>
+<div id="outline-container-org3924b6a" class="outline-4">
+<h4 id="org3924b6a"><span class="section-number-4">10.4.1</span> Ordinary signal handling</h4>
+<div class="outline-text-4" id="text-10-4-1">
+<p>
+The handling of ordinary signals are easy:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #483d8b;">  #include</span> <span style="color: #8b2252;">&lt;signal.h&gt;</span>
+  <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">my_handler</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">signum</span>) {
+    printf(<span style="color: #8b2252;">"received signal\n"</span>);
+  }
+
+  <span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+    <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sigaction</span> <span style="color: #a0522d;">sa</span>;
+    sa.sa_handler = my_handler;
+    sigemptyset(&amp;sa.sa_mask);
+    sa.sa_flags = SA_SIGINFO;
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">this segv does not work</span>
+    sigaction(<span style="color: #a0522d;">SIGSEGV</span>, &amp;sa, <span style="color: #008b8b;">NULL</span>);
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">this sigint will work</span>
+    sigaction(<span style="color: #a0522d;">SIGINT</span>, &amp;sa, <span style="color: #008b8b;">NULL</span>);
+  }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f84dbb" class="outline-4">
+<h4 id="org6f84dbb"><span class="section-number-4">10.4.2</span> SIGSEGV handling</h4>
+<div class="outline-text-4" id="text-10-4-2">
+</div>
+<div id="outline-container-orgebb55c8" class="outline-5">
+<h5 id="orgebb55c8"><span class="section-number-5">10.4.2.1</span> Motivation</h5>
+<div class="outline-text-5" id="text-10-4-2-1">
+<p>
+The reason that I want to handle the <code>SIGSEGV</code> is that I want to get the coverage from <code>gcov</code>.
+Gcov will not report any coverage information if the program terminates by receiving some signals.
+Fortunately we can explicitly ask gcov to dump it by calling <code>__gcov_flush()</code> inside the handler.
+I confirmed this can work for ordinary signal handling.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C">  <span style="color: #b22222;">// </span><span style="color: #b22222;">declaring the prototype of gcov</span>
+  <span style="color: #228b22;">void</span> <span style="color: #0000ff;">__gcov_flush</span>(<span style="color: #228b22;">void</span>);
+
+  <span style="color: #228b22;">void</span> <span style="color: #0000ff;">myhanlder</span>() {
+    __gcov_flush();
+  }
+</pre>
+</div>
+
+<p>
+After experiment, I found:
+</p>
+<ol class="org-ol">
+<li>address sanitizer cannot work with this handling. AddressSanitizer will hijact the signal, and maybe output another signal.</li>
+<li>Even if I turned off address sanitizer, and the handler function is executed, the coverage information is still not able to get.
+This possibly because the handler is running on a different stack.</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org3e11d85" class="outline-5">
+<h5 id="org3e11d85"><span class="section-number-5">10.4.2.2</span> a new stack</h5>
+<div class="outline-text-5" id="text-10-4-2-2">
+<p>
+However, handling the SIGSEGV is challenging.
+The above will not work <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<blockquote>
+<p>
+By default, when a signal is delivered, its handler is called on the same stack where the program was running.
+But if the signal is due to stack overflow, then attempting to execute the handler will cause a second segfault.
+Linux is smart enough not to send this segfault back to the same signal handler, which would prevent an infinite cascade of segfaults.
+Instead, in effect, the signal handler does not work.
+</p>
+</blockquote>
+
+<p>
+Instead, we need to make a new stack and install the handler on that stack.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #483d8b;">  #include</span> <span style="color: #8b2252;">&lt;signal.h&gt;</span>
+  <span style="color: #228b22;">void</span> <span style="color: #0000ff;">sigsegv_handler</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">signum</span>, <span style="color: #228b22;">siginfo_t</span> *<span style="color: #a0522d;">info</span>, <span style="color: #228b22;">void</span> *<span style="color: #a0522d;">data</span>) {
+    printf(<span style="color: #8b2252;">"Received signal finally\n"</span>);
+    exit(1);
+  }
+
+<span style="color: #483d8b;">  #define</span> <span style="color: #a0522d;">SEGV_STACK_SIZE</span> BUFSIZ
+
+  <span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+    <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">sigaction</span> <span style="color: #a0522d;">action</span>;
+    bzero(&amp;action, <span style="color: #a020f0;">sizeof</span>(action));
+    action.sa_flags = SA_SIGINFO|SA_STACK;
+    action.sa_sigaction = &amp;sigsegv_handler;
+    sigaction(<span style="color: #a0522d;">SIGSEGV</span>, &amp;action, <span style="color: #008b8b;">NULL</span>);
+
+
+    <span style="color: #228b22;">stack_t</span> <span style="color: #a0522d;">segv_stack</span>;
+    segv_stack.ss_sp = valloc(SEGV_STACK_SIZE);
+    segv_stack.ss_flags = 0;
+    segv_stack.ss_size = SEGV_STACK_SIZE;
+    sigaltstack(&amp;segv_stack, <span style="color: #008b8b;">NULL</span>);
+
+    <span style="color: #228b22;">char</span> <span style="color: #a0522d;">buf</span>[10];
+    <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">src</span> = <span style="color: #8b2252;">"super long string"</span>;
+    strcpy(buf, src);
+  }
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org12931d3" class="outline-5">
+<h5 id="org12931d3"><span class="section-number-5">10.4.2.3</span> libsigsegv</h5>
+<div class="outline-text-5" id="text-10-4-2-3">
+<p>
+I also tried another library, the libsigsegv <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+I followed two of their methods, but I cannot make either work.
+The code lists here as a reference:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #483d8b;">  #include</span> <span style="color: #8b2252;">&lt;signal.h&gt;</span>
+<span style="color: #483d8b;">  #include</span> <span style="color: #8b2252;">&lt;sigsegv.h&gt;</span>
+  <span style="color: #228b22;">int</span> <span style="color: #0000ff;">handler</span> (<span style="color: #228b22;">void</span> *<span style="color: #a0522d;">fault_address</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">serious</span>) {
+    printf(<span style="color: #8b2252;">"Handler triggered.\n"</span>);
+    <span style="color: #a020f0;">return</span> 0;
+  }
+  <span style="color: #228b22;">void</span> <span style="color: #0000ff;">stackoverflow_handler</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">emergency</span>, <span style="color: #228b22;">stackoverflow_context_t</span> <span style="color: #a0522d;">scp</span>) {
+    printf(<span style="color: #8b2252;">"Handler received\n"</span>);
+  }
+  <span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+    <span style="color: #228b22;">char</span>* <span style="color: #a0522d;">mystack</span>; <span style="color: #b22222;">// </span><span style="color: #b22222;">don't know how to use</span>
+    sigsegv_install_handler (&amp;handler);
+    stackoverflow_install_handler (&amp;stackoverflow_handler,
+                                   mystack, SIGSTKSZ);
+  }
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org16594cd" class="outline-3">
+<h3 id="org16594cd"><span class="section-number-3">10.5</span> pThread</h3>
+<div class="outline-text-3" id="text-10-5">
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;pthread.h&gt;</span>
+pthread_create (thread, attr, start_routine, arg)
+pthread_exit (status)
+pthread_join (threadid, status)
+pthread_detach (threadid)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org072bf71" class="outline-4">
+<h4 id="org072bf71"><span class="section-number-4">10.5.1</span> Create threads</h4>
+<div class="outline-text-4" id="text-10-5-1">
+<p>
+If main() finishes before the threads it has created, and exits with
+pthread<sub>exit</sub>(), the other threads will continue to execute. Otherwise,
+they will be automatically terminated when main() finishes.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">  #define</span> <span style="color: #a0522d;">NUM_THREADS</span>     5
+
+  <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">thread_data</span>{
+    <span style="color: #228b22;">int</span>  <span style="color: #a0522d;">thread_id</span>;
+    <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">message</span>;
+  };
+
+  <span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+    <span style="color: #228b22;">pthread_t</span> <span style="color: #a0522d;">threads</span>[NUM_THREADS];
+    <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">thread_data</span> <span style="color: #a0522d;">td</span>[NUM_THREADS];
+
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">rc</span>;
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>;
+
+    <span style="color: #a020f0;">for</span>( i=0; i &lt; NUM_THREADS; i++ ){
+      td[i].thread_id = i;
+      td[i].message = <span style="color: #8b2252;">"This is message"</span>;
+      rc = pthread_create(&amp;threads[i], <span style="color: #008b8b;">NULL</span>, PrintHello, (<span style="color: #228b22;">void</span> *)&amp;td[i]);
+      <span style="color: #a020f0;">if</span> (rc){
+        cout &lt;&lt; <span style="color: #8b2252;">"Error:unable to create thread,"</span> &lt;&lt; rc &lt;&lt; endl;
+        exit(-1);
+      }
+    }
+    pthread_exit(<span style="color: #008b8b;">NULL</span>);
+  }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc26598f" class="outline-4">
+<h4 id="orgc26598f"><span class="section-number-4">10.5.2</span> Join and Detach</h4>
+<div class="outline-text-4" id="text-10-5-2">
+<div class="org-src-container">
+<pre class="src src-cpp">  <span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span> () {
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">rc</span>;
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>;
+        
+    <span style="color: #228b22;">pthread_t</span> <span style="color: #a0522d;">threads</span>[NUM_THREADS];
+    <span style="color: #228b22;">pthread_attr_t</span> <span style="color: #a0522d;">attr</span>;
+    <span style="color: #228b22;">void</span> *<span style="color: #a0522d;">status</span>;
+
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">Initialize and set thread joinable</span>
+    pthread_attr_init(&amp;attr);
+    pthread_attr_setdetachstate(&amp;attr, PTHREAD_CREATE_JOINABLE);
+
+    <span style="color: #a020f0;">for</span>( i=0; i &lt; NUM_THREADS; i++ ){
+      cout &lt;&lt; <span style="color: #8b2252;">"main() : creating thread, "</span> &lt;&lt; i &lt;&lt; endl;
+      rc = pthread_create(&amp;threads[i], &amp;attr, wait, (<span style="color: #228b22;">void</span> *)i );
+                
+      <span style="color: #a020f0;">if</span> (rc){
+        cout &lt;&lt; <span style="color: #8b2252;">"Error:unable to create thread,"</span> &lt;&lt; rc &lt;&lt; endl;
+        exit(-1);
+      }
+    }
+
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">free attribute and wait for the other threads</span>
+    pthread_attr_destroy(&amp;attr);
+        
+    <span style="color: #a020f0;">for</span>( i=0; i &lt; NUM_THREADS; i++ ){
+      rc = pthread_join(threads[i], &amp;status);
+                
+      <span style="color: #a020f0;">if</span> (rc){
+        cout &lt;&lt; <span style="color: #8b2252;">"Error:unable to join,"</span> &lt;&lt; rc &lt;&lt; endl;
+        exit(-1);
+      }
+                
+      cout &lt;&lt; <span style="color: #8b2252;">"Main: completed thread id :"</span> &lt;&lt; i ;
+      cout &lt;&lt; <span style="color: #8b2252;">"  exiting with status :"</span> &lt;&lt; status &lt;&lt; endl;
+    }
+
+    cout &lt;&lt; <span style="color: #8b2252;">"Main: program exiting."</span> &lt;&lt; endl;
+    pthread_exit(<span style="color: #008b8b;">NULL</span>);
+  }
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org2ef5805" class="outline-3">
+<h3 id="org2ef5805"><span class="section-number-3">10.6</span> Other</h3>
+<div class="outline-text-3" id="text-10-6">
+<p>
+sleep
+</p>
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;unistd.h&gt;</span>
+<span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #0000ff;">sleep</span>(<span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">seconds</span>); <span style="color: #b22222;">// </span><span style="color: #b22222;">seconds</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">usleep</span>(<span style="color: #228b22;">useconds_t</span> <span style="color: #a0522d;">useconds</span>); <span style="color: #b22222;">// </span><span style="color: #b22222;">microseconds</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">nanosleep</span>(<span style="color: #a020f0;">const</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">timespec</span> *<span style="color: #a0522d;">rqtp</span>, <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">timespec</span> *<span style="color: #a0522d;">rmtp</span>);
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org59dd672" class="outline-2">
+<h2 id="org59dd672"><span class="section-number-2">11</span> Shell Utilities</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>sort -k 4 -n</li>
+<li>tee</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-sh">  <span style="color: #a020f0;">for</span> name<span style="color: #a020f0;"> in</span> data/github-bench/*; <span style="color: #a020f0;">do</span> 
+      <span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"===== $name"</span><span style="color: #8b2252;">\</span>
+          | tee -a log.txt; { <span style="color: #a020f0;">time</span> helium --create-cache $<span style="color: #a0522d;">name</span>; } 2&gt;&amp;1<span style="color: #8b2252;">\</span>
+          | tee -a log.txt; <span style="color: #a020f0;">done</span>
+</pre>
+</div>
+
+<p>
+Another example: redirect output of time
+</p>
+<pre class="example">
+{ time sleep 1 ; } 2&gt; time.txt
+{ time sleep 1 ; } 2&gt;&amp;1 | tee -a time.txt
+</pre>
+
+
+<ul class="org-ul">
+<li>xz: a general-purpose data compression tool</li>
+<li>cpio: copy files between archives and directories</li>
+
+<li>shuf: random number generation</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">shuf -i 1-100 -n 1
+</pre>
+</div>
+<ul class="org-ul">
+<li><code>bc</code> calculator</li>
+
+<li>grep: -i (case insensitive), -n (show line number), -v (inverse), -H
+(show file name)</li>
+
+<li>xargs: consume the standard output, and integrate result with new
+command:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-shell">find /etc -name <span style="color: #8b2252;">'*.conf'</span> | xargs ls -l
+<span style="color: #b22222;"># </span><span style="color: #b22222;">the same as:</span>
+ls -l ~find ...~
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>time &lt;command&gt;</code>: # the total user and system time consumed by the shell and its children</li>
+<li><code>column</code>: formats its input into multiple columns. <code>mount | column -t</code></li>
+<li><code>dd</code>: <code>dd if=xxx.iso of=/dev/sdb bs=4m; sync</code></li>
+<li><code>convert</code>: <code>convert xxx.jpg -resize 800 xxx.out.jpg # 800x&lt;height&gt;</code></li>
+<li><code>nl</code>: <code>nl &lt;filename&gt;</code> 添加行号。输出到stdout</li>
+<li><code>ln</code>: <code>ln -s &lt;target&gt; &lt;linkname&gt;</code> 记忆：新的东西总要最后才发布。</li>
+<li><code>ls</code>: order: <code>-r</code> reverse; <code>-s</code> file size; <code>X</code> extension; <code>-t</code> time</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org3d57b66" class="outline-3">
+<h3 id="org3d57b66"><span class="section-number-3">11.1</span> Patch System</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+Create a patch (notice the order: old then new):
+</p>
+<pre class="example">
+diff -u hello.c hello_new.c &gt; hello.patch
+diff -Naur /usr/src/openvpn-2.3.2 /usr/src/openvpn-2.3.4 &gt; openvpn.patch
+</pre>
+
+<p>
+To apply a patch
+</p>
+<pre class="example">
+patch -p3 &lt; /path/to/openvpn.patch
+patch -p1 &lt;patch -d /path/to/old/file
+</pre>
+
+<p>
+the number after <code>p</code> indicates how many the leading slashes are skipped when find the old file
+</p>
+
+<p>
+To reverse (un-apply) a patch:
+</p>
+
+<pre class="example">
+patch -p1 -R &lt;patch
+</pre>
+
+<p>
+This works as if you swapped the old and new file when creating the patch.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0bc9511" class="outline-3">
+<h3 id="org0bc9511"><span class="section-number-3">11.2</span> tr: translate characters</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+tr &lt;string1&gt; &lt;string2&gt;
+</p>
+
+<p>
+the characters in string1 are translated into the characters in string2
+where the first character in string1 is translated into the first character in string2 and so on.  If string1 is longer than string2,
+the last character found in string2 is duplicated until string1 is exhausted.
+</p>
+
+<p>
+characters in the string can be:
+</p>
+
+<p>
+any characters will represent itself if not:
+</p>
+
+<ul class="org-ul">
+<li><code>\\octal</code>: A backslash followed by 1, 2 or 3 octal digits</li>
+<li><code>\n</code>, <code>\t</code></li>
+<li><code>a-z</code>: inclusive, ascending</li>
+<li><code>[:class:]</code>: space, upper, lower, alnum
+<ul class="org-ul">
+<li>if <code>[:upper:]</code> and <code>[:lower:]</code> appears in the same relative position, they will correlate.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf750409" class="outline-3">
+<h3 id="orgf750409"><span class="section-number-3">11.3</span> uniq: report or filter out repeated lines in a file</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+Repeated lines in the input will not be detected if they are not adjacent,
+so it may be necessary to sort the files first.
+</p>
+
+<ul class="org-ul">
+<li><code>uniq -c</code>: Precede each output line with the count of the number of
+times the line occurred in the input, followed by a single
+space. You can then comtine this with <code>sort -n</code></li>
+<li><code>-u</code>: Only output lines that are not repeated in the input.</li>
+<li><code>-i</code>: Case insensitive comparison of lines.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9880852" class="outline-3">
+<h3 id="org9880852"><span class="section-number-3">11.4</span> Find</h3>
+<div class="outline-text-3" id="text-11-4">
+<div class="org-src-container">
+<pre class="src src-shell">find . -type f -name *.flac -exec mv {} ../out/ <span style="color: #8b2252;">\;</span>
+</pre>
+</div>
+<p>
+Copy file based on find, and take care of quotes and spaces:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">find CloudMusic -type f -name <span style="color: #8b2252;">"*mp3"</span> -exec cp <span style="color: #8b2252;">"{}"</span> all_music <span style="color: #8b2252;">\;</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>find</li>
+</ul>
+<pre class="example">
+find ~/data/fast/pick-master/ -name '*.[ch]'
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgae5975c" class="outline-2">
+<h2 id="orgae5975c"><span class="section-number-2">12</span> Trouble Shooting</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-org91ceef1" class="outline-3">
+<h3 id="org91ceef1"><span class="section-number-3">12.1</span> Cannot su root</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+When su cannot change to root, run
+</p>
+<pre class="example">
+chmod u+s /bin/su
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgaed7c5b" class="outline-3">
+<h3 id="orgaed7c5b"><span class="section-number-3">12.2</span> in docker, cannot open chromium</h3>
+<div class="outline-text-3" id="text-12-2">
+<blockquote>
+<p>
+failed to move to new namespace: PID namespaces supported, Network
+namespace supported, but failed: errno = Operation not permitted.
+</p>
+</blockquote>
+
+<p>
+Solution
+</p>
+<pre class="example">
+chromium --no-sandbox
+</pre>
+</div>
+</div>
+<div id="outline-container-org6c32e20" class="outline-3">
+<h3 id="org6c32e20"><span class="section-number-3">12.3</span> Encoding</h3>
+<div class="outline-text-3" id="text-12-3">
+<p>
+When converting MS windows format to unix format, you can use emacs
+and call <code>set-buffer-file-coding-system</code> and set to unix.  Or you can
+use <code>dos2unix</code>, perhaps by
+</p>
+
+<pre class="example">
+find . -name *.java | xargs dos2unix
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgeaffead" class="outline-3">
+<h3 id="orgeaffead"><span class="section-number-3">12.4</span> Cannot open shared library</h3>
+<div class="outline-text-3" id="text-12-4">
+<p>
+On <code>CentOS</code>, the default <code>LD_LIBRARY_PATH</code> does not contains the
+<code>/usr/local/lib</code>.  The consequence is the <code>-lpugi</code> and <code>-lctags</code> are
+not recognized because they are put in that directory.  Set it, or
+edit <code>/etc/ld.conf.d/local.conf</code> and add the path.  After that, run
+<code>ldconf</code> as root to update the database.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8ce3b0b" class="outline-3">
+<h3 id="org8ce3b0b"><span class="section-number-3">12.5</span> auto expansion error for latex font</h3>
+<div class="outline-text-3" id="text-12-5">
+<p>
+when compiling latex using acmart template, auto expansion error is
+reported.
+</p>
+
+<p>
+Solution:
+</p>
+<pre class="example">
+mktexlsr # texhash
+updmap-sys
+</pre>
+
+<p>
+Reference: <a href="https://github.com/borisveytsman/acmart/issues/95">https://github.com/borisveytsman/acmart/issues/95</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0568a45" class="outline-3">
+<h3 id="org0568a45"><span class="section-number-3">12.6</span> time not up-to-date</h3>
+<div class="outline-text-3" id="text-12-6">
+<p>
+Although I set the right timezone (check by <code>timedatectl</code>), the clock
+is still incorrect. To fix that, install <code>ntp</code> package and run
+</p>
+
+<pre class="example">
+sudo ntpd -qg
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org58ad8ff" class="outline-3">
+<h3 id="org58ad8ff"><span class="section-number-3">12.7</span> backlight on TP25</h3>
+<div class="outline-text-3" id="text-12-7">
+<p>
+For regular laptops, using debian
+</p>
+
+<pre class="example">
+cat /sys/class/backlight/intel_backlight/max_brightness
+cat /sys/class/backlight/intel_backlight/brightness
+
+echo 400 &gt; /sys/class/backlight/intel_backlight/brightness
+</pre>
+
+<p>
+But on Archlinux, on TP25, The <code>xorg-xbacklight</code> is not working. The
+drop-in replacement <code>acpilight</code> (aur) does.
+</p>
+
+<p>
+To setup for video group users to adjust backlight, place a file
+<code>/etc/udev/rules.d/90-backlight.rules</code>
+</p>
+
+<pre class="example">
+SUBSYSTEM=="backlight", ACTION=="add", \
+  RUN+="/bin/chgrp video %S%p/brightness", \
+  RUN+="/bin/chmod g+w %S%p/brightness"
+</pre>
+
+<p>
+The command is still <code>xbacklight</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbfc5179" class="outline-3">
+<h3 id="orgbfc5179"><span class="section-number-3">12.8</span> xinit won't start</h3>
+<div class="outline-text-3" id="text-12-8">
+<p>
+On Debian, when I <code>dist-upgrade</code> Debian 8 Jessie to 9 Stretch,
+the <code>startx</code> stop working.
+I try install a Debian 9 from its own image, and still the same result.
+The error message says:
+</p>
+<blockquote>
+<p>
+vesa cannot read int vect
+screen found but none leave a usable configuration
+xf86enableioports failed to set iopl for i/o
+</p>
+</blockquote>
+
+<p>
+The trick is you need:
+</p>
+<pre class="example">
+chomd u+s /usr/bin/xinit
+</pre>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://rethinkdb.com/blog/handling-stack-overflow-on-custom-stacks/">https://rethinkdb.com/blog/handling-stack-overflow-on-custom-stacks/</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.gnu.org/software/libsigsegv/">https://www.gnu.org/software/libsigsegv/</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,3085 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Racket</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Racket</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge3cc752">1. Basic</a>
+<ul>
+<li><a href="#org331f4ac">1.1. Local binding</a></li>
+<li><a href="#orga7e7895">1.2. require</a></li>
+</ul>
+</li>
+<li><a href="#org3141330">2. Black Magic</a></li>
+<li><a href="#org97e1315">3. Pattern Matching (racket/match)</a></li>
+<li><a href="#org280dc45">4. Macros</a>
+<ul>
+<li><a href="#org4f0f34c">4.1. Reader</a></li>
+<li><a href="#org29a62b5">4.2. Syntax Model</a></li>
+<li><a href="#orgba74b7b">4.3. Hygienic</a></li>
+</ul>
+</li>
+<li><a href="#org1f94d7b">5. Rackunit</a></li>
+<li><a href="#org8b020f2">6. Numbers</a></li>
+<li><a href="#org93b4308">7. Procedure</a></li>
+<li><a href="#orgca98855">8. Control Structure</a></li>
+<li><a href="#org78ff3de">9. String</a></li>
+<li><a href="#org6d2e8dd">10. Regular Expression</a></li>
+<li><a href="#org32f7182">11. Pair, List, Vector</a></li>
+<li><a href="#org53b0bc7">12. Hash Tables</a></li>
+<li><a href="#org55584d8">13. Sequence</a></li>
+<li><a href="#org117018c">14. Hash set (use racket/set)</a></li>
+<li><a href="#org4651f77">15. structure</a>
+<ul>
+<li><a href="#org3775c0c">15.1. Field options</a></li>
+<li><a href="#org0adf3a1">15.2. Subtyping</a></li>
+<li><a href="#org70ff566">15.3. Structure options</a></li>
+<li><a href="#org7cdbe57">15.4. Generic Interface</a></li>
+</ul>
+</li>
+<li><a href="#org697b9cc">16. Multiple Values</a></li>
+<li><a href="#org076e6f0">17. Exception</a></li>
+<li><a href="#org03ad732">18. Concurrency</a></li>
+<li><a href="#orgda2b4fc">19. IO</a>
+<ul>
+<li><a href="#org21bd4ec">19.1. ports</a>
+<ul>
+<li><a href="#orge32357a">19.1.1. General operation</a></li>
+<li><a href="#org4dc3123">19.1.2. File IO</a></li>
+<li><a href="#org92d7214">19.1.3. String IO</a></li>
+<li><a href="#orge42ae38">19.1.4. Extra</a></li>
+</ul>
+</li>
+<li><a href="#orgee0f8a5">19.2. Reading</a></li>
+<li><a href="#orga092fda">19.3. Writing</a></li>
+</ul>
+</li>
+<li><a href="#org97215f0">20. OS</a>
+<ul>
+<li><a href="#orgaa5c5ee">20.1. Path</a></li>
+<li><a href="#org403708e">20.2. File System</a></li>
+<li><a href="#orge617d65">20.3. Networking</a></li>
+<li><a href="#org71d65b7">20.4. Processes</a></li>
+<li><a href="#org408e3b4">20.5. CMD parsing (racket/cmdline)</a></li>
+</ul>
+</li>
+<li><a href="#orgf1b2adf">21. Trouble shooting</a>
+<ul>
+<li><a href="#org6b9b359">21.1. racket cannot find browsers</a></li>
+</ul>
+</li>
+<li><a href="#orgda82beb">22. Logger</a></li>
+<li><a href="#orgd09194b">23. Libraries</a>
+<ul>
+<li><a href="#orgfc1aa3c">23.1. Drawing libraries</a></li>
+<li><a href="#orge4bf07d">23.2. pict-lib</a>
+<ul>
+<li><a href="#orgfc8093b">23.2.1. Constructors</a>
+<ul>
+<li><a href="#org765af65">23.2.1.1. More constructors</a></li>
+</ul>
+</li>
+<li><a href="#org6cbff15">23.2.2. Combiners</a></li>
+<li><a href="#org5e77083">23.2.3. Adjusters</a></li>
+<li><a href="#org20f8eb4">23.2.4. Bounding box</a></li>
+<li><a href="#org8e4fcad">23.2.5. Pict finder</a></li>
+<li><a href="#orgc8f1d85">23.2.6. Tree layout</a></li>
+</ul>
+</li>
+<li><a href="#orgd7f60ad">23.3. graph</a></li>
+<li><a href="#orgb003f66">23.4. 2htdp/image</a>
+<ul>
+<li><a href="#orgb28389d">23.4.1. Common Concepts</a></li>
+<li><a href="#org9207e1f">23.4.2. basic shape</a></li>
+<li><a href="#orgf1741c4">23.4.3. Overlay</a></li>
+<li><a href="#orgf024483">23.4.4. scene</a></li>
+<li><a href="#org445a516">23.4.5. transform</a></li>
+<li><a href="#org7a3c581">23.4.6. bitmap</a></li>
+<li><a href="#orgb7e424d">23.4.7. properties</a></li>
+</ul>
+</li>
+<li><a href="#org1996e99">23.5. Networking</a>
+<ul>
+<li><a href="#org3234c95">23.5.1. HTML parsing</a></li>
+<li><a href="#orgce20455">23.5.2. URL &amp; HTTP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge3cc752" class="outline-2">
+<h2 id="orge3cc752"><span class="section-number-2">1</span> Basic</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org331f4ac" class="outline-3">
+<h3 id="org331f4ac"><span class="section-number-3">1.1</span> Local binding</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The local binding is established by <code>let</code> family. Apart from normal
+<code>let</code>, racket has a second form, known as <b>named let</b>.
+</p>
+
+<pre class="example">
+(let proc-id ([id init-expr] ...) body ...+)
+</pre>
+
+<p>
+It first evaluates the init-exprs, the resulting values become
+arguments to <b>an application of a procedure</b>.
+</p>
+
+<pre class="example">
+(lambda (id ...) body ...+)
+</pre>
+
+<p>
+Within the body, <code>proc-id</code> is bound to the procedure itself.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">let</span> <span style="color: #0000ff;">fac</span> ([<span style="color: #a0522d;">n</span> <span style="color: #2e8b57;">10</span>])
+    (<span style="color: #a020f0;">if</span> (<span style="color: #483d8b;">zero?</span> n) <span style="color: #2e8b57;">1</span>
+        (<span style="color: #483d8b;">*</span> n (fac (<span style="color: #483d8b;">sub1</span> n)))))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga7e7895" class="outline-3">
+<h3 id="orga7e7895"><span class="section-number-3">1.2</span> require</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<code>require</code> introduces bindings. It can only be used in two context, the
+top-level context, or the module context (in which it introduce module
+bindings).
+</p>
+
+<p>
+To require a installed module, use <code>(lib "rel-string")</code>, and its
+widely used shorthand <code>(require id)</code> where id is the unquoted string.
+</p>
+
+<p>
+When requiring a local file, use plain relative (to current directory)
+path in a string. The path should NOT start or end with a slash. It
+seems that the suffix is optional.
+</p>
+
+<p>
+To use a absolute path, you have to use <code>(file string)</code>, and
+<code>expand-user-path</code> is called, so you can use:
+</p>
+<ul class="org-ul">
+<li>relative path</li>
+<li>tide home directory</li>
+<li>absolute path</li>
+</ul>
+
+<p>
+The <code>#lang</code> is a shorthand.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #a020f0;">#lang</span> <span style="color: #a0522d;">racket</span>
+decl <span style="color: #a020f0;">...</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">equivalent to</span>
+(<span style="color: #a020f0;">module</span> <span style="color: #0000ff;">name</span> <span style="color: #a0522d;">racket</span>
+  decl <span style="color: #a020f0;">...</span>)
+</pre>
+</div>
+
+<p>
+Where name is the file name.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3141330" class="outline-2">
+<h2 id="org3141330"><span class="section-number-2">2</span> Black Magic</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="http://www.greghendershott.com/2015/07/keyword-structs-revisited.html">http://www.greghendershott.com/2015/07/keyword-structs-revisited.html</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">begin-for-syntax</span>
+    (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">syntax-&gt;keyword</span> (<span style="color: #483d8b;">compose1</span>
+                             <span style="color: #483d8b;">string-&gt;keyword</span>
+                             <span style="color: #483d8b;">symbol-&gt;string</span>
+                             <span style="color: #483d8b;">syntax-&gt;datum</span>)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org97e1315" class="outline-2">
+<h2 id="org97e1315"><span class="section-number-2">3</span> Pattern Matching (racket/match)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The syntax:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #483d8b;">match</span> val-expr clause <span style="color: #a020f0;">...</span>)
+
+  clause <span style="color: #483d8b;">=</span> [pat [<span style="color: #cd0000;">#:when</span> cond-expr] body ...+]
+</pre>
+</div>
+<p>
+cond-expr is in teh scope of pat (to have the bind or not??).
+</p>
+
+<p>
+The clauses are checked one-by-one, and the body of first match will
+be in the tail position.
+</p>
+
+<p>
+Pattern can be
+</p>
+<ul class="org-ul">
+<li><code>_</code> to match anything and abandon it.</li>
+<li>a single id which matches anything and bind to it. An ID can appear
+more than once, in which case the pattern is considered matching
+only if all of the bindings of ID are same.
+<ul class="org-ul">
+<li>e.g. <code>(list a b a)</code> will not match <code>'(1 2 3)</code>, but will match <code>'(1
+    2 1)</code></li>
+</ul></li>
+<li>a list which binds to the destruction.</li>
+<li>The quote can not be used to construct list of symbols, it will
+match verbatically instead. For that, use quasiquote, which supports
+the evaluation and splice-eval.
+<ul class="org-ul">
+<li>e.g. <code>`(1 ,a ,b)</code> will match <code>'(1 2 3)</code> with <code>a</code> and <code>b</code> bound.</li>
+</ul></li>
+<li>hash-table can be used to match the key and values, Using <code>...</code> in
+it means collect into a list.
+<ul class="org-ul">
+<li>e.g. <code>(hash-table ("key1" a) ("key2" b))</code>.</li>
+<li>e.g. <code>(hash-table (key val) ...)</code> will match <code>#hash(("a" . 1) ("b"
+    . 2))</code>, and key will be <code>'("b" "a")</code></li>
+</ul></li>
+<li>cons can be used to match pairs</li>
+<li><code>struct-id</code> can be used to match fields by position. Use <code>(struct
+  struct-id _)</code> to match an instance of structure itself. E.g.
+<ul class="org-ul">
+<li>for structure <code>(struct tree (val left right))</code></li>
+<li>pattern <code>(tree a (tree b  _ _) _)</code> will match</li>
+<li><code>(tree 0 (tree 1 #f #f) #f)</code></li>
+<li>with <code>a</code> bound to 0, <code>b</code> bound to 1</li>
+</ul></li>
+<li><code>(and pat ...)</code> is used to combine a list of patterns. The typical usage is
+<code>(and id pat)</code> where you can bind <code>id</code> and still check the <code>pat</code>
+against the entire value. <code>or</code> is also available but not that
+useful.</li>
+<li><code>(? expr pat ...)</code>: combine a predicate and the <code>and</code>
+pattern. I.e. first, apply <code>expr</code> on the value to match, if <code>#t</code>,
+the additional <code>pat</code> are matched using the above <code>and</code> pattern.</li>
+</ul>
+
+<p>
+There are some syntax sugar for matching:
+</p>
+<ul class="org-ul">
+<li><code>(match-lambda clause ...)</code>: equivalent to <code>(lambda (id) (match id
+  clause ...))</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org280dc45" class="outline-2">
+<h2 id="org280dc45"><span class="section-number-2">4</span> Macros</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Matthias Felleisen boils down macros into three main categories:
+</p>
+<ol class="org-ol">
+<li>Binding form</li>
+<li>Change order of evaluation</li>
+<li>Make DSLs</li>
+</ol>
+
+<p>
+Different from common lisp where you have compile time and runtime,
+racket has the concept called <i>level</i>. The level 0 is roughly runtime,
+and level 1 is compile time. But there're also level -1 and level 2,
+3, &#x2026;, thus it is more general. But typically the first two levels
+are used.
+</p>
+
+<p>
+When using racket syntax, you typically need to require the base
+library for it, by <code>(require (for-syntax racket/base))</code>.
+</p>
+
+<p>
+Everything boils down to <code>define-syntax</code> and <code>syntax-case</code>.
+<code>define-syntax</code> is nothing fancy. It just define a binding, same as
+define, but the binding is in effect at level 1. Thus actually we
+typically still define it as a lambda expression, thus it has the
+shorthand to write argument (stx) in the same line. <code>syntax-rules</code>
+itself is a lambda expression surounding <code>syntax-case</code>. Thus second
+form does not use syntax-rules, but use syntax-case directly.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define-syntax</span> <span style="color: #a0522d;">foo</span>
+    (<span style="color: #a020f0;">syntax-rules</span> ()
+      ((<span style="color: #a020f0;">_</span> a <span style="color: #a020f0;">...</span>) (<span style="color: #483d8b;">printf</span> <span style="color: #8b2252;">"~a\n"</span> (<span style="color: #483d8b;">list</span> a <span style="color: #a020f0;">...</span>)))))
+  <span style="color: #b22222;">;; </span><span style="color: #b22222;">&lt;=&gt;</span>
+  (<span style="color: #a020f0;">define-syntax</span> (<span style="color: #0000ff;">foo</span> stx)
+    (<span style="color: #a020f0;">syntax-case</span> stx ()
+      (<span style="color: #a020f0;">_</span> a <span style="color: #a020f0;">...</span>)
+      #'(<span style="color: #483d8b;">printf</span> <span style="color: #8b2252;">"~a\n"</span> (<span style="color: #483d8b;">list</span> a <span style="color: #a020f0;">...</span>))))
+</pre>
+</div>
+
+<p>
+<code>syntax-case</code> match a given syntax object against patterns, and return
+another syntax object. It is doing the transformation. You can
+actually do the transformation yourself, using <code>sytax-&gt;datum</code>,
+operates on it, and use <code>datum-&gt;syntax</code> to convert it back. So
+<code>syntax-case</code> just provides an easier way to do that, in the sense
+that you don't need to convert explicitly. Instead, you specify by
+position the argument, to match the datum, and construct a syntax
+object as a result.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">syntax-case</span> stx-expr (literal-id <span style="color: #a020f0;">...</span>)
+    [pattern result-expr] <span style="color: #a020f0;">...</span>)
+</pre>
+</div>
+
+<p>
+Note the result is <code>result-expr</code>, that means the expr is going to be
+executed, and the return value should be a syntax object.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define-syntax</span> (<span style="color: #0000ff;">foo</span> stx)
+    (<span style="color: #a020f0;">syntax-case</span> stx ()
+      [(<span style="color: #a020f0;">_</span> a b c)
+       #'(<span style="color: #a020f0;">if</span> a b c)]))
+</pre>
+</div>
+
+<p>
+See, stx is matched against the pattern <code>(_ a b c)</code>, and
+destructed. <code>a b c</code> can then be used to construct the returned syntax
+object. Note, the return must be a syntax object, it replaces the (foo
+xxx) and be evaluated. The first is <code>_</code> because we don't care about
+the leading identifier <code>#'foo</code>.
+</p>
+
+<p>
+<code>syntax-rules</code> is a lambda expression, that calls <code>syntax-case</code> to
+return a syntax object. It is used to define multiple patterns and
+templates at one time. Note that the result is a "template" instead of
+"expr", meaning it is restricted: cannot run any code, merely return
+the template as if quoted. Thus when using syntax-rules, the result
+need not be quoted by <code>syntax</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">syntax-rules</span> (literal-id <span style="color: #a020f0;">...</span>)
+    [(id . pattern) template] <span style="color: #a020f0;">...</span>)
+  <span style="color: #b22222;">;; </span><span style="color: #b22222;">&lt;=&gt;</span>
+  (<span style="color: #a020f0;">lambda</span> (stx)
+    (<span style="color: #a020f0;">syntax-case</span> stx (literal-id <span style="color: #a020f0;">...</span>)
+      [(generated-id . pattern) (<span style="color: #483d8b;">syntax-protect</span> #<span style="color: #2e8b57;">'template</span>)] <span style="color: #a020f0;">...</span>))
+</pre>
+</div>
+
+<p>
+<code>define-syntax-rule</code> is shorthand for <code>define-syntax</code> and
+<code>syntax-rules</code>. The pattern is a list, the first is an identifier, the
+following are pattern variables that matches anything. The template is
+the constructed form to replace the old form. It is not quoted,
+because it uses syntax-rules to construct. All pattern variables will
+be replaced by the actual form.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define-syntax-rule</span> (<span style="color: #0000ff;">id</span> . pattern) template)
+  <span style="color: #b22222;">;; </span><span style="color: #b22222;">&lt;=&gt;</span>
+  (<span style="color: #a020f0;">define-syntax</span> <span style="color: #a0522d;">id</span>
+    (<span style="color: #a020f0;">syntax-rules</span> ()
+      [(id . pattern) template]))
+</pre>
+</div>
+<p>
+This is so constrained. The following is equivalent to the above:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define-syntax-rule</span> (<span style="color: #0000ff;">foo</span> a b c)
+    (<span style="color: #a020f0;">if</span> a b c))
+</pre>
+</div>
+
+<p>
+<code>with-syntax</code> is often used to nest syntax. It is like <code>let</code> but is
+able to bind pattern variables.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">syntax-case</span> &lt;syntax&gt; () [&lt;pattern&gt; &lt;body&gt;] <span style="color: #a020f0;">...</span>)
+(<span style="color: #a020f0;">syntax-case</span> (<span style="color: #483d8b;">list</span> stx-expr <span style="color: #a020f0;">...</span>) () [(pattern <span style="color: #a020f0;">...</span>) (<span style="color: #a020f0;">let</span> () body ...+)])
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">&lt;=&gt;</span>
+(<span style="color: #a020f0;">with-syntax</span> ([&lt;pattern&gt; &lt;stx-expr&gt;] <span style="color: #a020f0;">...</span>) &lt;body&gt; ...+)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org4f0f34c" class="outline-3">
+<h3 id="org4f0f34c"><span class="section-number-3">4.1</span> Reader</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+To understand how macro works, we need to know how the reader handles
+the program.
+</p>
+
+<p>
+A datum is the basic output of a read. Datum can be compound, in which
+case the reader is recursively read the components. Some datums are
+interned by the reader, i.e. their values are always <code>eq?</code> when they
+are <code>equal?</code>. Such datums includes: symbols, keywords, strings, byte
+strings, regexps, characters, numbers.
+</p>
+
+<p>
+Some special read notation:
+</p>
+<ul class="org-ul">
+<li><code>#(1 2 3)</code> for vectors</li>
+<li><code>#s(struct-id 1 2 3)</code> for prefab structure types. note that for
+complex structure, the print format is not intuitive.</li>
+<li><code>#hash(("a" . 5) ("b" b))</code> for hash tables</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org29a62b5" class="outline-3">
+<h3 id="org29a62b5"><span class="section-number-3">4.2</span> Syntax Model</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+A <i>syntax object</i> is a simple racket value + scope set + phase level.
+</p>
+
+<p>
+When require something, those functions are not visible in
+level 1. Thus if you want to use those when macro expands, you need
+<code>(reqire (for-syntax racket/base))</code>.  Similarly, <code>for-meta</code> can be
+used to specify any number as shift level.
+</p>
+
+<p>
+Similaryly, a top-level <code>begin</code> is not visible in macro, we need
+<code>begin-for-syntax</code> to bind variables to use at level 1.
+</p>
+
+<p>
+Use these to expand a macro:
+</p>
+<ul class="org-ul">
+<li><code>(expand top-level-form)</code>: fully expand</li>
+<li><code>(expand-once top-level-form)</code>: expand only once</li>
+</ul>
+
+<p>
+Here's an example from Racket Guide that implements call-by-reference
+</p>
+
+<p>
+Should generate
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">define</span> (<span style="color: #0000ff;">do-f</span> get-a get-b put-a! put-b!)
+  (define-get/put-id <span style="color: #a0522d;">a</span> get-a put-a!)
+  (define-get/put-id <span style="color: #a0522d;">b</span> get-b put-b!)
+  (swap a b))
+(do-f (<span style="color: #a020f0;">lambda</span> () x)
+      (<span style="color: #a020f0;">lambda</span> () y)
+      (<span style="color: #a020f0;">lambda</span> (v) (<span style="color: #a020f0;">set!</span> x v))
+      (<span style="color: #a020f0;">lambda</span> (v) (<span style="color: #a020f0;">set!</span> y v)))
+</pre>
+</div>
+
+<p>
+The test code:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">  (define-cbr (<span style="color: #0000ff;">f</span> a b)
+    (swap a b))
+
+  (<span style="color: #a020f0;">let</span> ([<span style="color: #a0522d;">x</span> <span style="color: #2e8b57;">1</span>] [<span style="color: #a0522d;">y</span> <span style="color: #2e8b57;">2</span>])
+    (f x y)
+    (<span style="color: #483d8b;">list</span> x y))
+</pre>
+</div>
+
+<p>
+The actual implementation:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define-syntax-rule</span> (<span style="color: #0000ff;">define-get/put-id</span> <span style="color: #a0522d;">id</span> get put!)
+    (<span style="color: #a020f0;">define-syntax</span> <span style="color: #a0522d;">id</span>
+      (<span style="color: #483d8b;">make-set!-transformer</span>
+       (<span style="color: #a020f0;">lambda</span> (stx)
+         (<span style="color: #a020f0;">syntax-case</span> stx (<span style="color: #a020f0;">set!</span>)
+           [id (<span style="color: #483d8b;">identifier?</span> (<span style="color: #a020f0;">syntax</span> id)) (<span style="color: #a020f0;">syntax</span> (get))]
+           [(<span style="color: #a020f0;">set!</span> id e) (<span style="color: #a020f0;">syntax</span> (put! e))])))))
+
+  (<span style="color: #a020f0;">define-syntax-rule</span> (<span style="color: #0000ff;">define-cbr</span> (id arg <span style="color: #a020f0;">...</span>) body)
+    (<span style="color: #a020f0;">begin</span>
+      (<span style="color: #a020f0;">define-syntax</span> <span style="color: #a0522d;">id</span>
+        (<span style="color: #a020f0;">syntax-rules</span> ()
+          [(id actual (<span style="color: #a020f0;">...</span> <span style="color: #a020f0;">...</span>))
+           (do-f (<span style="color: #a020f0;">lambda</span> () actual)
+                 (<span style="color: #a020f0;">...</span> <span style="color: #a020f0;">...</span>)
+                 (<span style="color: #a020f0;">lambda</span> (v)
+                   (<span style="color: #a020f0;">set!</span> actual v))
+                 (<span style="color: #a020f0;">...</span> <span style="color: #a020f0;">...</span>))]))
+      (define-for-cbr <span style="color: #a0522d;">do-f</span> (arg <span style="color: #a020f0;">...</span>)
+        () <span style="color: #b22222;">; </span><span style="color: #b22222;">explained below...</span>
+        body)))
+
+  (<span style="color: #a020f0;">define-syntax</span> <span style="color: #a0522d;">define-for-cbr</span>
+    (<span style="color: #a020f0;">syntax-rules</span> ()
+      [(define-for-cbr <span style="color: #a0522d;">do-f</span> (id0 id <span style="color: #a020f0;">...</span>)
+         (gens <span style="color: #a020f0;">...</span>) body)
+       (define-for-cbr <span style="color: #a0522d;">do-f</span> (id <span style="color: #a020f0;">...</span>)
+         (gens <span style="color: #a020f0;">...</span> (id0 get put)) body)]
+      [(define-for-cbr <span style="color: #a0522d;">do-f</span> ()
+         ((id get put) <span style="color: #a020f0;">...</span>) body)
+       (<span style="color: #a020f0;">define</span> (<span style="color: #0000ff;">do-f</span> get <span style="color: #a020f0;">...</span> put <span style="color: #a020f0;">...</span>)
+         (define-get/put-id <span style="color: #a0522d;">id</span> get put) <span style="color: #a020f0;">...</span>
+         body)]))
+</pre>
+</div>
+
+<p>
+The define-for-cbr is pretty tricky, the following <code>with-syntax</code> is
+better:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define-syntax</span> (<span style="color: #0000ff;">define-for-cbr</span> <span style="color: #a0522d;">stx</span>)
+    (<span style="color: #a020f0;">syntax-case</span> stx ()
+      [(<span style="color: #a020f0;">_</span> do-f (id <span style="color: #a020f0;">...</span>) body)
+       (<span style="color: #a020f0;">with-syntax</span> ([(get <span style="color: #a020f0;">...</span>) (<span style="color: #483d8b;">generate-temporaries</span> #'(id <span style="color: #a020f0;">...</span>))]
+                     [(put <span style="color: #a020f0;">...</span>) (<span style="color: #483d8b;">generate-temporaries</span> #'(id <span style="color: #a020f0;">...</span>))])
+         #'(<span style="color: #a020f0;">define</span> (<span style="color: #0000ff;">do-f</span> get <span style="color: #a020f0;">...</span> put <span style="color: #a020f0;">...</span>)
+             (define-get/put-id <span style="color: #a0522d;">id</span> get put) <span style="color: #a020f0;">...</span>
+             body))]))
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgba74b7b" class="outline-3">
+<h3 id="orgba74b7b"><span class="section-number-3">4.3</span> Hygienic</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+A very good writing about syntax-case, and how to (NOT) write
+non-hygienic macros.
+<a href="http://blog.racket-lang.org/2011/04/writing-syntax-case-macros.html">http://blog.racket-lang.org/2011/04/writing-syntax-case-macros.html</a>
+</p>
+
+
+<ul class="org-ul">
+<li>a syntax object is a plain datum with some lexical context
+information</li>
+<li><code>syntax-&gt;datum</code> accepts one syntax object, and return the raw list</li>
+<li><code>datum-&gt;syntax</code> accepts one context syntax object to donor its
+context, and a plain datum to be converted.</li>
+<li>scheme macro is hygienic, i.e.
+<ol class="org-ol">
+<li>if it inserts a binding, it will be renamed through its lexical
+scope</li>
+<li>if it refers a free variable, it refers to the one in scope in
+which <b>the definition of the macro</b> happens.</li>
+</ol></li>
+</ul>
+
+<p>
+Thus, to break the hygienic
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">define-syntax</span> (<span style="color: #0000ff;">while</span> stx)
+  (<span style="color: #a020f0;">syntax-case</span> stx ()
+    [(<span style="color: #a020f0;">_</span> test body <span style="color: #a020f0;">...</span>)
+     (<span style="color: #a020f0;">syntax-case</span> (<span style="color: #483d8b;">datum-&gt;syntax</span> stx <span style="color: #2e8b57;">'it</span>) ()
+       [it #'(<span style="color: #a020f0;">let</span> <span style="color: #0000ff;">loop</span> ()
+               (<span style="color: #a020f0;">let</span> ([<span style="color: #a0522d;">it</span> test])
+                 (<span style="color: #a020f0;">when</span> it
+                   body <span style="color: #a020f0;">...</span>
+                   (loop))))])]))
+
+</pre>
+</div>
+
+<p>
+or using <code>with-syntax</code> to bind pattern variable:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">define-syntax</span> (<span style="color: #0000ff;">while</span> stx)
+  (<span style="color: #a020f0;">syntax-case</span> stx ()
+    [(<span style="color: #a020f0;">_</span> test body <span style="color: #a020f0;">...</span>)
+     (<span style="color: #a020f0;">with-syntax</span> ([it (<span style="color: #483d8b;">datum-&gt;syntax</span> stx <span style="color: #2e8b57;">'it</span>)])
+       #'(<span style="color: #a020f0;">let</span> <span style="color: #0000ff;">loop</span> ()
+           (<span style="color: #a020f0;">let</span> ([<span style="color: #a0522d;">it</span> test])
+             (<span style="color: #a020f0;">when</span> it
+               body <span style="color: #a020f0;">...</span>
+               (loop)))))]))
+</pre>
+</div>
+
+<p>
+This is primarily used to introduce a binding that is visible to the
+outside world. It seems that <i>syntax parameters</i> can do that better.
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org1f94d7b" class="outline-2">
+<h2 id="org1f94d7b"><span class="section-number-2">5</span> Rackunit</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Since racket has the <code>test</code> module concept, there needs no unit test
+framework. However, it seems that <code>rackunit</code> provides some
+predicate functions.
+</p>
+
+<p>
+In racket, each file is a module with the file name as the module
+name. You can define a submodule using <code>module*</code> and <code>module+</code>. The
+former can only appear exactly once for each module, while the latter
+can appear multiple times, all of them concatenated into a single
+module as if using <code>module*</code>.
+</p>
+
+<p>
+Thus, folks typically use <code>module*</code> to define a <code>main</code> module, which
+will be run by racket after the enclosing module by
+<code>racket</code>. <code>module+</code> is used to define <code>test</code> modules, and will be
+executed by <code>raco test</code> command.
+</p>
+
+<p>
+<code>rackunit</code> provides check APIs and also organize tests into cases and
+suites.  A check is a simple check, like equality. A test case is a
+group of checks. If one of them fails, the following will not be
+executed, and the test case fails. A suite is a group of test cases,
+and has a name.
+</p>
+
+<p>
+Check APIs (all of them accepts an optional message at the end):
+</p>
+<ul class="org-ul">
+<li><code>check-eq?</code></li>
+<li><code>check-not-eq?</code></li>
+<li><code>check-equal?</code></li>
+<li><code>check-not-equal?</code></li>
+<li><code>check-pred pred v</code>: check if apply pred on v will produce
+other than #f</li>
+<li><code>check-= v1 v2 epsilon</code>: |v1-v2| &lt;= epsilon</li>
+<li><code>check-true v</code>: #t</li>
+<li><code>check-false v</code>: #f</li>
+<li><code>check-not-flase v</code>: not #f</li>
+<li><code>check op v1 v2</code>: generic form, op is <code>(-&gt; any any any)</code></li>
+<li><code>fail</code>: fail unconditionally, useful when developing to mark some tests</li>
+</ul>
+
+<p>
+The following does not accept message, because they are straightforward:
+</p>
+<ul class="org-ul">
+<li><code>check-match v pattern</code>: check if v match pattern</li>
+</ul>
+
+<p>
+<code>test-begin expr ...</code> is used to group exprs, while <code>test-case name
+body ...+</code> accept a name for them, and get reported if test fails.
+</p>
+
+<p>
+Test suites are not going to run by default. This allows you to
+specify which tests to run. There're text (<code>run-tests</code> in
+<code>rackunit/text-ui</code>) and gui (<code>test/gui</code> in <code>rackunit/gui</code>) interfaces
+to select tests. Create a suite using <code>(test-suite name-expr test
+...)</code>. The tests can be single check or a test case.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b020f2" class="outline-2">
+<h2 id="org8b020f2"><span class="section-number-2">6</span> Numbers</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><code>/</code>: provide the fraction if given two numbers, not to round it.</li>
+<li><code>quotient n m</code>: <code>(truncate (/ n m))</code></li>
+<li><code>remainder n m</code>: seems that the result has the same sign with n</li>
+<li><code>modulo n m</code>: seems that the result has the same sign with m</li>
+<li><code>add1</code></li>
+<li><code>sub1</code></li>
+<li><code>abs</code></li>
+<li><code>max</code></li>
+<li><code>min</code></li>
+<li><code>gcd</code></li>
+<li><code>lcm</code>: least common multiple</li>
+<li><code>round</code></li>
+<li><code>floor</code></li>
+<li><code>ceiling</code></li>
+<li><code>truncate</code>: towards 0</li>
+<li><code>numerator</code></li>
+<li><code>denominator</code></li>
+</ul>
+
+<p>
+Computation
+</p>
+<ul class="org-ul">
+<li><code>sqrt</code></li>
+<li><code>expt e p</code>: e to the power of p</li>
+<li><code>exp z</code></li>
+<li><code>log z [b (exp 1)]</code></li>
+</ul>
+
+<p>
+Random
+</p>
+<ul class="org-ul">
+<li><code>random k</code>: <code>[0,k)</code></li>
+<li><code>random min max</code>: <code>[min,max)</code></li>
+<li><code>random-seed k</code></li>
+</ul>
+
+<p>
+With <code>racket/random</code>:
+</p>
+<ul class="org-ul">
+<li><code>random-sample seq n</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org93b4308" class="outline-2">
+<h2 id="org93b4308"><span class="section-number-2">7</span> Procedure</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+The <code>define</code> keyword can be used to bind a id to a variable, but most
+likely you are binding a procedure. So the syntax for arguments
+matters.
+</p>
+
+<pre class="example">
+  (define (head args) body ...+)
+  args = arg ... | arg ... . rest-id
+  arg = arg-id
+      | [arg-id default-expr]
+      | keyword arg-id
+      | keyword [arg-id default-expr]
+</pre>
+
+<p>
+Note how the rest-id are used to implement the <code>...</code> by using one dot.
+</p>
+
+<p>
+The context matters. In an internal-definition context, a <code>define</code>
+binds a local binding. At top level, it introduces <i>top-level
+binding</i>.
+</p>
+
+<p>
+In application of procedures, <code>apply</code> will apply the procedure with
+content of the list as argument, thus the procedure must accept <b>as
+many parameters as</b> the length of list. The list is actually more
+flexible, i.e. collected using <code>list*</code>.
+</p>
+
+<p>
+<code>compose</code> accepts one or more procedures, and composes them by
+applying one by one, and fold result into parameter to the next. The
+last procedure is applied first. There're two versions, <code>compose</code>
+allow arbitrary number of values to be passed between procedure calls,
+as long as the number of results and parameters match. <code>compose1</code>
+restricts this to exactly one value.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgca98855" class="outline-2">
+<h2 id="orgca98855"><span class="section-number-2">8</span> Control Structure</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li><code>if</code></li>
+<li><code>(cond [test-expr then-body ...+] ...)</code></li>
+</ul>
+
+<pre class="example">
+  (cond cond-clause ...)
+  cond-clause = [test-expr then-body ...+]
+              | [else then-body ...+]
+              | [test-expr =&gt; proc-expr]
+              | [test-expr]
+</pre>
+
+<ul class="org-ul">
+<li><code>and</code>: A typically trick: <code>(and (some expr) #t)</code> to return a boolean
+value
+<ul class="org-ul">
+<li>if no expr, return <code>#t</code></li>
+<li>one expr, return its value in tail position.</li>
+<li>Multiple exprs
+<ul class="org-ul">
+<li>if first eval to <code>#f</code>, return #f</li>
+<li><b>otherwise</b> recursive call with the rest of exprs in tail
+position.</li>
+</ul></li>
+</ul></li>
+
+<li><code>test-expr =&gt; proc-expr</code>: <code>proc-expr</code> must <b>produce</b> a procedure
+that accept exactly <b>one</b> argument, the result of <code>test-expr</code> is
+that argument. The value is returned.</li>
+<li><code>test-expr</code> without a body will return the result of
+<code>test-expr</code>. Not in tail position.</li>
+
+<li><code>(case val-expr [(datum ...) then-body ...+] ...)</code>: if val-expr
+matches one of datum, execute the body</li>
+<li><code>when</code></li>
+<li><code>unless</code></li>
+<li><code>(for ([id seq-expr] #:when guard-expr #:unless guard-expr) body)</code></li>
+<li><code>for/list</code>, <code>for/vector</code>, <code>for/hash</code></li>
+<li><code>for/and</code>, <code>for/or</code></li>
+<li><code>for/sum</code>, <code>for/product</code></li>
+<li><code>for/first</code>, <code>for/last</code></li>
+<li><code>for/fold</code></li>
+<li><code>for*</code>: like for, but with implicit #:when #t between each
+pair. Thus all clauses are nested. <code>for*</code> also has the form of
+different return values.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org78ff3de" class="outline-2">
+<h2 id="org78ff3de"><span class="section-number-2">9</span> String</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+The reading syntax of characters starts with <code>#\</code>, with following
+forms
+</p>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">ASCII</th>
+<th scope="col" class="org-left">name</th>
+<th scope="col" class="org-left">desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">#\null</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-left">#\backspace</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-left">#\tab</td>
+<td class="org-left">\t</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">#\newline #\linefeed</td>
+<td class="org-left">linefeed (\n), move cursor to next line</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-left">#\vtab</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-left">#\page</td>
+<td class="org-left">page break</td>
+</tr>
+
+<tr>
+<td class="org-right">13</td>
+<td class="org-left">#\return</td>
+<td class="org-left">carriage return (\r), move cursor to begin</td>
+</tr>
+
+<tr>
+<td class="org-right">32</td>
+<td class="org-left">#\space</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">127</td>
+<td class="org-left">#\rubout</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">#\&lt;digit<sub>8</sub>&gt;<sup>{3}</sup></td>
+<td class="org-left">Unicode for octal number</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">#\&lt;digit<sub>16</sub>&gt;<sup>{1,4}</sup></td>
+<td class="org-left">Unicode for Hex</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">#\&lt;c&gt;</td>
+<td class="org-left">the single character</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+As a side note, windows use <code>\r\n</code>, Unix use <code>\n</code>, Mac OS use <code>\r</code>
+</p>
+
+<p>
+APIs
+</p>
+<ul class="org-ul">
+<li><code>make-string k [char]</code></li>
+<li><code>string-length</code></li>
+<li><code>string-ref</code></li>
+<li><code>substring str start [end]</code></li>
+<li><code>string-copy</code></li>
+<li><code>string-append</code></li>
+<li><code>string-&gt;list</code></li>
+<li><code>list-&gt;string</code></li>
+<li><code>string=?</code>, <code>string&lt;?</code>, ..</li>
+<li><code>string-ci=?</code>, &#x2026;</li>
+<li><code>string-upcase</code>, <code>string-downcase</code>, <code>string-titlecase</code>,
+<code>string-foldcase</code> (normalize for different locale)</li>
+</ul>
+
+<p>
+With <code>racket/string</code>:
+</p>
+<ul class="org-ul">
+<li><code>string-join</code></li>
+<li><code>string-replace</code></li>
+<li><code>string-split</code></li>
+<li><code>string-trim</code></li>
+<li><code>string-contains?</code> s contained</li>
+<li><code>string-prefix?</code> s prefix</li>
+<li><code>string-suffix?</code> s suffix</li>
+</ul>
+
+<p>
+With <code>racket/format</code>:
+</p>
+<ul class="org-ul">
+<li><code>~a</code>: accept a value, using <code>display</code>. It accepts several keyword
+arguments:
+<ul class="org-ul">
+<li><code>#:separator ""</code>: the function actually accepts multiple values, each
+of them is connected with separator</li>
+<li><code>#:width</code></li>
+<li><code>#:max-width</code></li>
+<li><code>#:min-width</code></li>
+<li><code>#:limit-marker ""</code>: if the string is longer than the width, use this
+as indication of "more".</li>
+<li><code>#:align</code>: <code>(or/c 'left 'center 'right) = 'left</code></li>
+<li><code>#:pad-string " "</code>: when width is less than the specified width, this
+is used to pad</li>
+</ul></li>
+<li><code>~v</code>: use <code>print</code> instead of <code>display</code>. Default separator is " ",
+default limit-marker is "&#x2026;"</li>
+<li><code>~s</code>: use <code>write</code>. Default separator is " ", default limit-marker is
+"&#x2026;"</li>
+</ul>
+
+<p>
+Byte string
+</p>
+<ul class="org-ul">
+<li><code>make-bytes k [b]</code></li>
+<li><code>bytes-length</code></li>
+<li><code>bytes-ref</code></li>
+<li><code>subbytes bstr start [end]</code></li>
+<li><code>bytes-copy</code></li>
+<li><code>bytes-append</code></li>
+<li><code>bytes-&gt;list</code></li>
+<li><code>list-&gt;bytes</code></li>
+<li><code>bytes=?</code>, &#x2026;</li>
+<li><code>bytes-&gt;string/utf-8</code></li>
+<li><code>bytes-&gt;string/locale</code></li>
+<li><code>bytes-&gt;string/latin-1</code></li>
+<li><code>string-&gt;bytes/utf-8</code></li>
+<li><code>string-&gt;bytes/locale</code></li>
+<li><code>string-&gt;bytes/latin-1</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d2e8dd" class="outline-2">
+<h2 id="org6d2e8dd"><span class="section-number-2">10</span> Regular Expression</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li><code>#rx"xxx"</code>: regular expression</li>
+<li><code>#px"xxx"</code>: perl regular expression</li>
+</ul>
+
+<p>
+Functions:
+</p>
+<ul class="org-ul">
+<li><code>regexp-quote</code>: generate a regular expression string that match the
+string literally</li>
+<li><code>regexp-match</code> pattern input [start-pos end-pos]: find the pattern in
+the input. and return a list containing the result (only one). If no
+match, return #f. If has capture group, return the match and all
+captured group.</li>
+<li><code>regexp-match*</code>: match multiple times, return list of
+results. <code>#:match-select</code> accepts a procedure (defaults to
+<code>car</code>). Examples: values (all), cadr</li>
+<li><code>regexp-match-position</code>: like <code>regexp-match</code>, but return list of number
+pairs, each is a range of [start, end).</li>
+<li><code>regexp-match?</code>: return #t or #f</li>
+<li><code>regexp-match-exact?</code>: return #t only if entire content matches.</li>
+
+<li><code>regexp-split pattern input</code>: complement of <code>regexp-match*</code></li>
+<li><code>regexp-replace pattern input insert</code>: replace the first
+match. Match can be referenced by using <code>&amp;</code> (whole match), <code>\0</code>
+(whole match), <code>\n</code> captured.</li>
+<li><code>regexp-replace*</code>: replace all</li>
+<li><code>regexp-replaces input ([pat rep] ...)</code>: do <code>regexp-replace*</code> for
+each replacement in order, chained. Which means latter can operate
+on former.</li>
+<li><code>regexp-replace-quote</code>: produce string suitable to use as
+replacement (unquoting <code>\</code> and <code>&amp;</code>)</li>
+</ul>
+
+<p>
+Input port specific:
+</p>
+<ul class="org-ul">
+<li><code>regexp-try-match</code>: like <code>regexp-match</code>, but if the input is a port,
+don't read the input on failure.</li>
+<li><code>regexp-match-peek</code>: do not read input ports on both failure and
+success</li>
+<li><code>regexp-match-peek-positions</code>: return positions</li>
+<li><code>regexp-match-peek-immediate</code>: non-blocking on input port</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #483d8b;">regexp-match</span> <span style="color: #2e8b57;">#rx</span><span style="color: #8b2252;">"x(.)"</span> <span style="color: #8b2252;">"12x4x6"</span>)
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">'("x4" "4")</span>
+(<span style="color: #a020f0;">regexp-match*</span> <span style="color: #2e8b57;">#rx</span><span style="color: #8b2252;">"x(.)"</span> <span style="color: #8b2252;">"12x4x6"</span> <span style="color: #cd0000;">#:match-select</span> var) <span style="color: #b22222;">; </span><span style="color: #b22222;">default</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">'("x4" "x6")</span>
+(<span style="color: #a020f0;">regexp-match*</span> <span style="color: #2e8b57;">#rx</span><span style="color: #8b2252;">"x(.)"</span> <span style="color: #8b2252;">"12x4x6"</span> <span style="color: #cd0000;">#:match-select</span> <span style="color: #483d8b;">values</span>) <span style="color: #b22222;">; </span><span style="color: #b22222;">all</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">'(("x4" "4") ("x6" "6"))</span>
+(<span style="color: #a020f0;">regexp-match*</span> <span style="color: #2e8b57;">#rx</span><span style="color: #8b2252;">"x(.)"</span> <span style="color: #8b2252;">"12x4x6"</span> <span style="color: #cd0000;">#:match-select</span> <span style="color: #483d8b;">cadr</span>)
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">'("4" "6")</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org32f7182" class="outline-2">
+<h2 id="org32f7182"><span class="section-number-2">11</span> Pair, List, Vector</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+The variants tradition:
+</p>
+<ul class="org-ul">
+<li>v: use eqv?</li>
+<li>q: use eq?</li>
+<li>f: accept and use a procedure</li>
+</ul>
+
+<p>
+The APIs:
+</p>
+<ul class="org-ul">
+<li><code>length</code></li>
+<li><code>list-ref</code></li>
+<li><code>list-tail</code></li>
+<li><code>append</code></li>
+<li><code>reverse</code></li>
+<li><code>map</code>, <code>andmap</code>, <code>ormap</code></li>
+<li><code>for-each</code></li>
+<li><code>foldl</code>, <code>foldr</code></li>
+<li><code>filter pred lst</code>: return list with items that makes <code>pred</code> <code>#t</code>.</li>
+<li><code>remove</code></li>
+<li><code>sort</code></li>
+<li><code>member</code>, <code>memf</code> (using function): if found, <b>return the tail</b> list
+starting from the match</li>
+<li><code>findf</code>: like memf, but return just the matched element.</li>
+<li><code>assoc v lst</code>: the first element of lst whose car equal to
+v. E.g. <code>(assoc 1 '((1 2) (3 4)))</code> returns <code>'(1 2)</code>. variants:
+<code>assv</code>, <code>assq</code>, <code>assf</code></li>
+</ul>
+
+<p>
+from <code>racket/list</code>
+</p>
+<ul class="org-ul">
+<li><code>empty?</code></li>
+<li><code>first</code></li>
+<li><code>rest</code></li>
+<li><code>second</code></li>
+<li><code>last</code></li>
+<li><code>list-update</code> lst pos updater: the pos index is updated with
+<code>(updater (list-ref lst pos))</code></li>
+<li><code>list-set lst pos value</code></li>
+<li><code>index-of lst v</code>: return the index of the first v</li>
+<li><code>index-where lst proc</code>: use function</li>
+<li><code>indexes-of</code>, <code>indexes-where</code>: return all matches</li>
+<li><code>take lst pos</code>: take only the first pos elements</li>
+<li><code>drop lst pos</code>: same as list-tail</li>
+<li><code>split-at lst pos</code>: same as <code>(values (take lst pos) (drop lst pos))</code></li>
+<li><code>takef</code>, <code>dropf</code>, <code>splitf-at</code>: take all the elements satisfying the
+function.</li>
+<li><code>take-right</code>, <code>drop-right</code>, <code>split-at-right</code>, and their f-version</li>
+<li><code>list-prefix? l r</code>: whether l is prefix of r</li>
+<li><code>take-common-prefix l r</code></li>
+<li><code>drop-common-prefix l r</code></li>
+<li><code>split-common-prefix l r</code></li>
+<li><code>flatten v</code></li>
+<li><code>check-duplicates lst</code></li>
+<li><code>remove-duplicates lst</code></li>
+<li><code>partition prod lst</code>: return two lists, with items that <code>prod</code>
+evaluates to <code>#t</code> and <code>#f</code> respectively. It is the same as</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #483d8b;">values</span> (<span style="color: #483d8b;">filter</span> <span style="color: #483d8b;">pred</span> lst)
+          (<span style="color: #483d8b;">filter</span> (<span style="color: #483d8b;">negate</span> <span style="color: #483d8b;">pred</span>) lst))
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>range end</code>: [0,end)</li>
+<li><code>range start end [step=1]</code></li>
+<li><code>shuffle lst</code></li>
+<li><code>combinations lst [size]</code>: if size is given, return only combination
+of length size.</li>
+<li><code>permutations lst</code></li>
+<li><code>argmin proc lst</code>: return the first elemnt in lst that minimize
+<code>(proc elem)</code></li>
+<li><code>argmax</code></li>
+</ul>
+
+<p>
+Vectors
+</p>
+<ul class="org-ul">
+<li><code>vector-length</code></li>
+<li><code>vector-ref</code></li>
+<li><code>vector-set!</code>: it makes sense to set a vector, because it takes
+constant time to access and update</li>
+<li><code>vector-&gt;list</code></li>
+<li><code>list-&gt;vector</code></li>
+<li><code>vector-fill! vec v</code></li>
+<li><code>vector-copy! dst dst-start src [src-start] [src-end]</code></li>
+</ul>
+
+<p>
+A <i>box</i> is like a single-element vector, typically used as minimal
+mutable storage.
+</p>
+<ul class="org-ul">
+<li><code>box</code>: create a box</li>
+<li><code>box?</code></li>
+<li><code>unbox</code>: return the content</li>
+<li><code>set-box! box v</code>: return <code>#&lt;void&gt;</code></li>
+<li><code>box-cas! box old new</code>: <b>atomically</b> update content <b>from old</b> to
+new, return <code>#t</code>. If does not contain old, nothing changed, and
+return <code>#f</code>.</li>
+</ul>
+
+
+<p>
+From <code>racket/vector</code>:
+</p>
+<ul class="org-ul">
+<li><code>vector-map</code></li>
+<li><code>vector-append</code></li>
+<li><code>vector-take</code>, <code>vector-drop</code></li>
+<li><code>vector-take-right</code>, <code>vector-drop-right</code></li>
+<li><code>vector-split-at</code>, <code>vector-split-at-right</code></li>
+<li><code>vector-copy</code></li>
+<li><code>vector-filter</code></li>
+<li><code>vector-filter-not</code></li>
+<li><code>vector-count proc vec</code></li>
+<li><code>vector-argmin</code>, <code>vector-argmax</code></li>
+<li><code>vector-member</code></li>
+<li><code>vector-sort</code></li>
+<li><code>vector-sort!</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org53b0bc7" class="outline-2">
+<h2 id="org53b0bc7"><span class="section-number-2">12</span> Hash Tables</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li><code>(hash key val ... ...)</code></li>
+<li><code>hash-set hash key v</code></li>
+<li><code>hash-ref hash key</code></li>
+<li><code>hash-has-key?</code></li>
+<li><code>hash-update</code></li>
+<li><code>hash-remove</code></li>
+<li><code>hash-clear</code></li>
+<li><code>hash-keys</code></li>
+<li><code>hash-values</code></li>
+<li><code>hash-&gt;list</code></li>
+<li><code>hash-keys-subset? hash1 hash2</code>: hash1 is a subset of hash2?</li>
+<li><code>hash-count hash</code></li>
+<li><code>hash-empty?</code></li>
+<li><code>hash-union</code>: require <code>racket/hash</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org55584d8" class="outline-2">
+<h2 id="org55584d8"><span class="section-number-2">13</span> Sequence</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Sequence is designed to be used with <code>for</code>. Not only list and vectors
+are sequence, hash table is also sequence. Dictionary and set are also
+sequences. List can also be dictionary type.
+</p>
+
+<ul class="org-ul">
+<li><code>sequence?</code></li>
+</ul>
+<p>
+Constructing sequences
+</p>
+<ul class="org-ul">
+<li><code>in-range</code></li>
+<li><code>in-naturals</code></li>
+<li><code>in-list</code></li>
+<li><code>in-vector</code></li>
+<li><code>in-string</code></li>
+<li><code>in-lines [in=(current-input-port)]</code></li>
+<li><code>in-hash</code></li>
+<li><code>in-hash-keys</code>, <code>in-hash-values</code>, <code>in-hash-pairs</code></li>
+<li><b><code>in-directory [dir use-dir?]</code></b>: It is depth first. The path are
+built, not individual components. If <code>dir</code> is not given, use current
+dir. If use-dir? <code>with signature (path? . -&gt; any/c)</code> is given, it
+acts like as a filter of the results</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org117018c" class="outline-2">
+<h2 id="org117018c"><span class="section-number-2">14</span> Hash set (use racket/set)</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li><code>set v ...</code>: construct a hash set</li>
+<li><code>list-&gt;set lst</code>: construct from list</li>
+<li><code>for/set</code></li>
+<li><code>set-member?</code></li>
+<li><code>set-add</code></li>
+<li><code>set-remove</code></li>
+<li><code>set-empty?</code></li>
+<li><code>set-count</code></li>
+<li><code>set-first</code></li>
+<li><code>set-rest</code></li>
+<li><code>set-copy</code></li>
+<li><code>set-clear</code></li>
+<li><code>set-union</code></li>
+<li><code>set-intersect</code></li>
+<li><code>set-subtract</code></li>
+<li><code>set=?</code></li>
+<li><code>subset? st1 st2</code>: st1 is subset of st2?</li>
+<li><code>proper-subset? st1 st2</code>: strict subset</li>
+<li><code>set-&gt;list</code></li>
+<li><code>in-set</code></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org4651f77" class="outline-2">
+<h2 id="org4651f77"><span class="section-number-2">15</span> structure</h2>
+<div class="outline-text-2" id="text-15">
+<pre class="example">
+struct id maybe-super (field ...) struct-option ...
+field = field-id | [field-id field-option ...]
+</pre>
+
+<p>
+The <code>struct</code> form creates a structure type (unless <code>#:prefab</code> is
+specified), and some names (along with others). Now we use <code>myid</code> as
+the provided id:
+</p>
+<ul class="org-ul">
+<li><code>struct:myid</code>: the <i>structure type descriptor</i>, can be used in
+<code>#:super</code> option</li>
+<li><code>myid</code>: constructor, unless <code>#:constructor-name</code> option is specified</li>
+<li><code>myid?</code>: predicate procedure</li>
+<li><code>myid-myfield</code>: accessor procedure for each field</li>
+</ul>
+</div>
+
+<div id="outline-container-org3775c0c" class="outline-3">
+<h3 id="org3775c0c"><span class="section-number-3">15.1</span> Field options</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+There are two available field options:
+</p>
+<ul class="org-ul">
+<li><code>#:auto</code>: automatic fields: the constructor does not accept argument
+for that field, the auto value by <code>#:auto-value</code> (defaults to <code>#f</code>)
+is used.</li>
+<li><code>#:mutable</code>: <code>set-myid-myfield!</code>: destructively update field. A
+mutable field is defined in <b>one</b> of two ways: defined for the
+fields with <code>#:mutable</code> option, or struct option <code>#:mutable</code> for all
+fields. Specify both results in syntax error.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0adf3a1" class="outline-3">
+<h3 id="org0adf3a1"><span class="section-number-3">15.2</span> Subtyping</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+You can specify super class in <b>one</b> of two ways: maybe-super or via
+<code>#:super</code> option. Specify both results in syntax error.  Subtype will
+inherit fields, when initialize, initialize those parent fields first.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org70ff566" class="outline-3">
+<h3 id="org70ff566"><span class="section-number-3">15.3</span> Structure options</h3>
+<div class="outline-text-3" id="text-15-3">
+<ul class="org-ul">
+<li><code>#:mutable</code>: same as set <code>#:mutable</code> for all fields</li>
+<li><code>#:super</code>: same as set maybe-super</li>
+<li><code>#:prefab</code>: means <i>previously fabricated</i>. Also known as predefined,
+globally shared. Such structure types are globally shared, and they
+can be print and read back. If it has a super class, obviously it
+must also be prefab. It is inherently transparent, and cannot have a
+guard or property. I.e. it cannot be used together with
+<code>#:transparent</code>, <code>#:inspector</code>, <code>#:guard</code>, <code>#:property</code>.</li>
+<li><code>#:auto-value</code>: supply <b>one</b> value for all <code>#:auto</code> fields</li>
+<li><code>#:transparent</code>: shorthand for <code>#:inspector #f</code>. All structures are
+by default opaque, thus the print out format does not show any
+information. If the structure is transparent, the print information
+can see the data. The <code>equal?</code> will also works by recursively
+compare all fields, while for opaque structures, this require to
+define generic method for <code>equal?</code>. However, the prints cannot be
+read back, to do which the prefab is required.</li>
+<li><code>#:inspector</code> specify an inspector. This is intended for use by
+debuggers. It is related to reflection, i.e. providing access to
+structure fields and structure type information.</li>
+<li><code>#:guard</code> specify a guard procedure, or just <code>#f</code> to turn it
+off. This is used to filter the arguments to constructor. It accepts
+n+1 arguments: the n constructor arguments, plus the name of the
+structure, and return n arguments that is actually used for
+construction. It is called "guard" in the sense that it can raise
+exceptions.</li>
+<li><code>#:property</code>: this can be specified multiple times for multiple
+properties. A property is associated with the type, not the
+instance. Subtype will inherit property, and can override it. The
+usage is TODO, and how to retrieve is also TODO.</li>
+<li><code>#:methods</code>: TODO</li>
+</ul>
+
+
+<p>
+Other
+</p>
+<ul class="org-ul">
+<li><code>#:authentic</code></li>
+<li><code>#:name</code></li>
+<li><code>#:extra-name</code></li>
+<li><code>#:constructor-name</code></li>
+<li><code>#:extra-constructor-name</code></li>
+<li><code>#:reflection-name</code></li>
+<li><code>#:omit-define-syntaxes</code></li>
+<li><code>#:omit-define-values</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7cdbe57" class="outline-3">
+<h3 id="org7cdbe57"><span class="section-number-3">15.4</span> Generic Interface</h3>
+<div class="outline-text-3" id="text-15-4">
+<p>
+require <code>racket/generic</code>.
+</p>
+
+<p>
+First define the interface.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(define-generics <span style="color: #a0522d;">printable</span>
+  (gen-print printable port)
+  (gen-port-print port printable)
+  (gen-print* printable [port] <span style="color: #cd0000;">#:width</span> width <span style="color: #cd0000;">#:height</span> height))
+</pre>
+</div>
+
+<p>
+We are defining a generic id called <code>printable</code>. The <code>gen:printable</code>
+will be the transformer binding used when defining the structure. The
+followings are the methods that are supposed to be defined. Note:
+there must be a <code>printable</code> literally in each of these methods. It
+does not matter which position, but this particular position should be
+kept as the variable in your actual definition. The arguments are
+nothing new, including optional variable, default values, as well as
+keyword arguments.
+</p>
+
+<p>
+Define the structure. To declare that this structure satisfies a
+generic interface, specify it in <code>#:methods</code>. It accepts two values:
+<code>gen:name</code>, and <code>method-defs</code>. You can supply multiple <code>#:methods</code> of
+course. Each of the def is a define of the function, very normal. Note
+that the variable that corresponds to the <code>printable</code>, by position, is
+the data object. Since there cannot be duplicate arguments, you cannot
+use this twice (this of course is not likely what you want).
+</p>
+
+<p>
+There's a <code>define/generic</code> that has a fixed form of two arguments,
+<code>local-id</code> and <code>method-id</code>. The latter can only be one of these
+generic method. It is the form used to create a binding. Using just
+define cannot create this, because <code>gen-print</code> will not be in
+scope. And <code>define/generic</code> can only be used here. And interestingly
+inside a generic function, the <code>gen-print</code> is in scope, and can be
+bound by a <code>let</code> expression (why??).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">struct</span> num (v)
+  <span style="color: #cd0000;">#:methods</span> gen:printable
+  [(define/generic <span style="color: #a0522d;">alias</span> gen-print)
+   (define/generic <span style="color: #a0522d;">alias2</span> gen-print*)
+   <span style="color: #b22222;">;; </span><span style="color: #b22222;">(define alias3 gen-print)</span>
+   (<span style="color: #a020f0;">define</span> (<span style="color: #0000ff;">gen-print</span> n port)
+     (<span style="color: #483d8b;">fprintf</span> port <span style="color: #8b2252;">"Num: ~a"</span> (num-v n)))
+   (<span style="color: #a020f0;">define</span> (<span style="color: #0000ff;">gen-port-print</span> port n)
+     (<span style="color: #a020f0;">let</span> ([<span style="color: #a0522d;">alias2</span> gen-print]) 
+       (gen-print n port)
+       (alias n port)
+       <span style="color: #b22222;">;; </span><span style="color: #b22222;">(alias2 n)</span>
+       <span style="color: #b22222;">;; </span><span style="color: #b22222;">(alias3 n port)</span>
+       ))])
+</pre>
+</div>
+
+<p>
+Use like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(gen-port-print (<span style="color: #483d8b;">current-output-port</span>) (num <span style="color: #2e8b57;">8</span>) )
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org697b9cc" class="outline-2">
+<h2 id="org697b9cc"><span class="section-number-2">16</span> Multiple Values</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+values produce multiple values value, to consume that, typically use
+<code>let-values</code>, <code>let*-values</code>, <code>define-values</code>. Also, binding forms that
+can destruct values can also be used.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org076e6f0" class="outline-2">
+<h2 id="org076e6f0"><span class="section-number-2">17</span> Exception</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+For now, I only care about how to handle exceptions. To do that:
+</p>
+
+<ul class="org-ul">
+<li>call-with-exception-handler f thunk: (f ex)</li>
+<li>with-handlers ([pred-expr handler-expr] &#x2026;) body &#x2026;+</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">with-handlers</span> ([<span style="color: #483d8b;">exn:fail:syntax?</span>
+                   (<span style="color: #a020f0;">&#955;</span> (e) (<span style="color: #483d8b;">displayln</span> <span style="color: #8b2252;">"got a syntax error"</span>))]
+                  [<span style="color: #483d8b;">exn:fail?</span>
+                   (<span style="color: #a020f0;">&#955;</span> (e) (<span style="color: #483d8b;">displayln</span> <span style="color: #8b2252;">"fallback clause"</span>))])
+    (<span style="color: #483d8b;">raise-syntax-error</span> <span style="color: #2e8b57;">#f</span> <span style="color: #8b2252;">"a syntax error"</span>))
+</pre>
+</div>
+
+<p>
+Here's the hierarchy of built-in exceptions
+</p>
+<ul class="org-ul">
+<li>exn
+<ul class="org-ul">
+<li>exn:fail
+<ul class="org-ul">
+<li>exn:fail:contract</li>
+<li>exn:fail:syntax</li>
+<li>exn:fail:read</li>
+<li>exn:fail:filesystem</li>
+<li>exn:fail:network</li>
+<li>exn:fail:out-of-memory</li>
+<li>exn:fail:unsupported</li>
+<li>exn:fail:user</li>
+</ul></li>
+<li>exn:break</li>
+</ul></li>
+</ul>
+
+<p>
+To raise an exception, you can use:
+</p>
+<ul class="org-ul">
+<li><code>raise</code>: too general, don't use for now</li>
+<li><code>error</code>: raise exn:fail</li>
+<li><code>raise-user-error</code></li>
+<li><code>raise-syntax-error</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org03ad732" class="outline-2">
+<h2 id="org03ad732"><span class="section-number-2">18</span> Concurrency</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+Comparison
+</p>
+<ul class="org-ul">
+<li>Thread: all the threads are running parallel, but they run on the
+<i>same processor</i>.</li>
+<li>Future: can utilize multiple processors</li>
+</ul>
+
+<p>
+Thread
+</p>
+<ul class="org-ul">
+<li><code>thread thunk</code>: create a thread to run, and return immediately with
+thread descriptor. When thunk terminates, the thread
+terminates. Threads are managed in current custodian.</li>
+<li><code>thread?</code></li>
+<li><code>current-thread</code></li>
+<li><code>thread-suspend</code></li>
+<li><code>thread-resume</code></li>
+<li><code>kill-thread</code></li>
+<li><code>break-thread</code></li>
+<li><code>sleep [secs=0]</code>: cause the current thread to sleep. 0 simply hint
+other threads to execute (useful??).</li>
+<li><code>thread-running?</code></li>
+<li><code>thread-dead?</code></li>
+<li><code>thread-wait thd</code>: block until thd terminates</li>
+<li><code>thread-send thd v</code></li>
+<li><code>thread-receive</code>: block until a v is ready</li>
+<li><code>thread-try-receive</code>: non-block version</li>
+</ul>
+
+<p>
+Parameters are procedures, which optionally accepts one argument. If
+no argument, get the value. Given the arguement, set the value. This
+is like a global variable, thus suitable for a command line option
+storage. The parameters are local to thread, and sub thread inherit
+parent ones, but not shared. This means setting the parameter will not
+affect the parameter in other thead (including parent thread).
+</p>
+
+<p>
+To make a parameter, simply:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">aaa</span> (<span style="color: #483d8b;">make-parameter</span> <span style="color: #2e8b57;">#f</span>))
+(aaa) <span style="color: #b22222;">; </span><span style="color: #b22222;">=&gt; #f</span>
+(aaa <span style="color: #2e8b57;">3</span>)
+(aaa) <span style="color: #b22222;">; </span><span style="color: #b22222;">=&gt; 3</span>
+</pre>
+</div>
+
+<p>
+Parameters are often used by parameterize it in some content, instead
+of set directly.
+</p>
+
+<pre class="example">
+(parameterize ([param value-expr] ...)
+  body ...+)
+</pre>
+
+
+<p>
+Future (<code>racket/future</code>)
+</p>
+<ul class="org-ul">
+<li><code>future thunk</code>: return the future. It will not run, until touch it.</li>
+<li><code>touch f</code>: blockingly run the future f, and return the result. After
+touch returns, the results are still hold in the future. You can
+touch it again and retrieve the same result. Then, how to run in
+parallel? Create a thread to touch it??</li>
+<li><code>current-future</code></li>
+<li><code>future-enabled?</code></li>
+<li><code>future?</code></li>
+<li><code>processor-count</code></li>
+<li><code>for/async (for-clause ...) body ...+</code></li>
+</ul>
+
+<p>
+Places can also use multiple cores. Place enables greater parallelism
+than future, because it creates a new racket VM, and include separate
+garbage collection. Thus the setup and communication cost is higher.
+Places can only communicate through place channels.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgda2b4fc" class="outline-2">
+<h2 id="orgda2b4fc"><span class="section-number-2">19</span> IO</h2>
+<div class="outline-text-2" id="text-19">
+</div>
+<div id="outline-container-org21bd4ec" class="outline-3">
+<h3 id="org21bd4ec"><span class="section-number-3">19.1</span> ports</h3>
+<div class="outline-text-3" id="text-19-1">
+</div>
+<div id="outline-container-orge32357a" class="outline-4">
+<h4 id="orge32357a"><span class="section-number-4">19.1.1</span> General operation</h4>
+<div class="outline-text-4" id="text-19-1-1">
+<ul class="org-ul">
+<li><code>eof</code>: global variable</li>
+<li><code>eof-object?</code></li>
+<li><code>close-input-port</code>, <code>close-output-port</code></li>
+<li><code>current-input-port</code>, <code>current-output-port</code>, <code>current-error-port</code>:
+can be used to get/set the current</li>
+<li><code>flush-output out</code>: Input or output ports are both block-buffered by
+default. Terminal output port is line-buffered. This function cause
+the port to be flushed immediately</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4dc3123" class="outline-4">
+<h4 id="org4dc3123"><span class="section-number-4">19.1.2</span> File IO</h4>
+<div class="outline-text-4" id="text-19-1-2">
+<ul class="org-ul">
+<li><code>open-input-file path [#:mode flag]</code>: return an input port. mode can
+be <code>'binary</code> or <code>'text</code></li>
+<li><code>open-output-file path [#:mode flag #:exists flag]</code>: exist flag
+includes
+<ul class="org-ul">
+<li>error</li>
+<li>append</li>
+<li>replace: remove old file, create a new one</li>
+</ul></li>
+<li><code>open-input-output-file path [#:mode flag #:exists flag]</code></li>
+<li><code>call-with-input-file path proc</code>: proc is <code>(input-port? . -&gt;
+  . any)</code>. When proc returns, the port is closed.</li>
+<li><code>call-with-output-file path proc</code></li>
+<li><code>with-input-from-file path thunk</code>: set <code>current-input-port</code> to
+file. As it is similar to <code>call-with-input-file</code>, the port is closed
+when thunk returns.</li>
+<li><code>with-output-to-file path thunk</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org92d7214" class="outline-4">
+<h4 id="org92d7214"><span class="section-number-4">19.1.3</span> String IO</h4>
+<div class="outline-text-4" id="text-19-1-3">
+<ul class="org-ul">
+<li><code>open-input-string str</code>: create a string port using str</li>
+<li><code>open-output-string</code>: create a output string port</li>
+<li><code>get-output-string out</code>: read from a output string port. This should
+be used with the above method, specifically the out should be
+<code>(and/c output-port? string-port?)</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge42ae38" class="outline-4">
+<h4 id="orge42ae38"><span class="section-number-4">19.1.4</span> Extra</h4>
+<div class="outline-text-4" id="text-19-1-4">
+<p>
+Requires <code>racket/port</code>. This is actually the most commonly used
+helpers. All of these have bytes counterparts.
+</p>
+
+<ul class="org-ul">
+<li><b><code>port-&gt;string</code></b></li>
+<li><code>port-&gt;lines</code></li>
+<li><code>display-lines</code></li>
+<li><code>call-with-output-string proc</code>: proc: <code>(output-port? . -&gt; . any)</code></li>
+<li><code>with-output-to-string proc</code>: proc is <code>(-&gt; any)</code></li>
+<li><code>call-with-input-string str proc</code>: proc: <code>(input-port? . -&gt; . any)</code></li>
+<li><code>with-input-from-string str proc</code>: proc is <code>(-&gt; any)</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgee0f8a5" class="outline-3">
+<h3 id="orgee0f8a5"><span class="section-number-3">19.2</span> Reading</h3>
+<div class="outline-text-3" id="text-19-2">
+<ul class="org-ul">
+<li><code>read-char</code></li>
+<li><code>read-byte</code></li>
+<li><code>read-line</code></li>
+<li><code>read-bytes-line</code></li>
+<li><code>read</code>: read a <i>datum</i> from an input port</li>
+<li><code>read-syntax</code>: like read, but produce a <i>syntax object</i>, with
+source-location information</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga092fda" class="outline-3">
+<h3 id="orga092fda"><span class="section-number-3">19.3</span> Writing</h3>
+<div class="outline-text-3" id="text-19-3">
+<ul class="org-ul">
+<li><code>write-char</code></li>
+<li><code>write-byte</code></li>
+<li><code>newline</code></li>
+<li><code>write-string</code></li>
+<li><code>write-bytes</code></li>
+
+<li><code>write</code>: write a datum so that it can be read back</li>
+<li><code>display</code>: write string without the quotes</li>
+<li><code>print</code>: this is pretty weird. The existence rationale is that,
+<i>display and write both have specific output convention</i>. But print
+has no pre-assumed convention, and the environment is free to modify
+its behavior.</li>
+<li><code>writeln</code>, <code>displayln</code>, <code>println</code></li>
+<li><code>fprintf out form v ...</code>
+<ul class="org-ul">
+<li>out is an output port</li>
+<li>form is a format string.
+<ul class="org-ul">
+<li><code>~n</code>: new line</li>
+<li><code>~a</code>: display</li>
+<li><code>~s</code>: write</li>
+<li><code>~v</code>: print</li>
+</ul></li>
+</ul></li>
+<li><code>printf form v ...</code>: equivalent to <code>fprintf (current-output-port) form v ...</code></li>
+<li><code>eprintf form v ...</code>: print to (current-error-port)</li>
+<li><code>format form v ...</code>: return the string</li>
+</ul>
+
+<p>
+with <code>racket/pretty</code>
+</p>
+<ul class="org-ul">
+<li><code>pretty-print</code></li>
+<li><code>pretty-write</code></li>
+<li><code>pretty-display</code></li>
+<li><code>pretty-format</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org97215f0" class="outline-2">
+<h2 id="org97215f0"><span class="section-number-2">20</span> OS</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li><code>(getenv name)</code></li>
+<li><code>(putenv name value)</code></li>
+</ul>
+
+<p>
+In <code>racket/os</code>
+</p>
+<ul class="org-ul">
+<li><code>gethostname</code></li>
+<li><code>getpid</code></li>
+</ul>
+</div>
+<div id="outline-container-orgaa5c5ee" class="outline-3">
+<h3 id="orgaa5c5ee"><span class="section-number-3">20.1</span> Path</h3>
+<div class="outline-text-3" id="text-20-1">
+<ul class="org-ul">
+<li><code>string-&gt;path</code></li>
+<li><code>path-&gt;string</code></li>
+<li><b><code>build-path base sub ...</code></b></li>
+<li><code>absolute-path?</code>, <code>relative-path?</code></li>
+<li><code>path-&gt;directory-path</code>: from <code>x/y</code> to <code>x/y/</code></li>
+<li><code>resolve-path</code>: follow soft link. Note that itself does not expand
+user path.</li>
+<li><code>cleanse-path</code>: most racket functions clean the path before use,
+unless it does not access filesystem (i.e. onlyl do a form
+checking). <code>cleanse-path</code>, <code>expand-user-path</code>, <code>simplify-path</code> are
+exceptions in the sense that they does not access filesystem, but
+will do cleanse. But what exactly cleanse does?</li>
+<li><b><code>expand-user-path</code></b>: a leading <code>~</code> is replaced by the user home
+directory.</li>
+<li><code>simplify-path</code>: nomalize as much as possible. I.e. remove
+<ul class="org-ul">
+<li>redundant path separators (except single trailing separator)</li>
+<li><code>..</code>, <code>.</code></li>
+</ul></li>
+<li><b><code>split-path</code></b>: remove the last component (without consideration of
+trailing <code>/</code>, as we will see in the 3rd return value), and return 3
+values (e.g. "aa/bb/cc/"):
+<ul class="org-ul">
+<li>base: <code>aa/bb/</code></li>
+<li>name: <code>cc</code></li>
+<li>must-be-dir?: <code>#t</code></li>
+</ul></li>
+<li><code>explode-path</code>: split path extensively, the first one is root</li>
+<li><b><code>path-replace-extension path ext</code></b>: extension starts from the last
+dot. <code>ext</code> should lead by a dot. If no dot in the path, simply add
+it.</li>
+<li><code>path-add-extension path ext [sep #"_"]</code>: add the extension. If
+there's a dot in the path, the last dot will be replaced by sep.</li>
+</ul>
+
+<p>
+From <code>racket/path</code>
+</p>
+<ul class="org-ul">
+<li><code>file-name-from-path</code></li>
+<li><b><code>path-get-extension</code></b></li>
+<li><code>path-has-extension?</code></li>
+<li><code>file-relative-path base path</code>: how to do from base TO path
+<ul class="org-ul">
+<li><code>(find-relative-path "a/b" "a/b/c/d")</code> returns <code>c/d</code></li>
+</ul></li>
+<li><code>normalize-path path</code>: complete, expand (NOT expand-user-path,
+.. but what??), resolve soft links</li>
+<li><code>simple-form-path</code>: complete, then simplify. This is said to be used
+more often than <code>normalize-path</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org403708e" class="outline-3">
+<h3 id="org403708e"><span class="section-number-3">20.2</span> File System</h3>
+<div class="outline-text-3" id="text-20-2">
+<ul class="org-ul">
+<li><code>find-system-path kind</code>, where kind is
+<ul class="org-ul">
+<li><code>'home-dir</code></li>
+<li><code>'temp-dir</code></li>
+</ul></li>
+<li><b><code>find-executable-path program</code></b></li>
+<li><b><code>file-exists?</code></b></li>
+<li><code>link-exists?</code></li>
+<li><b><code>delete-file</code></b></li>
+<li><code>rename-file-or-directory old new</code></li>
+<li><code>file-size</code>: in bytes</li>
+<li><code>copy-file src dest</code></li>
+<li><code>make-file-or-directory-link to path</code>: create <code>path</code>, link to <code>to</code>
+(soft or hard??)</li>
+<li><b><code>current-directory</code></b> get or set, this is a parameter</li>
+<li><b><code>directory-exists?</code></b></li>
+<li><code>make-directory</code></li>
+<li><code>delete-directory</code></li>
+<li><b><code>directory-list [path #:build build?]</code></b>: list of all files or
+directories in <code>path</code>. path defaults to current directory, while
+build? defaults to <code>#f</code>. If <code>#:build</code> is <code>#t</code>, each of the results
+are built with prefix <code>path</code>. Note that this is not recursive, for
+that, use the <b>sequence generator <code>in-directory</code></b>.</li>
+</ul>
+
+<p>
+From <code>racket/file</code>:
+</p>
+<ul class="org-ul">
+<li><b><code>file-&gt;string</code></b>: this READs the file content to a string</li>
+<li><code>file-&gt;value</code>: READs a single S-expression using <code>read</code>. Seems that
+the file can contain more</li>
+<li><code>file-&gt;list path [proc = read]</code>: reads the file content with proc
+until EOF</li>
+<li><code>file-&gt;lines</code>: read into lines, without line separators</li>
+<li><code>display-to-file v path</code>: <code>display</code> <code>v</code> to <code>path</code></li>
+<li><code>write-to-file v path</code>: <code>write</code> <code>v</code> to <code>path</code></li>
+<li><code>display-lines-to-file lst path [#:separator sep]</code>: as name suggests, add line seperators</li>
+<li><code>copy-directory/files src dest</code></li>
+<li><code>delete-directory/files</code></li>
+<li><code>find-files predicate [start-path]</code>: start-path defaults ot
+current. Use predicate to filter what should be returned. Seems that
+this is recursive.</li>
+<li><b><code>make-directory*</code></b>: seems to be <code>mkdir -p</code></li>
+<li><b><code>make-parent-directory*</code></b>: this is very convenient in making a
+necessary directory to write a file</li>
+<li><code>make-temporary-file [template copy-from-filename directory]</code>:
+create it, and return path.
+<ul class="org-ul">
+<li>template: <code>"rkttmp~a"</code></li>
+<li>copy-from-filename
+<ul class="org-ul">
+<li>a path: the created one is a copy of the path</li>
+<li>#f: which is also default, create an empty file</li>
+<li><code>'directory</code>: create a directory(!!!) instead</li>
+</ul></li>
+<li>directory: <code>#f</code>, means use default temporary path (<code>/var/tmp</code>)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge617d65" class="outline-3">
+<h3 id="orge617d65"><span class="section-number-3">20.3</span> Networking</h3>
+<div class="outline-text-3" id="text-20-3">
+<p>
+I'm not going to dig deep on this because I don't use it. Just listing
+available functions. Needs require 
+</p>
+
+<p>
+TCP (<code>racket/tcp</code>)
+</p>
+<ul class="org-ul">
+<li><code>tcp-listen port-no</code>: return <code>tcp-listener?</code></li>
+<li><code>tcp-connect hostname port-no</code>: return <code>input-port?</code> <code>output-port?</code></li>
+<li><code>tcp-accept listener</code>: return <code>input-port?</code> <code>output-port?</code></li>
+<li><code>tcp-close listener</code></li>
+</ul>
+
+<p>
+UDP (<code>racket/udp</code>)
+</p>
+<ul class="org-ul">
+<li><code>udp-open-socket</code></li>
+<li><code>udp-bind! udp-socket hostname-string port-no</code></li>
+<li><code>udp-connect! udp-socket hostname-string port-no</code></li>
+<li><code>udp-send-to udp-socket hostname port-no bstr</code></li>
+<li><code>udp-send udp-socket bstr</code></li>
+<li><code>udp-receive! udp-socket bstr</code></li>
+<li><code>udp-send-to*</code>, <code>udp-send*</code>, <code>udp-receive!*</code>: non-block</li>
+<li>udp-close udp-socket</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org71d65b7" class="outline-3">
+<h3 id="org71d65b7"><span class="section-number-3">20.4</span> Processes</h3>
+<div class="outline-text-3" id="text-20-4">
+<ul class="org-ul">
+<li><code>subprocess stdout stdin stderr cmd arg ...</code>
+<ul class="org-ul">
+<li>the command runs ASYNC, it seems that it will run immediately</li>
+<li>If provided a port, it will use that. Otherwise (provide <code>#f</code>), it
+will create one, and get returned. The return value is exactly the
+same: <code>subprocess? port? port? port? path-string? string?</code>. <code>#f</code>
+means no, no matter as parameter or return value.</li>
+<li>stderr can be <code>'stdout</code>, in which case the corresponding return
+value will be <code>#f</code></li>
+<li>All ports returned must be closed manually</li>
+<li>since the ports have capacity, it is possible to have deadlock</li>
+</ul></li>
+<li><code>subprocess-wait</code>: block until subprocess terminate</li>
+<li><code>subprocess-status</code>: returns either <code>'running</code> or the exit code</li>
+<li><code>subprocess-kill</code></li>
+<li><code>subprocess-pid</code></li>
+</ul>
+
+<p>
+In <code>racket/system</code>:
+</p>
+<ul class="org-ul">
+<li><code>system cmd</code>: execute cmd <b>through shell command</b>
+SYNChronously. Return #t for success, #f for fail</li>
+<li><code>system* cmd arg ...</code>: differ in:
+<ul class="org-ul">
+<li>execute directly instead of through shell command</li>
+<li>obviously arguments are provided as arguments instead of in string</li>
+</ul></li>
+<li><code>system/exit-code cmd</code>: same as <code>system</code>, but the return is exit
+code</li>
+<li><code>system*/exit-code cmd arg ...</code></li>
+<li><code>process cmd</code>: run ASYNC, through a shell, return (input port,
+output port, PID, stderr, proc). All ports must be closed
+manually. The procedure <code>proc</code> can accept one argument, and is used
+to interact with the process. The argument can be:
+<ul class="org-ul">
+<li><code>'status</code>: return one of <code>'running</code>, <code>'done-ok</code>, <code>'done-error</code></li>
+<li><code>'exit-code</code></li>
+<li><code>'wait</code>: block until terminate</li>
+<li><code>'interrupt</code>: send SIGINT</li>
+<li><code>'kill</code></li>
+</ul></li>
+<li><code>process* cmd arg ...</code>: like the difference of <code>system*</code> with
+<code>system</code></li>
+<li><code>process/ports out in error-out cmd</code>: You can provide the ports (the
+return will be <code>#f</code>), or provide <code>#f</code> (the ports are created and
+returned).</li>
+<li><code>process*/ports out in error-out cmd arg ...</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org408e3b4" class="outline-3">
+<h3 id="org408e3b4"><span class="section-number-3">20.5</span> CMD parsing (racket/cmdline)</h3>
+<div class="outline-text-3" id="text-20-5">
+<p>
+The <code>command-line</code> macro actually parse the command line. The
+<code>current-command-line-arguments</code> is actually a parameter that returns
+a vector of strings. It is the cmd args that used to run the racket
+program. Thus <code>command-line</code> consumes this value. But since it is a
+parameter, you can access it as many times as you want.
+</p>
+
+<p>
+All the arguments are actually keyword arguments, but they must appear
+in order, according to the grammar.
+</p>
+<pre class="example">
+(command-line [name-expr] [argv-expr] flag-clause ... finish-clause)
+</pre>
+
+<p>
+The flag clauses can be:
+</p>
+<ul class="org-ul">
+<li><code>#:multi</code>: flags can appear multiple times</li>
+<li><code>#:once-each</code>: each flag can appear one time</li>
+<li><code>#:once-any</code>: one of the flag can appear</li>
+<li><code>#:final</code>: this is like <code>#:multi</code>, but no argument is treated as
+flag any more after it (means they are all left over)</li>
+</ul>
+
+<p>
+Each of them will be followed by some <code>flag-sepcs</code>:
+</p>
+<pre class="example">
+flag-spec ::= (flags id ... help-spec body ...+)
+flags ::= flag-string | (flag-string ...+)
+help-spec ::= string | (string-expr ...+)
+</pre>
+
+<p>
+Flags are equivalent, usually to supply <code>-x</code> and <code>--longer-x</code>. If
+<code>help-spec</code> is a list of strings, they are printed in separate lines.
+</p>
+
+<p>
+The <code>flag-clause</code> can also be some general printing service, followed
+by strings to print
+</p>
+<ul class="org-ul">
+<li><code>#:usage-help</code>: this is going to be printed right after the <i>usage</i>
+of the command</li>
+<li><code>#:ps</code>: insert at the end of the help</li>
+</ul>
+
+
+<p>
+Finish clause just use <code>#:args arg-formals body ...+</code>. It is intended
+to handle left over arguments. arg-formals can be just a single ID, in
+which case it will be a list of left over arguments. It can also be a
+list, which indicates how many left over are expected. The body are
+executed and the value of last is returned as the result.
+</p>
+
+<p>
+A typical command line parser looks like this. It typically:
+</p>
+<ul class="org-ul">
+<li>set parameters</li>
+<li>print messages</li>
+<li>return file lists</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">verbose-mode</span> (<span style="color: #483d8b;">make-parameter</span> <span style="color: #2e8b57;">#f</span>))
+  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">profiling-on</span> (<span style="color: #483d8b;">make-parameter</span> <span style="color: #2e8b57;">#f</span>))
+  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">optimize-level</span> (<span style="color: #483d8b;">make-parameter</span> <span style="color: #2e8b57;">0</span>))
+  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">link-flags</span> (<span style="color: #483d8b;">make-parameter</span> <span style="color: #483d8b;">null</span>))
+
+  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">file-to-compile</span>
+    (<span style="color: #483d8b;">command-line</span>
+     <span style="color: #cd0000;">#:program</span> <span style="color: #8b2252;">"compiler"</span>
+     <span style="color: #cd0000;">#:once-each</span>
+     [(<span style="color: #8b2252;">"-v"</span> <span style="color: #8b2252;">"--verbose"</span>) <span style="color: #8b2252;">"Compile with verbose messages"</span>
+                         (verbose-mode <span style="color: #2e8b57;">#t</span>)]
+     [(<span style="color: #8b2252;">"-p"</span> <span style="color: #8b2252;">"--profile"</span>) <span style="color: #8b2252;">"Compile with profiling"</span>
+                         (profiling-on <span style="color: #2e8b57;">#t</span>)]
+     <span style="color: #cd0000;">#:once-any</span>
+     [(<span style="color: #8b2252;">"-o"</span> <span style="color: #8b2252;">"--optimize-1"</span>) <span style="color: #8b2252;">"Compile with optimization level 1"</span>
+                            (optimize-level <span style="color: #2e8b57;">1</span>)]
+     [(<span style="color: #8b2252;">"--optimize-2"</span>) (<span style="color: #8b2252;">"Compile with optimization level 2,"</span>
+                        <span style="color: #8b2252;">"which includes all of level 1"</span>)
+                       (optimize-level <span style="color: #2e8b57;">2</span>)]
+     <span style="color: #cd0000;">#:multi</span>
+     [(<span style="color: #8b2252;">"-l"</span> <span style="color: #8b2252;">"--link-flags"</span>) lf
+                            <span style="color: #8b2252;">"Add a flag"</span>
+                            (link-flags (<span style="color: #483d8b;">cons</span> lf (link-flags)))]
+     <span style="color: #cd0000;">#:args</span> (filename) filename))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf1b2adf" class="outline-2">
+<h2 id="orgf1b2adf"><span class="section-number-2">21</span> Trouble shooting</h2>
+<div class="outline-text-2" id="text-21">
+</div>
+<div id="outline-container-org6b9b359" class="outline-3">
+<h3 id="org6b9b359"><span class="section-number-3">21.1</span> racket cannot find browsers</h3>
+<div class="outline-text-3" id="text-21-1">
+<p>
+Browsers are declared in sendurl.rkt, with
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">all-unix-browsers</span>
+    '(
+      firefox
+      google-chrome
+      galeon
+      opera
+      mozilla
+      konqueror
+      <span style="color: #b22222;">;; </span><span style="color: #b22222;">...</span>
+      ))
+</pre>
+</div>
+
+<p>
+chromium is not in the list, thus
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">require</span> net/sendurl)
+unix-browser-list <span style="color: #b22222;">;; </span><span style="color: #b22222;">empty</span>
+(send-url <span style="color: #8b2252;">"google.com"</span>) <span style="color: #b22222;">;; </span><span style="color: #b22222;">error</span>
+</pre>
+</div>
+
+<p>
+The trick is to create a soft link for chromium named "google-chrome".
+Also, the default is using firefox &#x2026; So I need to make sure firefox
+is uninstalled. Is there a better way to configure browser??
+</p>
+
+<p>
+The <code>racket-doc</code> will use the local racket document to search, thus in
+order for it to work, install <code>racket-doc</code> package.
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgda82beb" class="outline-2">
+<h2 id="orgda82beb"><span class="section-number-2">22</span> Logger</h2>
+<div class="outline-text-2" id="text-22">
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">lg</span> (<span style="color: #483d8b;">make-logger</span>))
+  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">rc</span> (<span style="color: #483d8b;">make-log-receiver</span> lg <span style="color: #2e8b57;">'debug</span>))
+  (<span style="color: #483d8b;">current-logger</span> lg)
+  (<span style="color: #483d8b;">void</span>
+   (<span style="color: #483d8b;">thread</span>
+    (<span style="color: #a020f0;">lambda</span> () (<span style="color: #a020f0;">let</span> <span style="color: #0000ff;">loop</span> ()
+                 (<span style="color: #483d8b;">print</span> (<span style="color: #483d8b;">sync</span> rc))
+                 (loop)))))
+  (<span style="color: #a020f0;">log-error</span> <span style="color: #8b2252;">"error"</span>)
+  (<span style="color: #a020f0;">log-fatal</span> <span style="color: #8b2252;">"fatal"</span>)
+  (<span style="color: #a020f0;">log-debug</span> <span style="color: #8b2252;">"just a debug"</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-racket">  (<span style="color: #a020f0;">require</span> racket/logging)
+  (<span style="color: #a020f0;">let</span> ([<span style="color: #a0522d;">my-log</span> (<span style="color: #483d8b;">open-output-string</span>)])
+    (with-logging-to-port my-log
+      (<span style="color: #a020f0;">lambda</span> ()
+        (<span style="color: #a020f0;">log-warning</span> <span style="color: #8b2252;">"Warning World!"</span>)
+        (<span style="color: #483d8b;">+</span> <span style="color: #2e8b57;">2</span> <span style="color: #2e8b57;">2</span>))
+      <span style="color: #2e8b57;">'warning</span>)
+    (<span style="color: #483d8b;">get-output-string</span> my-log))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd09194b" class="outline-2">
+<h2 id="orgd09194b"><span class="section-number-2">23</span> Libraries</h2>
+<div class="outline-text-2" id="text-23">
+</div>
+<div id="outline-container-orgfc1aa3c" class="outline-3">
+<h3 id="orgfc1aa3c"><span class="section-number-3">23.1</span> Drawing libraries</h3>
+<div class="outline-text-3" id="text-23-1">
+<ul class="org-ul">
+<li>metapict: <a href="https://github.com/soegaard/metapict">https://github.com/soegaard/metapict</a></li>
+<li>rosetta: <a href="https://github.com/aptmcl/rosetta/tree/master">https://github.com/aptmcl/rosetta/tree/master</a>
+<ul class="org-ul">
+<li>this one is for design 2/3d models, and seems broken and not in
+official support.</li>
+</ul></li>
+<li>2htdp/image: in teachpack</li>
+<li>racket/draw: bare-bone, object-oriented, not so interesting</li>
+<li>pict-lib pict: this one is pretty good, functional. It was in
+slideshow</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge4bf07d" class="outline-3">
+<h3 id="orge4bf07d"><span class="section-number-3">23.2</span> pict-lib</h3>
+<div class="outline-text-3" id="text-23-2">
+</div>
+<div id="outline-container-orgfc8093b" class="outline-4">
+<h4 id="orgfc8093b"><span class="section-number-4">23.2.1</span> Constructors</h4>
+<div class="outline-text-4" id="text-23-2-1">
+<ul class="org-ul">
+<li>text</li>
+<li>hline, vline</li>
+<li>frame</li>
+<li>ellipse, circle, filled-ellipse, disk</li>
+<li>rectangle, filled-rectangle</li>
+<li>rounded-rectangle</li>
+<li>filled-rounded-rectangle</li>
+<li>bitmap: read a bitmap image</li>
+<li>arrow, arrowhead</li>
+</ul>
+
+<p>
+Use pin to create lines connecting picts
+</p>
+<ul class="org-ul">
+<li>pin-line, pin-arrow-line, pin-arrows-line: add lines onto a pict. It
+finds positions in the src and dst picts, and can set angle to
+create curve</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org765af65" class="outline-5">
+<h5 id="org765af65"><span class="section-number-5">23.2.1.1</span> More constructors</h5>
+<div class="outline-text-5" id="text-23-2-1-1">
+<ul class="org-ul">
+<li>cloud</li>
+<li>file-icon</li>
+<li>standard-fish</li>
+<li>jack-o-lantern</li>
+<li>angel-wing</li>
+<li>desktop-machine</li>
+<li>thermometer</li>
+<li>face, face*</li>
+</ul>
+
+<p>
+Balloon annotation
+</p>
+
+<ul class="org-ul">
+<li>wrap-balloon</li>
+<li>pin-wrap-balloon</li>
+<li>pin-balloon</li>
+<li>balloon</li>
+<li>filled-flash</li>
+<li>outline-flash</li>
+</ul>
+
+<p>
+code
+</p>
+<ul class="org-ul">
+<li>typeset-code</li>
+<li>code</li>
+<li>define-code</li>
+<li>code-align: align code with pict</li>
+<li>codeblock-pict: a block of code, seems to respect #lang option
+inside the code string, to decide lexer</li>
+</ul>
+
+<p>
+code parameters
+</p>
+<ul class="org-ul">
+<li>current-code-font</li>
+<li>current-code-tt</li>
+<li>current-code-line-sep</li>
+<li>current-comment-color</li>
+<li>current-keyword-color</li>
+<li>current-id-color</li>
+<li>current-literal-color</li>
+<li>current-const-color</li>
+<li>current-base-color</li>
+<li>current-reader-forms: this should be able to define language</li>
+<li>current-keyword-list</li>
+<li>current-const-list</li>
+<li>current-literal-list</li>
+<li>code-colorize-enabled</li>
+<li>code-italic-underscore-enabled</li>
+<li>code-scripts-enabled</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org6cbff15" class="outline-4">
+<h4 id="org6cbff15"><span class="section-number-4">23.2.2</span> Combiners</h4>
+<div class="outline-text-4" id="text-23-2-2">
+<ul class="org-ul">
+<li>various of append
+<ul class="org-ul">
+<li>syntax: v and h, then alignment</li>
+<li>vl, vc, vr, ht, htl, hc, hbl, hb</li>
+<li>v and h for vertical and horizontal</li>
+<li>t,b for top, bottom</li>
+<li>l,c,r for left, center, right</li>
+</ul></li>
+<li>superimpose
+<ul class="org-ul">
+<li>Syntax: horizontal alignment, vertical alignment</li>
+<li>lt,ltl,lc,lbl,lb,ct,ctl,cc,cbl,cb,rt,rtl,rc,rbl,rb</li>
+<li>l,c,r for left, center, and right</li>
+<li>t,b for top and bottom</li>
+</ul></li>
+<li>pin
+<ul class="org-ul">
+<li>pin-over</li>
+<li>pin-under</li>
+</ul></li>
+<li>table</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5e77083" class="outline-4">
+<h4 id="org5e77083"><span class="section-number-4">23.2.3</span> Adjusters</h4>
+<div class="outline-text-4" id="text-23-2-3">
+<ul class="org-ul">
+<li>scale, scale-to-fit, scale/improve-new-text</li>
+<li>rotate</li>
+<li>ghost: does not draw (invisible), but use the size</li>
+<li>cellophane: make is semi-transparent</li>
+<li>clip, inset/clip</li>
+<li>freeze: to bitmap</li>
+</ul>
+
+<p>
+The followings can be used to specify parameters
+</p>
+<ul class="org-ul">
+<li>linewidth</li>
+<li>linestyle</li>
+<li>colorize</li>
+<li>black-and-white</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org20f8eb4" class="outline-4">
+<h4 id="org20f8eb4"><span class="section-number-4">23.2.4</span> Bounding box</h4>
+<div class="outline-text-4" id="text-23-2-4">
+<ul class="org-ul">
+<li>inset</li>
+<li>clip-decent</li>
+<li>lift-above-baseline</li>
+<li>drop-below-ascent</li>
+<li>baseless</li>
+<li>refocus: focus on the top most sub-pict</li>
+<li>panorama: enclose all sub-picts</li>
+<li>use-last, use-last*</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8e4fcad" class="outline-4">
+<h4 id="org8e4fcad"><span class="section-number-4">23.2.5</span> Pict finder</h4>
+<div class="outline-text-4" id="text-23-2-5">
+<ul class="org-ul">
+<li>with -find suffix
+<ul class="org-ul">
+<li>lt,ltl,lc,lbl,lb,ct,ctl,cc,cbl,cb,rt,rtl,rc,rbl,rb</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc8f1d85" class="outline-4">
+<h4 id="orgc8f1d85"><span class="section-number-4">23.2.6</span> Tree layout</h4>
+<div class="outline-text-4" id="text-23-2-6">
+<p>
+tree-layout creates a layout containing edges. The layout can be
+rendered to pict by
+</p>
+<ul class="org-ul">
+<li>naive-layered (seems to be good)</li>
+<li>binary-tidier</li>
+<li>hv-alternating</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd7f60ad" class="outline-3">
+<h3 id="orgd7f60ad"><span class="section-number-3">23.3</span> graph</h3>
+<div class="outline-text-3" id="text-23-3">
+<p>
+This is a generic graphic library.  graph is defined through a generic
+interface <code>gen:graph</code>, supporting the following methods:
+</p>
+<ul class="org-ul">
+<li>has-vertex?</li>
+<li>has-edge?</li>
+<li>vertex=?</li>
+<li>add-vertex!</li>
+<li>remove-vertex!</li>
+<li>rename-vertex!</li>
+<li>add-edge!</li>
+<li>remove-edge!</li>
+<li>get-vertices</li>
+<li>in-vertices</li>
+<li>get-neighbors</li>
+<li>in-neighbors</li>
+<li>get-edges</li>
+<li>in-edges</li>
+<li>edge-weight</li>
+<li>transpose</li>
+<li>graph-copy</li>
+<li>graph-union!</li>
+</ul>
+
+<p>
+This actually is mostly not functional.
+</p>
+
+<p>
+To construct a graph, use <code>directed-graph</code> or <code>undirected-graph</code> with
+list of edges represented as list of vertex, with first being the
+source, rest being target. These functions seems only support single
+target.
+</p>
+
+<p>
+The library let you define vertex and edge properties, just like those
+in boost library. You can do bfs or dfs, shortest path, graph
+coloring, maximum flow.
+</p>
+
+<p>
+Finally, you can call <code>graphviz</code> to convert the graph to a string of
+dot format. It cannot output a <code>pict</code>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgb003f66" class="outline-3">
+<h3 id="orgb003f66"><span class="section-number-3">23.4</span> 2htdp/image</h3>
+<div class="outline-text-3" id="text-23-4">
+<p>
+This is teachpack of How to design program version 2.  It provides
+several basic images, rotation, scale, flip, overlay.
+</p>
+
+<p>
+Other interesting packages in this pack:
+</p>
+<ul class="org-ul">
+<li>2htdp/planetcute contains many images</li>
+</ul>
+</div>
+
+
+<div id="outline-container-orgb28389d" class="outline-4">
+<h4 id="orgb28389d"><span class="section-number-4">23.4.1</span> Common Concepts</h4>
+<div class="outline-text-4" id="text-23-4-1">
+<p>
+The length is measured in terms of pixels, angle means degree. When
+using names, both string and symbol are acceptable, and
+case-insensitive.
+</p>
+
+<p>
+Mode can be <code>'solid</code> or <code>'outline</code>. The string format is also
+supported. Solid fills, outline only draws the outside line. A integer
+between 0 and 255 instead will indicate the transparency.
+</p>
+
+<p>
+Color can be name or color structure. If the name is not recognized,
+no error is reported, and black is used. The complete list (plus
+<code>transparent</code>) is in the document of <code>color-database&lt;%&gt;</code>. This is an
+interface, defined in <code>racket/draw</code>.
+</p>
+
+<p>
+The color structure is
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">struct</span> color (red green blue alpha))
+</pre>
+</div>
+
+
+<p>
+In many places, the color also accepts a pen. <code>pen</code> is a structure. It
+seems only for drawing lines, so outline mode will support it. Its
+definition is
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">(<span style="color: #a020f0;">struct</span> pen (color width style cap join))
+</pre>
+</div>
+
+<dl class="org-dl">
+<dt>style</dt><dd>solid, dot, long-dash, short-dash, dot-dash</dd>
+<dt>cap</dt><dd>round, projecting, butt</dd>
+<dt>join</dt><dd>round, bevel, miter</dd>
+</dl>
+
+<p>
+When doing alignment, you can use pinhole, only if all the images have
+a pinhole. You can add pinhole to image by
+</p>
+<ul class="org-ul">
+<li>center-pinhole image</li>
+<li>put-pinhole x y image</li>
+<li>clear-pinhole</li>
+</ul>
+
+<p>
+And retrieve pinhole by
+</p>
+<ul class="org-ul">
+<li>pinhole-x</li>
+<li>pinhole-y</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9207e1f" class="outline-4">
+<h4 id="org9207e1f"><span class="section-number-4">23.4.2</span> basic shape</h4>
+<div class="outline-text-4" id="text-23-4-2">
+<ul class="org-ul">
+<li>shape
+<ul class="org-ul">
+<li><code>(circle radius mode color)</code></li>
+<li><code>(ellipse width height mode color)</code></li>
+<li>triangle
+<ul class="org-ul">
+<li><code>(triangle side-length mode color)</code></li>
+<li>right-triangle</li>
+<li>isosceles-triangle</li>
+<li>triangle/sss</li>
+</ul></li>
+<li>square x</li>
+<li>rectangle x y</li>
+<li>rhombus x θ</li>
+<li>star
+<ul class="org-ul">
+<li>star x</li>
+<li>star-polygon</li>
+<li>radial-star</li>
+</ul></li>
+<li>polygon
+<ul class="org-ul">
+<li>regular-polygon</li>
+<li>polygon</li>
+<li>add-polygon</li>
+<li>scene+polygon</li>
+</ul></li>
+</ul></li>
+<li>line
+<ul class="org-ul">
+<li><code>(line x y color)</code>: draw a line from (0,0) to (x,y).</li>
+<li><code>(add-line image x1 y1 x2 y2 color)</code>: add line to image, from
+(x1,y1) to (x2,y2)</li>
+<li><code>add-curve</code></li>
+<li><code>add-solid-curve</code></li>
+</ul></li>
+<li>text
+<ul class="org-ul">
+<li><code>(text string font-size color)</code></li>
+<li><code>text/font</code>: this will use a complete font specification,
+including
+<ul class="org-ul">
+<li>face: which font name</li>
+<li>family: default, script, modern, etc</li>
+<li>style: normal, italic</li>
+<li>weight: normal, bold, light</li>
+<li>underline?: #t #f</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf1741c4" class="outline-4">
+<h4 id="orgf1741c4"><span class="section-number-4">23.4.3</span> Overlay</h4>
+<div class="outline-text-4" id="text-23-4-3">
+<ul class="org-ul">
+<li><code>overlay</code> accepts a sequence of images, with the first being on
+top. Images are aligned on their center.</li>
+<li><code>overlay/align x-place y-place</code> controls where to align the images.
+<ul class="org-ul">
+<li>x: left, right, middle, center, pinhole</li>
+<li>y: top, bottom, middle, center, baseline, pinhole</li>
+</ul></li>
+<li><code>overlay/offset i1 x y i2</code>: moves i2 by (x,y) compared to (0,0),
+thus to down right</li>
+<li><code>overlay/align/offset</code> combines both options</li>
+<li><code>overlay/xy</code>: what's the difference from offset?</li>
+<li><code>overlay/pinhole</code></li>
+</ul>
+
+<p>
+There's also an <code>underlay</code> version that does the reverse order, for
+all above.
+</p>
+
+<ul class="org-ul">
+<li><code>beside</code> accepts images, and placing them in horizontal row, aligned
+on their centers</li>
+<li><code>beside/align y</code></li>
+<li><code>above</code>: in a vertical row</li>
+<li><code>above/align x</code></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf024483" class="outline-4">
+<h4 id="orgf024483"><span class="section-number-4">23.4.4</span> scene</h4>
+<div class="outline-text-4" id="text-23-4-4">
+<p>
+Typically you place images on a scene. If an image is placed (using
+those place functions) or add lines (using scene+XXX) on scene, it is
+cropped based on the size of scene. You can still compose the image by
+overlay or add-line, but those does not respect the size of scene.
+</p>
+
+<ul class="org-ul">
+<li><code>empty-scene x y color</code></li>
+<li><code>place-image image x y scene</code>: the (x,y) is according to the
+top-left corner of scene</li>
+<li><code>place-image/align image</code></li>
+<li><code>place-images</code>: just a list of images and a list of positions</li>
+<li><code>place-images/align</code></li>
+<li><code>scene+line</code>: add a line to the scene</li>
+<li><code>scene+curve</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org445a516" class="outline-4">
+<h4 id="org445a516"><span class="section-number-4">23.4.5</span> transform</h4>
+<div class="outline-text-4" id="text-23-4-5">
+<ul class="org-ul">
+<li><code>rotate angle image</code></li>
+<li><code>scale factor image</code></li>
+<li><code>scale/xy</code>: using different factor for x and y</li>
+<li><code>flip-horizontal image</code></li>
+<li><code>flip-vertical image</code></li>
+<li><code>crop x y width height image</code></li>
+<li><code>crop/align</code></li>
+<li><code>frame image</code>: return an image with a black frame around the
+<i>bounding box</i> of the it. Even if the image might be a circle, the
+bounding box is still rectangle.</li>
+<li><code>color-frame color image</code></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7a3c581" class="outline-4">
+<h4 id="org7a3c581"><span class="section-number-4">23.4.6</span> bitmap</h4>
+<div class="outline-text-4" id="text-23-4-6">
+<p>
+You can load a bit map file by <code>(bitmap filename)</code>, or <code>(bitmap/url
+url)</code> to download from web. For a vector image you created in racket,
+you can "freeze" it to bitmap by <code>freeze image</code>.
+</p>
+
+<p>
+Finally, you can save image to file by
+</p>
+<ul class="org-ul">
+<li><code>save-image image filename [width height]</code>: png</li>
+<li><code>save-svg-image image filename [width height]</code>: svg</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb7e424d" class="outline-4">
+<h4 id="orgb7e424d"><span class="section-number-4">23.4.7</span> properties</h4>
+<div class="outline-text-4" id="text-23-4-7">
+<ul class="org-ul">
+<li>image-width</li>
+<li>image-height</li>
+<li>image-baseline</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1996e99" class="outline-3">
+<h3 id="org1996e99"><span class="section-number-3">23.5</span> Networking</h3>
+<div class="outline-text-3" id="text-23-5">
+</div>
+<div id="outline-container-org3234c95" class="outline-4">
+<h4 id="org3234c95"><span class="section-number-4">23.5.1</span> HTML parsing</h4>
+<div class="outline-text-4" id="text-23-5-1">
+<p>
+The package is <code>html-parsing</code>. It has only one function, <code>html-&gt;xexp</code>.
+</p>
+
+<p>
+The xexp is a list like this:
+</p>
+
+<pre class="example">
+(*TOP* (html (head (title) (title "whatever"))
+  (body "\n"
+    (a (@ (href "url")) "link"))))
+</pre>
+
+<p>
+The xexp needs to use <code>sxml</code> (needs install) package to
+parse. <code>sxpath</code> is a function for XPath like query. Use like this
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">((sxpath '(html body table tr td a @ (*or* href title)))
+ table)
+</pre>
+</div>
+
+<p>
+sxpath itself returns a function, apply that function on an xexp data,
+a list will be returned for matched results.
+</p>
+<ol class="org-ol">
+<li>the xexp must begin with <code>*TOP*</code>, the query result will not have
+it. So if you want to parse it again, construct it by <code>`(*TOP* ,x)</code></li>
+<li>the xpath starts from root (html)</li>
+<li>you can use <code>'(// table)</code> to query tables at arbitrary level</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgce20455" class="outline-4">
+<h4 id="orgce20455"><span class="section-number-4">23.5.2</span> URL &amp; HTTP</h4>
+<div class="outline-text-4" id="text-23-5-2">
+<p>
+require the package <code>net/url</code> (needs install) and
+<code>net/url-string</code>. First, construct a url by <code>string-&gt;url</code>, then, open
+input port by <code>get-pure-port</code>, this is using <code>GET</code> method. The port
+can be used as input, e.g. <code>port-&gt;string</code>. How to download binary
+file, like pdf? It should be bytes streaming, so maybe
+</p>
+<ul class="org-ul">
+<li>copy-port in out</li>
+<li>port-&gt;bytes then write-bytes</li>
+</ul>
+
+
+<p>
+The <code>call/input-url URL connect handle</code> will call handle on the port,
+and close the port on return. The connect is a procedure,
+e.g. <code>get-pure-port</code>.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
