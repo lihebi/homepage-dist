@@ -225,6 +225,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -233,31 +255,407 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9f3023f">1. Map Reduce</a></li>
+<li><a href="#org31969b4">1. References</a></li>
+<li><a href="#orgff05ca7">2. Expression</a></li>
+<li><a href="#org34a8616">3. What is a Function?</a>
+<ul>
+<li><a href="#orga25c9d4">3.1. Composition</a></li>
+<li><a href="#org822c23f">3.2. Strictness</a></li>
+</ul>
+</li>
+<li><a href="#orgda377b7">4. Type</a>
+<ul>
+<li><a href="#org0d01068">4.1. Type inference</a></li>
+<li><a href="#org818e87e">4.2. List</a></li>
+</ul>
+</li>
+<li><a href="#org885dfc8">5. Recursion</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9f3023f" class="outline-2">
-<h2 id="org9f3023f"><span class="section-number-2">1</span> Map Reduce</h2>
+<div id="outline-container-org31969b4" class="outline-2">
+<h2 id="org31969b4"><span class="section-number-2">1</span> References</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>introduction to functional programming <a class='org-ref-reference' href="#1988-Book-Bird-Introduction">1988-Book-Bird-Introduction</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgff05ca7" class="outline-2">
+<h2 id="orgff05ca7"><span class="section-number-2">2</span> Expression</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-map and reduce are from functional programming. Map is just map,
-reduce has another familiar name called <i>fold</i>.
+An expression can be <i>reduced</i> to an simpler equivalent form.  We say
+an expression is <i>canonical</i> (or in <i>normal form</i>) if it cannot be
+further reduced.
 </p>
 
 <p>
-The Map-reduce framework does not just borrow the name. Its
-contribution is scalability and fault-tolerance.
+The result of <i>equality test</i> is done by reducing the expressions to
+their canonical form, and testing whether the results are
+identical. If an expression does not have a canonical form, the result
+is undefined, represented by \(\bot\). In particular, function values
+have no canonical form.
 </p>
 
 <p>
-The steps:
+The order of evaluation thus matters. Each reduction step replace a
+sub-term by an equivalent term. The term is called a <i>redex</i>, short
+for <i>reducible expression</i>. There are two reduction policies,
+<i>innermost reduction</i> and <i>outermost reduction</i>. <i>Innermost reduction</i>
+reduces the innermost redex, i.e. the one that contains no other
+redex. <i>Outermost reduction</i> reduces the one that is contained in no
+other redex.
 </p>
+
+<p>
+The evaluation order matters because of the <i>termination</i>. Sometimes,
+the outermost reduction will terminate while the inner most fail to do
+so. In fact, we have the following property:
+</p>
+
+<blockquote>
+<p>
+For every term, if there exists any reduction order that terminates,
+then there is an outermost reduction that terminates.
+</p>
+</blockquote>
+
+<p>
+Thus, outermost reduction is also called <i>normal order reduction</i>,
+because it is capable of reducing a term to its normal form whenever
+the term has such a form. It is also called <i>lazy evaluation</i>, because
+it does not reduce a term unless it is essential for finding the
+answer. By contract, the innermost reduction is called <i>applicative
+order reduction</i>, or <i>eager evaluation</i>.
+</p>
+
+<p>
+Outermost reduction is essential for evaluating non-strict
+functions. But innermost and outermost reduction will yield the same
+answer when only strict functions are involved.
+</p>
+
+<p>
+With that said for termination property, however, outermost may
+require more steps than innermost reduction. The reason is that, the
+outermost reduction might duplicate some inner expressions. One
+problem is called <i>graph reduction</i>, which ensures that the duplicated
+sub-terms are always linked together in the graph, and reduction of
+them will happen ones, for all the references of them. With graph
+reduction, we can say outermost reduction never performs more steps
+than innermost.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org34a8616" class="outline-2">
+<h2 id="org34a8616"><span class="section-number-2">3</span> What is a Function?</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>currying: replacing structured arguments by a sequence of simple
+ones. The function application operation associates to the left,
+i.e. <code>f x y</code> means <code>((f x) y)</code>.</li>
+</ul>
+</div>
+
+<div id="outline-container-orga25c9d4" class="outline-3">
+<h3 id="orga25c9d4"><span class="section-number-3">3.1</span> Composition</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Functional composition has the definition of
+</p>
+
+<p>
+\[(f \circ g) x = f (g x)\]
+</p>
+
+<p>
+and the type of it
+</p>
+
+<p>
+\[(\circ) :: (\beta \rightarrow \gamma) \rightarrow (\alpha
+\rightarrow \beta) \rightarrow (\alpha \rightarrow \gamma)\]
+</p>
+
+<p>
+functional composition is also associative, thus no need to put
+brackets
+</p>
+
+<p>
+\[(f \circ g) \circ h = f \circ (g \circ h)\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org822c23f" class="outline-3">
+<h3 id="org822c23f"><span class="section-number-3">3.2</span> Strictness</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+The special value \(\bot\) is polymorphic: \(\bot\) is a value of every
+type. This means, any function can be applied to \(\bot\). If \(f \bot =
+\bot\), then \(f\) is said to be strict. Otherwise, it is non-strict. In
+other words, a function is <i>strict</i> if it is undefined whenever its
+argument is undefined. 
+</p>
+
+<p>
+In fact, a non-strict semantic is often preferable for functions, for
+several reasons:
+</p>
+<ul class="org-ul">
+<li>it makes reasoning about equality easier</li>
+<li>we can define new control structures by defining new functions</li>
+</ul>
+
+<p>
+For example, we define a function <code>three</code> that takes anything and
+return the value <code>3</code>. I.e.
+</p>
+
+<pre class="example">
+three :: num -&gt; num
+three x = 3
+</pre>
+
+<p>
+Another example, the definition of <code>cond</code>
+</p>
+
+<p>
+\[cond :: bool \rightarrow \alpha \rightarrow \alpha \rightarrow \alpha\]
+</p>
+
+<pre class="example">
+cond p x y = x, if p
+           = y, otherwise
+</pre>
+
+<p>
+Under strict semantics, \(cond\ True\ 0\ \bot = \bot\), under non-strict
+semantics, \(cond True 0 \bot = 0\). But in either case, <code>cond</code> is
+strict on its first argument.
+</p>
+
+<p>
+The operational semantics of strict or non-strict functions is closely
+related to the reduction strategy. <i>eager-evaluation</i> reduces every
+expression to its simplest form, while <i>lazy-evaluation</i> does not care
+about the wellness of the expressions whose values are not required
+for the evaluation.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgda377b7" class="outline-2">
+<h2 id="orgda377b7"><span class="section-number-2">4</span> Type</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Strong-typing: the type of an expression depends only on the type of
+its component expressions.</li>
+<li>Type variable: typically represented in Greek letters \(\alpha\),
+\(\beta\), etc. Such type can be instantiated by substitute the type
+variable with specific type.</li>
+<li>Polymorphic type: a type that contains <i>type variables</i></li>
+</ul>
+</div>
+
+<div id="outline-container-org0d01068" class="outline-3">
+<h3 id="org0d01068"><span class="section-number-3">4.1</span> Type inference</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Three basic rules
+</p>
+
 <ol class="org-ol">
-<li>map: produce data by filtering, and emit the data (marshalling)</li>
-<li>reduce: fold</li>
+<li>Application rule: if <code>f x :: t</code>, then <code>x :: t'</code> and <code>f :: t' -&gt; t</code>
+for some new type <code>t'</code></li>
+<li>Equality rule: if both the types <code>x :: t</code> and <code>x :: t'</code> can be
+deduced for a variable <code>x</code>, then <code>t = t'</code>.</li>
+<li>Function rule: If <code>t -&gt; u = t' -&gt; u'</code>, then <code>t = t'</code>, and <code>u = u'</code></li>
 </ol>
+
+<p>
+Often, the newly introduced types are named by numerical sub-notation.
+</p>
+
+<p>
+For example, consider the composition operator
+</p>
+
+<pre class="example">
+(.) f g x = f (g x)
+</pre>
+
+<p>
+The following script shows the inference steps:
+</p>
+<pre class="example">
+f :: t1
+g :: t2
+x :: t3
+f (g x) :: t4
+(.) :: t1 -&gt; t2 -&gt; t3 -&gt; t4
+g x :: t5
+f :: t5 -&gt; t4
+x :: t6
+g :: t6 -&gt; t5
+t1 = t5 -&gt; t4
+t2 = t6 -&gt; t5
+t3 = t6
+(.) :: (t5 -&gt; t4) -&gt; (t6 -&gt; t5) -&gt; t6 -&gt; t4
+</pre>
+
+<p>
+Finally, we need to replace the types with type variables to make it
+generic:
+</p>
+
+<p>
+\[(\circ) :: (\beta \rightarrow \gamma) \rightarrow (\alpha
+\rightarrow \beta) \rightarrow (\alpha \rightarrow \gamma)\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org818e87e" class="outline-3">
+<h3 id="org818e87e"><span class="section-number-3">4.2</span> List</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Let list comprehension notation be <code>[&lt;expr&gt; | &lt;qualifier&gt;;
+...]</code>. Qualifier can be boolean expression for predicates or
+generators. Later generators vary more quickly than their
+predecessors, and can depends on the variables introduced by earlier
+ones. With this, we can define many operators on lists:
+</p>
+
+<pre class="example">
+(++) :: [a] -&gt; [a] -&gt; [a]
+concat :: [[a]] -&gt; [a]
+concat xss = [x | xs &lt;- xss; x &lt;- xs]
+</pre>
+
+<p>
+Instead of using <code>(++)</code> for concating list, we can use <code>(:)</code>
+(pronounced 'cons') for specifying consing. One important reason to
+use <code>(:)</code> is that, every list can be expressed in terms of <code>[]</code> and
+<code>(:)</code> in <b>exactly one way</b>.
+</p>
+
+<pre class="example">
+(:) :: a -&gt; [a] -&gt; [a]
+x:xs = [x] ++ xs
+</pre>
+
+<p>
+We have the following operators on lists:
+</p>
+<pre class="example">
+
+(#) :: [a] -&gt; num
+#(xs ++ ys) = #xs + #ys
+
+hd :: [a] -&gt; a
+tl :: [a] -&gt; [a]
+hd ([x] ++ xs) = x
+tl ([x] ++ xs) = xs
+
+take n xs ++ drop n xs = xs
+
+takewhile :: (a -&gt; bool) -&gt; [a]  -&gt; [a]
+zip :: ([a], [b]) -&gt; [(a,b)]
+(!) :: [a] -&gt; num -&gt; a # index
+
+</pre>
+
+<p>
+Map and filter can be defined by:
+</p>
+<pre class="example">
+map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+map f xs = [f x | x &lt;- xs]
+filter :: (a -&gt; bool) -&gt; [a] -&gt; [a]
+filter p xs = [x | x &lt;- xs; p x]
+</pre>
+
+<p>
+Fold:
+</p>
+<pre class="example">
+foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b
+sum = foldr (+) 0
+product = foldr (x) 1
+concat = foldr (++) []
+and = foldr (&amp;) True
+or = foldr (|) False
+</pre>
+
+<p>
+<code>foldr</code> and <code>foldl</code> do rely on associative of the underlying operators
+to function correctly, and there are several <i>duality theorems</i>.
+</p>
+
+<p>
+In big data literature, <i>map</i> and <i>reduce</i> are borrowed from
+functional programming. Map is just map, reduce has another familiar
+name called <i>fold</i>.  The Map-reduce framework does not just borrow the
+name. Its contribution is <b>scalability and fault-tolerance</b>. In this
+case, <i>map</i> produces data by filtering, and emit the data,
+marshalling, and <i>reduce</i> does folding.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org885dfc8" class="outline-2">
+<h2 id="org885dfc8"><span class="section-number-2">5</span> Recursion</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Functions are often defined recursively. In this section, we see some
+of the list function definitions in recursion.
+</p>
+
+<pre class="example">
+zip([], ys) = []
+zip(x:xs, []) = []
+zip(x:xs, y:ys) = (x,y):zip(xs,ys)
+</pre>
+
+<pre class="example">
+take 0 xs = []
+take (n+1) [] = []
+take (n+1) (x:xs) = x:take n xs
+
+drop 0 xs = xs
+drop (n+1) [] = []
+drop (n+1) (x:xs) = drop n xs
+</pre>
+
+<pre class="example">
+hd(x:xs) = x
+tl(x:xs) = xs
+</pre>
+
+<pre class="example">
+map f [] = []
+map f (x:xs) = f x : map f xs
+filter p [] = []
+filter p (x:xs) = x : filter p xs, if p x
+                = filter p xs,     otherwise
+</pre>
+
+<p>
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="1988-Book-Bird-Introduction">[1988-Book-Bird-Introduction]</a> Bird & Wadler, Introduction to Functional Programming, (1988).</li>
+</ul>
+</p>
 </div>
 </div>
 </div>
