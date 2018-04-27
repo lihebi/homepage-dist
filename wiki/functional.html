@@ -311,6 +311,16 @@ other redex.
 </p>
 
 <p>
+Any term that is reduced must be reduced to <i>head normal form</i>. A term
+is in <i>head normal form</i> if it is not a redex, and it cannot become a
+redex by reducing any of its subterms. For example, <code>(e1:e2)</code> is in
+head normal form, because the (:) <i>itself</i> cannot be reduced. However,
+<code>e1</code> and <code>e2</code> might be reducible. It is a normal form only when e1 and
+e2 both are in normal form. By definition, every term in normal form
+is in head normal form, but not vice versa.
+</p>
+
+<p>
 The evaluation order matters because of the <i>termination</i>. Sometimes,
 the outermost reduction will terminate while the inner most fail to do
 so. In fact, we have the following property:
@@ -348,8 +358,49 @@ them will happen ones, for all the references of them. With graph
 reduction, we can say outermost reduction never performs more steps
 than innermost.
 </p>
+
+<p>
+In summary, we shall use <i>outermost graph reduction</i> as the evaluation
+model, because
+</p>
+<ol class="org-ol">
+<li>it terminates whenever any reduction order terminates</li>
+<li>it requires no more steps than innermost order reduction</li>
+</ol>
+
+<p>
+However, the outermost reduction might use more space than
+innermost. In this case, it might be desired to mix innermost order to
+achieve better space efficiency. There is a special function <code>strict</code>
+that fine-control the evaluation order. <code>strict f e</code> is reduced by
+first reducing <code>e</code> to head normal form, then applying <code>f</code>. The term
+<code>e</code> itself is evaluated as normal, using outermost order. With that,
+<code>strict</code> can be defined like below. We can easily have this: <code>f =
+strict f</code> iff <code>f</code> is a strict function.
+</p>
+
+<pre class="example">
+strict f x = \bot, if x = \bot
+           = f x,  otherwise
+</pre>
+
+<p>
+There are some ways to decide how to use <code>strict</code> to optimize the
+space occupation, but some takeaway: for functions such as <code>(+)</code> or
+<code>(x)</code>, that are strict in <b>both arguments</b>, and can be computed in
+constant time and space, <code>foldl'</code> is more efficient. But for
+functions, such as <code>(&amp;)</code> and <code>(++)</code>, that are non-strict in some
+argument, <code>foldr</code> is often more efficient.  (<code>foldl'</code> is a rewrite of
+<code>foldl</code> with strictness)
+</p>
+
+<pre class="example">
+foldl' (op) a [] = a
+foldl' (op) a (x:xs) = strict (foldl' (op)) (a op x) xs
+</pre>
 </div>
 </div>
+
 
 
 <div id="outline-container-org34a8616" class="outline-2">
@@ -401,8 +452,9 @@ The special value \(\bot\) is polymorphic: \(\bot\) is a value of every
 type. This means, any function can be applied to \(\bot\). If \(f \bot =
 \bot\), then \(f\) is said to be strict. Otherwise, it is non-strict. In
 other words, a function is <i>strict</i> if it is undefined whenever its
-argument is undefined. 
+argument is undefined.
 </p>
+
 
 <p>
 In fact, a non-strict semantic is often preferable for functions, for
@@ -439,7 +491,8 @@ cond p x y = x, if p
 <p>
 Under strict semantics, \(cond\ True\ 0\ \bot = \bot\), under non-strict
 semantics, \(cond True 0 \bot = 0\). But in either case, <code>cond</code> is
-strict on its first argument.
+strict on its first argument. This also means, strictness is bundled
+with the function, and is applied on some arguments, not all.
 </p>
 
 <p>
@@ -463,6 +516,20 @@ its component expressions.</li>
 \(\beta\), etc. Such type can be instantiated by substitute the type
 variable with specific type.</li>
 <li>Polymorphic type: a type that contains <i>type variables</i></li>
+<li>Enumerated type: enumeration of possible values</li>
+<li>Composite type: composite primitive type together to form new types</li>
+<li>algebraic data type: is a form of composite type, containing product
+type and sum type
+<ul class="org-ul">
+<li>sum type: this is like C union, so it is also called a tagged
+union. It can take value of either the type, but not both.</li>
+<li>product type: this is like a C structure with different
+fields. The value set of this type is the set-theoretic product,
+i.e., the Cartesian product of the set of the field type.</li>
+</ul></li>
+<li>Abstract Type: types in which the values are prescribed, but the
+operations are not, are called concrete types. A type whose values
+are not defined, but operations are, is called abstract type.</li>
 </ul>
 </div>
 
@@ -527,6 +594,15 @@ generic:
 <div id="outline-container-org818e87e" class="outline-3">
 <h3 id="org818e87e"><span class="section-number-3">4.2</span> List</h3>
 <div class="outline-text-3" id="text-4-2">
+<p>
+List itself is defined as a recursive type.
+</p>
+
+<p>
+\[list \alpha :: Nil | Cons \alpha (list \alpha)\]
+</p>
+
+
 <p>
 Let list comprehension notation be <code>[&lt;expr&gt; | &lt;qualifier&gt;;
 ...]</code>. Qualifier can be boolean expression for predicates or
