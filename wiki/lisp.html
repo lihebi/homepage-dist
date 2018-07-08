@@ -159,6 +159,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -184,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -235,10 +248,11 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgf6f8369">1. Dialects</a></li>
 <li><a href="#org276ec1f">2. Why Lisp?</a></li>
-<li><a href="#org8450e96">3. fold &amp; unfold</a></li>
-<li><a href="#org382cb43">4. Car &amp; Cdr</a></li>
-<li><a href="#org01275a3">5. The right thing vs. Worse is better </a></li>
-<li><a href="#orgdcafb7b">6. Reference</a></li>
+<li><a href="#orge936d01">3. CASE</a></li>
+<li><a href="#org8450e96">4. fold &amp; unfold</a></li>
+<li><a href="#org382cb43">5. Car &amp; Cdr</a></li>
+<li><a href="#org01275a3">6. The right thing vs. Worse is better </a></li>
+<li><a href="#orgdcafb7b">7. Reference</a></li>
 </ul>
 </div>
 </div>
@@ -304,10 +318,47 @@ reverse is true.
 </div>
 </div>
 
+<div id="outline-container-orge936d01" class="outline-2">
+<h2 id="orge936d01"><span class="section-number-2">3</span> CASE</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+David J. Cooper in <i>Basic Lisp Techniques</i>:
+</p>
+
+<blockquote>
+<p>
+Many developers once hoped that the software development process of
+the future would be more automated through Computer-aided Software
+Engineering (CASE) tools. Such tools claim to enable programmers and
+non-programmers to diagram their applications visually and
+automatically generate code. While useful to a certain extent,
+traditional CASE tools cannot cover domain-specific details and
+support all possible kinds of customizations — so developers
+inevitably need to hand-code the rest of their applications, breaking
+the link between the CASE model and the code. CASE systems fall short
+of being a true “problem solving tool.”
+</p>
+
+<p>
+The recursive nature of CL, and its natural ability to build
+applications in layers and build upon itself — in essence, code which
+writes code which writes code&#x2026;, makes CL a much better software
+engineering solution. CL programs can generate other CL programs
+(usually at compile-time), allowing the developer to define all parts
+of the application in one unified high-level language. Using macros
+and functions, naturally supported by the CL syntax, the system can
+convert applications written in the high-level language automatically
+into “final” code. Thus, CL is both a programming language and a
+powerful CASE tool, and there is no need to break the connection.
+</p>
+</blockquote>
+</div>
+</div>
+
 
 <div id="outline-container-org8450e96" class="outline-2">
-<h2 id="org8450e96"><span class="section-number-2">3</span> fold &amp; unfold</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="org8450e96"><span class="section-number-2">4</span> fold &amp; unfold</h2>
+<div class="outline-text-2" id="text-4">
 <blockquote>
 <p>
 In academic functional programming literature, folds are often called
@@ -338,8 +389,8 @@ state you wish to modify.
 
 
 <div id="outline-container-org382cb43" class="outline-2">
-<h2 id="org382cb43"><span class="section-number-2">4</span> Car &amp; Cdr</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="org382cb43"><span class="section-number-2">5</span> Car &amp; Cdr</h2>
+<div class="outline-text-2" id="text-5">
 <blockquote>
 <p>
 The names CAR and CDR derive from the history of Lisp.  The original
@@ -357,8 +408,8 @@ cells.
 
 
 <div id="outline-container-org01275a3" class="outline-2">
-<h2 id="org01275a3"><span class="section-number-2">5</span> The right thing vs. Worse is better <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-5">
+<h2 id="org01275a3"><span class="section-number-2">6</span> The right thing vs. Worse is better <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-6">
 <p>
 These are two software design philosophies. The key different is:
 </p>
@@ -391,8 +442,8 @@ programming language; the bad news is that they will be Unix and C++.
 </div>
 
 <div id="outline-container-orgdcafb7b" class="outline-2">
-<h2 id="orgdcafb7b"><span class="section-number-2">6</span> Reference</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="orgdcafb7b"><span class="section-number-2">7</span> Reference</h2>
+<div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li>Ron Garret: Why Lisp: <a href="http://blog.rongarret.info/2015/05/why-lisp.html">http://blog.rongarret.info/2015/05/why-lisp.html</a>
 <ul class="org-ul">
@@ -403,6 +454,10 @@ of representing the code</li>
 <li>Robert Strandh: what is wrong with lisp: <a href="http://metamodular.com/Essays/wrong.html">http://metamodular.com/Essays/wrong.html</a></li>
 <li>Kent Pitman on Genera vs. Emacs:
 <a href="https://groups.google.com/forum/?hl=en#!topic/comp.lang.lisp/XpvUwF2xKbk%5B101-125%5D">https://groups.google.com/forum/?hl=en#!topic/comp.lang.lisp/XpvUwF2xKbk[101-125]</a></li>
+
+<li>The book: Lisp Lore: A Guide to Programming the LISP Machine
+<a href="http://www.archive.org/details/lisploreguidetop00brom">http://www.archive.org/details/lisploreguidetop00brom</a></li>
+<li><a href="http://www.lispmachine.net/">http://www.lispmachine.net/</a></li>
 </ul>
 </div>
 </div>

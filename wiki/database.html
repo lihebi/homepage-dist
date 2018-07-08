@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Data base</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Data base</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgab2e108">1. XPath</a></li>
+<li><a href="#org6eefcd4">2. CSV</a></li>
+<li><a href="#org54beab8">3. SQL</a>
+<ul>
+<li><a href="#org91fc223">3.1. Emacs Babels</a></li>
+<li><a href="#org26f2141">3.2. Basic Statements</a></li>
+<li><a href="#orgdc38a1e">3.3. SQLite</a>
+<ul>
+<li><a href="#org659f74d">3.3.1. C interface</a></li>
+<li><a href="#org74905c7">3.3.2. Python interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgab2e108" class="outline-2">
+<h2 id="orgab2e108"><span class="section-number-2">1</span> XPath</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>tag</li>
+<li><code>*</code>: all child elements</li>
+<li><code>.</code>: current node. Used mostly at the beginning of the path to indicate it is a relative path.</li>
+<li><code>//</code>: all subelements</li>
+<li><code>..</code>: parent element</li>
+<li><code>[@attr]</code>: have attribute</li>
+<li><code>[@attr='value']</code></li>
+<li><code>[tag]</code>: select all elements that have a child named tag</li>
+<li><code>[position]</code>: position can be integer(1 is the first) or <code>last()</code> or <code>last()-1</code></li>
+</ul>
+
+<p>
+predicates(expressions with square brackets) must be preceded by a:
+</p>
+
+<ul class="org-ul">
+<li>tag name</li>
+<li>asterisk <code>*</code></li>
+<li>another predicate</li>
+</ul>
+
+<p>
+position predicate must be preceded by a tag name.
+</p>
+
+<p>
+or:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text">//tag1|//tag2/tag22
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6eefcd4" class="outline-2">
+<h2 id="org6eefcd4"><span class="section-number-2">2</span> CSV</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>fields/columns separated by the comma character</li>
+<li>records/rows terminated by newlines.</li>
+<li>header is optional, so special care is needed when importing.</li>
+<li>Any field <i>may</i> be quoted with double quotes.</li>
+<li>Fields containing a <i>comma</i> should be quoted by double quotes.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org54beab8" class="outline-2">
+<h2 id="org54beab8"><span class="section-number-2">3</span> SQL</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org91fc223" class="outline-3">
+<h3 id="org91fc223"><span class="section-number-3">3.1</span> Emacs Babels</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+There're two babels: <code>sqlite</code> and <code>sql</code>. The SQL babel works for a RDBMS like MySQL.
+But a file-based sqlite database is easier to use, so we talk about <code>sqlite</code> babel here.
+</p>
+
+<p>
+To create a table, you probably want it to be silent.
+Use this header:
+<code>#+header: :results silent</code>
+to do that.
+</p>
+
+<p>
+You need a database file of course.
+<code>#+header: :dir ~/tmp/</code>
+and
+<code>#+header: :db test-sqlite.db</code>
+together will locate the database file.
+</p>
+
+<p>
+To show the result, the default is in table format, like most babels for emacs.
+If you also want the column names like those shown in command line interface, add
+<code>#+header: :colnames yes</code>
+</p>
+
+<p>
+In stead of showing as a table by default, <code>#+header: :results raw</code> will print the raw text.
+However the result will be appended if running multiple times instead of replacing.
+</p>
+
+<p>
+The following is an example.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sqlite" id="orga074781"><span style="color: #a020f0;">create</span> <span style="color: #a020f0;">table</span> <span style="color: #0000ff;">greeting</span>(one <span style="color: #228b22;">varchar</span>(10), two <span style="color: #228b22;">varchar</span>(10));
+<span style="color: #a020f0;">insert</span> <span style="color: #a020f0;">into</span> greeting <span style="color: #a020f0;">values</span>(<span style="color: #8b2252;">'Hello'</span>, <span style="color: #8b2252;">'world!'</span>);
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sqlite" id="org1d0a01d"><span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> greeting;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org26f2141" class="outline-3">
+<h3 id="org26f2141"><span class="section-number-3">3.2</span> Basic Statements</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+create &amp; insert &amp; delete
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sqlite">  <span style="color: #a020f0;">create</span> <span style="color: #a020f0;">table</span> <span style="color: #0000ff;">greeting</span>(one <span style="color: #228b22;">varchar</span>(10), two <span style="color: #228b22;">varchar</span>(10));
+  <span style="color: #a020f0;">insert</span> <span style="color: #a020f0;">into</span> greeting <span style="color: #a020f0;">values</span>(<span style="color: #8b2252;">'Hello'</span>, <span style="color: #8b2252;">'world!'</span>);
+  <span style="color: #a020f0;">insert</span> <span style="color: #a020f0;">into</span> tablename <span style="color: #a020f0;">values</span> (1, <span style="color: #8b2252;">'xxx'</span>, 34);
+  <span style="color: #a020f0;">insert</span> <span style="color: #a020f0;">into</span> tablename (col1, col3) <span style="color: #a020f0;">values</span> (1, 34);
+  <span style="color: #a020f0;">update</span> tablename <span style="color: #a020f0;">set</span> col1=3,col3=8 <span style="color: #a020f0;">where</span> col2=<span style="color: #8b2252;">'yyy'</span>;
+  <span style="color: #a020f0;">delete</span> <span style="color: #a020f0;">from</span> tablename <span style="color: #a020f0;">where</span> col1=3;
+  <span style="color: #a020f0;">delete</span> <span style="color: #a020f0;">from</span> tablename; <span style="color: #b22222;">-- same as:</span>
+  <span style="color: #a020f0;">delete</span> * <span style="color: #a020f0;">from</span> tablename;
+</pre>
+</div>
+
+<p>
+select
+</p>
+<div class="org-src-container">
+<pre class="src src-sqlite">  <span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> tablename;
+  <span style="color: #a020f0;">select</span> col1,col2 <span style="color: #a020f0;">from</span> tablename;
+  <span style="color: #a020f0;">select</span> <span style="color: #a020f0;">distinct</span> col1,col2 <span style="color: #a020f0;">from</span> tablename;
+  <span style="color: #b22222;">-- 'xxx' depends on the type of that column, e.g. for integer, 123</span>
+  <span style="color: #b22222;">-- operators can be =, &lt;=, &lt;&gt;(not equal)</span>
+  <span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> tablename <span style="color: #a020f0;">where</span> col1=<span style="color: #8b2252;">'xxx'</span>;
+  <span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> tablename <span style="color: #a020f0;">where</span> col1=<span style="color: #8b2252;">'xxx'</span> <span style="color: #a020f0;">and</span> col2&lt;&gt;3 <span style="color: #a020f0;">or</span> col3=8;
+  <span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> tablename <span style="color: #a020f0;">order</span> <span style="color: #a020f0;">by</span> col1 <span style="color: #a020f0;">ASC</span>, col2 <span style="color: #a020f0;">DESC</span>, col3;
+  <span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> tablename <span style="color: #a020f0;">where</span> col1 <span style="color: #a020f0;">in</span> (<span style="color: #8b2252;">'xxx'</span>, <span style="color: #8b2252;">'yyy'</span>);
+
+  <span style="color: #a020f0;">select</span> top 2 * <span style="color: #a020f0;">from</span> tablename;
+  <span style="color: #a020f0;">select</span> top 50 percent * <span style="color: #a020f0;">from</span> tablename;
+  <span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> tablename <span style="color: #a020f0;">limit</span> 3;
+</pre>
+</div>
+
+<p>
+Aliasing
+</p>
+<div class="org-src-container">
+<pre class="src src-sqlite"><span style="color: #a020f0;">SELECT</span> o.OrderID, o.OrderDate, c.CustomerName
+<span style="color: #a020f0;">FROM</span> Customers <span style="color: #a020f0;">AS</span> c, Orders <span style="color: #a020f0;">AS</span> o
+<span style="color: #a020f0;">WHERE</span> c.CustomerName="Around the Horn" <span style="color: #a020f0;">AND</span> c.CustomerID=o.CustomerID;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdc38a1e" class="outline-3">
+<h3 id="orgdc38a1e"><span class="section-number-3">3.3</span> SQLite</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+This is a file-based database.
+There's no server, every read and write goes into the ordinary file.
+</p>
+
+<p>
+There're some special commands for sqlite command line client, the dot commands.
+To see the help, use <code>.help</code>.
+Some useful ones:
+</p>
+<ul class="org-ul">
+<li><code>.tables ?TABLE?</code> show the tables (optionally only the tables that match the pattern <code>?TABLE?</code>).
+There's no statements like <code>show tables;</code> in MySQL.</li>
+<li><code>.schema ?TABLE?</code>: similar to <code>describe tablename;</code></li>
+</ul>
+</div>
+
+<div id="outline-container-org659f74d" class="outline-4">
+<h4 id="org659f74d"><span class="section-number-4">3.3.1</span> C interface</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>#include &lt;sqlite3.h&gt;</li>
+</ul>
+
+<p>
+Execute a command
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp">  <span style="color: #228b22;">sqlite3</span> *<span style="color: #a0522d;">db</span> = <span style="color: #008b8b;">nullptr</span>;
+  db = sqlite3_open(<span style="color: #8b2252;">"/path/to/index.db"</span>, &amp;db)
+  <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">cmd</span> = <span style="color: #8b2252;">"insert into mytable values (1, 3, 'hello');"</span>;
+  <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">errmsg</span> = <span style="color: #008b8b;">nullptr</span>;
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">rc</span> = sqlite3_exec(db, cmd, <span style="color: #008b8b;">nullptr</span>, <span style="color: #008b8b;">nullptr</span>, &amp;errmsg);
+  <span style="color: #a020f0;">if</span> (rc != SQLITE_OK) {
+    fprintf(stderr, <span style="color: #8b2252;">"SQL error: %s\n"</span>, errmsg);
+    sqlite3_free(errmsg);
+  }
+</pre>
+</div>
+
+<p>
+Query
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp">  <span style="color: #228b22;">sqlite3</span> *<span style="color: #a0522d;">db</span> = <span style="color: #008b8b;">nullptr</span>;
+  db = sqlite3_open(<span style="color: #8b2252;">"/path/to/index.db"</span>, &amp;db)
+  <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">cmd</span> = <span style="color: #8b2252;">"select * from mytable;"</span>;
+  <span style="color: #228b22;">sqlite3_stmt</span> *<span style="color: #a0522d;">stmt</span> = <span style="color: #008b8b;">nullptr</span>;
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">rc</span>;
+  rc = sqlite3_prepare_v2(db, cmd, -1, &amp;stmt, <span style="color: #008b8b;">nullptr</span>);
+  assert(rc == SQLITE_OK);
+  <span style="color: #a020f0;">while</span> (<span style="color: #008b8b;">true</span>) {
+    rc = sqlite3_step(stmt);
+    <span style="color: #a020f0;">if</span> (rc == SQLITE_ROW) {
+      <span style="color: #b22222;">// </span><span style="color: #b22222;">data row</span>
+      <span style="color: #228b22;">int</span> <span style="color: #a0522d;">column_count</span> = sqlite3_column_count(stmt);
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>=0;i&lt;column_count;i++) {
+        <span style="color: #b22222;">// </span><span style="color: #b22222;">get data as int</span>
+        <span style="color: #228b22;">int</span> <span style="color: #a0522d;">data</span> = sqlite3_column_int(stmt, i);
+        <span style="color: #b22222;">// </span><span style="color: #b22222;">get data as string</span>
+        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">s</span> = sqlite3_column_text(stmt, i);
+      }
+    } <span style="color: #a020f0;">else</span> <span style="color: #a020f0;">if</span> (rc == SQLITE_DONE) {
+      <span style="color: #a020f0;">break</span>;
+    } <span style="color: #a020f0;">else</span> {
+      assert(<span style="color: #008b8b;">false</span>);
+    }
+  }
+  sqlite3_finalize(stmt);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org74905c7" class="outline-4">
+<h4 id="org74905c7"><span class="section-number-4">3.3.2</span> Python interface</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a020f0;">import</span> sqlite3
+<span style="color: #a0522d;">conn</span> = sqlite3.connect(<span style="color: #8b2252;">'example.db'</span>)
+</pre>
+</div>
+
+<p>
+There is an <code>execute</code> method for the connection object, but that is
+not standard, and is only a shortcut for creating the cursor, call the
+cursor's <code>execute</code> method, and return the cursor. Thus, we'd better
+just create the cursor ourselves.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a0522d;">c</span> = conn.cursor()
+c.execute(<span style="color: #8b2252;">'select ...'</span>)
+</pre>
+</div>
+
+<p>
+The result can be fetched by <code>fetchone</code>, <code>fetchmany(int)</code> or
+<code>fetchall</code>. <code>fetchone</code> will return the next row of query result, as a
+"sequence". <code>fetchmany</code> return multiple, in a list. <code>fetchall</code> return
+all results as a list. Typically, just fetch all. The fetch will
+remove the row from the cursor. The cursor can be used to execute
+another query, which will override the current result in the cursor.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

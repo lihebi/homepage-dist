@@ -159,6 +159,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -184,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -351,20 +364,19 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgfcbe49d">16. Gnus</a>
+<li><a href="#org0a153e1">16. Mail</a>
 <ul>
-<li><a href="#orgd6b3717">16.1. Gmail Setup</a></li>
-<li><a href="#org0a153e1">16.2. Mail</a></li>
-<li><a href="#org423967d">16.3. gmane news group setting</a></li>
-<li><a href="#orgc3e3b42">16.4. Usage</a>
+<li><a href="#org9bb7621">16.1. Reading Mail</a></li>
+<li><a href="#org903beba">16.2. Sending Mail</a></li>
+<li><a href="#orga230f88">16.3. Gnus Usage</a>
 <ul>
-<li><a href="#orgc56d39c">16.4.1. Server buffer</a></li>
-<li><a href="#orgc1d4889">16.4.2. Group Buffer:</a></li>
-<li><a href="#orga98d4e3">16.4.3. Summary and Article buffer</a></li>
-<li><a href="#orgb2330e2">16.4.4. Message buffer</a></li>
+<li><a href="#orgc56d39c">16.3.1. Server buffer</a></li>
+<li><a href="#orgc1d4889">16.3.2. Group Buffer:</a></li>
+<li><a href="#orga98d4e3">16.3.3. Summary and Article buffer</a></li>
+<li><a href="#orgb2330e2">16.3.4. Message buffer</a></li>
 </ul>
 </li>
-<li><a href="#orgf8cce45">16.5. Scoring</a></li>
+<li><a href="#orgf8cce45">16.4. Scoring</a></li>
 </ul>
 </li>
 <li><a href="#orgf22cf96">17. Elisp</a>
@@ -463,9 +475,24 @@ for the JavaScript code in this tag.
 <li><code>toggle-truncate-lines</code>: some file format, e.g. txt, will have a
 line wrap at the end of the screen. This might be annoying, and
 toggle this will truncate the line.</li>
+<li><code>browse-url-of-file</code>: open current file in browser</li>
+<li><code>org-toggle-inline-images (C-c C-x C-v)</code></li>
 </ul>
+
+<blockquote>
+<p>
+In emacs, &lt;DEL&gt; means backspace, &lt;delete&gt; means the delete key.
+</p>
+</blockquote>
+
+<p>
+If sometimes emacs runs slow, you can <code>profiler-start</code>, and do the
+slow operations, and <code>profiler-report</code>. When finished, stop it by
+<code>profiler-stop</code> to avoid overhead.
+</p>
 </div>
 </div>
+
 
 <div id="outline-container-org1bef564" class="outline-2">
 <h2 id="org1bef564"><span class="section-number-2">2</span> buffer</h2>
@@ -1474,102 +1501,75 @@ Interact:
 
 
 
-<div id="outline-container-orgfcbe49d" class="outline-2">
-<h2 id="orgfcbe49d"><span class="section-number-2">16</span> Gnus</h2>
+<div id="outline-container-org0a153e1" class="outline-2">
+<h2 id="org0a153e1"><span class="section-number-2">16</span> Mail</h2>
 <div class="outline-text-2" id="text-16">
-<blockquote>
 <p>
-In emacs, &lt;DEL&gt; means backspace, &lt;delete&gt; means the delete key.
+In this section, we discuss how to set up and use Email in Emacs.
 </p>
-</blockquote>
 </div>
 
-
-<div id="outline-container-orgd6b3717" class="outline-3">
-<h3 id="orgd6b3717"><span class="section-number-3">16.1</span> Gmail Setup</h3>
+<div id="outline-container-org9bb7621" class="outline-3">
+<h3 id="org9bb7621"><span class="section-number-3">16.1</span> Reading Mail</h3>
 <div class="outline-text-3" id="text-16-1">
 <p>
-Add the credential information to <code>~/.authinfo</code>
+Some groups should be combined. The most obviously example is INBOX
+and Sent, so that I can have a tree-view of the interactions of
+email. To do that, in the group buffer, create a virtual group via <code>G
+V</code>, then edit it by <code>C-e</code>. A edit buffer should pop out and the
+content should be changed to something like this:
 </p>
 
 <pre class="example">
-machine imap.gmail.com login &lt;username&gt; password &lt;password&gt; port 993
-machine smtp.gmail.com login &lt;username&gt; password &lt;password&gt; port 587
-</pre>
-
-<p>
-To configure multiple IMAP client for gnus:
-</p>
-<pre class="example">
-machine gmail login XXX@gmail.com password &lt;PASSWORD&gt; port 993
-machine cymail login XXX@iastate.edu password &lt;PASSWORD&gt; port 993
-</pre>
-
-<p>
-Add the following into <code>.gnus</code>
-</p>
-
-<pre class="example">
-(setq user-mail-address "lihebi.emacs@gmail.com"
-      user-full-name "Hebi Li")
-
-(setq gnus-select-method
-      '(nnimap "gmail"
-	       (nnimap-address "imap.gmail.com")  ; it could also be imap.googlemail.com if that's your server.
-	       (nnimap-server-port "imaps")
-	       (nnimap-stream ssl)))
-
-(setq smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
-      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
-
-
-;; send mail using gmail smtp, no require for installation of sendmail or something
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "lihebi.emacs@gmail.com" nil))
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
-      starttls-use-gnutls t)
+(nnvirtual "nnimap\\+cymail:INBOX\\|nnimap\\+cymail:.*/Sent Mail")
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org0a153e1" class="outline-3">
-<h3 id="org0a153e1"><span class="section-number-3">16.2</span> Mail</h3>
+<div id="outline-container-org903beba" class="outline-3">
+<h3 id="org903beba"><span class="section-number-3">16.2</span> Sending Mail</h3>
 <div class="outline-text-3" id="text-16-2">
 <p>
-To start a mail, use <code>compose-mail (C-x m)</code>. This will drop you to a
-<code>message</code> buffer, with <code>message-mode</code>.
+I usually just use <code>m</code> in gnus buffer to send mail. But you can also
+use <code>compose-mail (C-x m)</code> at any time, and this seems to use the same
+set of configuration for sending mail. Fire <code>message-send-and-exit
+(C-c C-c)</code> to send it, <code>C-c C-k</code> to kill it.
 </p>
-
-<ul class="org-ul">
-<li><code>message-send-and-exit (C-c C-c)</code>: send it</li>
-</ul>
 
 <p>
-Actually when <code>gnus</code> is set up, simply type <code>m</code> to compose email.
+The easiest way to use multiple SMTP account is through <code>msmtp</code>. The
+configuration of <code>msmtp</code>:
 </p>
-</div>
-</div>
 
-<div id="outline-container-org423967d" class="outline-3">
-<h3 id="org423967d"><span class="section-number-3">16.3</span> gmane news group setting</h3>
-<div class="outline-text-3" id="text-16-3">
-<div class="org-src-container">
-<pre class="src src-elisp">(<span style="color: #a020f0;">setq</span> gnus-default-nntp-server <span style="color: #8b2252;">"news.gmane.org"</span>)
-(<span style="color: #a020f0;">setq</span> gnus-select-method '(nntp <span style="color: #8b2252;">"news.gmane.org"</span>))
-(<span style="color: #a020f0;">setq</span> gnus-use-adaptive-scoring t)
-(add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
+<pre class="example">
+defaults
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+tls on
+auth on
+port 587
+
+account XXX
+from XXX@gmail.com
+host smtp.gmail.com
+user XXX@gmail.com
+password XXXXXX
+
+account YYY
+from YYY@gmail.com
+host smtp.gmail.com
+user YYY@gmail.com
+password YYYYYY
 </pre>
 </div>
 </div>
-</div>
 
-<div id="outline-container-orgc3e3b42" class="outline-3">
-<h3 id="orgc3e3b42"><span class="section-number-3">16.4</span> Usage</h3>
-<div class="outline-text-3" id="text-16-4">
+
+
+
+
+<div id="outline-container-orga230f88" class="outline-3">
+<h3 id="orga230f88"><span class="section-number-3">16.3</span> Gnus Usage</h3>
+<div class="outline-text-3" id="text-16-3">
 <p>
 Inside emacs, run <code>gnus</code> command. This brings the <code>*Group*</code>
 buffer. You will see the list of groups, use <code>&lt;spc&gt;</code> or <code>&lt;enter&gt;</code> to
@@ -1586,8 +1586,8 @@ cite, <code>R</code> for reply with cite, <code>t</code> for toggle some mode.
 </div>
 
 <div id="outline-container-orgc56d39c" class="outline-4">
-<h4 id="orgc56d39c"><span class="section-number-4">16.4.1</span> Server buffer</h4>
-<div class="outline-text-4" id="text-16-4-1">
+<h4 id="orgc56d39c"><span class="section-number-4">16.3.1</span> Server buffer</h4>
+<div class="outline-text-4" id="text-16-3-1">
 <p>
 From group buffer, type <code>^</code> to enter server buffer. Use <code>&lt;space&gt;</code> (NOT
 <code>&lt;enter&gt;</code>!) to browse the groups of it, and subscribe via <code>u</code>. To
@@ -1602,8 +1602,8 @@ region also works as expect.
 </div>
 
 <div id="outline-container-orgc1d4889" class="outline-4">
-<h4 id="orgc1d4889"><span class="section-number-4">16.4.2</span> Group Buffer:</h4>
-<div class="outline-text-4" id="text-16-4-2">
+<h4 id="orgc1d4889"><span class="section-number-4">16.3.2</span> Group Buffer:</h4>
+<div class="outline-text-4" id="text-16-3-2">
 <p>
 Finding the groups
 </p>
@@ -1692,8 +1692,8 @@ this:
 
 
 <div id="outline-container-orga98d4e3" class="outline-4">
-<h4 id="orga98d4e3"><span class="section-number-4">16.4.3</span> Summary and Article buffer</h4>
-<div class="outline-text-4" id="text-16-4-3">
+<h4 id="orga98d4e3"><span class="section-number-4">16.3.3</span> Summary and Article buffer</h4>
+<div class="outline-text-4" id="text-16-3-3">
 <p>
 This will list all the mails. <code>&lt;RET&gt;</code> to enter a specific mail.  The
 following commands work in both buffers.
@@ -1820,8 +1820,8 @@ process mark</li>
 </div>
 
 <div id="outline-container-orgb2330e2" class="outline-4">
-<h4 id="orgb2330e2"><span class="section-number-4">16.4.4</span> Message buffer</h4>
-<div class="outline-text-4" id="text-16-4-4">
+<h4 id="orgb2330e2"><span class="section-number-4">16.3.4</span> Message buffer</h4>
+<div class="outline-text-4" id="text-16-3-4">
 <p>
 This is pretty standard: <code>C-c C-c</code> for send, <code>C-c C-k</code> for kill. What
 is not standard though is <code>C-c C-d</code> for draft, <code>C-c C-m f</code> to attach
@@ -1844,8 +1844,8 @@ headers.
 </div>
 
 <div id="outline-container-orgf8cce45" class="outline-3">
-<h3 id="orgf8cce45"><span class="section-number-3">16.5</span> Scoring</h3>
-<div class="outline-text-3" id="text-16-5">
+<h3 id="orgf8cce45"><span class="section-number-3">16.4</span> Scoring</h3>
+<div class="outline-text-3" id="text-16-4">
 <p>
 To mark a score for an article:
 </p>
@@ -2920,7 +2920,7 @@ Return a list of names of files in DIRECTORY.
 Usage example:
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(bib-files (directory-files bib-dir t <span style="color: #8b2252;">".*\.bib$"</span>))
+<pre class="src src-elisp">(bib-files (directory-files bib-dir t <span style="color: #8b2252;">".*</span><span style="color: #ff0000; font-weight: bold;">\</span><span style="color: #8b2252;">.bib$"</span>))
 </pre>
 </div>
 </div>
