@@ -246,17 +246,21 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org20d63f7">1. Installation</a>
+<li><a href="#orge61c3e7">1. Installation</a>
 <ul>
 <li><a href="#org14b4d39">1.1. Virtualization</a></li>
 </ul>
 </li>
-<li><a href="#org3181cc8">2. GuixSD</a></li>
+<li><a href="#org3181cc8">2. GuixSD</a>
+<ul>
+<li><a href="#org6086dda">2.1. Qemu Image</a></li>
+</ul>
+</li>
 <li><a href="#org3ed62e7">3. Git</a>
 <ul>
 <li><a href="#org88f86b8">3.1. <span class="todo TODO">TODO</span> gitolite</a></li>
 <li><a href="#orgba6f463">3.2. Server</a></li>
-<li><a href="#org514b620">3.3. Configuration</a></li>
+<li><a href="#org5ae22aa">3.3. Configuration</a></li>
 <li><a href="#org6509543">3.4. Usage Tips</a></li>
 <li><a href="#orgf67afde">3.5. Individual tools</a>
 <ul>
@@ -312,7 +316,7 @@ for the JavaScript code in this tag.
 <li><a href="#org8fa94f2">6.6. ratpoison</a></li>
 <li><a href="#orgbb2087b">6.7. StumpWM</a>
 <ul>
-<li><a href="#org256e2f8">6.7.1. Installation</a>
+<li><a href="#orgb39ed20">6.7.1. Installation</a>
 <ul>
 <li><a href="#org872914f">6.7.1.1. A better way to install stumpwm</a></li>
 <li><a href="#org2f4a77b">6.7.1.2. Live Debugging</a></li>
@@ -326,7 +330,7 @@ for the JavaScript code in this tag.
 <li><a href="#org55a0a72">6.7.3. Window</a></li>
 <li><a href="#orgb9bc5d3">6.7.4. Frame</a></li>
 <li><a href="#org09829c7">6.7.5. Groups</a></li>
-<li><a href="#org03e4f7f">6.7.6. Configuration</a></li>
+<li><a href="#org5001bc2">6.7.6. Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -352,7 +356,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org99c1675">8. Arch Linux</a>
 <ul>
-<li><a href="#orge61c3e7">8.1. Installation</a>
+<li><a href="#org31b967e">8.1. Installation</a>
 <ul>
 <li><a href="#orgb24c2ff">8.1.1. Verify UEFI</a></li>
 <li><a href="#org2d444c3">8.1.2. System clock</a></li>
@@ -373,7 +377,7 @@ for the JavaScript code in this tag.
 <li><a href="#org15aa6c6">10. Debian</a>
 <ul>
 <li><a href="#orga757635">10.1. Package</a></li>
-<li><a href="#org5ae22aa">10.2. Configuration</a>
+<li><a href="#org8429447">10.2. Configuration</a>
 <ul>
 <li><a href="#org0bbbb13">10.2.1. update-alternatives</a></li>
 </ul>
@@ -409,12 +413,12 @@ for the JavaScript code in this tag.
 <li><a href="#orge2f569f">12.2.2. struct timespec</a></li>
 <li><a href="#org95a1aee">12.2.3. difftime</a></li>
 <li><a href="#orgb4fdb45">12.2.4. time<sub>t</sub></a></li>
-<li><a href="#orgc6e318f">12.2.5. alarm</a>
+<li><a href="#orgbe5ff1f">12.2.5. alarm</a>
 <ul>
 <li><a href="#org8ff2936">12.2.5.1. struct itimerval</a></li>
 <li><a href="#org105d4ed">12.2.5.2. setitimer</a></li>
 <li><a href="#orgb1c04e9">12.2.5.3. getitimer(int which, struct itimerval *old)</a></li>
-<li><a href="#org39bdd01">12.2.5.4. alarm</a></li>
+<li><a href="#orgc6e318f">12.2.5.4. alarm</a></li>
 </ul>
 </li>
 </ul>
@@ -478,8 +482,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org20d63f7" class="outline-2">
-<h2 id="org20d63f7"><span class="section-number-2">1</span> Installation</h2>
+<div id="outline-container-orge61c3e7" class="outline-2">
+<h2 id="orge61c3e7"><span class="section-number-2">1</span> Installation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 On windows, you need <code>unetbootin</code>. On linux:
@@ -550,9 +554,21 @@ qemu-system-x86_64 -enable-kvm -m 1024 disk_image
 <p>
 Alternatively, you can use <code>virt-manager</code> as a GUI front-end.
 </p>
+
+<p>
+To have sound and better resolution:
+</p>
+<pre class="example">
+qemu-system-x86_64 -enable-kvm -m 4096 -vga virtio -soundhw hda -cpu host -smp 8 ubuntu
+</pre>
+
+<p>
+TODO: try SPICE.
+</p>
 </div>
 </div>
 </div>
+
 
 <div id="outline-container-org3181cc8" class="outline-2">
 <h2 id="org3181cc8"><span class="section-number-2">2</span> GuixSD</h2>
@@ -690,7 +706,44 @@ guix pull
 guix system reconfigure
 </pre>
 </div>
+
+
+<div id="outline-container-org6086dda" class="outline-3">
+<h3 id="org6086dda"><span class="section-number-3">2.1</span> Qemu Image</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Running GuixSD in Qemu is probably the easiest way. Download the Qemu
+image, uncompress it, and run:
+</p>
+
+<pre class="example">
+qemu-system-x86_64 \
+   -net user -net nic,model=virtio \
+   -enable-kvm -m 256 /path/to/image
+</pre>
+
+<p>
+To bring the network up:
+</p>
+<pre class="example">
+ifconfig eth0 up
+dhclient -v eth0
+</pre>
+
+<p>
+The system is now online. But <code>ping</code> command is not working, and
+that's fine.
+</p>
+
+<pre class="example">
+guix pull
+guix package -u
+</pre>
 </div>
+</div>
+</div>
+
+
 
 
 
@@ -926,8 +979,8 @@ into that yet. Cloning does not have such problem though.
 </div>
 
 
-<div id="outline-container-org514b620" class="outline-3">
-<h3 id="org514b620"><span class="section-number-3">3.3</span> Configuration</h3>
+<div id="outline-container-org5ae22aa" class="outline-3">
+<h3 id="org5ae22aa"><span class="section-number-3">3.3</span> Configuration</h3>
 <div class="outline-text-3" id="text-3-3">
 <pre class="example">
 git config --global user.email 'xxx@xxx'
@@ -1803,8 +1856,8 @@ one, but
 <h3 id="orgbb2087b"><span class="section-number-3">6.7</span> StumpWM</h3>
 <div class="outline-text-3" id="text-6-7">
 </div>
-<div id="outline-container-org256e2f8" class="outline-4">
-<h4 id="org256e2f8"><span class="section-number-4">6.7.1</span> Installation</h4>
+<div id="outline-container-orgb39ed20" class="outline-4">
+<h4 id="orgb39ed20"><span class="section-number-4">6.7.1</span> Installation</h4>
 <div class="outline-text-4" id="text-6-7-1">
 <p>
 In order to use <code>ttf-fonts</code> module, the lisp <code>clx-truetype</code> package needs to be installed.
@@ -1997,8 +2050,8 @@ Shortcuts:
 </div>
 
 
-<div id="outline-container-org03e4f7f" class="outline-4">
-<h4 id="org03e4f7f"><span class="section-number-4">6.7.6</span> Configuration</h4>
+<div id="outline-container-org5001bc2" class="outline-4">
+<h4 id="org5001bc2"><span class="section-number-4">6.7.6</span> Configuration</h4>
 <div class="outline-text-4" id="text-6-7-6">
 <pre class="example">
 (stumpwm:define-key stumpwm:*root-map* (stumpwm:kbd "C-z") "echo Zzzzz...")
@@ -2285,8 +2338,8 @@ mount /dev/debian-vg/home /home
 <h2 id="org99c1675"><span class="section-number-2">8</span> Arch Linux</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orge61c3e7" class="outline-3">
-<h3 id="orge61c3e7"><span class="section-number-3">8.1</span> Installation</h3>
+<div id="outline-container-org31b967e" class="outline-3">
+<h3 id="org31b967e"><span class="section-number-3">8.1</span> Installation</h3>
 <div class="outline-text-3" id="text-8-1">
 </div>
 <div id="outline-container-orgb24c2ff" class="outline-4">
@@ -2619,8 +2672,8 @@ non-free packages, add also <code>non-free</code>.
 </div>
 
 
-<div id="outline-container-org5ae22aa" class="outline-3">
-<h3 id="org5ae22aa"><span class="section-number-3">10.2</span> Configuration</h3>
+<div id="outline-container-org8429447" class="outline-3">
+<h3 id="org8429447"><span class="section-number-3">10.2</span> Configuration</h3>
 <div class="outline-text-3" id="text-10-2">
 </div>
 <div id="outline-container-org0bbbb13" class="outline-4">
@@ -3318,8 +3371,8 @@ get current calenddar time:
 </div>
 </div>
 
-<div id="outline-container-orgc6e318f" class="outline-4">
-<h4 id="orgc6e318f"><span class="section-number-4">12.2.5</span> alarm</h4>
+<div id="outline-container-orgbe5ff1f" class="outline-4">
+<h4 id="orgbe5ff1f"><span class="section-number-4">12.2.5</span> alarm</h4>
 <div class="outline-text-4" id="text-12-2-5">
 </div>
 <div id="outline-container-org8ff2936" class="outline-5">
@@ -3355,8 +3408,8 @@ get the timer
 </div>
 </div>
 
-<div id="outline-container-org39bdd01" class="outline-5">
-<h5 id="org39bdd01"><span class="section-number-5">12.2.5.4</span> alarm</h5>
+<div id="outline-container-orgc6e318f" class="outline-5">
+<h5 id="orgc6e318f"><span class="section-number-5">12.2.5.4</span> alarm</h5>
 <div class="outline-text-5" id="text-12-2-5-4">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #0000ff;">alarm</span>(<span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">seconds</span>)
