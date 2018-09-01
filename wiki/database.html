@@ -246,16 +246,16 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgab2e108">1. XPath</a></li>
-<li><a href="#org6eefcd4">2. CSV</a></li>
-<li><a href="#org54beab8">3. SQL</a>
+<li><a href="#org39f8919">1. XPath</a></li>
+<li><a href="#orgc156282">2. CSV</a></li>
+<li><a href="#org836bd4c">3. SQL</a>
 <ul>
-<li><a href="#org91fc223">3.1. Emacs Babels</a></li>
-<li><a href="#org26f2141">3.2. Basic Statements</a></li>
-<li><a href="#orgdc38a1e">3.3. SQLite</a>
+<li><a href="#orga8e238f">3.1. Emacs Babels</a></li>
+<li><a href="#orgc102ee9">3.2. Basic Statements</a></li>
+<li><a href="#orgc170622">3.3. SQLite</a>
 <ul>
-<li><a href="#org659f74d">3.3.1. C interface</a></li>
-<li><a href="#org74905c7">3.3.2. Python interface</a></li>
+<li><a href="#org352a16a">3.3.1. C interface</a></li>
+<li><a href="#org5d38205">3.3.2. Python interface</a></li>
 </ul>
 </li>
 </ul>
@@ -265,8 +265,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgab2e108" class="outline-2">
-<h2 id="orgab2e108"><span class="section-number-2">1</span> XPath</h2>
+<div id="outline-container-org39f8919" class="outline-2">
+<h2 id="org39f8919"><span class="section-number-2">1</span> XPath</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>tag</li>
@@ -305,8 +305,8 @@ or:
 </div>
 </div>
 
-<div id="outline-container-org6eefcd4" class="outline-2">
-<h2 id="org6eefcd4"><span class="section-number-2">2</span> CSV</h2>
+<div id="outline-container-orgc156282" class="outline-2">
+<h2 id="orgc156282"><span class="section-number-2">2</span> CSV</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>fields/columns separated by the comma character</li>
@@ -318,12 +318,12 @@ or:
 </div>
 </div>
 
-<div id="outline-container-org54beab8" class="outline-2">
-<h2 id="org54beab8"><span class="section-number-2">3</span> SQL</h2>
+<div id="outline-container-org836bd4c" class="outline-2">
+<h2 id="org836bd4c"><span class="section-number-2">3</span> SQL</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org91fc223" class="outline-3">
-<h3 id="org91fc223"><span class="section-number-3">3.1</span> Emacs Babels</h3>
+<div id="outline-container-orga8e238f" class="outline-3">
+<h3 id="orga8e238f"><span class="section-number-3">3.1</span> Emacs Babels</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 There're two babels: <code>sqlite</code> and <code>sql</code>. The SQL babel works for a RDBMS like MySQL.
@@ -361,20 +361,20 @@ The following is an example.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sqlite" id="orga074781"><span style="color: #a020f0;">create</span> <span style="color: #a020f0;">table</span> <span style="color: #0000ff;">greeting</span>(one <span style="color: #228b22;">varchar</span>(10), two <span style="color: #228b22;">varchar</span>(10));
+<pre class="src src-sqlite" id="org7891629"><span style="color: #a020f0;">create</span> <span style="color: #a020f0;">table</span> <span style="color: #0000ff;">greeting</span>(one <span style="color: #228b22;">varchar</span>(10), two <span style="color: #228b22;">varchar</span>(10));
 <span style="color: #a020f0;">insert</span> <span style="color: #a020f0;">into</span> greeting <span style="color: #a020f0;">values</span>(<span style="color: #8b2252;">'Hello'</span>, <span style="color: #8b2252;">'world!'</span>);
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-sqlite" id="org1d0a01d"><span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> greeting;
+<pre class="src src-sqlite" id="orgb0d33ac"><span style="color: #a020f0;">select</span> * <span style="color: #a020f0;">from</span> greeting;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org26f2141" class="outline-3">
-<h3 id="org26f2141"><span class="section-number-3">3.2</span> Basic Statements</h3>
+<div id="outline-container-orgc102ee9" class="outline-3">
+<h3 id="orgc102ee9"><span class="section-number-3">3.2</span> Basic Statements</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 create &amp; insert &amp; delete
@@ -424,8 +424,8 @@ Aliasing
 </div>
 </div>
 
-<div id="outline-container-orgdc38a1e" class="outline-3">
-<h3 id="orgdc38a1e"><span class="section-number-3">3.3</span> SQLite</h3>
+<div id="outline-container-orgc170622" class="outline-3">
+<h3 id="orgc170622"><span class="section-number-3">3.3</span> SQLite</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 This is a file-based database.
@@ -444,8 +444,8 @@ There's no statements like <code>show tables;</code> in MySQL.</li>
 </ul>
 </div>
 
-<div id="outline-container-org659f74d" class="outline-4">
-<h4 id="org659f74d"><span class="section-number-4">3.3.1</span> C interface</h4>
+<div id="outline-container-org352a16a" class="outline-4">
+<h4 id="org352a16a"><span class="section-number-4">3.3.1</span> C interface</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>#include &lt;sqlite3.h&gt;</li>
@@ -503,8 +503,8 @@ Query
 </div>
 </div>
 
-<div id="outline-container-org74905c7" class="outline-4">
-<h4 id="org74905c7"><span class="section-number-4">3.3.2</span> Python interface</h4>
+<div id="outline-container-org5d38205" class="outline-4">
+<h4 id="org5d38205"><span class="section-number-4">3.3.2</span> Python interface</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">import</span> sqlite3

@@ -268,215 +268,215 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org10dfb7b">1. Introduction</a>
+<li><a href="#orge2c28a9">1. Introduction</a>
 <ul>
-<li><a href="#orgf6f8369">1.1. Dialects</a></li>
-<li><a href="#org276ec1f">1.2. Why Lisp?</a></li>
-<li><a href="#orge936d01">1.3. CASE</a></li>
-<li><a href="#org8450e96">1.4. fold &amp; unfold</a></li>
-<li><a href="#org382cb43">1.5. Car &amp; Cdr</a></li>
-<li><a href="#org01275a3">1.6. The right thing vs. Worse is better </a></li>
+<li><a href="#org9aea1de">1.1. Dialects</a></li>
+<li><a href="#org9401dd5">1.2. Why Lisp?</a></li>
+<li><a href="#org71fb45c">1.3. CASE</a></li>
+<li><a href="#orge6688db">1.4. fold &amp; unfold</a></li>
+<li><a href="#org6905583">1.5. Car &amp; Cdr</a></li>
+<li><a href="#org94cd583">1.6. The right thing vs. Worse is better </a></li>
 </ul>
 </li>
-<li><a href="#orgfcf0fc6">2. Racket</a>
+<li><a href="#orga9f5ffd">2. Racket</a>
 <ul>
-<li><a href="#org44461b2">2.1. Basic</a>
+<li><a href="#orgcd3118f">2.1. Basic</a>
 <ul>
-<li><a href="#org77f4f1e">2.1.1. Local binding</a></li>
-<li><a href="#org22d1b0d">2.1.2. require</a></li>
+<li><a href="#org1c988e5">2.1.1. Local binding</a></li>
+<li><a href="#orga47c680">2.1.2. require</a></li>
 </ul>
 </li>
-<li><a href="#orgf03ae39">2.2. Black Magic</a></li>
-<li><a href="#orgdacde5d">2.3. Pattern Matching (racket/match)</a></li>
-<li><a href="#orgcbab8a4">2.4. Macros</a>
+<li><a href="#orgd6679b0">2.2. Black Magic</a></li>
+<li><a href="#org0a256fe">2.3. Pattern Matching (racket/match)</a></li>
+<li><a href="#org6a3373c">2.4. Macros</a>
 <ul>
-<li><a href="#org05b7fbc">2.4.1. Reader</a></li>
-<li><a href="#org4ff4ec3">2.4.2. Syntax Model</a></li>
-<li><a href="#orga80cc59">2.4.3. Hygienic</a></li>
+<li><a href="#orgf6c98e6">2.4.1. Reader</a></li>
+<li><a href="#orge61a983">2.4.2. Syntax Model</a></li>
+<li><a href="#org70f4da5">2.4.3. Hygienic</a></li>
 </ul>
 </li>
-<li><a href="#org83559e4">2.5. Rackunit</a></li>
-<li><a href="#org69486df">2.6. Numbers</a></li>
-<li><a href="#org56daee0">2.7. Procedure</a></li>
-<li><a href="#org1e406f5">2.8. Control Structure</a></li>
-<li><a href="#org040aa1b">2.9. String</a></li>
-<li><a href="#org05fd6df">2.10. Regular Expression</a></li>
-<li><a href="#org9a527c8">2.11. Pair, List, Vector</a></li>
-<li><a href="#org508b678">2.12. Hash Tables</a></li>
-<li><a href="#orgbb42b8b">2.13. Sequence</a></li>
-<li><a href="#orgb69498f">2.14. Hash set (use racket/set)</a></li>
-<li><a href="#org1d51d6f">2.15. structure</a>
+<li><a href="#org494dbd2">2.5. Rackunit</a></li>
+<li><a href="#org31a6a12">2.6. Numbers</a></li>
+<li><a href="#org1d0daec">2.7. Procedure</a></li>
+<li><a href="#org52d82a2">2.8. Control Structure</a></li>
+<li><a href="#org7a8eefb">2.9. String</a></li>
+<li><a href="#org0166262">2.10. Regular Expression</a></li>
+<li><a href="#orga2d4584">2.11. Pair, List, Vector</a></li>
+<li><a href="#org7ee5c05">2.12. Hash Tables</a></li>
+<li><a href="#orgfa0cf67">2.13. Sequence</a></li>
+<li><a href="#orgcf14ada">2.14. Hash set (use racket/set)</a></li>
+<li><a href="#orgc403532">2.15. structure</a>
 <ul>
-<li><a href="#orgf30cd04">2.15.1. Field options</a></li>
-<li><a href="#org7871767">2.15.2. Subtyping</a></li>
-<li><a href="#org14a1328">2.15.3. Structure options</a></li>
-<li><a href="#org4cc10d5">2.15.4. Generic Interface</a></li>
+<li><a href="#org762b140">2.15.1. Field options</a></li>
+<li><a href="#org772befb">2.15.2. Subtyping</a></li>
+<li><a href="#orgfc96c97">2.15.3. Structure options</a></li>
+<li><a href="#org19d1602">2.15.4. Generic Interface</a></li>
 </ul>
 </li>
-<li><a href="#org1ffdb5e">2.16. Multiple Values</a></li>
-<li><a href="#orgcadfcb9">2.17. Exception</a></li>
-<li><a href="#org34d52c5">2.18. Concurrency</a></li>
-<li><a href="#org1367dc1">2.19. IO</a>
+<li><a href="#orgbb8cc8e">2.16. Multiple Values</a></li>
+<li><a href="#org9ac2c59">2.17. Exception</a></li>
+<li><a href="#orge623156">2.18. Concurrency</a></li>
+<li><a href="#org8e01e7d">2.19. IO</a>
 <ul>
-<li><a href="#org34c97d4">2.19.1. ports</a>
+<li><a href="#org3381149">2.19.1. ports</a>
 <ul>
-<li><a href="#org985bf28">2.19.1.1. General operation</a></li>
-<li><a href="#orgc8cd508">2.19.1.2. File IO</a></li>
-<li><a href="#orgd24caab">2.19.1.3. String IO</a></li>
-<li><a href="#org5d4d71e">2.19.1.4. Extra</a></li>
+<li><a href="#orgcba010b">2.19.1.1. General operation</a></li>
+<li><a href="#orgf3c6b26">2.19.1.2. File IO</a></li>
+<li><a href="#org9608516">2.19.1.3. String IO</a></li>
+<li><a href="#org5a83f2c">2.19.1.4. Extra</a></li>
 </ul>
 </li>
-<li><a href="#org0f89ef4">2.19.2. Reading</a></li>
-<li><a href="#org28a2c10">2.19.3. Writing</a></li>
+<li><a href="#org1774387">2.19.2. Reading</a></li>
+<li><a href="#org40ee0a2">2.19.3. Writing</a></li>
 </ul>
 </li>
-<li><a href="#org06a5cf5">2.20. OS</a>
+<li><a href="#org01022dd">2.20. OS</a>
 <ul>
-<li><a href="#orgfd2e98b">2.20.1. Path</a></li>
-<li><a href="#orgde59164">2.20.2. File System</a></li>
-<li><a href="#orgbf0e0e4">2.20.3. Networking</a></li>
-<li><a href="#org24d4390">2.20.4. Processes</a></li>
-<li><a href="#org894ba76">2.20.5. CMD parsing (racket/cmdline)</a></li>
+<li><a href="#org831a4bd">2.20.1. Path</a></li>
+<li><a href="#org799bf4c">2.20.2. File System</a></li>
+<li><a href="#org209331b">2.20.3. Networking</a></li>
+<li><a href="#org5b8eba7">2.20.4. Processes</a></li>
+<li><a href="#org836baa7">2.20.5. CMD parsing (racket/cmdline)</a></li>
 </ul>
 </li>
-<li><a href="#org2e3f933">2.21. Trouble shooting</a>
+<li><a href="#orgb5b18f1">2.21. Trouble shooting</a>
 <ul>
-<li><a href="#org9256e05">2.21.1. racket cannot find browsers</a></li>
+<li><a href="#org638db79">2.21.1. racket cannot find browsers</a></li>
 </ul>
 </li>
-<li><a href="#org23df2f8">2.22. Logger</a></li>
-<li><a href="#orge3352cc">2.23. Libraries</a>
+<li><a href="#org88d707e">2.22. Logger</a></li>
+<li><a href="#org4664408">2.23. Libraries</a>
 <ul>
-<li><a href="#org05f324e">2.23.1. Drawing libraries</a></li>
-<li><a href="#org6ea629d">2.23.2. pict-lib</a>
+<li><a href="#orgc4fd1f5">2.23.1. Drawing libraries</a></li>
+<li><a href="#org0833a93">2.23.2. pict-lib</a>
 <ul>
-<li><a href="#org6f96993">2.23.2.1. Constructors</a></li>
-<li><a href="#org7ad2786">2.23.2.2. Combiners</a></li>
-<li><a href="#org0073aea">2.23.2.3. Adjusters</a></li>
-<li><a href="#org805a292">2.23.2.4. Bounding box</a></li>
-<li><a href="#orgda99cea">2.23.2.5. Pict finder</a></li>
-<li><a href="#org03b518c">2.23.2.6. Tree layout</a></li>
+<li><a href="#org1a6dc27">2.23.2.1. Constructors</a></li>
+<li><a href="#org1684249">2.23.2.2. Combiners</a></li>
+<li><a href="#org72ce6e3">2.23.2.3. Adjusters</a></li>
+<li><a href="#org5a8fca9">2.23.2.4. Bounding box</a></li>
+<li><a href="#orgc819cdd">2.23.2.5. Pict finder</a></li>
+<li><a href="#org61e6af3">2.23.2.6. Tree layout</a></li>
 </ul>
 </li>
-<li><a href="#org012baee">2.23.3. graph</a></li>
-<li><a href="#org67598d0">2.23.4. 2htdp/image</a>
+<li><a href="#org5ee45c0">2.23.3. graph</a></li>
+<li><a href="#org9e7cc98">2.23.4. 2htdp/image</a>
 <ul>
-<li><a href="#org5ce08f9">2.23.4.1. Common Concepts</a></li>
-<li><a href="#org3d06933">2.23.4.2. basic shape</a></li>
-<li><a href="#org6e77701">2.23.4.3. Overlay</a></li>
-<li><a href="#org04943cd">2.23.4.4. scene</a></li>
-<li><a href="#org60a6e26">2.23.4.5. transform</a></li>
-<li><a href="#org1b84ee6">2.23.4.6. bitmap</a></li>
-<li><a href="#org9cd7f1c">2.23.4.7. properties</a></li>
+<li><a href="#orga96973b">2.23.4.1. Common Concepts</a></li>
+<li><a href="#org678f0d2">2.23.4.2. basic shape</a></li>
+<li><a href="#orgd06350b">2.23.4.3. Overlay</a></li>
+<li><a href="#org555a8af">2.23.4.4. scene</a></li>
+<li><a href="#org3bf45c6">2.23.4.5. transform</a></li>
+<li><a href="#org88c6e9e">2.23.4.6. bitmap</a></li>
+<li><a href="#org7ef0cc7">2.23.4.7. properties</a></li>
 </ul>
 </li>
-<li><a href="#org0204ef1">2.23.5. Networking</a>
+<li><a href="#orgb29de08">2.23.5. Networking</a>
 <ul>
-<li><a href="#orgb4790c7">2.23.5.1. HTML parsing</a></li>
-<li><a href="#org51120a2">2.23.5.2. URL &amp; HTTP</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgf7325d7">3. Common Lisp</a>
-<ul>
-<li><a href="#orgd9e0c80">3.1. Emacs Support</a>
-<ul>
-<li><a href="#org6acbf6d">3.1.1. lisp-mode</a></li>
-<li><a href="#orgd56141a">3.1.2. lisp go-to-def</a></li>
-<li><a href="#org456016f">3.1.3. <span class="todo TODO">TODO</span> eldoc</a></li>
-<li><a href="#orga4d70d8">3.1.4. <span class="todo TODO">TODO</span> slime-mode</a></li>
-<li><a href="#org4205968">3.1.5. paredit</a></li>
-</ul>
-</li>
-<li><a href="#org3ad73ba">3.2. List</a></li>
-<li><a href="#orga176d04">3.3. Sequence</a></li>
-<li><a href="#org0ad2901">3.4. String</a></li>
-<li><a href="#orgcf3041c">3.5. Array</a></li>
-<li><a href="#org85fbfce">3.6. Structure</a></li>
-<li><a href="#org182545b">3.7. Hash Table</a></li>
-<li><a href="#orge2b9bb2">3.8. Symbols &amp; Variables</a>
-<ul>
-<li><a href="#orgadcd6f9">3.8.1. Equality</a></li>
-</ul>
-</li>
-<li><a href="#orgf4930a9">3.9. Type</a></li>
-<li><a href="#org8427183">3.10. Numbers</a></li>
-<li><a href="#org200792a">3.11. Function</a>
-<ul>
-<li><a href="#org61fd0a8">3.11.1. Defun and Lambda Expression</a></li>
-</ul>
-</li>
-<li><a href="#org8269a01">3.12. Macro</a></li>
-<li><a href="#org11b1ee7">3.13. Evaluation</a></li>
-<li><a href="#orgf6bf5fe">3.14. Exception</a></li>
-<li><a href="#org009cfc8">3.15. Control Structure</a>
-<ul>
-<li><a href="#org07ddd0d">3.15.1. Sequential</a></li>
-<li><a href="#org21acf0d">3.15.2. Conditional</a></li>
-<li><a href="#org542392a">3.15.3. Iteration</a>
-<ul>
-<li><a href="#org44f55db">3.15.3.1. Append to a list</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgeddaac3">3.16. Loop Facility</a>
-<ul>
-<li><a href="#org32cfb30">3.16.1. Loop Clauses</a></li>
-<li><a href="#org162f03b">3.16.2. Loop Syntax</a></li>
-<li><a href="#org993833e">3.16.3. Iteration Control (for, as, repeat)</a></li>
-<li><a href="#org5ccad2e">3.16.4. End Test Control (always, never, thereis, until, while)</a></li>
-<li><a href="#org810189a">3.16.5. Value Accumulation</a></li>
-<li><a href="#orgd863bde">3.16.6. Variable Initialization (with)</a></li>
-<li><a href="#orgeaa82aa">3.16.7. Conditional Execution (if, when, unless)</a></li>
-<li><a href="#org023b888">3.16.8. Unconditional Execution (do, return)</a></li>
-<li><a href="#org34338cf">3.16.9. Misc (named, initially, finally)</a></li>
-<li><a href="#org9fd2ac1">3.16.10. Destructure</a></li>
-</ul>
-</li>
-<li><a href="#org8693008">3.17. Input/Output</a></li>
-<li><a href="#org73f5da2">3.18. Package</a>
-<ul>
-<li><a href="#org4b4da46">3.18.1. Modules</a></li>
-</ul>
-</li>
-<li><a href="#org161a5fe">3.19. Common Lisp Object System</a>
-<ul>
-<li><a href="#org4848ade">3.19.1. <span class="todo TODO">TODO</span> Concept</a></li>
-<li><a href="#orgd6e306e">3.19.2. Functions</a></li>
-</ul>
-</li>
-<li><a href="#org93507f4">3.20. ASDF (Another System Definition Facility)</a>
-<ul>
-<li><a href="#orgd0ba4c4">3.20.1. Load ASDF</a></li>
-<li><a href="#orgf87fd0a">3.20.2. Load System</a></li>
-<li><a href="#org688ead4">3.20.3. Build System</a></li>
-</ul>
-</li>
-<li><a href="#orge037790">3.21. Appendix</a>
-<ul>
-<li><a href="#org3e0463f">3.21.1. Installation</a>
-<ul>
-<li><a href="#org5bd07a9">3.21.1.1. quicklisp</a></li>
-<li><a href="#orgd8cdbb2">3.21.1.2. packages</a></li>
-<li><a href="#org4f5df84">3.21.1.3. org babel</a></li>
-<li><a href="#orgcd56f3e">3.21.1.4. Slime</a></li>
-</ul>
-</li>
-<li><a href="#org35ade45">3.21.2. Practical Common Lisp</a>
-<ul>
-<li><a href="#orgc139c7c">3.21.2.1. CD database</a></li>
-<li><a href="#org0fb7df8">3.21.2.2. Unit Test Framework</a></li>
+<li><a href="#orge0a059e">2.23.5.1. HTML parsing</a></li>
+<li><a href="#orgac73c9e">2.23.5.2. URL &amp; HTTP</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgdcafb7b">4. Reference</a></li>
+<li><a href="#org2d0cf01">3. Common Lisp</a>
+<ul>
+<li><a href="#org6cad2c8">3.1. Emacs Support</a>
+<ul>
+<li><a href="#org2cf1703">3.1.1. lisp-mode</a></li>
+<li><a href="#org425be7d">3.1.2. lisp go-to-def</a></li>
+<li><a href="#org8f3e6ee">3.1.3. <span class="todo TODO">TODO</span> eldoc</a></li>
+<li><a href="#org5964029">3.1.4. <span class="todo TODO">TODO</span> slime-mode</a></li>
+<li><a href="#org9d86b96">3.1.5. paredit</a></li>
+</ul>
+</li>
+<li><a href="#org1cb626f">3.2. List</a></li>
+<li><a href="#org3ca1008">3.3. Sequence</a></li>
+<li><a href="#orga701262">3.4. String</a></li>
+<li><a href="#org72e6c47">3.5. Array</a></li>
+<li><a href="#org6a19381">3.6. Structure</a></li>
+<li><a href="#orgbba4046">3.7. Hash Table</a></li>
+<li><a href="#org18416cb">3.8. Symbols &amp; Variables</a>
+<ul>
+<li><a href="#org0c27167">3.8.1. Equality</a></li>
+</ul>
+</li>
+<li><a href="#orgc6fcc17">3.9. Type</a></li>
+<li><a href="#org0a86c54">3.10. Numbers</a></li>
+<li><a href="#orgc1e33dd">3.11. Function</a>
+<ul>
+<li><a href="#orgc368d8c">3.11.1. Defun and Lambda Expression</a></li>
+</ul>
+</li>
+<li><a href="#org0a8f82b">3.12. Macro</a></li>
+<li><a href="#orgac54daa">3.13. Evaluation</a></li>
+<li><a href="#org7f4d4c8">3.14. Exception</a></li>
+<li><a href="#orgf125067">3.15. Control Structure</a>
+<ul>
+<li><a href="#org045cda8">3.15.1. Sequential</a></li>
+<li><a href="#org1c4fecb">3.15.2. Conditional</a></li>
+<li><a href="#org7df6002">3.15.3. Iteration</a>
+<ul>
+<li><a href="#orgcf1660b">3.15.3.1. Append to a list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org139f709">3.16. Loop Facility</a>
+<ul>
+<li><a href="#orgca2be06">3.16.1. Loop Clauses</a></li>
+<li><a href="#org5c35597">3.16.2. Loop Syntax</a></li>
+<li><a href="#org0569241">3.16.3. Iteration Control (for, as, repeat)</a></li>
+<li><a href="#org30f854c">3.16.4. End Test Control (always, never, thereis, until, while)</a></li>
+<li><a href="#org870e3a9">3.16.5. Value Accumulation</a></li>
+<li><a href="#orge4559a0">3.16.6. Variable Initialization (with)</a></li>
+<li><a href="#org7db4db8">3.16.7. Conditional Execution (if, when, unless)</a></li>
+<li><a href="#org8ebef13">3.16.8. Unconditional Execution (do, return)</a></li>
+<li><a href="#orgd965c15">3.16.9. Misc (named, initially, finally)</a></li>
+<li><a href="#org8ac13f3">3.16.10. Destructure</a></li>
+</ul>
+</li>
+<li><a href="#org09bd5f1">3.17. Input/Output</a></li>
+<li><a href="#org3edcb22">3.18. Package</a>
+<ul>
+<li><a href="#orgfdadd10">3.18.1. Modules</a></li>
+</ul>
+</li>
+<li><a href="#orgafa8446">3.19. Common Lisp Object System</a>
+<ul>
+<li><a href="#org4068c3e">3.19.1. <span class="todo TODO">TODO</span> Concept</a></li>
+<li><a href="#org1bb3d8d">3.19.2. Functions</a></li>
+</ul>
+</li>
+<li><a href="#org3a0e656">3.20. ASDF (Another System Definition Facility)</a>
+<ul>
+<li><a href="#org5015885">3.20.1. Load ASDF</a></li>
+<li><a href="#orgbf1f22e">3.20.2. Load System</a></li>
+<li><a href="#org63874b4">3.20.3. Build System</a></li>
+</ul>
+</li>
+<li><a href="#org4ae96a2">3.21. Appendix</a>
+<ul>
+<li><a href="#orgb495cdc">3.21.1. Installation</a>
+<ul>
+<li><a href="#org3c5a268">3.21.1.1. quicklisp</a></li>
+<li><a href="#org2c38d9a">3.21.1.2. packages</a></li>
+<li><a href="#orged7af95">3.21.1.3. org babel</a></li>
+<li><a href="#org0d529ce">3.21.1.4. Slime</a></li>
+</ul>
+</li>
+<li><a href="#org2ef4b3c">3.21.2. Practical Common Lisp</a>
+<ul>
+<li><a href="#org03e7d6c">3.21.2.1. CD database</a></li>
+<li><a href="#org26af3bd">3.21.2.2. Unit Test Framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org76ed2c1">4. Reference</a></li>
 </ul>
 </div>
 </div>
@@ -489,12 +489,12 @@ There's a <a href="http://hyperpolyglot.org/lisp">page</a> for corresponding
 APIs of common lisp, racket, clojure, emacs lisp.
 </p>
 
-<div id="outline-container-org10dfb7b" class="outline-2">
-<h2 id="org10dfb7b"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orge2c28a9" class="outline-2">
+<h2 id="orge2c28a9"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgf6f8369" class="outline-3">
-<h3 id="orgf6f8369"><span class="section-number-3">1.1</span> Dialects</h3>
+<div id="outline-container-org9aea1de" class="outline-3">
+<h3 id="org9aea1de"><span class="section-number-3">1.1</span> Dialects</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Richard P. Gabriel has a <a href="http://www.nhplace.com/kent/Papers/Technical-Issues.html">paper</a> about Lisp-1 and Lisp-2. Basically
@@ -511,8 +511,8 @@ with batteries.
 </div>
 
 
-<div id="outline-container-org276ec1f" class="outline-3">
-<h3 id="org276ec1f"><span class="section-number-3">1.2</span> Why Lisp?</h3>
+<div id="outline-container-org9401dd5" class="outline-3">
+<h3 id="org9401dd5"><span class="section-number-3">1.2</span> Why Lisp?</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 As Peter Norvig put in <a href="https://github.com/norvig/paip-lisp">Paradigms of Artificial Intelligence Programming</a>
@@ -542,8 +542,8 @@ reverse is true.
 </div>
 </div>
 
-<div id="outline-container-orge936d01" class="outline-3">
-<h3 id="orge936d01"><span class="section-number-3">1.3</span> CASE</h3>
+<div id="outline-container-org71fb45c" class="outline-3">
+<h3 id="org71fb45c"><span class="section-number-3">1.3</span> CASE</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 David J. Cooper in <i>Basic Lisp Techniques</i>:
@@ -580,8 +580,8 @@ powerful CASE tool, and there is no need to break the connection.
 </div>
 
 
-<div id="outline-container-org8450e96" class="outline-3">
-<h3 id="org8450e96"><span class="section-number-3">1.4</span> fold &amp; unfold</h3>
+<div id="outline-container-orge6688db" class="outline-3">
+<h3 id="orge6688db"><span class="section-number-3">1.4</span> fold &amp; unfold</h3>
 <div class="outline-text-3" id="text-1-4">
 <blockquote>
 <p>
@@ -612,8 +612,8 @@ state you wish to modify.
 </div>
 
 
-<div id="outline-container-org382cb43" class="outline-3">
-<h3 id="org382cb43"><span class="section-number-3">1.5</span> Car &amp; Cdr</h3>
+<div id="outline-container-org6905583" class="outline-3">
+<h3 id="org6905583"><span class="section-number-3">1.5</span> Car &amp; Cdr</h3>
 <div class="outline-text-3" id="text-1-5">
 <blockquote>
 <p>
@@ -631,8 +631,8 @@ cells.
 </div>
 
 
-<div id="outline-container-org01275a3" class="outline-3">
-<h3 id="org01275a3"><span class="section-number-3">1.6</span> The right thing vs. Worse is better <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div id="outline-container-org94cd583" class="outline-3">
+<h3 id="org94cd583"><span class="section-number-3">1.6</span> The right thing vs. Worse is better <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 These are two software design philosophies. The key different is:
@@ -668,16 +668,16 @@ programming language; the bad news is that they will be Unix and C++.
 
 
 
-<div id="outline-container-orgfcf0fc6" class="outline-2">
-<h2 id="orgfcf0fc6"><span class="section-number-2">2</span> Racket</h2>
+<div id="outline-container-orga9f5ffd" class="outline-2">
+<h2 id="orga9f5ffd"><span class="section-number-2">2</span> Racket</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org44461b2" class="outline-3">
-<h3 id="org44461b2"><span class="section-number-3">2.1</span> Basic</h3>
+<div id="outline-container-orgcd3118f" class="outline-3">
+<h3 id="orgcd3118f"><span class="section-number-3">2.1</span> Basic</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org77f4f1e" class="outline-4">
-<h4 id="org77f4f1e"><span class="section-number-4">2.1.1</span> Local binding</h4>
+<div id="outline-container-org1c988e5" class="outline-4">
+<h4 id="org1c988e5"><span class="section-number-4">2.1.1</span> Local binding</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 The local binding is established by <code>let</code> family. Apart from normal
@@ -710,8 +710,8 @@ Within the body, <code>proc-id</code> is bound to the procedure itself.
 </div>
 </div>
 
-<div id="outline-container-org22d1b0d" class="outline-4">
-<h4 id="org22d1b0d"><span class="section-number-4">2.1.2</span> require</h4>
+<div id="outline-container-orga47c680" class="outline-4">
+<h4 id="orga47c680"><span class="section-number-4">2.1.2</span> require</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 <code>require</code> introduces bindings. It can only be used in two context, the
@@ -760,8 +760,8 @@ Where name is the file name.
 </div>
 
 
-<div id="outline-container-orgf03ae39" class="outline-3">
-<h3 id="orgf03ae39"><span class="section-number-3">2.2</span> Black Magic</h3>
+<div id="outline-container-orgd6679b0" class="outline-3">
+<h3 id="orgd6679b0"><span class="section-number-3">2.2</span> Black Magic</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <a href="http://www.greghendershott.com/2015/07/keyword-structs-revisited.html">http://www.greghendershott.com/2015/07/keyword-structs-revisited.html</a>
@@ -777,8 +777,8 @@ Where name is the file name.
 </div>
 </div>
 
-<div id="outline-container-orgdacde5d" class="outline-3">
-<h3 id="orgdacde5d"><span class="section-number-3">2.3</span> Pattern Matching (racket/match)</h3>
+<div id="outline-container-org0a256fe" class="outline-3">
+<h3 id="org0a256fe"><span class="section-number-3">2.3</span> Pattern Matching (racket/match)</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 The syntax:
@@ -853,8 +853,8 @@ There are some syntax sugar for matching:
 </div>
 </div>
 
-<div id="outline-container-orgcbab8a4" class="outline-3">
-<h3 id="orgcbab8a4"><span class="section-number-3">2.4</span> Macros</h3>
+<div id="outline-container-org6a3373c" class="outline-3">
+<h3 id="org6a3373c"><span class="section-number-3">2.4</span> Macros</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Matthias Felleisen boils down macros into three main categories:
@@ -996,8 +996,8 @@ able to bind pattern variables.
 </div>
 </div>
 
-<div id="outline-container-org05b7fbc" class="outline-4">
-<h4 id="org05b7fbc"><span class="section-number-4">2.4.1</span> Reader</h4>
+<div id="outline-container-orgf6c98e6" class="outline-4">
+<h4 id="orgf6c98e6"><span class="section-number-4">2.4.1</span> Reader</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 To understand how macro works, we need to know how the reader handles
@@ -1023,8 +1023,8 @@ complex structure, the print format is not intuitive.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ff4ec3" class="outline-4">
-<h4 id="org4ff4ec3"><span class="section-number-4">2.4.2</span> Syntax Model</h4>
+<div id="outline-container-orge61a983" class="outline-4">
+<h4 id="orge61a983"><span class="section-number-4">2.4.2</span> Syntax Model</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <p>
 A <i>syntax object</i> is a simple racket value + scope set + phase level.
@@ -1141,8 +1141,8 @@ better:
 </div>
 
 
-<div id="outline-container-orga80cc59" class="outline-4">
-<h4 id="orga80cc59"><span class="section-number-4">2.4.3</span> Hygienic</h4>
+<div id="outline-container-org70f4da5" class="outline-4">
+<h4 id="org70f4da5"><span class="section-number-4">2.4.3</span> Hygienic</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <p>
 A very good writing about syntax-case, and how to (NOT) write
@@ -1211,8 +1211,8 @@ outside world. It seems that <i>syntax parameters</i> can do that better.
 
 
 
-<div id="outline-container-org83559e4" class="outline-3">
-<h3 id="org83559e4"><span class="section-number-3">2.5</span> Rackunit</h3>
+<div id="outline-container-org494dbd2" class="outline-3">
+<h3 id="org494dbd2"><span class="section-number-3">2.5</span> Rackunit</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Since racket has the <code>test</code> module concept, there needs no unit test
@@ -1283,8 +1283,8 @@ to select tests. Create a suite using <code>(test-suite name-expr test
 </div>
 </div>
 
-<div id="outline-container-org69486df" class="outline-3">
-<h3 id="org69486df"><span class="section-number-3">2.6</span> Numbers</h3>
+<div id="outline-container-org31a6a12" class="outline-3">
+<h3 id="org31a6a12"><span class="section-number-3">2.6</span> Numbers</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li><code>/</code>: provide the fraction if given two numbers, not to round it.</li>
@@ -1334,8 +1334,8 @@ With <code>racket/random</code>:
 </div>
 </div>
 
-<div id="outline-container-org56daee0" class="outline-3">
-<h3 id="org56daee0"><span class="section-number-3">2.7</span> Procedure</h3>
+<div id="outline-container-org1d0daec" class="outline-3">
+<h3 id="org1d0daec"><span class="section-number-3">2.7</span> Procedure</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 The <code>define</code> keyword can be used to bind a id to a variable, but most
@@ -1381,8 +1381,8 @@ restricts this to exactly one value.
 </div>
 
 
-<div id="outline-container-org1e406f5" class="outline-3">
-<h3 id="org1e406f5"><span class="section-number-3">2.8</span> Control Structure</h3>
+<div id="outline-container-org52d82a2" class="outline-3">
+<h3 id="org52d82a2"><span class="section-number-3">2.8</span> Control Structure</h3>
 <div class="outline-text-3" id="text-2-8">
 <ul class="org-ul">
 <li><code>if</code></li>
@@ -1434,8 +1434,8 @@ different return values.</li>
 </div>
 </div>
 
-<div id="outline-container-org040aa1b" class="outline-3">
-<h3 id="org040aa1b"><span class="section-number-3">2.9</span> String</h3>
+<div id="outline-container-org7a8eefb" class="outline-3">
+<h3 id="org7a8eefb"><span class="section-number-3">2.9</span> String</h3>
 <div class="outline-text-3" id="text-2-9">
 <p>
 The reading syntax of characters starts with <code>#\</code>, with following
@@ -1616,8 +1616,8 @@ Byte string
 </div>
 </div>
 
-<div id="outline-container-org05fd6df" class="outline-3">
-<h3 id="org05fd6df"><span class="section-number-3">2.10</span> Regular Expression</h3>
+<div id="outline-container-org0166262" class="outline-3">
+<h3 id="org0166262"><span class="section-number-3">2.10</span> Regular Expression</h3>
 <div class="outline-text-3" id="text-2-10">
 <ul class="org-ul">
 <li><code>#rx"xxx"</code>: regular expression</li>
@@ -1680,8 +1680,8 @@ success</li>
 </div>
 </div>
 
-<div id="outline-container-org9a527c8" class="outline-3">
-<h3 id="org9a527c8"><span class="section-number-3">2.11</span> Pair, List, Vector</h3>
+<div id="outline-container-orga2d4584" class="outline-3">
+<h3 id="orga2d4584"><span class="section-number-3">2.11</span> Pair, List, Vector</h3>
 <div class="outline-text-3" id="text-2-11">
 <p>
 The variants tradition:
@@ -1814,8 +1814,8 @@ From <code>racket/vector</code>:
 </div>
 </div>
 
-<div id="outline-container-org508b678" class="outline-3">
-<h3 id="org508b678"><span class="section-number-3">2.12</span> Hash Tables</h3>
+<div id="outline-container-org7ee5c05" class="outline-3">
+<h3 id="org7ee5c05"><span class="section-number-3">2.12</span> Hash Tables</h3>
 <div class="outline-text-3" id="text-2-12">
 <ul class="org-ul">
 <li><code>(hash key val ... ...)</code></li>
@@ -1836,8 +1836,8 @@ From <code>racket/vector</code>:
 </div>
 </div>
 
-<div id="outline-container-orgbb42b8b" class="outline-3">
-<h3 id="orgbb42b8b"><span class="section-number-3">2.13</span> Sequence</h3>
+<div id="outline-container-orgfa0cf67" class="outline-3">
+<h3 id="orgfa0cf67"><span class="section-number-3">2.13</span> Sequence</h3>
 <div class="outline-text-3" id="text-2-13">
 <p>
 Sequence is designed to be used with <code>for</code>. Not only list and vectors
@@ -1868,8 +1868,8 @@ acts like as a filter of the results</li>
 </div>
 </div>
 
-<div id="outline-container-orgb69498f" class="outline-3">
-<h3 id="orgb69498f"><span class="section-number-3">2.14</span> Hash set (use racket/set)</h3>
+<div id="outline-container-orgcf14ada" class="outline-3">
+<h3 id="orgcf14ada"><span class="section-number-3">2.14</span> Hash set (use racket/set)</h3>
 <div class="outline-text-3" id="text-2-14">
 <ul class="org-ul">
 <li><code>set v ...</code>: construct a hash set</li>
@@ -1897,8 +1897,8 @@ acts like as a filter of the results</li>
 </div>
 
 
-<div id="outline-container-org1d51d6f" class="outline-3">
-<h3 id="org1d51d6f"><span class="section-number-3">2.15</span> structure</h3>
+<div id="outline-container-orgc403532" class="outline-3">
+<h3 id="orgc403532"><span class="section-number-3">2.15</span> structure</h3>
 <div class="outline-text-3" id="text-2-15">
 <pre class="example">
 struct id maybe-super (field ...) struct-option ...
@@ -1919,8 +1919,8 @@ the provided id:
 </ul>
 </div>
 
-<div id="outline-container-orgf30cd04" class="outline-4">
-<h4 id="orgf30cd04"><span class="section-number-4">2.15.1</span> Field options</h4>
+<div id="outline-container-org762b140" class="outline-4">
+<h4 id="org762b140"><span class="section-number-4">2.15.1</span> Field options</h4>
 <div class="outline-text-4" id="text-2-15-1">
 <p>
 There are two available field options:
@@ -1937,8 +1937,8 @@ fields. Specify both results in syntax error.</li>
 </div>
 </div>
 
-<div id="outline-container-org7871767" class="outline-4">
-<h4 id="org7871767"><span class="section-number-4">2.15.2</span> Subtyping</h4>
+<div id="outline-container-org772befb" class="outline-4">
+<h4 id="org772befb"><span class="section-number-4">2.15.2</span> Subtyping</h4>
 <div class="outline-text-4" id="text-2-15-2">
 <p>
 You can specify super class in <b>one</b> of two ways: maybe-super or via
@@ -1948,8 +1948,8 @@ inherit fields, when initialize, initialize those parent fields first.
 </div>
 </div>
 
-<div id="outline-container-org14a1328" class="outline-4">
-<h4 id="org14a1328"><span class="section-number-4">2.15.3</span> Structure options</h4>
+<div id="outline-container-orgfc96c97" class="outline-4">
+<h4 id="orgfc96c97"><span class="section-number-4">2.15.3</span> Structure options</h4>
 <div class="outline-text-4" id="text-2-15-3">
 <ul class="org-ul">
 <li><code>#:mutable</code>: same as set <code>#:mutable</code> for all fields</li>
@@ -2001,8 +2001,8 @@ Other
 </div>
 </div>
 
-<div id="outline-container-org4cc10d5" class="outline-4">
-<h4 id="org4cc10d5"><span class="section-number-4">2.15.4</span> Generic Interface</h4>
+<div id="outline-container-org19d1602" class="outline-4">
+<h4 id="org19d1602"><span class="section-number-4">2.15.4</span> Generic Interface</h4>
 <div class="outline-text-4" id="text-2-15-4">
 <p>
 require <code>racket/generic</code>.
@@ -2081,8 +2081,8 @@ Use like this:
 
 
 
-<div id="outline-container-org1ffdb5e" class="outline-3">
-<h3 id="org1ffdb5e"><span class="section-number-3">2.16</span> Multiple Values</h3>
+<div id="outline-container-orgbb8cc8e" class="outline-3">
+<h3 id="orgbb8cc8e"><span class="section-number-3">2.16</span> Multiple Values</h3>
 <div class="outline-text-3" id="text-2-16">
 <p>
 values produce multiple values value, to consume that, typically use
@@ -2092,8 +2092,8 @@ can destruct values can also be used.
 </div>
 </div>
 
-<div id="outline-container-orgcadfcb9" class="outline-3">
-<h3 id="orgcadfcb9"><span class="section-number-3">2.17</span> Exception</h3>
+<div id="outline-container-org9ac2c59" class="outline-3">
+<h3 id="org9ac2c59"><span class="section-number-3">2.17</span> Exception</h3>
 <div class="outline-text-3" id="text-2-17">
 <p>
 For now, I only care about how to handle exceptions. To do that:
@@ -2145,8 +2145,8 @@ To raise an exception, you can use:
 </div>
 </div>
 
-<div id="outline-container-org34d52c5" class="outline-3">
-<h3 id="org34d52c5"><span class="section-number-3">2.18</span> Concurrency</h3>
+<div id="outline-container-orge623156" class="outline-3">
+<h3 id="orge623156"><span class="section-number-3">2.18</span> Concurrency</h3>
 <div class="outline-text-3" id="text-2-18">
 <p>
 Comparison
@@ -2236,16 +2236,16 @@ Places can only communicate through place channels.
 </div>
 </div>
 
-<div id="outline-container-org1367dc1" class="outline-3">
-<h3 id="org1367dc1"><span class="section-number-3">2.19</span> IO</h3>
+<div id="outline-container-org8e01e7d" class="outline-3">
+<h3 id="org8e01e7d"><span class="section-number-3">2.19</span> IO</h3>
 <div class="outline-text-3" id="text-2-19">
 </div>
-<div id="outline-container-org34c97d4" class="outline-4">
-<h4 id="org34c97d4"><span class="section-number-4">2.19.1</span> ports</h4>
+<div id="outline-container-org3381149" class="outline-4">
+<h4 id="org3381149"><span class="section-number-4">2.19.1</span> ports</h4>
 <div class="outline-text-4" id="text-2-19-1">
 </div>
-<div id="outline-container-org985bf28" class="outline-5">
-<h5 id="org985bf28"><span class="section-number-5">2.19.1.1</span> General operation</h5>
+<div id="outline-container-orgcba010b" class="outline-5">
+<h5 id="orgcba010b"><span class="section-number-5">2.19.1.1</span> General operation</h5>
 <div class="outline-text-5" id="text-2-19-1-1">
 <ul class="org-ul">
 <li><code>eof</code>: global variable</li>
@@ -2260,8 +2260,8 @@ the port to be flushed immediately</li>
 </div>
 </div>
 
-<div id="outline-container-orgc8cd508" class="outline-5">
-<h5 id="orgc8cd508"><span class="section-number-5">2.19.1.2</span> File IO</h5>
+<div id="outline-container-orgf3c6b26" class="outline-5">
+<h5 id="orgf3c6b26"><span class="section-number-5">2.19.1.2</span> File IO</h5>
 <div class="outline-text-5" id="text-2-19-1-2">
 <ul class="org-ul">
 <li><code>open-input-file path [#:mode flag]</code>: return an input port. mode can
@@ -2285,8 +2285,8 @@ when thunk returns.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd24caab" class="outline-5">
-<h5 id="orgd24caab"><span class="section-number-5">2.19.1.3</span> String IO</h5>
+<div id="outline-container-org9608516" class="outline-5">
+<h5 id="org9608516"><span class="section-number-5">2.19.1.3</span> String IO</h5>
 <div class="outline-text-5" id="text-2-19-1-3">
 <ul class="org-ul">
 <li><code>open-input-string str</code>: create a string port using str</li>
@@ -2298,8 +2298,8 @@ be used with the above method, specifically the out should be
 </div>
 </div>
 
-<div id="outline-container-org5d4d71e" class="outline-5">
-<h5 id="org5d4d71e"><span class="section-number-5">2.19.1.4</span> Extra</h5>
+<div id="outline-container-org5a83f2c" class="outline-5">
+<h5 id="org5a83f2c"><span class="section-number-5">2.19.1.4</span> Extra</h5>
 <div class="outline-text-5" id="text-2-19-1-4">
 <p>
 Requires <code>racket/port</code>. This is actually the most commonly used
@@ -2321,8 +2321,8 @@ helpers. All of these have bytes counterparts.
 
 
 
-<div id="outline-container-org0f89ef4" class="outline-4">
-<h4 id="org0f89ef4"><span class="section-number-4">2.19.2</span> Reading</h4>
+<div id="outline-container-org1774387" class="outline-4">
+<h4 id="org1774387"><span class="section-number-4">2.19.2</span> Reading</h4>
 <div class="outline-text-4" id="text-2-19-2">
 <ul class="org-ul">
 <li><code>read-char</code></li>
@@ -2336,8 +2336,8 @@ source-location information</li>
 </div>
 </div>
 
-<div id="outline-container-org28a2c10" class="outline-4">
-<h4 id="org28a2c10"><span class="section-number-4">2.19.3</span> Writing</h4>
+<div id="outline-container-org40ee0a2" class="outline-4">
+<h4 id="org40ee0a2"><span class="section-number-4">2.19.3</span> Writing</h4>
 <div class="outline-text-4" id="text-2-19-3">
 <ul class="org-ul">
 <li><code>write-char</code></li>
@@ -2383,8 +2383,8 @@ with <code>racket/pretty</code>
 </div>
 
 
-<div id="outline-container-org06a5cf5" class="outline-3">
-<h3 id="org06a5cf5"><span class="section-number-3">2.20</span> OS</h3>
+<div id="outline-container-org01022dd" class="outline-3">
+<h3 id="org01022dd"><span class="section-number-3">2.20</span> OS</h3>
 <div class="outline-text-3" id="text-2-20">
 <ul class="org-ul">
 <li><code>(getenv name)</code></li>
@@ -2399,8 +2399,8 @@ In <code>racket/os</code>
 <li><code>getpid</code></li>
 </ul>
 </div>
-<div id="outline-container-orgfd2e98b" class="outline-4">
-<h4 id="orgfd2e98b"><span class="section-number-4">2.20.1</span> Path</h4>
+<div id="outline-container-org831a4bd" class="outline-4">
+<h4 id="org831a4bd"><span class="section-number-4">2.20.1</span> Path</h4>
 <div class="outline-text-4" id="text-2-20-1">
 <ul class="org-ul">
 <li><code>string-&gt;path</code></li>
@@ -2456,8 +2456,8 @@ more often than <code>normalize-path</code>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgde59164" class="outline-4">
-<h4 id="orgde59164"><span class="section-number-4">2.20.2</span> File System</h4>
+<div id="outline-container-org799bf4c" class="outline-4">
+<h4 id="org799bf4c"><span class="section-number-4">2.20.2</span> File System</h4>
 <div class="outline-text-4" id="text-2-20-2">
 <ul class="org-ul">
 <li><code>find-system-path kind</code>, where kind is
@@ -2522,8 +2522,8 @@ create it, and return path.
 </div>
 </div>
 
-<div id="outline-container-orgbf0e0e4" class="outline-4">
-<h4 id="orgbf0e0e4"><span class="section-number-4">2.20.3</span> Networking</h4>
+<div id="outline-container-org209331b" class="outline-4">
+<h4 id="org209331b"><span class="section-number-4">2.20.3</span> Networking</h4>
 <div class="outline-text-4" id="text-2-20-3">
 <p>
 I'm not going to dig deep on this because I don't use it. Just listing
@@ -2556,8 +2556,8 @@ UDP (<code>racket/udp</code>)
 </div>
 </div>
 
-<div id="outline-container-org24d4390" class="outline-4">
-<h4 id="org24d4390"><span class="section-number-4">2.20.4</span> Processes</h4>
+<div id="outline-container-org5b8eba7" class="outline-4">
+<h4 id="org5b8eba7"><span class="section-number-4">2.20.4</span> Processes</h4>
 <div class="outline-text-4" id="text-2-20-4">
 <ul class="org-ul">
 <li><code>subprocess stdout stdin stderr cmd arg ...</code>
@@ -2613,8 +2613,8 @@ returned).</li>
 </div>
 </div>
 
-<div id="outline-container-org894ba76" class="outline-4">
-<h4 id="org894ba76"><span class="section-number-4">2.20.5</span> CMD parsing (racket/cmdline)</h4>
+<div id="outline-container-org836baa7" class="outline-4">
+<h4 id="org836baa7"><span class="section-number-4">2.20.5</span> CMD parsing (racket/cmdline)</h4>
 <div class="outline-text-4" id="text-2-20-5">
 <p>
 The <code>command-line</code> macro actually parse the command line. The
@@ -2717,12 +2717,12 @@ A typical command line parser looks like this. It typically:
 </div>
 
 
-<div id="outline-container-org2e3f933" class="outline-3">
-<h3 id="org2e3f933"><span class="section-number-3">2.21</span> Trouble shooting</h3>
+<div id="outline-container-orgb5b18f1" class="outline-3">
+<h3 id="orgb5b18f1"><span class="section-number-3">2.21</span> Trouble shooting</h3>
 <div class="outline-text-3" id="text-2-21">
 </div>
-<div id="outline-container-org9256e05" class="outline-4">
-<h4 id="org9256e05"><span class="section-number-4">2.21.1</span> racket cannot find browsers</h4>
+<div id="outline-container-org638db79" class="outline-4">
+<h4 id="org638db79"><span class="section-number-4">2.21.1</span> racket cannot find browsers</h4>
 <div class="outline-text-4" id="text-2-21-1">
 <p>
 Browsers are declared in sendurl.rkt, with
@@ -2768,8 +2768,8 @@ order for it to work, install <code>racket-doc</code> package.
 
 
 
-<div id="outline-container-org23df2f8" class="outline-3">
-<h3 id="org23df2f8"><span class="section-number-3">2.22</span> Logger</h3>
+<div id="outline-container-org88d707e" class="outline-3">
+<h3 id="org88d707e"><span class="section-number-3">2.22</span> Logger</h3>
 <div class="outline-text-3" id="text-2-22">
 <div class="org-src-container">
 <pre class="src src-racket">  (<span style="color: #a020f0;">define</span> <span style="color: #a0522d;">lg</span> (<span style="color: #483d8b;">make-logger</span>))
@@ -2800,12 +2800,12 @@ order for it to work, install <code>racket-doc</code> package.
 </div>
 </div>
 
-<div id="outline-container-orge3352cc" class="outline-3">
-<h3 id="orge3352cc"><span class="section-number-3">2.23</span> Libraries</h3>
+<div id="outline-container-org4664408" class="outline-3">
+<h3 id="org4664408"><span class="section-number-3">2.23</span> Libraries</h3>
 <div class="outline-text-3" id="text-2-23">
 </div>
-<div id="outline-container-org05f324e" class="outline-4">
-<h4 id="org05f324e"><span class="section-number-4">2.23.1</span> Drawing libraries</h4>
+<div id="outline-container-orgc4fd1f5" class="outline-4">
+<h4 id="orgc4fd1f5"><span class="section-number-4">2.23.1</span> Drawing libraries</h4>
 <div class="outline-text-4" id="text-2-23-1">
 <ul class="org-ul">
 <li>metapict: <a href="https://github.com/soegaard/metapict">https://github.com/soegaard/metapict</a></li>
@@ -2822,12 +2822,12 @@ slideshow</li>
 </div>
 </div>
 
-<div id="outline-container-org6ea629d" class="outline-4">
-<h4 id="org6ea629d"><span class="section-number-4">2.23.2</span> pict-lib</h4>
+<div id="outline-container-org0833a93" class="outline-4">
+<h4 id="org0833a93"><span class="section-number-4">2.23.2</span> pict-lib</h4>
 <div class="outline-text-4" id="text-2-23-2">
 </div>
-<div id="outline-container-org6f96993" class="outline-5">
-<h5 id="org6f96993"><span class="section-number-5">2.23.2.1</span> Constructors</h5>
+<div id="outline-container-org1a6dc27" class="outline-5">
+<h5 id="org1a6dc27"><span class="section-number-5">2.23.2.1</span> Constructors</h5>
 <div class="outline-text-5" id="text-2-23-2-1">
 <ul class="org-ul">
 <li>text</li>
@@ -2853,7 +2853,7 @@ create curve</li>
 
 
 <ol class="org-ol">
-<li><a id="org62c7992"></a>More constructors<br />
+<li><a id="org7bf0cf6"></a>More constructors<br />
 <div class="outline-text-6" id="text-2-23-2-1-1">
 <ul class="org-ul">
 <li>cloud</li>
@@ -2919,8 +2919,8 @@ code parameters
 
 
 
-<div id="outline-container-org7ad2786" class="outline-5">
-<h5 id="org7ad2786"><span class="section-number-5">2.23.2.2</span> Combiners</h5>
+<div id="outline-container-org1684249" class="outline-5">
+<h5 id="org1684249"><span class="section-number-5">2.23.2.2</span> Combiners</h5>
 <div class="outline-text-5" id="text-2-23-2-2">
 <ul class="org-ul">
 <li>various of append
@@ -2947,8 +2947,8 @@ code parameters
 </ul>
 </div>
 </div>
-<div id="outline-container-org0073aea" class="outline-5">
-<h5 id="org0073aea"><span class="section-number-5">2.23.2.3</span> Adjusters</h5>
+<div id="outline-container-org72ce6e3" class="outline-5">
+<h5 id="org72ce6e3"><span class="section-number-5">2.23.2.3</span> Adjusters</h5>
 <div class="outline-text-5" id="text-2-23-2-3">
 <ul class="org-ul">
 <li>scale, scale-to-fit, scale/improve-new-text</li>
@@ -2970,8 +2970,8 @@ The followings can be used to specify parameters
 </ul>
 </div>
 </div>
-<div id="outline-container-org805a292" class="outline-5">
-<h5 id="org805a292"><span class="section-number-5">2.23.2.4</span> Bounding box</h5>
+<div id="outline-container-org5a8fca9" class="outline-5">
+<h5 id="org5a8fca9"><span class="section-number-5">2.23.2.4</span> Bounding box</h5>
 <div class="outline-text-5" id="text-2-23-2-4">
 <ul class="org-ul">
 <li>inset</li>
@@ -2986,8 +2986,8 @@ The followings can be used to specify parameters
 </div>
 </div>
 
-<div id="outline-container-orgda99cea" class="outline-5">
-<h5 id="orgda99cea"><span class="section-number-5">2.23.2.5</span> Pict finder</h5>
+<div id="outline-container-orgc819cdd" class="outline-5">
+<h5 id="orgc819cdd"><span class="section-number-5">2.23.2.5</span> Pict finder</h5>
 <div class="outline-text-5" id="text-2-23-2-5">
 <ul class="org-ul">
 <li>with -find suffix
@@ -2998,8 +2998,8 @@ The followings can be used to specify parameters
 </div>
 </div>
 
-<div id="outline-container-org03b518c" class="outline-5">
-<h5 id="org03b518c"><span class="section-number-5">2.23.2.6</span> Tree layout</h5>
+<div id="outline-container-org61e6af3" class="outline-5">
+<h5 id="org61e6af3"><span class="section-number-5">2.23.2.6</span> Tree layout</h5>
 <div class="outline-text-5" id="text-2-23-2-6">
 <p>
 tree-layout creates a layout containing edges. The layout can be
@@ -3014,8 +3014,8 @@ rendered to pict by
 </div>
 </div>
 
-<div id="outline-container-org012baee" class="outline-4">
-<h4 id="org012baee"><span class="section-number-4">2.23.3</span> graph</h4>
+<div id="outline-container-org5ee45c0" class="outline-4">
+<h4 id="org5ee45c0"><span class="section-number-4">2.23.3</span> graph</h4>
 <div class="outline-text-4" id="text-2-23-3">
 <p>
 This is a generic graphic library.  graph is defined through a generic
@@ -3067,8 +3067,8 @@ dot format. It cannot output a <code>pict</code>.
 </div>
 
 
-<div id="outline-container-org67598d0" class="outline-4">
-<h4 id="org67598d0"><span class="section-number-4">2.23.4</span> 2htdp/image</h4>
+<div id="outline-container-org9e7cc98" class="outline-4">
+<h4 id="org9e7cc98"><span class="section-number-4">2.23.4</span> 2htdp/image</h4>
 <div class="outline-text-4" id="text-2-23-4">
 <p>
 This is teachpack of How to design program version 2.  It provides
@@ -3084,8 +3084,8 @@ Other interesting packages in this pack:
 </div>
 
 
-<div id="outline-container-org5ce08f9" class="outline-5">
-<h5 id="org5ce08f9"><span class="section-number-5">2.23.4.1</span> Common Concepts</h5>
+<div id="outline-container-orga96973b" class="outline-5">
+<h5 id="orga96973b"><span class="section-number-5">2.23.4.1</span> Common Concepts</h5>
 <div class="outline-text-5" id="text-2-23-4-1">
 <p>
 The length is measured in terms of pixels, angle means degree. When
@@ -3153,8 +3153,8 @@ And retrieve pinhole by
 </div>
 
 
-<div id="outline-container-org3d06933" class="outline-5">
-<h5 id="org3d06933"><span class="section-number-5">2.23.4.2</span> basic shape</h5>
+<div id="outline-container-org678f0d2" class="outline-5">
+<h5 id="org678f0d2"><span class="section-number-5">2.23.4.2</span> basic shape</h5>
 <div class="outline-text-5" id="text-2-23-4-2">
 <ul class="org-ul">
 <li>shape
@@ -3211,8 +3211,8 @@ including
 </div>
 
 
-<div id="outline-container-org6e77701" class="outline-5">
-<h5 id="org6e77701"><span class="section-number-5">2.23.4.3</span> Overlay</h5>
+<div id="outline-container-orgd06350b" class="outline-5">
+<h5 id="orgd06350b"><span class="section-number-5">2.23.4.3</span> Overlay</h5>
 <div class="outline-text-5" id="text-2-23-4-3">
 <ul class="org-ul">
 <li><code>overlay</code> accepts a sequence of images, with the first being on
@@ -3245,8 +3245,8 @@ on their centers</li>
 </div>
 
 
-<div id="outline-container-org04943cd" class="outline-5">
-<h5 id="org04943cd"><span class="section-number-5">2.23.4.4</span> scene</h5>
+<div id="outline-container-org555a8af" class="outline-5">
+<h5 id="org555a8af"><span class="section-number-5">2.23.4.4</span> scene</h5>
 <div class="outline-text-5" id="text-2-23-4-4">
 <p>
 Typically you place images on a scene. If an image is placed (using
@@ -3268,8 +3268,8 @@ top-left corner of scene</li>
 </div>
 </div>
 
-<div id="outline-container-org60a6e26" class="outline-5">
-<h5 id="org60a6e26"><span class="section-number-5">2.23.4.5</span> transform</h5>
+<div id="outline-container-org3bf45c6" class="outline-5">
+<h5 id="org3bf45c6"><span class="section-number-5">2.23.4.5</span> transform</h5>
 <div class="outline-text-5" id="text-2-23-4-5">
 <ul class="org-ul">
 <li><code>rotate angle image</code></li>
@@ -3288,8 +3288,8 @@ bounding box is still rectangle.</li>
 </div>
 
 
-<div id="outline-container-org1b84ee6" class="outline-5">
-<h5 id="org1b84ee6"><span class="section-number-5">2.23.4.6</span> bitmap</h5>
+<div id="outline-container-org88c6e9e" class="outline-5">
+<h5 id="org88c6e9e"><span class="section-number-5">2.23.4.6</span> bitmap</h5>
 <div class="outline-text-5" id="text-2-23-4-6">
 <p>
 You can load a bit map file by <code>(bitmap filename)</code>, or <code>(bitmap/url
@@ -3307,8 +3307,8 @@ Finally, you can save image to file by
 </div>
 </div>
 
-<div id="outline-container-org9cd7f1c" class="outline-5">
-<h5 id="org9cd7f1c"><span class="section-number-5">2.23.4.7</span> properties</h5>
+<div id="outline-container-org7ef0cc7" class="outline-5">
+<h5 id="org7ef0cc7"><span class="section-number-5">2.23.4.7</span> properties</h5>
 <div class="outline-text-5" id="text-2-23-4-7">
 <ul class="org-ul">
 <li>image-width</li>
@@ -3320,12 +3320,12 @@ Finally, you can save image to file by
 </div>
 
 
-<div id="outline-container-org0204ef1" class="outline-4">
-<h4 id="org0204ef1"><span class="section-number-4">2.23.5</span> Networking</h4>
+<div id="outline-container-orgb29de08" class="outline-4">
+<h4 id="orgb29de08"><span class="section-number-4">2.23.5</span> Networking</h4>
 <div class="outline-text-4" id="text-2-23-5">
 </div>
-<div id="outline-container-orgb4790c7" class="outline-5">
-<h5 id="orgb4790c7"><span class="section-number-5">2.23.5.1</span> HTML parsing</h5>
+<div id="outline-container-orge0a059e" class="outline-5">
+<h5 id="orge0a059e"><span class="section-number-5">2.23.5.1</span> HTML parsing</h5>
 <div class="outline-text-5" id="text-2-23-5-1">
 <p>
 The package is <code>html-parsing</code>. It has only one function, <code>html-&gt;xexp</code>.
@@ -3364,8 +3364,8 @@ it. So if you want to parse it again, construct it by <code>`(*TOP* ,x)</code></
 </div>
 </div>
 
-<div id="outline-container-org51120a2" class="outline-5">
-<h5 id="org51120a2"><span class="section-number-5">2.23.5.2</span> URL &amp; HTTP</h5>
+<div id="outline-container-orgac73c9e" class="outline-5">
+<h5 id="orgac73c9e"><span class="section-number-5">2.23.5.2</span> URL &amp; HTTP</h5>
 <div class="outline-text-5" id="text-2-23-5-2">
 <p>
 require the package <code>net/url</code> (needs install) and
@@ -3393,16 +3393,16 @@ e.g. <code>get-pure-port</code>.
 
 
 
-<div id="outline-container-orgf7325d7" class="outline-2">
-<h2 id="orgf7325d7"><span class="section-number-2">3</span> Common Lisp</h2>
+<div id="outline-container-org2d0cf01" class="outline-2">
+<h2 id="org2d0cf01"><span class="section-number-2">3</span> Common Lisp</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgd9e0c80" class="outline-3">
-<h3 id="orgd9e0c80"><span class="section-number-3">3.1</span> Emacs Support</h3>
+<div id="outline-container-org6cad2c8" class="outline-3">
+<h3 id="org6cad2c8"><span class="section-number-3">3.1</span> Emacs Support</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org6acbf6d" class="outline-4">
-<h4 id="org6acbf6d"><span class="section-number-4">3.1.1</span> lisp-mode</h4>
+<div id="outline-container-org2cf1703" class="outline-4">
+<h4 id="org2cf1703"><span class="section-number-4">3.1.1</span> lisp-mode</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>indent-sexp (C-M-q)</li>
@@ -3414,8 +3414,8 @@ transpose, point will be after the two sexps</li>
 </div>
 </div>
 
-<div id="outline-container-orgd56141a" class="outline-4">
-<h4 id="orgd56141a"><span class="section-number-4">3.1.2</span> lisp go-to-def</h4>
+<div id="outline-container-org425be7d" class="outline-4">
+<h4 id="org425be7d"><span class="section-number-4">3.1.2</span> lisp go-to-def</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>xref-find-definitions (M-.)</li>
@@ -3427,12 +3427,12 @@ These are supported via general progmodes
 </p>
 </div>
 </div>
-<div id="outline-container-org456016f" class="outline-4">
-<h4 id="org456016f"><span class="section-number-4">3.1.3</span> <span class="todo TODO">TODO</span> eldoc</h4>
+<div id="outline-container-org8f3e6ee" class="outline-4">
+<h4 id="org8f3e6ee"><span class="section-number-4">3.1.3</span> <span class="todo TODO">TODO</span> eldoc</h4>
 </div>
 
-<div id="outline-container-orga4d70d8" class="outline-4">
-<h4 id="orga4d70d8"><span class="section-number-4">3.1.4</span> <span class="todo TODO">TODO</span> slime-mode</h4>
+<div id="outline-container-org5964029" class="outline-4">
+<h4 id="org5964029"><span class="section-number-4">3.1.4</span> <span class="todo TODO">TODO</span> slime-mode</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <p>
 This is minor mode. All the commands are prefixed with slime
@@ -3468,8 +3468,8 @@ go back from a definition.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4205968" class="outline-4">
-<h4 id="org4205968"><span class="section-number-4">3.1.5</span> paredit</h4>
+<div id="outline-container-org9d86b96" class="outline-4">
+<h4 id="org9d86b96"><span class="section-number-4">3.1.5</span> paredit</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <p>
 I'm going to use this instead of newer and seemingly fancier
@@ -3552,8 +3552,8 @@ Split and join
 
 
 
-<div id="outline-container-org3ad73ba" class="outline-3">
-<h3 id="org3ad73ba"><span class="section-number-3">3.2</span> List</h3>
+<div id="outline-container-org1cb626f" class="outline-3">
+<h3 id="org1cb626f"><span class="section-number-3">3.2</span> List</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 The function <code>cons</code> builds lists. If second argument is a list, it
@@ -3679,8 +3679,8 @@ variables. It cna be used to bind into tree structures.
 
 
 
-<div id="outline-container-orga176d04" class="outline-3">
-<h3 id="orga176d04"><span class="section-number-3">3.3</span> Sequence</h3>
+<div id="outline-container-org3ca1008" class="outline-3">
+<h3 id="org3ca1008"><span class="section-number-3">3.3</span> Sequence</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Sequence contains both lists and vectors. To tell what kind of
@@ -3728,8 +3728,8 @@ the previous result in the next computation.
 </div>
 </div>
 
-<div id="outline-container-org0ad2901" class="outline-3">
-<h3 id="org0ad2901"><span class="section-number-3">3.4</span> String</h3>
+<div id="outline-container-orga701262" class="outline-3">
+<h3 id="orga701262"><span class="section-number-3">3.4</span> String</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 A string is a specialized vector (one-dimensional array) whose
@@ -3764,8 +3764,8 @@ conversion can be done by <code>string-upcase</code>, <code>string-downcase</cod
 </div>
 
 
-<div id="outline-container-orgcf3041c" class="outline-3">
-<h3 id="orgcf3041c"><span class="section-number-3">3.5</span> Array</h3>
+<div id="outline-container-org72e6c47" class="outline-3">
+<h3 id="org72e6c47"><span class="section-number-3">3.5</span> Array</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 Array can be general array, holding arbitrary object types; it can
@@ -3807,8 +3807,8 @@ supported via <code>bit</code>, <code>sbit</code>, <code>bit-and</code>, <code>b
 </div>
 </div>
 
-<div id="outline-container-org85fbfce" class="outline-3">
-<h3 id="org85fbfce"><span class="section-number-3">3.6</span> Structure</h3>
+<div id="outline-container-org6a19381" class="outline-3">
+<h3 id="org6a19381"><span class="section-number-3">3.6</span> Structure</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Macro <code>(defstruct point x y)</code> will also define <code>make-point</code>,
@@ -3817,8 +3817,8 @@ Macro <code>(defstruct point x y)</code> will also define <code>make-point</code
 </div>
 </div>
 
-<div id="outline-container-org182545b" class="outline-3">
-<h3 id="org182545b"><span class="section-number-3">3.7</span> Hash Table</h3>
+<div id="outline-container-orgbba4046" class="outline-3">
+<h3 id="orgbba4046"><span class="section-number-3">3.7</span> Hash Table</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 This is a map. <code>make-hash-table</code> creates a hash-table. The test
@@ -3840,8 +3840,8 @@ the table by <code>clrhash</code>.  To iterate through a hash table, use
 </p>
 </div>
 </div>
-<div id="outline-container-orge2b9bb2" class="outline-3">
-<h3 id="orge2b9bb2"><span class="section-number-3">3.8</span> Symbols &amp; Variables</h3>
+<div id="outline-container-org18416cb" class="outline-3">
+<h3 id="org18416cb"><span class="section-number-3">3.8</span> Symbols &amp; Variables</h3>
 <div class="outline-text-3" id="text-3-8">
 <p>
 Lisp is case-insensitive. The program will be converted to upper case
@@ -3976,8 +3976,8 @@ to assign it back to the variable.
 </div>
 </div>
 
-<div id="outline-container-orgadcd6f9" class="outline-4">
-<h4 id="orgadcd6f9"><span class="section-number-4">3.8.1</span> Equality</h4>
+<div id="outline-container-org0c27167" class="outline-4">
+<h4 id="org0c27167"><span class="section-number-4">3.8.1</span> Equality</h4>
 <div class="outline-text-4" id="text-3-8-1">
 <p>
 The reason Lisp has no pointer is that every value is conceptually a
@@ -4005,8 +4005,8 @@ equal case-insensitively. NEVER use this.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf4930a9" class="outline-3">
-<h3 id="orgf4930a9"><span class="section-number-3">3.9</span> Type</h3>
+<div id="outline-container-orgc6fcc17" class="outline-3">
+<h3 id="orgc6fcc17"><span class="section-number-3">3.9</span> Type</h3>
 <div class="outline-text-3" id="text-3-9">
 <p>
 Common Lisp is strong typed, but the type is associated with objects,
@@ -4042,8 +4042,8 @@ remember, documenting here.
 </div>
 </div>
 
-<div id="outline-container-org8427183" class="outline-3">
-<h3 id="org8427183"><span class="section-number-3">3.10</span> Numbers</h3>
+<div id="outline-container-org0a86c54" class="outline-3">
+<h3 id="org0a86c54"><span class="section-number-3">3.10</span> Numbers</h3>
 <div class="outline-text-3" id="text-3-10">
 <p>
 Numbers can use read form, e.g. <code>#b010101</code>, <code>#xaf08</code>. Predicates such
@@ -4100,8 +4100,8 @@ general function that accept many operations that cover all above.
 </div>
 
 
-<div id="outline-container-org200792a" class="outline-3">
-<h3 id="org200792a"><span class="section-number-3">3.11</span> Function</h3>
+<div id="outline-container-orgc1e33dd" class="outline-3">
+<h3 id="orgc1e33dd"><span class="section-number-3">3.11</span> Function</h3>
 <div class="outline-text-3" id="text-3-11">
 <p>
 The predicate <code>fboundp</code> tells whether there's a function with a given
@@ -4114,8 +4114,8 @@ obtained by <code>#'</code>.
 </p>
 </div>
 
-<div id="outline-container-org61fd0a8" class="outline-4">
-<h4 id="org61fd0a8"><span class="section-number-4">3.11.1</span> Defun and Lambda Expression</h4>
+<div id="outline-container-orgc368d8c" class="outline-4">
+<h4 id="orgc368d8c"><span class="section-number-4">3.11.1</span> Defun and Lambda Expression</h4>
 <div class="outline-text-4" id="text-3-11-1">
 <p>
 <code>defun</code> is a macro.
@@ -4185,8 +4185,8 @@ differently, so <code>lambda</code> is no longer necessary.
 </div>
 </div>
 
-<div id="outline-container-org8269a01" class="outline-3">
-<h3 id="org8269a01"><span class="section-number-3">3.12</span> Macro</h3>
+<div id="outline-container-org0a8f82b" class="outline-3">
+<h3 id="org0a8f82b"><span class="section-number-3">3.12</span> Macro</h3>
 <div class="outline-text-3" id="text-3-12">
 <p>
 Macro is designed to abstract away common syntactic patterns.
@@ -4231,8 +4231,8 @@ you want to use the variable.</li>
 </div>
 
 
-<div id="outline-container-org11b1ee7" class="outline-3">
-<h3 id="org11b1ee7"><span class="section-number-3">3.13</span> Evaluation</h3>
+<div id="outline-container-orgac54daa" class="outline-3">
+<h3 id="orgac54daa"><span class="section-number-3">3.13</span> Evaluation</h3>
 <div class="outline-text-3" id="text-3-13">
 <ul class="org-ul">
 <li>eval form: evaluate form in the current dynamic environment and a
@@ -4310,8 +4310,8 @@ that is used in defmacro.
 </div>
 </div>
 
-<div id="outline-container-orgf6bf5fe" class="outline-3">
-<h3 id="orgf6bf5fe"><span class="section-number-3">3.14</span> Exception</h3>
+<div id="outline-container-org7f4d4c8" class="outline-3">
+<h3 id="org7f4d4c8"><span class="section-number-3">3.14</span> Exception</h3>
 <div class="outline-text-3" id="text-3-14">
 <p>
 A <code>catch</code> expression takes a tag, which can be any kind of object,
@@ -4329,12 +4329,12 @@ the lisp error handler.
 
 
 
-<div id="outline-container-org009cfc8" class="outline-3">
-<h3 id="org009cfc8"><span class="section-number-3">3.15</span> Control Structure</h3>
+<div id="outline-container-orgf125067" class="outline-3">
+<h3 id="orgf125067"><span class="section-number-3">3.15</span> Control Structure</h3>
 <div class="outline-text-3" id="text-3-15">
 </div>
-<div id="outline-container-org07ddd0d" class="outline-4">
-<h4 id="org07ddd0d"><span class="section-number-4">3.15.1</span> Sequential</h4>
+<div id="outline-container-org045cda8" class="outline-4">
+<h4 id="org045cda8"><span class="section-number-4">3.15.1</span> Sequential</h4>
 <div class="outline-text-4" id="text-3-15-1">
 <ul class="org-ul">
 <li>progn</li>
@@ -4344,8 +4344,8 @@ the lisp error handler.
 </div>
 </div>
 
-<div id="outline-container-org21acf0d" class="outline-4">
-<h4 id="org21acf0d"><span class="section-number-4">3.15.2</span> Conditional</h4>
+<div id="outline-container-org1c4fecb" class="outline-4">
+<h4 id="org1c4fecb"><span class="section-number-4">3.15.2</span> Conditional</h4>
 <div class="outline-text-4" id="text-3-15-2">
 <div class="org-src-container">
 <pre class="src src-lisp">(<span style="color: #a020f0;">if</span> condition then-form [else-form])
@@ -4385,8 +4385,8 @@ simple conditional evaluation. For example,
 </div>
 
 
-<div id="outline-container-org542392a" class="outline-4">
-<h4 id="org542392a"><span class="section-number-4">3.15.3</span> Iteration</h4>
+<div id="outline-container-org7df6002" class="outline-4">
+<h4 id="org7df6002"><span class="section-number-4">3.15.3</span> Iteration</h4>
 <div class="outline-text-4" id="text-3-15-3">
 <div class="org-src-container">
 <pre class="src src-lisp">(<span style="color: #a020f0;">dolist</span> (var list-form) body-form*)
@@ -4406,8 +4406,8 @@ the var-def is <code>(var init-form step-form)</code>. For example:
 </div>
 
 
-<div id="outline-container-org44f55db" class="outline-5">
-<h5 id="org44f55db"><span class="section-number-5">3.15.3.1</span> Append to a list</h5>
+<div id="outline-container-orgcf1660b" class="outline-5">
+<h5 id="orgcf1660b"><span class="section-number-5">3.15.3.1</span> Append to a list</h5>
 <div class="outline-text-5" id="text-3-15-3-1">
 <p>
 Remember that append copies its arguments.  Avoid using append
@@ -4448,8 +4448,8 @@ Best:
 </div>
 </div>
 
-<div id="outline-container-orgeddaac3" class="outline-3">
-<h3 id="orgeddaac3"><span class="section-number-3">3.16</span> Loop Facility</h3>
+<div id="outline-container-org139f709" class="outline-3">
+<h3 id="org139f709"><span class="section-number-3">3.16</span> Loop Facility</h3>
 <div class="outline-text-3" id="text-3-16">
 <p>
 <i>Loop keywords</i> are not true common lisp keywords. They are symbols
@@ -4472,8 +4472,8 @@ All variables are initialized in the loop prologue.
 </p>
 </div>
 
-<div id="outline-container-org32cfb30" class="outline-4">
-<h4 id="org32cfb30"><span class="section-number-4">3.16.1</span> Loop Clauses</h4>
+<div id="outline-container-orgca2be06" class="outline-4">
+<h4 id="orgca2be06"><span class="section-number-4">3.16.1</span> Loop Clauses</h4>
 <div class="outline-text-4" id="text-3-16-1">
 <p>
 Inside the loop is the loop clauses.
@@ -4546,8 +4546,8 @@ Miscellaneous
 </ul>
 </div>
 </div>
-<div id="outline-container-org162f03b" class="outline-4">
-<h4 id="org162f03b"><span class="section-number-4">3.16.2</span> Loop Syntax</h4>
+<div id="outline-container-org5c35597" class="outline-4">
+<h4 id="org5c35597"><span class="section-number-4">3.16.2</span> Loop Syntax</h4>
 <div class="outline-text-4" id="text-3-16-2">
 <pre class="example">
 loop ::= (loop [named name] {variables}* {main}*)
@@ -4572,8 +4572,8 @@ initial-final ::= initially | finally
 </div>
 </div>
 
-<div id="outline-container-org993833e" class="outline-4">
-<h4 id="org993833e"><span class="section-number-4">3.16.3</span> Iteration Control (for, as, repeat)</h4>
+<div id="outline-container-org0569241" class="outline-4">
+<h4 id="org0569241"><span class="section-number-4">3.16.3</span> Iteration Control (for, as, repeat)</h4>
 <div class="outline-text-4" id="text-3-16-3">
 <p>
 for and as are exctly the same.
@@ -4674,8 +4674,8 @@ repeat the body (expr) times.
 </div>
 </div>
 
-<div id="outline-container-org5ccad2e" class="outline-4">
-<h4 id="org5ccad2e"><span class="section-number-4">3.16.4</span> End Test Control (always, never, thereis, until, while)</h4>
+<div id="outline-container-org30f854c" class="outline-4">
+<h4 id="org30f854c"><span class="section-number-4">3.16.4</span> End Test Control (always, never, thereis, until, while)</h4>
 <div class="outline-text-4" id="text-3-16-4">
 <p>
 always, never, thereis change the return value, so
@@ -4701,8 +4701,8 @@ if so, otherwise return t</li>
 </div>
 </div>
 
-<div id="outline-container-org810189a" class="outline-4">
-<h4 id="org810189a"><span class="section-number-4">3.16.5</span> Value Accumulation</h4>
+<div id="outline-container-org870e3a9" class="outline-4">
+<h4 id="org870e3a9"><span class="section-number-4">3.16.5</span> Value Accumulation</h4>
 <div class="outline-text-4" id="text-3-16-5">
 <ul class="org-ul">
 <li>multiple accumulation can be used if they operate the same type,
@@ -4741,8 +4741,8 @@ Clauses: all of them have <code>xxx expr [into var]</code> format
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd863bde" class="outline-4">
-<h4 id="orgd863bde"><span class="section-number-4">3.16.6</span> Variable Initialization (with)</h4>
+<div id="outline-container-orge4559a0" class="outline-4">
+<h4 id="orge4559a0"><span class="section-number-4">3.16.6</span> Variable Initialization (with)</h4>
 <div class="outline-text-4" id="text-3-16-6">
 <pre class="example">
 with var [= expr] {and var [= expr]}*
@@ -4754,8 +4754,8 @@ with var [= expr] {and var [= expr]}*
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeaa82aa" class="outline-4">
-<h4 id="orgeaa82aa"><span class="section-number-4">3.16.7</span> Conditional Execution (if, when, unless)</h4>
+<div id="outline-container-org7db4db8" class="outline-4">
+<h4 id="org7db4db8"><span class="section-number-4">3.16.7</span> Conditional Execution (if, when, unless)</h4>
 <div class="outline-text-4" id="text-3-16-7">
 <p>
 They all have the same signature:
@@ -4779,8 +4779,8 @@ keyword marks the end. This is useful in compound clauses.</li>
 </div>
 </div>
 
-<div id="outline-container-org023b888" class="outline-4">
-<h4 id="org023b888"><span class="section-number-4">3.16.8</span> Unconditional Execution (do, return)</h4>
+<div id="outline-container-org8ebef13" class="outline-4">
+<h4 id="org8ebef13"><span class="section-number-4">3.16.8</span> Unconditional Execution (do, return)</h4>
 <div class="outline-text-4" id="text-3-16-8">
 <ul class="org-ul">
 <li>do {expr}*: execute sequentially</li>
@@ -4789,8 +4789,8 @@ keyword marks the end. This is useful in compound clauses.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org34338cf" class="outline-4">
-<h4 id="org34338cf"><span class="section-number-4">3.16.9</span> Misc (named, initially, finally)</h4>
+<div id="outline-container-orgd965c15" class="outline-4">
+<h4 id="orgd965c15"><span class="section-number-4">3.16.9</span> Misc (named, initially, finally)</h4>
 <div class="outline-text-4" id="text-3-16-9">
 <ul class="org-ul">
 <li>named: name a loop so that we can use return-from</li>
@@ -4801,8 +4801,8 @@ collected into one place inside <code>progn</code> in the order they present.</l
 </ul>
 </div>
 </div>
-<div id="outline-container-org9fd2ac1" class="outline-4">
-<h4 id="org9fd2ac1"><span class="section-number-4">3.16.10</span> Destructure</h4>
+<div id="outline-container-org8ac13f3" class="outline-4">
+<h4 id="org8ac13f3"><span class="section-number-4">3.16.10</span> Destructure</h4>
 <div class="outline-text-4" id="text-3-16-10">
 <p>
 bind result to a list of variables. This can be used in <code>for</code> and
@@ -4822,8 +4822,8 @@ value</li>
 
 
 
-<div id="outline-container-org8693008" class="outline-3">
-<h3 id="org8693008"><span class="section-number-3">3.17</span> Input/Output</h3>
+<div id="outline-container-org09bd5f1" class="outline-3">
+<h3 id="org09bd5f1"><span class="section-number-3">3.17</span> Input/Output</h3>
 <div class="outline-text-3" id="text-3-17">
 <p>
 These input/output operations perform on streams.  Streams are lisp
@@ -4894,8 +4894,8 @@ In case you only have a string, it is convenient to use
 </div>
 
 
-<div id="outline-container-org73f5da2" class="outline-3">
-<h3 id="org73f5da2"><span class="section-number-3">3.18</span> Package</h3>
+<div id="outline-container-org3edcb22" class="outline-3">
+<h3 id="org3edcb22"><span class="section-number-3">3.18</span> Package</h3>
 <div class="outline-text-3" id="text-3-18">
 <p>
 This is used to solve name conflict.
@@ -4933,8 +4933,8 @@ This is used to solve name conflict.
 </ul>
 </div>
 
-<div id="outline-container-org4b4da46" class="outline-4">
-<h4 id="org4b4da46"><span class="section-number-4">3.18.1</span> Modules</h4>
+<div id="outline-container-orgfdadd10" class="outline-4">
+<h4 id="orgfdadd10"><span class="section-number-4">3.18.1</span> Modules</h4>
 <div class="outline-text-4" id="text-3-18-1">
 <p>
 A module is a subsystem. It consists of one or more packages. It may
@@ -4952,15 +4952,15 @@ be loaded from one or more files.
 
 
 
-<div id="outline-container-org161a5fe" class="outline-3">
-<h3 id="org161a5fe"><span class="section-number-3">3.19</span> Common Lisp Object System</h3>
+<div id="outline-container-orgafa8446" class="outline-3">
+<h3 id="orgafa8446"><span class="section-number-3">3.19</span> Common Lisp Object System</h3>
 <div class="outline-text-3" id="text-3-19">
 </div>
-<div id="outline-container-org4848ade" class="outline-4">
-<h4 id="org4848ade"><span class="section-number-4">3.19.1</span> <span class="todo TODO">TODO</span> Concept</h4>
+<div id="outline-container-org4068c3e" class="outline-4">
+<h4 id="org4068c3e"><span class="section-number-4">3.19.1</span> <span class="todo TODO">TODO</span> Concept</h4>
 </div>
-<div id="outline-container-orgd6e306e" class="outline-4">
-<h4 id="orgd6e306e"><span class="section-number-4">3.19.2</span> Functions</h4>
+<div id="outline-container-org1bb3d8d" class="outline-4">
+<h4 id="org1bb3d8d"><span class="section-number-4">3.19.2</span> Functions</h4>
 <div class="outline-text-4" id="text-3-19-2">
 <ul class="org-ul">
 <li>add-method</li>
@@ -5012,15 +5012,15 @@ be loaded from one or more files.
 </div>
 
 
-<div id="outline-container-org93507f4" class="outline-3">
-<h3 id="org93507f4"><span class="section-number-3">3.20</span> ASDF (Another System Definition Facility)</h3>
+<div id="outline-container-org3a0e656" class="outline-3">
+<h3 id="org3a0e656"><span class="section-number-3">3.20</span> ASDF (Another System Definition Facility)</h3>
 <div class="outline-text-3" id="text-3-20">
 <p>
 <a href="https://common-lisp.net/project/asdf/asdf.html">https://common-lisp.net/project/asdf/asdf.html</a>
 </p>
 </div>
-<div id="outline-container-orgd0ba4c4" class="outline-4">
-<h4 id="orgd0ba4c4"><span class="section-number-4">3.20.1</span> Load ASDF</h4>
+<div id="outline-container-org5015885" class="outline-4">
+<h4 id="org5015885"><span class="section-number-4">3.20.1</span> Load ASDF</h4>
 <div class="outline-text-4" id="text-3-20-1">
 <p>
 ASDF should come along with lisp implementations.
@@ -5049,8 +5049,8 @@ However, quicklisp should already configured the load path.
 </div>
 </div>
 
-<div id="outline-container-orgf87fd0a" class="outline-4">
-<h4 id="orgf87fd0a"><span class="section-number-4">3.20.2</span> Load System</h4>
+<div id="outline-container-orgbf1f22e" class="outline-4">
+<h4 id="orgbf1f22e"><span class="section-number-4">3.20.2</span> Load System</h4>
 <div class="outline-text-4" id="text-3-20-2">
 <ul class="org-ul">
 <li><code>(require "asdf")</code></li>
@@ -5075,8 +5075,8 @@ Some functions:
 </div>
 </div>
 
-<div id="outline-container-org688ead4" class="outline-4">
-<h4 id="org688ead4"><span class="section-number-4">3.20.3</span> Build System</h4>
+<div id="outline-container-org63874b4" class="outline-4">
+<h4 id="org63874b4"><span class="section-number-4">3.20.3</span> Build System</h4>
 <div class="outline-text-4" id="text-3-20-3">
 <ul class="org-ul">
 <li><code>(require "asdf")</code></li>
@@ -5110,16 +5110,16 @@ The system is specified using <code>defsystem</code> syntax. An example
 </div>
 </div>
 
-<div id="outline-container-orge037790" class="outline-3">
-<h3 id="orge037790"><span class="section-number-3">3.21</span> Appendix</h3>
+<div id="outline-container-org4ae96a2" class="outline-3">
+<h3 id="org4ae96a2"><span class="section-number-3">3.21</span> Appendix</h3>
 <div class="outline-text-3" id="text-3-21">
 </div>
-<div id="outline-container-org3e0463f" class="outline-4">
-<h4 id="org3e0463f"><span class="section-number-4">3.21.1</span> Installation</h4>
+<div id="outline-container-orgb495cdc" class="outline-4">
+<h4 id="orgb495cdc"><span class="section-number-4">3.21.1</span> Installation</h4>
 <div class="outline-text-4" id="text-3-21-1">
 </div>
-<div id="outline-container-org5bd07a9" class="outline-5">
-<h5 id="org5bd07a9"><span class="section-number-5">3.21.1.1</span> quicklisp</h5>
+<div id="outline-container-org3c5a268" class="outline-5">
+<h5 id="org3c5a268"><span class="section-number-5">3.21.1.1</span> quicklisp</h5>
 <div class="outline-text-5" id="text-3-21-1-1">
 <div class="org-src-container">
 <pre class="src src-lisp"> <span style="color: #b22222;">;; </span><span style="color: #b22222;">sbcl --load /path/to/quicklisp.lisp</span>
@@ -5161,8 +5161,8 @@ A list of packages used:
 </dl>
 </div>
 </div>
-<div id="outline-container-orgd8cdbb2" class="outline-5">
-<h5 id="orgd8cdbb2"><span class="section-number-5">3.21.1.2</span> packages</h5>
+<div id="outline-container-org2c38d9a" class="outline-5">
+<h5 id="org2c38d9a"><span class="section-number-5">3.21.1.2</span> packages</h5>
 <div class="outline-text-5" id="text-3-21-1-2">
 <ul class="org-ul">
 <li><code>cl-quicklisp</code></li>
@@ -5172,22 +5172,22 @@ A list of packages used:
 
 
 
-<div id="outline-container-org4f5df84" class="outline-5">
-<h5 id="org4f5df84"><span class="section-number-5">3.21.1.3</span> org babel</h5>
+<div id="outline-container-orged7af95" class="outline-5">
+<h5 id="orged7af95"><span class="section-number-5">3.21.1.3</span> org babel</h5>
 <div class="outline-text-5" id="text-3-21-1-3">
 <p>
 first, start <code>M-x slime</code>, then you can evaluate this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp" id="orge0698a1">   (princ message)
+<pre class="src src-lisp" id="org072df19">   (princ message)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcd56f3e" class="outline-5">
-<h5 id="orgcd56f3e"><span class="section-number-5">3.21.1.4</span> Slime</h5>
+<div id="outline-container-org0d529ce" class="outline-5">
+<h5 id="org0d529ce"><span class="section-number-5">3.21.1.4</span> Slime</h5>
 <div class="outline-text-5" id="text-3-21-1-4">
 <ul class="org-ul">
 <li>slime (emacs IDE)</li>
@@ -5225,7 +5225,7 @@ The staff added into <code>.sbclrc</code>:
 </div>
 
 <ol class="org-ol">
-<li><a id="org3a74294"></a>Commands<br />
+<li><a id="org5ff3c85"></a>Commands<br />
 <div class="outline-text-6" id="text-3-21-1-4-1">
 <table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
 
@@ -5271,15 +5271,15 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
 
 
 
-<div id="outline-container-org35ade45" class="outline-4">
-<h4 id="org35ade45"><span class="section-number-4">3.21.2</span> Practical Common Lisp</h4>
+<div id="outline-container-org2ef4b3c" class="outline-4">
+<h4 id="org2ef4b3c"><span class="section-number-4">3.21.2</span> Practical Common Lisp</h4>
 <div class="outline-text-4" id="text-3-21-2">
 <p>
 <a href="http://www.gigamonkeys.com/book/">http://www.gigamonkeys.com/book/</a>
 </p>
 </div>
-<div id="outline-container-orgc139c7c" class="outline-5">
-<h5 id="orgc139c7c"><span class="section-number-5">3.21.2.1</span> CD database</h5>
+<div id="outline-container-org03e7d6c" class="outline-5">
+<h5 id="org03e7d6c"><span class="section-number-5">3.21.2.1</span> CD database</h5>
 <div class="outline-text-5" id="text-3-21-2-1">
 <div class="org-src-container">
 <pre class="src src-lisp">   <span style="color: #b22222;">;; </span><span style="color: #ff0000;">(HEBI: hello world, testing environment)</span>
@@ -5464,8 +5464,8 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
 </div>
 
 
-<div id="outline-container-org0fb7df8" class="outline-5">
-<h5 id="org0fb7df8"><span class="section-number-5">3.21.2.2</span> Unit Test Framework</h5>
+<div id="outline-container-org26af3bd" class="outline-5">
+<h5 id="org26af3bd"><span class="section-number-5">3.21.2.2</span> Unit Test Framework</h5>
 <div class="outline-text-5" id="text-3-21-2-2">
 <div class="org-src-container">
 <pre class="src src-lisp">   <span style="color: #b22222;">;; </span><span style="color: #b22222;">the design goal of a unit test framework:</span>
@@ -5536,8 +5536,8 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
 </div>
 
 
-<div id="outline-container-orgdcafb7b" class="outline-2">
-<h2 id="orgdcafb7b"><span class="section-number-2">4</span> Reference</h2>
+<div id="outline-container-org76ed2c1" class="outline-2">
+<h2 id="org76ed2c1"><span class="section-number-2">4</span> Reference</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Ron Garret: Why Lisp: <a href="http://blog.rongarret.info/2015/05/why-lisp.html">http://blog.rongarret.info/2015/05/why-lisp.html</a>
