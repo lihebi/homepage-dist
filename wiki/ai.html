@@ -268,129 +268,269 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8aedaef">1. Graphical Model</a>
+<li><a href="#org42e6293">1. Tmp</a>
 <ul>
-<li><a href="#orgf143fe6">1.1. Graph Background</a></li>
-<li><a href="#orgb98fe17">1.2. Probability Background</a></li>
-<li><a href="#orgde032ac">1.3. Representation</a></li>
-<li><a href="#orgc29a5e6">1.4. Bayesian Network (BN)</a>
-<ul>
-<li><a href="#org405e651">1.4.1. Local Independence</a></li>
-<li><a href="#org6880db1">1.4.2. Global Independence</a></li>
-<li><a href="#orgb442989">1.4.3. Other</a></li>
+<li><a href="#org67fda5b">1.1. Gibbs sampling</a></li>
+<li><a href="#org3a6516f">1.2. Explaining away effect</a></li>
+<li><a href="#org716b013">1.3. Chi-square Independence test</a></li>
 </ul>
 </li>
-<li><a href="#org544e742">1.5. Markov Network</a>
+<li><a href="#orgeab8502">2. Probabilistic Model</a>
 <ul>
-<li><a href="#org3554b1e">1.5.1. Independence</a></li>
+<li><a href="#org2c7a572">2.1. Discrete Variables</a></li>
+<li><a href="#org2bc31de">2.2. Continuous Variables</a></li>
+<li><a href="#org0064426">2.3. Expectation, Variance, Entropy</a></li>
+<li><a href="#org49a02ab">2.4. Independence</a></li>
+<li><a href="#orgc119232">2.5. probability queries</a></li>
+<li><a href="#orgf330cd1">2.6. Non-parametric distributions</a></li>
 </ul>
 </li>
-<li><a href="#org075740a">1.6. <span class="todo TODO">TODO</span> Inference</a></li>
-<li><a href="#org6041289">1.7. Structure and Parameter Learning</a>
+<li><a href="#org4b93e38">3. Graphical Model</a>
 <ul>
-<li><a href="#org054b220">1.7.1. Parameter Estimation for Bayesian Network</a></li>
-<li><a href="#org5f5be7f">1.7.2. Structure Learning in Bayesian Network</a></li>
-<li><a href="#orgfe5289b">1.7.3. Learning Markov Network</a></li>
-<li><a href="#org8b7fb6e">1.7.4. Hidden Variable</a></li>
+<li><a href="#orgb767a69">3.1. Graph Background</a></li>
+<li><a href="#org7fcc317">3.2. Representation</a></li>
+<li><a href="#org4d2dffd">3.3. Bayesian Network (BN)</a>
+<ul>
+<li><a href="#org249dcbd">3.3.1. Local Independence</a></li>
+<li><a href="#orga957c15">3.3.2. Global Independence</a></li>
+<li><a href="#org966495d">3.3.3. Other</a></li>
 </ul>
 </li>
+<li><a href="#org6ffcb5d">3.4. Markov Network</a>
+<ul>
+<li><a href="#orga56225f">3.4.1. Independence</a></li>
 </ul>
 </li>
-<li><a href="#orge335fd0">2. Causality</a>
+<li><a href="#org9bf7057">3.5. <span class="todo TODO">TODO</span> Inference</a></li>
+<li><a href="#orga89c077">3.6. Structure and Parameter Learning</a>
 <ul>
-<li><a href="#org69d09b8">2.1. Stochastic Representation</a></li>
-<li><a href="#orgde263f9">2.2. Functional Causal Model</a></li>
-<li><a href="#org407a7a9">2.3. Causal Effect</a></li>
-<li><a href="#org917f837">2.4. Confounding</a></li>
-</ul>
-</li>
-<li><a href="#org41785e2">3. Search Algorithm</a>
-<ul>
-<li><a href="#org71c677a">3.1. Branch &amp; Bound algorithm</a></li>
-<li><a href="#orgee3b957">3.2. A* algorithm</a></li>
-<li><a href="#org90ddcb2">3.3. local search</a>
-<ul>
-<li><a href="#org775e970">3.3.1. hill climbing</a></li>
-<li><a href="#org1b05de1">3.3.2. simulated annealing(SA)</a></li>
-<li><a href="#org6c43ecf">3.3.3. gradient descent</a></li>
+<li><a href="#org869d29e">3.6.1. Parameter Estimation for Bayesian Network</a></li>
+<li><a href="#org66881ca">3.6.2. Structure Learning in Bayesian Network</a></li>
+<li><a href="#org5fe971d">3.6.3. Learning Markov Network</a></li>
+<li><a href="#orgd1496b8">3.6.4. Hidden Variable</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org89df81c">4. Similarity metrics</a></li>
+<li><a href="#org602e64f">4. Causality</a>
+<ul>
+<li><a href="#org4879747">4.1. Stochastic Representation</a></li>
+<li><a href="#orgcbd550f">4.2. Functional Causal Model</a></li>
+<li><a href="#orged0728e">4.3. Causal Effect</a></li>
+<li><a href="#org3f03240">4.4. Confounding</a></li>
+<li><a href="#org547e314">4.5. Causal Discovery</a>
+<ul>
+<li><a href="#org332e0a8">4.5.1. IC algorithm</a></li>
+<li><a href="#orga497f85">4.5.2. SGS algorithm</a></li>
+<li><a href="#org85826b5">4.5.3. PC algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge0135d7">5. Search Algorithm</a>
+<ul>
+<li><a href="#orgb0cb6d3">5.1. Branch &amp; Bound algorithm</a></li>
+<li><a href="#org26ec14b">5.2. A* algorithm</a></li>
+<li><a href="#org6aafca8">5.3. local search</a>
+<ul>
+<li><a href="#org85662c9">5.3.1. hill climbing</a></li>
+<li><a href="#orge6ea20e">5.3.2. simulated annealing(SA)</a></li>
+<li><a href="#org6a6d2de">5.3.3. gradient descent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org21d2349">6. Similarity metrics</a></li>
+<li><a href="#org1fe7ba1">7. Reference</a>
+<ul>
+<li><a href="#org07f4854">7.1. cite:2007-Journal-Nasrabadi-Pattern Pattern recognition and machine learning</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8aedaef" class="outline-2">
-<h2 id="org8aedaef"><span class="section-number-2">1</span> Graphical Model</h2>
+<div id="outline-container-org42e6293" class="outline-2">
+<h2 id="org42e6293"><span class="section-number-2">1</span> Tmp</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Conditional Random Field (CRF):</li>
+
+<li>Markov property: a stochastic process has Markov property, if the
+conditional probabilistic distribution of future states depends only
+on current state, not the sequence of events preceded it.</li>
+<li>Markov process: a stochastic process with Markov property</li>
+<li>Hidden Markov Model (HMM): Markov process with unobserved states.</li>
+<li>strong Markov property: it indicates ordinary Markov property. It
+introduces an extra variable time t, and says for each t, some
+property holds.</li>
+<li>Markov assumption: assume Markov property holds in a given model</li>
+<li>Markov Random Field (MRF): THIS IS JUST THE MARKOV NETWORK. It
+extend the Markov property to two or more <b>dimensions</b>, or to random
+variables defined for an <b>interconnected network of items</b>, instead
+of a sequence, such as the graphical model.</li>
+<li>Ising model: this is an example of Markov Random Field.</li>
+<li>Markov chain: a discrete-time stochastic process satisfying the
+Markov property</li>
+</ul>
 </div>
-<div id="outline-container-orgf143fe6" class="outline-3">
-<h3 id="orgf143fe6"><span class="section-number-3">1.1</span> Graph Background</h3>
+
+<div id="outline-container-org67fda5b" class="outline-3">
+<h3 id="org67fda5b"><span class="section-number-3">1.1</span> Gibbs sampling</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-We typically denote undirected graph as H, directed graph as G, and a
-general graph as K.
+It is one kind of Monte Carlo Markov Chain method, for sampling from
+posterior distribution. The key is to sample from variables'
+conditional distribution: for each variable, sample from the
+conditional distribution where all other variables are fixed to their
+previous value.
 </p>
+
+<p>
+\[x^i_1 \sim p(X_1=x_1 | X_2 = x^{i-1}_2, X_3=.., X_4=.., ...)\]
+</p>
+
+<p>
+The convergence is when the sample values have the same distribution
+as their posterior joint distribution. The theory of MCMC guarantees
+that the stationary distribution of the samples is the target joint
+posterior distribution.
+</p>
+
 <ul class="org-ul">
-<li>For two nodes connected by any edge, we have neighbor (Nb) relation</li>
-<li>A graph in which every pair of nodes is connected by an edge is
-called complete</li>
+<li>How do we know they converge?</li>
+<li>what do you mean by "sample from conditional distribution"?</li>
 </ul>
-
-<p>
-For directed graph:
-</p>
-<ul class="org-ul">
-<li>For a direct edge, we have parent (Pa) and child (Ch) relation</li>
-<li>The boundary of X, denoted as \(Boundary_X\), is \(Pa_X \cup Nb_X\)</li>
-<li>A family in a graph is a node and its all parents</li>
-<li>A node is root if no parent</li>
-<li>A node is sink if it has no children</li>
-<li>A connected DAG in which every node has at most one parent is called
-a tree</li>
-<li>A connected DAG in which every node has at most one child is called
-a chain</li>
-</ul>
-
-<p>
-For undirected graph, two nodes are <i>adjacent</i> if there is an edge
-joining them, denoted as \(X \sim Y\). A <i>path</i> is a set of vertices
-that are adjacent sequentially. A <i>complete graph</i> is a graph where
-every pair of vertices is joined by an edge. A <i>subgraph</i> is a subset
-of vertices together with their edges. A <i>clique</i> is a complete
-subgraph. It is called <i>maximal</i> if it is a clique and no other
-vertices can be added to it and still yield a clique.
-</p>
-
-<p>
-For directed graph, a path can follow any edge, but must not reverse
-direction. However, a trail can follow either direction. Some defines
-the path as a trail, i.e. can go either along or against the arrows,
-and define the directed path for those that go along arrows. If there
-exists a path between two vertices, they are said to be connected,
-otherwise disconnected.
-</p>
-
-<p>
-An acyclic graph containing both directed and undirected edges is
-called a <i>partially directed acyclic graph (PDAG)</i>. Such a PDAG can be
-cecomposed into chain components, where the edges between components
-must be directed. The hybrid network is the one that has both
-continuous and discrete probabilities.
-</p>
-
-<p>
-The <i>skeleton</i> of G is the corresponding undirected graph, i.e. strip
-away all arrowheads.
-</p>
 </div>
 </div>
 
-<div id="outline-container-orgb98fe17" class="outline-3">
-<h3 id="orgb98fe17"><span class="section-number-3">1.2</span> Probability Background</h3>
+<div id="outline-container-org3a6516f" class="outline-3">
+<h3 id="org3a6516f"><span class="section-number-3">1.2</span> Explaining away effect</h3>
 <div class="outline-text-3" id="text-1-2">
+<p>
+Two causes for an effect, if we can confirm one cause, it will reduce
+the happen of the other.
+</p>
+
+<p>
+However, one cause does not provide any evidence of the other cause,
+because they are independent (??). But in probability theory, it
+SHOULD reduce the other cause.
+</p>
+
+<p>
+For example, you scored 100/100 out of a test, can have two causes:
+</p>
+<ul class="org-ul">
+<li>paper is too easy</li>
+<li>you are too smart</li>
+</ul>
+<p>
+Given that the paper is too easy, I tend not to think you are too
+smart.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org716b013" class="outline-3">
+<h3 id="org716b013"><span class="section-number-3">1.3</span> Chi-square Independence test</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Using the example taken from Wikipedia
+</p>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">A</th>
+<th scope="col" class="org-right">B</th>
+<th scope="col" class="org-right">C</th>
+<th scope="col" class="org-right">D</th>
+<th scope="col" class="org-right">total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">White collar</td>
+<td class="org-right">90</td>
+<td class="org-right">60</td>
+<td class="org-right">104</td>
+<td class="org-right">95</td>
+<td class="org-right">349</td>
+</tr>
+
+<tr>
+<td class="org-left">Blue collar</td>
+<td class="org-right">30</td>
+<td class="org-right">50</td>
+<td class="org-right">51</td>
+<td class="org-right">20</td>
+<td class="org-right">151</td>
+</tr>
+
+<tr>
+<td class="org-left">No collar</td>
+<td class="org-right">30</td>
+<td class="org-right">40</td>
+<td class="org-right">45</td>
+<td class="org-right">35</td>
+<td class="org-right">150</td>
+</tr>
+
+<tr>
+<td class="org-left">Total</td>
+<td class="org-right">150</td>
+<td class="org-right">150</td>
+<td class="org-right">200</td>
+<td class="org-right">150</td>
+<td class="org-right">650</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We basically use the 3x4 table cells. This is the observed number.
+</p>
+
+<ol class="org-ol">
+<li>We first calculate a table for the expected number, for example for
+(A, white collar), we calculate it as (150 /650 * 349 =
+80.54).</li>
+<li>Then, we compute the difference in each cell, as the <i>test
+statistics</i>, for example (90 - 80.54) / 80.54 = 1.11</li>
+<li>We sum up all these difference values in the table cells</li>
+<li>calculate the <i>Degree of Freedom (DF)</i> as \((ncol-1)*(nrow-1)\)</li>
+<li>Using the DF and the test statistics, we can look up table to see
+what is the probability of seen such a distribution if the data is
+independent (our <i>null hypothesis</i>)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeab8502" class="outline-2">
+<h2 id="orgeab8502"><span class="section-number-2">2</span> Probabilistic Model</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org2c7a572" class="outline-3">
+<h3 id="org2c7a572"><span class="section-number-3">2.1</span> Discrete Variables</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 We define the <i>outcome space</i> as the space of possible outcomes,
 denoted as \(\Omega\). We also define the <i>events</i> \(S\). Each event
@@ -466,7 +606,186 @@ that can be described using these random variables. We use \(\xi\) to
 refer to a full assignment to the variables in \(X\). The conditional
 probability in terms of random variables are intuitive.
 </p>
+</div>
+</div>
 
+<div id="outline-container-org2bc31de" class="outline-3">
+<h3 id="org2bc31de"><span class="section-number-3">2.2</span> Continuous Variables</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+For <b>continuous random variables</b>, <i>probability density function
+(PDF)</i> is used for continuous random variables, because the vector is
+infinite. I record some distributions here:
+</p>
+
+
+<p>
+<i>Uniform distribution</i> over [a,b], denoted as \(X \sim Unif[a,b]\), if
+\(p(x) = \frac{1}{b-1}\) in [a,b] otherwise 0.
+</p>
+
+<p>
+<i>Gaussian distribution</i> with mean \(\mu\) and variance \(\sigma^2\),
+denoted as \(X \sim N(\mu; \sigma^2)(x)\), if
+</p>
+
+<p>
+\[p(X)=\frac{1}{\sqrt{2\pi} \sigma} e^{-\frac{(x-\mu)^2}{2
+  \sigma^2}}\]
+</p>
+
+<p>
+Multivariate normal distribution:
+</p>
+
+<p>
+\[N(x|\mu, \Sigma)
+ = \frac{1}{(2\pi)^{D/2}} \frac{1}{|\Sigma|^{1/2}} 
+exp\{-\frac{1}{2}(x-\mu)^T \Sigma^-1 (x-\mu)\} \]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0064426" class="outline-3">
+<h3 id="org0064426"><span class="section-number-3">2.3</span> Expectation, Variance, Entropy</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Expectation is \(E_x[f]=\sum_x p(x)f(x)\). Variance is 
+</p>
+
+\begin{align}
+var[f] 
+& = E[(f(x) - E[f(x)])^2]\\
+& = E[f(x)^2] - E[f(x)]^2
+\end{align}
+
+<p>
+The square root of variance is called standard deviation.
+</p>
+
+<p>
+Specially for x, it is
+</p>
+
+<p>
+\[var[x] = E[x^2] - E[x]^2\]
+</p>
+
+<p>
+The covariate of two random variables x and y is defined as
+</p>
+\begin{align}
+cov[x,y]
+& = E_{x,y}[(x-E[x])(y-E[y])]\\
+& = E_{x,y}[xy] - E[x]E[y]
+\end{align}
+
+<p>
+The entropy is from information theory. We want to calculate how much
+information we gain after seeing an observation from a probability
+distribution \(p(x)\). Intuitively, if we see a highly improbable event,
+we received a lot of information. If we observe a very likely event,
+we gain less information. The extreme case, if we observe an event
+that is certain to happen, we would receive no information. How can we
+quantify this?
+</p>
+
+<p>
+The straightforward thinking is that, the information gain of two
+independent observations \(x\) and \(y\) should be the sum of the gain of
+the two, i.e. \(h(x,y) = h(x) + h(y)\). And we have \(p(x,y) = p(x)p(y)\),
+thus, we need to take the logarithm of \(p(x)\) to define \(h(x)\),
+i.e.
+</p>
+
+<p>
+\[h(x) = -log_2 p(x)\]
+</p>
+
+<p>
+The basis 2 is arbitrary.  We also want to define information gain for
+a distribution. To that end, we define entropy as 
+</p>
+
+<p>
+\[H(x) = - \sum_x p(x) log_2 p(x)\]
+</p>
+
+<p>
+The conditional entropy is
+</p>
+
+<p>
+\[H[y|x] = - \int \int p(y,x)ln p(y|x) dy dx\]
+</p>
+
+<p>
+and we can see
+</p>
+
+<p>
+\[H[x,y] = H[y|x] + H[x]\]
+</p>
+
+<p>
+Consider some unknown distribution p(x), and we use q(x) to
+approximate it. If we use q(x) to transmit the information about p(x),
+how much additional information is required to correct the mistake? We
+model that by <i>relative entropy</i>, or <i>Kullback-Leibler (KL)
+divergence</i>, defined as:
+</p>
+
+\begin{align}
+KL(p||q) 
+& = - \int p(x) ln q(x) dx - (- \int p(x) ln p(x) dx)\\
+& = - \int p(x) ln \frac{q(x)}{p(x)} dx
+\end{align}
+
+<p>
+Note that this is not a symmetrical quantity. We can show that
+\(KL(p||q) \ge 0\) with equality if and only if \(p(x) = q(x)\).
+</p>
+
+<p>
+Recall that for two random variables x and y, if they are independent,
+the joint distribution can factorize into the product of their
+marginals, i.e. \(p(x,y) = p(x)p(y)\). If they are not independent, how
+close they are from being independent? We can quantify this by <i>mutual
+information</i> between \(x\) and \(y\), defined as:
+</p>
+
+\begin{align}
+I[x,y]
+& = KL[p(x,y)||p(x)p(y)]\\
+& = - \int \int p(x,y) ln \frac{p(x)p(y)}{p(x,y)} dx dy
+\end{align}
+
+<p>
+Finally, we can see
+</p>
+
+<p>
+\[I[x,y] = H[x] - H[x|y] = H[y] - H[y|x]\]
+</p>
+
+<p>
+The <i>linearity of expectation</i> property states that
+\(E[X+y]=E[X]+E[Y]\). There is no general product form, but if X and Y
+are independent, we have \(E[X*y]=E[X]*E[Y]\). The variance is defined
+as \(Var_P[X] = E_P[(X-E_P[X])^2]\), or \(Var[X] = E[X^2] - (E[X])^2\). We
+don't have even the linear property, but if X and Y are independent,
+then \(Var[X+Y]=Var[X]+Var[Y]\). The variance generally scales as a
+quadratic function of X: \(Var[aX+b]=a^2Var[X]\). The standard deviation
+is \(\sigma_X=\sqrt{Var[X]}\).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org49a02ab" class="outline-3">
+<h3 id="org49a02ab"><span class="section-number-3">2.4</span> Independence</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
 Next, we introduce <b>independence</b>. First in events notation, we say
 that
@@ -560,7 +879,12 @@ property says, for mutually disjoint sets X,Y,Z,W, we have:
 <p>
 All these properties are called <i>graphoid axioms</i>.
 </p>
+</div>
+</div>
 
+<div id="outline-container-orgc119232" class="outline-3">
+<h3 id="orgc119232"><span class="section-number-3">2.5</span> probability queries</h3>
+<div class="outline-text-3" id="text-2-5">
 <p>
 After defining probability distribution, we are interested in
 answering <b><i>probability queries</i></b>. We have <i>evidence variables</i> E and
@@ -578,38 +902,119 @@ to some subset of variables. The <i>MAP assignment</i> is the most likely
 assignment to all of the non-evidence variables. Formally, let
 \(W=X-E\), our task is to find \(MAP(W|e) = argmax_w P(w,e)\)
 </p>
+</div>
+</div>
+
+<div id="outline-container-orgf330cd1" class="outline-3">
+<h3 id="orgf330cd1"><span class="section-number-3">2.6</span> Non-parametric distributions</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Non-parametric models essentially exploit the locality of data.
+</p>
 
 <p>
-For <b>continuous random variables</b>, <i>probability density function
-(PDF)</i> is used for continuous random variables, because the vector is
-infinite. I record some distributions here:
+<i>Histogram density model</i> simply partitions the input into bins of
+width \(\delta_i\), and calculate the density inside each bin by
+normalization, i.e. \(\int p(x) dx = 1\), resulting in \(p_i =
+\frac{n_i}{N \delta_i}\).
+</p>
+
+<p>
+The downsides:
+</p>
+<ol class="org-ol">
+<li>it is discontinuous</li>
+<li>it does not scale with dimensionality</li>
+</ol>
+
+<p>
+Two other models, <i>kernel method</i> and <i>KNN</i>, are highly
+related. Specifically, with some D-dimentional distance model like
+Euclidean, we can define a region \(R\) of volume \(V\) around a data
+point containing \(K\) data points. The density estimator is \(p(x) =
+\frac{K}{NV}\).  Importantly, if we fix K and determine the value of V
+from the data, it is called K-Nearest-Neighbor; if we fix V and
+determine K from the data, it is called Kernel Method.  The kernel
+function is the function that define the shape of the region. The
+kernel method has one problem: since \(V\) is fixed, if the data points
+are dense at some points while sparse at others, it will lead to
+precision problem.
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org4b93e38" class="outline-2">
+<h2 id="org4b93e38"><span class="section-number-2">3</span> Graphical Model</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgb767a69" class="outline-3">
+<h3 id="orgb767a69"><span class="section-number-3">3.1</span> Graph Background</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+We typically denote undirected graph as H, directed graph as G, and a
+general graph as K.
 </p>
 <ul class="org-ul">
-<li><i>Uniform distribution</i> over [a,b], denoted as \(X \sim Unif[a,b]\), if
-\(p(x) = \frac{1}{b-1}\) in [a,b] otherwise 0.</li>
-<li><i>Gaussian distribution</i> with mean \(\mu\) and variance \(\sigma^2\),
-denoted as \(X \sim N(\mu; \sigma^2)(x)\), if
-\(p(X)=\frac{1}{\sqrt{2\pi} \sigma} e^{-\frac{(x-\mu)^2}{2
-  \sigma^2}}\)</li>
+<li>For two nodes connected by any edge, we have neighbor (Nb) relation</li>
+<li>A graph in which every pair of nodes is connected by an edge is
+called complete</li>
 </ul>
 
 <p>
-The <i>linearity of expectation</i> property states that
-\(E[X+y]=E[X]+E[Y]\). There is no general product form, but if X and Y
-are independent, we have \(E[X*y]=E[X]*E[Y]\). The variance is defined
-as \(Var_P[X] = E_P[(X-E_P[X])^2]\), or \(Var[X] = E[X^2] - (E[X])^2\). We
-don't have even the linear property, but if X and Y are independent,
-then \(Var[X+Y]=Var[X]+Var[Y]\). The variance generally scales as a
-quadratic function of X: \(Var[aX+b]=a^2Var[X]\). The standard deviation
-is \(\sigma_X=\sqrt{Var[X]}\).
+For directed graph:
+</p>
+<ul class="org-ul">
+<li>For a direct edge, we have parent (Pa) and child (Ch) relation</li>
+<li>The boundary of X, denoted as \(Boundary_X\), is \(Pa_X \cup Nb_X\)</li>
+<li>A family in a graph is a node and its all parents</li>
+<li>A node is root if no parent</li>
+<li>A node is sink if it has no children</li>
+<li>A connected DAG in which every node has at most one parent is called
+a tree</li>
+<li>A connected DAG in which every node has at most one child is called
+a chain</li>
+</ul>
+
+<p>
+For undirected graph, two nodes are <i>adjacent</i> if there is an edge
+joining them, denoted as \(X \sim Y\). A <i>path</i> is a set of vertices
+that are adjacent sequentially. A <i>complete graph</i> is a graph where
+every pair of vertices is joined by an edge. A <i>subgraph</i> is a subset
+of vertices together with their edges. A <i>clique</i> is a complete
+subgraph. It is called <i>maximal</i> if it is a clique and no other
+vertices can be added to it and still yield a clique.
+</p>
+
+<p>
+For directed graph, a path can follow any edge, but must not reverse
+direction. However, a trail can follow either direction. Some defines
+the path as a trail, i.e. can go either along or against the arrows,
+and define the directed path for those that go along arrows. If there
+exists a path between two vertices, they are said to be connected,
+otherwise disconnected.
+</p>
+
+<p>
+An acyclic graph containing both directed and undirected edges is
+called a <i>partially directed acyclic graph (PDAG)</i>. Such a PDAG can be
+cecomposed into chain components, where the edges between components
+must be directed. The hybrid network is the one that has both
+continuous and discrete probabilities.
+</p>
+
+<p>
+The <i>skeleton</i> of G is the corresponding undirected graph, i.e. strip
+away all arrowheads.
 </p>
 </div>
 </div>
 
-
-<div id="outline-container-orgde032ac" class="outline-3">
-<h3 id="orgde032ac"><span class="section-number-3">1.3</span> Representation</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org7fcc317" class="outline-3">
+<h3 id="org7fcc317"><span class="section-number-3">3.2</span> Representation</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 We have two views of the graphical model. On one hand, we view it as a
 representation of a set of independence that holds in the
@@ -637,9 +1042,9 @@ factorization \(P(C,X_1,...,X_n) = P(C) \prod_{i=1}^n P(X_i|C)\).
 </div>
 </div>
 
-<div id="outline-container-orgc29a5e6" class="outline-3">
-<h3 id="orgc29a5e6"><span class="section-number-3">1.4</span> Bayesian Network (BN)</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org4d2dffd" class="outline-3">
+<h3 id="org4d2dffd"><span class="section-number-3">3.3</span> Bayesian Network (BN)</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 The naive Bayes model has too strong assumption. The Bayesian Network
 can encode the conditional independence relationship in a finer
@@ -655,9 +1060,9 @@ and its <i>Conditional Probability Distribution (CPD)</i>.
 </div>
 
 
-<div id="outline-container-org405e651" class="outline-4">
-<h4 id="org405e651"><span class="section-number-4">1.4.1</span> Local Independence</h4>
-<div class="outline-text-4" id="text-1-4-1">
+<div id="outline-container-org249dcbd" class="outline-4">
+<h4 id="org249dcbd"><span class="section-number-4">3.3.1</span> Local Independence</h4>
+<div class="outline-text-4" id="text-3-3-1">
 <p>
 The <b><i>local independence</i></b> encoded in the Bayesian Network, denoted by
 \(I_l(G)\), is
@@ -711,9 +1116,9 @@ G is an I-map for P iff P factorizes according to G.
 </div>
 </div>
 
-<div id="outline-container-org6880db1" class="outline-4">
-<h4 id="org6880db1"><span class="section-number-4">1.4.2</span> Global Independence</h4>
-<div class="outline-text-4" id="text-1-4-2">
+<div id="outline-container-orga957c15" class="outline-4">
+<h4 id="orga957c15"><span class="section-number-4">3.3.2</span> Global Independence</h4>
+<div class="outline-text-4" id="text-3-3-2">
 <p>
 Besides local independence, we can read off other independence from
 Bayesian Network.
@@ -856,9 +1261,9 @@ P-map.
 </div>
 </div>
 
-<div id="outline-container-orgb442989" class="outline-4">
-<h4 id="orgb442989"><span class="section-number-4">1.4.3</span> Other</h4>
-<div class="outline-text-4" id="text-1-4-3">
+<div id="outline-container-org966495d" class="outline-4">
+<h4 id="org966495d"><span class="section-number-4">3.3.3</span> Other</h4>
+<div class="outline-text-4" id="text-3-3-3">
 <p>
 When choosing prior, it is important to distinguish the extremely
 unlikely and impossible, because one can never condition away a zero
@@ -891,9 +1296,9 @@ variables is called hybrid Bayesian network.
 </div>
 
 
-<div id="outline-container-org544e742" class="outline-3">
-<h3 id="org544e742"><span class="section-number-3">1.5</span> Markov Network</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-org6ffcb5d" class="outline-3">
+<h3 id="org6ffcb5d"><span class="section-number-3">3.4</span> Markov Network</h3>
+<div class="outline-text-3" id="text-3-4">
 <p>
 The Bayesian network is parameterized by a CPD, representing the
 distribution over one node given others. However, this does not make
@@ -929,9 +1334,9 @@ i.e. we have an edge <code>X-Y</code> if there is an edge <code>X-Y</code> in H.
 </p>
 </div>
 
-<div id="outline-container-org3554b1e" class="outline-4">
-<h4 id="org3554b1e"><span class="section-number-4">1.5.1</span> Independence</h4>
-<div class="outline-text-4" id="text-1-5-1">
+<div id="outline-container-orga56225f" class="outline-4">
+<h4 id="orga56225f"><span class="section-number-4">3.4.1</span> Independence</h4>
+<div class="outline-text-4" id="text-3-4-1">
 <p>
 The Markov Network also encodes a set of independence assertions,
 where the influence flow along undirected path. Let Z be a set of
@@ -1007,9 +1412,9 @@ reverse.
 </div>
 
 
-<div id="outline-container-org075740a" class="outline-3">
-<h3 id="org075740a"><span class="section-number-3">1.6</span> <span class="todo TODO">TODO</span> Inference</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-org9bf7057" class="outline-3">
+<h3 id="org9bf7057"><span class="section-number-3">3.5</span> <span class="todo TODO">TODO</span> Inference</h3>
+<div class="outline-text-3" id="text-3-5">
 <p>
 <i>Inference</i> refers to answering probabilistic queries, the computation
 of marginal vertex probabilities and expectations from their joint
@@ -1019,9 +1424,9 @@ probability of some variables given evidence on others.
 </div>
 </div>
 
-<div id="outline-container-org6041289" class="outline-3">
-<h3 id="org6041289"><span class="section-number-3">1.7</span> Structure and Parameter Learning</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-orga89c077" class="outline-3">
+<h3 id="orga89c077"><span class="section-number-3">3.6</span> Structure and Parameter Learning</h3>
+<div class="outline-text-3" id="text-3-6">
 <p>
 <i>Learning</i> refers to the estimation of edge parameters from data, and
 learning the structure skeleton.  Fundamental assumptions in learning
@@ -1072,9 +1477,9 @@ observable.
 </p>
 </div>
 
-<div id="outline-container-org054b220" class="outline-4">
-<h4 id="org054b220"><span class="section-number-4">1.7.1</span> Parameter Estimation for Bayesian Network</h4>
-<div class="outline-text-4" id="text-1-7-1">
+<div id="outline-container-org869d29e" class="outline-4">
+<h4 id="org869d29e"><span class="section-number-4">3.6.1</span> Parameter Estimation for Bayesian Network</h4>
+<div class="outline-text-4" id="text-3-6-1">
 <p>
 In this setting, we consider the fixed structure, and the data set are
 fully observed, what we need is to estimate the parameters on top of
@@ -1170,9 +1575,9 @@ Dirichlet(\alpha_1, ..., \alpha_k)\) if \(P(\theta) \propto \prod_k
 </div>
 </div>
 
-<div id="outline-container-org5f5be7f" class="outline-4">
-<h4 id="org5f5be7f"><span class="section-number-4">1.7.2</span> Structure Learning in Bayesian Network</h4>
-<div class="outline-text-4" id="text-1-7-2">
+<div id="outline-container-org66881ca" class="outline-4">
+<h4 id="org66881ca"><span class="section-number-4">3.6.2</span> Structure Learning in Bayesian Network</h4>
+<div class="outline-text-4" id="text-3-6-2">
 <p>
 If we include more edges, the model often contains spurious edges. If
 we include fewer edges, we may miss dependencies. When the data is
@@ -1288,9 +1693,9 @@ model, it generates an ensemble of possible structures.
 </div>
 </div>
 
-<div id="outline-container-orgfe5289b" class="outline-4">
-<h4 id="orgfe5289b"><span class="section-number-4">1.7.3</span> Learning Markov Network</h4>
-<div class="outline-text-4" id="text-1-7-3">
+<div id="outline-container-org5fe971d" class="outline-4">
+<h4 id="org5fe971d"><span class="section-number-4">3.6.3</span> Learning Markov Network</h4>
+<div class="outline-text-4" id="text-3-6-3">
 <p>
 The likelihood function of Markov network contains the partition
 function, which is a global function over all variables. This prevents
@@ -1309,9 +1714,9 @@ network. For score based approach, there are \(score_L\), \(score_{BIC}\),
 </div>
 </div>
 
-<div id="outline-container-org8b7fb6e" class="outline-4">
-<h4 id="org8b7fb6e"><span class="section-number-4">1.7.4</span> Hidden Variable</h4>
-<div class="outline-text-4" id="text-1-7-4">
+<div id="outline-container-orgd1496b8" class="outline-4">
+<h4 id="orgd1496b8"><span class="section-number-4">3.6.4</span> Hidden Variable</h4>
+<div class="outline-text-4" id="text-3-6-4">
 <p>
 The previous discussions all assume the data are fully observed.
 Inclusion of hidden variables in the network can greatly simplify the
@@ -1345,17 +1750,19 @@ hard.
 <p>
 The <i>Expectation Maximization (EM)</i> method is especially designed for
 optimizing the likelihood function in case of missing data: it tries
-to fill in the missing data. Indeed, this is a chicken and egg
-problem: learning the parameters and hypothesizing values for
-unobserved variables, both of them are fairly easy given the solution
-to the other. EM algorithm solve this chicken and egg problem using a
-bootstrap approach: it starts with some arbitrary starting point, and
-repeatedly apply the two steps, until converge. The expectation step
-is to use the current parameter assignment, to complete the data. The
-maximization step treats the completed data as observed, perform
-maximum likelihood estimation, and learn a new set of parameters. The
-algorithm guarantee that each iteration can improve the log-likelihood
-function, thus the process is guaranteed to converge.
+to fill in the missing data. Originally developed by Dempster
+<a class='org-ref-reference' href="#1977-Journal-Dempster-Maximum">1977-Journal-Dempster-Maximum</a> (50,000+ citations). Indeed, this
+is a chicken and egg problem: learning the parameters and
+hypothesizing values for unobserved variables, both of them are fairly
+easy given the solution to the other. EM algorithm solve this chicken
+and egg problem using a bootstrap approach: it starts with some
+arbitrary starting point, and repeatedly apply the two steps, until
+converge. The expectation step is to use the current parameter
+assignment, to complete the data. The maximization step treats the
+completed data as observed, perform maximum likelihood estimation, and
+learn a new set of parameters. The algorithm guarantee that each
+iteration can improve the log-likelihood function, thus the process is
+guaranteed to converge.
 </p>
 
 <p>
@@ -1369,9 +1776,9 @@ Score</i>.
 </div>
 
 
-<div id="outline-container-orge335fd0" class="outline-2">
-<h2 id="orge335fd0"><span class="section-number-2">2</span> Causality</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org602e64f" class="outline-2">
+<h2 id="org602e64f"><span class="section-number-2">4</span> Causality</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 The advantages of building DAG around causal: first, the judgments
 required in the construction of the model are more meaningful, more
@@ -1380,9 +1787,9 @@ and respond to external or spontaneous changes.
 </p>
 </div>
 
-<div id="outline-container-org69d09b8" class="outline-3">
-<h3 id="org69d09b8"><span class="section-number-3">2.1</span> Stochastic Representation</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org4879747" class="outline-3">
+<h3 id="org4879747"><span class="section-number-3">4.1</span> Stochastic Representation</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 The basic representation of causal model is the <b>causal Bayesian
 network</b>.  We can devise the Bayesian network by quite simple
@@ -1424,9 +1831,9 @@ and test whether the distribution is sensitive to \(x_i\).
 </div>
 </div>
 
-<div id="outline-container-orgde263f9" class="outline-3">
-<h3 id="orgde263f9"><span class="section-number-3">2.2</span> Functional Causal Model</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgcbd550f" class="outline-3">
+<h3 id="orgcbd550f"><span class="section-number-3">4.2</span> Functional Causal Model</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 A <b><i>functional causal model</i></b> is another representation of the causal
 model, consisting of a set of equations of the form \(x_i = f_i(pa_i,
@@ -1505,9 +1912,9 @@ cannot apply abduction step to update \(P(u)\) with evidence \(e\).
 </div>
 </div>
 
-<div id="outline-container-org407a7a9" class="outline-3">
-<h3 id="org407a7a9"><span class="section-number-3">2.3</span> Causal Effect</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orged0728e" class="outline-3">
+<h3 id="orged0728e"><span class="section-number-3">4.3</span> Causal Effect</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 For two disjoint set X and Y, the <b><i>causal effect</i></b> of X on Y is
 defined as P(y | do(x)), a function from X to the space of probability
@@ -1620,9 +2027,9 @@ value??).
 </div>
 </div>
 
-<div id="outline-container-org917f837" class="outline-3">
-<h3 id="org917f837"><span class="section-number-3">2.4</span> Confounding</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-org3f03240" class="outline-3">
+<h3 id="org3f03240"><span class="section-number-3">4.4</span> Confounding</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 If a third variable Z can influence both X and Y, then X and Y are
 said to be confounded, and Z is called a <i>confounder</i> of X and Y, or
@@ -1670,16 +2077,132 @@ are <i>not confounded</i> in causal model M iff \(P(y|do(x)) = P(y|x)\).
 </p>
 </div>
 </div>
+
+<div id="outline-container-org547e314" class="outline-3">
+<h3 id="org547e314"><span class="section-number-3">4.5</span> Causal Discovery</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Two books for reference
+</p>
+<ul class="org-ul">
+<li>Causation, prediction, and search <a class='org-ref-reference' href="#2000-Book-Spirtes-Causation">2000-Book-Spirtes-Causation</a></li>
+<li>Causality <a class='org-ref-reference' href="#2009-Book-Pearl-Causality">2009-Book-Pearl-Causality</a></li>
+</ul>
+</div>
+<div id="outline-container-org332e0a8" class="outline-4">
+<h4 id="org332e0a8"><span class="section-number-4">4.5.1</span> IC algorithm</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li>Input: a sample distribution</li>
+<li>Output: a partial (mixed directed and undirected edge) DAG graph</li>
+</ul>
+
+<p>
+This is very simple:
+</p>
+<ol class="org-ol">
+<li>for each pair (a,b), search for set \(S_{ab}\) that \(a independent b ||
+   S_{ab}\). If no such \(S_{ab}\), add undirected edge \(a-b\).</li>
+<li>For <code>a-c-b</code>, if \(c \not\in S_{ab}\), orient the direction as
+<code>a-&gt;c&lt;-b</code></li>
+<li>orient as many edges as we can, by two rules: (HEBI: ??)
+<ol class="org-ol">
+<li>the orientation should not create new v-structure (i.e. <code>{X,Y}-&gt;Z</code>)</li>
+<li>the orientation should not create cyclic graph</li>
+</ol></li>
+</ol>
+
+<p>
+So actually step 3 is unspecified. In later works by Pearl and Meek
+there are several rules, that are necessary and sufficient:
+</p>
+<ol class="org-ol">
+<li>a-&gt;b whenever there exists c-&gt;a such that b and c are not adjacent
+(in <code>IC*</code> algorithm, a-&gt;b is marked with <code>*</code>)</li>
+<li>a-&gt;b whenever there is a chain a-&gt;c-&gt;b</li>
+<li>a-&gt;b if a-c-&gt;b and a-d-&gt;b and c and d are not adjacent</li>
+<li>a-&gt;b if a-c-&gt;d and c-&gt;d-&gt;b and c and b are not adjacent</li>
+</ol>
+
+<p>
+IC* algorithm differs in the step 3:
+</p>
+<ol class="org-ol">
+<li>a-&gt;b with <code>*</code> mark whenever there exists c-&gt;a such that b and c are
+not adjacent</li>
+<li>a-&gt;b if a and b are adjacent, and there is a directed strictly
+marked (with <code>*</code>) path from a to b.</li>
+</ol>
+
+<p>
+The graph output of IC* is different. It contains four types of edges:
+</p>
+<ol class="org-ol">
+<li>a-&gt;b</li>
+<li>a-b</li>
+<li>a&lt;-&gt;b</li>
+<li>a-&gt;b with <code>*</code> mark</li>
+</ol>
+
+<p>
+IC* algorithm is not complete, in that it may not output a maximally
+informative graph.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga497f85" class="outline-4">
+<h4 id="orga497f85"><span class="section-number-4">4.5.2</span> SGS algorithm</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<ol class="org-ol">
+<li>form complete undirected graph</li>
+<li>for each pair (a,b), if we can find a subset S that can d-separate
+(a,b), remove a-b</li>
+<li>if a-b-c, but not a-c. If a and c cannot be d-separated, orient
+<code>a-&gt;b&lt;-c</code></li>
+<li>repeat until no more edges can be oriented
+<ol class="org-ol">
+<li>if a-&gt;b-c and not a-c, and there is no arrowhead at b (?),
+orient b-&gt;c</li>
+<li>if a-b and there is a directed path from a to b, orient <code>a-&gt;b</code>
+(because we don't want cycle)</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org85826b5" class="outline-4">
+<h4 id="org85826b5"><span class="section-number-4">4.5.3</span> PC algorithm</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<p>
+SGS requires too many d-separation test, thus computationally
+inefficient.
+</p>
+
+<p>
+The PC algorithm differs only in step 2, how to remove edge. The trick
+is, we can remove an edge once we find one set of nodes to separate a
+and b. So it makes sense to test in some order.
+</p>
+
+<p>
+PC* algorithm takes one additional step further than PC. The only
+difference is, when removing a-b, only test the subset of variables
+adjacent to a and b that are on undirected paths between a and b.
+</p>
+</div>
+</div>
+</div>
 </div>
 
 
-<div id="outline-container-org41785e2" class="outline-2">
-<h2 id="org41785e2"><span class="section-number-2">3</span> Search Algorithm</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orge0135d7" class="outline-2">
+<h2 id="orge0135d7"><span class="section-number-2">5</span> Search Algorithm</h2>
+<div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org71c677a" class="outline-3">
-<h3 id="org71c677a"><span class="section-number-3">3.1</span> Branch &amp; Bound algorithm</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgb0cb6d3" class="outline-3">
+<h3 id="orgb0cb6d3"><span class="section-number-3">5.1</span> Branch &amp; Bound algorithm</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
 The problem is to minimize a function f(x) of variables \(x_1,...,x_n\)
 over a region of feasible solutions S.
@@ -1742,9 +2265,9 @@ solution is inside at least one branch.
 </div>
 </div>
 
-<div id="outline-container-orgee3b957" class="outline-3">
-<h3 id="orgee3b957"><span class="section-number-3">3.2</span> A* algorithm</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-org26ec14b" class="outline-3">
+<h3 id="org26ec14b"><span class="section-number-3">5.2</span> A* algorithm</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
 The problem is, from an initial node, find the least-cost path to one
 <i>goal node</i> (out of one or more possible goals).
@@ -1785,9 +2308,9 @@ Stop when the goal nodes has the lowest cost function value.
 </div>
 
 
-<div id="outline-container-org90ddcb2" class="outline-3">
-<h3 id="org90ddcb2"><span class="section-number-3">3.3</span> local search</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-org6aafca8" class="outline-3">
+<h3 id="org6aafca8"><span class="section-number-3">5.3</span> local search</h3>
+<div class="outline-text-3" id="text-5-3">
 <p>
 Concepts:
 </p>
@@ -1820,9 +2343,9 @@ the training data.</li>
 </ul>
 </div>
 
-<div id="outline-container-org775e970" class="outline-4">
-<h4 id="org775e970"><span class="section-number-4">3.3.1</span> hill climbing</h4>
-<div class="outline-text-4" id="text-3-3-1">
+<div id="outline-container-org85662c9" class="outline-4">
+<h4 id="org85662c9"><span class="section-number-4">5.3.1</span> hill climbing</h4>
+<div class="outline-text-4" id="text-5-3-1">
 <p>
 Find an initial solution, which is much worse than optimal one.
 Attempts to find a better solution by incrementally changing a
@@ -1831,9 +2354,9 @@ found.
 </p>
 </div>
 </div>
-<div id="outline-container-org1b05de1" class="outline-4">
-<h4 id="org1b05de1"><span class="section-number-4">3.3.2</span> simulated annealing(SA)</h4>
-<div class="outline-text-4" id="text-3-3-2">
+<div id="outline-container-orge6ea20e" class="outline-4">
+<h4 id="orge6ea20e"><span class="section-number-4">5.3.2</span> simulated annealing(SA)</h4>
+<div class="outline-text-4" id="text-5-3-2">
 <p>
 Accepting worse solutions is a fundamental property of metaheuristics
 because it allows for a more extensive search for the optimal
@@ -1856,9 +2379,9 @@ always goes to smaller state if found.  But this is not required.
 </div>
 </div>
 
-<div id="outline-container-org6c43ecf" class="outline-4">
-<h4 id="org6c43ecf"><span class="section-number-4">3.3.3</span> gradient descent</h4>
-<div class="outline-text-4" id="text-3-3-3">
+<div id="outline-container-org6a6d2de" class="outline-4">
+<h4 id="org6a6d2de"><span class="section-number-4">5.3.3</span> gradient descent</h4>
+<div class="outline-text-4" id="text-5-3-3">
 <p>
 Go alone the decrease of the gradient.
 </p>
@@ -1868,9 +2391,9 @@ Go alone the decrease of the gradient.
 </div>
 
 
-<div id="outline-container-org89df81c" class="outline-2">
-<h2 id="org89df81c"><span class="section-number-2">4</span> Similarity metrics</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org21d2349" class="outline-2">
+<h2 id="org21d2349"><span class="section-number-2">6</span> Similarity metrics</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 <i>Jaccard index</i>, also known as the <i>Jaccard similarity coefficient</i>,
 compares two sets, A and B.
@@ -1977,6 +2500,15 @@ Both the tfidf is 0, meaning "this" is not very informative.
 <li>tfidf("example", d1) = 0 / 5 * 0.3 = 0</li>
 <li>tfidf("example", d2) = 3 / 7 * 0.3 = 0.13</li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-org1fe7ba1" class="outline-2">
+<h2 id="org1fe7ba1"><span class="section-number-2">7</span> Reference</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org07f4854" class="outline-3">
+<h3 id="org07f4854"><span class="section-number-3">7.1</span> <a class='org-ref-reference' href="#2007-Journal-Nasrabadi-Pattern">2007-Journal-Nasrabadi-Pattern</a> Pattern recognition and machine learning</h3>
 </div>
 </div>
 </div>
