@@ -252,7 +252,7 @@ for the JavaScript code in this tag.
 <li><a href="#org465f76d">1.2. Deep Learning Framework GPU setup</a></li>
 </ul>
 </li>
-<li><a href="#orgd16d471">2. Installation</a>
+<li><a href="#org27fe007">2. Installation</a>
 <ul>
 <li><a href="#org503deee">2.1. Virtualization</a></li>
 </ul>
@@ -262,13 +262,18 @@ for the JavaScript code in this tag.
 <li><a href="#org08a2337">3.1. Qemu Image</a></li>
 <li><a href="#orgb560d25">3.2. Guile</a></li>
 <li><a href="#orga1d0c8c">3.3. Guix</a></li>
+<li><a href="#org7478ef9">3.4. Guix on Foreign distribution</a>
+<ul>
+<li><a href="#orga4e731f">3.4.1. Trouble Shooting</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#orga74eaf3">4. Git</a>
 <ul>
 <li><a href="#org8ce72f1">4.1. <span class="todo TODO">TODO</span> gitolite</a></li>
 <li><a href="#orga44e899">4.2. Server</a></li>
-<li><a href="#org1f84696">4.3. Configuration</a></li>
+<li><a href="#org1f459a9">4.3. Configuration</a></li>
 <li><a href="#orgb791dce">4.4. Usage Tips</a></li>
 <li><a href="#org5f26aa3">4.5. Individual tools</a>
 <ul>
@@ -324,7 +329,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgcb15295">7.6. ratpoison</a></li>
 <li><a href="#org57d0fa9">7.7. StumpWM</a>
 <ul>
-<li><a href="#org0447735">7.7.1. Installation</a>
+<li><a href="#org46c52bf">7.7.1. Installation</a>
 <ul>
 <li><a href="#orgb8221f4">7.7.1.1. A better way to install stumpwm</a></li>
 <li><a href="#org971ff6c">7.7.1.2. Live Debugging</a></li>
@@ -338,7 +343,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgd3c02f6">7.7.3. Window</a></li>
 <li><a href="#org6f1931d">7.7.4. Frame</a></li>
 <li><a href="#orga870581">7.7.5. Groups</a></li>
-<li><a href="#orge880211">7.7.6. Configuration</a></li>
+<li><a href="#org1b86d3d">7.7.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#org2123190">7.8. Xmonad</a></li>
@@ -366,7 +371,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org22b8b4a">9. Arch Linux</a>
 <ul>
-<li><a href="#org27fe007">9.1. Installation</a>
+<li><a href="#org857ef44">9.1. Installation</a>
 <ul>
 <li><a href="#org15a80cd">9.1.1. Verify UEFI</a></li>
 <li><a href="#org23e444d">9.1.2. System clock</a></li>
@@ -387,7 +392,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgdd35985">11. Debian</a>
 <ul>
 <li><a href="#orgaf8fc9e">11.1. Package</a></li>
-<li><a href="#org1f459a9">11.2. Configuration</a>
+<li><a href="#org9c3a77a">11.2. Configuration</a>
 <ul>
 <li><a href="#orga4770f4">11.2.1. update-alternatives</a></li>
 </ul>
@@ -423,12 +428,12 @@ for the JavaScript code in this tag.
 <li><a href="#orgb308298">13.2.2. struct timespec</a></li>
 <li><a href="#org6e57375">13.2.3. difftime</a></li>
 <li><a href="#orgb1d439d">13.2.4. time<sub>t</sub></a></li>
-<li><a href="#org516d24e">13.2.5. alarm</a>
+<li><a href="#org6ad0dab">13.2.5. alarm</a>
 <ul>
 <li><a href="#orgab636c4">13.2.5.1. struct itimerval</a></li>
 <li><a href="#org64308fd">13.2.5.2. setitimer</a></li>
 <li><a href="#org9aef335">13.2.5.3. getitimer(int which, struct itimerval *old)</a></li>
-<li><a href="#org9c812c4">13.2.5.4. alarm</a></li>
+<li><a href="#org516d24e">13.2.5.4. alarm</a></li>
 </ul>
 </li>
 </ul>
@@ -476,7 +481,7 @@ for the JavaScript code in this tag.
 <li><a href="#org5118042">14.4. Find</a></li>
 </ul>
 </li>
-<li><a href="#orga4e731f">15. Trouble Shooting</a>
+<li><a href="#orgc06ce4c">15. Trouble Shooting</a>
 <ul>
 <li><a href="#org274da48">15.1. Cannot su root</a></li>
 <li><a href="#org5c76ece">15.2. in docker, cannot open chromium</a></li>
@@ -495,7 +500,12 @@ for the JavaScript code in this tag.
 <div id="outline-container-org1ce78dd" class="outline-2">
 <h2 id="org1ce78dd"><span class="section-number-2">1</span> Tmp</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+<code>sudo -i</code> will drop you to root shell, even if you don't know root
+password!
+</p>
 </div>
+
 <div id="outline-container-org99a8e8e" class="outline-3">
 <h3 id="org99a8e8e"><span class="section-number-3">1.1</span> Arduino</h3>
 <div class="outline-text-3" id="text-1-1">
@@ -561,8 +571,8 @@ sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 
 
-<div id="outline-container-orgd16d471" class="outline-2">
-<h2 id="orgd16d471"><span class="section-number-2">2</span> Installation</h2>
+<div id="outline-container-org27fe007" class="outline-2">
+<h2 id="org27fe007"><span class="section-number-2">2</span> Installation</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 On windows, you need <code>unetbootin</code>. On linux:
@@ -930,9 +940,55 @@ failed to create path for auto-compiled file "/home/hebi/.config/guix/channels.s
 </pre>
 </div>
 </div>
+
+<div id="outline-container-org7478ef9" class="outline-3">
+<h3 id="org7478ef9"><span class="section-number-3">3.4</span> Guix on Foreign distribution</h3>
+<div class="outline-text-3" id="text-3-4">
 </div>
+<div id="outline-container-orga4e731f" class="outline-4">
+<h4 id="orga4e731f"><span class="section-number-4">3.4.1</span> Trouble Shooting</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+On Ubuntu, every time I run <code>guix package</code>, I got the warning:
+</p>
+<pre class="example">
+guile: warning: failed to install locale
+hint: Consider installing the `glibc-utf8-locales' or `glibc-locales' package and
+defining `GUIX_LOCPATH', along these lines:
 
+     guix package -i glibc-utf8-locales
+     export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
+See the "Application Setup" section in the manual, for more info.
+</pre>
+
+<p>
+The problem is that, on Ubuntu, the guix-daemon is run as root. Thus,
+the package and the path should be set to root's
+profile. Specifically, in <code>/etc/systemd/system/guix-daemon.service</code>:
+</p>
+
+<pre class="example">
+Environment=GUIX_LOCPATH=/var/guix/profiles/per-user/root/guix-profile/lib/locale
+</pre>
+
+<p>
+The path is OK, but root does not have the package installed. Thus,
+the following command fixes it. There is no need to update the guix of
+the root.
+</p>
+
+<pre class="example">
+sudo guix package -i glibc-utf8-locales
+</pre>
+
+<p>
+Reference: <a href="https://lists.gnu.org/archive/html/help-guix/2019-01/msg00211.html">https://lists.gnu.org/archive/html/help-guix/2019-01/msg00211.html</a>
+</p>
+</div>
+</div>
+</div>
+</div>
 
 
 <div id="outline-container-orga74eaf3" class="outline-2">
@@ -1179,8 +1235,8 @@ address. Thus, nothing can be done actually.
 
 
 
-<div id="outline-container-org1f84696" class="outline-3">
-<h3 id="org1f84696"><span class="section-number-3">4.3</span> Configuration</h3>
+<div id="outline-container-org1f459a9" class="outline-3">
+<h3 id="org1f459a9"><span class="section-number-3">4.3</span> Configuration</h3>
 <div class="outline-text-3" id="text-4-3">
 <pre class="example">
 git config --global user.email 'xxx@xxx'
@@ -2101,8 +2157,8 @@ one, but
 <h3 id="org57d0fa9"><span class="section-number-3">7.7</span> StumpWM</h3>
 <div class="outline-text-3" id="text-7-7">
 </div>
-<div id="outline-container-org0447735" class="outline-4">
-<h4 id="org0447735"><span class="section-number-4">7.7.1</span> Installation</h4>
+<div id="outline-container-org46c52bf" class="outline-4">
+<h4 id="org46c52bf"><span class="section-number-4">7.7.1</span> Installation</h4>
 <div class="outline-text-4" id="text-7-7-1">
 <p>
 In order to use <code>ttf-fonts</code> module, the lisp <code>clx-truetype</code> package needs to be installed.
@@ -2323,8 +2379,8 @@ Shortcuts:
 </div>
 
 
-<div id="outline-container-orge880211" class="outline-4">
-<h4 id="orge880211"><span class="section-number-4">7.7.6</span> Configuration</h4>
+<div id="outline-container-org1b86d3d" class="outline-4">
+<h4 id="org1b86d3d"><span class="section-number-4">7.7.6</span> Configuration</h4>
 <div class="outline-text-4" id="text-7-7-6">
 <pre class="example">
 (stumpwm:define-key stumpwm:*root-map* (stumpwm:kbd "C-z") "echo Zzzzz...")
@@ -2749,8 +2805,8 @@ mount /dev/debian-vg/home /home
 <h2 id="org22b8b4a"><span class="section-number-2">9</span> Arch Linux</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-org27fe007" class="outline-3">
-<h3 id="org27fe007"><span class="section-number-3">9.1</span> Installation</h3>
+<div id="outline-container-org857ef44" class="outline-3">
+<h3 id="org857ef44"><span class="section-number-3">9.1</span> Installation</h3>
 <div class="outline-text-3" id="text-9-1">
 </div>
 <div id="outline-container-org15a80cd" class="outline-4">
@@ -3092,8 +3148,8 @@ apt --fix-broken install
 
 
 
-<div id="outline-container-org1f459a9" class="outline-3">
-<h3 id="org1f459a9"><span class="section-number-3">11.2</span> Configuration</h3>
+<div id="outline-container-org9c3a77a" class="outline-3">
+<h3 id="org9c3a77a"><span class="section-number-3">11.2</span> Configuration</h3>
 <div class="outline-text-3" id="text-11-2">
 </div>
 <div id="outline-container-orga4770f4" class="outline-4">
@@ -3791,8 +3847,8 @@ get current calenddar time:
 </div>
 </div>
 
-<div id="outline-container-org516d24e" class="outline-4">
-<h4 id="org516d24e"><span class="section-number-4">13.2.5</span> alarm</h4>
+<div id="outline-container-org6ad0dab" class="outline-4">
+<h4 id="org6ad0dab"><span class="section-number-4">13.2.5</span> alarm</h4>
 <div class="outline-text-4" id="text-13-2-5">
 </div>
 <div id="outline-container-orgab636c4" class="outline-5">
@@ -3828,8 +3884,8 @@ get the timer
 </div>
 </div>
 
-<div id="outline-container-org9c812c4" class="outline-5">
-<h5 id="org9c812c4"><span class="section-number-5">13.2.5.4</span> alarm</h5>
+<div id="outline-container-org516d24e" class="outline-5">
+<h5 id="org516d24e"><span class="section-number-5">13.2.5.4</span> alarm</h5>
 <div class="outline-text-5" id="text-13-2-5-4">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #0000ff;">alarm</span>(<span style="color: #228b22;">unsigned</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">seconds</span>)
@@ -4486,8 +4542,8 @@ find ~/data/fast/pick-master/ -name '*.[ch]'
 
 
 
-<div id="outline-container-orga4e731f" class="outline-2">
-<h2 id="orga4e731f"><span class="section-number-2">15</span> Trouble Shooting</h2>
+<div id="outline-container-orgc06ce4c" class="outline-2">
+<h2 id="orgc06ce4c"><span class="section-number-2">15</span> Trouble Shooting</h2>
 <div class="outline-text-2" id="text-15">
 </div>
 <div id="outline-container-org274da48" class="outline-3">
