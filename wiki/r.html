@@ -197,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -246,75 +246,75 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgac999f4">1. Setup</a>
+<li><a href="#org0747d66">1. Setup</a>
 <ul>
-<li><a href="#orgfe26eff">1.1. Packages</a></li>
-<li><a href="#orgbb942e7">1.2. Emacs ESS</a></li>
-<li><a href="#org55d974c">1.3. Interactive Shell</a></li>
-<li><a href="#orgf18e499">1.4. Commonly used functions</a></li>
-<li><a href="#org8f17a57">1.5. Org Mode</a></li>
+<li><a href="#org5f2e7ad">1.1. Packages</a></li>
+<li><a href="#org1b204d9">1.2. Emacs ESS</a></li>
+<li><a href="#org94cd9e2">1.3. Interactive Shell</a></li>
+<li><a href="#org61a4a04">1.4. Commonly used functions</a></li>
+<li><a href="#org4bdf800">1.5. Org Mode</a></li>
 </ul>
 </li>
-<li><a href="#org3efb85c">2. Objects</a>
+<li><a href="#org527e5a0">2. Objects</a>
 <ul>
-<li><a href="#org17531b2">2.1. Vector</a></li>
-<li><a href="#org7ed022a">2.2. Indexing</a></li>
-<li><a href="#orgaa8072b">2.3. Data frame</a></li>
-<li><a href="#org183b939">2.4. data example</a></li>
+<li><a href="#orge2f0a52">2.1. Vector</a></li>
+<li><a href="#orge4b7b37">2.2. Indexing</a></li>
+<li><a href="#org9317e01">2.3. Data frame</a></li>
+<li><a href="#orgce10807">2.4. data example</a></li>
 </ul>
 </li>
-<li><a href="#orgca35053">3. Operators</a></li>
-<li><a href="#org7c5f780">4. Control Structure</a>
+<li><a href="#org0411314">3. Operators</a></li>
+<li><a href="#org8cb95d0">4. Control Structure</a>
 <ul>
-<li><a href="#org6146296">4.1. Conditional</a></li>
-<li><a href="#org95ae33a">4.2. Loop</a></li>
+<li><a href="#org22449c9">4.1. Conditional</a></li>
+<li><a href="#orgaf71699">4.2. Loop</a></li>
 </ul>
 </li>
-<li><a href="#orgbc99196">5. Evaluation rules</a></li>
-<li><a href="#org9f3b425">6. Function</a></li>
-<li><a href="#orgbfe977d">7. Quote</a></li>
-<li><a href="#org538f3be">8. Debugging</a></li>
-<li><a href="#org97624e7">9. Data IO</a></li>
-<li><a href="#orge4e89b4">10. Models</a>
+<li><a href="#org60aa4a1">5. Evaluation rules</a></li>
+<li><a href="#org3ecccd6">6. Function</a></li>
+<li><a href="#org00dd4db">7. Quote</a></li>
+<li><a href="#orgdd018e2">8. Debugging</a></li>
+<li><a href="#orgaa83a6c">9. Data IO</a></li>
+<li><a href="#orgc54af4e">10. Models</a>
 <ul>
-<li><a href="#org6be7534">10.1. Linear model.</a></li>
+<li><a href="#org066f1df">10.1. Linear model.</a></li>
 </ul>
 </li>
-<li><a href="#orge29bb00">11. Plot</a>
+<li><a href="#org0938370">11. Plot</a>
 <ul>
-<li><a href="#org8ccaef7">11.1. Decoration</a></li>
-<li><a href="#org4ae5967">11.2. Plot Types</a>
+<li><a href="#org2418e68">11.1. Decoration</a></li>
+<li><a href="#orgdbeca21">11.2. Plot Types</a>
 <ul>
-<li><a href="#org3ccbf21">11.2.1. plot</a></li>
-<li><a href="#org37c55c8">11.2.2. barplot</a></li>
-<li><a href="#orgd777d56">11.2.3. pie</a></li>
-<li><a href="#orgdabefe1">11.2.4. boxplot</a></li>
-<li><a href="#orgcf0f19f">11.2.5. hist</a></li>
-<li><a href="#org1beeeab">11.2.6. <span class="todo TODO">TODO</span> stem</a></li>
-<li><a href="#org4593f51">11.2.7. <span class="todo TODO">TODO</span> mosaicplot</a></li>
-<li><a href="#org9029761">11.2.8. pairs</a></li>
+<li><a href="#org92c144f">11.2.1. plot</a></li>
+<li><a href="#orge0d55c5">11.2.2. barplot</a></li>
+<li><a href="#org11e255b">11.2.3. pie</a></li>
+<li><a href="#org8e2b3fa">11.2.4. boxplot</a></li>
+<li><a href="#orgb840b01">11.2.5. hist</a></li>
+<li><a href="#orga90cce4">11.2.6. <span class="todo TODO">TODO</span> stem</a></li>
+<li><a href="#org9364997">11.2.7. <span class="todo TODO">TODO</span> mosaicplot</a></li>
+<li><a href="#orge7942de">11.2.8. pairs</a></li>
 </ul>
 </li>
-<li><a href="#orgf28b871">11.3. Device Driver</a></li>
+<li><a href="#org46c8e28">11.3. Device Driver</a></li>
 </ul>
 </li>
-<li><a href="#org6c6740a">12. Packages</a>
+<li><a href="#orgc6a8940">12. Packages</a>
 <ul>
-<li><a href="#org5271994">12.1. ggplot2</a></li>
-<li><a href="#orga33bba6">12.2. plot(x, y, &#x2026;)</a></li>
-<li><a href="#org971bc13">12.3. dplyr</a></li>
+<li><a href="#org1b4bd86">12.1. ggplot2</a></li>
+<li><a href="#org0591a34">12.2. plot(x, y, &#x2026;)</a></li>
+<li><a href="#org5ae23e3">12.3. dplyr</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgac999f4" class="outline-2">
-<h2 id="orgac999f4"><span class="section-number-2">1</span> Setup</h2>
+<div id="outline-container-org0747d66" class="outline-2">
+<h2 id="org0747d66"><span class="section-number-2">1</span> Setup</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgfe26eff" class="outline-3">
-<h3 id="orgfe26eff"><span class="section-number-3">1.1</span> Packages</h3>
+<div id="outline-container-org5f2e7ad" class="outline-3">
+<h3 id="org5f2e7ad"><span class="section-number-3">1.1</span> Packages</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 <code>library()</code> see the list of installed packages.  <code>library(class)</code>
@@ -353,8 +353,8 @@ namespace which is already loaded.
 
 
 
-<div id="outline-container-orgbb942e7" class="outline-3">
-<h3 id="orgbb942e7"><span class="section-number-3">1.2</span> Emacs ESS</h3>
+<div id="outline-container-org1b204d9" class="outline-3">
+<h3 id="org1b204d9"><span class="section-number-3">1.2</span> Emacs ESS</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 To start ESS session, run command <code>S</code>. But my preferred way is to
@@ -383,8 +383,8 @@ file in plain text.
 </div>
 
 
-<div id="outline-container-org55d974c" class="outline-3">
-<h3 id="org55d974c"><span class="section-number-3">1.3</span> Interactive Shell</h3>
+<div id="outline-container-org94cd9e2" class="outline-3">
+<h3 id="org94cd9e2"><span class="section-number-3">1.3</span> Interactive Shell</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 We need to know what's going on in the current workspace.  <code>getwd()</code>
@@ -414,8 +414,8 @@ Finally, <code>q()</code> quit R.
 </div>
 </div>
 
-<div id="outline-container-orgf18e499" class="outline-3">
-<h3 id="orgf18e499"><span class="section-number-3">1.4</span> Commonly used functions</h3>
+<div id="outline-container-org61a4a04" class="outline-3">
+<h3 id="org61a4a04"><span class="section-number-3">1.4</span> Commonly used functions</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li><code>str</code> show the structure of arbitrary type</li>
@@ -436,8 +436,8 @@ To see the data, you can use:
 </div>
 </div>
 
-<div id="outline-container-org8f17a57" class="outline-3">
-<h3 id="org8f17a57"><span class="section-number-3">1.5</span> Org Mode</h3>
+<div id="outline-container-org4bdf800" class="outline-3">
+<h3 id="org4bdf800"><span class="section-number-3">1.5</span> Org Mode</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 There's a babel in org mode for R, so just <code>C-c C-c</code> would work.
@@ -480,8 +480,8 @@ To export some summary data:
 </div>
 
 
-<div id="outline-container-org3efb85c" class="outline-2">
-<h2 id="org3efb85c"><span class="section-number-2">2</span> Objects</h2>
+<div id="outline-container-org527e5a0" class="outline-2">
+<h2 id="org527e5a0"><span class="section-number-2">2</span> Objects</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Objects have mode and length.  The <code>typeof</code> gets the type of an
@@ -523,8 +523,8 @@ Type Conversion: you can change a type of a vector by
 </ul>
 </div>
 
-<div id="outline-container-org17531b2" class="outline-3">
-<h3 id="org17531b2"><span class="section-number-3">2.1</span> Vector</h3>
+<div id="outline-container-orge2f0a52" class="outline-3">
+<h3 id="orge2f0a52"><span class="section-number-3">2.1</span> Vector</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Create a vector by <code>c</code>: <code>c(10.4, 5.6, 3.1)</code>.
@@ -550,8 +550,8 @@ Repeating can be done by <code>rep</code>:
 </ul>
 </div>
 </div>
-<div id="outline-container-org7ed022a" class="outline-3">
-<h3 id="org7ed022a"><span class="section-number-3">2.2</span> Indexing</h3>
+<div id="outline-container-orge4b7b37" class="outline-3">
+<h3 id="orge4b7b37"><span class="section-number-3">2.2</span> Indexing</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Inside <code>[]</code>, it can be a number or character, or a vector of them.
@@ -579,11 +579,11 @@ The empty index <code>[]</code> will returns the entire vector with <i>irrelevan
 The only retained ones are the <code>names</code>, <code>dim</code> and <code>dimnames</code> attributes.
 </p>
 <div class="org-src-container">
-<pre class="src src-R">fruit <span style="color: #008b8b;">&lt;-</span> c(5, 10, 1, 20)
-names(fruit) <span style="color: #008b8b;">&lt;-</span> c(<span style="color: #8b2252;">"orange"</span>, <span style="color: #8b2252;">"banana"</span>, <span style="color: #8b2252;">"apple"</span>, <span style="color: #8b2252;">"peach"</span>)
-lunch <span style="color: #008b8b;">&lt;-</span> fruit[c(<span style="color: #8b2252;">"apple"</span>,<span style="color: #8b2252;">"orange"</span>)]
-<span style="color: #b22222;"># </span><span style="color: #b22222;">matrix</span>
-dim(z) <span style="color: #008b8b;">&lt;-</span> c(3,5,100)~
+<pre class="src src-R">fruit &lt;- c(5, 10, 1, 20)
+names(fruit) &lt;- c("orange", "banana", "apple", "peach")
+lunch &lt;- fruit[c("apple","orange")]
+# matrix
+dim(z) &lt;- c(3,5,100)~
 z[2,,]
 z[,,]
 </pre>
@@ -593,14 +593,14 @@ z[,,]
 Matrix can be created by the <code>matrix</code> function.
 </p>
 <div class="org-src-container">
-<pre class="src src-R">matrix(1:9, nrow=3,byrow=<span style="color: #228b22;">TRUE</span>)
+<pre class="src src-R">matrix(1:9, nrow=3,byrow=TRUE)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgaa8072b" class="outline-3">
-<h3 id="orgaa8072b"><span class="section-number-3">2.3</span> Data frame</h3>
+<div id="outline-container-org9317e01" class="outline-3">
+<h3 id="org9317e01"><span class="section-number-3">2.3</span> Data frame</h3>
 <div class="outline-text-3" id="text-2-3">
 <dl class="org-dl">
 <dt><code>na.omit</code></dt><dd>can omit the NA values in data frame</dd>
@@ -620,45 +620,45 @@ You cannot use a vector as index.</li>
 </div>
 </div>
 
-<div id="outline-container-org183b939" class="outline-3">
-<h3 id="org183b939"><span class="section-number-3">2.4</span> data example</h3>
+<div id="outline-container-orgce10807" class="outline-3">
+<h3 id="orgce10807"><span class="section-number-3">2.4</span> data example</h3>
 <div class="outline-text-3" id="text-2-4">
 <div class="org-src-container">
-<pre class="src src-R">  <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: Command line arguments)</span>
-  args = commandArgs(trailingOnly=<span style="color: #228b22;">TRUE</span>)
+<pre class="src src-R">  ## (HEBI: Command line arguments)
+  args = commandArgs(trailingOnly=TRUE)
   csvfile = args[1]
-  csv = read.csv(csvfile, header=<span style="color: #228b22;">TRUE</span>)
+  csv = read.csv(csvfile, header=TRUE)
 
-  total_test <span style="color: #008b8b;">&lt;-</span> dim(csv)[[1]]
+  total_test &lt;- dim(csv)[[1]]
   sub = subset(csv, reach_code&gt;=5)
-  total_reach_poi <span style="color: #008b8b;">&lt;-</span> dim(sub)[[1]]
+  total_reach_poi &lt;- dim(sub)[[1]]
   sub = subset(csv, reach_code==5 &amp; status_code == 1)
-  total_fail_poi <span style="color: #008b8b;">&lt;-</span> dim(sub)[[1]]
+  total_fail_poi &lt;- dim(sub)[[1]]
 
-  sub <span style="color: #008b8b;">&lt;-</span> sub[1:(length(csv)-2)]
-  <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: callin ga function)</span>
+  sub &lt;- sub[1:(length(csv)-2)]
+  ## (HEBI: callin ga function)
   funcs = TransferFunction(sub);
 
-  <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: define a function)</span>
-  <span style="color: #0000ff;">Constant</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(data) {
-      <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: return value as a vector)</span>
-      ret <span style="color: #008b8b;">&lt;-</span> c()
-      i <span style="color: #008b8b;">&lt;-</span> 1
-      <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: a for loop using the vector as range)</span>
-      <span style="color: #a020f0;">for</span> (i <span style="color: #a020f0;">in</span> c(1:length(data))) {
+  ## (HEBI: define a function)
+  Constant &lt;- function(data) {
+      ## (HEBI: return value as a vector)
+      ret &lt;- c()
+      i &lt;- 1
+      ## (HEBI: a for loop using the vector as range)
+      for (i in c(1:length(data))) {
           col = data[i];
-          <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: Get the name of a column)</span>
+          ## (HEBI: Get the name of a column)
           name = names(col);
-          <span style="color: #a020f0;">if</span> (substr(name, 1, 6) == <span style="color: #8b2252;">"output"</span>) {
-              <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: remove of NA)</span>
+          if (substr(name, 1, 6) == "output") {
+              ## (HEBI: remove of NA)
               newcol = col[!is.na(col)];
-              <span style="color: #a020f0;">if</span> (length(newcol) &gt; 2) {
-                  value <span style="color: #008b8b;">&lt;-</span> newcol[1]
-                  <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: check the value of the vector is all the same)</span>
-                  <span style="color: #a020f0;">if</span> (length(newcol[newcol != value]) == 0) {
-                      <span style="color: #b22222;">## </span><span style="color: #ff0000;">(HEBI: pushing a new value to the return vector)</span>
-                      ret <span style="color: #008b8b;">&lt;-</span> c(ret, paste(<span style="color: #8b2252;">"name = "</span>,  value))}}}}
-      <span style="color: #a020f0;">return</span>(ret)}
+              if (length(newcol) &gt; 2) {
+                  value &lt;- newcol[1]
+                  ## (HEBI: check the value of the vector is all the same)
+                  if (length(newcol[newcol != value]) == 0) {
+                      ## (HEBI: pushing a new value to the return vector)
+                      ret &lt;- c(ret, paste("name = ",  value))}}}}
+      return(ret)}
 
 </pre>
 </div>
@@ -666,8 +666,8 @@ You cannot use a vector as index.</li>
 </div>
 </div>
 
-<div id="outline-container-orgca35053" class="outline-2">
-<h2 id="orgca35053"><span class="section-number-2">3</span> Operators</h2>
+<div id="outline-container-org0411314" class="outline-2">
+<h2 id="org0411314"><span class="section-number-2">3</span> Operators</h2>
 <div class="outline-text-2" id="text-3">
 <dl class="org-dl">
 <dt>arithmetic</dt><dd><code>+-*/</code>, <code>^</code> for exp, <code>%%</code> for modulus</dd>
@@ -698,15 +698,15 @@ argument can be numeric.</li>
 </div>
 </div>
 
-<div id="outline-container-org7c5f780" class="outline-2">
-<h2 id="org7c5f780"><span class="section-number-2">4</span> Control Structure</h2>
+<div id="outline-container-org8cb95d0" class="outline-2">
+<h2 id="org8cb95d0"><span class="section-number-2">4</span> Control Structure</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The compound statements are the same as C, can be a single statement without the braces.
 </p>
 </div>
-<div id="outline-container-org6146296" class="outline-3">
-<h3 id="org6146296"><span class="section-number-3">4.1</span> Conditional</h3>
+<div id="outline-container-org22449c9" class="outline-3">
+<h3 id="org22449c9"><span class="section-number-3">4.1</span> Conditional</h3>
 <div class="outline-text-3" id="text-4-1">
 <dl class="org-dl">
 <dt>if</dt><dd><code>if (STMT) STMT else if (STMT) STMT else STMT</code></dd>
@@ -721,8 +721,8 @@ The compound statements are the same as C, can be a single statement without the
 </div>
 </div>
 
-<div id="outline-container-org95ae33a" class="outline-3">
-<h3 id="org95ae33a"><span class="section-number-3">4.2</span> Loop</h3>
+<div id="outline-container-orgaf71699" class="outline-3">
+<h3 id="orgaf71699"><span class="section-number-3">4.2</span> Loop</h3>
 <div class="outline-text-3" id="text-4-2">
 <dl class="org-dl">
 <dt><code>for</code></dt><dd><code>for (NAME in VECTOR) STMT</code></dd>
@@ -734,8 +734,8 @@ The compound statements are the same as C, can be a single statement without the
 </div>
 </div>
 
-<div id="outline-container-orgbc99196" class="outline-2">
-<h2 id="orgbc99196"><span class="section-number-2">5</span> Evaluation rules</h2>
+<div id="outline-container-org60aa4a1" class="outline-2">
+<h2 id="org60aa4a1"><span class="section-number-2">5</span> Evaluation rules</h2>
 <div class="outline-text-2" id="text-5">
 <dl class="org-dl">
 <dt>recycling rules</dt><dd>the shortest list is recycled to the length of longest.</dd>
@@ -744,8 +744,8 @@ The compound statements are the same as C, can be a single statement without the
 </div>
 </div>
 
-<div id="outline-container-org9f3b425" class="outline-2">
-<h2 id="org9f3b425"><span class="section-number-2">6</span> Function</h2>
+<div id="outline-container-org3ecccd6" class="outline-2">
+<h2 id="org3ecccd6"><span class="section-number-2">6</span> Function</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 <code>function (ARGLIST) BODY</code>
@@ -771,8 +771,8 @@ Partial matching result must be unique, but the exact matched ones are excluded 
 </div>
 </div>
 
-<div id="outline-container-orgbfe977d" class="outline-2">
-<h2 id="orgbfe977d"><span class="section-number-2">7</span> Quote</h2>
+<div id="outline-container-org00dd4db" class="outline-2">
+<h2 id="org00dd4db"><span class="section-number-2">7</span> Quote</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 The quote will wrap the expression into an object without evaluating it.
@@ -782,8 +782,8 @@ The <code>eval</code> is used to evaluate it.
 </div>
 </div>
 
-<div id="outline-container-org538f3be" class="outline-2">
-<h2 id="org538f3be"><span class="section-number-2">8</span> Debugging</h2>
+<div id="outline-container-orgdd018e2" class="outline-2">
+<h2 id="orgdd018e2"><span class="section-number-2">8</span> Debugging</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 The <code>print</code> function can output the value of a variable.
@@ -803,8 +803,8 @@ Every time the function is invoked, the return value will be printed as trace.
 
 
 
-<div id="outline-container-org97624e7" class="outline-2">
-<h2 id="org97624e7"><span class="section-number-2">9</span> Data IO</h2>
+<div id="outline-container-orgaa83a6c" class="outline-2">
+<h2 id="orgaa83a6c"><span class="section-number-2">9</span> Data IO</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li><code>write</code></li>
@@ -831,12 +831,12 @@ Every time the function is invoked, the return value will be printed as trace.
 
 
 
-<div id="outline-container-orge4e89b4" class="outline-2">
-<h2 id="orge4e89b4"><span class="section-number-2">10</span> Models</h2>
+<div id="outline-container-orgc54af4e" class="outline-2">
+<h2 id="orgc54af4e"><span class="section-number-2">10</span> Models</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org6be7534" class="outline-3">
-<h3 id="org6be7534"><span class="section-number-3">10.1</span> Linear model.</h3>
+<div id="outline-container-org066f1df" class="outline-3">
+<h3 id="org066f1df"><span class="section-number-3">10.1</span> Linear model.</h3>
 <div class="outline-text-3" id="text-10-1">
 <pre class="example">
  fm = lm(y ~ x1 + x2, data = mydataframe)
@@ -859,17 +859,17 @@ The models can be updated, if the formula only changes a little bit.
 In the following example, the <code>.</code> means the corresponding part of the original formula.
 </p>
 <div class="org-src-container">
-<pre class="src src-R">fs <span style="color: #008b8b;">&lt;-</span> lm(y~x1 + x2, data=mydata)
-fs <span style="color: #008b8b;">&lt;-</span> update(fs, . ~ . + x3)
-fs <span style="color: #008b8b;">&lt;-</span> update(fs, sqrt(.) ~ .)
+<pre class="src src-R">fs &lt;- lm(y~x1 + x2, data=mydata)
+fs &lt;- update(fs, . ~ . + x3)
+fs &lt;- update(fs, sqrt(.) ~ .)
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge29bb00" class="outline-2">
-<h2 id="orge29bb00"><span class="section-number-2">11</span> Plot</h2>
+<div id="outline-container-org0938370" class="outline-2">
+<h2 id="org0938370"><span class="section-number-2">11</span> Plot</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 Process data:
@@ -880,8 +880,8 @@ Process data:
 </ul>
 </div>
 
-<div id="outline-container-org8ccaef7" class="outline-3">
-<h3 id="org8ccaef7"><span class="section-number-3">11.1</span> Decoration</h3>
+<div id="outline-container-org2418e68" class="outline-3">
+<h3 id="org2418e68"><span class="section-number-3">11.1</span> Decoration</h3>
 <div class="outline-text-3" id="text-11-1">
 <ul class="org-ul">
 <li>box</li>
@@ -895,12 +895,12 @@ Process data:
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ae5967" class="outline-3">
-<h3 id="org4ae5967"><span class="section-number-3">11.2</span> Plot Types</h3>
+<div id="outline-container-orgdbeca21" class="outline-3">
+<h3 id="orgdbeca21"><span class="section-number-3">11.2</span> Plot Types</h3>
 <div class="outline-text-3" id="text-11-2">
 </div>
-<div id="outline-container-org3ccbf21" class="outline-4">
-<h4 id="org3ccbf21"><span class="section-number-4">11.2.1</span> plot</h4>
+<div id="outline-container-org92c144f" class="outline-4">
+<h4 id="org92c144f"><span class="section-number-4">11.2.1</span> plot</h4>
 <div class="outline-text-4" id="text-11-2-1">
 <ul class="org-ul">
 <li>lines</li>
@@ -908,40 +908,40 @@ Process data:
 </ul>
 </div>
 </div>
-<div id="outline-container-org37c55c8" class="outline-4">
-<h4 id="org37c55c8"><span class="section-number-4">11.2.2</span> barplot</h4>
+<div id="outline-container-orge0d55c5" class="outline-4">
+<h4 id="orge0d55c5"><span class="section-number-4">11.2.2</span> barplot</h4>
 </div>
-<div id="outline-container-orgd777d56" class="outline-4">
-<h4 id="orgd777d56"><span class="section-number-4">11.2.3</span> pie</h4>
+<div id="outline-container-org11e255b" class="outline-4">
+<h4 id="org11e255b"><span class="section-number-4">11.2.3</span> pie</h4>
 </div>
-<div id="outline-container-orgdabefe1" class="outline-4">
-<h4 id="orgdabefe1"><span class="section-number-4">11.2.4</span> boxplot</h4>
+<div id="outline-container-org8e2b3fa" class="outline-4">
+<h4 id="org8e2b3fa"><span class="section-number-4">11.2.4</span> boxplot</h4>
 <div class="outline-text-4" id="text-11-2-4">
 <ul class="org-ul">
 <li>quantile</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcf0f19f" class="outline-4">
-<h4 id="orgcf0f19f"><span class="section-number-4">11.2.5</span> hist</h4>
+<div id="outline-container-orgb840b01" class="outline-4">
+<h4 id="orgb840b01"><span class="section-number-4">11.2.5</span> hist</h4>
 <div class="outline-text-4" id="text-11-2-5">
 <ul class="org-ul">
 <li>lines(density(data))</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1beeeab" class="outline-4">
-<h4 id="org1beeeab"><span class="section-number-4">11.2.6</span> <span class="todo TODO">TODO</span> stem</h4>
+<div id="outline-container-orga90cce4" class="outline-4">
+<h4 id="orga90cce4"><span class="section-number-4">11.2.6</span> <span class="todo TODO">TODO</span> stem</h4>
 </div>
-<div id="outline-container-org4593f51" class="outline-4">
-<h4 id="org4593f51"><span class="section-number-4">11.2.7</span> <span class="todo TODO">TODO</span> mosaicplot</h4>
+<div id="outline-container-org9364997" class="outline-4">
+<h4 id="org9364997"><span class="section-number-4">11.2.7</span> <span class="todo TODO">TODO</span> mosaicplot</h4>
 </div>
-<div id="outline-container-org9029761" class="outline-4">
-<h4 id="org9029761"><span class="section-number-4">11.2.8</span> pairs</h4>
+<div id="outline-container-orge7942de" class="outline-4">
+<h4 id="orge7942de"><span class="section-number-4">11.2.8</span> pairs</h4>
 </div>
 </div>
-<div id="outline-container-orgf28b871" class="outline-3">
-<h3 id="orgf28b871"><span class="section-number-3">11.3</span> Device Driver</h3>
+<div id="outline-container-org46c8e28" class="outline-3">
+<h3 id="org46c8e28"><span class="section-number-3">11.3</span> Device Driver</h3>
 <div class="outline-text-3" id="text-11-3">
 <p>
 When outputting some image, you have to tell R which format you want
@@ -964,42 +964,42 @@ When you have finished with a device, terminate it by <code>dev.off()</code>.
 To output to a file TODO to open plot in emacs:
 </p>
 <div class="org-src-container">
-<pre class="src src-R">  pdf(<span style="color: #8b2252;">"test1.pdf"</span>)
-  dev.control(displaylist = <span style="color: #8b2252;">"enable"</span>)
+<pre class="src src-R">  pdf("test1.pdf")
+  dev.control(displaylist = "enable")
   plot(1:10)
-  dev.copy(pdf, <span style="color: #8b2252;">"test2.pdf"</span>)
+  dev.copy(pdf, "test2.pdf")
   dev.off()
-  <span style="color: #b22222;"># </span><span style="color: #b22222;">should now have a valid test2.pdf</span>
-  dev.off() <span style="color: #b22222;"># </span><span style="color: #b22222;">finished</span>
+  # should now have a valid test2.pdf
+  dev.off() # finished
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6c6740a" class="outline-2">
-<h2 id="org6c6740a"><span class="section-number-2">12</span> Packages</h2>
+<div id="outline-container-orgc6a8940" class="outline-2">
+<h2 id="orgc6a8940"><span class="section-number-2">12</span> Packages</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-org5271994" class="outline-3">
-<h3 id="org5271994"><span class="section-number-3">12.1</span> ggplot2</h3>
+<div id="outline-container-org1b4bd86" class="outline-3">
+<h3 id="org1b4bd86"><span class="section-number-3">12.1</span> ggplot2</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
-<pre class="src src-R">qplot(totbill, tip, geom=<span style="color: #8b2252;">"point"</span>, data=tips) <span style="color: #b22222;"># </span><span style="color: #b22222;">scatter plot</span>
-qplot(totbill, tip, geom=<span style="color: #8b2252;">"point"</span>, data=tips) + geom_smooth(method=<span style="color: #8b2252;">"lm"</span>) <span style="color: #b22222;"># </span><span style="color: #b22222;">with linear relationship line</span>
-qplot(tip, geom=<span style="color: #8b2252;">"histogram"</span>, data=tip) <span style="color: #b22222;"># </span><span style="color: #b22222;">histogram</span>
-qplot(tip, geom=<span style="color: #8b2252;">"histogram"</span>, binwidth=1, data=tips) <span style="color: #b22222;"># </span><span style="color: #b22222;">with custom binwidth</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">box plots</span>
-qplot(sex, tipperc, geom=<span style="color: #8b2252;">"boxplot"</span>, data=tips)
-qplot(smoker, tipperc, geom=<span style="color: #8b2252;">"boxplot"</span>, data=tips)
-qplot(sex:smoker, tipperc, geom=<span style="color: #8b2252;">"boxplot"</span>, data=tips) <span style="color: #b22222;"># </span><span style="color: #b22222;">combine! plot the two sets of graph in two one graph</span>
-qplot(totbill, tip, geom=<span style="color: #8b2252;">"point"</span>, colour=day, data=tips) <span style="color: #b22222;"># </span><span style="color: #b22222;">scatter plot with colors, in regard to "day" column</span>
+<pre class="src src-R">qplot(totbill, tip, geom="point", data=tips) # scatter plot
+qplot(totbill, tip, geom="point", data=tips) + geom_smooth(method="lm") # with linear relationship line
+qplot(tip, geom="histogram", data=tip) # histogram
+qplot(tip, geom="histogram", binwidth=1, data=tips) # with custom binwidth
+# box plots
+qplot(sex, tipperc, geom="boxplot", data=tips)
+qplot(smoker, tipperc, geom="boxplot", data=tips)
+qplot(sex:smoker, tipperc, geom="boxplot", data=tips) # combine! plot the two sets of graph in two one graph
+qplot(totbill, tip, geom="point", colour=day, data=tips) # scatter plot with colors, in regard to "day" column
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga33bba6" class="outline-3">
-<h3 id="orga33bba6"><span class="section-number-3">12.2</span> plot(x, y, &#x2026;)</h3>
+<div id="outline-container-org0591a34" class="outline-3">
+<h3 id="org0591a34"><span class="section-number-3">12.2</span> plot(x, y, &#x2026;)</h3>
 <div class="outline-text-3" id="text-12-2">
 <p>
 Possible <code>...</code> arguments:
@@ -1019,8 +1019,8 @@ Possible <code>...</code> arguments:
 </div>
 </div>
 
-<div id="outline-container-org971bc13" class="outline-3">
-<h3 id="org971bc13"><span class="section-number-3">12.3</span> dplyr</h3>
+<div id="outline-container-org5ae23e3" class="outline-3">
+<h3 id="org5ae23e3"><span class="section-number-3">12.3</span> dplyr</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 A Grammar of Data Manipulation

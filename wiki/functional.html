@@ -197,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -268,27 +268,27 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge13ee72">1. References</a></li>
-<li><a href="#orgb15d56c">2. Expression</a></li>
-<li><a href="#org632df4d">3. What is a Function?</a>
+<li><a href="#org56c7496">1. References</a></li>
+<li><a href="#orgaff511d">2. Expression</a></li>
+<li><a href="#org66972c2">3. What is a Function?</a>
 <ul>
-<li><a href="#orgffb2cde">3.1. Composition</a></li>
-<li><a href="#orgb5d8e8c">3.2. Strictness</a></li>
+<li><a href="#org97943c2">3.1. Composition</a></li>
+<li><a href="#orge55454b">3.2. Strictness</a></li>
 </ul>
 </li>
-<li><a href="#org2ebf2f6">4. Type</a>
+<li><a href="#org3ab8f4d">4. Type</a>
 <ul>
-<li><a href="#org6693e06">4.1. Type inference</a></li>
-<li><a href="#org5d1a6a3">4.2. List</a></li>
+<li><a href="#orga01a355">4.1. Type inference</a></li>
+<li><a href="#org89e230c">4.2. List</a></li>
 </ul>
 </li>
-<li><a href="#orgf41a180">5. Recursion</a></li>
+<li><a href="#org7475334">5. Recursion</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge13ee72" class="outline-2">
-<h2 id="orge13ee72"><span class="section-number-2">1</span> References</h2>
+<div id="outline-container-org56c7496" class="outline-2">
+<h2 id="org56c7496"><span class="section-number-2">1</span> References</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>introduction to functional programming <a class='org-ref-reference' href="#1988-Book-Bird-Introduction">1988-Book-Bird-Introduction</a></li>
@@ -296,8 +296,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgb15d56c" class="outline-2">
-<h2 id="orgb15d56c"><span class="section-number-2">2</span> Expression</h2>
+<div id="outline-container-orgaff511d" class="outline-2">
+<h2 id="orgaff511d"><span class="section-number-2">2</span> Expression</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 An expression can be <i>reduced</i> to an simpler equivalent form.  We say
@@ -416,8 +416,8 @@ foldl' (op) a (x:xs) = strict (foldl' (op)) (a op x) xs
 
 
 
-<div id="outline-container-org632df4d" class="outline-2">
-<h2 id="org632df4d"><span class="section-number-2">3</span> What is a Function?</h2>
+<div id="outline-container-org66972c2" class="outline-2">
+<h2 id="org66972c2"><span class="section-number-2">3</span> What is a Function?</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>currying: replacing structured arguments by a sequence of simple
@@ -426,8 +426,8 @@ i.e. <code>f x y</code> means <code>((f x) y)</code>.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgffb2cde" class="outline-3">
-<h3 id="orgffb2cde"><span class="section-number-3">3.1</span> Composition</h3>
+<div id="outline-container-org97943c2" class="outline-3">
+<h3 id="org97943c2"><span class="section-number-3">3.1</span> Composition</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Functional composition has the definition of
@@ -457,8 +457,8 @@ brackets
 </div>
 </div>
 
-<div id="outline-container-orgb5d8e8c" class="outline-3">
-<h3 id="orgb5d8e8c"><span class="section-number-3">3.2</span> Strictness</h3>
+<div id="outline-container-orge55454b" class="outline-3">
+<h3 id="orge55454b"><span class="section-number-3">3.2</span> Strictness</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 The special value \(\bot\) is polymorphic: \(\bot\) is a value of every
@@ -519,8 +519,8 @@ for the evaluation.
 </div>
 </div>
 
-<div id="outline-container-org2ebf2f6" class="outline-2">
-<h2 id="org2ebf2f6"><span class="section-number-2">4</span> Type</h2>
+<div id="outline-container-org3ab8f4d" class="outline-2">
+<h2 id="org3ab8f4d"><span class="section-number-2">4</span> Type</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Strong-typing: the type of an expression depends only on the type of
@@ -546,8 +546,8 @@ are not defined, but operations are, is called abstract type.</li>
 </ul>
 </div>
 
-<div id="outline-container-org6693e06" class="outline-3">
-<h3 id="org6693e06"><span class="section-number-3">4.1</span> Type inference</h3>
+<div id="outline-container-orga01a355" class="outline-3">
+<h3 id="orga01a355"><span class="section-number-3">4.1</span> Type inference</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Three basic rules
@@ -604,8 +604,8 @@ generic:
 </div>
 </div>
 
-<div id="outline-container-org5d1a6a3" class="outline-3">
-<h3 id="org5d1a6a3"><span class="section-number-3">4.2</span> List</h3>
+<div id="outline-container-org89e230c" class="outline-3">
+<h3 id="org89e230c"><span class="section-number-3">4.2</span> List</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 List itself is defined as a recursive type.
@@ -703,8 +703,8 @@ marshalling, and <i>reduce</i> does folding.
 </div>
 </div>
 
-<div id="outline-container-orgf41a180" class="outline-2">
-<h2 id="orgf41a180"><span class="section-number-2">5</span> Recursion</h2>
+<div id="outline-container-org7475334" class="outline-2">
+<h2 id="org7475334"><span class="section-number-2">5</span> Recursion</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Functions are often defined recursively. In this section, we see some

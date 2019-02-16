@@ -197,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -268,180 +268,180 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6032b37">1. Org Mode</a>
+<li><a href="#orgbc8becd">1. Org Mode</a>
 <ul>
-<li><a href="#orga04b38b">1.1. Structure</a>
+<li><a href="#org1189760">1.1. Structure</a>
 <ul>
-<li><a href="#org1fc4d2f">1.1.1. Drawer</a></li>
-<li><a href="#orgce34922">1.1.2. Footnote</a></li>
-<li><a href="#orgb0a46eb">1.1.3. Headings</a></li>
+<li><a href="#org6cd2e84">1.1.1. Drawer</a></li>
+<li><a href="#orgdd6c110">1.1.2. Footnote</a></li>
+<li><a href="#org3739879">1.1.3. Headings</a></li>
 </ul>
 </li>
-<li><a href="#orge055fa4">1.2. Agenda</a></li>
-<li><a href="#org43ee2b5">1.3. Tags</a></li>
-<li><a href="#orgd1c1ce1">1.4. Properties</a></li>
-<li><a href="#org1a7d530">1.5. Exporting</a>
+<li><a href="#org2b39b26">1.2. Agenda</a></li>
+<li><a href="#orge7eff01">1.3. Tags</a></li>
+<li><a href="#orgc8822d4">1.4. Properties</a></li>
+<li><a href="#orgfab012f">1.5. Exporting</a>
 <ul>
-<li><a href="#org7d94c2f">1.5.1. bibliography</a></li>
-<li><a href="#orgf22439e">1.5.2. Latex Exporting</a>
+<li><a href="#org9d299f1">1.5.1. bibliography</a></li>
+<li><a href="#org9f0d671">1.5.2. Latex Exporting</a>
 <ul>
-<li><a href="#org343c426">1.5.2.1. doc class &amp; options</a></li>
-<li><a href="#org227d894">1.5.2.2. appendix</a></li>
-<li><a href="#orgdb533b0">1.5.2.3. code listing</a></li>
+<li><a href="#orgf6f5788">1.5.2.1. doc class &amp; options</a></li>
+<li><a href="#orgcb76c1b">1.5.2.2. appendix</a></li>
+<li><a href="#org58689ce">1.5.2.3. code listing</a></li>
 </ul>
 </li>
-<li><a href="#org0f27ac1">1.5.3. Beamer</a>
+<li><a href="#orga0b53c8">1.5.3. Beamer</a>
 <ul>
-<li><a href="#org3233d5d">1.5.3.1. Octave code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></a></li>
-<li><a href="#orga33971c">1.5.3.2. The output&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></a></li>
+<li><a href="#org477d3e2">1.5.3.1. Octave code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></a></li>
+<li><a href="#orgf56bbb5">1.5.3.2. The output&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb67600a">1.6. Table</a></li>
-<li><a href="#orgfde3d10">1.7. Image</a></li>
-<li><a href="#orgb4e742e">1.8. org-ref</a>
+<li><a href="#orgc351aab">1.6. Table</a></li>
+<li><a href="#orgdf0c777">1.7. Image</a></li>
+<li><a href="#org5d01f1a">1.8. org-ref</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org82f7c35">1.8.0.1. Commands</a></li>
+<li><a href="#org83e166a">1.8.0.1. Commands</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org0e96a36">2. Markdown</a></li>
-<li><a href="#orgc83b6f2">3. Latex</a>
+<li><a href="#orgd8606fd">2. Markdown</a></li>
+<li><a href="#org954b720">3. Latex</a>
 <ul>
-<li><a href="#org3a6d5fb">3.1. Configuration</a></li>
-<li><a href="#org96b95b5">3.2. Mathematics</a></li>
-<li><a href="#orgbd171b9">3.3. Primitives</a></li>
-<li><a href="#orgcc56a87">3.4. Tips</a></li>
-<li><a href="#orgeebf535">3.5. Beamer</a></li>
-<li><a href="#org33285bc">3.6. listings</a>
+<li><a href="#org3548c43">3.1. Configuration</a></li>
+<li><a href="#org8635582">3.2. Mathematics</a></li>
+<li><a href="#org868bcf9">3.3. Primitives</a></li>
+<li><a href="#orgb8058f2">3.4. Tips</a></li>
+<li><a href="#orgfd7fa30">3.5. Beamer</a></li>
+<li><a href="#org15f379a">3.6. listings</a>
 <ul>
-<li><a href="#org03f8aa2">3.6.1. Global setting:</a></li>
-<li><a href="#org4341007">3.6.2. Local setting:</a></li>
+<li><a href="#org6eff167">3.6.1. Global setting:</a></li>
+<li><a href="#org3db59a3">3.6.2. Local setting:</a></li>
 </ul>
 </li>
-<li><a href="#orgb3fab2f">3.7. Tikz</a>
+<li><a href="#org78e9a09">3.7. Tikz</a>
 <ul>
-<li><a href="#org930bd3a">3.7.1. Hacks</a></li>
-<li><a href="#orga4696e9">3.7.2. FAQ</a></li>
-<li><a href="#org70d5588">3.7.3. Code Structure</a></li>
-<li><a href="#orgce800ab">3.7.4. Parameters (options)</a>
+<li><a href="#orgb2c12ab">3.7.1. Hacks</a></li>
+<li><a href="#org9458960">3.7.2. FAQ</a></li>
+<li><a href="#orge0ca9a7">3.7.3. Code Structure</a></li>
+<li><a href="#org04a7037">3.7.4. Parameters (options)</a>
 <ul>
-<li><a href="#orgae84cd2">3.7.4.1. Scope</a></li>
-<li><a href="#orgb94e6d9">3.7.4.2. Styles</a></li>
+<li><a href="#org10d15e2">3.7.4.1. Scope</a></li>
+<li><a href="#org575cdde">3.7.4.2. Styles</a></li>
 </ul>
 </li>
-<li><a href="#org8c1b8c3">3.7.5. Coordinates</a>
+<li><a href="#org9290227">3.7.5. Coordinates</a>
 <ul>
-<li><a href="#orgfb46e42">3.7.5.1. Intersection</a></li>
-<li><a href="#orge5d8bad">3.7.5.2. Relative position</a></li>
-<li><a href="#orgdcc8399">3.7.5.3. calc</a></li>
+<li><a href="#org75fcabb">3.7.5.1. Intersection</a></li>
+<li><a href="#orgaff11d3">3.7.5.2. Relative position</a></li>
+<li><a href="#org0f48920">3.7.5.3. calc</a></li>
 </ul>
 </li>
-<li><a href="#org0755c24">3.7.6. Path</a></li>
-<li><a href="#org3890ec7">3.7.7. Actions (on path)</a>
+<li><a href="#orga08561e">3.7.6. Path</a></li>
+<li><a href="#org7f97f81">3.7.7. Actions (on path)</a>
 <ul>
-<li><a href="#org7208e90">3.7.7.1. Draw</a></li>
-<li><a href="#org88e83ad">3.7.7.2. Clip</a></li>
-<li><a href="#org5f9ff35">3.7.7.3. Bounding box</a></li>
+<li><a href="#orgfcc8c01">3.7.7.1. Draw</a></li>
+<li><a href="#orga5f2fe1">3.7.7.2. Clip</a></li>
+<li><a href="#org6c3929f">3.7.7.3. Bounding box</a></li>
 </ul>
 </li>
-<li><a href="#org9771c67">3.7.8. Arrow</a>
+<li><a href="#org1077d5f">3.7.8. Arrow</a>
 <ul>
-<li><a href="#orge11d7f9">3.7.8.1. <span class="todo TODO">TODO</span> Bending and flexing</a></li>
-<li><a href="#org74ee5aa">3.7.8.2. <span class="todo TODO">TODO</span> arrow tips</a></li>
+<li><a href="#org9829303">3.7.8.1. <span class="todo TODO">TODO</span> Bending and flexing</a></li>
+<li><a href="#org8f58806">3.7.8.2. <span class="todo TODO">TODO</span> arrow tips</a></li>
 </ul>
 </li>
-<li><a href="#org3cc763e">3.7.9. Node</a>
+<li><a href="#org704139a">3.7.9. Node</a>
 <ul>
-<li><a href="#org1fcccae">3.7.9.1. Options</a></li>
-<li><a href="#org274b6ec">3.7.9.2. Foreach</a></li>
-<li><a href="#org129cca3">3.7.9.3. Style</a></li>
-<li><a href="#org73353d1">3.7.9.4. <span class="todo TODO">TODO</span> Multi-part node</a></li>
-<li><a href="#orgcd852f5">3.7.9.5. Node Text</a></li>
-<li><a href="#org1541c8b">3.7.9.6. Node Positioning</a></li>
-<li><a href="#orgfacc32d">3.7.9.7. Fitting</a></li>
-<li><a href="#org7fd2629">3.7.9.8. Place on a line</a></li>
-<li><a href="#org94a32ff">3.7.9.9. Label &amp; Pin</a></li>
-<li><a href="#org672a7b2">3.7.9.10. <span class="todo TODO">TODO</span> 17.12 Edge and from here</a></li>
+<li><a href="#orgfb5d0e5">3.7.9.1. Options</a></li>
+<li><a href="#org4c5af9d">3.7.9.2. Foreach</a></li>
+<li><a href="#org367ee3c">3.7.9.3. Style</a></li>
+<li><a href="#org894772e">3.7.9.4. <span class="todo TODO">TODO</span> Multi-part node</a></li>
+<li><a href="#org0580b82">3.7.9.5. Node Text</a></li>
+<li><a href="#orgf75360a">3.7.9.6. Node Positioning</a></li>
+<li><a href="#org0521299">3.7.9.7. Fitting</a></li>
+<li><a href="#orgc7e0462">3.7.9.8. Place on a line</a></li>
+<li><a href="#org381154d">3.7.9.9. Label &amp; Pin</a></li>
+<li><a href="#org7adac32">3.7.9.10. <span class="todo TODO">TODO</span> 17.12 Edge and from here</a></li>
 </ul>
 </li>
-<li><a href="#org69a54f6">3.7.10. Pic</a></li>
-<li><a href="#org201805c">3.7.11. Graph</a>
+<li><a href="#orgfe7c9a7">3.7.10. Pic</a></li>
+<li><a href="#org988fe05">3.7.11. Graph</a>
 <ul>
-<li><a href="#orgc573ea6">3.7.11.1. Specs</a></li>
-<li><a href="#org260a532">3.7.11.2. Edge</a></li>
-<li><a href="#org1f84f1f">3.7.11.3. Coloring</a></li>
-<li><a href="#org030d7af">3.7.11.4. Node placement</a></li>
+<li><a href="#org966322c">3.7.11.1. Specs</a></li>
+<li><a href="#org7447b22">3.7.11.2. Edge</a></li>
+<li><a href="#org27f8065">3.7.11.3. Coloring</a></li>
+<li><a href="#org9b975ed">3.7.11.4. Node placement</a></li>
 </ul>
 </li>
-<li><a href="#org5311cd1">3.7.12. Tree</a>
+<li><a href="#org0dd1091">3.7.12. Tree</a>
 <ul>
-<li><a href="#org89f17d8">3.7.12.1. Styling</a></li>
-<li><a href="#orgecf3092">3.7.12.2. Placement</a></li>
-<li><a href="#org01b3569">3.7.12.3. forest</a></li>
+<li><a href="#org52e1cc0">3.7.12.1. Styling</a></li>
+<li><a href="#orgd639531">3.7.12.2. Placement</a></li>
+<li><a href="#org4eb982c">3.7.12.3. forest</a></li>
 </ul>
 </li>
-<li><a href="#orgdec25cc">3.7.13. Matrix</a>
+<li><a href="#org46ebaeb">3.7.13. Matrix</a>
 <ul>
-<li><a href="#org5cff509">3.7.13.1. Styling</a></li>
-<li><a href="#org597a41a">3.7.13.2. Anchoring</a></li>
+<li><a href="#org753bfe3">3.7.13.1. Styling</a></li>
+<li><a href="#org50272f1">3.7.13.2. Anchoring</a></li>
 </ul>
 </li>
-<li><a href="#orgd3485dc">3.7.14. Data Visualization</a>
+<li><a href="#org02393ce">3.7.14. Data Visualization</a>
 <ul>
-<li><a href="#orgbdc0f5f">3.7.14.1. Axis system</a></li>
-<li><a href="#org4532eab">3.7.14.2. Provide data</a></li>
-<li><a href="#org90aae48">3.7.14.3. Visualizers</a></li>
-<li><a href="#orgdc85aed">3.7.14.4. Style sheets &amp; Legends</a></li>
+<li><a href="#org63c2246">3.7.14.1. Axis system</a></li>
+<li><a href="#org9e8bd66">3.7.14.2. Provide data</a></li>
+<li><a href="#org2f59efa">3.7.14.3. Visualizers</a></li>
+<li><a href="#org43825b0">3.7.14.4. Style sheets &amp; Legends</a></li>
 </ul>
 </li>
-<li><a href="#org3476eab">3.7.15. <span class="todo TODO">TODO</span> Packages</a>
+<li><a href="#orgbf54bcf">3.7.15. <span class="todo TODO">TODO</span> Packages</a>
 <ul>
-<li><a href="#org9cc42b2">3.7.15.1. shapes.multipart</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgcfec95c">4. UML</a>
-<ul>
-<li><a href="#org37f0f3b">4.1. Plantuml</a>
-<ul>
-<li><a href="#org4a7384c">4.1.1. Installation</a></li>
-<li><a href="#org1310924">4.1.2. Class Diagram</a></li>
-<li><a href="#org08e6a1e">4.1.3. Sequence Diagram</a></li>
+<li><a href="#org35eb5d2">3.7.15.1. shapes.multipart</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgae6adfe">5. Graphviz/Dot</a>
+</ul>
+</li>
+<li><a href="#org8b8bdba">4. UML</a>
 <ul>
-<li><a href="#orgbad6813">5.1. Language</a></li>
-<li><a href="#org6e38e29">5.2. Attributes</a></li>
-<li><a href="#org2cf0d1c">5.3. CMD</a></li>
+<li><a href="#orgf784ff3">4.1. Plantuml</a>
+<ul>
+<li><a href="#org6d74ec8">4.1.1. Installation</a></li>
+<li><a href="#orgc808ae3">4.1.2. Class Diagram</a></li>
+<li><a href="#orge4facb9">4.1.3. Sequence Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1473325">5. Graphviz/Dot</a>
+<ul>
+<li><a href="#org7797e0c">5.1. Language</a></li>
+<li><a href="#org8781dc5">5.2. Attributes</a></li>
+<li><a href="#orgdc369c9">5.3. CMD</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6032b37" class="outline-2">
-<h2 id="org6032b37"><span class="section-number-2">1</span> Org Mode</h2>
+<div id="outline-container-orgbc8becd" class="outline-2">
+<h2 id="orgbc8becd"><span class="section-number-2">1</span> Org Mode</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga04b38b" class="outline-3">
-<h3 id="orga04b38b"><span class="section-number-3">1.1</span> Structure</h3>
+<div id="outline-container-org1189760" class="outline-3">
+<h3 id="org1189760"><span class="section-number-3">1.1</span> Structure</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org1fc4d2f" class="outline-4">
-<h4 id="org1fc4d2f"><span class="section-number-4">1.1.1</span> Drawer</h4>
+<div id="outline-container-org6cd2e84" class="outline-4">
+<h4 id="org6cd2e84"><span class="section-number-4">1.1.1</span> Drawer</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 The heading can have a drawer, meaning it is hidden by default.
@@ -450,8 +450,8 @@ Under a headline, use <code>:DRAWERNAME:</code> and <code>:END:</code> to denote
 </p>
 </div>
 </div>
-<div id="outline-container-orgce34922" class="outline-4">
-<h4 id="orgce34922"><span class="section-number-4">1.1.2</span> Footnote</h4>
+<div id="outline-container-orgdd6c110" class="outline-4">
+<h4 id="orgdd6c110"><span class="section-number-4">1.1.2</span> Footnote</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 Footnote can be of these format:
@@ -474,8 +474,8 @@ There should be two empty lines after the footnote definition.
 </div>
 </div>
 
-<div id="outline-container-orgb0a46eb" class="outline-4">
-<h4 id="orgb0a46eb"><span class="section-number-4">1.1.3</span> Headings</h4>
+<div id="outline-container-org3739879" class="outline-4">
+<h4 id="org3739879"><span class="section-number-4">1.1.3</span> Headings</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <dl class="org-dl">
 <dt>Moving around</dt><dd><code>C-c C-n</code> :: next heading
@@ -493,8 +493,8 @@ It is very useful to narrow the subtree using <code>C-x n s</code> and widen it 
 </div>
 </div>
 
-<div id="outline-container-orge055fa4" class="outline-3">
-<h3 id="orge055fa4"><span class="section-number-3">1.2</span> Agenda</h3>
+<div id="outline-container-org2b39b26" class="outline-3">
+<h3 id="org2b39b26"><span class="section-number-3">1.2</span> Agenda</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 It is very convenient to use <code>org-capture</code> to quickly write down a
@@ -550,8 +550,8 @@ Clocking in and out becomes <code>I</code> and <code>O</code>, and cancel with <
 </div>
 </div>
 
-<div id="outline-container-org43ee2b5" class="outline-3">
-<h3 id="org43ee2b5"><span class="section-number-3">1.3</span> Tags</h3>
+<div id="outline-container-orge7eff01" class="outline-3">
+<h3 id="orge7eff01"><span class="section-number-3">1.3</span> Tags</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Tags can be the variable name plus <code>@</code> is available.
@@ -561,8 +561,8 @@ Tags will be inherited by default for the subtrees.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd1c1ce1" class="outline-3">
-<h3 id="orgd1c1ce1"><span class="section-number-3">1.4</span> Properties</h3>
+<div id="outline-container-orgc8822d4" class="outline-3">
+<h3 id="orgc8822d4"><span class="section-number-3">1.4</span> Properties</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Similar to tags, we can also set the property, the key value pairs.
@@ -573,12 +573,12 @@ Property is not inherited by default.
 </div>
 
 
-<div id="outline-container-org1a7d530" class="outline-3">
-<h3 id="org1a7d530"><span class="section-number-3">1.5</span> Exporting</h3>
+<div id="outline-container-orgfab012f" class="outline-3">
+<h3 id="orgfab012f"><span class="section-number-3">1.5</span> Exporting</h3>
 <div class="outline-text-3" id="text-1-5">
 </div>
-<div id="outline-container-org7d94c2f" class="outline-4">
-<h4 id="org7d94c2f"><span class="section-number-4">1.5.1</span> bibliography</h4>
+<div id="outline-container-org9d299f1" class="outline-4">
+<h4 id="org9d299f1"><span class="section-number-4">1.5.1</span> bibliography</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <p>
 Normally you only need:
@@ -594,12 +594,12 @@ It remains to be seen how to put a set of default bib file instead of specifying
 </div>
 </div>
 
-<div id="outline-container-orgf22439e" class="outline-4">
-<h4 id="orgf22439e"><span class="section-number-4">1.5.2</span> Latex Exporting</h4>
+<div id="outline-container-org9f0d671" class="outline-4">
+<h4 id="org9f0d671"><span class="section-number-4">1.5.2</span> Latex Exporting</h4>
 <div class="outline-text-4" id="text-1-5-2">
 </div>
-<div id="outline-container-org343c426" class="outline-5">
-<h5 id="org343c426"><span class="section-number-5">1.5.2.1</span> doc class &amp; options</h5>
+<div id="outline-container-orgf6f5788" class="outline-5">
+<h5 id="orgf6f5788"><span class="section-number-5">1.5.2.1</span> doc class &amp; options</h5>
 <div class="outline-text-5" id="text-1-5-2-1">
 <pre class="example">
  #+LATEX_CLASS: fse
@@ -611,8 +611,8 @@ It remains to be seen how to put a set of default bib file instead of specifying
 </div>
 </div>
 
-<div id="outline-container-org227d894" class="outline-5">
-<h5 id="org227d894"><span class="section-number-5">1.5.2.2</span> appendix</h5>
+<div id="outline-container-orgcb76c1b" class="outline-5">
+<h5 id="orgcb76c1b"><span class="section-number-5">1.5.2.2</span> appendix</h5>
 <div class="outline-text-5" id="text-1-5-2-2">
 <pre class="example">
  #+LaTeX: \appendix
@@ -625,8 +625,8 @@ It remains to be seen how to put a set of default bib file instead of specifying
 </div>
 </div>
 
-<div id="outline-container-orgdb533b0" class="outline-5">
-<h5 id="orgdb533b0"><span class="section-number-5">1.5.2.3</span> code listing</h5>
+<div id="outline-container-org58689ce" class="outline-5">
+<h5 id="org58689ce"><span class="section-number-5">1.5.2.3</span> code listing</h5>
 <div class="outline-text-5" id="text-1-5-2-3">
 <pre class="example">
 #+ATTR_LATEX: :options frame=shadowbox
@@ -637,8 +637,8 @@ It remains to be seen how to put a set of default bib file instead of specifying
 </div>
 
 
-<div id="outline-container-org0f27ac1" class="outline-4">
-<h4 id="org0f27ac1"><span class="section-number-4">1.5.3</span> Beamer</h4>
+<div id="outline-container-orga0b53c8" class="outline-4">
+<h4 id="orga0b53c8"><span class="section-number-4">1.5.3</span> Beamer</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <p>
 The header setup:
@@ -678,13 +678,13 @@ These blocks can utilize the horizontal space.
 #+BEGIN<sub>EXAMPLE</sub>
 </p>
 </div>
-<div id="outline-container-org3233d5d" class="outline-5">
-<h5 id="org3233d5d"><span class="section-number-5">1.5.3.1</span> Octave code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></h5>
+<div id="outline-container-org477d3e2" class="outline-5">
+<h5 id="org477d3e2"><span class="section-number-5">1.5.3.1</span> Octave code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></h5>
 <div class="outline-text-5" id="text-1-5-3-1">
 </div>
 </div>
-<div id="outline-container-orga33971c" class="outline-5">
-<h5 id="orga33971c"><span class="section-number-5">1.5.3.2</span> The output&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></h5>
+<div id="outline-container-orgf56bbb5" class="outline-5">
+<h5 id="orgf56bbb5"><span class="section-number-5">1.5.3.2</span> The output&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></h5>
 <div class="outline-text-5" id="text-1-5-3-2">
 <p>
 #+END<sub>EXAMPLE</sub>
@@ -695,8 +695,8 @@ These blocks can utilize the horizontal space.
 </div>
 
 
-<div id="outline-container-orgb67600a" class="outline-3">
-<h3 id="orgb67600a"><span class="section-number-3">1.6</span> Table</h3>
+<div id="outline-container-orgc351aab" class="outline-3">
+<h3 id="orgc351aab"><span class="section-number-3">1.6</span> Table</h3>
 <div class="outline-text-3" id="text-1-6">
 <pre class="example">
 #+TBLFM: $4=$2/10
@@ -705,8 +705,8 @@ These blocks can utilize the horizontal space.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgfde3d10" class="outline-3">
-<h3 id="orgfde3d10"><span class="section-number-3">1.7</span> Image</h3>
+<div id="outline-container-orgdf0c777" class="outline-3">
+<h3 id="orgdf0c777"><span class="section-number-3">1.7</span> Image</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 <code>[[./image]]</code>
@@ -733,12 +733,12 @@ Use <code>#+ATTR_HTML: :width 300px</code> to set the html export size.
 </div>
 </div>
 
-<div id="outline-container-orgb4e742e" class="outline-3">
-<h3 id="orgb4e742e"><span class="section-number-3">1.8</span> org-ref</h3>
+<div id="outline-container-org5d01f1a" class="outline-3">
+<h3 id="org5d01f1a"><span class="section-number-3">1.8</span> org-ref</h3>
 <div class="outline-text-3" id="text-1-8">
 </div>
-<div id="outline-container-org82f7c35" class="outline-5">
-<h5 id="org82f7c35"><span class="section-number-5">1.8.0.1</span> Commands</h5>
+<div id="outline-container-org83e166a" class="outline-5">
+<h5 id="org83e166a"><span class="section-number-5">1.8.0.1</span> Commands</h5>
 <div class="outline-text-5" id="text-1-8-0-1">
 <ul class="org-ul">
 <li><code>C-c ]</code>: insert citation, typically with helm: <code>org-ref-helm-insert-cite-link</code></li>
@@ -746,7 +746,7 @@ Use <code>#+ATTR_HTML: :width 300px</code> to set the html export size.
 </div>
 
 <ol class="org-ol">
-<li><a id="org87013a3"></a>Navigation in the bib file<br />
+<li><a id="orgad5eca2"></a>Navigation in the bib file<br />
 <div class="outline-text-6" id="text-1-8-0-1-1">
 <dl class="org-dl">
 <dt><code>M-n</code></dt><dd>next entry</dd>
@@ -760,8 +760,8 @@ Use <code>#+ATTR_HTML: :width 300px</code> to set the html export size.
 </div>
 
 
-<div id="outline-container-org0e96a36" class="outline-2">
-<h2 id="org0e96a36"><span class="section-number-2">2</span> Markdown</h2>
+<div id="outline-container-orgd8606fd" class="outline-2">
+<h2 id="orgd8606fd"><span class="section-number-2">2</span> Markdown</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 title
@@ -799,12 +799,12 @@ Image &amp; link
 
 
 
-<div id="outline-container-orgc83b6f2" class="outline-2">
-<h2 id="orgc83b6f2"><span class="section-number-2">3</span> Latex</h2>
+<div id="outline-container-org954b720" class="outline-2">
+<h2 id="org954b720"><span class="section-number-2">3</span> Latex</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org3a6d5fb" class="outline-3">
-<h3 id="org3a6d5fb"><span class="section-number-3">3.1</span> Configuration</h3>
+<div id="outline-container-org3548c43" class="outline-3">
+<h3 id="org3548c43"><span class="section-number-3">3.1</span> Configuration</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 To see what is your tex home:
@@ -834,33 +834,357 @@ Command to update the <code>ls-R</code> database
 </div>
 </div>
 
-<div id="outline-container-org96b95b5" class="outline-3">
-<h3 id="org96b95b5"><span class="section-number-3">3.2</span> Mathematics</h3>
+<div id="outline-container-org8635582" class="outline-3">
+<h3 id="org8635582"><span class="section-number-3">3.2</span> Mathematics</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
-<li>Greek: <code>\alpha</code> (&alpha;) <code>\beta</code> (&beta;) <code>\gamma</code> (&gamma;) <code>\theta</code>
-(&theta;) <code>\phi</code> (&phi;) <code>\varphi</code> (&varphi;) <code>\xi</code> (&xi;) <code>\mu</code> (&mu;)
-<code>\pi</code> (&pi;) <code>\rho</code> (&rho;) <code>\sigma</code> (&sigma;) <code>\epsilon</code> (&epsilon;)
-<code>\partial</code> (&part;) <code>\ell</code> (&ell;)</li>
-<li>spacing: <code>\quad</code> (\quad) <code>\qquad</code> (\qquad)</li>
-<li>logic: <code>\cup</code> (&cup;) <code>\bigcup</code> (\bigcup) <code>\cap</code> (&cap;) <code>\vee</code> (&or;)
-<code>\wedge</code> (&and;) <code>\in</code> (&isin;) <code>\notin</code> (&notin;) <code>\neg</code> (&not;)
-<code>\subset</code> (&sub;) <code>\subseteq</code> (\subseteq) <code>\supset</code> (&sup;)
-<code>\supseteq</code> (\supseteq) <code>\le</code> (&le;) <code>\ge</code> (&ge;) <code>\neq</code> (&ne;)
-<code>\forall</code> (&forall;) <code>\exists</code> (&exist;)</li>
-<li>arrow: <code>\leftarrow</code> (&larr;) <code>\rightarrow</code> (&rarr;)
-<code>\Rightarrow</code> (&rArr;) <code>\Leftarrow</code> (&lArr;)
-<code>\Leftrightarrow</code> (&hArr;) <code>\longrightarrow</code>
-(\longrightarrow)</li>
-<li>accents: <code>\hat{a}</code> (\hat{a}), <code>\bar{a}</code> (\bar{a}) <code>\vec{x}</code> (\vec{x})</li>
-<li>math: <code>\infty</code> (&infin;) <code>\propto</code> (&prop;) <code>\lfloor</code> (&lfloor;)
-<code>\rfloor</code> (&rfloor;) <code>\lceil</code> (&lceil;) <code>\rceil</code> (&rceil;) <code>\sum_i^j</code>
-(&sum;<sub>i</sub><sup>j</sup>) <code>\sum\limits_i^j</code> (\(\sum\limits_i^j\)) <code>\int</code> (&int;)
-<code>\prod</code> (&prod;) <code>\times</code> (&times;) <code>\ldots</code> ( \ldots ) <code>\frac{a}{b}</code>
-(\frac{a}{b}) <code>\sqrt{n}</code> (\sqrt{n}) <code>\overline{abc}</code>
-(\overline{abc})</li>
-<li>mark: <code>\checkmark</code> (&check;)</li>
+<li>Greek</li>
 </ul>
+
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\alpha</code></td>
+<td class="org-left">(&alpha;)</td>
+<td class="org-left"><code>\beta</code></td>
+<td class="org-left">(&beta;)</td>
+<td class="org-left"><code>\gamma</code></td>
+<td class="org-left">(&gamma;)</td>
+<td class="org-left"><code>\theta</code></td>
+<td class="org-left">(&theta;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\phi</code></td>
+<td class="org-left">(&phi;)</td>
+<td class="org-left"><code>\varphi</code></td>
+<td class="org-left">(&varphi;)</td>
+<td class="org-left"><code>\xi</code></td>
+<td class="org-left">(&xi;)</td>
+<td class="org-left"><code>\mu</code></td>
+<td class="org-left">(&mu;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\pi</code></td>
+<td class="org-left">(&pi;)</td>
+<td class="org-left"><code>\rho</code></td>
+<td class="org-left">(&rho;)</td>
+<td class="org-left"><code>\sigma</code></td>
+<td class="org-left">(&sigma;)</td>
+<td class="org-left"><code>\epsilon</code></td>
+<td class="org-left">(&epsilon;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\partial</code></td>
+<td class="org-left">(&part;)</td>
+<td class="org-left"><code>\ell</code></td>
+<td class="org-left">(&ell;)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>spacing</li>
+</ul>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\quad</code></td>
+<td class="org-left">(\quad)</td>
+<td class="org-left"><code>\qquad</code></td>
+<td class="org-left">(\qquad)</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>logic</li>
+</ul>
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\cup</code></td>
+<td class="org-left">(&cup;)</td>
+<td class="org-left"><code>\bigcup</code></td>
+<td class="org-left">(\bigcup)</td>
+<td class="org-left"><code>\cap</code></td>
+<td class="org-left">(&cap;)</td>
+<td class="org-left"><code>\vee</code></td>
+<td class="org-left">(&or;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\wedge</code></td>
+<td class="org-left">(&and;)</td>
+<td class="org-left"><code>\in</code></td>
+<td class="org-left">(&isin;)</td>
+<td class="org-left"><code>\notin</code></td>
+<td class="org-left">(&notin;)</td>
+<td class="org-left"><code>\neg</code></td>
+<td class="org-left">(&not;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\subset</code></td>
+<td class="org-left">(&sub;)</td>
+<td class="org-left"><code>\subseteq</code></td>
+<td class="org-left">(\subseteq)</td>
+<td class="org-left"><code>\supset</code></td>
+<td class="org-left">(&sup;)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\supseteq</code></td>
+<td class="org-left">(\supseteq)</td>
+<td class="org-left"><code>\le</code></td>
+<td class="org-left">(&le;)</td>
+<td class="org-left"><code>\ge</code></td>
+<td class="org-left">(&ge;)</td>
+<td class="org-left"><code>\neq</code></td>
+<td class="org-left">(&ne;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\forall</code></td>
+<td class="org-left">(&forall;)</td>
+<td class="org-left"><code>\exists</code></td>
+<td class="org-left">(&exist;)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>arrow</li>
+</ul>
+
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\leftarrow</code></td>
+<td class="org-left">(&larr;)</td>
+<td class="org-left"><code>\rightarrow</code></td>
+<td class="org-left">(&rarr;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\Rightarrow</code></td>
+<td class="org-left">(&rArr;)</td>
+<td class="org-left"><code>\Leftarrow</code></td>
+<td class="org-left">(&lArr;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\Leftrightarrow</code></td>
+<td class="org-left">(&hArr;)</td>
+<td class="org-left"><code>\longrightarrow</code></td>
+<td class="org-left">(\longrightarrow)</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>accents</li>
+</ul>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\hat{a}</code></td>
+<td class="org-left">(\hat{a})</td>
+<td class="org-left"><code>\bar{a}</code></td>
+<td class="org-left">(\bar{a})</td>
+<td class="org-left"><code>\vec{x}</code></td>
+<td class="org-left">(\vec{x})</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>math</li>
+</ul>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\infty</code></td>
+<td class="org-left">(&infin;)</td>
+<td class="org-left"><code>\propto</code></td>
+<td class="org-left">(&prop;)</td>
+<td class="org-left"><code>\lfloor</code></td>
+<td class="org-left">(&lfloor;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\rfloor</code></td>
+<td class="org-left">(&rfloor;)</td>
+<td class="org-left"><code>\lceil</code></td>
+<td class="org-left">(&lceil;)</td>
+<td class="org-left"><code>\rceil</code></td>
+<td class="org-left">(&rceil;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\sum_i^j</code></td>
+<td class="org-left">(&sum;<sub>i</sub><sup>j</sup>)</td>
+<td class="org-left"><code>\sum\limits_i^j</code></td>
+<td class="org-left">(\(\sum\limits_i^j\))</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\int</code></td>
+<td class="org-left">(&int;)</td>
+<td class="org-left"><code>\prod</code></td>
+<td class="org-left">(&prod;)</td>
+<td class="org-left"><code>\times</code></td>
+<td class="org-left">(&times;)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\ldots</code></td>
+<td class="org-left">( \ldots )</td>
+<td class="org-left"><code>\frac{a}{b}</code></td>
+<td class="org-left">(\frac{a}{b})</td>
+<td class="org-left"><code>\sqrt{n}</code></td>
+<td class="org-left">(\sqrt{n})</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\overline{abc}</code></td>
+<td class="org-left">(\overline{abc})</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>mark</li>
+</ul>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\checkmark</code></td>
+<td class="org-left">(&check;)</td>
+</tr>
+</tbody>
+</table>
+
 
 
 <pre class="example">
@@ -885,8 +1209,8 @@ x & \text{if } x > 0.
 </div>
 </div>
 
-<div id="outline-container-orgbd171b9" class="outline-3">
-<h3 id="orgbd171b9"><span class="section-number-3">3.3</span> Primitives</h3>
+<div id="outline-container-org868bcf9" class="outline-3">
+<h3 id="org868bcf9"><span class="section-number-3">3.3</span> Primitives</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Font size can be tiny, scriptsize, footnotesize, small, normalsize,
@@ -947,8 +1271,8 @@ The following primitives are provided by <code>ulem</code>:
 </div>
 
 
-<div id="outline-container-orgcc56a87" class="outline-3">
-<h3 id="orgcc56a87"><span class="section-number-3">3.4</span> Tips</h3>
+<div id="outline-container-orgb8058f2" class="outline-3">
+<h3 id="orgb8058f2"><span class="section-number-3">3.4</span> Tips</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 The the default for LaTeX is to have no indent after sectional
@@ -993,8 +1317,8 @@ cite link (need to load a package like <code>hyperref</code> or <code>url</code>
 </div>
 
 
-<div id="outline-container-orgeebf535" class="outline-3">
-<h3 id="orgeebf535"><span class="section-number-3">3.5</span> Beamer</h3>
+<div id="outline-container-orgfd7fa30" class="outline-3">
+<h3 id="orgfd7fa30"><span class="section-number-3">3.5</span> Beamer</h3>
 <div class="outline-text-3" id="text-3-5">
 <pre class="example">
 #+AUTHOR: Hebi Li
@@ -1016,12 +1340,12 @@ Themes
 </div>
 </div>
 
-<div id="outline-container-org33285bc" class="outline-3">
-<h3 id="org33285bc"><span class="section-number-3">3.6</span> listings</h3>
+<div id="outline-container-org15f379a" class="outline-3">
+<h3 id="org15f379a"><span class="section-number-3">3.6</span> listings</h3>
 <div class="outline-text-3" id="text-3-6">
 </div>
-<div id="outline-container-org03f8aa2" class="outline-4">
-<h4 id="org03f8aa2"><span class="section-number-4">3.6.1</span> Global setting:</h4>
+<div id="outline-container-org6eff167" class="outline-4">
+<h4 id="org6eff167"><span class="section-number-4">3.6.1</span> Global setting:</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <p>
 Frame:
@@ -1083,8 +1407,8 @@ Style arbitrary content:
 </div>
 
 
-<div id="outline-container-org4341007" class="outline-4">
-<h4 id="org4341007"><span class="section-number-4">3.6.2</span> Local setting:</h4>
+<div id="outline-container-org3db59a3" class="outline-4">
+<h4 id="org3db59a3"><span class="section-number-4">3.6.2</span> Local setting:</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <div class="org-src-container">
 <pre class="src src-latex"><span style="color: #a020f0;">\begin</span>{<span style="color: #0000ff;">lstlisting</span>}[float, caption=The caption] <span style="color: #b22222;">% using caption will cause the title be: "listing 1: xxx"</span>
@@ -1100,12 +1424,12 @@ Style arbitrary content:
 </div>
 </div>
 
-<div id="outline-container-orgb3fab2f" class="outline-3">
-<h3 id="orgb3fab2f"><span class="section-number-3">3.7</span> Tikz</h3>
+<div id="outline-container-org78e9a09" class="outline-3">
+<h3 id="org78e9a09"><span class="section-number-3">3.7</span> Tikz</h3>
 <div class="outline-text-3" id="text-3-7">
 </div>
-<div id="outline-container-org930bd3a" class="outline-4">
-<h4 id="org930bd3a"><span class="section-number-4">3.7.1</span> Hacks</h4>
+<div id="outline-container-orgb2c12ab" class="outline-4">
+<h4 id="orgb2c12ab"><span class="section-number-4">3.7.1</span> Hacks</h4>
 <div class="outline-text-4" id="text-3-7-1">
 <p>
 When fitting figure, if you put text direclty into the fitted node, it
@@ -1115,8 +1439,8 @@ will not be vertically centered. Instead, create a new node at the
 </div>
 </div>
 
-<div id="outline-container-orga4696e9" class="outline-4">
-<h4 id="orga4696e9"><span class="section-number-4">3.7.2</span> FAQ</h4>
+<div id="outline-container-org9458960" class="outline-4">
+<h4 id="org9458960"><span class="section-number-4">3.7.2</span> FAQ</h4>
 <div class="outline-text-4" id="text-3-7-2">
 <p>
 Use <code>scale=0.5, transform shape</code> to scale
@@ -1124,8 +1448,8 @@ Use <code>scale=0.5, transform shape</code> to scale
 </div>
 </div>
 
-<div id="outline-container-org70d5588" class="outline-4">
-<h4 id="org70d5588"><span class="section-number-4">3.7.3</span> Code Structure</h4>
+<div id="outline-container-orge0ca9a7" class="outline-4">
+<h4 id="orge0ca9a7"><span class="section-number-4">3.7.3</span> Code Structure</h4>
 <div class="outline-text-4" id="text-3-7-3">
 <p>
 First, use the package
@@ -1187,8 +1511,8 @@ else, you need the <code>background</code> package.
 </p>
 </div>
 </div>
-<div id="outline-container-orgce800ab" class="outline-4">
-<h4 id="orgce800ab"><span class="section-number-4">3.7.4</span> Parameters (options)</h4>
+<div id="outline-container-org04a7037" class="outline-4">
+<h4 id="org04a7037"><span class="section-number-4">3.7.4</span> Parameters (options)</h4>
 <div class="outline-text-4" id="text-3-7-4">
 <p>
 The options are the same as using <code>\tikzset{options}</code>. Sometimes there
@@ -1239,8 +1563,8 @@ Path can be decorated, given <code>decorate</code> and
 </div>
 
 
-<div id="outline-container-orgae84cd2" class="outline-5">
-<h5 id="orgae84cd2"><span class="section-number-5">3.7.4.1</span> Scope</h5>
+<div id="outline-container-org10d15e2" class="outline-5">
+<h5 id="org10d15e2"><span class="section-number-5">3.7.4.1</span> Scope</h5>
 <div class="outline-text-5" id="text-3-7-4-1">
 <p>
 Parameters can have scope. It is introduced by <code>{scope}</code> invironment,
@@ -1264,8 +1588,8 @@ scoping. One line scope command is also available as
 </div>
 </div>
 
-<div id="outline-container-orgb94e6d9" class="outline-5">
-<h5 id="orgb94e6d9"><span class="section-number-5">3.7.4.2</span> Styles</h5>
+<div id="outline-container-org575cdde" class="outline-5">
+<h5 id="org575cdde"><span class="section-number-5">3.7.4.2</span> Styles</h5>
 <div class="outline-text-5" id="text-3-7-4-2">
 <p>
 Another way to group code together is to define a style. Like <code>help
@@ -1309,8 +1633,8 @@ Use it as <code>outline=blue</code>
 </div>
 </div>
 
-<div id="outline-container-org8c1b8c3" class="outline-4">
-<h4 id="org8c1b8c3"><span class="section-number-4">3.7.5</span> Coordinates</h4>
+<div id="outline-container-org9290227" class="outline-4">
+<h4 id="org9290227"><span class="section-number-4">3.7.5</span> Coordinates</h4>
 <div class="outline-text-4" id="text-3-7-5">
 <p>
 The general syntax is
@@ -1349,8 +1673,8 @@ Node is also often used for specify a coordinate. The implicit way is
 <li><code>(a.10)</code>: 10 degree angle</li>
 </ul>
 </div>
-<div id="outline-container-orgfb46e42" class="outline-5">
-<h5 id="orgfb46e42"><span class="section-number-5">3.7.5.1</span> Intersection</h5>
+<div id="outline-container-org75fcabb" class="outline-5">
+<h5 id="org75fcabb"><span class="section-number-5">3.7.5.1</span> Intersection</h5>
 <div class="outline-text-5" id="text-3-7-5-1">
 <p>
 Yet another way is to use <i>perpendicular</i> coordinate system. This
@@ -1368,8 +1692,8 @@ A more general way to find intersection of two pathes is to use
 </div>
 </div>
 
-<div id="outline-container-orge5d8bad" class="outline-5">
-<h5 id="orge5d8bad"><span class="section-number-5">3.7.5.2</span> Relative position</h5>
+<div id="outline-container-orgaff11d3" class="outline-5">
+<h5 id="orgaff11d3"><span class="section-number-5">3.7.5.2</span> Relative position</h5>
 <div class="outline-text-5" id="text-3-7-5-2">
 <ul class="org-ul">
 <li><code>++(x,y)</code>: You can also use relative position.  means shift to the
@@ -1385,8 +1709,8 @@ option.
 </div>
 </div>
 
-<div id="outline-container-orgdcc8399" class="outline-5">
-<h5 id="orgdcc8399"><span class="section-number-5">3.7.5.3</span> calc</h5>
+<div id="outline-container-org0f48920" class="outline-5">
+<h5 id="org0f48920"><span class="section-number-5">3.7.5.3</span> calc</h5>
 <div class="outline-text-5" id="text-3-7-5-3">
 <p>
 The package <code>calc</code> provide calculation for coordinates. The general
@@ -1421,8 +1745,8 @@ and project b onto c, get the intersection point.</li>
 </div>
 </div>
 
-<div id="outline-container-org0755c24" class="outline-4">
-<h4 id="org0755c24"><span class="section-number-4">3.7.6</span> Path</h4>
+<div id="outline-container-orga08561e" class="outline-4">
+<h4 id="orga08561e"><span class="section-number-4">3.7.6</span> Path</h4>
 <div class="outline-text-4" id="text-3-7-6">
 <p>
 Path is a list of path operations. The coordinates can be <code>cycle</code>, literally.
@@ -1490,12 +1814,12 @@ weired.</li>
 </div>
 </div>
 
-<div id="outline-container-org3890ec7" class="outline-4">
-<h4 id="org3890ec7"><span class="section-number-4">3.7.7</span> Actions (on path)</h4>
+<div id="outline-container-org7f97f81" class="outline-4">
+<h4 id="org7f97f81"><span class="section-number-4">3.7.7</span> Actions (on path)</h4>
 <div class="outline-text-4" id="text-3-7-7">
 </div>
-<div id="outline-container-org7208e90" class="outline-5">
-<h5 id="org7208e90"><span class="section-number-5">3.7.7.1</span> Draw</h5>
+<div id="outline-container-orgfcc8c01" class="outline-5">
+<h5 id="orgfcc8c01"><span class="section-number-5">3.7.7.1</span> Draw</h5>
 <div class="outline-text-5" id="text-3-7-7-1">
 <ul class="org-ul">
 <li><code>\draw</code>: <code>\draw</code> is an abbreviation for <code>\path[draw]</code>. It will draw
@@ -1516,8 +1840,8 @@ is abbrev for <code>\path[fill,draw]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-org88e83ad" class="outline-5">
-<h5 id="org88e83ad"><span class="section-number-5">3.7.7.2</span> Clip</h5>
+<div id="outline-container-orga5f2fe1" class="outline-5">
+<h5 id="orga5f2fe1"><span class="section-number-5">3.7.7.2</span> Clip</h5>
 <div class="outline-text-5" id="text-3-7-7-2">
 <ul class="org-ul">
 <li><code>\clip</code>: does NOT have <code>\clipdraw</code> because it seems not making
@@ -1534,8 +1858,8 @@ scope.
 </div>
 </div>
 
-<div id="outline-container-org5f9ff35" class="outline-5">
-<h5 id="org5f9ff35"><span class="section-number-5">3.7.7.3</span> Bounding box</h5>
+<div id="outline-container-org6c3929f" class="outline-5">
+<h5 id="org6c3929f"><span class="section-number-5">3.7.7.3</span> Bounding box</h5>
 <div class="outline-text-5" id="text-3-7-7-3">
 <p>
 A path can be used as a bounding box. It can be used in two ways, make
@@ -1585,8 +1909,8 @@ not the figure.
 </div>
 </div>
 
-<div id="outline-container-org9771c67" class="outline-4">
-<h4 id="org9771c67"><span class="section-number-4">3.7.8</span> Arrow</h4>
+<div id="outline-container-org1077d5f" class="outline-4">
+<h4 id="org1077d5f"><span class="section-number-4">3.7.8</span> Arrow</h4>
 <div class="outline-text-4" id="text-3-7-8">
 <p>
 Use the library <code>arrows.meta</code>.
@@ -1617,16 +1941,16 @@ line width, round, sharp</li>
 </ul>
 </div>
 
-<div id="outline-container-orge11d7f9" class="outline-5">
-<h5 id="orge11d7f9"><span class="section-number-5">3.7.8.1</span> <span class="todo TODO">TODO</span> Bending and flexing</h5>
+<div id="outline-container-org9829303" class="outline-5">
+<h5 id="org9829303"><span class="section-number-5">3.7.8.1</span> <span class="todo TODO">TODO</span> Bending and flexing</h5>
 </div>
-<div id="outline-container-org74ee5aa" class="outline-5">
-<h5 id="org74ee5aa"><span class="section-number-5">3.7.8.2</span> <span class="todo TODO">TODO</span> arrow tips</h5>
+<div id="outline-container-org8f58806" class="outline-5">
+<h5 id="org8f58806"><span class="section-number-5">3.7.8.2</span> <span class="todo TODO">TODO</span> arrow tips</h5>
 </div>
 </div>
 
-<div id="outline-container-org3cc763e" class="outline-4">
-<h4 id="org3cc763e"><span class="section-number-4">3.7.9</span> Node</h4>
+<div id="outline-container-org704139a" class="outline-4">
+<h4 id="org704139a"><span class="section-number-4">3.7.9</span> Node</h4>
 <div class="outline-text-4" id="text-3-7-9">
 <p>
 Nodes are intended for putting text. They cannot be easily nested.  A
@@ -1651,8 +1975,8 @@ is given by <code>name=&lt;name&gt;</code> option, or by <code>node(name){text}<
 </div>
 
 
-<div id="outline-container-org1fcccae" class="outline-5">
-<h5 id="org1fcccae"><span class="section-number-5">3.7.9.1</span> Options</h5>
+<div id="outline-container-orgfb5d0e5" class="outline-5">
+<h5 id="orgfb5d0e5"><span class="section-number-5">3.7.9.1</span> Options</h5>
 <div class="outline-text-5" id="text-3-7-9-1">
 <p>
 Options are only applied to the node itself, possible options are:
@@ -1681,8 +2005,8 @@ Options are only applied to the node itself, possible options are:
 </ul>
 </div>
 </div>
-<div id="outline-container-org274b6ec" class="outline-5">
-<h5 id="org274b6ec"><span class="section-number-5">3.7.9.2</span> Foreach</h5>
+<div id="outline-container-org4c5af9d" class="outline-5">
+<h5 id="org4c5af9d"><span class="section-number-5">3.7.9.2</span> Foreach</h5>
 <div class="outline-text-5" id="text-3-7-9-2">
 <p>
 Foreach works like this: the following creates three nodes.  You can
@@ -1695,8 +2019,8 @@ also nest the loops.
 </div>
 </div>
 
-<div id="outline-container-org129cca3" class="outline-5">
-<h5 id="org129cca3"><span class="section-number-5">3.7.9.3</span> Style</h5>
+<div id="outline-container-org367ee3c" class="outline-5">
+<h5 id="org367ee3c"><span class="section-number-5">3.7.9.3</span> Style</h5>
 <div class="outline-text-5" id="text-3-7-9-3">
 <p>
 The style hooks are <code>every node</code> and <code>every circle node</code>, <code>every
@@ -1711,11 +2035,11 @@ every node names inside the scope will be renamed under the hood.
 </div>
 </div>
 
-<div id="outline-container-org73353d1" class="outline-5">
-<h5 id="org73353d1"><span class="section-number-5">3.7.9.4</span> <span class="todo TODO">TODO</span> Multi-part node</h5>
+<div id="outline-container-org894772e" class="outline-5">
+<h5 id="org894772e"><span class="section-number-5">3.7.9.4</span> <span class="todo TODO">TODO</span> Multi-part node</h5>
 </div>
-<div id="outline-container-orgcd852f5" class="outline-5">
-<h5 id="orgcd852f5"><span class="section-number-5">3.7.9.5</span> Node Text</h5>
+<div id="outline-container-org0580b82" class="outline-5">
+<h5 id="org0580b82"><span class="section-number-5">3.7.9.5</span> Node Text</h5>
 <div class="outline-text-5" id="text-3-7-9-5">
 <p>
 Options
@@ -1742,8 +2066,8 @@ Options
 </div>
 </div>
 
-<div id="outline-container-org1541c8b" class="outline-5">
-<h5 id="org1541c8b"><span class="section-number-5">3.7.9.6</span> Node Positioning</h5>
+<div id="outline-container-orgf75360a" class="outline-5">
+<h5 id="orgf75360a"><span class="section-number-5">3.7.9.6</span> Node Positioning</h5>
 <div class="outline-text-5" id="text-3-7-9-6">
 <p>
 It uses anchor. The default is the center of the node. Possible anchors
@@ -1764,7 +2088,7 @@ thus he came up with some suger:
 </div>
 
 <ol class="org-ol">
-<li><a id="orgbef57ae"></a><span class="todo TODO">TODO</span> positioning<br />
+<li><a id="orgd804e8a"></a><span class="todo TODO">TODO</span> positioning<br />
 <div class="outline-text-6" id="text-3-7-9-6-1">
 <p>
 For more advanced placement, there's a library called
@@ -1777,8 +2101,8 @@ detail seems to be interesting.
 </ol>
 </div>
 
-<div id="outline-container-orgfacc32d" class="outline-5">
-<h5 id="orgfacc32d"><span class="section-number-5">3.7.9.7</span> Fitting</h5>
+<div id="outline-container-org0521299" class="outline-5">
+<h5 id="org0521299"><span class="section-number-5">3.7.9.7</span> Fitting</h5>
 <div class="outline-text-5" id="text-3-7-9-7">
 <p>
 This fits the scenario that you want a box that is just big enough to
@@ -1795,11 +2119,11 @@ nodes.
 </div>
 
 <ol class="org-ol">
-<li><a id="orgbf3d094"></a><span class="todo TODO">TODO</span> how to get several boxes to hold several things, but those boxes are of same size and aligned?<br /></li>
+<li><a id="orgadf4c58"></a><span class="todo TODO">TODO</span> how to get several boxes to hold several things, but those boxes are of same size and aligned?<br /></li>
 </ol>
 </div>
-<div id="outline-container-org7fd2629" class="outline-5">
-<h5 id="org7fd2629"><span class="section-number-5">3.7.9.8</span> Place on a line</h5>
+<div id="outline-container-orgc7e0462" class="outline-5">
+<h5 id="orgc7e0462"><span class="section-number-5">3.7.9.8</span> Place on a line</h5>
 <div class="outline-text-5" id="text-3-7-9-8">
 <p>
 These continue the node options
@@ -1823,8 +2147,8 @@ to the curve</li>
 </div>
 </div>
 
-<div id="outline-container-org94a32ff" class="outline-5">
-<h5 id="org94a32ff"><span class="section-number-5">3.7.9.9</span> Label &amp; Pin</h5>
+<div id="outline-container-org381154d" class="outline-5">
+<h5 id="org381154d"><span class="section-number-5">3.7.9.9</span> Label &amp; Pin</h5>
 <div class="outline-text-5" id="text-3-7-9-9">
 <p>
 This is used to add a node of text <i>next to another node</i>.
@@ -1882,12 +2206,12 @@ parser.
 </div>
 </div>
 
-<div id="outline-container-org672a7b2" class="outline-5">
-<h5 id="org672a7b2"><span class="section-number-5">3.7.9.10</span> <span class="todo TODO">TODO</span> 17.12 Edge and from here</h5>
+<div id="outline-container-org7adac32" class="outline-5">
+<h5 id="org7adac32"><span class="section-number-5">3.7.9.10</span> <span class="todo TODO">TODO</span> 17.12 Edge and from here</h5>
 </div>
 </div>
-<div id="outline-container-org69a54f6" class="outline-4">
-<h4 id="org69a54f6"><span class="section-number-4">3.7.10</span> Pic</h4>
+<div id="outline-container-orgfe7c9a7" class="outline-4">
+<h4 id="orgfe7c9a7"><span class="section-number-4">3.7.10</span> Pic</h4>
 <div class="outline-text-4" id="text-3-7-10">
 <p>
 You can define some shape, and then reuse it at any place a node can
@@ -1944,8 +2268,8 @@ syntax inside the option of pic, too.
 </div>
 </div>
 
-<div id="outline-container-org201805c" class="outline-4">
-<h4 id="org201805c"><span class="section-number-4">3.7.11</span> Graph</h4>
+<div id="outline-container-org988fe05" class="outline-4">
+<h4 id="org988fe05"><span class="section-number-4">3.7.11</span> Graph</h4>
 <div class="outline-text-4" id="text-3-7-11">
 <p>
 The graph system is syntax suger for nodes, for the sake of creating a
@@ -1979,12 +2303,12 @@ nothing special, just a <code>node [options] {text}</code>.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgc573ea6" class="outline-5">
-<h5 id="orgc573ea6"><span class="section-number-5">3.7.11.1</span> Specs</h5>
+<div id="outline-container-org966322c" class="outline-5">
+<h5 id="org966322c"><span class="section-number-5">3.7.11.1</span> Specs</h5>
 <div class="outline-text-5" id="text-3-7-11-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgbf4587e"></a>Group Spec<br />
+<li><a id="orgd5016db"></a>Group Spec<br />
 <div class="outline-text-6" id="text-3-7-11-1-1">
 <pre class="example">
 &lt;group spec&gt; ::= {[options] &lt;chain spec&gt; [,;] &lt;chain spec&gt; ...}
@@ -2028,7 +2352,7 @@ the source.</li>
 </div>
 </li>
 
-<li><a id="org9fb21c3"></a>Node Spec<br />
+<li><a id="orgf66fb64"></a>Node Spec<br />
 <div class="outline-text-6" id="text-3-7-11-1-2">
 <pre class="example">
 &lt;node spec&gt; ::= &lt;direct&gt; | &lt;reference&gt; | &lt;group spec&gt;
@@ -2097,8 +2421,8 @@ appear at whatever places a node spec can be.
 </div>
 
 
-<div id="outline-container-org260a532" class="outline-5">
-<h5 id="org260a532"><span class="section-number-5">3.7.11.2</span> Edge</h5>
+<div id="outline-container-org7447b22" class="outline-5">
+<h5 id="org7447b22"><span class="section-number-5">3.7.11.2</span> Edge</h5>
 <div class="outline-text-5" id="text-3-7-11-2">
 <p>
 The edge option can accept quotes.
@@ -2130,8 +2454,8 @@ a single edge by add options to the node.
 </div>
 </div>
 
-<div id="outline-container-org1f84f1f" class="outline-5">
-<h5 id="org1f84f1f"><span class="section-number-5">3.7.11.3</span> Coloring</h5>
+<div id="outline-container-org27f8065" class="outline-5">
+<h5 id="org27f8065"><span class="section-number-5">3.7.11.3</span> Coloring</h5>
 <div class="outline-text-5" id="text-3-7-11-3">
 <p>
 The color is logical color. Some predefined color including <code>source</code>
@@ -2167,8 +2491,8 @@ Set the nodes to color class, and connect them.
 </div>
 </div>
 
-<div id="outline-container-org030d7af" class="outline-5">
-<h5 id="org030d7af"><span class="section-number-5">3.7.11.4</span> Node placement</h5>
+<div id="outline-container-org9b975ed" class="outline-5">
+<h5 id="org9b975ed"><span class="section-number-5">3.7.11.4</span> Node placement</h5>
 <div class="outline-text-5" id="text-3-7-11-4">
 <p>
 The idea of graph is to make the positioning automatic. Thus we have
@@ -2209,8 +2533,8 @@ level 1/.style={...}
 </div>
 
 
-<div id="outline-container-org5311cd1" class="outline-4">
-<h4 id="org5311cd1"><span class="section-number-4">3.7.12</span> Tree</h4>
+<div id="outline-container-org0dd1091" class="outline-4">
+<h4 id="org0dd1091"><span class="section-number-4">3.7.12</span> Tree</h4>
 <div class="outline-text-4" id="text-3-7-12">
 <p>
 The node syntax can also be used to draw a tree. A node can be
@@ -2254,8 +2578,8 @@ also counts.
 </p>
 </div>
 
-<div id="outline-container-org89f17d8" class="outline-5">
-<h5 id="org89f17d8"><span class="section-number-5">3.7.12.1</span> Styling</h5>
+<div id="outline-container-org52e1cc0" class="outline-5">
+<h5 id="org52e1cc0"><span class="section-number-5">3.7.12.1</span> Styling</h5>
 <div class="outline-text-5" id="text-3-7-12-1">
 <p>
 Rules
@@ -2279,8 +2603,8 @@ Some hooks
 </div>
 </div>
 
-<div id="outline-container-orgecf3092" class="outline-5">
-<h5 id="orgecf3092"><span class="section-number-5">3.7.12.2</span> Placement</h5>
+<div id="outline-container-orgd639531" class="outline-5">
+<h5 id="orgd639531"><span class="section-number-5">3.7.12.2</span> Placement</h5>
 <div class="outline-text-5" id="text-3-7-12-2">
 <p>
 The following options can be specified multiple times for each portion
@@ -2303,14 +2627,14 @@ coming edge.
 </div>
 
 
-<div id="outline-container-org01b3569" class="outline-5">
-<h5 id="org01b3569"><span class="section-number-5">3.7.12.3</span> forest</h5>
+<div id="outline-container-org4eb982c" class="outline-5">
+<h5 id="org4eb982c"><span class="section-number-5">3.7.12.3</span> forest</h5>
 </div>
 </div>
 
 
-<div id="outline-container-orgdec25cc" class="outline-4">
-<h4 id="orgdec25cc"><span class="section-number-4">3.7.13</span> Matrix</h4>
+<div id="outline-container-org46ebaeb" class="outline-4">
+<h4 id="org46ebaeb"><span class="section-number-4">3.7.13</span> Matrix</h4>
 <div class="outline-text-4" id="text-3-7-13">
 <p>
 Matrix is actually a node with <code>matrix</code> as option. The <code>\matrix</code> is
@@ -2340,8 +2664,8 @@ specify the spacing for the next separation.
 </p>
 </div>
 
-<div id="outline-container-org5cff509" class="outline-5">
-<h5 id="org5cff509"><span class="section-number-5">3.7.13.1</span> Styling</h5>
+<div id="outline-container-org753bfe3" class="outline-5">
+<h5 id="org753bfe3"><span class="section-number-5">3.7.13.1</span> Styling</h5>
 <div class="outline-text-5" id="text-3-7-13-1">
 <ul class="org-ul">
 <li><code>every cell={&lt;row&gt;}{&lt;column&gt;}</code>: this is a style hook. The row and
@@ -2365,8 +2689,8 @@ column are optional.
 </div>
 </div>
 
-<div id="outline-container-org597a41a" class="outline-5">
-<h5 id="org597a41a"><span class="section-number-5">3.7.13.2</span> Anchoring</h5>
+<div id="outline-container-org50272f1" class="outline-5">
+<h5 id="org50272f1"><span class="section-number-5">3.7.13.2</span> Anchoring</h5>
 <div class="outline-text-5" id="text-3-7-13-2">
 <ul class="org-ul">
 <li><code>matrix anchor=&lt;anchor&gt;</code>: this anchor will only apply to the matrix</li>
@@ -2376,8 +2700,8 @@ column are optional.
 </div>
 </div>
 
-<div id="outline-container-orgd3485dc" class="outline-4">
-<h4 id="orgd3485dc"><span class="section-number-4">3.7.14</span> Data Visualization</h4>
+<div id="outline-container-org02393ce" class="outline-4">
+<h4 id="org02393ce"><span class="section-number-4">3.7.14</span> Data Visualization</h4>
 <div class="outline-text-4" id="text-3-7-14">
 <p>
 Use the library <code>datavisualization</code>.
@@ -2418,8 +2742,8 @@ Other commands include:
 </ul>
 </div>
 
-<div id="outline-container-orgbdc0f5f" class="outline-5">
-<h5 id="orgbdc0f5f"><span class="section-number-5">3.7.14.1</span> Axis system</h5>
+<div id="outline-container-org63c2246" class="outline-5">
+<h5 id="org63c2246"><span class="section-number-5">3.7.14.1</span> Axis system</h5>
 <div class="outline-text-5" id="text-3-7-14-1">
 <p>
 You can specify axis system manually, but typically just choose from
@@ -2460,8 +2784,8 @@ strategies. There are also styling options for ticks and grid.
 </div>
 </div>
 
-<div id="outline-container-org4532eab" class="outline-5">
-<h5 id="org4532eab"><span class="section-number-5">3.7.14.2</span> Provide data</h5>
+<div id="outline-container-org9e8bd66" class="outline-5">
+<h5 id="org9e8bd66"><span class="section-number-5">3.7.14.2</span> Provide data</h5>
 <div class="outline-text-5" id="text-3-7-14-2">
 <p>
 Use <code>data</code> command.
@@ -2517,8 +2841,8 @@ This is for reuse some data points.
 </div>
 </div>
 
-<div id="outline-container-org90aae48" class="outline-5">
-<h5 id="org90aae48"><span class="section-number-5">3.7.14.3</span> Visualizers</h5>
+<div id="outline-container-org2f59efa" class="outline-5">
+<h5 id="org2f59efa"><span class="section-number-5">3.7.14.3</span> Visualizers</h5>
 <div class="outline-text-5" id="text-3-7-14-3">
 <p>
 Specified in options.
@@ -2619,8 +2943,8 @@ style sheet=strong colors
 </div>
 </div>
 
-<div id="outline-container-orgdc85aed" class="outline-5">
-<h5 id="orgdc85aed"><span class="section-number-5">3.7.14.4</span> Style sheets &amp; Legends</h5>
+<div id="outline-container-org43825b0" class="outline-5">
+<h5 id="org43825b0"><span class="section-number-5">3.7.14.4</span> Style sheets &amp; Legends</h5>
 <div class="outline-text-5" id="text-3-7-14-4">
 <p>
 style sheet values:
@@ -2717,12 +3041,12 @@ The text of legend can be styled as well.
 
 
 
-<div id="outline-container-org3476eab" class="outline-4">
-<h4 id="org3476eab"><span class="section-number-4">3.7.15</span> <span class="todo TODO">TODO</span> Packages</h4>
+<div id="outline-container-orgbf54bcf" class="outline-4">
+<h4 id="orgbf54bcf"><span class="section-number-4">3.7.15</span> <span class="todo TODO">TODO</span> Packages</h4>
 <div class="outline-text-4" id="text-3-7-15">
 </div>
-<div id="outline-container-org9cc42b2" class="outline-5">
-<h5 id="org9cc42b2"><span class="section-number-5">3.7.15.1</span> shapes.multipart</h5>
+<div id="outline-container-org35eb5d2" class="outline-5">
+<h5 id="org35eb5d2"><span class="section-number-5">3.7.15.1</span> shapes.multipart</h5>
 <div class="outline-text-5" id="text-3-7-15-1">
 <div class="org-src-container">
 <pre class="src src-latex"><span style="color: #a020f0;">\usetikzlibrary</span>{shapes.multipart}
@@ -2744,16 +3068,16 @@ mynode/.style={split, rectangle split parts=2}
 
 
 
-<div id="outline-container-orgcfec95c" class="outline-2">
-<h2 id="orgcfec95c"><span class="section-number-2">4</span> UML</h2>
+<div id="outline-container-org8b8bdba" class="outline-2">
+<h2 id="org8b8bdba"><span class="section-number-2">4</span> UML</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org37f0f3b" class="outline-3">
-<h3 id="org37f0f3b"><span class="section-number-3">4.1</span> Plantuml</h3>
+<div id="outline-container-orgf784ff3" class="outline-3">
+<h3 id="orgf784ff3"><span class="section-number-3">4.1</span> Plantuml</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-org4a7384c" class="outline-4">
-<h4 id="org4a7384c"><span class="section-number-4">4.1.1</span> Installation</h4>
+<div id="outline-container-org6d74ec8" class="outline-4">
+<h4 id="org6d74ec8"><span class="section-number-4">4.1.1</span> Installation</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <p>
 Set the path in <code>org-plantuml-jar-path</code> variable in emacs.
@@ -2769,8 +3093,8 @@ The block line:
 </div>
 </div>
 
-<div id="outline-container-org1310924" class="outline-4">
-<h4 id="org1310924"><span class="section-number-4">4.1.2</span> Class Diagram</h4>
+<div id="outline-container-orgc808ae3" class="outline-4">
+<h4 id="orgc808ae3"><span class="section-number-4">4.1.2</span> Class Diagram</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <div class="org-src-container">
 <pre class="src src-plantuml">abstract class AbstractClass {
@@ -2803,8 +3127,8 @@ note left of AbstractClass : note left of A, can be\n&lt;b&gt;top,bottom,left,ri
 </div>
 </div>
 
-<div id="outline-container-org08e6a1e" class="outline-4">
-<h4 id="org08e6a1e"><span class="section-number-4">4.1.3</span> Sequence Diagram</h4>
+<div id="outline-container-orge4facb9" class="outline-4">
+<h4 id="orge4facb9"><span class="section-number-4">4.1.3</span> Sequence Diagram</h4>
 <div class="outline-text-4" id="text-4-1-3">
 <p>
 Sequence Diagram is used to describe the communication of <i>participants</i>.
@@ -2856,12 +3180,12 @@ note over Alice: note over Alice
 </div>
 
 
-<div id="outline-container-orgae6adfe" class="outline-2">
-<h2 id="orgae6adfe"><span class="section-number-2">5</span> Graphviz/Dot</h2>
+<div id="outline-container-org1473325" class="outline-2">
+<h2 id="org1473325"><span class="section-number-2">5</span> Graphviz/Dot</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgbad6813" class="outline-3">
-<h3 id="orgbad6813"><span class="section-number-3">5.1</span> Language</h3>
+<div id="outline-container-org7797e0c" class="outline-3">
+<h3 id="org7797e0c"><span class="section-number-3">5.1</span> Language</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 A graphviz source start from either <code>graph</code> or <code>digraph</code>. In graph,
@@ -2911,8 +3235,8 @@ A subgraph is a cluster, if its name has prefix <code>cluster</code>.
 </div>
 
 
-<div id="outline-container-org6e38e29" class="outline-3">
-<h3 id="org6e38e29"><span class="section-number-3">5.2</span> Attributes</h3>
+<div id="outline-container-org8781dc5" class="outline-3">
+<h3 id="org8781dc5"><span class="section-number-3">5.2</span> Attributes</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>attribute: <a href="https://graphviz.gitlab.io/_pages/doc/info/attrs.html">https://graphviz.gitlab.io/_pages/doc/info/attrs.html</a></li>
@@ -3042,8 +3366,8 @@ Node shape (some):
 </div>
 
 
-<div id="outline-container-org2cf0d1c" class="outline-3">
-<h3 id="org2cf0d1c"><span class="section-number-3">5.3</span> CMD</h3>
+<div id="outline-container-orgdc369c9" class="outline-3">
+<h3 id="orgdc369c9"><span class="section-number-3">5.3</span> CMD</h3>
 <div class="outline-text-3" id="text-5-3">
 <pre class="example">
 dot -Tpng -o xxx.png xxx.dot

@@ -197,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -246,14 +246,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7879ace">1. Remarkable</a></li>
-<li><a href="#orgfe511d5">2. Android</a></li>
+<li><a href="#org9f2af61">1. Remarkable</a></li>
+<li><a href="#orgc8861a2">2. Android</a></li>
+<li><a href="#org6ce80a1">3. C</a>
+<ul>
+<li><a href="#org586be4e">3.1. Context Sensitivity of C</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7879ace" class="outline-2">
-<h2 id="org7879ace"><span class="section-number-2">1</span> Remarkable</h2>
+<div id="outline-container-org9f2af61" class="outline-2">
+<h2 id="org9f2af61"><span class="section-number-2">1</span> Remarkable</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://github.com/reHackable/maxio">https://github.com/reHackable/maxio</a>
@@ -261,8 +266,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgfe511d5" class="outline-2">
-<h2 id="orgfe511d5"><span class="section-number-2">2</span> Android</h2>
+<div id="outline-container-orgc8861a2" class="outline-2">
+<h2 id="orgc8861a2"><span class="section-number-2">2</span> Android</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 H2O APN setting
@@ -300,6 +305,32 @@ Everything else Not set, including
 <li>Authentication Type</li>
 <li>MVNO Value</li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-org6ce80a1" class="outline-2">
+<h2 id="org6ce80a1"><span class="section-number-2">3</span> C</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org586be4e" class="outline-3">
+<h3 id="org586be4e"><span class="section-number-3">3.1</span> Context Sensitivity of C</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><a href="https://eli.thegreenplace.net/2007/11/24/the-context-sensitivity-of-cs-grammar/">https://eli.thegreenplace.net/2007/11/24/the-context-sensitivity-of-cs-grammar/</a></li>
+<li>The lexer hack <a href="https://en.wikipedia.org/wiki/The_lexer_hack">https://en.wikipedia.org/wiki/The_lexer_hack</a></li>
+<li>Clang use a thin lexer to avoid this problem, which is what I'm
+going to use as well</li>
+</ul>
+
+
+<p>
+Here is the C lexer rule and grammar for yacc
+</p>
+<ul class="org-ul">
+<li>lex: <a href="http://www.quut.com/c/ANSI-C-grammar-l.html">http://www.quut.com/c/ANSI-C-grammar-l.html</a></li>
+<li>yacc: <a href="http://www.quut.com/c/ANSI-C-grammar-y.html">http://www.quut.com/c/ANSI-C-grammar-y.html</a></li>
+</ul>
+</div>
 </div>
 </div>
 </div>

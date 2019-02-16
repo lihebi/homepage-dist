@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Circuit</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Circuit</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org865d0ab">1. Reference</a>
+<ul>
+<li><a href="#org5503fee">1.1. Foundations of analog and digital electronic circuits cite:2005-Book-Agarwal-Foundations</a></li>
+</ul>
+</li>
+<li><a href="#org012fa32">2. Simple Staff</a></li>
+<li><a href="#orgaa9cf81">3. Circuit Analysis</a>
+<ul>
+<li><a href="#orge214d6a">3.1. Energy storage elements</a>
+<ul>
+<li><a href="#orgca6c020">3.1.1. Capacitors in Lumped Model</a></li>
+<li><a href="#org8552be6">3.1.2. Inductors in Lumped Model</a></li>
+<li><a href="#orgf67617b">3.1.3. Impedance analysis</a></li>
+</ul>
+</li>
+<li><a href="#org0a09a4f">3.2. <span class="todo TODO">TODO</span> Pictures of typical circuit elements</a></li>
+</ul>
+</li>
+<li><a href="#org349c1d5">4. Digital abstraction</a>
+<ul>
+<li><a href="#org8b9bbea">4.1. <span class="todo TODO">TODO</span> Logical gates pictures</a></li>
+<li><a href="#org541daf6">4.2. <span class="todo TODO">TODO</span> transistor pictures</a></li>
+<li><a href="#orge5566ab">4.3. <span class="todo TODO">TODO</span> op-amp pictures and equations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org865d0ab" class="outline-2">
+<h2 id="org865d0ab"><span class="section-number-2">1</span> Reference</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org5503fee" class="outline-3">
+<h3 id="org5503fee"><span class="section-number-3">1.1</span> Foundations of analog and digital electronic circuits <a class='org-ref-reference' href="#2005-Book-Agarwal-Foundations">2005-Book-Agarwal-Foundations</a></h3>
+</div>
+</div>
+
+<div id="outline-container-org012fa32" class="outline-2">
+<h2 id="org012fa32"><span class="section-number-2">2</span> Simple Staff</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>DC: Direct Current.</li>
+<li>AC: Alternating current. Can be produced by an alternator. AC is
+easy to transform to high voltage. The higher the voltage, P=IV. To
+transform the same among of energy, the higher the voltage, the
+lower the current. And P<sub>waste</sub>=I2R, the lower the current, the
+lower the wasted energy in the wire. Thus, higher voltage enables
+long distance power distribution. It is hard to obtain high voltage
+direct current, thus can only support a mile. Thus, AC is used in
+distributing energy.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgaa9cf81" class="outline-2">
+<h2 id="orgaa9cf81"><span class="section-number-2">3</span> Circuit Analysis</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<i>Lumped element model</i> simplifies the description of the behaviour of
+spatially distributed physical systems into a topology consisting of
+discrete entities that approximate the behaviour of the distributed
+system under certain assumptions.
+</p>
+
+<p>
+In another word, it abstracts real items into a discrete finite space,
+such as a battery (voltage source) and a resistor circuit.
+</p>
+
+<p>
+Circuit analysis is basically solving the equations imposed with the
+following laws:
+</p>
+<dl class="org-dl">
+<dt>Kirchhoff's Current Law (KCL)</dt><dd>the current flowing out of any node
+in a circuit must equal the current flowing in.</dd>
+<dt>Kirchhoff's Voltage Law (KVL)</dt><dd>The algebraic sum of the branch
+voltages around any closed path in a network must be zero.</dd>
+<dt>Ohm's law</dt><dd>V=IR, voltage, current, resistance</dd>
+</dl>
+
+<p>
+There are several analysis methods:
+</p>
+<dl class="org-dl">
+<dt>node analysis method</dt><dd>We choose a node as ground, as a
+reference. The voltages of all other nodes can be
+represented. But it seems to be just apply KCL and KVL to get
+equations and solve them.</dd>
+<dt>Superposition method</dt><dd><p>
+This is for a circuit with multiple
+independent sources. The method analyzes each of them separately,
+by setting the other sources to zero:
+</p>
+<ul class="org-ul">
+<li>replace voltage source with a short circuit</li>
+<li>replace the current source with an open circuit</li>
+</ul>
+<p>
+The results are summed together.
+</p></dd>
+</dl>
+
+<p>
+The superposition method has some further extensions:
+</p>
+<dl class="org-dl">
+<dt>Thevenin's Theorem</dt><dd>Any combination of batteries and resistances
+with two terminals can be replaced by a single voltage source e
+(\(v_{TH}\)) and a single series resistor r (called <i>Thevenin's
+equivalent resistance</i>, \(R_{TH}\)). The value of e is the open
+circuit voltage at the terminals, and the value of r is e divided
+by the current with the terminals short circuited. The two
+circuits are called <i>Thevenin equivalent circuit</i>.</dd>
+<dt>Norton Theorem</dt><dd>Any collection of batteries and resistances with
+two terminals is electrically equivalent to an
+ideal current source i (i<sub>N</sub>) in parallel with a
+single resistor r (R<sub>N</sub>). The value of r is the
+same as that in the Thevenin equivalent and the
+current i can be found by dividing the open
+circuit voltage by r.</dd>
+<dt>(no term)</dt><dd>It is easy to see that the two theorems are equivalent, and $v<sub>TH</sub></dd>
+</dl>
+<p>
+t  = i<sub>N</sub> R<sub>TH</sub>$
+</p>
+
+<p>
+The power source can be:
+</p>
+<ul class="org-ul">
+<li>independent voltage source</li>
+<li>independent current source</li>
+<li id="Voltage-Controlled Current Source (VCCS)">\(i_{out} = f(v_{in})\),
+in the circuit, it has a diamond shape. The linear VCCS is
+\(i_{out} = g v_{in}\) where g is called <i>transconductance</i>.</li>
+<li id="Current Controlled Current Source (CCCS)">\(i_{out} = \alpha
+     i_{in}\), \(\alpha\) is called current transfer ratio.</li>
+<li id="Current-Controlled Voltage Source (CCVS)">\(v_{out} = r i_{in}\), r
+is called <i>transresistance</i>.</li>
+<li id="Voltage-Controlled Voltage Source (VCVS)">\(v_{out} = \mu v_{in}\),
+\(\mu\) is referered to as a <i>voltage transfer ratio</i>.</li>
+</ul>
+
+<p>
+Some of the circuit pattern is frequent enough to have their notations:
+</p>
+<ul class="org-ul">
+<li>parallel resistors: \(R_1 || R_2 = \frac{R_1R_2}{R_1 + R_2}\). This
+notations can be used for multiple parallel resistors, as \(R_1 ||
+  R_2 || R_3\).</li>
+</ul>
+
+<p>
+There is not a lot of nonlinear circuits, as in the textbook the
+example is a diode.
+</p>
+
+<blockquote>
+<p>
+A diode is a two-terminal electronic component that conducts current
+primarily in one direction (asymmetric conductance); it has low
+(ideally zero) resistance in one direction, and high (ideally
+infinite) resistance in the other.
+</p>
+</blockquote>
+
+<p>
+But the specific v-i non-linear relation is \(i_D = I_s
+(e^{\frac{v_D}{V_{TH}}} - 1)\), where I<sub>s</sub> and V<sub>TH</sub> are constants,
+typically \(10^{-12} A\) and \(0.025V\).
+</p>
+
+<p>
+There are several analysis method for non-linear circuits:
+</p>
+<ol class="org-ol">
+<li>directly use the relation equation</li>
+<li>graphical analysis</li>
+<li>piecewise linear</li>
+<li>incremental analysis, i.e. use derivation and integral</li>
+</ol>
+
+<p>
+Some other notes:
+</p>
+<ul class="org-ul">
+<li>Power = VI</li>
+<li>Pull down resistor R<sub>pd</sub>, pull up resistor R<sub>pu</sub>. These are used
+for a clean stable voltage, and also for controlling power
+consumption.</li>
+</ul>
+</div>
+
+<div id="outline-container-orge214d6a" class="outline-3">
+<h3 id="orge214d6a"><span class="section-number-3">3.1</span> Energy storage elements</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+This will be sensitive to time, different from those in resistors.
+</p>
+</div>
+
+<div id="outline-container-orgca6c020" class="outline-4">
+<h4 id="orgca6c020"><span class="section-number-4">3.1.1</span> Capacitors in Lumped Model</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+To capture the parasitic effects using Lumped Model, we model:
+</p>
+<ul class="org-ul">
+<li>resistance by resistors</li>
+<li>charge by capacitors</li>
+<li>flux by inductors</li>
+</ul>
+
+<p>
+Some physical parameters:
+</p>
+<ul class="org-ul">
+<li>gap of length l</li>
+<li>area overlap A</li>
+</ul>
+
+<p>
+We have:
+</p>
+<ul class="org-ul">
+<li>\(C = \epsilon A(t) / l(t)\)</li>
+<li>\(q(t) = Cv(t)\), where q is the charge of the capacitor</li>
+<li>\(i(t) = C \frac{dv}{dt}\). This is the most important equation used
+in KCL/KVL analysis.</li>
+<li>The stored energy is \(w_E(t) = \frac{q^2}{2C} = \frac{Cv(t)^2}{2}\)</li>
+</ul>
+
+<p>
+When connected together:
+</p>
+<ul class="org-ul">
+<li>series connection: \(\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}\)</li>
+<li>parallel connection: \(C=C_1+C_2\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8552be6" class="outline-4">
+<h4 id="org8552be6"><span class="section-number-4">3.1.2</span> Inductors in Lumped Model</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>the capacitor is a circuit element to model the effect of electric fields</li>
+<li>Correspondingly, the inductor models the effect of magnetic fields.</li>
+</ul>
+
+<p>
+Some physical parameters:
+</p>
+<ul class="org-ul">
+<li>number of turns N</li>
+<li>magnetic permeability (渗透性) &mu;</li>
+<li>length of the core l</li>
+<li>cross-sectional (横截面) area A</li>
+</ul>
+
+<p>
+We have:
+</p>
+<ul class="org-ul">
+<li>\(L(t) = \frac{\mu N^2 A(t)}{l(t)}\)</li>
+<li>flux: \(\lambda(t) = L(t)i(t)\)</li>
+<li>\(v(t) = L \frac{di}{dt}\). This is the most important equation used
+in KCL/KVL analysis.
+<ul class="org-ul">
+<li>Putting this in KCL/KVL simply results in a differential equation
+to solve. We will be looking at serial/parallel RC/RL
+circuit. This is called first-order transient circuit</li>
+<li>When two energy storage elements with independent states, it is
+second-order transient circuit, because we need to solve
+second-order differential equations.</li>
+</ul></li>
+<li>stored energy \(w_M(t) = \frac{\lambda^2(t)}{2L} = \frac{Li(t)^2}{2}\)</li>
+</ul>
+
+<p>
+When connected together:
+</p>
+<ul class="org-ul">
+<li>series connection: \(L=L_1+L_2\)</li>
+<li>parallel connection: \(\frac{1}{L} = \frac{1}{L_1} + \frac{1}{L_2}\)</li>
+</ul>
+
+<p>
+If we wind a second coil around an inductor, we arrive at the
+<i>transformer</i>. Assume the two coils have N<sub>1</sub> and N<sub>2</sub> turns
+respectively, we have \(\frac{v_1(t)}{N_1} = \frac{v_2(t)}{N_2}\), or
+\(N_1 i_1(t) = -N_2 i_2(t)\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf67617b" class="outline-4">
+<h4 id="orgf67617b"><span class="section-number-4">3.1.3</span> Impedance analysis</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+It is still very complex for solving the differential equations for LC
+circuits. If the input is sinusoidal, it is possible to derive a very
+simple analysis method.
+</p>
+
+<p>
+Under sinusoidal drive, we are almost always interested in the
+steady-state value of the capacitor voltage. One of the most important
+properties is that \(V_c = \frac{1/Cs_1}{R+1/Cs_1} V_i\).  This suggests
+a very simple method for finding the complex amplitude V<sub>c</sub> directly
+from the circuit: redraw the circuit, replacing resistors with R
+boxes, capacitors with 1/Cs<sub>1</sub> boxes, and cosine sources by their
+amplitudes.
+</p>
+
+<p>
+Basically three equations:
+</p>
+<ul class="org-ul">
+<li>\(V=\frac{1}{Cs} I\), where s is short hand for \(j \omega\), where j
+indicates imagination part of complex number, &omega; measures the
+frequency.</li>
+<li>\(V = L s I\)</li>
+<li>\(V = I R\)</li>
+</ul>
+
+<p>
+Thus, we can simply replace the C and L as a resistor! Specifically,
+the impedances (阻抗) of an inductor, a capacitor and a resistor are
+</p>
+<ul class="org-ul">
+<li>Z<sub>L</sub> = sL = jwL</li>
+<li>Z<sub>C</sub> = \frac{1}{sC} = \frac{1}{jwC}</li>
+<li>Z<sub>R</sub> = R</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0a09a4f" class="outline-3">
+<h3 id="org0a09a4f"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> Pictures of typical circuit elements</h3>
+</div>
+</div>
+
+<div id="outline-container-org349c1d5" class="outline-2">
+<h2 id="org349c1d5"><span class="section-number-2">4</span> Digital abstraction</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Basically we want to transform the analog voltage level to binary 0
+and 1. The <i>static discipline</i> is the specification to define the
+transformation. There is a <i>low voltage threshold</i> \(V_L\) and <i>high
+voltage threshold</i> \(V_H\). The space in between is called <i>forbidden
+region</i>. The other regions are the valid region.
+</p>
+
+<p>
+But we also need to consider noise. Suppose we have a sender and a
+receiver. We need to have different voltage level requirement for them
+to allow a margin for noise. Thus, we will have \(5V > V_{OH} > V_{IH}
+> V_{IL} > V_{OL} > 0V\). O stands for out, I stands for in. Clearly,
+we are proposing a stricter requirement for the sender. The difference
+of V<sub>OH</sub> and V<sub>IH</sub> is called the <i>Noise Margin</i>, i.e. \(NM_0 =
+V_{IL} - V_{OL}\) for logical 0, \(NM_1 = V_{OH} - V_{IH}\) for
+logical 1.
+</p>
+
+<p>
+Logical gate notations:
+</p>
+<ul class="org-ul">
+<li>AB: and</li>
+<li>A+B: or</li>
+<li>\bar{A}: not</li>
+</ul>
+
+<p>
+An implementation of logical gate is simply accepting two terminals,
+and output the voltage that is in the valid region of the desired
+result. To implement the logical gates, we typically need a switch in
+serial or parallel. However, mechanical switches require a form of
+physical pressure, thus we need a electronic switch.  <i>Meta Oxide
+Semiconductor Field-Effect Transistor (MOSFET)</i> is one such device, a
+three-terminal switch device. It contains three terminals
+</p>
+<dl class="org-dl">
+<dt>control terminal</dt><dd>called the gate G</dd>
+<dt>input terminal</dt><dd>called the drain D</dd>
+<dt>output terminal</dt><dd>called the source S</dd>
+</dl>
+<p>
+It has a simple v-i characteristics:
+</p>
+<ul class="org-ul">
+<li>if v<sub>GS</sub> &lt; V<sub>T</sub>, i<sub>DS</sub> = 0</li>
+<li>otherwise, v<sub>DS</sub> = 0. Thus it is a short circuit. In practice there
+is a small resistance (R<sub>ON</sub>). If we ignore it, the model is called
+<i>switch (S) model</i>. Otherwise, we are looking at <i>switch-resistor
+(SR) model</i>.</li>
+</ul>
+
+<p>
+Amplifiers also have three ports: the input (control) port, the output
+port, and the power port (because in order to amplify the signal, we
+need to supply power). It can amplify voltage, current, or both (with
+possibly different gain ratio).
+</p>
+
+<p>
+Amplifiers applications:
+</p>
+<ol class="org-ol">
+<li>signal transition in the presence of noise, because for the same
+amount of noise, the larger the signal, the stabler.</li>
+<li>buffering. A buffer isolate one part of a system from another. Many
+sensors produce a voltage signal, but cannot supply a large amount
+of current. A buffer device can replicate the sensor's voltage
+signal while also provides a large current.</li>
+</ol>
+
+<p>
+The implementation of amplifiers also uses the MOSFET, but different
+properties. It turns out that, a MOSFET will operate in <i>saturation
+region</i> if the following two conditions are satisfied:
+</p>
+<ul class="org-ul">
+<li>\(v_{GS} \le V_T\)</li>
+<li>\(v_{DS} \le v_{GS} - v_T\) (this is more important)</li>
+</ul>
+
+<p>
+This is called the saturation discipline:
+</p>
+
+<blockquote>
+<p>
+The saturation discipline simply says that the amplifier be operated
+in the saturation region of the MOSFET
+</p>
+</blockquote>
+
+<p>
+If these conditions are satisfied, we are looking at the
+<i>Switch-Current Source (SCS) model</i> of MOSFET, with the following
+characteristics:
+</p>
+<ul class="org-ul">
+<li>\(i_{DS} = \frac{K(v_{GS}-v_T)^2}{2}\) if \(v_{GS} \le V_T\). This is
+more important. K is a constant related to the physical properties
+of the MOSFET.</li>
+<li>\(i_{DS} = 0\) if \(v_{GS} < V_T\)</li>
+</ul>
+
+<p>
+The amplifier is a non-linear transfer function of voltage, and the
+analytical result is: \(v_O = V_S - K \frac{(v_{IN} - V_T)^2}{2}
+R_L\). We also care about what is the range of valid input values.
+</p>
+
+<p>
+Actually there is a transistor that can implement linear amplifier,
+the <i>bipolar junction transistor (BJT)</i>. It is a three terminal
+device, with the base (B), the collector (C), the emitter (E)
+corresponding to G, D, S. It has three regions: active region, cutoff
+region, saturation region. In the active region, the piecewise-linear
+model for BJT is:
+</p>
+<ul class="org-ul">
+<li>\(i_C = \beta i_B\) if \(i_B>0\) and \(v_{CE} > v_{BE} - 0.4V\)</li>
+<li>0 otherwise</li>
+</ul>
+<p>
+Using as an amplifier, it is $v<sub>O</sub> = V<sub>S</sub> - \frac{(v<sub>IN</sub> - 0.6)}{R<sub>I</sub>}
+&beta; R<sub>L</sub>
+</p>
+
+
+<p>
+However, the non-linear gain of the amplifier is not very desired. In
+many situations we want a linear gain. We can simply take a piece-wise
+linear of the v-i relationship to realize that. We choose an
+<i>operating point</i>, and around that point, we have a limited small
+range of perturbation (called <i>narrow operating range</i>) that
+approximate linear behavior. We will have the gain to be \(g_m =
+K(V_{GS} - V_T)\), and the voltage gain is \(\frac{v_o}{v_i} = -g_m
+R_L\). This model is derived by applying \(Taylor Series Expansion\), and
+ignore the second order term for small changes. This model is called
+<i>small-signal model</i>.
+</p>
+
+<p>
+Operational amplifier is the one that achieve fixed gain that is
+invariant to temperature. It has two input ports, v^+ and v^-, two
+power supply ports, and an output port. The special property of op-amp
+is that, it has a infinite gain, i.e. \(v_o = A(v^+ - v^-)\), A is
+usually about 300,000. The gain itself is not precise, but that is not
+important. The important part is that it is much larger than 1, thus
+the constant 1 can be ignored if it is added to the gain. The trick is
+to introduce two resistors, and possibly add negative feedback
+loop. The result is that, we have a gain of \(\frac{v_o}{v_i}\) to be
+only related to the ratio of the two resistors. Since resistors are
+stable, the gain is stable.
+</p>
+</div>
+
+<div id="outline-container-org8b9bbea" class="outline-3">
+<h3 id="org8b9bbea"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> Logical gates pictures</h3>
+</div>
+<div id="outline-container-org541daf6" class="outline-3">
+<h3 id="org541daf6"><span class="section-number-3">4.2</span> <span class="todo TODO">TODO</span> transistor pictures</h3>
+</div>
+<div id="outline-container-orge5566ab" class="outline-3">
+<h3 id="orge5566ab"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> op-amp pictures and equations</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
