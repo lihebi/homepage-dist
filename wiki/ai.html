@@ -288,7 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#orge05ced0">2.1. Discrete Variables</a></li>
 <li><a href="#org006c6c6">2.2. Continuous Variables</a></li>
 <li><a href="#org6487fc1">2.3. Expectation, Variance, Entropy</a></li>
-<li><a href="#orga8c0c9b">2.4. Independence</a></li>
+<li><a href="#org58a21f7">2.4. Independence</a></li>
 <li><a href="#orgd1c69f0">2.5. probability queries</a></li>
 <li><a href="#org738c53d">2.6. Non-parametric distributions</a></li>
 </ul>
@@ -306,7 +306,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgb3214ed">3.4. Markov Network</a>
 <ul>
-<li><a href="#org58a21f7">3.4.1. Independence</a></li>
+<li><a href="#org79d99f7">3.4.1. Independence</a></li>
 </ul>
 </li>
 <li><a href="#orge65c0db">3.5. <span class="todo TODO">TODO</span> Inference</a></li>
@@ -349,27 +349,9 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org77b356c">6. Similarity metrics</a></li>
-<li><a href="#orgca4a048">7. Frameworks</a>
+<li><a href="#orgc7371c7">7. Reference</a>
 <ul>
-<li><a href="#orgc1f6131">7.1. Deep Learning frameworks</a></li>
-<li><a href="#org94cf051">7.2. tensorflow</a>
-<ul>
-<li><a href="#orgfe54f3a">7.2.1. Dataset</a>
-<ul>
-<li><a href="#org82caf6d">7.2.1.1. Keras</a></li>
-<li><a href="#org6988ba1">7.2.1.2. TFRecord</a></li>
-<li><a href="#orgb774ea4">7.2.1.3. tf.data.Dataset</a></li>
-</ul>
-</li>
-<li><a href="#orgc4d9b72">7.2.2. NN Models</a></li>
-<li><a href="#org77fff83">7.2.3. Visualization</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgc7371c7">8. Reference</a>
-<ul>
-<li><a href="#orgfab3d37">8.1. cite:2007-Journal-Nasrabadi-Pattern Pattern recognition and machine learning</a></li>
+<li><a href="#orgfab3d37">7.1. cite:2007-Journal-Nasrabadi-Pattern Pattern recognition and machine learning</a></li>
 </ul>
 </li>
 </ul>
@@ -889,8 +871,8 @@ is \(\sigma_X=\sqrt{Var[X]}\).
 </div>
 
 
-<div id="outline-container-orga8c0c9b" class="outline-3">
-<h3 id="orga8c0c9b"><span class="section-number-3">2.4</span> Independence</h3>
+<div id="outline-container-org58a21f7" class="outline-3">
+<h3 id="org58a21f7"><span class="section-number-3">2.4</span> Independence</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Next, we introduce <b>independence</b>. First in events notation, we say
@@ -1440,8 +1422,8 @@ i.e. we have an edge <code>X-Y</code> if there is an edge <code>X-Y</code> in H.
 </p>
 </div>
 
-<div id="outline-container-org58a21f7" class="outline-4">
-<h4 id="org58a21f7"><span class="section-number-4">3.4.1</span> Independence</h4>
+<div id="outline-container-org79d99f7" class="outline-4">
+<h4 id="org79d99f7"><span class="section-number-4">3.4.1</span> Independence</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 The Markov Network also encodes a set of independence assertions,
@@ -2609,233 +2591,12 @@ Both the tfidf is 0, meaning "this" is not very informative.
 </div>
 </div>
 
-
-<div id="outline-container-orgca4a048" class="outline-2">
-<h2 id="orgca4a048"><span class="section-number-2">7</span> Frameworks</h2>
+<div id="outline-container-orgc7371c7" class="outline-2">
+<h2 id="orgc7371c7"><span class="section-number-2">7</span> Reference</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgc1f6131" class="outline-3">
-<h3 id="orgc1f6131"><span class="section-number-3">7.1</span> Deep Learning frameworks</h3>
-</div>
-
-<div id="outline-container-org94cf051" class="outline-3">
-<h3 id="org94cf051"><span class="section-number-3">7.2</span> tensorflow</h3>
-<div class="outline-text-3" id="text-7-2">
-<ul class="org-ul">
-<li>tf.cast</li>
-</ul>
-</div>
-
-<div id="outline-container-orgfe54f3a" class="outline-4">
-<h4 id="orgfe54f3a"><span class="section-number-4">7.2.1</span> Dataset</h4>
-<div class="outline-text-4" id="text-7-2-1">
-<p>
-tensorflow guide: <a href="https://www.tensorflow.org/guide/datasets">https://www.tensorflow.org/guide/datasets</a>
-</p>
-</div>
-
-<div id="outline-container-org82caf6d" class="outline-5">
-<h5 id="org82caf6d"><span class="section-number-5">7.2.1.1</span> Keras</h5>
-<div class="outline-text-5" id="text-7-2-1-1">
-<ul class="org-ul">
-<li>download data: <code>tf.keras.utils.get_file(fname, url, extract=False)</code>:
-get file into the cache if not already there, and get placed at
-<code>~/.keras/datasets/XXX</code>. The path is returned.</li>
-
-<li>preloaded datasets: <code>keras.datasets.mnist.load_data()</code>: this will
-gives Tuple of Numpy arrays: <code>(x_train, y_train), (x_test, y_test)</code>.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org6988ba1" class="outline-5">
-<h5 id="org6988ba1"><span class="section-number-5">7.2.1.2</span> TFRecord</h5>
-<div class="outline-text-5" id="text-7-2-1-2">
-<p>
-Create TFRecord
-</p>
-
-<p>
-<code>tf.data.experimental.TFRecordWriter</code>
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a0522d;">tfrec</span> = tf.data.experimental.TFRecordWriter(<span style="color: #8b2252;">'images.tfrec'</span>)
-tfrec.write(image_ds)
-</pre>
-</div>
-
-<p>
-Reading TFRecord (<code>tf.data.TFRecordDataset</code>):
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a0522d;">image_ds</span> = tf.data.TFRecordDataset(<span style="color: #8b2252;">'images.tfrec'</span>).<span style="color: #483d8b;">map</span>(preprocess_image)
-</pre>
-</div>
-
-<p>
-Seems that <code>TFRecordDataset</code> is simply a subclass of <code>Dataset</code>, and
-only the <code>__init__</code> function is different.
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-orgb774ea4" class="outline-5">
-<h5 id="orgb774ea4"><span class="section-number-5">7.2.1.3</span> tf.data.Dataset</h5>
-<div class="outline-text-5" id="text-7-2-1-3">
-<p>
-API doc: <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset">https://www.tensorflow.org/api_docs/python/tf/data/Dataset</a>
-</p>
-
-<p>
-This is an abstraction class of data that provides several useful APIs
-and is easy to feed into a model for training. 
-</p>
-
-
-<p>
-First, we need to create an instance, using the static method
-<code>tf.data.Dataset.from_tensor_slices</code>. This is more used than
-<code>from_tensors(tensors)</code> because the latter results in one element
-while the former uses the "slice", thus contains the list of tensors
-directly.
-</p>
-
-<p>
-All the APIs are functional: they does not alter the instance, but
-return a new instance. The useful APIs of this class:
-</p>
-<ul class="org-ul">
-<li><code>map</code></li>
-<li><code>zip</code></li>
-<li><code>shuffle</code></li>
-<li><code>repeat(count=None)</code>: by default this will make the dataset repeat
-forever. When doing the training, you want that.</li>
-<li><code>batch(batch_size, drop_remainder=False)</code>: the resulting tensor will
-have one more outer dimension that is the batch size. The size seems
-to be a placehoder, represented by <code>?</code>. The batch may not be divided
-evenly, thus the last batch may have a smaller batch dimension. To
-prevent this if desired, set <code>drop_remainder</code> to true.</li>
-<li><code>prefetch(buffer_size=AUTOTUNE)</code>: `prefetch` lets the dataset fetch
-batches, in the background while the model is training.</li>
-<li><code>take</code>: useful for visualization</li>
-</ul>
-
-<p>
-An extended example:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a0522d;">all_image_paths</span> = [<span style="color: #8b2252;">'/path/to/img1'</span>, <span style="color: #8b2252;">'/path/to/img2'</span>, ...]
-<span style="color: #a0522d;">path_ds</span> = tf.data.Dataset.from_tensor_slices(all_image_paths)
-<span style="color: #a0522d;">image_ds</span> = path_ds.<span style="color: #483d8b;">map</span>(load_and_preprocess_image)
-
-<span style="color: #a0522d;">all_image_labels</span> = [<span style="color: #8b2252;">'tulips'</span>, <span style="color: #8b2252;">'daisy'</span>, <span style="color: #8b2252;">'sunflowers'</span>, ...]
-<span style="color: #a0522d;">label_ds</span> = tf.data.Dataset.from_tensor_slices(tf.cast(all_image_labels, tf.int64))
-
-<span style="color: #a0522d;">image_label_ds</span> = tf.data.Dataset.<span style="color: #483d8b;">zip</span>((image_ds, label_ds))
-
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">load_and_preprocess_from_path_label</span>(path, label):
-<span style="background-color: #f2f2f2;"> </span> <span style="color: #a020f0;">return</span> load_and_preprocess_image(path), label
-<span style="color: #a0522d;">image_label_ds</span> = ds.<span style="color: #483d8b;">map</span>(load_and_preprocess_from_path_label)
-
-<span style="color: #a0522d;">ds</span> = tf.data.Dataset.from_tensor_slices((all_image_paths, all_image_labels))
-<span style="color: #a0522d;">ds</span> = image_label_ds.shuffle(buffer_size=image_count)
-<span style="color: #a0522d;">ds</span> = ds.repeat()
-<span style="color: #a0522d;">ds</span> = ds.batch(BATCH_SIZE)
-<span style="color: #a0522d;">ds</span> = ds.prefetch()
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-orgc4d9b72" class="outline-4">
-<h4 id="orgc4d9b72"><span class="section-number-4">7.2.2</span> NN Models</h4>
-</div>
-
-<div id="outline-container-org77fff83" class="outline-4">
-<h4 id="org77fff83"><span class="section-number-4">7.2.3</span> Visualization</h4>
-<div class="outline-text-4" id="text-7-2-3">
-<p>
-Display an image file on disk:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">import</span> IPython.display <span style="color: #a020f0;">as</span> display
-<span style="color: #a0522d;">image</span> = display.Image(image_path)
-display.display(image)
-</pre>
-</div>
-
-<p>
-Read a image file on disk into tensor:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">load_and_preprocess_image</span>(img_path)
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a0522d;">img_raw</span> = tf.read_file(img_path)
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a0522d;">img_tensor</span> = tf.image.decode_image(img_raw)
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a020f0;">print</span>(img_tensor.shape)         <span style="color: #b22222;"># </span><span style="color: #b22222;">(212, 320, 3)</span>
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a020f0;">print</span>(img_tensor.dtype)         <span style="color: #b22222;"># </span><span style="color: #b22222;">&lt;dtype: 'uint8'&gt;</span>
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a0522d;">img_final</span> = tf.image.resize_images(img_tensor, [192, 192])
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a0522d;">img_final</span> = img_final/255.0
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a020f0;">print</span>(img_final.shape)          <span style="color: #b22222;"># </span><span style="color: #b22222;">(192, 192, 3)</span>
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a020f0;">print</span>(img_final.numpy().<span style="color: #483d8b;">min</span>())  <span style="color: #b22222;"># </span><span style="color: #b22222;">0.0</span>
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a020f0;">print</span>(img_final.numpy().<span style="color: #483d8b;">max</span>())  <span style="color: #b22222;"># </span><span style="color: #b22222;">1.0</span>
-<span style="background-color: #f2f2f2;"> </span>   <span style="color: #a020f0;">return</span> img_final
-</pre>
-</div>
-
-<p>
-Display image data by matplotlib:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">import</span> matplotlib.pyplot <span style="color: #a020f0;">as</span> plt
-plt.imshow(image_data)
-plt.grid(<span style="color: #008b8b;">False</span>)
-plt.xlabel(<span style="color: #8b2252;">'some text'</span>)
-plt.title(<span style="color: #8b2252;">'title'</span>)
-<span style="color: #a020f0;">print</span>()
-</pre>
-</div>
-
-<p>
-Matplotlib:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">import</span> matplotlib.pyplot <span style="color: #a020f0;">as</span> plt
-plt.figure(figsize=(8,8))
-<span style="color: #a020f0;">for</span> n,image <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">enumerate</span>(image_ds.take(4)):
-<span style="background-color: #f2f2f2;"> </span> plt.subplot(2,2,n+1)
-<span style="background-color: #f2f2f2;"> </span> plt.imshow(image)
-<span style="background-color: #f2f2f2;"> </span> plt.grid(<span style="color: #008b8b;">False</span>)
-<span style="background-color: #f2f2f2;"> </span> plt.xticks([])
-<span style="background-color: #f2f2f2;"> </span> plt.yticks([])
-<span style="background-color: #f2f2f2;"> </span> plt.xlabel(caption_image(all_image_paths[n]))
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-<div id="outline-container-orgc7371c7" class="outline-2">
-<h2 id="orgc7371c7"><span class="section-number-2">8</span> Reference</h2>
-<div class="outline-text-2" id="text-8">
-</div>
 <div id="outline-container-orgfab3d37" class="outline-3">
-<h3 id="orgfab3d37"><span class="section-number-3">8.1</span> <a class='org-ref-reference' href="#2007-Journal-Nasrabadi-Pattern">2007-Journal-Nasrabadi-Pattern</a> Pattern recognition and machine learning</h3>
+<h3 id="orgfab3d37"><span class="section-number-3">7.1</span> <a class='org-ref-reference' href="#2007-Journal-Nasrabadi-Pattern">2007-Journal-Nasrabadi-Pattern</a> Pattern recognition and machine learning</h3>
 </div>
 </div>
 </div>
