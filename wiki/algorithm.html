@@ -334,14 +334,14 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0f0f2c3">5.4. Shortest path</a>
 <ul>
-<li><a href="#org851d3c4">5.4.1. <span class="todo TODO">TODO</span> Bellman-Ford algorithm</a></li>
-<li><a href="#org323cc1a">5.4.2. <span class="todo TODO">TODO</span> Dijkstra's algorithm</a></li>
+<li><a href="#org851d3c4">5.4.1. Bellman-Ford algorithm</a></li>
+<li><a href="#org323cc1a">5.4.2. Dijkstra's algorithm</a></li>
 </ul>
 </li>
-<li><a href="#org3fc2898">5.5. <span class="todo TODO">TODO</span> Network Flow Problems</a>
+<li><a href="#org3fc2898">5.5. Network Flow Problems</a>
 <ul>
-<li><a href="#org139c644">5.5.1. <span class="todo TODO">TODO</span> Ford-Fulkerson algorithm</a></li>
-<li><a href="#org92b4717">5.5.2. <span class="todo TODO">TODO</span> Edmonds-Karp algorithm</a></li>
+<li><a href="#orgd64c4a4">5.5.1. Ford-Fulkerson method</a></li>
+<li><a href="#org92b4717">5.5.2. Edmonds-Karp algorithm</a></li>
 </ul>
 </li>
 </ul>
@@ -353,7 +353,7 @@ for the JavaScript code in this tag.
 <li><a href="#org1af7684">6.3. <span class="todo TODO">TODO</span> Knuth-Morris-Pratt algorithm</a></li>
 </ul>
 </li>
-<li><a href="#orgb605e3f">7. <span class="todo TODO">TODO</span> Dynamic Programming</a>
+<li><a href="#org40034b7">7. <span class="todo TODO">TODO</span> Dynamic Programming</a>
 <ul>
 <li><a href="#org2d17f16">7.1. The rod-cutting problem</a></li>
 <li><a href="#org89444c2">7.2. <span class="todo TODO">TODO</span> Largest common subsequence</a></li>
@@ -388,7 +388,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgeb6b02d">11.1. <span class="todo TODO">TODO</span> Devide-and-Conquer</a></li>
 <li><a href="#orgb911ffa">11.2. Recursive</a></li>
-<li><a href="#org12e518e">11.3. Dynamic Programming</a></li>
+<li><a href="#orgedaecc6">11.3. Dynamic Programming</a></li>
 </ul>
 </li>
 <li><a href="#orgd5f4d88">12. Old Writings</a>
@@ -399,24 +399,24 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org988cb0b">12.2. Linear congruential generator</a></li>
-<li><a href="#org40034b7">12.3. Dynamic Programming</a>
+<li><a href="#orgb07832c">12.3. Dynamic Programming</a>
 <ul>
 <li><a href="#orgb9120db">12.3.1. One dimension</a>
 <ul>
-<li><a href="#orgb0e2b6c">12.3.1.1. Define sub-problems</a></li>
-<li><a href="#org1973569">12.3.1.2. Recurrence formula</a></li>
+<li><a href="#orgb799677">12.3.1.1. Define sub-problems</a></li>
+<li><a href="#orgdfb7fd6">12.3.1.2. Recurrence formula</a></li>
 </ul>
 </li>
 <li><a href="#org9c38feb">12.3.2. Two Dimensions</a>
 <ul>
-<li><a href="#orgb799677">12.3.2.1. Define sub-problems</a></li>
-<li><a href="#org504c187">12.3.2.2. Recurrence formula</a></li>
+<li><a href="#org31ca7e9">12.3.2.1. Define sub-problems</a></li>
+<li><a href="#orged4b124">12.3.2.2. Recurrence formula</a></li>
 </ul>
 </li>
 <li><a href="#org994ee22">12.3.3. Interval DP</a>
 <ul>
 <li><a href="#org40be234">12.3.3.1. Define sub-problem</a></li>
-<li><a href="#orgdfb7fd6">12.3.3.2. Recurrence formula</a></li>
+<li><a href="#orgc924dac">12.3.3.2. Recurrence formula</a></li>
 </ul>
 </li>
 <li><a href="#org669d27a">12.3.4. Tree DP</a>
@@ -1246,31 +1246,204 @@ while Q:
 <div id="outline-container-org0f0f2c3" class="outline-3">
 <h3 id="org0f0f2c3"><span class="section-number-3">5.4</span> Shortest path</h3>
 <div class="outline-text-3" id="text-5-4">
-</div>
-<div id="outline-container-org851d3c4" class="outline-4">
-<h4 id="org851d3c4"><span class="section-number-4">5.4.1</span> <span class="todo TODO">TODO</span> Bellman-Ford algorithm</h4>
-</div>
-<div id="outline-container-org323cc1a" class="outline-4">
-<h4 id="org323cc1a"><span class="section-number-4">5.4.2</span> <span class="todo TODO">TODO</span> Dijkstra's algorithm</h4>
+<p>
+Given a weighted, directed graph, the shortest path from u to v is the
+path that has minimum weight. We talk mainly about single-source,
+single-destination shortest path.
+</p>
+
+<p>
+We add to attributes to vertices of the graph:
+</p>
+<ul class="org-ul">
+<li><code>v.d</code>: the upper bound of shortest path from s to v. Initialize to infinite.</li>
+<li><code>v.pred</code>: the predecessor for that upper bound. Initialize to nil.</li>
+</ul>
+
+<p>
+First a helper function, relax of an edge (u,v), by checking whether
+setting v.pred to u improve v.d:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">relax</span>(u,v):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">if</span> v.d &gt; u.d + w(u,v):
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">v.d</span> = u.d + w(u,v)
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">v.pred</span> = u
+</pre>
 </div>
 </div>
 
-<div id="outline-container-org3fc2898" class="outline-3">
-<h3 id="org3fc2898"><span class="section-number-3">5.5</span> <span class="todo TODO">TODO</span> Network Flow Problems</h3>
-<div class="outline-text-3" id="text-5-5">
+
+<div id="outline-container-org851d3c4" class="outline-4">
+<h4 id="org851d3c4"><span class="section-number-4">5.4.1</span> Bellman-Ford algorithm</h4>
+<div class="outline-text-4" id="text-5-4-1">
 <p>
-Maximium Flow &amp; Minimum cut
+This is kind of a brute force algorithm. It relax all edges \(|V|-1\)
+times. Each time, at least one node is set to its optimal, and the
+source vertex s.d=0, thus \(|V|-1\) iterations will make sure all
+vertices are set to optimal.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">bellman_ford</span>():
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(|V|-1):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> (u,v) <span class="org-keyword">in</span> |E|:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> relax(u,v)
+</pre>
+</div>
+
+<p>
+The running time is |V||E|
 </p>
 </div>
+</div>
 
-<div id="outline-container-org139c644" class="outline-4">
-<h4 id="org139c644"><span class="section-number-4">5.5.1</span> <span class="todo TODO">TODO</span> Ford-Fulkerson algorithm</h4>
+<div id="outline-container-org323cc1a" class="outline-4">
+<h4 id="org323cc1a"><span class="section-number-4">5.4.2</span> Dijkstra's algorithm</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<p>
+In addition to weighted, directly graph, it assumes all weights are
+non-negative. The key idea has two fold:
+</p>
+<ol class="org-ol">
+<li>It maintains a set S of vertices whose "d" has been determined.</li>
+<li>Every iteration, it tries to determine one more vertex. It greedily
+choose the one with minimum "d".</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">dijkstra</span>():
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">sovled</span> = {}
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">s.d</span> = 0
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">q</span> = min_priority_queue(V, <span class="org-string">"d"</span>)
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">while</span> q:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">u</span> = q.pop_min()
+<span class="org-highlight-indentation"> </span>   solved.insert(u)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> v <span class="org-keyword">in</span> u.adj:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> relax(u,v)
+</pre>
 </div>
+
+
+<p>
+The running time is \(|V|^2 + |E|\). If the priority queue is
+implemented using Fibonacci heap (TODO), the running time is \(|V|
+log |V| + |E|\).
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3fc2898" class="outline-3">
+<h3 id="org3fc2898"><span class="section-number-3">5.5</span> Network Flow Problems</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+The constraints of a flow network:
+</p>
+
+<ol class="org-ol">
+<li>capacity constraint: 0 &le; f(u,v) &le; c(u,v)</li>
+<li>flow conservation: &sum;<sub>v&isin; V</sub> f(v,u) = &sum;<sub>v &isin; V</sub>
+f(u,v). I.e. the ingoing and outgoing flow of a node shall equal.</li>
+</ol>
+
+<p>
+We are interested in two equivalent problems:
+</p>
+<ul class="org-ul">
+<li>maximum flow</li>
+<li>minimum cut</li>
+</ul>
+
+<p>
+Residual network:
+</p>
+<ul class="org-ul">
+<li>Residual network: given capacity c and flow f, the capacity of
+residual network \(c_f\) is simply \(c(u,v)-f(u,v)\).</li>
+<li>augmenting path: given a flow network G and a flow f, the augmenting
+path p is a simple path from s to t in the residual network \(G_f\)</li>
+</ul>
+
+<p>
+The cut of a flow is (S,T) where S + T = V. The flow f(S,T) across the
+cut is defined as:
+</p>
+
+<p>
+\[f(S,T) = \sum_{u\in S} \sum_{v \in T} f(u,v) - \sum_{u\in S} \sum_{v \in T} f(v,u)\]
+</p>
+
+<p>
+The capacity of the cut is:
+</p>
+
+<p>
+\[c(S,T) = \sum_{u\in S} \sum_{v \in T} c(u,v)\].
+</p>
+
+<p>
+The minimum cut is the one whose capacity is minimum. The max-flow
+min-cut theorem states that the minimum cut equals to the
+max-flow. Specifically, the following conditions are equivalent:
+</p>
+
+<ol class="org-ol">
+<li>f is maximum flow in G</li>
+<li>The residual network \(G_f\) contains no augmenting paths</li>
+<li>|f|=c(S,T) for some cut (S,T) of G.
+<ul class="org-ul">
+<li>This should be further written as |f| equal to the capacity of
+minimum cut of G.</li>
+</ul></li>
+</ol>
+</div>
+
+<div id="outline-container-orgd64c4a4" class="outline-4">
+<h4 id="orgd64c4a4"><span class="section-number-4">5.5.1</span> Ford-Fulkerson method</h4>
+<div class="outline-text-4" id="text-5-5-1">
+<p>
+It is a method instead of an algorithm because it has several
+different implementations with different running time.
+</p>
+
+<p>
+The general ford-fulkerson:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">f</span> = 0
+<span class="org-keyword">while</span> <span class="org-constant">True</span>:
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">res_net</span> = residual_network(G, f):
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">aug_p</span> = augmenting_path(res_net)
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">if</span> <span class="org-keyword">not</span> aug_p: <span class="org-keyword">break</span>
+<span class="org-highlight-indentation"> </span> do_augment(aug_p)
+<span class="org-keyword">return</span> f
+</pre>
+</div>
+
+<p>
+Apparently the key point is how to find the augmenting path. If chosen
+poorly, it may not terminate.
+</p>
+</div>
+</div>
+
 <div id="outline-container-org92b4717" class="outline-4">
-<h4 id="org92b4717"><span class="section-number-4">5.5.2</span> <span class="todo TODO">TODO</span> Edmonds-Karp algorithm</h4>
+<h4 id="org92b4717"><span class="section-number-4">5.5.2</span> Edmonds-Karp algorithm</h4>
+<div class="outline-text-4" id="text-5-5-2">
+<p>
+This algorithm is to use BFS for finding the augmenting path. The
+shortest path (with unit edge weight) from s to t is selected in this
+way. It runs in O(VE<sup>2</sup>), i.e. polynomial time.
+</p>
 </div>
 </div>
 </div>
+</div>
+
 
 <div id="outline-container-org5cc12ca" class="outline-2">
 <h2 id="org5cc12ca"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> String algorithms</h2>
@@ -1287,8 +1460,8 @@ Maximium Flow &amp; Minimum cut
 </div>
 </div>
 
-<div id="outline-container-orgb605e3f" class="outline-2">
-<h2 id="orgb605e3f"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Dynamic Programming</h2>
+<div id="outline-container-org40034b7" class="outline-2">
+<h2 id="org40034b7"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Dynamic Programming</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 The core idea is to store the solution to subproblems, thus avoid
@@ -1422,8 +1595,8 @@ Otherwise return false.
 <div id="outline-container-orgb911ffa" class="outline-3">
 <h3 id="orgb911ffa"><span class="section-number-3">11.2</span> Recursive</h3>
 </div>
-<div id="outline-container-org12e518e" class="outline-3">
-<h3 id="org12e518e"><span class="section-number-3">11.3</span> Dynamic Programming</h3>
+<div id="outline-container-orgedaecc6" class="outline-3">
+<h3 id="orgedaecc6"><span class="section-number-3">11.3</span> Dynamic Programming</h3>
 </div>
 </div>
 
@@ -1512,8 +1685,8 @@ If c ≠ 0, the method is called a mixed congruential generator.
 </div>
 
 
-<div id="outline-container-org40034b7" class="outline-3">
-<h3 id="org40034b7"><span class="section-number-3">12.3</span> Dynamic Programming</h3>
+<div id="outline-container-orgb07832c" class="outline-3">
+<h3 id="orgb07832c"><span class="section-number-3">12.3</span> Dynamic Programming</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 Solve problem by breaking down into simpler sub-problems.
@@ -1528,8 +1701,8 @@ Given n, find the number of different ways to write n as the sum of 1,3,4
 </p>
 </div>
 
-<div id="outline-container-orgb0e2b6c" class="outline-5">
-<h5 id="orgb0e2b6c"><span class="section-number-5">12.3.1.1</span> Define sub-problems</h5>
+<div id="outline-container-orgb799677" class="outline-5">
+<h5 id="orgb799677"><span class="section-number-5">12.3.1.1</span> Define sub-problems</h5>
 <div class="outline-text-5" id="text-12-3-1-1">
 <p>
 D<sub>n</sub> is the number of ways to write n as sum of 1,3,4
@@ -1537,8 +1710,8 @@ D<sub>n</sub> is the number of ways to write n as sum of 1,3,4
 </div>
 </div>
 
-<div id="outline-container-org1973569" class="outline-5">
-<h5 id="org1973569"><span class="section-number-5">12.3.1.2</span> Recurrence formula</h5>
+<div id="outline-container-orgdfb7fd6" class="outline-5">
+<h5 id="orgdfb7fd6"><span class="section-number-5">12.3.1.2</span> Recurrence formula</h5>
 <div class="outline-text-5" id="text-12-3-1-2">
 <p>
 D<sub>n</sub> = D<sub>n-1</sub> + D<sub>n-3</sub> + D<sub>n-4</sub>
@@ -1555,8 +1728,8 @@ Given two string x and y, find the length of longest common sub-sequence.
 </p>
 </div>
 
-<div id="outline-container-orgb799677" class="outline-5">
-<h5 id="orgb799677"><span class="section-number-5">12.3.2.1</span> Define sub-problems</h5>
+<div id="outline-container-org31ca7e9" class="outline-5">
+<h5 id="org31ca7e9"><span class="section-number-5">12.3.2.1</span> Define sub-problems</h5>
 <div class="outline-text-5" id="text-12-3-2-1">
 <p>
 D<sub>ij</sub> is the length for x<sub>i..i</sub> and y<sub>1..j</sub>
@@ -1564,8 +1737,8 @@ D<sub>ij</sub> is the length for x<sub>i..i</sub> and y<sub>1..j</sub>
 </div>
 </div>
 
-<div id="outline-container-org504c187" class="outline-5">
-<h5 id="org504c187"><span class="section-number-5">12.3.2.2</span> Recurrence formula</h5>
+<div id="outline-container-orged4b124" class="outline-5">
+<h5 id="orged4b124"><span class="section-number-5">12.3.2.2</span> Recurrence formula</h5>
 <div class="outline-text-5" id="text-12-3-2-2">
 <p>
 D<sub>ij</sub> =
@@ -1596,8 +1769,8 @@ D<sub>i,j</sub> be the minimum number of characters.
 </div>
 </div>
 
-<div id="outline-container-orgdfb7fd6" class="outline-5">
-<h5 id="orgdfb7fd6"><span class="section-number-5">12.3.3.2</span> Recurrence formula</h5>
+<div id="outline-container-orgc924dac" class="outline-5">
+<h5 id="orgc924dac"><span class="section-number-5">12.3.3.2</span> Recurrence formula</h5>
 <div class="outline-text-5" id="text-12-3-3-2">
 <p>
 say y<sub>1..k</sub> is the palindrome for x<sub>i..j</sub>,
