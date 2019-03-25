@@ -191,7 +191,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -238,6 +238,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -246,19 +268,25 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9f2af61">1. Remarkable</a></li>
-<li><a href="#orgc8861a2">2. Android</a></li>
-<li><a href="#org6ce80a1">3. C</a>
+<li><a href="#orgc655e63">1. Remarkable</a></li>
+<li><a href="#orge5a4208">2. Android</a></li>
+<li><a href="#org807f15a">3. C</a>
 <ul>
-<li><a href="#org586be4e">3.1. Context Sensitivity of C</a></li>
+<li><a href="#orgcbf9e6f">3.1. Context Sensitivity of C</a></li>
+</ul>
+</li>
+<li><a href="#org8e26e4a">4. Math</a>
+<ul>
+<li><a href="#org581253f">4.1. Calculus</a></li>
+<li><a href="#org3faa77f">4.2. Lagrange multiplier</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9f2af61" class="outline-2">
-<h2 id="org9f2af61"><span class="section-number-2">1</span> Remarkable</h2>
+<div id="outline-container-orgc655e63" class="outline-2">
+<h2 id="orgc655e63"><span class="section-number-2">1</span> Remarkable</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://github.com/reHackable/maxio">https://github.com/reHackable/maxio</a>
@@ -266,8 +294,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc8861a2" class="outline-2">
-<h2 id="orgc8861a2"><span class="section-number-2">2</span> Android</h2>
+<div id="outline-container-orge5a4208" class="outline-2">
+<h2 id="orge5a4208"><span class="section-number-2">2</span> Android</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 H2O APN setting
@@ -308,12 +336,12 @@ Everything else Not set, including
 </div>
 </div>
 
-<div id="outline-container-org6ce80a1" class="outline-2">
-<h2 id="org6ce80a1"><span class="section-number-2">3</span> C</h2>
+<div id="outline-container-org807f15a" class="outline-2">
+<h2 id="org807f15a"><span class="section-number-2">3</span> C</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org586be4e" class="outline-3">
-<h3 id="org586be4e"><span class="section-number-3">3.1</span> Context Sensitivity of C</h3>
+<div id="outline-container-orgcbf9e6f" class="outline-3">
+<h3 id="orgcbf9e6f"><span class="section-number-3">3.1</span> Context Sensitivity of C</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li><a href="https://eli.thegreenplace.net/2007/11/24/the-context-sensitivity-of-cs-grammar/">https://eli.thegreenplace.net/2007/11/24/the-context-sensitivity-of-cs-grammar/</a></li>
@@ -330,6 +358,63 @@ Here is the C lexer rule and grammar for yacc
 <li>lex: <a href="http://www.quut.com/c/ANSI-C-grammar-l.html">http://www.quut.com/c/ANSI-C-grammar-l.html</a></li>
 <li>yacc: <a href="http://www.quut.com/c/ANSI-C-grammar-y.html">http://www.quut.com/c/ANSI-C-grammar-y.html</a></li>
 </ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8e26e4a" class="outline-2">
+<h2 id="org8e26e4a"><span class="section-number-2">4</span> Math</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org581253f" class="outline-3">
+<h3 id="org581253f"><span class="section-number-3">4.1</span> Calculus</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Calculus has two main branches:
+</p>
+<ul class="org-ul">
+<li>differential calculus
+<ul class="org-ul">
+<li>it is mainly about derivative. The process of finding a derivative
+is called differentiation.</li>
+<li>\(\frac{dy}{dx}|_{a}\) is Leibniz's notation</li>
+<li>f'(a) is Lagrange's notation</li>
+</ul></li>
+<li>integral calculus
+<ul class="org-ul">
+<li>definite integral</li>
+<li>indefinite integral (also antiderivative)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3faa77f" class="outline-3">
+<h3 id="org3faa77f"><span class="section-number-3">4.2</span> Lagrange multiplier</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+When solving a maxima of a function, with subject to a constraint, we
+often use <i>Lagrange multiplier</i>. Say:
+</p>
+<ul class="org-ul">
+<li>maximize \(f(x,y)\)</li>
+<li>subject to \(g(x,y)=0\)</li>
+</ul>
+<p>
+We are going to introduce the Lagrange multiplier \(\lambda\) such that
+</p>
+<ul class="org-ul">
+<li>\(L(x,y,\lambda) = f(x,y) - \lambda g(x,y)\) is called Lagrange
+function.</li>
+<li>Compute the gradient of L, and compute the stationary points. Those
+points will be the space of the solution to the original maxima
+problem.</li>
+</ul>
+
+<p>
+The intuition: at a maximum, f(x,y) cannot be increasing in the
+direction of any neighboring point where g = 0.
+</p>
 </div>
 </div>
 </div>

@@ -191,7 +191,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -268,98 +268,98 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org45123ac">1. Tmp</a>
+<li><a href="#org053d48d">1. Tmp</a>
 <ul>
-<li><a href="#org61ad092">1.1. <span class="todo TODO">TODO</span> PCA &amp; PCR &amp; PLS</a>
+<li><a href="#org94914a1">1.1. <span class="todo TODO">TODO</span> PCA &amp; PCR &amp; PLS</a>
 <ul>
-<li><a href="#orgd7f4cd3">1.1.1. <i>Principal Component Analysis (PCA)</i></a></li>
-<li><a href="#orgf94622d">1.1.2. <i>Principal Component Regression (PCR)</i></a></li>
-<li><a href="#org0178166">1.1.3. <i>Partial Least Squares (PLS)</i></a></li>
+<li><a href="#org37fef1b">1.1.1. <i>Principal Component Analysis (PCA)</i></a></li>
+<li><a href="#org6d6d4d3">1.1.2. <i>Principal Component Regression (PCR)</i></a></li>
+<li><a href="#org35a638f">1.1.3. <i>Partial Least Squares (PLS)</i></a></li>
 </ul>
 </li>
-<li><a href="#org4190e05">1.2. <span class="todo TODO">TODO</span> ICA</a></li>
-<li><a href="#orge1de86d">1.3. Gibbs sampling</a></li>
-<li><a href="#orge98f4f1">1.4. Explaining away effect</a></li>
-<li><a href="#org76d3f05">1.5. Chi-square Independence test</a></li>
+<li><a href="#org8aa529d">1.2. <span class="todo TODO">TODO</span> ICA</a></li>
+<li><a href="#org905e826">1.3. Gibbs sampling</a></li>
+<li><a href="#orgd18dd16">1.4. Explaining away effect</a></li>
+<li><a href="#orgadf3376">1.5. Chi-square Independence test</a></li>
 </ul>
 </li>
-<li><a href="#org3dd35c6">2. Probabilistic Model</a>
+<li><a href="#orga81cab4">2. Probabilistic Model</a>
 <ul>
-<li><a href="#orge05ced0">2.1. Discrete Variables</a></li>
-<li><a href="#org006c6c6">2.2. Continuous Variables</a></li>
-<li><a href="#org6487fc1">2.3. Expectation, Variance, Entropy</a></li>
-<li><a href="#org58a21f7">2.4. Independence</a></li>
-<li><a href="#orgd1c69f0">2.5. probability queries</a></li>
-<li><a href="#org738c53d">2.6. Non-parametric distributions</a></li>
+<li><a href="#orgd6c275f">2.1. Discrete Variables</a></li>
+<li><a href="#orgc4e672e">2.2. Continuous Variables</a></li>
+<li><a href="#orgf9080f2">2.3. Expectation, Variance, Entropy</a></li>
+<li><a href="#orgcea169c">2.4. Independence</a></li>
+<li><a href="#orgcbc0e9c">2.5. probability queries</a></li>
+<li><a href="#org90b7bd3">2.6. Non-parametric distributions</a></li>
 </ul>
 </li>
-<li><a href="#org9bfdf16">3. Graphical Model</a>
+<li><a href="#org4f87c99">3. Graphical Model</a>
 <ul>
-<li><a href="#orgb678a8e">3.1. Graph Background</a></li>
-<li><a href="#org48d5c37">3.2. Representation</a></li>
-<li><a href="#org0ac897d">3.3. Bayesian Network (BN)</a>
+<li><a href="#orgd8144af">3.1. Graph Background</a></li>
+<li><a href="#orge57bd4c">3.2. Representation</a></li>
+<li><a href="#orgdb86254">3.3. Bayesian Network (BN)</a>
 <ul>
-<li><a href="#org03d7261">3.3.1. Local Independence</a></li>
-<li><a href="#org1834373">3.3.2. Global Independence</a></li>
-<li><a href="#org7e9f949">3.3.3. Other</a></li>
+<li><a href="#org9934327">3.3.1. Local Independence</a></li>
+<li><a href="#orgd50e9c5">3.3.2. Global Independence</a></li>
+<li><a href="#orgd59d2ee">3.3.3. Other</a></li>
 </ul>
 </li>
-<li><a href="#orgb3214ed">3.4. Markov Network</a>
+<li><a href="#org2c64940">3.4. Markov Network</a>
 <ul>
-<li><a href="#org79d99f7">3.4.1. Independence</a></li>
+<li><a href="#org67c2685">3.4.1. Independence</a></li>
 </ul>
 </li>
-<li><a href="#orge65c0db">3.5. <span class="todo TODO">TODO</span> Inference</a></li>
-<li><a href="#org4063c28">3.6. Structure and Parameter Learning</a>
+<li><a href="#orgcf7d948">3.5. <span class="todo TODO">TODO</span> Inference</a></li>
+<li><a href="#orga2e0258">3.6. Structure and Parameter Learning</a>
 <ul>
-<li><a href="#org98f8ce6">3.6.1. Parameter Estimation for Bayesian Network</a></li>
-<li><a href="#org2f0e4be">3.6.2. Structure Learning in Bayesian Network</a></li>
-<li><a href="#org3defb29">3.6.3. Learning Markov Network</a></li>
-<li><a href="#org143549c">3.6.4. Hidden Variable</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org377e5fe">4. Causality</a>
-<ul>
-<li><a href="#orgfbf0239">4.1. Stochastic Representation</a></li>
-<li><a href="#org3042182">4.2. Functional Causal Model</a></li>
-<li><a href="#orgb372100">4.3. Causal Effect</a></li>
-<li><a href="#org07ccb3e">4.4. Confounding</a></li>
-<li><a href="#org59a7e10">4.5. Causal Discovery</a>
-<ul>
-<li><a href="#orgf3dd4c3">4.5.1. IC algorithm</a></li>
-<li><a href="#org6794446">4.5.2. SGS algorithm</a></li>
-<li><a href="#orgf3dfa19">4.5.3. PC algorithm</a></li>
+<li><a href="#orgb3cd435">3.6.1. Parameter Estimation for Bayesian Network</a></li>
+<li><a href="#org9b70efa">3.6.2. Structure Learning in Bayesian Network</a></li>
+<li><a href="#org8f587b5">3.6.3. Learning Markov Network</a></li>
+<li><a href="#orgafcf441">3.6.4. Hidden Variable</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org27a412e">5. Search Algorithm</a>
+<li><a href="#org222b063">4. Causality</a>
 <ul>
-<li><a href="#org1530576">5.1. Branch &amp; Bound algorithm</a></li>
-<li><a href="#org8cf3661">5.2. A* algorithm</a></li>
-<li><a href="#org3fc1f59">5.3. local search</a>
+<li><a href="#org2978413">4.1. Stochastic Representation</a></li>
+<li><a href="#orgf53c2ce">4.2. Functional Causal Model</a></li>
+<li><a href="#orgca549ce">4.3. Causal Effect</a></li>
+<li><a href="#org5e5a319">4.4. Confounding</a></li>
+<li><a href="#org27b144e">4.5. Causal Discovery</a>
 <ul>
-<li><a href="#org609c767">5.3.1. hill climbing</a></li>
-<li><a href="#org7469793">5.3.2. simulated annealing(SA)</a></li>
-<li><a href="#org76c29c2">5.3.3. gradient descent</a></li>
+<li><a href="#org3d30de0">4.5.1. IC algorithm</a></li>
+<li><a href="#org71d52e4">4.5.2. SGS algorithm</a></li>
+<li><a href="#org84c7541">4.5.3. PC algorithm</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org77b356c">6. Similarity metrics</a></li>
-<li><a href="#orgc7371c7">7. Reference</a>
+<li><a href="#org0d660f4">5. Search Algorithm</a>
 <ul>
-<li><a href="#orgfab3d37">7.1. cite:2007-Journal-Nasrabadi-Pattern Pattern recognition and machine learning</a></li>
+<li><a href="#org06ca0b5">5.1. Branch &amp; Bound algorithm</a></li>
+<li><a href="#orge0560b1">5.2. A* algorithm</a></li>
+<li><a href="#orgdae4be0">5.3. local search</a>
+<ul>
+<li><a href="#org739d8dd">5.3.1. hill climbing</a></li>
+<li><a href="#org6e5ef77">5.3.2. simulated annealing(SA)</a></li>
+<li><a href="#orgc986147">5.3.3. gradient descent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org02aebb0">6. Similarity metrics</a></li>
+<li><a href="#orga6bad02">7. Reference</a>
+<ul>
+<li><a href="#org787c5c4">7.1. cite:2007-Journal-Nasrabadi-Pattern Pattern recognition and machine learning</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org45123ac" class="outline-2">
-<h2 id="org45123ac"><span class="section-number-2">1</span> Tmp</h2>
+<div id="outline-container-org053d48d" class="outline-2">
+<h2 id="org053d48d"><span class="section-number-2">1</span> Tmp</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Conditional Random Field (CRF):</li>
@@ -383,8 +383,8 @@ Markov property</li>
 </ul>
 </div>
 
-<div id="outline-container-org61ad092" class="outline-3">
-<h3 id="org61ad092"><span class="section-number-3">1.1</span> <span class="todo TODO">TODO</span> PCA &amp; PCR &amp; PLS</h3>
+<div id="outline-container-org94914a1" class="outline-3">
+<h3 id="org94914a1"><span class="section-number-3">1.1</span> <span class="todo TODO">TODO</span> PCA &amp; PCR &amp; PLS</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 In case of high dimensionality, many models would fail, and this is
@@ -395,8 +395,8 @@ isotropic neighborhoods will run into problems in high dimensions.
 </p>
 </div>
 
-<div id="outline-container-orgd7f4cd3" class="outline-4">
-<h4 id="orgd7f4cd3"><span class="section-number-4">1.1.1</span> <i>Principal Component Analysis (PCA)</i></h4>
+<div id="outline-container-org37fef1b" class="outline-4">
+<h4 id="org37fef1b"><span class="section-number-4">1.1.1</span> <i>Principal Component Analysis (PCA)</i></h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 The following are some criteria for the direction selection, they all
@@ -420,8 +420,8 @@ orthogonal.
 </div>
 </div>
 
-<div id="outline-container-orgf94622d" class="outline-4">
-<h4 id="orgf94622d"><span class="section-number-4">1.1.2</span> <i>Principal Component Regression (PCR)</i></h4>
+<div id="outline-container-org6d6d4d3" class="outline-4">
+<h4 id="org6d6d4d3"><span class="section-number-4">1.1.2</span> <i>Principal Component Regression (PCR)</i></h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 Construct the first M principal components, and do linear regression
@@ -430,8 +430,8 @@ on the new predictors.
 </div>
 </div>
 
-<div id="outline-container-org0178166" class="outline-4">
-<h4 id="org0178166"><span class="section-number-4">1.1.3</span> <i>Partial Least Squares (PLS)</i></h4>
+<div id="outline-container-org35a638f" class="outline-4">
+<h4 id="org35a638f"><span class="section-number-4">1.1.3</span> <i>Partial Least Squares (PLS)</i></h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 The directions identified by PCA is in an unsupervised way, i.e. it
@@ -459,12 +459,12 @@ that has not been explained by the first PLS direction</li>
 </div>
 
 
-<div id="outline-container-org4190e05" class="outline-3">
-<h3 id="org4190e05"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> ICA</h3>
+<div id="outline-container-org8aa529d" class="outline-3">
+<h3 id="org8aa529d"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> ICA</h3>
 </div>
 
-<div id="outline-container-orge1de86d" class="outline-3">
-<h3 id="orge1de86d"><span class="section-number-3">1.3</span> Gibbs sampling</h3>
+<div id="outline-container-org905e826" class="outline-3">
+<h3 id="org905e826"><span class="section-number-3">1.3</span> Gibbs sampling</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 It is one kind of Monte Carlo Markov Chain method, for sampling from
@@ -492,8 +492,8 @@ posterior distribution.
 </div>
 </div>
 
-<div id="outline-container-orge98f4f1" class="outline-3">
-<h3 id="orge98f4f1"><span class="section-number-3">1.4</span> Explaining away effect</h3>
+<div id="outline-container-orgd18dd16" class="outline-3">
+<h3 id="orgd18dd16"><span class="section-number-3">1.4</span> Explaining away effect</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Two causes for an effect, if we can confirm one cause, it will reduce
@@ -520,8 +520,8 @@ smart.
 </div>
 </div>
 
-<div id="outline-container-org76d3f05" class="outline-3">
-<h3 id="org76d3f05"><span class="section-number-3">1.5</span> Chi-square Independence test</h3>
+<div id="outline-container-orgadf3376" class="outline-3">
+<h3 id="orgadf3376"><span class="section-number-3">1.5</span> Chi-square Independence test</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 Using the example taken from Wikipedia
@@ -612,12 +612,12 @@ independent (our <i>null hypothesis</i>)</li>
 </div>
 </div>
 
-<div id="outline-container-org3dd35c6" class="outline-2">
-<h2 id="org3dd35c6"><span class="section-number-2">2</span> Probabilistic Model</h2>
+<div id="outline-container-orga81cab4" class="outline-2">
+<h2 id="orga81cab4"><span class="section-number-2">2</span> Probabilistic Model</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orge05ced0" class="outline-3">
-<h3 id="orge05ced0"><span class="section-number-3">2.1</span> Discrete Variables</h3>
+<div id="outline-container-orgd6c275f" class="outline-3">
+<h3 id="orgd6c275f"><span class="section-number-3">2.1</span> Discrete Variables</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 We define the <i>outcome space</i> as the space of possible outcomes,
@@ -697,8 +697,8 @@ probability in terms of random variables are intuitive.
 </div>
 </div>
 
-<div id="outline-container-org006c6c6" class="outline-3">
-<h3 id="org006c6c6"><span class="section-number-3">2.2</span> Continuous Variables</h3>
+<div id="outline-container-orgc4e672e" class="outline-3">
+<h3 id="orgc4e672e"><span class="section-number-3">2.2</span> Continuous Variables</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 For <b>continuous random variables</b>, <i>probability density function
@@ -735,8 +735,8 @@ exp\{-\frac{1}{2}(x-\mu)^T \Sigma^-1 (x-\mu)\} \]
 </div>
 
 
-<div id="outline-container-org6487fc1" class="outline-3">
-<h3 id="org6487fc1"><span class="section-number-3">2.3</span> Expectation, Variance, Entropy</h3>
+<div id="outline-container-orgf9080f2" class="outline-3">
+<h3 id="orgf9080f2"><span class="section-number-3">2.3</span> Expectation, Variance, Entropy</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Expectation is \(E_x[f]=\sum_x p(x)f(x)\). Variance is 
@@ -871,8 +871,8 @@ is \(\sigma_X=\sqrt{Var[X]}\).
 </div>
 
 
-<div id="outline-container-org58a21f7" class="outline-3">
-<h3 id="org58a21f7"><span class="section-number-3">2.4</span> Independence</h3>
+<div id="outline-container-orgcea169c" class="outline-3">
+<h3 id="orgcea169c"><span class="section-number-3">2.4</span> Independence</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Next, we introduce <b>independence</b>. First in events notation, we say
@@ -970,8 +970,8 @@ All these properties are called <i>graphoid axioms</i>.
 </div>
 </div>
 
-<div id="outline-container-orgd1c69f0" class="outline-3">
-<h3 id="orgd1c69f0"><span class="section-number-3">2.5</span> probability queries</h3>
+<div id="outline-container-orgcbc0e9c" class="outline-3">
+<h3 id="orgcbc0e9c"><span class="section-number-3">2.5</span> probability queries</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 After defining probability distribution, we are interested in
@@ -993,8 +993,8 @@ assignment to all of the non-evidence variables. Formally, let
 </div>
 </div>
 
-<div id="outline-container-org738c53d" class="outline-3">
-<h3 id="org738c53d"><span class="section-number-3">2.6</span> Non-parametric distributions</h3>
+<div id="outline-container-org90b7bd3" class="outline-3">
+<h3 id="org90b7bd3"><span class="section-number-3">2.6</span> Non-parametric distributions</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 Non-parametric models essentially exploit the locality of data.
@@ -1034,12 +1034,12 @@ precision problem.
 
 
 
-<div id="outline-container-org9bfdf16" class="outline-2">
-<h2 id="org9bfdf16"><span class="section-number-2">3</span> Graphical Model</h2>
+<div id="outline-container-org4f87c99" class="outline-2">
+<h2 id="org4f87c99"><span class="section-number-2">3</span> Graphical Model</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb678a8e" class="outline-3">
-<h3 id="orgb678a8e"><span class="section-number-3">3.1</span> Graph Background</h3>
+<div id="outline-container-orgd8144af" class="outline-3">
+<h3 id="orgd8144af"><span class="section-number-3">3.1</span> Graph Background</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 We typically denote undirected graph as H, directed graph as G, and a
@@ -1100,8 +1100,8 @@ away all arrowheads.
 </div>
 </div>
 
-<div id="outline-container-org48d5c37" class="outline-3">
-<h3 id="org48d5c37"><span class="section-number-3">3.2</span> Representation</h3>
+<div id="outline-container-orge57bd4c" class="outline-3">
+<h3 id="orge57bd4c"><span class="section-number-3">3.2</span> Representation</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 We have two views of the graphical model. On one hand, we view it as a
@@ -1130,8 +1130,8 @@ factorization \(P(C,X_1,...,X_n) = P(C) \prod_{i=1}^n P(X_i|C)\).
 </div>
 </div>
 
-<div id="outline-container-org0ac897d" class="outline-3">
-<h3 id="org0ac897d"><span class="section-number-3">3.3</span> Bayesian Network (BN)</h3>
+<div id="outline-container-orgdb86254" class="outline-3">
+<h3 id="orgdb86254"><span class="section-number-3">3.3</span> Bayesian Network (BN)</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 The naive Bayes model has too strong assumption. The Bayesian Network
@@ -1148,8 +1148,8 @@ and its <i>Conditional Probability Distribution (CPD)</i>.
 </div>
 
 
-<div id="outline-container-org03d7261" class="outline-4">
-<h4 id="org03d7261"><span class="section-number-4">3.3.1</span> Local Independence</h4>
+<div id="outline-container-org9934327" class="outline-4">
+<h4 id="org9934327"><span class="section-number-4">3.3.1</span> Local Independence</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 The <b><i>local independence</i></b> encoded in the Bayesian Network, denoted by
@@ -1204,8 +1204,8 @@ G is an I-map for P iff P factorizes according to G.
 </div>
 </div>
 
-<div id="outline-container-org1834373" class="outline-4">
-<h4 id="org1834373"><span class="section-number-4">3.3.2</span> Global Independence</h4>
+<div id="outline-container-orgd50e9c5" class="outline-4">
+<h4 id="orgd50e9c5"><span class="section-number-4">3.3.2</span> Global Independence</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p>
 Besides local independence, we can read off other independence from
@@ -1349,8 +1349,8 @@ P-map.
 </div>
 </div>
 
-<div id="outline-container-org7e9f949" class="outline-4">
-<h4 id="org7e9f949"><span class="section-number-4">3.3.3</span> Other</h4>
+<div id="outline-container-orgd59d2ee" class="outline-4">
+<h4 id="orgd59d2ee"><span class="section-number-4">3.3.3</span> Other</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <p>
 When choosing prior, it is important to distinguish the extremely
@@ -1384,8 +1384,8 @@ variables is called hybrid Bayesian network.
 </div>
 
 
-<div id="outline-container-orgb3214ed" class="outline-3">
-<h3 id="orgb3214ed"><span class="section-number-3">3.4</span> Markov Network</h3>
+<div id="outline-container-org2c64940" class="outline-3">
+<h3 id="org2c64940"><span class="section-number-3">3.4</span> Markov Network</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 The Bayesian network is parameterized by a CPD, representing the
@@ -1422,8 +1422,8 @@ i.e. we have an edge <code>X-Y</code> if there is an edge <code>X-Y</code> in H.
 </p>
 </div>
 
-<div id="outline-container-org79d99f7" class="outline-4">
-<h4 id="org79d99f7"><span class="section-number-4">3.4.1</span> Independence</h4>
+<div id="outline-container-org67c2685" class="outline-4">
+<h4 id="org67c2685"><span class="section-number-4">3.4.1</span> Independence</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 The Markov Network also encodes a set of independence assertions,
@@ -1500,8 +1500,8 @@ reverse.
 </div>
 
 
-<div id="outline-container-orge65c0db" class="outline-3">
-<h3 id="orge65c0db"><span class="section-number-3">3.5</span> <span class="todo TODO">TODO</span> Inference</h3>
+<div id="outline-container-orgcf7d948" class="outline-3">
+<h3 id="orgcf7d948"><span class="section-number-3">3.5</span> <span class="todo TODO">TODO</span> Inference</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 <i>Inference</i> refers to answering probabilistic queries, the computation
@@ -1512,8 +1512,8 @@ probability of some variables given evidence on others.
 </div>
 </div>
 
-<div id="outline-container-org4063c28" class="outline-3">
-<h3 id="org4063c28"><span class="section-number-3">3.6</span> Structure and Parameter Learning</h3>
+<div id="outline-container-orga2e0258" class="outline-3">
+<h3 id="orga2e0258"><span class="section-number-3">3.6</span> Structure and Parameter Learning</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 <i>Learning</i> refers to the estimation of edge parameters from data, and
@@ -1565,8 +1565,8 @@ observable.
 </p>
 </div>
 
-<div id="outline-container-org98f8ce6" class="outline-4">
-<h4 id="org98f8ce6"><span class="section-number-4">3.6.1</span> Parameter Estimation for Bayesian Network</h4>
+<div id="outline-container-orgb3cd435" class="outline-4">
+<h4 id="orgb3cd435"><span class="section-number-4">3.6.1</span> Parameter Estimation for Bayesian Network</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <p>
 In this setting, we consider the fixed structure, and the data set are
@@ -1663,8 +1663,8 @@ Dirichlet(\alpha_1, ..., \alpha_k)\) if \(P(\theta) \propto \prod_k
 </div>
 </div>
 
-<div id="outline-container-org2f0e4be" class="outline-4">
-<h4 id="org2f0e4be"><span class="section-number-4">3.6.2</span> Structure Learning in Bayesian Network</h4>
+<div id="outline-container-org9b70efa" class="outline-4">
+<h4 id="org9b70efa"><span class="section-number-4">3.6.2</span> Structure Learning in Bayesian Network</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <p>
 If we include more edges, the model often contains spurious edges. If
@@ -1781,8 +1781,8 @@ model, it generates an ensemble of possible structures.
 </div>
 </div>
 
-<div id="outline-container-org3defb29" class="outline-4">
-<h4 id="org3defb29"><span class="section-number-4">3.6.3</span> Learning Markov Network</h4>
+<div id="outline-container-org8f587b5" class="outline-4">
+<h4 id="org8f587b5"><span class="section-number-4">3.6.3</span> Learning Markov Network</h4>
 <div class="outline-text-4" id="text-3-6-3">
 <p>
 The likelihood function of Markov network contains the partition
@@ -1802,8 +1802,8 @@ network. For score based approach, there are \(score_L\), \(score_{BIC}\),
 </div>
 </div>
 
-<div id="outline-container-org143549c" class="outline-4">
-<h4 id="org143549c"><span class="section-number-4">3.6.4</span> Hidden Variable</h4>
+<div id="outline-container-orgafcf441" class="outline-4">
+<h4 id="orgafcf441"><span class="section-number-4">3.6.4</span> Hidden Variable</h4>
 <div class="outline-text-4" id="text-3-6-4">
 <p>
 The previous discussions all assume the data are fully observed.
@@ -1864,8 +1864,8 @@ Score</i>.
 </div>
 
 
-<div id="outline-container-org377e5fe" class="outline-2">
-<h2 id="org377e5fe"><span class="section-number-2">4</span> Causality</h2>
+<div id="outline-container-org222b063" class="outline-2">
+<h2 id="org222b063"><span class="section-number-2">4</span> Causality</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The advantages of building DAG around causal: first, the judgments
@@ -1875,8 +1875,8 @@ and respond to external or spontaneous changes.
 </p>
 </div>
 
-<div id="outline-container-orgfbf0239" class="outline-3">
-<h3 id="orgfbf0239"><span class="section-number-3">4.1</span> Stochastic Representation</h3>
+<div id="outline-container-org2978413" class="outline-3">
+<h3 id="org2978413"><span class="section-number-3">4.1</span> Stochastic Representation</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 The basic representation of causal model is the <b>causal Bayesian
@@ -1919,8 +1919,8 @@ and test whether the distribution is sensitive to \(x_i\).
 </div>
 </div>
 
-<div id="outline-container-org3042182" class="outline-3">
-<h3 id="org3042182"><span class="section-number-3">4.2</span> Functional Causal Model</h3>
+<div id="outline-container-orgf53c2ce" class="outline-3">
+<h3 id="orgf53c2ce"><span class="section-number-3">4.2</span> Functional Causal Model</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 A <b><i>functional causal model</i></b> is another representation of the causal
@@ -2000,8 +2000,8 @@ cannot apply abduction step to update \(P(u)\) with evidence \(e\).
 </div>
 </div>
 
-<div id="outline-container-orgb372100" class="outline-3">
-<h3 id="orgb372100"><span class="section-number-3">4.3</span> Causal Effect</h3>
+<div id="outline-container-orgca549ce" class="outline-3">
+<h3 id="orgca549ce"><span class="section-number-3">4.3</span> Causal Effect</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 For two disjoint set X and Y, the <b><i>causal effect</i></b> of X on Y is
@@ -2115,8 +2115,8 @@ value??).
 </div>
 </div>
 
-<div id="outline-container-org07ccb3e" class="outline-3">
-<h3 id="org07ccb3e"><span class="section-number-3">4.4</span> Confounding</h3>
+<div id="outline-container-org5e5a319" class="outline-3">
+<h3 id="org5e5a319"><span class="section-number-3">4.4</span> Confounding</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 If a third variable Z can influence both X and Y, then X and Y are
@@ -2166,8 +2166,8 @@ are <i>not confounded</i> in causal model M iff \(P(y|do(x)) = P(y|x)\).
 </div>
 </div>
 
-<div id="outline-container-org59a7e10" class="outline-3">
-<h3 id="org59a7e10"><span class="section-number-3">4.5</span> Causal Discovery</h3>
+<div id="outline-container-org27b144e" class="outline-3">
+<h3 id="org27b144e"><span class="section-number-3">4.5</span> Causal Discovery</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 Two books for reference
@@ -2177,8 +2177,8 @@ Two books for reference
 <li>Causality <a class='org-ref-reference' href="#2009-Book-Pearl-Causality">2009-Book-Pearl-Causality</a></li>
 </ul>
 </div>
-<div id="outline-container-orgf3dd4c3" class="outline-4">
-<h4 id="orgf3dd4c3"><span class="section-number-4">4.5.1</span> IC algorithm</h4>
+<div id="outline-container-org3d30de0" class="outline-4">
+<h4 id="org3d30de0"><span class="section-number-4">4.5.1</span> IC algorithm</h4>
 <div class="outline-text-4" id="text-4-5-1">
 <ul class="org-ul">
 <li>Input: a sample distribution</li>
@@ -2239,8 +2239,8 @@ informative graph.
 </div>
 </div>
 
-<div id="outline-container-org6794446" class="outline-4">
-<h4 id="org6794446"><span class="section-number-4">4.5.2</span> SGS algorithm</h4>
+<div id="outline-container-org71d52e4" class="outline-4">
+<h4 id="org71d52e4"><span class="section-number-4">4.5.2</span> SGS algorithm</h4>
 <div class="outline-text-4" id="text-4-5-2">
 <ol class="org-ol">
 <li>form complete undirected graph</li>
@@ -2259,8 +2259,8 @@ orient b-&gt;c</li>
 </div>
 </div>
 
-<div id="outline-container-orgf3dfa19" class="outline-4">
-<h4 id="orgf3dfa19"><span class="section-number-4">4.5.3</span> PC algorithm</h4>
+<div id="outline-container-org84c7541" class="outline-4">
+<h4 id="org84c7541"><span class="section-number-4">4.5.3</span> PC algorithm</h4>
 <div class="outline-text-4" id="text-4-5-3">
 <p>
 SGS requires too many d-separation test, thus computationally
@@ -2284,12 +2284,12 @@ adjacent to a and b that are on undirected paths between a and b.
 </div>
 
 
-<div id="outline-container-org27a412e" class="outline-2">
-<h2 id="org27a412e"><span class="section-number-2">5</span> Search Algorithm</h2>
+<div id="outline-container-org0d660f4" class="outline-2">
+<h2 id="org0d660f4"><span class="section-number-2">5</span> Search Algorithm</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org1530576" class="outline-3">
-<h3 id="org1530576"><span class="section-number-3">5.1</span> Branch &amp; Bound algorithm</h3>
+<div id="outline-container-org06ca0b5" class="outline-3">
+<h3 id="org06ca0b5"><span class="section-number-3">5.1</span> Branch &amp; Bound algorithm</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 The problem is to minimize a function f(x) of variables \(x_1,...,x_n\)
@@ -2353,8 +2353,8 @@ solution is inside at least one branch.
 </div>
 </div>
 
-<div id="outline-container-org8cf3661" class="outline-3">
-<h3 id="org8cf3661"><span class="section-number-3">5.2</span> A* algorithm</h3>
+<div id="outline-container-orge0560b1" class="outline-3">
+<h3 id="orge0560b1"><span class="section-number-3">5.2</span> A* algorithm</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 The problem is, from an initial node, find the least-cost path to one
@@ -2396,8 +2396,8 @@ Stop when the goal nodes has the lowest cost function value.
 </div>
 
 
-<div id="outline-container-org3fc1f59" class="outline-3">
-<h3 id="org3fc1f59"><span class="section-number-3">5.3</span> local search</h3>
+<div id="outline-container-orgdae4be0" class="outline-3">
+<h3 id="orgdae4be0"><span class="section-number-3">5.3</span> local search</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Concepts:
@@ -2431,8 +2431,8 @@ the training data.</li>
 </ul>
 </div>
 
-<div id="outline-container-org609c767" class="outline-4">
-<h4 id="org609c767"><span class="section-number-4">5.3.1</span> hill climbing</h4>
+<div id="outline-container-org739d8dd" class="outline-4">
+<h4 id="org739d8dd"><span class="section-number-4">5.3.1</span> hill climbing</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <p>
 Find an initial solution, which is much worse than optimal one.
@@ -2442,8 +2442,8 @@ found.
 </p>
 </div>
 </div>
-<div id="outline-container-org7469793" class="outline-4">
-<h4 id="org7469793"><span class="section-number-4">5.3.2</span> simulated annealing(SA)</h4>
+<div id="outline-container-org6e5ef77" class="outline-4">
+<h4 id="org6e5ef77"><span class="section-number-4">5.3.2</span> simulated annealing(SA)</h4>
 <div class="outline-text-4" id="text-5-3-2">
 <p>
 Accepting worse solutions is a fundamental property of metaheuristics
@@ -2467,8 +2467,8 @@ always goes to smaller state if found.  But this is not required.
 </div>
 </div>
 
-<div id="outline-container-org76c29c2" class="outline-4">
-<h4 id="org76c29c2"><span class="section-number-4">5.3.3</span> gradient descent</h4>
+<div id="outline-container-orgc986147" class="outline-4">
+<h4 id="orgc986147"><span class="section-number-4">5.3.3</span> gradient descent</h4>
 <div class="outline-text-4" id="text-5-3-3">
 <p>
 Go alone the decrease of the gradient.
@@ -2479,8 +2479,8 @@ Go alone the decrease of the gradient.
 </div>
 
 
-<div id="outline-container-org77b356c" class="outline-2">
-<h2 id="org77b356c"><span class="section-number-2">6</span> Similarity metrics</h2>
+<div id="outline-container-org02aebb0" class="outline-2">
+<h2 id="org02aebb0"><span class="section-number-2">6</span> Similarity metrics</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 <i>Jaccard index</i>, also known as the <i>Jaccard similarity coefficient</i>,
@@ -2591,12 +2591,12 @@ Both the tfidf is 0, meaning "this" is not very informative.
 </div>
 </div>
 
-<div id="outline-container-orgc7371c7" class="outline-2">
-<h2 id="orgc7371c7"><span class="section-number-2">7</span> Reference</h2>
+<div id="outline-container-orga6bad02" class="outline-2">
+<h2 id="orga6bad02"><span class="section-number-2">7</span> Reference</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgfab3d37" class="outline-3">
-<h3 id="orgfab3d37"><span class="section-number-3">7.1</span> <a class='org-ref-reference' href="#2007-Journal-Nasrabadi-Pattern">2007-Journal-Nasrabadi-Pattern</a> Pattern recognition and machine learning</h3>
+<div id="outline-container-org787c5c4" class="outline-3">
+<h3 id="org787c5c4"><span class="section-number-3">7.1</span> <a class='org-ref-reference' href="#2007-Journal-Nasrabadi-Pattern">2007-Journal-Nasrabadi-Pattern</a> Pattern recognition and machine learning</h3>
 </div>
 </div>
 </div>

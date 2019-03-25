@@ -191,7 +191,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
+<link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/test.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/test.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -268,90 +268,854 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdc72190">1. Network Flow Problems</a>
+<li><a href="#orga043744">1. Basics</a>
 <ul>
-<li><a href="#org17fb812">1.1. Kruskal's algorithm</a></li>
-<li><a href="#org846b7af">1.2. Prim's algorithm</a></li>
+<li><a href="#org790a992">1.1. Order of growth</a></li>
+<li><a href="#orge1d54f3">1.2. <span class="todo TODO">TODO</span> how to analyze the running time</a></li>
+<li><a href="#org636ec64">1.3. <span class="todo TODO">TODO</span> Amortized Analysis</a></li>
 </ul>
 </li>
-<li><a href="#org8425a19">2. Other</a>
+<li><a href="#org1f101ba">2. <span class="todo TODO">TODO</span> Sorting algorithms</a>
 <ul>
-<li><a href="#orgf9a3404">2.1. Barrel shifter</a>
+<li><a href="#org54c1ac4">2.1. Bubble sort</a></li>
+<li><a href="#orgea66d45">2.2. insertion sort</a></li>
+<li><a href="#org59d5f33">2.3. merge sort</a></li>
+<li><a href="#org682e0a8">2.4. Heap sort</a></li>
+<li><a href="#org7b7c57a">2.5. Quick sort</a></li>
+<li><a href="#org7bb5bcb">2.6. Linear time sorting</a>
 <ul>
-<li><a href="#org91171cd">2.1.1. shift register</a></li>
-</ul>
-</li>
-<li><a href="#orgb06b178">2.2. Bloom Filter</a></li>
-<li><a href="#org47f4d0e">2.3. Linear congruential generator</a></li>
-</ul>
-</li>
-<li><a href="#org32b4eb2">3. Dynamic Programming</a>
-<ul>
-<li><a href="#org5c1d270">3.1. One dimension</a>
-<ul>
-<li><a href="#org092bfb5">3.1.1. Define sub-problems</a></li>
-<li><a href="#org73cec11">3.1.2. Recurrence formula</a></li>
-</ul>
-</li>
-<li><a href="#org769c058">3.2. Two Dimensions</a>
-<ul>
-<li><a href="#org4c32841">3.2.1. Define sub-problems</a></li>
-<li><a href="#org39461be">3.2.2. Recurrence formula</a></li>
-</ul>
-</li>
-<li><a href="#orga3e9f4a">3.3. Interval DP</a>
-<ul>
-<li><a href="#orge63c06f">3.3.1. Define sub-problem</a></li>
-<li><a href="#org569c160">3.3.2. Recurrence formula</a></li>
-</ul>
-</li>
-<li><a href="#org6b97052">3.4. Tree DP</a>
-<ul>
-<li><a href="#org4e66d5a">3.4.1. Define</a></li>
-<li><a href="#org44f48f1">3.4.2. Recurrence</a></li>
+<li><a href="#org342019e">2.6.1. couting sort</a></li>
+<li><a href="#orga902d46">2.6.2. Radix sort</a></li>
+<li><a href="#org274fa54">2.6.3. Bucket sort</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org436753c">4. String Algorithm</a>
+<li><a href="#org35fd616">3. Data structure</a>
 <ul>
-<li><a href="#org7fa925e">4.1. Knuth–Morris–Pratt(KMP)</a>
+<li><a href="#org9289faf">3.1. linked list</a></li>
+<li><a href="#org377d7fa">3.2. stack &amp; queue</a>
 <ul>
-<li><a href="#org8a05d9c">4.1.1. 214. Shortest Palindrome</a>
+<li><a href="#org8b7ab66">3.2.1. priority queue</a></li>
+</ul>
+</li>
+<li><a href="#orgd158ca7">3.3. hash table</a></li>
+</ul>
+</li>
+<li><a href="#orgf3b8147">4. <span class="todo TODO">TODO</span> Trees</a>
 <ul>
-<li><a href="#org2e6ca4a">4.1.1.1. KMP</a></li>
-<li><a href="#org5c3e840">4.1.1.2. brute force</a></li>
+<li><a href="#orgca97356">4.1. Search</a></li>
+<li><a href="#org16d50bc">4.2. Traversal</a></li>
+<li><a href="#org24d39bd">4.3. Special Trees</a>
+<ul>
+<li><a href="#org674f8eb">4.3.1. Binary search tree</a></li>
+<li><a href="#org2fff9a6">4.3.2. red-black tree</a></li>
+<li><a href="#orgfac7381">4.3.3. interval tree</a></li>
+<li><a href="#org2a7255d">4.3.4. B-tree</a></li>
+<li><a href="#org9fdbf33">4.3.5. prefix-tree</a></li>
+</ul>
+</li>
+<li><a href="#org8d1c9c1">4.4. Heap</a>
+<ul>
+<li><a href="#org0bee563">4.4.1. Fibonacci Heap</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd8bea84">4.2. Boyer Moore</a>
+<li><a href="#org17b0ca4">5. <span class="todo TODO">TODO</span> Graph</a>
 <ul>
-<li><a href="#org482e6e0">4.2.1. Bad Character Rule</a></li>
-<li><a href="#orge08e7f1">4.2.2. Good Suffix Rule</a></li>
-<li><a href="#org3a5e993">4.2.3. Galil Rule</a></li>
-</ul>
-</li>
-<li><a href="#org7794513">4.3. Rabin-Karp Algorithm</a>
+<li><a href="#org00f3144">5.1. DFS &amp; BFS</a></li>
+<li><a href="#orgbaf5748">5.2. topological sort</a></li>
+<li><a href="#orgaa317dd">5.3. Minimum Spanning Tree</a>
 <ul>
-<li><a href="#org17ed87f">4.3.1. Rolling Hash</a>
+<li><a href="#org8655e42">5.3.1. Kruskal's algorithm</a></li>
+<li><a href="#org385cbf4">5.3.2. Prim's algorithm</a></li>
+</ul>
+</li>
+<li><a href="#org0f0f2c3">5.4. Shortest path</a>
 <ul>
-<li><a href="#orge0f1c15">4.3.1.1. Rabin-Karp rolling hash</a></li>
-<li><a href="#org3702553">4.3.1.2. Cyclic Polynomial (Buzhash)</a></li>
+<li><a href="#org851d3c4">5.4.1. <span class="todo TODO">TODO</span> Bellman-Ford algorithm</a></li>
+<li><a href="#org323cc1a">5.4.2. <span class="todo TODO">TODO</span> Dijkstra's algorithm</a></li>
 </ul>
 </li>
-<li><a href="#orgfcbbd71">4.3.2. Tabulation hashing</a></li>
+<li><a href="#org3fc2898">5.5. <span class="todo TODO">TODO</span> Network Flow Problems</a>
+<ul>
+<li><a href="#org139c644">5.5.1. <span class="todo TODO">TODO</span> Ford-Fulkerson algorithm</a></li>
+<li><a href="#org92b4717">5.5.2. <span class="todo TODO">TODO</span> Edmonds-Karp algorithm</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#org5cc12ca">6. <span class="todo TODO">TODO</span> String algorithms</a>
+<ul>
+<li><a href="#orgfed8abd">6.1. <span class="todo TODO">TODO</span> Substring matching</a></li>
+<li><a href="#org8496386">6.2. <span class="todo TODO">TODO</span> Rabin-Karp algorithm</a></li>
+<li><a href="#org1af7684">6.3. <span class="todo TODO">TODO</span> Knuth-Morris-Pratt algorithm</a></li>
+</ul>
+</li>
+<li><a href="#orgb605e3f">7. <span class="todo TODO">TODO</span> Dynamic Programming</a>
+<ul>
+<li><a href="#org2d17f16">7.1. The rod-cutting problem</a></li>
+<li><a href="#org89444c2">7.2. <span class="todo TODO">TODO</span> Largest common subsequence</a></li>
+</ul>
+</li>
+<li><a href="#org7ce89fa">8. Other Named Algorithm</a>
+<ul>
+<li><a href="#org91c26e0">8.1. Bloom Filter</a></li>
+</ul>
+</li>
+<li><a href="#org417e470">9. <span class="todo TODO">TODO</span> NP-Completeness</a>
+<ul>
+<li><a href="#orgad7d7f6">9.1. Approximation algorithms</a>
+<ul>
+<li><a href="#orgff9bde3">9.1.1. the vertex-cover problem</a></li>
+<li><a href="#org31bd238">9.1.2. the traveling-salesman problem</a></li>
+<li><a href="#org677deb6">9.1.3. the set-covering problem</a></li>
+<li><a href="#orgc18d199">9.1.4. the subset-sum problem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga1a5bb6">10. <span class="todo TODO">TODO</span> Linear Programming (LP)</a>
+<ul>
+<li><a href="#orgf74a478">10.1. Standard and slack forms</a></li>
+<li><a href="#org10b294d">10.2. Formulating</a></li>
+<li><a href="#org392cc13">10.3. Simplex algorithm</a></li>
+<li><a href="#orgbcd6ebd">10.4. Duality</a></li>
+</ul>
+</li>
+<li><a href="#org7e37e94">11. Tips</a>
+<ul>
+<li><a href="#orgeb6b02d">11.1. <span class="todo TODO">TODO</span> Devide-and-Conquer</a></li>
+<li><a href="#orgb911ffa">11.2. Recursive</a></li>
+<li><a href="#org12e518e">11.3. Dynamic Programming</a></li>
+</ul>
+</li>
+<li><a href="#orgd5f4d88">12. Old Writings</a>
+<ul>
+<li><a href="#orgdd80d4c">12.1. Barrel shifter</a>
+<ul>
+<li><a href="#org742d326">12.1.1. shift register</a></li>
+</ul>
+</li>
+<li><a href="#org988cb0b">12.2. Linear congruential generator</a></li>
+<li><a href="#org40034b7">12.3. Dynamic Programming</a>
+<ul>
+<li><a href="#orgb9120db">12.3.1. One dimension</a>
+<ul>
+<li><a href="#orgb0e2b6c">12.3.1.1. Define sub-problems</a></li>
+<li><a href="#org1973569">12.3.1.2. Recurrence formula</a></li>
+</ul>
+</li>
+<li><a href="#org9c38feb">12.3.2. Two Dimensions</a>
+<ul>
+<li><a href="#orgb799677">12.3.2.1. Define sub-problems</a></li>
+<li><a href="#org504c187">12.3.2.2. Recurrence formula</a></li>
+</ul>
+</li>
+<li><a href="#org994ee22">12.3.3. Interval DP</a>
+<ul>
+<li><a href="#org40be234">12.3.3.1. Define sub-problem</a></li>
+<li><a href="#orgdfb7fd6">12.3.3.2. Recurrence formula</a></li>
+</ul>
+</li>
+<li><a href="#org669d27a">12.3.4. Tree DP</a>
+<ul>
+<li><a href="#orgf248e5c">12.3.4.1. Define</a></li>
+<li><a href="#orge8067cb">12.3.4.2. Recurrence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1211051">12.4. String Algorithm</a>
+<ul>
+<li><a href="#org9d21aaf">12.4.1. Knuth–Morris–Pratt(KMP)</a>
+<ul>
+<li><a href="#org8178136">12.4.1.1. 214. Shortest Palindrome</a></li>
+</ul>
+</li>
+<li><a href="#org9fc4b4d">12.4.2. Boyer Moore</a>
+<ul>
+<li><a href="#orgabfc744">12.4.2.1. Bad Character Rule</a></li>
+<li><a href="#orgfd08289">12.4.2.2. Good Suffix Rule</a></li>
+<li><a href="#orgdcf68b6">12.4.2.3. Galil Rule</a></li>
+</ul>
+</li>
+<li><a href="#orgeab07ca">12.4.3. Rabin-Karp Algorithm</a>
+<ul>
+<li><a href="#orgcabab33">12.4.3.1. Rolling Hash</a></li>
+<li><a href="#org7f7b417">12.4.3.2. Tabulation hashing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a class='org-ref-reference' href="#2009-Book-Cormen-Introduction">2009-Book-Cormen-Introduction</a>
+</p>
+
+<div id="outline-container-orga043744" class="outline-2">
+<h2 id="orga043744"><span class="section-number-2">1</span> Basics</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org790a992" class="outline-3">
+<h3 id="org790a992"><span class="section-number-3">1.1</span> Order of growth</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+In this section, &exist; c<sub>1,c</sub><sub>2,n</sub><sub>0</sub> means there exists positive
+constants c<sub>1</sub>, c<sub>2</sub>, and n<sub>0</sub>.
+</p>
+
+<ul class="org-ul">
+<li>\(\Theta (g(n))\): "big-theta" of g of n, both lower bound and upper
+bound, asymptotically tight bound</li>
+<li>O: <b>big-o (most often used)</b>, upper bound, asymptotic upper bound</li>
+<li>\(\Omega\): big omega, lower bound, asymptotic lower bound</li>
+<li>o: little-o, not tight upper bound</li>
+<li>\(\omega\): little omega, not tight lower bound</li>
+</ul>
+
+<p>
+Formally:
+</p>
+<ul class="org-ul">
+<li>\(\Theta(g(n)) = {f(n) : \exists c_1, c_2, n_0 \text{ such that } 0 \le c_1
+  g(n) \le f(n) \le c_2 g(n) \text{ for all } n \ge n_0}\)</li>
+<li>O(g(n)) = {f(n): &exist; c and n<sub>0</sub> such that 0 &le; f(n) &le; c g(n)
+for all n &ge; n<sub>0</sub>}</li>
+<li>&Omega;(g(n)) = {f(n): &exist; c and n<sub>0</sub> such that 0 &le; c g(n) &le;
+f(n) for all n &ge; n<sub>0</sub>}</li>
+<li>o(g(n)) = {f(n): &exist; c and n<sub>0</sub> such that 0 &le; f(n) &lt; c g(n) for
+all n &ge; n<sub>0</sub>}</li>
+<li>&omega;(g(n)) = {f(n): &exist; c and n<sub>0</sub> such that 0 &le; c g(n) &lt;
+f(n) for all n &ge; n<sub>0</sub>}</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdc72190" class="outline-2">
-<h2 id="orgdc72190"><span class="section-number-2">1</span> Network Flow Problems</h2>
-<div class="outline-text-2" id="text-1">
+
+
+
+
+<div id="outline-container-orge1d54f3" class="outline-3">
+<h3 id="orge1d54f3"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> how to analyze the running time</h3>
+</div>
+<div id="outline-container-org636ec64" class="outline-3">
+<h3 id="org636ec64"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> Amortized Analysis</h3>
+</div>
+</div>
+
+<div id="outline-container-org1f101ba" class="outline-2">
+<h2 id="org1f101ba"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Sorting algorithms</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">algorithm</th>
+<th scope="col" class="org-left">worst-case</th>
+<th scope="col" class="org-left">average case</th>
+<th scope="col" class="org-left">memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">insertion sort</td>
+<td class="org-left">n<sup>2</sup></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">merge sort</td>
+<td class="org-left">n log n</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">heap sort</td>
+<td class="org-left">n log n</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">in place</td>
+</tr>
+
+<tr>
+<td class="org-left">quick sort</td>
+<td class="org-left">n<sup>2</sup></td>
+<td class="org-left">n log n</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">counting sort</td>
+<td class="org-left">n+k</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">radix sort</td>
+<td class="org-left">d(n+k)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">bucket sort</td>
+<td class="org-left">n<sup>2</sup></td>
+<td class="org-left">n</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org54c1ac4" class="outline-3">
+<h3 id="org54c1ac4"><span class="section-number-3">2.1</span> Bubble sort</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Go through the array n items. Each time, swap two adjacent items a and
+b if a&gt;b. Each loop, the largest one go to the end, the smaller ones
+bubbles up.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(n):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> j <span class="org-keyword">in</span> <span class="org-builtin">range</span>(n-i):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> A[j] &gt; A[j+1]:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> swap(A[j], A[j+1])
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgea66d45" class="outline-3">
+<h3 id="orgea66d45"><span class="section-number-3">2.2</span> insertion sort</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Each loop, make sure the first i items are sorted. In the i-th loop,
+insert the i-th item into the correct position.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">for</span> i <span class="org-keyword">in</span> 1 to A.length:
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">key</span> = A[i]
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">j</span> = i-1
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">while</span> A[j] &gt; key:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">A</span>[j+1] = A[j]
+<span class="org-highlight-indentation"> </span>   j--
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">A</span>[j]=key
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org59d5f33" class="outline-3">
+<h3 id="org59d5f33"><span class="section-number-3">2.3</span> merge sort</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Uses divide-and-conquer, recursively solve the left and right
+subarray, and merge the two sorted arrays (in linear time).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">sort</span>(A, p, r):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">if</span> p &lt; r:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">q</span> = (p + r) / 2
+<span class="org-highlight-indentation"> </span>   sort(A, p, q)
+<span class="org-highlight-indentation"> </span>   sort(A, q, r)
+<span class="org-highlight-indentation"> </span>   merge(A, p, q, r)
+
+<span class="org-keyword">def</span> <span class="org-function-name">merge</span>(A, p, q, r):
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">n</span> = q-r+1
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">L</span> = A[p:q]
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">R</span> = A[q:r]
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">l</span> = <span class="org-variable-name">r</span> = 0
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(n):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> L[l] &lt; R[r]:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-variable-name">A</span>[i] = L[l]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> l++
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-variable-name">A</span>[i] = R[r]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> r++
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org682e0a8" class="outline-3">
+<h3 id="org682e0a8"><span class="section-number-3">2.4</span> Heap sort</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Binary heap is a nearly complete binary tree, i.e. completely filled
+on all levels except possibly the lowest, which is filled from left up
+to a point. It can be either max-heap or min-heap, with the max and
+min on top of heap respectively.
+</p>
+
+<p>
+Some helper routines:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">parent</span>(i):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> floor(i/2)
+<span class="org-keyword">def</span> <span class="org-function-name">left</span>(i):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> 2*i
+<span class="org-keyword">def</span> <span class="org-function-name">right</span>(i):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> 2*i+1
+</pre>
+</div>
+
+<p>
+Assuming the trees rooted at <code>left(i)</code> and <code>right(i)</code> are max-heaps,
+but <code>A[i]</code> is not. Float down A[i] so that the tree rooted at <code>i</code> is
+max-heap.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">max_heapify</span>(A, i):
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">l</span> = left(i)
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">r</span> = right(i)
+<span class="org-highlight-indentation"> </span> <span class="org-comment-delimiter"># </span><span class="org-fic">TODO</span><span class="org-comment"> check l,r &lt; A.heap_size</span>
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">value</span>, <span class="org-variable-name">index</span> = <span class="org-builtin">max</span>(A[i], A[l], A[r])
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">if</span> index != i:
+<span class="org-highlight-indentation"> </span>   swap(A[i], A[index])
+<span class="org-highlight-indentation"> </span>   max_heapify(A, index)
+</pre>
+</div>
+
+<p>
+Build a heap from an array:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">build_max_heap</span>(A):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(A), 1, -1):
+<span class="org-highlight-indentation"> </span>   max_heapify(A, i)
+</pre>
+</div>
+
+<p>
+Finally heap sort: in each loop, remove the top (current max item),
+replace it with the last element in the heap, and do <code>heapify</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">heapsort</span>(A):
+<span class="org-highlight-indentation"> </span> build_max_heap(A)
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(A), 2, -1):
+<span class="org-highlight-indentation"> </span>   swap(A[1], A[i])
+<span class="org-highlight-indentation"> </span>   A.heap_size--
+<span class="org-highlight-indentation"> </span>   max_heapify(A, 1)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7b7c57a" class="outline-3">
+<h3 id="org7b7c57a"><span class="section-number-3">2.5</span> Quick sort</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+The worst running time is \(\Theta(n^2)\), but it is often the best
+practical choice for sorting, because it has average running time of
+\(\Theta(n log n)\), with a small constant factor.
+</p>
+
+<p>
+It is an divide-n-conquer algorithm. 
+</p>
+<ol class="org-ol">
+<li>First find a pivot value \(x\), which is typically the last element
+in the array.</li>
+<li>Then <b>partition the array into two parts, less than \(x\) and larger
+than \(x\)</b>.</li>
+<li>recursively do this for the two partitions</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">sort</span>(A):
+<span class="org-highlight-indentation"> </span> quicksort(A, 1, <span class="org-builtin">len</span>(A))
+<span class="org-keyword">def</span> <span class="org-function-name">quicksort</span>(A, p, r):
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">q</span> = partition(A, p, r)
+<span class="org-highlight-indentation"> </span> quicksort(A, p, q-1)
+<span class="org-highlight-indentation"> </span> quicksort(A, q+1, r)
+</pre>
+</div>
+
+<p>
+The partition function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">partition</span>(A, p, r):
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">x</span> = A[r]
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">i</span> = p-1
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> j <span class="org-keyword">in</span> <span class="org-builtin">range</span>(p, r):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> A[j] &lt;= x:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-variable-name">i</span> = i+1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-comment-delimiter"># </span><span class="org-comment">values less than x swapped to left part</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> swap(A[i], A[j])
+<span class="org-highlight-indentation"> </span> <span class="org-comment-delimiter"># </span><span class="org-comment">put the pivot value in place</span>
+<span class="org-highlight-indentation"> </span> swap(A[i+1], A[r])
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> i+1
+</pre>
+</div>
+
+<p>
+Or I prefer a functional way, in which case we don't even need to
+specify the implementation of <code>partition</code> function, as it is obvious:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">quicksort</span>(A):
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">x</span> = A[-1]
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">Al</span>, <span class="org-variable-name">Ar</span> = partition(A, x)
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> [quicksort(Al), x, quicksort(Ar)]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7bb5bcb" class="outline-3">
+<h3 id="org7bb5bcb"><span class="section-number-3">2.6</span> Linear time sorting</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+All sorting algorithms above are comparison sorts, which can be proved
+to take at least \(n log n\) running time. The algorithms in this
+section makes certain assumptions to the array.
+</p>
+</div>
+
+<div id="outline-container-org342019e" class="outline-4">
+<h4 id="org342019e"><span class="section-number-4">2.6.1</span> couting sort</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+Assume each of the elements are integers, in the range of [0,k].
+</p>
+
+<p>
+The idea:
+</p>
+<ol class="org-ol">
+<li>maintain an array C[0..k], where C[i] is the number of value <code>i</code> in A</li>
+<li>change the array C such that C[i] is the number of values less than
+or equal to <code>i</code></li>
+<li>put the elements directly to the place according to C</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga902d46" class="outline-4">
+<h4 id="orga902d46"><span class="section-number-4">2.6.2</span> Radix sort</h4>
+</div>
+<div id="outline-container-org274fa54" class="outline-4">
+<h4 id="org274fa54"><span class="section-number-4">2.6.3</span> Bucket sort</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<p>
+Assume the input is drawn from a uniform distribution. The average
+running time is linear.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org35fd616" class="outline-2">
+<h2 id="org35fd616"><span class="section-number-2">3</span> Data structure</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+This section is mostly empty, because these are obvious. Most
+important aspects of these data structures are the implementation of
+their operations.
+</p>
+</div>
+
+<div id="outline-container-org9289faf" class="outline-3">
+<h3 id="org9289faf"><span class="section-number-3">3.1</span> linked list</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>linked list
+<ul class="org-ul">
+<li>head</li>
+<li>tail</li>
+<li>next</li>
+</ul></li>
+<li>doubly linked list
+<ul class="org-ul">
+<li>next</li>
+<li>prev</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org377d7fa" class="outline-3">
+<h3 id="org377d7fa"><span class="section-number-3">3.2</span> stack &amp; queue</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>push</li>
+<li>pop</li>
+<li>enqueue</li>
+<li>dequeue</li>
+</ul>
+</div>
+
+<div id="outline-container-org8b7ab66" class="outline-4">
+<h4 id="org8b7ab66"><span class="section-number-4">3.2.1</span> priority queue</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+It is implemented using a heap. Each item has a value. The <code>dequeue</code>
+operation makes sure the popped item is the max one or min one, for
+max-priority queue and min-priority queue, respectively.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd158ca7" class="outline-3">
+<h3 id="orgd158ca7"><span class="section-number-3">3.3</span> hash table</h3>
+</div>
+</div>
+
+<div id="outline-container-orgf3b8147" class="outline-2">
+<h2 id="orgf3b8147"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Trees</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgca97356" class="outline-3">
+<h3 id="orgca97356"><span class="section-number-3">4.1</span> Search</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Using binary tree as example.  &amp; 
+</p>
+
+<p>
+BFS:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">q</span> = queue()
+<span class="org-keyword">def</span> <span class="org-function-name">traverse</span>(root):
+<span class="org-highlight-indentation"> </span> q.insert(root)
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">while</span> (x = q.pop()):
+<span class="org-highlight-indentation"> </span>   q.insert(x.children)
+<span class="org-highlight-indentation"> </span>   visit(x)
+</pre>
+</div>
+
+<p>
+DFS:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">traverse(root)
+
+<span class="org-keyword">def</span> <span class="org-function-name">traverse</span>(node):
+<span class="org-highlight-indentation"> </span> traverse(node.left)
+<span class="org-highlight-indentation"> </span> traverse(node.right)
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org16d50bc" class="outline-3">
+<h3 id="org16d50bc"><span class="section-number-3">4.2</span> Traversal</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Only defined for DFS.
+</p>
+
+<p>
+Pre-order:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">traverse</span>(node):
+<span class="org-highlight-indentation"> </span> visit(node)
+<span class="org-highlight-indentation"> </span> traverse(node.left)
+<span class="org-highlight-indentation"> </span> traverse(node.right)
+</pre>
+</div>
+
+<p>
+In-order (only defined for binary tree):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">traverse</span>(node):
+<span class="org-highlight-indentation"> </span> traverse(node.left)
+<span class="org-highlight-indentation"> </span> visit(node)
+<span class="org-highlight-indentation"> </span> traverse(node.right)
+</pre>
+</div>
+
+<p>
+Post-order:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">traverse</span>(node):
+<span class="org-highlight-indentation"> </span> traverse(node.left)
+<span class="org-highlight-indentation"> </span> traverse(node.right)
+<span class="org-highlight-indentation"> </span> visit(node)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org24d39bd" class="outline-3">
+<h3 id="org24d39bd"><span class="section-number-3">4.3</span> Special Trees</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-org674f8eb" class="outline-4">
+<h4 id="org674f8eb"><span class="section-number-4">4.3.1</span> Binary search tree</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<p>
+The value of a node is larger than all values in its left subtree, but
+smaller than all values in the right subtree. As the name suggested,
+it is mostly used for searching a value.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2fff9a6" class="outline-4">
+<h4 id="org2fff9a6"><span class="section-number-4">4.3.2</span> red-black tree</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<p>
+A problem of search tree is that, the height may be very large, and
+the running time is tight with the height.
+</p>
+
+<p>
+The red-black tree is a binary search tree. It is designed to be a
+balanced binary search tree, and guarantees that a simple path from
+root to any leaf is no more than twice as long as any other, so that
+the tree is approximately balanced.
+</p>
+
+<p>
+Specifically, the property of a red-black tree:
+</p>
+<ol class="org-ol">
+<li>every node is either red or black</li>
+<li>the root is black</li>
+<li>every leaf is black</li>
+<li><b>if a node is red, both its children are black</b></li>
+<li>for each node, all simple paths from the node to leaves contains
+the <b>same number of black nodes</b></li>
+</ol>
+
+<p>
+Operations:
+</p>
+<ol class="org-ol">
+<li>rotation</li>
+<li>insertion</li>
+<li>deletion</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfac7381" class="outline-4">
+<h4 id="orgfac7381"><span class="section-number-4">4.3.3</span> interval tree</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<p>
+This is an example of augmenting data structures. It is an augmented
+red-black tree. Each node of a tree contains two additional
+attributes: the low and high of the sub-tree. Thus it is easier for
+search, as we can use the interval to decide whether the subtree
+contains the value at all.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2a7255d" class="outline-4">
+<h4 id="org2a7255d"><span class="section-number-4">4.3.4</span> B-tree</h4>
+<div class="outline-text-4" id="text-4-3-4">
+<p>
+B-tree is a balanced search tree, designed to work well on storage
+devices. B-tree is not a binary tree.
+</p>
+
+<p>
+Specifically, a B-tree is defined as:
+</p>
+<ol class="org-ol">
+<li>each node contains n keys, where \(t \le n \le 2t-1\), and contains
+\(n+1\) children.</li>
+<li>similar to binary search tree, the children of a node is divided by
+the keys, i.e. $ch<sub>1</sub> &le; key<sub>1</sub> &le; ch<sub>2</sub> &le; key<sub>2</sub> &#x2026;$.</li>
+<li>All leaves have the same depth</li>
+</ol>
+
+<p>
+The operations:
+</p>
+<ul class="org-ul">
+<li>search: obvious</li>
+<li>insertion: this is tricky. Since each tree node has a capacity of
+\([t,2t-1]\), when a node is full, it must be split, and a new key
+needs to be generated.</li>
+<li>deletion: this is also tricky, as when the node is filled with less
+than \(t\), it must be merged.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9fdbf33" class="outline-4">
+<h4 id="org9fdbf33"><span class="section-number-4">4.3.5</span> prefix-tree</h4>
+<div class="outline-text-4" id="text-4-3-5">
+<p>
+The prefix tree, also called <i>Trie</i>, <i>digital tree</i>, <i>radix tree</i>, is
+one kind of search tree, in which all descendants of a node share a
+common prefix.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d1c9c1" class="outline-3">
+<h3 id="org8d1c9c1"><span class="section-number-3">4.4</span> Heap</h3>
+<div class="outline-text-3" id="text-4-4">
+</div>
+<div id="outline-container-org0bee563" class="outline-4">
+<h4 id="org0bee563"><span class="section-number-4">4.4.1</span> Fibonacci Heap</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org17b0ca4" class="outline-2">
+<h2 id="org17b0ca4"><span class="section-number-2">5</span> <span class="todo TODO">TODO</span> Graph</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+The representation of a graph can be either a adjacent list or adjacent matrix.
+</p>
+
+<p>
+A graph is (V,E), each edge has a weight.
+</p>
+
+<p>
+Some general notations:
+</p>
 <ul class="org-ul">
 <li>A <b>cut</b> of an undirected graph G is a partition of V, into \((S, V-S)\).</li>
 <li>An edge E <b>crosses the cut</b> if its two ends belong to the different
@@ -362,6 +1126,35 @@ sides of the cut.</li>
 if it is the minimum weight one among all edges satisfying the
 property.</li>
 </ul>
+</div>
+
+<div id="outline-container-org00f3144" class="outline-3">
+<h3 id="org00f3144"><span class="section-number-3">5.1</span> DFS &amp; BFS</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Same as trees, except checking for repeat (by coloring).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbaf5748" class="outline-3">
+<h3 id="orgbaf5748"><span class="section-number-3">5.2</span> topological sort</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Run DFS (or BFS) and print out the nodes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaa317dd" class="outline-3">
+<h3 id="orgaa317dd"><span class="section-number-3">5.3</span> Minimum Spanning Tree</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Given a graph (V,E), and each edge has a weight. Find the subset of
+edges \(E' \subset E\) such that (V,E') is a tree. This tree is called
+<i>spanning tree</i>. The spanning tree with minimum sum of edge weights is
+called the minimum spanning tree.
+</p>
 
 <p>
 General idea: We grow a set of edges A, from \(\emptyset\), and maintain
@@ -405,9 +1198,15 @@ Then the light edge connecting \(C_i\) to \(C_j\) is safe to A.
 </blockquote>
 </div>
 
-<div id="outline-container-org17fb812" class="outline-3">
-<h3 id="org17fb812"><span class="section-number-3">1.1</span> Kruskal's algorithm</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org8655e42" class="outline-4">
+<h4 id="org8655e42"><span class="section-number-4">5.3.1</span> Kruskal's algorithm</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<p>
+This algorithm <b>grow the edges, or forest</b>. It sorts all edges.
+Starting from empty, greedily find the smallest edge as long as it
+does not form a cycle.
+</p>
+
 <pre class="example">
 edges = sorted(edges, key=weight)
 A = {}
@@ -418,13 +1217,13 @@ for (u,v) in edges:
 </div>
 </div>
 
-<div id="outline-container-org846b7af" class="outline-3">
-<h3 id="org846b7af"><span class="section-number-3">1.2</span> Prim's algorithm</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org385cbf4" class="outline-4">
+<h4 id="org385cbf4"><span class="section-number-4">5.3.2</span> Prim's algorithm</h4>
+<div class="outline-text-4" id="text-5-3-2">
 <p>
-Maintain a tree A at each step. Start from an arbitrary node, add it
-to A. Each step, add to A the light edge from a node A to the rest of
-G.
+This algorithm will <b>grow the tree</b>, i.e. at any given time, the
+result is a tree. Start from an arbitrary node, add it to A. Each
+step, add to A the light edge from a node A to the rest of G.
 </p>
 
 <pre class="example">
@@ -444,61 +1243,109 @@ while Q:
 </div>
 </div>
 
-
-
-
-
-<div id="outline-container-org8425a19" class="outline-2">
-<h2 id="org8425a19"><span class="section-number-2">2</span> Other</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org0f0f2c3" class="outline-3">
+<h3 id="org0f0f2c3"><span class="section-number-3">5.4</span> Shortest path</h3>
+<div class="outline-text-3" id="text-5-4">
 </div>
-<div id="outline-container-orgf9a3404" class="outline-3">
-<h3 id="orgf9a3404"><span class="section-number-3">2.1</span> Barrel shifter</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org851d3c4" class="outline-4">
+<h4 id="org851d3c4"><span class="section-number-4">5.4.1</span> <span class="todo TODO">TODO</span> Bellman-Ford algorithm</h4>
+</div>
+<div id="outline-container-org323cc1a" class="outline-4">
+<h4 id="org323cc1a"><span class="section-number-4">5.4.2</span> <span class="todo TODO">TODO</span> Dijkstra's algorithm</h4>
+</div>
+</div>
+
+<div id="outline-container-org3fc2898" class="outline-3">
+<h3 id="org3fc2898"><span class="section-number-3">5.5</span> <span class="todo TODO">TODO</span> Network Flow Problems</h3>
+<div class="outline-text-3" id="text-5-5">
 <p>
-A barrel shifter is a digital circuit that can shift a data word
-by a specified number of bits in one clock cycle.
-</p>
-
-
-<div class="figure">
-<p><img src="https://farm8.staticflickr.com/7578/16260221182_53a096f18c_o.png" alt="16260221182_53a096f18c_o.png" />
+Maximium Flow &amp; Minimum cut
 </p>
 </div>
+
+<div id="outline-container-org139c644" class="outline-4">
+<h4 id="org139c644"><span class="section-number-4">5.5.1</span> <span class="todo TODO">TODO</span> Ford-Fulkerson algorithm</h4>
+</div>
+<div id="outline-container-org92b4717" class="outline-4">
+<h4 id="org92b4717"><span class="section-number-4">5.5.2</span> <span class="todo TODO">TODO</span> Edmonds-Karp algorithm</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5cc12ca" class="outline-2">
+<h2 id="org5cc12ca"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> String algorithms</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgfed8abd" class="outline-3">
+<h3 id="orgfed8abd"><span class="section-number-3">6.1</span> <span class="todo TODO">TODO</span> Substring matching</h3>
+</div>
+<div id="outline-container-org8496386" class="outline-3">
+<h3 id="org8496386"><span class="section-number-3">6.2</span> <span class="todo TODO">TODO</span> Rabin-Karp algorithm</h3>
+</div>
+<div id="outline-container-org1af7684" class="outline-3">
+<h3 id="org1af7684"><span class="section-number-3">6.3</span> <span class="todo TODO">TODO</span> Knuth-Morris-Pratt algorithm</h3>
+</div>
+</div>
+
+<div id="outline-container-orgb605e3f" class="outline-2">
+<h2 id="orgb605e3f"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Dynamic Programming</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+The core idea is to store the solution to subproblems, thus avoid
+repeated computation. It uses additional memory to save computation
+time.
+</p>
 
 <p>
-In the above image, x is input and y is output.
+There are often two approaches for dynamic programming:
 </p>
+<ol class="org-ol">
+<li>Do recursion as usual, but just keep a look up table for each
+subproblem, i.e. when solving a subproblem, check the table to see
+if it is already solved, if not, solve it and store its result.</li>
+<li>This is the most commonly used and most efficient algorithm. The
+above is inefficient by a constant factor. We can order the
+subproblems based on its size, and the latter subproblems often
+directly uses the results from the smaller subproblems.</li>
+</ol>
+</div>
 
+
+<div id="outline-container-org2d17f16" class="outline-3">
+<h3 id="org2d17f16"><span class="section-number-3">7.1</span> The rod-cutting problem</h3>
+<div class="outline-text-3" id="text-7-1">
 <p>
-For shift 1, all the erjiguan on the green line exist, while others
-not.
+Given a rod of length n, and a price table mapping from lengths to
+prices. Determine the maximum revenue obtainable by cutting and
+selling the rod.
 </p>
-</div>
 
-<div id="outline-container-org91171cd" class="outline-4">
-<h4 id="org91171cd"><span class="section-number-4">2.1.1</span> shift register</h4>
-<div class="outline-text-4" id="text-2-1-1">
-
-<div class="figure">
-<p><img src="https://farm9.staticflickr.com/8671/16074934899_03921f148b_o.png" alt="16074934899_03921f148b_o.png" />
-</p>
-</div>
-
-<p>
-F0、F1、F2、F3是四个边沿触发的D触发器，每个触发器的输出端Q接到右边一个
-触发器的输入端D。因为从时钟信号CP的上升沿加到触发器上开始到输出端新状
-态稳定地建立起来有一段延迟时间，所以当时钟信号同时加到四个触发器上时，
-每个触发器接收的都是左边一个触发器中原来的数据(F0接收的输入数据D1)。寄
-存器中的数据依次右移一位。
-</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">cutrod</span>(price_table, n):
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">r</span>[0] = 0
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(1, n):
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">q</span>=0
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> j <span class="org-keyword">in</span> <span class="org-builtin">range</span>(1, i):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-variable-name">q</span> = <span class="org-builtin">max</span>(q, p[i]+r[i-j])
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">r</span>[i] = q
+<span class="org-keyword">return</span> r[n]
+</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb06b178" class="outline-3">
-<h3 id="orgb06b178"><span class="section-number-3">2.2</span> Bloom Filter</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org89444c2" class="outline-3">
+<h3 id="org89444c2"><span class="section-number-3">7.2</span> <span class="todo TODO">TODO</span> Largest common subsequence</h3>
+</div>
+</div>
+
+<div id="outline-container-org7ce89fa" class="outline-2">
+<h2 id="org7ce89fa"><span class="section-number-2">8</span> Other Named Algorithm</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org91c26e0" class="outline-3">
+<h3 id="org91c26e0"><span class="section-number-3">8.1</span> Bloom Filter</h3>
+<div class="outline-text-3" id="text-8-1">
 <p>
 It is used to judge whether an item is in a set or not.
 </p>
@@ -521,11 +1368,116 @@ Otherwise return false.
 </p>
 </div>
 </div>
+</div>
 
 
-<div id="outline-container-org47f4d0e" class="outline-3">
-<h3 id="org47f4d0e"><span class="section-number-3">2.3</span> Linear congruential generator</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org417e470" class="outline-2">
+<h2 id="org417e470"><span class="section-number-2">9</span> <span class="todo TODO">TODO</span> NP-Completeness</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-orgad7d7f6" class="outline-3">
+<h3 id="orgad7d7f6"><span class="section-number-3">9.1</span> Approximation algorithms</h3>
+<div class="outline-text-3" id="text-9-1">
+</div>
+<div id="outline-container-orgff9bde3" class="outline-4">
+<h4 id="orgff9bde3"><span class="section-number-4">9.1.1</span> the vertex-cover problem</h4>
+</div>
+<div id="outline-container-org31bd238" class="outline-4">
+<h4 id="org31bd238"><span class="section-number-4">9.1.2</span> the traveling-salesman problem</h4>
+</div>
+<div id="outline-container-org677deb6" class="outline-4">
+<h4 id="org677deb6"><span class="section-number-4">9.1.3</span> the set-covering problem</h4>
+</div>
+<div id="outline-container-orgc18d199" class="outline-4">
+<h4 id="orgc18d199"><span class="section-number-4">9.1.4</span> the subset-sum problem</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga1a5bb6" class="outline-2">
+<h2 id="orga1a5bb6"><span class="section-number-2">10</span> <span class="todo TODO">TODO</span> Linear Programming (LP)</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-orgf74a478" class="outline-3">
+<h3 id="orgf74a478"><span class="section-number-3">10.1</span> Standard and slack forms</h3>
+</div>
+<div id="outline-container-org10b294d" class="outline-3">
+<h3 id="org10b294d"><span class="section-number-3">10.2</span> Formulating</h3>
+</div>
+<div id="outline-container-org392cc13" class="outline-3">
+<h3 id="org392cc13"><span class="section-number-3">10.3</span> Simplex algorithm</h3>
+</div>
+<div id="outline-container-orgbcd6ebd" class="outline-3">
+<h3 id="orgbcd6ebd"><span class="section-number-3">10.4</span> Duality</h3>
+</div>
+</div>
+
+<div id="outline-container-org7e37e94" class="outline-2">
+<h2 id="org7e37e94"><span class="section-number-2">11</span> Tips</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-orgeb6b02d" class="outline-3">
+<h3 id="orgeb6b02d"><span class="section-number-3">11.1</span> <span class="todo TODO">TODO</span> Devide-and-Conquer</h3>
+</div>
+<div id="outline-container-orgb911ffa" class="outline-3">
+<h3 id="orgb911ffa"><span class="section-number-3">11.2</span> Recursive</h3>
+</div>
+<div id="outline-container-org12e518e" class="outline-3">
+<h3 id="org12e518e"><span class="section-number-3">11.3</span> Dynamic Programming</h3>
+</div>
+</div>
+
+<div id="outline-container-orgd5f4d88" class="outline-2">
+<h2 id="orgd5f4d88"><span class="section-number-2">12</span> Old Writings</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-orgdd80d4c" class="outline-3">
+<h3 id="orgdd80d4c"><span class="section-number-3">12.1</span> Barrel shifter</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+A barrel shifter is a digital circuit that can shift a data word
+by a specified number of bits in one clock cycle.
+</p>
+
+
+<div class="figure">
+<p><img src="https://farm8.staticflickr.com/7578/16260221182_53a096f18c_o.png" alt="16260221182_53a096f18c_o.png" />
+</p>
+</div>
+
+<p>
+In the above image, x is input and y is output.
+</p>
+
+<p>
+For shift 1, all the erjiguan on the green line exist, while others
+not.
+</p>
+</div>
+
+<div id="outline-container-org742d326" class="outline-4">
+<h4 id="org742d326"><span class="section-number-4">12.1.1</span> shift register</h4>
+<div class="outline-text-4" id="text-12-1-1">
+
+<div class="figure">
+<p><img src="https://farm9.staticflickr.com/8671/16074934899_03921f148b_o.png" alt="16074934899_03921f148b_o.png" />
+</p>
+</div>
+
+<p>
+F0、F1、F2、F3是四个边沿触发的D触发器，每个触发器的输出端Q接到右边一个
+触发器的输入端D。因为从时钟信号CP的上升沿加到触发器上开始到输出端新状
+态稳定地建立起来有一段延迟时间，所以当时钟信号同时加到四个触发器上时，
+每个触发器接收的都是左边一个触发器中原来的数据(F0接收的输入数据D1)。寄
+存器中的数据依次右移一位。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org988cb0b" class="outline-3">
+<h3 id="org988cb0b"><span class="section-number-3">12.2</span> Linear congruential generator</h3>
+<div class="outline-text-3" id="text-12-2">
 <p>
 A linear congruential generator (LCG)
 is an algorithm that yields a sequence of pseudo-randomized numbers.
@@ -558,38 +1510,36 @@ If c ≠ 0, the method is called a mixed congruential generator.
 </p>
 </div>
 </div>
-</div>
 
 
-
-<div id="outline-container-org32b4eb2" class="outline-2">
-<h2 id="org32b4eb2"><span class="section-number-2">3</span> Dynamic Programming</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org40034b7" class="outline-3">
+<h3 id="org40034b7"><span class="section-number-3">12.3</span> Dynamic Programming</h3>
+<div class="outline-text-3" id="text-12-3">
 <p>
 Solve problem by breaking down into simpler sub-problems.
 </p>
 </div>
 
-<div id="outline-container-org5c1d270" class="outline-3">
-<h3 id="org5c1d270"><span class="section-number-3">3.1</span> One dimension</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgb9120db" class="outline-4">
+<h4 id="orgb9120db"><span class="section-number-4">12.3.1</span> One dimension</h4>
+<div class="outline-text-4" id="text-12-3-1">
 <p>
 Given n, find the number of different ways to write n as the sum of 1,3,4
 </p>
 </div>
 
-<div id="outline-container-org092bfb5" class="outline-4">
-<h4 id="org092bfb5"><span class="section-number-4">3.1.1</span> Define sub-problems</h4>
-<div class="outline-text-4" id="text-3-1-1">
+<div id="outline-container-orgb0e2b6c" class="outline-5">
+<h5 id="orgb0e2b6c"><span class="section-number-5">12.3.1.1</span> Define sub-problems</h5>
+<div class="outline-text-5" id="text-12-3-1-1">
 <p>
 D<sub>n</sub> is the number of ways to write n as sum of 1,3,4
 </p>
 </div>
 </div>
 
-<div id="outline-container-org73cec11" class="outline-4">
-<h4 id="org73cec11"><span class="section-number-4">3.1.2</span> Recurrence formula</h4>
-<div class="outline-text-4" id="text-3-1-2">
+<div id="outline-container-org1973569" class="outline-5">
+<h5 id="org1973569"><span class="section-number-5">12.3.1.2</span> Recurrence formula</h5>
+<div class="outline-text-5" id="text-12-3-1-2">
 <p>
 D<sub>n</sub> = D<sub>n-1</sub> + D<sub>n-3</sub> + D<sub>n-4</sub>
 </p>
@@ -597,26 +1547,26 @@ D<sub>n</sub> = D<sub>n-1</sub> + D<sub>n-3</sub> + D<sub>n-4</sub>
 </div>
 </div>
 
-<div id="outline-container-org769c058" class="outline-3">
-<h3 id="org769c058"><span class="section-number-3">3.2</span> Two Dimensions</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-org9c38feb" class="outline-4">
+<h4 id="org9c38feb"><span class="section-number-4">12.3.2</span> Two Dimensions</h4>
+<div class="outline-text-4" id="text-12-3-2">
 <p>
 Given two string x and y, find the length of longest common sub-sequence.
 </p>
 </div>
 
-<div id="outline-container-org4c32841" class="outline-4">
-<h4 id="org4c32841"><span class="section-number-4">3.2.1</span> Define sub-problems</h4>
-<div class="outline-text-4" id="text-3-2-1">
+<div id="outline-container-orgb799677" class="outline-5">
+<h5 id="orgb799677"><span class="section-number-5">12.3.2.1</span> Define sub-problems</h5>
+<div class="outline-text-5" id="text-12-3-2-1">
 <p>
 D<sub>ij</sub> is the length for x<sub>i..i</sub> and y<sub>1..j</sub>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org39461be" class="outline-4">
-<h4 id="org39461be"><span class="section-number-4">3.2.2</span> Recurrence formula</h4>
-<div class="outline-text-4" id="text-3-2-2">
+<div id="outline-container-org504c187" class="outline-5">
+<h5 id="org504c187"><span class="section-number-5">12.3.2.2</span> Recurrence formula</h5>
+<div class="outline-text-5" id="text-12-3-2-2">
 <p>
 D<sub>ij</sub> =
 </p>
@@ -628,27 +1578,27 @@ D<sub>ij</sub> =
 </div>
 </div>
 
-<div id="outline-container-orga3e9f4a" class="outline-3">
-<h3 id="orga3e9f4a"><span class="section-number-3">3.3</span> Interval DP</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-org994ee22" class="outline-4">
+<h4 id="org994ee22"><span class="section-number-4">12.3.3</span> Interval DP</h4>
+<div class="outline-text-4" id="text-12-3-3">
 <p>
 Given a string x=x<sub>1..n</sub>,
 find the minimum number of characters that need to be inserted to make it a palindrome.
 </p>
 </div>
 
-<div id="outline-container-orge63c06f" class="outline-4">
-<h4 id="orge63c06f"><span class="section-number-4">3.3.1</span> Define sub-problem</h4>
-<div class="outline-text-4" id="text-3-3-1">
+<div id="outline-container-org40be234" class="outline-5">
+<h5 id="org40be234"><span class="section-number-5">12.3.3.1</span> Define sub-problem</h5>
+<div class="outline-text-5" id="text-12-3-3-1">
 <p>
 D<sub>i,j</sub> be the minimum number of characters.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org569c160" class="outline-4">
-<h4 id="org569c160"><span class="section-number-4">3.3.2</span> Recurrence formula</h4>
-<div class="outline-text-4" id="text-3-3-2">
+<div id="outline-container-orgdfb7fd6" class="outline-5">
+<h5 id="orgdfb7fd6"><span class="section-number-5">12.3.3.2</span> Recurrence formula</h5>
+<div class="outline-text-5" id="text-12-3-3-2">
 <p>
 say y<sub>1..k</sub> is the palindrome for x<sub>i..j</sub>,
 <b>we have either y<sub>1</sub> = x<sub>i</sub> or y<sub>k</sub> = x<sub>j</sub></b>
@@ -665,17 +1615,17 @@ D<sub>ij</sub> =
 </div>
 </div>
 
-<div id="outline-container-org6b97052" class="outline-3">
-<h3 id="org6b97052"><span class="section-number-3">3.4</span> Tree DP</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-org669d27a" class="outline-4">
+<h4 id="org669d27a"><span class="section-number-4">12.3.4</span> Tree DP</h4>
+<div class="outline-text-4" id="text-12-3-4">
 <p>
 Given a tree, color nodes black as many as possible without coloring two adjacent nodes.
 </p>
 </div>
 
-<div id="outline-container-org4e66d5a" class="outline-4">
-<h4 id="org4e66d5a"><span class="section-number-4">3.4.1</span> Define</h4>
-<div class="outline-text-4" id="text-3-4-1">
+<div id="outline-container-orgf248e5c" class="outline-5">
+<h5 id="orgf248e5c"><span class="section-number-5">12.3.4.1</span> Define</h5>
+<div class="outline-text-5" id="text-12-3-4-1">
 <ul class="org-ul">
 <li>B(r) as the maximum nodes if the (root) node r is colored black.</li>
 <li>W(r) as the maximum nodes if the (root) node r is colored white.</li>
@@ -683,9 +1633,9 @@ Given a tree, color nodes black as many as possible without coloring two adjacen
 </div>
 </div>
 
-<div id="outline-container-org44f48f1" class="outline-4">
-<h4 id="org44f48f1"><span class="section-number-4">3.4.2</span> Recurrence</h4>
-<div class="outline-text-4" id="text-3-4-2">
+<div id="outline-container-orge8067cb" class="outline-5">
+<h5 id="orge8067cb"><span class="section-number-5">12.3.4.2</span> Recurrence</h5>
+<div class="outline-text-5" id="text-12-3-4-2">
 <ul class="org-ul">
 <li>B(v) = 1 + &sum;<sub>children</sub> W(c)</li>
 <li>W(v) = 1 + &sum;<sub>children</sub> max{B(c), W(c)}</li>
@@ -696,13 +1646,13 @@ Given a tree, color nodes black as many as possible without coloring two adjacen
 </div>
 
 
-<div id="outline-container-org436753c" class="outline-2">
-<h2 id="org436753c"><span class="section-number-2">4</span> String Algorithm</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org1211051" class="outline-3">
+<h3 id="org1211051"><span class="section-number-3">12.4</span> String Algorithm</h3>
+<div class="outline-text-3" id="text-12-4">
 </div>
-<div id="outline-container-org7fa925e" class="outline-3">
-<h3 id="org7fa925e"><span class="section-number-3">4.1</span> Knuth–Morris–Pratt(KMP)</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-org9d21aaf" class="outline-4">
+<h4 id="org9d21aaf"><span class="section-number-4">12.4.1</span> Knuth–Morris–Pratt(KMP)</h4>
+<div class="outline-text-4" id="text-12-4-1">
 <blockquote>
 <p>
 Match a pattern string P inside given long string T.
@@ -723,40 +1673,40 @@ The algorithm to build the table:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp-interaction">  (<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">build-table</span> (pattern)
-    (<span style="color: #a020f0;">cl-loop</span> with pos = 2
+<pre class="src src-lisp-interaction">  (<span class="org-keyword">defun</span> <span class="org-function-name">build-table</span> (pattern)
+    (<span class="org-keyword">cl-loop</span> with pos = 2
              with match = 0
              with size = (length pattern)
              with ret = (make-vector size 0)
              initially do
-             <span style="color: #b22222;">;; </span><span style="color: #b22222;">here I assume size is at least 2</span>
-             (<span style="color: #a020f0;">assert</span> (&gt; size 1))
+             <span class="org-comment-delimiter">;; </span><span class="org-comment">here I assume size is at least 2</span>
+             (<span class="org-keyword">assert</span> (&gt; size 1))
              (aset ret 0 -1)
              (aset ret 1 0)
              while (&lt; pos size) do
-             (<span style="color: #a020f0;">if</span> (equal (elt pattern (- pos 1)) (elt pattern match))
-                 (<span style="color: #a020f0;">progn</span>
+             (<span class="org-keyword">if</span> (equal (elt pattern (- pos 1)) (elt pattern match))
+                 (<span class="org-keyword">progn</span>
                    (aset ret pos (+ 1 match))
-                   (<span style="color: #a020f0;">incf</span> match)
-                   (<span style="color: #a020f0;">incf</span> pos))
-               (<span style="color: #a020f0;">if</span> (&gt; match 0)
-                   (<span style="color: #a020f0;">setq</span> match (elt ret match))
+                   (<span class="org-keyword">incf</span> match)
+                   (<span class="org-keyword">incf</span> pos))
+               (<span class="org-keyword">if</span> (&gt; match 0)
+                   (<span class="org-keyword">setq</span> match (elt ret match))
                  (aset ret pos 0)
-                 (<span style="color: #a020f0;">incf</span> pos)))
+                 (<span class="org-keyword">incf</span> pos)))
              finally return ret))
 
-  (<span style="color: #a020f0;">ert-deftest</span> <span style="color: #0000ff;">build-table-test</span>()
-    (should (equal (build-table <span style="color: #8b2252;">"AABAAAC"</span>) [-1 0 1 0 1 2 2]))
-    (should (equal (build-table <span style="color: #8b2252;">"ABCABCD"</span>) [-1 0 0 0 1 2 3])))
+  (<span class="org-keyword">ert-deftest</span> <span class="org-function-name">build-table-test</span>()
+    (should (equal (build-table <span class="org-string">"AABAAAC"</span>) [-1 0 1 0 1 2 2]))
+    (should (equal (build-table <span class="org-string">"ABCABCD"</span>) [-1 0 0 0 1 2 3])))
 
   (ert-run-test (ert-get-test 'build-table-test))
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org8a05d9c" class="outline-4">
-<h4 id="org8a05d9c"><span class="section-number-4">4.1.1</span> 214. Shortest Palindrome</h4>
-<div class="outline-text-4" id="text-4-1-1">
+<div id="outline-container-org8178136" class="outline-5">
+<h5 id="org8178136"><span class="section-number-5">12.4.1.1</span> 214. Shortest Palindrome</h5>
+<div class="outline-text-5" id="text-12-4-1-1">
 <blockquote>
 <p>
 Given a string S, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.
@@ -764,9 +1714,9 @@ Given a string S, you are allowed to convert it to a palindrome by adding charac
 </blockquote>
 </div>
 
-<div id="outline-container-org2e6ca4a" class="outline-5">
-<h5 id="org2e6ca4a"><span class="section-number-5">4.1.1.1</span> KMP</h5>
-<div class="outline-text-5" id="text-4-1-1-1">
+<ol class="org-ol">
+<li><a id="orge1fa419"></a>KMP<br />
+<div class="outline-text-6" id="text-12-4-1-1-1">
 <p>
 It is easy to convert the problem to find the longest Palindrome at the beginning of s.
 To apply KMP, we write the string as <code>s + '#' + reverse(s)</code>.
@@ -774,84 +1724,84 @@ Then we build the KMP table for this string.
 What we need is to find the largest number inside KMP table.
 </p>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org5c3e840" class="outline-5">
-<h5 id="org5c3e840"><span class="section-number-5">4.1.1.2</span> brute force</h5>
-<div class="outline-text-5" id="text-4-1-1-2">
+<li><a id="org6e401a7"></a>brute force<br />
+<div class="outline-text-6" id="text-12-4-1-1-2">
 <p>
 I have a brute-force that "just" pass the tests.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-C++"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">Solution</span> {
-<span style="color: #a020f0;">public</span>:
-  <span style="color: #228b22;">string</span> <span style="color: #0000ff;">shortestPalindrome</span>(<span style="color: #228b22;">string</span> <span style="color: #a0522d;">s</span>) {
-    <span style="color: #a020f0;">if</span> (s.size() == 0) <span style="color: #a020f0;">return</span> s;
-    <span style="color: #a020f0;">if</span> (s.size() == 1) <span style="color: #a020f0;">return</span> s;
-    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>=(s.size()-1)/2;i&gt;0;i--) {
-      <span style="color: #a020f0;">if</span> (check(s, i, <span style="color: #008b8b;">false</span>)) {
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">std::cout &lt;&lt; "success on " &lt;&lt; i &lt;&lt; " false"  &lt;&lt; "\n";</span>
-        <span style="color: #228b22;">string</span> <span style="color: #a0522d;">sub</span> = s.substr(<span style="color: #228b22;">i</span>*2+2);
-        <span style="color: #008b8b;">std</span>::reverse(sub.begin(), sub.end());
-        <span style="color: #a020f0;">return</span> sub + s;
-      } <span style="color: #a020f0;">else</span> <span style="color: #a020f0;">if</span> (check(s, <span style="color: #228b22;">i</span>, <span style="color: #008b8b;">true</span>)) {
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">std::cout &lt;&lt; "success on " &lt;&lt; i &lt;&lt; " true"  &lt;&lt; "\n";</span>
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">THREE</span>
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">1 2 3 4 5 6</span>
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">- - -|- - -</span>
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">6/2=3</span>
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">1 2 3 4 5</span>
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">- - | - -</span>
-        <span style="color: #b22222;">// </span><span style="color: #b22222;">i*2+1 - end</span>
-        <span style="color: #228b22;">string</span> <span style="color: #a0522d;">sub</span> = s.substr(<span style="color: #228b22;">i</span>*2+1);
-        <span style="color: #008b8b;">std</span>::reverse(sub.begin(), sub.end());
-        <span style="color: #a020f0;">return</span> sub + s;
+<pre class="src src-C++"><span class="org-keyword">class</span> <span class="org-type">Solution</span> {
+<span class="org-keyword">public</span>:
+  <span class="org-type">string</span> <span class="org-function-name">shortestPalindrome</span>(<span class="org-type">string</span> <span class="org-variable-name">s</span>) {
+    <span class="org-keyword">if</span> (s.size() == 0) <span class="org-keyword">return</span> s;
+    <span class="org-keyword">if</span> (s.size() == 1) <span class="org-keyword">return</span> s;
+    <span class="org-keyword">for</span> (<span class="org-type">int</span> <span class="org-variable-name">i</span>=(s.size()-1)/2;i&gt;0;i--) {
+      <span class="org-keyword">if</span> (check(s, i, <span class="org-constant">false</span>)) {
+        <span class="org-comment-delimiter">// </span><span class="org-comment">std::cout &lt;&lt; "success on " &lt;&lt; i &lt;&lt; " false"  &lt;&lt; "\n";</span>
+        <span class="org-type">string</span> <span class="org-variable-name">sub</span> = s.substr(<span class="org-type">i</span>*2+2);
+        <span class="org-constant">std</span>::reverse(sub.begin(), sub.end());
+        <span class="org-keyword">return</span> sub + s;
+      } <span class="org-keyword">else</span> <span class="org-keyword">if</span> (check(s, <span class="org-type">i</span>, <span class="org-constant">true</span>)) {
+        <span class="org-comment-delimiter">// </span><span class="org-comment">std::cout &lt;&lt; "success on " &lt;&lt; i &lt;&lt; " true"  &lt;&lt; "\n";</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">THREE</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">1 2 3 4 5 6</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">- - -|- - -</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">6/2=3</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">1 2 3 4 5</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">- - | - -</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">i*2+1 - end</span>
+        <span class="org-type">string</span> <span class="org-variable-name">sub</span> = s.substr(<span class="org-type">i</span>*2+1);
+        <span class="org-constant">std</span>::reverse(sub.begin(), sub.end());
+        <span class="org-keyword">return</span> sub + s;
       }
     }
-    <span style="color: #228b22;">string</span> <span style="color: #a0522d;">sub</span>;
-    <span style="color: #a020f0;">if</span> (check(s, 0, <span style="color: #008b8b;">false</span>)) {
+    <span class="org-type">string</span> <span class="org-variable-name">sub</span>;
+    <span class="org-keyword">if</span> (check(s, 0, <span class="org-constant">false</span>)) {
       sub = s.substr(2);
-    } <span style="color: #a020f0;">else</span> {
+    } <span class="org-keyword">else</span> {
       sub = s.substr(1);
     }
-    <span style="color: #008b8b;">std</span>::reverse(sub.begin(), sub.end());
-    <span style="color: #a020f0;">return</span> sub + s;
+    <span class="org-constant">std</span>::reverse(sub.begin(), sub.end());
+    <span class="org-keyword">return</span> sub + s;
   }
-  <span style="color: #b22222;">/**</span>
-<span style="color: #b22222;">   * on: pivot on idx or not</span>
-<span style="color: #b22222;">   */</span>
-  <span style="color: #228b22;">bool</span> <span style="color: #0000ff;">check</span>(<span style="color: #228b22;">string</span> &amp;<span style="color: #a0522d;">s</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">idx</span>, <span style="color: #228b22;">bool</span> <span style="color: #a0522d;">on</span>) {
-    <span style="color: #b22222;">// </span><span style="color: #b22222;">std::cout &lt;&lt; idx  &lt;&lt; "\n";</span>
-    <span style="color: #a020f0;">if</span> (idx &lt;0 || idx &gt;= (<span style="color: #228b22;">int</span>)s.size()) <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">false</span>;
-    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span>=0,<span style="color: #a0522d;">j</span>=0;
-    <span style="color: #a020f0;">if</span> (on) {
+  <span class="org-comment-delimiter">/**</span>
+<span class="org-comment">   * on: pivot on idx or not</span>
+<span class="org-comment">   */</span>
+  <span class="org-type">bool</span> <span class="org-function-name">check</span>(<span class="org-type">string</span> &amp;<span class="org-variable-name">s</span>, <span class="org-type">int</span> <span class="org-variable-name">idx</span>, <span class="org-type">bool</span> <span class="org-variable-name">on</span>) {
+    <span class="org-comment-delimiter">// </span><span class="org-comment">std::cout &lt;&lt; idx  &lt;&lt; "\n";</span>
+    <span class="org-keyword">if</span> (idx &lt;0 || idx &gt;= (<span class="org-type">int</span>)s.size()) <span class="org-keyword">return</span> <span class="org-constant">false</span>;
+    <span class="org-type">int</span> <span class="org-variable-name">i</span>=0,<span class="org-variable-name">j</span>=0;
+    <span class="org-keyword">if</span> (on) {
       i=idx-1;
       j=idx+1;
-    } <span style="color: #a020f0;">else</span> {
+    } <span class="org-keyword">else</span> {
       i = idx;
       j = idx+1;
     }
-    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">size</span> = s.size();
-    <span style="color: #a020f0;">while</span> (i &gt;= 0) {
-      <span style="color: #a020f0;">if</span> (j &gt;= size) <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">false</span>;
-      <span style="color: #a020f0;">if</span> (s[i] != s[j]) <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">false</span>;
+    <span class="org-type">int</span> <span class="org-variable-name">size</span> = s.size();
+    <span class="org-keyword">while</span> (i &gt;= 0) {
+      <span class="org-keyword">if</span> (j &gt;= size) <span class="org-keyword">return</span> <span class="org-constant">false</span>;
+      <span class="org-keyword">if</span> (s[i] != s[j]) <span class="org-keyword">return</span> <span class="org-constant">false</span>;
       i--;
       j++;
     }
-    <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">true</span>;
+    <span class="org-keyword">return</span> <span class="org-constant">true</span>;
   }
 };
 </pre>
 </div>
 </div>
-</div>
+</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-orgd8bea84" class="outline-3">
-<h3 id="orgd8bea84"><span class="section-number-3">4.2</span> Boyer Moore</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-org9fc4b4d" class="outline-4">
+<h4 id="org9fc4b4d"><span class="section-number-4">12.4.2</span> Boyer Moore</h4>
+<div class="outline-text-4" id="text-12-4-2">
 <p>
 It is a string match algorithm.
 </p>
@@ -866,9 +1816,9 @@ In the following examples, the lower case denote the matched or unmatched part f
 They are upper case when considering matching.
 </p>
 </div>
-<div id="outline-container-org482e6e0" class="outline-4">
-<h4 id="org482e6e0"><span class="section-number-4">4.2.1</span> Bad Character Rule</h4>
-<div class="outline-text-4" id="text-4-2-1">
+<div id="outline-container-orgabfc744" class="outline-5">
+<h5 id="orgabfc744"><span class="section-number-5">12.4.2.1</span> Bad Character Rule</h5>
+<div class="outline-text-5" id="text-12-4-2-1">
 <p>
 Match from last. In the below example, the suffix <code>MAN</code> matches, but <code>N</code> does not match. Shift the pattern so that the first N (counted from last) go to the <code>N</code> place.
 </p>
@@ -889,9 +1839,9 @@ find to left a `n`, then shift it to the position.
 </div>
 </div>
 
-<div id="outline-container-orge08e7f1" class="outline-4">
-<h4 id="orge08e7f1"><span class="section-number-4">4.2.2</span> Good Suffix Rule</h4>
-<div class="outline-text-4" id="text-4-2-2">
+<div id="outline-container-orgfd08289" class="outline-5">
+<h5 id="orgfd08289"><span class="section-number-5">12.4.2.2</span> Good Suffix Rule</h5>
+<div class="outline-text-5" id="text-12-4-2-2">
 <p>
 Similar to the bad rule, find the matched, in this case <code>NAM</code>.
 Then, if an failure happens, move the same part to the left of that match (in this case another <code>NAM</code> at the left) to that position.
@@ -913,9 +1863,9 @@ and shift it to the position.
 </div>
 </div>
 
-<div id="outline-container-org3a5e993" class="outline-4">
-<h4 id="org3a5e993"><span class="section-number-4">4.2.3</span> Galil Rule</h4>
-<div class="outline-text-4" id="text-4-2-3">
+<div id="outline-container-orgdcf68b6" class="outline-5">
+<h5 id="orgdcf68b6"><span class="section-number-5">12.4.2.3</span> Galil Rule</h5>
+<div class="outline-text-5" id="text-12-4-2-3">
 <p>
 As opposed to shifting, the Galil rule deals with speeding up the actual comparisons done at each alignment by skipping sections that are known to match.
 Suppose that at an alignment k1,
@@ -931,9 +1881,9 @@ the Galil rule is required for proving linear-time execution in the worst case.
 </div>
 </div>
 
-<div id="outline-container-org7794513" class="outline-3">
-<h3 id="org7794513"><span class="section-number-3">4.3</span> Rabin-Karp Algorithm</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-orgeab07ca" class="outline-4">
+<h4 id="orgeab07ca"><span class="section-number-4">12.4.3</span> Rabin-Karp Algorithm</h4>
+<div class="outline-text-4" id="text-12-4-3">
 <p>
 It is a string searching algorithm.
 </p>
@@ -943,15 +1893,15 @@ The Naive Solution for string search:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-C"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">func</span>(<span style="color: #228b22;">char</span> <span style="color: #a0522d;">s</span>[], <span style="color: #228b22;">int</span> <span style="color: #a0522d;">n</span>, <span style="color: #228b22;">char</span> <span style="color: #a0522d;">pattern</span>[], <span style="color: #228b22;">int</span> <span style="color: #a0522d;">m</span>) {
-  <span style="color: #228b22;">char</span> *<span style="color: #a0522d;">ps</span>,*<span style="color: #a0522d;">pp</span>; <span style="color: #b22222;">//</span><span style="color: #b22222;">*</span>
+<pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">func</span>(<span class="org-type">char</span> <span class="org-variable-name">s</span>[], <span class="org-type">int</span> <span class="org-variable-name">n</span>, <span class="org-type">char</span> <span class="org-variable-name">pattern</span>[], <span class="org-type">int</span> <span class="org-variable-name">m</span>) {
+  <span class="org-type">char</span> *<span class="org-variable-name">ps</span>,*<span class="org-variable-name">pp</span>; <span class="org-comment-delimiter">//</span><span class="org-comment">*</span>
   ps=s;
   pp=pattern;
-  <span style="color: #a020f0;">for</span> (i=0;i&lt;n-m+1;) {
-    <span style="color: #a020f0;">if</span> (*pp==<span style="color: #8b2252;">'\0'</span>) <span style="color: #a020f0;">return</span> i; <span style="color: #b22222;">//</span><span style="color: #b22222;">*</span>
-    <span style="color: #a020f0;">if</span> (*ps == *pp) { <span style="color: #b22222;">//</span><span style="color: #b22222;">*</span>
+  <span class="org-keyword">for</span> (i=0;i&lt;n-m+1;) {
+    <span class="org-keyword">if</span> (*pp==<span class="org-string">'\0'</span>) <span class="org-keyword">return</span> i; <span class="org-comment-delimiter">//</span><span class="org-comment">*</span>
+    <span class="org-keyword">if</span> (*ps == *pp) { <span class="org-comment-delimiter">//</span><span class="org-comment">*</span>
       ps++;pp++;
-    } <span style="color: #a020f0;">else</span> {
+    } <span class="org-keyword">else</span> {
       i++;
       ps=s+i;
       pp=pattern;
@@ -1007,17 +1957,15 @@ K patterns, in a large string s, find any one of the K patterns.
 </p>
 </div>
 
-<div id="outline-container-org17ed87f" class="outline-4">
-<h4 id="org17ed87f"><span class="section-number-4">4.3.1</span> Rolling Hash</h4>
-<div class="outline-text-4" id="text-4-3-1">
+<div id="outline-container-orgcabab33" class="outline-5">
+<h5 id="orgcabab33"><span class="section-number-5">12.4.3.1</span> Rolling Hash</h5>
+<div class="outline-text-5" id="text-12-4-3-1">
 </div>
-<div id="outline-container-orge0f1c15" class="outline-5">
-<h5 id="orge0f1c15"><span class="section-number-5">4.3.1.1</span> Rabin-Karp rolling hash</h5>
-</div>
+<ol class="org-ol">
+<li><a id="orgd4f130a"></a>Rabin-Karp rolling hash<br /></li>
 
-<div id="outline-container-org3702553" class="outline-5">
-<h5 id="org3702553"><span class="section-number-5">4.3.1.2</span> Cyclic Polynomial (Buzhash)</h5>
-<div class="outline-text-5" id="text-4-3-1-2">
+<li><a id="orge9e1ae0"></a>Cyclic Polynomial (Buzhash)<br />
+<div class="outline-text-6" id="text-12-4-3-1-2">
 <p>
 <code>s(a)</code> means shift a left.
 </p>
@@ -1038,12 +1986,13 @@ To remove \(c_1\) and add \(c_{k+1}\):
 H = s(H) \oplus s^k(h(c_1)) \oplus h(c_{k+1})
 \end{equation}
 </div>
-</div>
+</li>
+</ol>
 </div>
 
-<div id="outline-container-orgfcbbd71" class="outline-4">
-<h4 id="orgfcbbd71"><span class="section-number-4">4.3.2</span> Tabulation hashing</h4>
-<div class="outline-text-4" id="text-4-3-2">
+<div id="outline-container-org7f7b417" class="outline-5">
+<h5 id="org7f7b417"><span class="section-number-5">12.4.3.2</span> Tabulation hashing</h5>
+<div class="outline-text-5" id="text-12-4-3-2">
 <p>
 input key is <code>p</code> bits, output is <code>q</code> bits.
 choose a <code>r</code> less then <code>p</code>, and \(t=\lceil p/r \rceil\).
@@ -1058,6 +2007,7 @@ to compute hash value for each of t numbers. Xor them together.
 The choice of r should be made in such a way that this table is not too large,
 so that it fits into the computer's cache memory.
 </p>
+</div>
 </div>
 </div>
 </div>
