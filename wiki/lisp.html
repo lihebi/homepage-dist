@@ -318,14 +318,14 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgd5b74c8">5.5. Rackunit</a></li>
-<li><a href="#org6577c16">5.6. Numbers</a></li>
+<li><a href="#orgaccf3e6">5.6. Numbers</a></li>
 <li><a href="#org3e3e9ba">5.7. Procedure</a></li>
-<li><a href="#org584b9a5">5.8. Control Structure</a></li>
-<li><a href="#org3eaeb51">5.9. String</a></li>
+<li><a href="#orga850f28">5.8. Control Structure</a></li>
+<li><a href="#orgc2593ec">5.9. String</a></li>
 <li><a href="#org60b94db">5.10. Regular Expression</a></li>
 <li><a href="#orgdbd97cd">5.11. Pair, List, Vector</a></li>
 <li><a href="#org8abd708">5.12. Hash Tables</a></li>
-<li><a href="#org0c38daf">5.13. Sequence</a></li>
+<li><a href="#org88ebda3">5.13. Sequence</a></li>
 <li><a href="#org709b533">5.14. Hash set (use racket/set)</a></li>
 <li><a href="#org88f6e24">5.15. structure</a>
 <ul>
@@ -336,7 +336,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgfcec887">5.16. Multiple Values</a></li>
-<li><a href="#orgc4646de">5.17. Exception</a></li>
+<li><a href="#orgdb9124c">5.17. Exception</a></li>
 <li><a href="#orgc78a6e2">5.18. Concurrency</a></li>
 <li><a href="#org9121df6">5.19. IO</a>
 <ul>
@@ -356,7 +356,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgfbd8265">5.20.1. Path</a></li>
 <li><a href="#org4e5bf39">5.20.2. File System</a></li>
-<li><a href="#orga94c2ae">5.20.3. Networking</a></li>
+<li><a href="#org4ee53d2">5.20.3. Networking</a></li>
 <li><a href="#org2d18cdc">5.20.4. Processes</a></li>
 <li><a href="#org013a437">5.20.5. CMD parsing (racket/cmdline)</a></li>
 </ul>
@@ -392,7 +392,7 @@ for the JavaScript code in this tag.
 <li><a href="#org8a861d6">5.23.4.7. properties</a></li>
 </ul>
 </li>
-<li><a href="#org25235fa">5.23.5. Networking</a>
+<li><a href="#org1c442a7">5.23.5. Networking</a>
 <ul>
 <li><a href="#orga571f75">5.23.5.1. HTML parsing</a></li>
 <li><a href="#org064e5db">5.23.5.2. URL &amp; HTTP</a></li>
@@ -414,8 +414,8 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orga4e5e80">6.2. List</a></li>
-<li><a href="#orgadf53cb">6.3. Sequence</a></li>
-<li><a href="#org7c1c14f">6.4. String</a></li>
+<li><a href="#orgb85a735">6.3. Sequence</a></li>
+<li><a href="#org7a432db">6.4. String</a></li>
 <li><a href="#org4ce82b0">6.5. Array</a></li>
 <li><a href="#orgd334ea4">6.6. Structure</a></li>
 <li><a href="#org4dcd419">6.7. Hash Table</a></li>
@@ -425,7 +425,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orga7f75c5">6.9. Type</a></li>
-<li><a href="#orge3d8e32">6.10. Numbers</a></li>
+<li><a href="#org7cf5e11">6.10. Numbers</a></li>
 <li><a href="#org4778450">6.11. Function</a>
 <ul>
 <li><a href="#org07348b0">6.11.1. Defun and Lambda Expression</a></li>
@@ -433,8 +433,8 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org739d3b1">6.12. Macro</a></li>
 <li><a href="#org35f01fd">6.13. Evaluation</a></li>
-<li><a href="#orga107921">6.14. Exception</a></li>
-<li><a href="#org1b5a58a">6.15. Control Structure</a>
+<li><a href="#org51651d1">6.14. Exception</a></li>
+<li><a href="#orgb8e566e">6.15. Control Structure</a>
 <ul>
 <li><a href="#orgebae1e0">6.15.1. Sequential</a></li>
 <li><a href="#org51d28fe">6.15.2. Conditional</a></li>
@@ -507,6 +507,31 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+<blockquote>
+<p>
+Any sufficiently complicated C or Fortran program contains an ad-hoc,
+informally-specified, bug-ridden, slow implementation of half of
+Common Lisp.
+</p>
+
+<p>
+&#x2013; <a href="https://en.wikipedia.org/wiki/Greenspun's_tenth_rule">Greenspun's tenth rule</a>
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Code is written for others to understand the developers' thoughts, and
+it accidentally runs on computers.
+</p>
+
+<p>
+&#x2013; Matthias Felleisen,
+   <a href="https://www.youtube.com/watch?v=XTl7Jn_kmio">Types are like the
+   Weather, Type Systems are like Weathermen (youtube video)</a>
+</p>
+</blockquote>
+
 <p>
 This is the lisp index page, containing general staff for lisp.
 </p>
@@ -1069,7 +1094,7 @@ thus observe stack and memory usage.
 First, use the trace library:
 </p>
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">require</span> racket/trace)
+<pre class="src src-scheme">(require racket/trace)
 </pre>
 </div>
 
@@ -1784,8 +1809,8 @@ to select tests. Create a suite using <code>(test-suite name-expr test
 </div>
 </div>
 
-<div id="outline-container-org6577c16" class="outline-3">
-<h3 id="org6577c16"><span class="section-number-3">5.6</span> Numbers</h3>
+<div id="outline-container-orgaccf3e6" class="outline-3">
+<h3 id="orgaccf3e6"><span class="section-number-3">5.6</span> Numbers</h3>
 <div class="outline-text-3" id="text-5-6">
 <ul class="org-ul">
 <li><code>/</code>: provide the fraction if given two numbers, not to round it.</li>
@@ -1882,8 +1907,8 @@ restricts this to exactly one value.
 </div>
 
 
-<div id="outline-container-org584b9a5" class="outline-3">
-<h3 id="org584b9a5"><span class="section-number-3">5.8</span> Control Structure</h3>
+<div id="outline-container-orga850f28" class="outline-3">
+<h3 id="orga850f28"><span class="section-number-3">5.8</span> Control Structure</h3>
 <div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li><code>if</code></li>
@@ -1935,8 +1960,8 @@ different return values.</li>
 </div>
 </div>
 
-<div id="outline-container-org3eaeb51" class="outline-3">
-<h3 id="org3eaeb51"><span class="section-number-3">5.9</span> String</h3>
+<div id="outline-container-orgc2593ec" class="outline-3">
+<h3 id="orgc2593ec"><span class="section-number-3">5.9</span> String</h3>
 <div class="outline-text-3" id="text-5-9">
 <p>
 The reading syntax of characters starts with <code>#\</code>, with following
@@ -2337,8 +2362,8 @@ From <code>racket/vector</code>:
 </div>
 </div>
 
-<div id="outline-container-org0c38daf" class="outline-3">
-<h3 id="org0c38daf"><span class="section-number-3">5.13</span> Sequence</h3>
+<div id="outline-container-org88ebda3" class="outline-3">
+<h3 id="org88ebda3"><span class="section-number-3">5.13</span> Sequence</h3>
 <div class="outline-text-3" id="text-5-13">
 <p>
 Sequence is designed to be used with <code>for</code>. Not only list and vectors
@@ -2593,8 +2618,8 @@ can destruct values can also be used.
 </div>
 </div>
 
-<div id="outline-container-orgc4646de" class="outline-3">
-<h3 id="orgc4646de"><span class="section-number-3">5.17</span> Exception</h3>
+<div id="outline-container-orgdb9124c" class="outline-3">
+<h3 id="orgdb9124c"><span class="section-number-3">5.17</span> Exception</h3>
 <div class="outline-text-3" id="text-5-17">
 <p>
 For now, I only care about how to handle exceptions. To do that:
@@ -3023,8 +3048,8 @@ create it, and return path.
 </div>
 </div>
 
-<div id="outline-container-orga94c2ae" class="outline-4">
-<h4 id="orga94c2ae"><span class="section-number-4">5.20.3</span> Networking</h4>
+<div id="outline-container-org4ee53d2" class="outline-4">
+<h4 id="org4ee53d2"><span class="section-number-4">5.20.3</span> Networking</h4>
 <div class="outline-text-4" id="text-5-20-3">
 <p>
 I'm not going to dig deep on this because I don't use it. Just listing
@@ -3821,8 +3846,8 @@ Finally, you can save image to file by
 </div>
 
 
-<div id="outline-container-org25235fa" class="outline-4">
-<h4 id="org25235fa"><span class="section-number-4">5.23.5</span> Networking</h4>
+<div id="outline-container-org1c442a7" class="outline-4">
+<h4 id="org1c442a7"><span class="section-number-4">5.23.5</span> Networking</h4>
 <div class="outline-text-4" id="text-5-23-5">
 </div>
 <div id="outline-container-orga571f75" class="outline-5">
@@ -4180,8 +4205,8 @@ variables. It cna be used to bind into tree structures.
 
 
 
-<div id="outline-container-orgadf53cb" class="outline-3">
-<h3 id="orgadf53cb"><span class="section-number-3">6.3</span> Sequence</h3>
+<div id="outline-container-orgb85a735" class="outline-3">
+<h3 id="orgb85a735"><span class="section-number-3">6.3</span> Sequence</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Sequence contains both lists and vectors. To tell what kind of
@@ -4229,8 +4254,8 @@ the previous result in the next computation.
 </div>
 </div>
 
-<div id="outline-container-org7c1c14f" class="outline-3">
-<h3 id="org7c1c14f"><span class="section-number-3">6.4</span> String</h3>
+<div id="outline-container-org7a432db" class="outline-3">
+<h3 id="org7a432db"><span class="section-number-3">6.4</span> String</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 A string is a specialized vector (one-dimensional array) whose
@@ -4543,8 +4568,8 @@ remember, documenting here.
 </div>
 </div>
 
-<div id="outline-container-orge3d8e32" class="outline-3">
-<h3 id="orge3d8e32"><span class="section-number-3">6.10</span> Numbers</h3>
+<div id="outline-container-org7cf5e11" class="outline-3">
+<h3 id="org7cf5e11"><span class="section-number-3">6.10</span> Numbers</h3>
 <div class="outline-text-3" id="text-6-10">
 <p>
 Numbers can use read form, e.g. <code>#b010101</code>, <code>#xaf08</code>. Predicates such
@@ -4811,8 +4836,8 @@ that is used in defmacro.
 </div>
 </div>
 
-<div id="outline-container-orga107921" class="outline-3">
-<h3 id="orga107921"><span class="section-number-3">6.14</span> Exception</h3>
+<div id="outline-container-org51651d1" class="outline-3">
+<h3 id="org51651d1"><span class="section-number-3">6.14</span> Exception</h3>
 <div class="outline-text-3" id="text-6-14">
 <p>
 A <code>catch</code> expression takes a tag, which can be any kind of object,
@@ -4830,8 +4855,8 @@ the lisp error handler.
 
 
 
-<div id="outline-container-org1b5a58a" class="outline-3">
-<h3 id="org1b5a58a"><span class="section-number-3">6.15</span> Control Structure</h3>
+<div id="outline-container-orgb8e566e" class="outline-3">
+<h3 id="orgb8e566e"><span class="section-number-3">6.15</span> Control Structure</h3>
 <div class="outline-text-3" id="text-6-15">
 </div>
 <div id="outline-container-orgebae1e0" class="outline-4">
@@ -6051,7 +6076,7 @@ its public interface:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define-module</span> (<span class="org-type">ice-9</span> popen)
+<pre class="src src-scheme">(<span class="org-keyword">define-module</span> (<span class="org-type">ice-9 popen</span>)
   <span class="org-builtin">#:use-module</span> (ice-9 popen)
   <span class="org-builtin">#:use-module</span> (ice-9 pclose)
   <span class="org-builtin">#:export</span> (my list-of names))
@@ -6063,11 +6088,11 @@ When using a module, the <code>use-modules</code> accesses this public interface
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(use-modules (ice-9 popen))
-(use-modules ((ice-9 popen)
+<pre class="src src-scheme">(<span class="org-keyword">use-modules</span> (ice-9 popen))
+(<span class="org-keyword">use-modules</span> ((ice-9 popen)
               <span class="org-builtin">#:select</span> ((open-pipe . pipe-open) close-pipe)
               <span class="org-builtin">#:renamer</span> (symbol-prefix-proc 'unixy:)))
-(use-modules ((ice-9 popen)
+(<span class="org-keyword">use-modules</span> ((ice-9 popen)
               <span class="org-builtin">#:select</span> ((open-pipe . pipe-open) close-pipe)
               <span class="org-builtin">#:prefix</span> unixy:))
 </pre>
