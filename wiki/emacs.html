@@ -268,7 +268,11 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org80ef8de">1. Tmp</a></li>
+<li><a href="#org80ef8de">1. Tmp</a>
+<ul>
+<li><a href="#orgd8d7d23">1.1. DOS/UNIX line ending</a></li>
+</ul>
+</li>
 <li><a href="#org4728517">2. buffer</a></li>
 <li><a href="#orgf0ad774">3. Getting Help</a></li>
 <li><a href="#org8b89f9a">4. Configuration</a></li>
@@ -494,7 +498,31 @@ slow operations, and <code>profiler-report</code>. When finished, stop it by
 <code>profiler-stop</code> to avoid overhead.
 </p>
 </div>
+
+<div id="outline-container-orgd8d7d23" class="outline-3">
+<h3 id="orgd8d7d23"><span class="section-number-3">1.1</span> DOS/UNIX line ending</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<a href="https://emacs.stackexchange.com/questions/5779/how-to-convert-dos-windows-newline-characters-to-unix-format-within-gnu-emacs">https://emacs.stackexchange.com/questions/5779/how-to-convert-dos-windows-newline-characters-to-unix-format-within-gnu-emacs</a>
+</p>
+
+<blockquote>
+<p>
+If the mode line shows a (DOS) indicator, click on it twice to cycle
+to : meaning Unix newlines and then save the file.
+</p>
+
+<p>
+If you can't click on the mode line or prefer a keyboard-based
+solution, run the command C-x RET f (set-buffer-file-coding-system)
+and type unix.
+</p>
+</blockquote>
 </div>
+</div>
+</div>
+
+
 
 
 <div id="outline-container-org4728517" class="outline-2">
