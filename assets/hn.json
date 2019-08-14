@@ -688,7 +688,9 @@
     "title": "HarmonyOS is Huawei’s Android alternative for smartphones and smart home devices",
     "type": "story",
     "url": "https://techcrunch.com/2019/08/09/harmonyos-huawei-release/",
-    "tags": null
+    "tags": [
+      "os"
+    ]
   },
   {
     "by": "luu",
@@ -826,7 +828,9 @@
     "title": "Show HN: I built a poker site with Haskell",
     "type": "story",
     "url": "https://github.com/therewillbecode/haskell-poker",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "utkarshkukreti",
@@ -900,7 +904,9 @@
     "title": "Home Chip Fab",
     "type": "story",
     "url": "http://sam.zeloof.xyz/category/semiconductor/",
-    "tags": null
+    "tags": [
+      "hw"
+    ]
   },
   {
     "by": "ingve",
@@ -927,7 +933,9 @@
     "title": "Solar Powered Raspberry Pi Camera",
     "type": "story",
     "url": "https://kaspars.net/blog/solar-raspberry-pi-camera",
-    "tags": null
+    "tags": [
+      "hw"
+    ]
   },
   {
     "by": "enkiv2",
@@ -1093,7 +1101,9 @@
     "title": "Future of Racket",
     "type": "story",
     "url": "https://www.greghendershott.com/2019/07/future-of-racket.html",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "Alupis",
@@ -1124,7 +1134,9 @@
     "title": "C-mera – Lisp syntax with C semantics",
     "type": "story",
     "url": "https://github.com/kiselgra/c-mera",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "ksec",
@@ -1232,7 +1244,9 @@
     "time": 1565089587,
     "title": "Ask HN: C++17 vs. Rust for New Project",
     "type": "story",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "johndamaia",
@@ -1278,7 +1292,9 @@
     "title": "Show HN: I trained a deep learning model to build sites for me",
     "type": "story",
     "url": "https://zecoda.com/",
-    "tags": null
+    "tags": [
+      "ai"
+    ]
   },
   {
     "by": "soegaard",
@@ -1503,7 +1519,9 @@
     "title": "Rust Language Cheat Sheet",
     "type": "story",
     "url": "https://cheats.rs/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "xhroot",
@@ -1575,7 +1593,9 @@
     "title": "Switching from Common Lisp to Julia (2017)",
     "type": "story",
     "url": "https://tamaspapp.eu/post/common-lisp-to-julia/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "eb0la",
@@ -1620,7 +1640,9 @@
     "title": "SpaceX Smallsat Rideshare Program",
     "type": "story",
     "url": "https://www.spacex.com/smallsat",
-    "tags": null
+    "tags": [
+      "space"
+    ]
   },
   {
     "by": "tosh",
@@ -1678,7 +1700,9 @@
     "title": "How to Write a Lisp Interpreter In Python (2010)",
     "type": "story",
     "url": "https://norvig.com/lispy.html",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "tnecniv",
@@ -1797,7 +1821,9 @@
     "title": "Artichoke – A Ruby made with Rust",
     "type": "story",
     "url": "https://github.com/artichoke/artichoke",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "tosh",
@@ -1838,7 +1864,9 @@
     "title": "Hy",
     "type": "story",
     "url": "https://en.wikipedia.org/wiki/Hy",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "snazz",
@@ -1857,7 +1885,9 @@
     "title": "Gerbil – A meta-dialect of Scheme",
     "type": "story",
     "url": "https://cons.io/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "espeed",
@@ -1961,7 +1991,9 @@
     "title": "Advances in Conversational AI",
     "type": "story",
     "url": "https://ai.facebook.com/blog/advances-in-conversational-ai/",
-    "tags": null
+    "tags": [
+      "ai"
+    ]
   },
   {
     "by": "mfilion",
@@ -1986,7 +2018,9 @@
     "title": "Moving the Linux desktop to another reality",
     "type": "story",
     "url": "https://www.collabora.com/news-and-blog/news-and-events/moving-the-linux-desktop-to-another-reality.html",
-    "tags": null
+    "tags": [
+      "os"
+    ]
   },
   {
     "by": "nanochess",
@@ -2138,7 +2172,9 @@
     "title": "Programming Algorithms: A Crash Course in Lisp",
     "type": "story",
     "url": "http://lisp-univ-etc.blogspot.com/2019/07/crash-course-in-lisp.html",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "signa11",
@@ -2226,7 +2262,9 @@
     "time": 1564312098,
     "title": "Ask HN: Best Lisp for software development?",
     "type": "story",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "pointfree",
@@ -2250,7 +2288,9 @@
     "title": "Levels of code in Forth programming (2002)",
     "type": "story",
     "url": "http://www.ultratechnology.com/levels.htm",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "dkarbayev",
@@ -2288,7 +2328,9 @@
     "title": "Go Contracts – Draft Design",
     "type": "story",
     "url": "https://go.googlesource.com/proposal/+/master/design/go2draft-contracts.md",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "signa11",
@@ -2605,7 +2647,9 @@
     "title": "Show HN: A Demo IDE for Scheme",
     "type": "story",
     "url": "https://kennethfriedman.org/projects/toski/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "rwmj",
@@ -2733,7 +2777,9 @@
     "title": "Show HN: PCBs with Full-Color Graphics",
     "type": "story",
     "url": "https://www.littlebird.com.au/blogs/news/colourful-printed-circuit-boards",
-    "tags": null
+    "tags": [
+      "hw"
+    ]
   },
   {
     "by": "thepete2",
@@ -2810,7 +2856,9 @@
     "title": "Show HN: OmniNet:- A unified architecture for multi-modal multi-task learning",
     "type": "story",
     "url": "https://github.com/subho406/OmniNet",
-    "tags": null
+    "tags": [
+      "ai"
+    ]
   },
   {
     "by": "superwayne",
@@ -2941,7 +2989,9 @@
     "title": "Roswell: A launcher for a major Lisp environment that just works",
     "type": "story",
     "url": "https://github.com/roswell/roswell",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "dcu",
@@ -2962,7 +3012,9 @@
     "title": "TinyGo: New Go Compiler Based on LLVM",
     "type": "story",
     "url": "https://tinygo.org/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "Qaphqa",
@@ -3042,7 +3094,9 @@
     "title": "A Differentiable Programming System to Bridge ML and Scientific Computing",
     "type": "story",
     "url": "https://arxiv.org/abs/1907.07587",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "tosh",
@@ -3073,7 +3127,9 @@
     "title": "Show HN: A Clojure implementation of logic programming language in SICP",
     "type": "story",
     "url": "https://github.com/jdormit/sicp-logic",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "dchengy",
@@ -3344,7 +3400,9 @@
     "title": "Racket2 Possibilities",
     "type": "story",
     "url": "https://groups.google.com/forum/#!msg/racket-users/HiC7z3A5O-k/XPR2wbSJCQAJ",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "nkurz",
@@ -3467,7 +3525,9 @@
     "title": "Common Lisp Style Guide",
     "type": "story",
     "url": "https://lisp-lang.org/style-guide/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "ska80",
@@ -3488,7 +3548,9 @@
     "title": "I'm writing a book about algorithms and Lisp",
     "type": "story",
     "url": "https://lisp-univ-etc.blogspot.com/2019/07/programming-algorithms-book.html",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "ignaloidas",
@@ -3611,7 +3673,9 @@
     "title": "Not So Fast: Analyzing the Performance of WebAssembly vs. Native Code",
     "type": "story",
     "url": "https://www.usenix.org/conference/atc19/presentation/jangda",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "tosh",
@@ -3630,7 +3694,9 @@
     "title": "In May 2009 O'Reilly agreed to publish a book about Common Lisp (2011)",
     "type": "story",
     "url": "https://www.nicklevine.org/lisp-book/talks/eclm-2011-10-23/plan.txt",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "helloiloveyou",
@@ -3851,7 +3917,9 @@
     "title": "Rebuilding Racket on Chez Scheme Experience Report [pdf]",
     "type": "story",
     "url": "https://www.cs.utah.edu/plt/publications/icfp19-rddkmstz.pdf",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "pcr910303",
@@ -3870,7 +3938,9 @@
     "title": "Elsa: Emacs Lisp Static Analyzer",
     "type": "story",
     "url": "https://github.com/emacs-elsa/Elsa",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "flo_hu",
@@ -3939,7 +4009,9 @@
     "title": "A material way to make Mars habitable",
     "type": "story",
     "url": "https://www.seas.harvard.edu/news/2019/07/material-way-to-make-mars-habitable",
-    "tags": null
+    "tags": [
+      "space"
+    ]
   },
   {
     "by": "frostmatthew",
@@ -4073,7 +4145,9 @@
     "title": "Raspberry Pi microSD card performance comparison",
     "type": "story",
     "url": "https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019",
-    "tags": null
+    "tags": [
+      "hw"
+    ]
   },
   {
     "by": "skilled",
@@ -5601,7 +5675,9 @@
     "title": "Cl-cpp-generator – A Common Lisp library to generate C/C++ code",
     "type": "story",
     "url": "https://github.com/plops/cl-cpp-generator",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "y2kenny",
@@ -5723,7 +5799,9 @@
     "title": "Ultralisp: A fast-moving Common Lisp software distribution",
     "type": "story",
     "url": "https://ultralisp.org/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "telotortium",
@@ -5868,7 +5946,9 @@
     "title": "Love It or Hate It, Java Continues to Evolve",
     "type": "story",
     "url": "https://www.azul.com/love-it-or-hate-it-java-continues-to-evolve/",
-    "tags": null
+    "tags": [
+      "pl"
+    ]
   },
   {
     "by": "meteor333",
@@ -6335,7 +6415,9 @@
     "title": "Apollo 11 in Real Time",
     "type": "story",
     "url": "https://apolloinrealtime.org/11/",
-    "tags": null
+    "tags": [
+      "space"
+    ]
   },
   {
     "by": "trishume",
