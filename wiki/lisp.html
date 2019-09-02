@@ -262,7 +262,11 @@ for the JavaScript code in this tag.
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><div id="content">
 <h1 class="title">Lisp Index Page</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
@@ -318,14 +322,14 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgd5b74c8">5.5. Rackunit</a></li>
-<li><a href="#orgaccf3e6">5.6. Numbers</a></li>
+<li><a href="#orga4932a0">5.6. Numbers</a></li>
 <li><a href="#org3e3e9ba">5.7. Procedure</a></li>
-<li><a href="#orga850f28">5.8. Control Structure</a></li>
-<li><a href="#orgc2593ec">5.9. String</a></li>
+<li><a href="#org75f3fc1">5.8. Control Structure</a></li>
+<li><a href="#org4288b4c">5.9. String</a></li>
 <li><a href="#org60b94db">5.10. Regular Expression</a></li>
 <li><a href="#orgdbd97cd">5.11. Pair, List, Vector</a></li>
 <li><a href="#org8abd708">5.12. Hash Tables</a></li>
-<li><a href="#org88ebda3">5.13. Sequence</a></li>
+<li><a href="#org074c31a">5.13. Sequence</a></li>
 <li><a href="#org709b533">5.14. Hash set (use racket/set)</a></li>
 <li><a href="#org88f6e24">5.15. structure</a>
 <ul>
@@ -336,7 +340,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgfcec887">5.16. Multiple Values</a></li>
-<li><a href="#orgdb9124c">5.17. Exception</a></li>
+<li><a href="#org71efcbc">5.17. Exception</a></li>
 <li><a href="#orgc78a6e2">5.18. Concurrency</a></li>
 <li><a href="#org9121df6">5.19. IO</a>
 <ul>
@@ -356,7 +360,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgfbd8265">5.20.1. Path</a></li>
 <li><a href="#org4e5bf39">5.20.2. File System</a></li>
-<li><a href="#org4ee53d2">5.20.3. Networking</a></li>
+<li><a href="#org21ff697">5.20.3. Networking</a></li>
 <li><a href="#org2d18cdc">5.20.4. Processes</a></li>
 <li><a href="#org013a437">5.20.5. CMD parsing (racket/cmdline)</a></li>
 </ul>
@@ -392,7 +396,7 @@ for the JavaScript code in this tag.
 <li><a href="#org8a861d6">5.23.4.7. properties</a></li>
 </ul>
 </li>
-<li><a href="#org1c442a7">5.23.5. Networking</a>
+<li><a href="#org29733a9">5.23.5. Networking</a>
 <ul>
 <li><a href="#orga571f75">5.23.5.1. HTML parsing</a></li>
 <li><a href="#org064e5db">5.23.5.2. URL &amp; HTTP</a></li>
@@ -414,8 +418,8 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orga4e5e80">6.2. List</a></li>
-<li><a href="#orgb85a735">6.3. Sequence</a></li>
-<li><a href="#org7a432db">6.4. String</a></li>
+<li><a href="#org8de7ec7">6.3. Sequence</a></li>
+<li><a href="#orgac6b8c9">6.4. String</a></li>
 <li><a href="#org4ce82b0">6.5. Array</a></li>
 <li><a href="#orgd334ea4">6.6. Structure</a></li>
 <li><a href="#org4dcd419">6.7. Hash Table</a></li>
@@ -425,7 +429,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orga7f75c5">6.9. Type</a></li>
-<li><a href="#org7cf5e11">6.10. Numbers</a></li>
+<li><a href="#orge2ba356">6.10. Numbers</a></li>
 <li><a href="#org4778450">6.11. Function</a>
 <ul>
 <li><a href="#org07348b0">6.11.1. Defun and Lambda Expression</a></li>
@@ -433,8 +437,8 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org739d3b1">6.12. Macro</a></li>
 <li><a href="#org35f01fd">6.13. Evaluation</a></li>
-<li><a href="#org51651d1">6.14. Exception</a></li>
-<li><a href="#orgb8e566e">6.15. Control Structure</a>
+<li><a href="#org7123d37">6.14. Exception</a></li>
+<li><a href="#org68d1b45">6.15. Control Structure</a>
 <ul>
 <li><a href="#orgebae1e0">6.15.1. Sequential</a></li>
 <li><a href="#org51d28fe">6.15.2. Conditional</a></li>
@@ -792,18 +796,18 @@ A very simple continuation example, to simulate the return statement:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(display
-  (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (return)
-    (display <span class="org-string">"One "</span>)
+<pre class="src src-racket">(<span class="org-builtin">display</span>
+  (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (return)
+    (<span class="org-builtin">display</span> <span class="org-string">"One "</span>)
     (return <span class="org-string">"Two "</span>)
-    (display <span class="org-string">"Three"</span>))))
+    (<span class="org-builtin">display</span> <span class="org-string">"Three"</span>))))
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(+ 5 (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (k)
-                (k (* 2 3))))
-   6)
+<pre class="src src-racket">(<span class="org-builtin">+</span> <span class="org-racket-selfeval">5</span> (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (k)
+                (k (<span class="org-builtin">*</span> <span class="org-racket-selfeval">2</span> <span class="org-racket-selfeval">3</span>))))
+   <span class="org-racket-selfeval">6</span>)
 </pre>
 </div>
 
@@ -814,16 +818,16 @@ continuation to a global variable, hence first-class continuation:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> <span class="org-function-name">reset</span> #f)
-(<span class="org-keyword">define</span> <span class="org-function-name">counter</span> #f)
+<pre class="src src-racket">(<span class="org-keyword">define</span> <span class="org-variable-name">reset</span> <span class="org-racket-selfeval">#f</span>)
+(<span class="org-keyword">define</span> <span class="org-variable-name">counter</span> <span class="org-racket-selfeval">#f</span>)
 
 ((<span class="org-keyword">lambda</span> ()
-   (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (cc) (<span class="org-keyword">set!</span> reset cc)))
-   (<span class="org-keyword">set!</span> counter 1)))
+   (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (cc) (<span class="org-keyword">set!</span> reset cc)))
+   (<span class="org-keyword">set!</span> counter <span class="org-racket-selfeval">1</span>)))
 
 counter
 <span class="org-comment-delimiter">;; </span><span class="org-comment">1</span>
-(<span class="org-keyword">set!</span> counter (+ 1 counter))
+(<span class="org-keyword">set!</span> counter (<span class="org-builtin">+</span> <span class="org-racket-selfeval">1</span> counter))
 
 counter
 <span class="org-comment-delimiter">;; </span><span class="org-comment">2</span>
@@ -839,23 +843,23 @@ Implementations of the sandwich example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> <span class="org-function-name">sandwich</span> #f)
-(<span class="org-keyword">define</span> <span class="org-function-name">pocket</span> #f)
+<pre class="src src-racket">(<span class="org-keyword">define</span> <span class="org-variable-name">sandwich</span> <span class="org-racket-selfeval">#f</span>)
+(<span class="org-keyword">define</span> <span class="org-variable-name">pocket</span> <span class="org-racket-selfeval">#f</span>)
 
 (<span class="org-keyword">define</span> (<span class="org-function-name">eat-sandwich</span>)
-  (<span class="org-keyword">let</span> ((mouth '()))
-    (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (cc)
+  (<span class="org-keyword">let</span> ((<span class="org-variable-name">mouth</span> '()))
+    (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (cc)
                (<span class="org-keyword">set!</span> pocket cc)))
     (<span class="org-keyword">if</span> sandwich
-        (<span class="org-keyword">begin</span> (<span class="org-keyword">set!</span> mouth (cons sandwich mouth))
-               (<span class="org-keyword">set!</span> sandwich #f)
-               (display <span class="org-string">"Ate the sandwich\n"</span>)
-               (display mouth))
-        (display <span class="org-string">"No sandwich\n"</span>))))
+        (<span class="org-keyword">begin</span> (<span class="org-keyword">set!</span> mouth (<span class="org-builtin">cons</span> sandwich mouth))
+               (<span class="org-keyword">set!</span> sandwich <span class="org-racket-selfeval">#f</span>)
+               (<span class="org-builtin">display</span> <span class="org-string">"Ate the sandwich\n"</span>)
+               (<span class="org-builtin">display</span> mouth))
+        (<span class="org-builtin">display</span> <span class="org-string">"No sandwich\n"</span>))))
 
 (eat-sandwich)
 <span class="org-comment-delimiter">;; </span><span class="org-comment">make the sandwich</span>
-(<span class="org-keyword">set!</span> sandwich (cons 'bread 'turkey))
+(<span class="org-keyword">set!</span> sandwich (<span class="org-builtin">cons</span> <span class="org-racket-selfeval">'bread</span> <span class="org-racket-selfeval">'turkey</span>))
 (pocket)
 
 </pre>
@@ -870,7 +874,7 @@ There is a very interesting example in the scheme reference (by Dybvig?):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">let</span> ([x (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
+<pre class="src src-racket">(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
   (x (<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>)))
 </pre>
 </div>
@@ -880,8 +884,8 @@ What it does, is that, the k here is:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">lambda</span> (_)
-  (<span class="org-keyword">let</span> ([x _])
+<pre class="src src-racket">(<span class="org-keyword">lambda</span> (<span class="org-keyword">_</span>)
+  (<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> <span class="org-keyword">_</span>])
    (x (<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>))))
 </pre>
 </div>
@@ -892,12 +896,12 @@ Thus the it assigns this k to x, and apply x on <code>(lambda (ignore)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">lambda</span> (_)
-  (<span class="org-keyword">let</span> ([x _])
+<pre class="src src-racket">(<span class="org-keyword">lambda</span> (<span class="org-keyword">_</span>)
+  (<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> <span class="org-keyword">_</span>])
     (x (<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>)))
   (<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>))
 
-(<span class="org-keyword">let</span> ([x (<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>)])
+(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> (<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>)])
   (x (<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>)))
 
 ((<span class="org-keyword">lambda</span> (ignore) <span class="org-string">"hi"</span>)
@@ -910,8 +914,8 @@ This is the self application function, which returns "hi". So If we say:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">let</span> ([x (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
-  (x (<span class="org-keyword">lambda</span> (a) (+ a 2))))
+<pre class="src src-racket">(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
+  (x (<span class="org-keyword">lambda</span> (a) (<span class="org-builtin">+</span> a <span class="org-racket-selfeval">2</span>))))
 </pre>
 </div>
 
@@ -920,8 +924,8 @@ It will basically means:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">((<span class="org-keyword">lambda</span> (a) (+ a 2))
- (<span class="org-keyword">lambda</span> (a) (+ a 2)))
+<pre class="src src-racket">((<span class="org-keyword">lambda</span> (a) (<span class="org-builtin">+</span> a <span class="org-racket-selfeval">2</span>))
+ (<span class="org-keyword">lambda</span> (a) (<span class="org-builtin">+</span> a <span class="org-racket-selfeval">2</span>)))
 </pre>
 </div>
 
@@ -934,7 +938,7 @@ If we gives it identify function, it will return the procedure:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">let</span> ([x (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
+<pre class="src src-racket">(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
   (x (<span class="org-keyword">lambda</span> (a) a)))
 </pre>
 </div>
@@ -944,7 +948,7 @@ If we give it self application function, it will loop forever:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">let</span> ([x (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
+<pre class="src src-racket">(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))])
   (x (<span class="org-keyword">lambda</span> (a) (a a))))
 </pre>
 </div>
@@ -954,8 +958,8 @@ As an exercise:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">((
-  (<span class="org-keyword">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))
+<pre class="src src-racket">((
+  (<span class="org-builtin">call/cc</span> (<span class="org-keyword">lambda</span> (k) k))
   (<span class="org-keyword">lambda</span> (x) x))
  <span class="org-string">"hi"</span>)
 </pre>
@@ -966,9 +970,9 @@ k:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">lambda</span> (_)
+<pre class="src src-racket">(<span class="org-keyword">lambda</span> (<span class="org-keyword">_</span>)
   ((
-   _
+   <span class="org-keyword">_</span>
    (<span class="org-keyword">lambda</span> (x) x))
    <span class="org-string">"hi"</span>))
 </pre>
@@ -979,9 +983,9 @@ Thus:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(((<span class="org-keyword">lambda</span> (_)
+<pre class="src src-racket">(((<span class="org-keyword">lambda</span> (<span class="org-keyword">_</span>)
     ((
-      _
+      <span class="org-keyword">_</span>
       (<span class="org-keyword">lambda</span> (x) x))
      <span class="org-string">"hi"</span>))
   (<span class="org-keyword">lambda</span> (x) x))
@@ -1020,10 +1024,10 @@ The non-tail call version:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> (<span class="org-function-name">fact</span> n)
+<pre class="src src-racket">(<span class="org-keyword">define</span> (<span class="org-function-name">fact</span> n)
   (<span class="org-keyword">cond</span>
-   [(zero? n) 1]
-   [<span class="org-keyword">else</span> (* (fact (sub1 n)) n)]))
+   [(<span class="org-builtin">zero?</span> n) <span class="org-racket-selfeval">1</span>]
+   [<span class="org-keyword">else</span> (<span class="org-builtin">*</span> (fact (<span class="org-builtin">sub1</span> n)) n)]))
 </pre>
 </div>
 
@@ -1031,12 +1035,12 @@ The non-tail call version:
 It can also be written in tail call, using accumulator-passing-style (aps):
 </p>
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> (<span class="org-function-name">fact-aps</span> n acc)
+<pre class="src src-racket">(<span class="org-keyword">define</span> (<span class="org-function-name">fact-aps</span> n acc)
   (<span class="org-keyword">cond</span>
-   [(zero? n) acc]
-   [<span class="org-keyword">else</span> (fact-aps (sub1 n) (* acc n))]))
+   [(<span class="org-builtin">zero?</span> n) acc]
+   [<span class="org-keyword">else</span> (fact-aps (<span class="org-builtin">sub1</span> n) (<span class="org-builtin">*</span> acc n))]))
 (<span class="org-keyword">define</span> (<span class="org-function-name">fact</span> n)
-  (fact-aps n 1))
+  (fact-aps n <span class="org-racket-selfeval">1</span>))
 </pre>
 </div>
 
@@ -1050,12 +1054,12 @@ Continuous passing style:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> (<span class="org-function-name">fact-cps</span> n k)
+<pre class="src src-racket">(<span class="org-keyword">define</span> (<span class="org-function-name">fact-cps</span> n k)
   (<span class="org-keyword">cond</span>
-   [(zero? n) (k 1)]
-   [<span class="org-keyword">else</span> (fact-cps (sub1 n)
+   [(<span class="org-builtin">zero?</span> n) (k <span class="org-racket-selfeval">1</span>)]
+   [<span class="org-keyword">else</span> (fact-cps (<span class="org-builtin">sub1</span> n)
                    (<span class="org-keyword">lambda</span> (v)
-                     (k (* v n))))]))
+                     (k (<span class="org-builtin">*</span> v n))))]))
 (<span class="org-keyword">define</span> (<span class="org-function-name">fact</span> n)
   (fact-cps n (<span class="org-keyword">lambda</span> (v) v)))
 </pre>
@@ -1094,7 +1098,7 @@ thus observe stack and memory usage.
 First, use the trace library:
 </p>
 <div class="org-src-container">
-<pre class="src src-scheme">(require racket/trace)
+<pre class="src src-racket">(<span class="org-keyword">require</span> racket/trace)
 </pre>
 </div>
 
@@ -1102,11 +1106,11 @@ First, use the trace library:
 Tail call:
 </p>
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> (<span class="org-function-name">foo</span> n)
-  (<span class="org-keyword">when</span> (&gt; n 0)
-    (foo (sub1 n))))
+<pre class="src src-racket">(<span class="org-keyword">define</span> (<span class="org-function-name">foo</span> n)
+  (<span class="org-keyword">when</span> (<span class="org-builtin">&gt;</span> n <span class="org-racket-selfeval">0</span>)
+    (foo (<span class="org-builtin">sub1</span> n))))
 (trace foo)
-(foo 5)
+(foo <span class="org-racket-selfeval">5</span>)
 </pre>
 </div>
 
@@ -1114,11 +1118,11 @@ Tail call:
 Non-tail call:
 </p>
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> (<span class="org-function-name">bar</span> n)
-  (<span class="org-keyword">when</span> (&gt; n 0)
-    (identity (bar (sub1 n)))))
+<pre class="src src-racket">(<span class="org-keyword">define</span> (<span class="org-function-name">bar</span> n)
+  (<span class="org-keyword">when</span> (<span class="org-builtin">&gt;</span> n <span class="org-racket-selfeval">0</span>)
+    (<span class="org-builtin">identity</span> (bar (<span class="org-builtin">sub1</span> n)))))
 (trace bar)
-(bar 5)
+(bar <span class="org-racket-selfeval">5</span>)
 </pre>
 </div>
 
@@ -1809,8 +1813,8 @@ to select tests. Create a suite using <code>(test-suite name-expr test
 </div>
 </div>
 
-<div id="outline-container-orgaccf3e6" class="outline-3">
-<h3 id="orgaccf3e6"><span class="section-number-3">5.6</span> Numbers</h3>
+<div id="outline-container-orga4932a0" class="outline-3">
+<h3 id="orga4932a0"><span class="section-number-3">5.6</span> Numbers</h3>
 <div class="outline-text-3" id="text-5-6">
 <ul class="org-ul">
 <li><code>/</code>: provide the fraction if given two numbers, not to round it.</li>
@@ -1907,8 +1911,8 @@ restricts this to exactly one value.
 </div>
 
 
-<div id="outline-container-orga850f28" class="outline-3">
-<h3 id="orga850f28"><span class="section-number-3">5.8</span> Control Structure</h3>
+<div id="outline-container-org75f3fc1" class="outline-3">
+<h3 id="org75f3fc1"><span class="section-number-3">5.8</span> Control Structure</h3>
 <div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li><code>if</code></li>
@@ -1960,8 +1964,8 @@ different return values.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc2593ec" class="outline-3">
-<h3 id="orgc2593ec"><span class="section-number-3">5.9</span> String</h3>
+<div id="outline-container-org4288b4c" class="outline-3">
+<h3 id="org4288b4c"><span class="section-number-3">5.9</span> String</h3>
 <div class="outline-text-3" id="text-5-9">
 <p>
 The reading syntax of characters starts with <code>#\</code>, with following
@@ -2362,8 +2366,8 @@ From <code>racket/vector</code>:
 </div>
 </div>
 
-<div id="outline-container-org88ebda3" class="outline-3">
-<h3 id="org88ebda3"><span class="section-number-3">5.13</span> Sequence</h3>
+<div id="outline-container-org074c31a" class="outline-3">
+<h3 id="org074c31a"><span class="section-number-3">5.13</span> Sequence</h3>
 <div class="outline-text-3" id="text-5-13">
 <p>
 Sequence is designed to be used with <code>for</code>. Not only list and vectors
@@ -2618,8 +2622,8 @@ can destruct values can also be used.
 </div>
 </div>
 
-<div id="outline-container-orgdb9124c" class="outline-3">
-<h3 id="orgdb9124c"><span class="section-number-3">5.17</span> Exception</h3>
+<div id="outline-container-org71efcbc" class="outline-3">
+<h3 id="org71efcbc"><span class="section-number-3">5.17</span> Exception</h3>
 <div class="outline-text-3" id="text-5-17">
 <p>
 For now, I only care about how to handle exceptions. To do that:
@@ -3048,8 +3052,8 @@ create it, and return path.
 </div>
 </div>
 
-<div id="outline-container-org4ee53d2" class="outline-4">
-<h4 id="org4ee53d2"><span class="section-number-4">5.20.3</span> Networking</h4>
+<div id="outline-container-org21ff697" class="outline-4">
+<h4 id="org21ff697"><span class="section-number-4">5.20.3</span> Networking</h4>
 <div class="outline-text-4" id="text-5-20-3">
 <p>
 I'm not going to dig deep on this because I don't use it. Just listing
@@ -3846,8 +3850,8 @@ Finally, you can save image to file by
 </div>
 
 
-<div id="outline-container-org1c442a7" class="outline-4">
-<h4 id="org1c442a7"><span class="section-number-4">5.23.5</span> Networking</h4>
+<div id="outline-container-org29733a9" class="outline-4">
+<h4 id="org29733a9"><span class="section-number-4">5.23.5</span> Networking</h4>
 <div class="outline-text-4" id="text-5-23-5">
 </div>
 <div id="outline-container-orga571f75" class="outline-5">
@@ -4205,8 +4209,8 @@ variables. It cna be used to bind into tree structures.
 
 
 
-<div id="outline-container-orgb85a735" class="outline-3">
-<h3 id="orgb85a735"><span class="section-number-3">6.3</span> Sequence</h3>
+<div id="outline-container-org8de7ec7" class="outline-3">
+<h3 id="org8de7ec7"><span class="section-number-3">6.3</span> Sequence</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Sequence contains both lists and vectors. To tell what kind of
@@ -4254,8 +4258,8 @@ the previous result in the next computation.
 </div>
 </div>
 
-<div id="outline-container-org7a432db" class="outline-3">
-<h3 id="org7a432db"><span class="section-number-3">6.4</span> String</h3>
+<div id="outline-container-orgac6b8c9" class="outline-3">
+<h3 id="orgac6b8c9"><span class="section-number-3">6.4</span> String</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 A string is a specialized vector (one-dimensional array) whose
@@ -4568,8 +4572,8 @@ remember, documenting here.
 </div>
 </div>
 
-<div id="outline-container-org7cf5e11" class="outline-3">
-<h3 id="org7cf5e11"><span class="section-number-3">6.10</span> Numbers</h3>
+<div id="outline-container-orge2ba356" class="outline-3">
+<h3 id="orge2ba356"><span class="section-number-3">6.10</span> Numbers</h3>
 <div class="outline-text-3" id="text-6-10">
 <p>
 Numbers can use read form, e.g. <code>#b010101</code>, <code>#xaf08</code>. Predicates such
@@ -4836,8 +4840,8 @@ that is used in defmacro.
 </div>
 </div>
 
-<div id="outline-container-org51651d1" class="outline-3">
-<h3 id="org51651d1"><span class="section-number-3">6.14</span> Exception</h3>
+<div id="outline-container-org7123d37" class="outline-3">
+<h3 id="org7123d37"><span class="section-number-3">6.14</span> Exception</h3>
 <div class="outline-text-3" id="text-6-14">
 <p>
 A <code>catch</code> expression takes a tag, which can be any kind of object,
@@ -4855,8 +4859,8 @@ the lisp error handler.
 
 
 
-<div id="outline-container-orgb8e566e" class="outline-3">
-<h3 id="orgb8e566e"><span class="section-number-3">6.15</span> Control Structure</h3>
+<div id="outline-container-org68d1b45" class="outline-3">
+<h3 id="org68d1b45"><span class="section-number-3">6.15</span> Control Structure</h3>
 <div class="outline-text-3" id="text-6-15">
 </div>
 <div id="outline-container-orgebae1e0" class="outline-4">
@@ -6076,10 +6080,10 @@ its public interface:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define-module</span> (<span class="org-type">ice-9 popen</span>)
-  <span class="org-builtin">#:use-module</span> (ice-9 popen)
-  <span class="org-builtin">#:use-module</span> (ice-9 pclose)
-  <span class="org-builtin">#:export</span> (my list-of names))
+<pre class="src src-racket">(define-module (<span class="org-function-name">ice-9</span> popen)
+  <span class="org-racket-keyword-argument">#:use-module</span> (ice-9 popen)
+  <span class="org-racket-keyword-argument">#:use-module</span> (ice-9 pclose)
+  <span class="org-racket-keyword-argument">#:export</span> (my list-of names))
 </pre>
 </div>
 
@@ -6088,13 +6092,13 @@ When using a module, the <code>use-modules</code> accesses this public interface
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">use-modules</span> (ice-9 popen))
-(<span class="org-keyword">use-modules</span> ((ice-9 popen)
-              <span class="org-builtin">#:select</span> ((open-pipe . pipe-open) close-pipe)
-              <span class="org-builtin">#:renamer</span> (symbol-prefix-proc 'unixy:)))
-(<span class="org-keyword">use-modules</span> ((ice-9 popen)
-              <span class="org-builtin">#:select</span> ((open-pipe . pipe-open) close-pipe)
-              <span class="org-builtin">#:prefix</span> unixy:))
+<pre class="src src-racket">(use-modules (ice-9 popen))
+(use-modules ((ice-9 popen)
+              <span class="org-racket-keyword-argument">#:select</span> ((open-pipe . pipe-open) close-pipe)
+              <span class="org-racket-keyword-argument">#:renamer</span> (symbol-prefix-proc <span class="org-racket-selfeval">'unixy:</span>)))
+(use-modules ((ice-9 popen)
+              <span class="org-racket-keyword-argument">#:select</span> ((open-pipe . pipe-open) close-pipe)
+              <span class="org-racket-keyword-argument">#:prefix</span> unixy:))
 </pre>
 </div>
 
@@ -6103,8 +6107,8 @@ Another way to access a module is through <code>@</code> syntax:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-scheme">(<span class="org-keyword">define</span> <span class="org-function-name">unixy:pipe-open</span> (@ (ice-9 popen) open-pipe))
-(<span class="org-keyword">define</span> <span class="org-function-name">unixy:close-pipe</span> (@ (ice-9 popen) close-pipe))
+<pre class="src src-racket">(<span class="org-keyword">define</span> <span class="org-variable-name">unixy:pipe-open</span> (@ (ice-9 popen) open-pipe))
+(<span class="org-keyword">define</span> <span class="org-variable-name">unixy:close-pipe</span> (@ (ice-9 popen) close-pipe))
 </pre>
 </div>
 

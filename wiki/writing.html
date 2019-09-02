@@ -262,7 +262,11 @@ for the JavaScript code in this tag.
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><div id="content">
 <h1 class="title">Techniques for Writing</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
@@ -295,7 +299,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgcd7e48c">2.5.2.3. code listing</a></li>
 </ul>
 </li>
-<li><a href="#org3ab793d">2.5.3. Beamer</a>
+<li><a href="#org8ea83f1">2.5.3. Beamer</a>
 <ul>
 <li><a href="#orgd2e389d">2.5.3.1. Octave code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></a></li>
 <li><a href="#orgab35ffc">2.5.3.2. The output&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BMCOL">BMCOL</span>&#xa0;<span class="B_block">B_block</span></span></a></li>
@@ -323,7 +327,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0d77a3e">4.2. Mathematics</a></li>
 <li><a href="#org168a89b">4.3. Primitives</a></li>
 <li><a href="#org349bb43">4.4. Tips</a></li>
-<li><a href="#org7a5ea92">4.5. Beamer</a></li>
+<li><a href="#org033ebe6">4.5. Beamer</a></li>
 <li><a href="#orged55489">4.6. listings</a>
 <ul>
 <li><a href="#orgbc7b7c4">4.6.1. Global setting:</a></li>
@@ -387,14 +391,14 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org72cc942">4.7.12. Tree</a>
 <ul>
-<li><a href="#org9a063d2">4.7.12.1. Styling</a></li>
+<li><a href="#orge88f548">4.7.12.1. Styling</a></li>
 <li><a href="#orgdfafcb9">4.7.12.2. Placement</a></li>
 <li><a href="#org60d50fc">4.7.12.3. forest</a></li>
 </ul>
 </li>
 <li><a href="#org7b129de">4.7.13. Matrix</a>
 <ul>
-<li><a href="#org27c6b7b">4.7.13.1. Styling</a></li>
+<li><a href="#org1d667f6">4.7.13.1. Styling</a></li>
 <li><a href="#orgeae9fba">4.7.13.2. Anchoring</a></li>
 </ul>
 </li>
@@ -691,6 +695,7 @@ The options will be passed directly to latex option,
 e.g. when using minted <code>\begin{minted}[frame=xxx,label=xxx]</code>.
 </p>
 
+
 <pre class="example">
 #+ATTR_LATEX: :font \small
 #+ATTR_LATEX: :float t
@@ -716,8 +721,8 @@ You can wrap it inside a minipage
 
 
 
-<div id="outline-container-org3ab793d" class="outline-4">
-<h4 id="org3ab793d"><span class="section-number-4">2.5.3</span> Beamer</h4>
+<div id="outline-container-org8ea83f1" class="outline-4">
+<h4 id="org8ea83f1"><span class="section-number-4">2.5.3</span> Beamer</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <p>
 The header setup:
@@ -1396,8 +1401,8 @@ cite link (need to load a package like <code>hyperref</code> or <code>url</code>
 </div>
 
 
-<div id="outline-container-org7a5ea92" class="outline-3">
-<h3 id="org7a5ea92"><span class="section-number-3">4.5</span> Beamer</h3>
+<div id="outline-container-org033ebe6" class="outline-3">
+<h3 id="org033ebe6"><span class="section-number-3">4.5</span> Beamer</h3>
 <div class="outline-text-3" id="text-4-5">
 <pre class="example">
 #+AUTHOR: Hebi Li
@@ -2657,8 +2662,8 @@ also counts.
 </p>
 </div>
 
-<div id="outline-container-org9a063d2" class="outline-5">
-<h5 id="org9a063d2"><span class="section-number-5">4.7.12.1</span> Styling</h5>
+<div id="outline-container-orge88f548" class="outline-5">
+<h5 id="orge88f548"><span class="section-number-5">4.7.12.1</span> Styling</h5>
 <div class="outline-text-5" id="text-4-7-12-1">
 <p>
 Rules
@@ -2743,8 +2748,8 @@ specify the spacing for the next separation.
 </p>
 </div>
 
-<div id="outline-container-org27c6b7b" class="outline-5">
-<h5 id="org27c6b7b"><span class="section-number-5">4.7.13.1</span> Styling</h5>
+<div id="outline-container-org1d667f6" class="outline-5">
+<h5 id="org1d667f6"><span class="section-number-5">4.7.13.1</span> Styling</h5>
 <div class="outline-text-5" id="text-4-7-13-1">
 <ul class="org-ul">
 <li><code>every cell={&lt;row&gt;}{&lt;column&gt;}</code>: this is a style hook. The row and
