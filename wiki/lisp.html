@@ -322,14 +322,14 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgd5b74c8">5.5. Rackunit</a></li>
-<li><a href="#orge2ba356">5.6. Numbers</a></li>
+<li><a href="#orgc739bad">5.6. Numbers</a></li>
 <li><a href="#org3e3e9ba">5.7. Procedure</a></li>
-<li><a href="#org68d1b45">5.8. Control Structure</a></li>
-<li><a href="#orgac6b8c9">5.9. String</a></li>
+<li><a href="#org2d7d700">5.8. Control Structure</a></li>
+<li><a href="#orgca64d04">5.9. String</a></li>
 <li><a href="#org60b94db">5.10. Regular Expression</a></li>
 <li><a href="#orgdbd97cd">5.11. Pair, List, Vector</a></li>
 <li><a href="#org8abd708">5.12. Hash Tables</a></li>
-<li><a href="#org8de7ec7">5.13. Sequence</a></li>
+<li><a href="#org45f6ffa">5.13. Sequence</a></li>
 <li><a href="#org709b533">5.14. Hash set (use racket/set)</a></li>
 <li><a href="#org88f6e24">5.15. structure</a>
 <ul>
@@ -340,7 +340,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgfcec887">5.16. Multiple Values</a></li>
-<li><a href="#org7123d37">5.17. Exception</a></li>
+<li><a href="#org89dc365">5.17. Exception</a></li>
 <li><a href="#orgc78a6e2">5.18. Concurrency</a></li>
 <li><a href="#org9121df6">5.19. IO</a>
 <ul>
@@ -360,7 +360,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgfbd8265">5.20.1. Path</a></li>
 <li><a href="#org4e5bf39">5.20.2. File System</a></li>
-<li><a href="#org29733a9">5.20.3. Networking</a></li>
+<li><a href="#orgd25e1f9">5.20.3. Networking</a></li>
 <li><a href="#org2d18cdc">5.20.4. Processes</a></li>
 <li><a href="#org013a437">5.20.5. CMD parsing (racket/cmdline)</a></li>
 </ul>
@@ -396,7 +396,7 @@ for the JavaScript code in this tag.
 <li><a href="#org8a861d6">5.23.4.7. properties</a></li>
 </ul>
 </li>
-<li><a href="#orgd25e1f9">5.23.5. Networking</a>
+<li><a href="#orgba6d8a0">5.23.5. Networking</a>
 <ul>
 <li><a href="#orga571f75">5.23.5.1. HTML parsing</a></li>
 <li><a href="#org064e5db">5.23.5.2. URL &amp; HTTP</a></li>
@@ -418,8 +418,8 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orga4e5e80">6.2. List</a></li>
-<li><a href="#org45f6ffa">6.3. Sequence</a></li>
-<li><a href="#orgca64d04">6.4. String</a></li>
+<li><a href="#org16e407d">6.3. Sequence</a></li>
+<li><a href="#orgbbfafed">6.4. String</a></li>
 <li><a href="#org4ce82b0">6.5. Array</a></li>
 <li><a href="#orgd334ea4">6.6. Structure</a></li>
 <li><a href="#org4dcd419">6.7. Hash Table</a></li>
@@ -429,7 +429,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orga7f75c5">6.9. Type</a></li>
-<li><a href="#orgc739bad">6.10. Numbers</a></li>
+<li><a href="#orgdd0b23e">6.10. Numbers</a></li>
 <li><a href="#org4778450">6.11. Function</a>
 <ul>
 <li><a href="#org07348b0">6.11.1. Defun and Lambda Expression</a></li>
@@ -437,8 +437,8 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org739d3b1">6.12. Macro</a></li>
 <li><a href="#org35f01fd">6.13. Evaluation</a></li>
-<li><a href="#org89dc365">6.14. Exception</a></li>
-<li><a href="#org2d7d700">6.15. Control Structure</a>
+<li><a href="#org1bf1770">6.14. Exception</a></li>
+<li><a href="#org9e3fb2f">6.15. Control Structure</a>
 <ul>
 <li><a href="#orgebae1e0">6.15.1. Sequential</a></li>
 <li><a href="#org51d28fe">6.15.2. Conditional</a></li>
@@ -545,8 +545,8 @@ So why I like Scheme?
 </p>
 <ul class="org-ul">
 <li>proper lexical scoping</li>
-<li>Lisp-2: you can define a function anywhere, and bind it to a name in
-lexical scope</li>
+<li>Lisp-1: you can define a function anywhere, and bind it to a name in
+  lexical scope</li>
 <li>hygenic macros, defining DSLs</li>
 <li>proper module namescoping</li>
 </ul>
@@ -556,9 +556,13 @@ Why I like Lisp in general?
 </p>
 <ul class="org-ul">
 <li>structural editing</li>
+<li>proper "structural scoping" by (let). Haskell-like languages still
+  use let xxx bindings as statement, and the binding is effective
+  through the function. Thus still no easy visual marking of the
+  scope (I bet you didn't understand what I said .. I need better words)</li>
 <li>easy to format: when you mess your code up, just M-q. Although
-Haskell and F# are good languages, I don't like the choice of
-indentation as syntax. That makes it hard to modify program</li>
+  Haskell and F# are good languages, I don't like the choice of
+  indentation as syntax. That makes it hard to modify program</li>
 <li>REPL, interactive development</li>
 <li>clear unambiguous syntax, parse tree by default</li>
 <li>encouraging of functional style code</li>
@@ -599,19 +603,19 @@ APIs of common lisp, racket, clojure, emacs lisp.
 <h3 id="org6b0c1b8"><span class="section-number-3">2.1</span> Dialects</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
-Richard P. Gabriel has a <a href="http://www.nhplace.com/kent/Papers/Technical-Issues.html">paper</a> about Lisp-1 and Lisp-2. Basically
-Lisp-1 has seperate namespace for functions and variables, while
-Lisp-2 only have one universal namespace.
+Richard P. Gabriel has a
+<a href="http://www.nhplace.com/kent/Papers/Technical-Issues.html">paper</a>
+about Lisp-1 and Lisp-2. Basically Lisp-1 only have one universal
+namespace, while Lisp-2 has seperate namespace for functions and
+variables.
 </p>
+
 
 <p>
-Lisp-1 includes Elisp, <a href="common-lisp.html">Common Lisp</a>. All
-scheme are lisp-2.  <a href="racket.html">Racket</a> is the modern scheme
-with batteries.
+Scheme and clojure are lisp-1. Elisp and Common Lisp are Lisp-2.
 </p>
 </div>
 </div>
-
 
 <div id="outline-container-org6817df3" class="outline-3">
 <h3 id="org6817df3"><span class="section-number-3">2.2</span> Why Lisp?</h3>
@@ -1199,12 +1203,12 @@ it will most likely output results in minibuffer, unless
 </p>
 <ol class="org-ol">
 <li>an error happens, where you are dropped in the REPL in debugger
-mode with the module of the file, so that you can access all the
-bindings there. Just remember to <code>,q</code> when you are done.</li>
+   mode with the module of the file, so that you can access all the
+   bindings there. Just remember to <code>,q</code> when you are done.</li>
 <li>output images, which will be shown in the REPL, but no entry of
-debugger</li>
+   debugger</li>
 <li>a warning happens. The warning will be in a separate buffer, and
-will not drop you in debugger.</li>
+   will not drop you in debugger.</li>
 </ol>
 
 <p>
@@ -1220,9 +1224,9 @@ Some of the useful commands:
 <li><code>C-x C-r</code>: evaluate region</li>
 <li><code>C-M-x</code>: eval top level</li>
 <li><code>C-c \</code> runs the command <code>geiser-insert-lambda</code>, inserts a
-lambda. As a comparison, the racket-mode has
-<code>racket-unicode-input-method-enable</code>, implemented an input method
-for all latin letters.</li>
+  lambda. As a comparison, the racket-mode has
+  <code>racket-unicode-input-method-enable</code>, implemented an input method
+  for all latin letters.</li>
 </ul>
 </div>
 </div>
@@ -1365,21 +1369,21 @@ Pattern can be
 <ul class="org-ul">
 <li><code>_</code> to match anything and abandon it.</li>
 <li>a single id which matches anything and bind to it. An ID can appear
-more than once, in which case the pattern is considered matching
-only if all of the bindings of ID are same.
+  more than once, in which case the pattern is considered matching
+  only if all of the bindings of ID are same.
 <ul class="org-ul">
 <li>e.g. <code>(list a b a)</code> will not match <code>'(1 2 3)</code>, but will match <code>'(1
     2 1)</code></li>
 </ul></li>
 <li>a list which binds to the destruction.</li>
 <li>The quote can not be used to construct list of symbols, it will
-match verbatically instead. For that, use quasiquote, which supports
-the evaluation and splice-eval.
+  match verbatically instead. For that, use quasiquote, which supports
+  the evaluation and splice-eval.
 <ul class="org-ul">
 <li>e.g. <code>`(1 ,a ,b)</code> will match <code>'(1 2 3)</code> with <code>a</code> and <code>b</code> bound.</li>
 </ul></li>
 <li>hash-table can be used to match the key and values, Using <code>...</code> in
-it means collect into a list.
+  it means collect into a list.
 <ul class="org-ul">
 <li>e.g. <code>(hash-table ("key1" a) ("key2" b))</code>.</li>
 <li>e.g. <code>(hash-table (key val) ...)</code> will match <code>#hash(("a" . 1) ("b"
@@ -1395,12 +1399,12 @@ it means collect into a list.
 <li>with <code>a</code> bound to 0, <code>b</code> bound to 1</li>
 </ul></li>
 <li><code>(and pat ...)</code> is used to combine a list of patterns. The typical usage is
-<code>(and id pat)</code> where you can bind <code>id</code> and still check the <code>pat</code>
-against the entire value. <code>or</code> is also available but not that
-useful.</li>
+  <code>(and id pat)</code> where you can bind <code>id</code> and still check the <code>pat</code>
+  against the entire value. <code>or</code> is also available but not that
+  useful.</li>
 <li><code>(? expr pat ...)</code>: combine a predicate and the <code>and</code>
-pattern. I.e. first, apply <code>expr</code> on the value to match, if <code>#t</code>,
-the additional <code>pat</code> are matched using the above <code>and</code> pattern.</li>
+  pattern. I.e. first, apply <code>expr</code> on the value to match, if <code>#t</code>,
+  the additional <code>pat</code> are matched using the above <code>and</code> pattern.</li>
 </ul>
 
 <p>
@@ -1578,7 +1582,7 @@ Some special read notation:
 <ul class="org-ul">
 <li><code>#(1 2 3)</code> for vectors</li>
 <li><code>#s(struct-id 1 2 3)</code> for prefab structure types. note that for
-complex structure, the print format is not intuitive.</li>
+  complex structure, the print format is not intuitive.</li>
 <li><code>#hash(("a" . 5) ("b" b))</code> for hash tables</li>
 </ul>
 </div>
@@ -1719,16 +1723,16 @@ non-hygienic macros.
 
 <ul class="org-ul">
 <li>a syntax object is a plain datum with some lexical context
-information</li>
+  information</li>
 <li><code>syntax-&gt;datum</code> accepts one syntax object, and return the raw list</li>
 <li><code>datum-&gt;syntax</code> accepts one context syntax object to donor its
-context, and a plain datum to be converted.</li>
+  context, and a plain datum to be converted.</li>
 <li>scheme macro is hygienic, i.e.
 <ol class="org-ol">
 <li>if it inserts a binding, it will be renamed through its lexical
-scope</li>
+     scope</li>
 <li>if it refers a free variable, it refers to the one in scope in
-which <b>the definition of the macro</b> happens.</li>
+     which <b>the definition of the macro</b> happens.</li>
 </ol></li>
 </ul>
 
@@ -1818,7 +1822,7 @@ Check APIs (all of them accepts an optional message at the end):
 <li><code>check-equal?</code></li>
 <li><code>check-not-equal?</code></li>
 <li><code>check-pred pred v</code>: check if apply pred on v will produce
-other than #f</li>
+  other than #f</li>
 <li><code>check-= v1 v2 epsilon</code>: |v1-v2| &lt;= epsilon</li>
 <li><code>check-true v</code>: #t</li>
 <li><code>check-false v</code>: #f</li>
@@ -1849,8 +1853,8 @@ to select tests. Create a suite using <code>(test-suite name-expr test
 </div>
 </div>
 
-<div id="outline-container-orge2ba356" class="outline-3">
-<h3 id="orge2ba356"><span class="section-number-3">5.6</span> Numbers</h3>
+<div id="outline-container-orgc739bad" class="outline-3">
+<h3 id="orgc739bad"><span class="section-number-3">5.6</span> Numbers</h3>
 <div class="outline-text-3" id="text-5-6">
 <ul class="org-ul">
 <li><code>/</code>: provide the fraction if given two numbers, not to round it.</li>
@@ -1947,8 +1951,8 @@ restricts this to exactly one value.
 </div>
 
 
-<div id="outline-container-org68d1b45" class="outline-3">
-<h3 id="org68d1b45"><span class="section-number-3">5.8</span> Control Structure</h3>
+<div id="outline-container-org2d7d700" class="outline-3">
+<h3 id="org2d7d700"><span class="section-number-3">5.8</span> Control Structure</h3>
 <div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li><code>if</code></li>
@@ -1965,7 +1969,7 @@ restricts this to exactly one value.
 
 <ul class="org-ul">
 <li><code>and</code>: A typically trick: <code>(and (some expr) #t)</code> to return a boolean
-value
+  value
 <ul class="org-ul">
 <li>if no expr, return <code>#t</code></li>
 <li>one expr, return its value in tail position.</li>
@@ -1973,18 +1977,18 @@ value
 <ul class="org-ul">
 <li>if first eval to <code>#f</code>, return #f</li>
 <li><b>otherwise</b> recursive call with the rest of exprs in tail
-position.</li>
+      position.</li>
 </ul></li>
 </ul></li>
 
 <li><code>test-expr =&gt; proc-expr</code>: <code>proc-expr</code> must <b>produce</b> a procedure
-that accept exactly <b>one</b> argument, the result of <code>test-expr</code> is
-that argument. The value is returned.</li>
+  that accept exactly <b>one</b> argument, the result of <code>test-expr</code> is
+  that argument. The value is returned.</li>
 <li><code>test-expr</code> without a body will return the result of
-<code>test-expr</code>. Not in tail position.</li>
+  <code>test-expr</code>. Not in tail position.</li>
 
 <li><code>(case val-expr [(datum ...) then-body ...+] ...)</code>: if val-expr
-matches one of datum, execute the body</li>
+  matches one of datum, execute the body</li>
 <li><code>when</code></li>
 <li><code>unless</code></li>
 <li><code>(for ([id seq-expr] #:when guard-expr #:unless guard-expr) body)</code></li>
@@ -1994,14 +1998,14 @@ matches one of datum, execute the body</li>
 <li><code>for/first</code>, <code>for/last</code></li>
 <li><code>for/fold</code></li>
 <li><code>for*</code>: like for, but with implicit #:when #t between each
-pair. Thus all clauses are nested. <code>for*</code> also has the form of
-different return values.</li>
+  pair. Thus all clauses are nested. <code>for*</code> also has the form of
+  different return values.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgac6b8c9" class="outline-3">
-<h3 id="orgac6b8c9"><span class="section-number-3">5.9</span> String</h3>
+<div id="outline-container-orgca64d04" class="outline-3">
+<h3 id="orgca64d04"><span class="section-number-3">5.9</span> String</h3>
 <div class="outline-text-3" id="text-5-9">
 <p>
 The reading syntax of characters starts with <code>#\</code>, with following
@@ -2119,7 +2123,7 @@ APIs
 <li><code>string=?</code>, <code>string&lt;?</code>, ..</li>
 <li><code>string-ci=?</code>, &#x2026;</li>
 <li><code>string-upcase</code>, <code>string-downcase</code>, <code>string-titlecase</code>,
-<code>string-foldcase</code> (normalize for different locale)</li>
+  <code>string-foldcase</code> (normalize for different locale)</li>
 </ul>
 
 <p>
@@ -2140,23 +2144,23 @@ With <code>racket/format</code>:
 </p>
 <ul class="org-ul">
 <li><code>~a</code>: accept a value, using <code>display</code>. It accepts several keyword
-arguments:
+  arguments:
 <ul class="org-ul">
 <li><code>#:separator ""</code>: the function actually accepts multiple values, each
-of them is connected with separator</li>
+    of them is connected with separator</li>
 <li><code>#:width</code></li>
 <li><code>#:max-width</code></li>
 <li><code>#:min-width</code></li>
 <li><code>#:limit-marker ""</code>: if the string is longer than the width, use this
-as indication of "more".</li>
+    as indication of "more".</li>
 <li><code>#:align</code>: <code>(or/c 'left 'center 'right) = 'left</code></li>
 <li><code>#:pad-string " "</code>: when width is less than the specified width, this
-is used to pad</li>
+    is used to pad</li>
 </ul></li>
 <li><code>~v</code>: use <code>print</code> instead of <code>display</code>. Default separator is " ",
-default limit-marker is "&#x2026;"</li>
+  default limit-marker is "&#x2026;"</li>
 <li><code>~s</code>: use <code>write</code>. Default separator is " ", default limit-marker is
-"&#x2026;"</li>
+  "&#x2026;"</li>
 </ul>
 
 <p>
@@ -2195,29 +2199,29 @@ Functions:
 </p>
 <ul class="org-ul">
 <li><code>regexp-quote</code>: generate a regular expression string that match the
-string literally</li>
+  string literally</li>
 <li><code>regexp-match</code> pattern input [start-pos end-pos]: find the pattern in
-the input. and return a list containing the result (only one). If no
-match, return #f. If has capture group, return the match and all
-captured group.</li>
+  the input. and return a list containing the result (only one). If no
+  match, return #f. If has capture group, return the match and all
+  captured group.</li>
 <li><code>regexp-match*</code>: match multiple times, return list of
-results. <code>#:match-select</code> accepts a procedure (defaults to
-<code>car</code>). Examples: values (all), cadr</li>
+  results. <code>#:match-select</code> accepts a procedure (defaults to
+  <code>car</code>). Examples: values (all), cadr</li>
 <li><code>regexp-match-position</code>: like <code>regexp-match</code>, but return list of number
-pairs, each is a range of [start, end).</li>
+  pairs, each is a range of [start, end).</li>
 <li><code>regexp-match?</code>: return #t or #f</li>
 <li><code>regexp-match-exact?</code>: return #t only if entire content matches.</li>
 
 <li><code>regexp-split pattern input</code>: complement of <code>regexp-match*</code></li>
 <li><code>regexp-replace pattern input insert</code>: replace the first
-match. Match can be referenced by using <code>&amp;</code> (whole match), <code>\0</code>
-(whole match), <code>\n</code> captured.</li>
+  match. Match can be referenced by using <code>&amp;</code> (whole match), <code>\0</code>
+  (whole match), <code>\n</code> captured.</li>
 <li><code>regexp-replace*</code>: replace all</li>
 <li><code>regexp-replaces input ([pat rep] ...)</code>: do <code>regexp-replace*</code> for
-each replacement in order, chained. Which means latter can operate
-on former.</li>
+  each replacement in order, chained. Which means latter can operate
+  on former.</li>
 <li><code>regexp-replace-quote</code>: produce string suitable to use as
-replacement (unquoting <code>\</code> and <code>&amp;</code>)</li>
+  replacement (unquoting <code>\</code> and <code>&amp;</code>)</li>
 </ul>
 
 <p>
@@ -2225,9 +2229,9 @@ Input port specific:
 </p>
 <ul class="org-ul">
 <li><code>regexp-try-match</code>: like <code>regexp-match</code>, but if the input is a port,
-don't read the input on failure.</li>
+  don't read the input on failure.</li>
 <li><code>regexp-match-peek</code>: do not read input ports on both failure and
-success</li>
+  success</li>
 <li><code>regexp-match-peek-positions</code>: return positions</li>
 <li><code>regexp-match-peek-immediate</code>: non-blocking on input port</li>
 </ul>
@@ -2274,11 +2278,11 @@ The APIs:
 <li><code>remove</code></li>
 <li><code>sort</code></li>
 <li><code>member</code>, <code>memf</code> (using function): if found, <b>return the tail</b> list
-starting from the match</li>
+  starting from the match</li>
 <li><code>findf</code>: like memf, but return just the matched element.</li>
 <li><code>assoc v lst</code>: the first element of lst whose car equal to
-v. E.g. <code>(assoc 1 '((1 2) (3 4)))</code> returns <code>'(1 2)</code>. variants:
-<code>assv</code>, <code>assq</code>, <code>assf</code></li>
+  v. E.g. <code>(assoc 1 '((1 2) (3 4)))</code> returns <code>'(1 2)</code>. variants:
+  <code>assv</code>, <code>assq</code>, <code>assf</code></li>
 </ul>
 
 <p>
@@ -2291,7 +2295,7 @@ from <code>racket/list</code>
 <li><code>second</code></li>
 <li><code>last</code></li>
 <li><code>list-update</code> lst pos updater: the pos index is updated with
-<code>(updater (list-ref lst pos))</code></li>
+  <code>(updater (list-ref lst pos))</code></li>
 <li><code>list-set lst pos value</code></li>
 <li><code>index-of lst v</code>: return the index of the first v</li>
 <li><code>index-where lst proc</code>: use function</li>
@@ -2300,7 +2304,7 @@ from <code>racket/list</code>
 <li><code>drop lst pos</code>: same as list-tail</li>
 <li><code>split-at lst pos</code>: same as <code>(values (take lst pos) (drop lst pos))</code></li>
 <li><code>takef</code>, <code>dropf</code>, <code>splitf-at</code>: take all the elements satisfying the
-function.</li>
+  function.</li>
 <li><code>take-right</code>, <code>drop-right</code>, <code>split-at-right</code>, and their f-version</li>
 <li><code>list-prefix? l r</code>: whether l is prefix of r</li>
 <li><code>take-common-prefix l r</code></li>
@@ -2310,7 +2314,7 @@ function.</li>
 <li><code>check-duplicates lst</code></li>
 <li><code>remove-duplicates lst</code></li>
 <li><code>partition prod lst</code>: return two lists, with items that <code>prod</code>
-evaluates to <code>#t</code> and <code>#f</code> respectively. It is the same as</li>
+  evaluates to <code>#t</code> and <code>#f</code> respectively. It is the same as</li>
 </ul>
 <div class="org-src-container">
 <pre class="src src-racket">  (<span class="org-builtin">values</span> (<span class="org-builtin">filter</span> <span class="org-builtin">pred</span> lst)
@@ -2323,10 +2327,10 @@ evaluates to <code>#t</code> and <code>#f</code> respectively. It is the same as
 <li><code>range start end [step=1]</code></li>
 <li><code>shuffle lst</code></li>
 <li><code>combinations lst [size]</code>: if size is given, return only combination
-of length size.</li>
+  of length size.</li>
 <li><code>permutations lst</code></li>
 <li><code>argmin proc lst</code>: return the first elemnt in lst that minimize
-<code>(proc elem)</code></li>
+  <code>(proc elem)</code></li>
 <li><code>argmax</code></li>
 </ul>
 
@@ -2337,7 +2341,7 @@ Vectors
 <li><code>vector-length</code></li>
 <li><code>vector-ref</code></li>
 <li><code>vector-set!</code>: it makes sense to set a vector, because it takes
-constant time to access and update</li>
+  constant time to access and update</li>
 <li><code>vector-&gt;list</code></li>
 <li><code>list-&gt;vector</code></li>
 <li><code>vector-fill! vec v</code></li>
@@ -2354,8 +2358,8 @@ mutable storage.
 <li><code>unbox</code>: return the content</li>
 <li><code>set-box! box v</code>: return <code>#&lt;void&gt;</code></li>
 <li><code>box-cas! box old new</code>: <b>atomically</b> update content <b>from old</b> to
-new, return <code>#t</code>. If does not contain old, nothing changed, and
-return <code>#f</code>.</li>
+  new, return <code>#t</code>. If does not contain old, nothing changed, and
+  return <code>#f</code>.</li>
 </ul>
 
 
@@ -2402,8 +2406,8 @@ From <code>racket/vector</code>:
 </div>
 </div>
 
-<div id="outline-container-org8de7ec7" class="outline-3">
-<h3 id="org8de7ec7"><span class="section-number-3">5.13</span> Sequence</h3>
+<div id="outline-container-org45f6ffa" class="outline-3">
+<h3 id="org45f6ffa"><span class="section-number-3">5.13</span> Sequence</h3>
 <div class="outline-text-3" id="text-5-13">
 <p>
 Sequence is designed to be used with <code>for</code>. Not only list and vectors
@@ -2427,9 +2431,9 @@ Constructing sequences
 <li><code>in-hash</code></li>
 <li><code>in-hash-keys</code>, <code>in-hash-values</code>, <code>in-hash-pairs</code></li>
 <li><b><code>in-directory [dir use-dir?]</code></b>: It is depth first. The path are
-built, not individual components. If <code>dir</code> is not given, use current
-dir. If use-dir? <code>with signature (path? . -&gt; any/c)</code> is given, it
-acts like as a filter of the results</li>
+  built, not individual components. If <code>dir</code> is not given, use current
+  dir. If use-dir? <code>with signature (path? . -&gt; any/c)</code> is given, it
+  acts like as a filter of the results</li>
 </ul>
 </div>
 </div>
@@ -2478,7 +2482,7 @@ the provided id:
 </p>
 <ul class="org-ul">
 <li><code>struct:myid</code>: the <i>structure type descriptor</i>, can be used in
-<code>#:super</code> option</li>
+  <code>#:super</code> option</li>
 <li><code>myid</code>: constructor, unless <code>#:constructor-name</code> option is specified</li>
 <li><code>myid?</code>: predicate procedure</li>
 <li><code>myid-myfield</code>: accessor procedure for each field</li>
@@ -2493,12 +2497,12 @@ There are two available field options:
 </p>
 <ul class="org-ul">
 <li><code>#:auto</code>: automatic fields: the constructor does not accept argument
-for that field, the auto value by <code>#:auto-value</code> (defaults to <code>#f</code>)
-is used.</li>
+  for that field, the auto value by <code>#:auto-value</code> (defaults to <code>#f</code>)
+  is used.</li>
 <li><code>#:mutable</code>: <code>set-myid-myfield!</code>: destructively update field. A
-mutable field is defined in <b>one</b> of two ways: defined for the
-fields with <code>#:mutable</code> option, or struct option <code>#:mutable</code> for all
-fields. Specify both results in syntax error.</li>
+  mutable field is defined in <b>one</b> of two ways: defined for the
+  fields with <code>#:mutable</code> option, or struct option <code>#:mutable</code> for all
+  fields. Specify both results in syntax error.</li>
 </ul>
 </div>
 </div>
@@ -2521,32 +2525,32 @@ inherit fields, when initialize, initialize those parent fields first.
 <li><code>#:mutable</code>: same as set <code>#:mutable</code> for all fields</li>
 <li><code>#:super</code>: same as set maybe-super</li>
 <li><code>#:prefab</code>: means <i>previously fabricated</i>. Also known as predefined,
-globally shared. Such structure types are globally shared, and they
-can be print and read back. If it has a super class, obviously it
-must also be prefab. It is inherently transparent, and cannot have a
-guard or property. I.e. it cannot be used together with
-<code>#:transparent</code>, <code>#:inspector</code>, <code>#:guard</code>, <code>#:property</code>.</li>
+  globally shared. Such structure types are globally shared, and they
+  can be print and read back. If it has a super class, obviously it
+  must also be prefab. It is inherently transparent, and cannot have a
+  guard or property. I.e. it cannot be used together with
+  <code>#:transparent</code>, <code>#:inspector</code>, <code>#:guard</code>, <code>#:property</code>.</li>
 <li><code>#:auto-value</code>: supply <b>one</b> value for all <code>#:auto</code> fields</li>
 <li><code>#:transparent</code>: shorthand for <code>#:inspector #f</code>. All structures are
-by default opaque, thus the print out format does not show any
-information. If the structure is transparent, the print information
-can see the data. The <code>equal?</code> will also works by recursively
-compare all fields, while for opaque structures, this require to
-define generic method for <code>equal?</code>. However, the prints cannot be
-read back, to do which the prefab is required.</li>
+  by default opaque, thus the print out format does not show any
+  information. If the structure is transparent, the print information
+  can see the data. The <code>equal?</code> will also works by recursively
+  compare all fields, while for opaque structures, this require to
+  define generic method for <code>equal?</code>. However, the prints cannot be
+  read back, to do which the prefab is required.</li>
 <li><code>#:inspector</code> specify an inspector. This is intended for use by
-debuggers. It is related to reflection, i.e. providing access to
-structure fields and structure type information.</li>
+  debuggers. It is related to reflection, i.e. providing access to
+  structure fields and structure type information.</li>
 <li><code>#:guard</code> specify a guard procedure, or just <code>#f</code> to turn it
-off. This is used to filter the arguments to constructor. It accepts
-n+1 arguments: the n constructor arguments, plus the name of the
-structure, and return n arguments that is actually used for
-construction. It is called "guard" in the sense that it can raise
-exceptions.</li>
+  off. This is used to filter the arguments to constructor. It accepts
+  n+1 arguments: the n constructor arguments, plus the name of the
+  structure, and return n arguments that is actually used for
+  construction. It is called "guard" in the sense that it can raise
+  exceptions.</li>
 <li><code>#:property</code>: this can be specified multiple times for multiple
-properties. A property is associated with the type, not the
-instance. Subtype will inherit property, and can override it. The
-usage is TODO, and how to retrieve is also TODO.</li>
+  properties. A property is associated with the type, not the
+  instance. Subtype will inherit property, and can override it. The
+  usage is TODO, and how to retrieve is also TODO.</li>
 <li><code>#:methods</code>: TODO</li>
 </ul>
 
@@ -2658,8 +2662,8 @@ can destruct values can also be used.
 </div>
 </div>
 
-<div id="outline-container-org7123d37" class="outline-3">
-<h3 id="org7123d37"><span class="section-number-3">5.17</span> Exception</h3>
+<div id="outline-container-org89dc365" class="outline-3">
+<h3 id="org89dc365"><span class="section-number-3">5.17</span> Exception</h3>
 <div class="outline-text-3" id="text-5-17">
 <p>
 For now, I only care about how to handle exceptions. To do that:
@@ -2719,7 +2723,7 @@ Comparison
 </p>
 <ul class="org-ul">
 <li>Thread: all the threads are running parallel, but they run on the
-<i>same processor</i>.</li>
+  <i>same processor</i>.</li>
 <li>Future: can utilize multiple processors</li>
 </ul>
 
@@ -2728,8 +2732,8 @@ Thread
 </p>
 <ul class="org-ul">
 <li><code>thread thunk</code>: create a thread to run, and return immediately with
-thread descriptor. When thunk terminates, the thread
-terminates. Threads are managed in current custodian.</li>
+  thread descriptor. When thunk terminates, the thread
+  terminates. Threads are managed in current custodian.</li>
 <li><code>thread?</code></li>
 <li><code>current-thread</code></li>
 <li><code>thread-suspend</code></li>
@@ -2737,7 +2741,7 @@ terminates. Threads are managed in current custodian.</li>
 <li><code>kill-thread</code></li>
 <li><code>break-thread</code></li>
 <li><code>sleep [secs=0]</code>: cause the current thread to sleep. 0 simply hint
-other threads to execute (useful??).</li>
+  other threads to execute (useful??).</li>
 <li><code>thread-running?</code></li>
 <li><code>thread-dead?</code></li>
 <li><code>thread-wait thd</code>: block until thd terminates</li>
@@ -2783,9 +2787,9 @@ Future (<code>racket/future</code>)
 <ul class="org-ul">
 <li><code>future thunk</code>: return the future. It will not run, until touch it.</li>
 <li><code>touch f</code>: blockingly run the future f, and return the result. After
-touch returns, the results are still hold in the future. You can
-touch it again and retrieve the same result. Then, how to run in
-parallel? Create a thread to touch it??</li>
+  touch returns, the results are still hold in the future. You can
+  touch it again and retrieve the same result. Then, how to run in
+  parallel? Create a thread to touch it??</li>
 <li><code>current-future</code></li>
 <li><code>future-enabled?</code></li>
 <li><code>future?</code></li>
@@ -2818,10 +2822,10 @@ Places can only communicate through place channels.
 <li><code>eof-object?</code></li>
 <li><code>close-input-port</code>, <code>close-output-port</code></li>
 <li><code>current-input-port</code>, <code>current-output-port</code>, <code>current-error-port</code>:
-can be used to get/set the current</li>
+  can be used to get/set the current</li>
 <li><code>flush-output out</code>: Input or output ports are both block-buffered by
-default. Terminal output port is line-buffered. This function cause
-the port to be flushed immediately</li>
+  default. Terminal output port is line-buffered. This function cause
+  the port to be flushed immediately</li>
 </ul>
 </div>
 </div>
@@ -2831,9 +2835,9 @@ the port to be flushed immediately</li>
 <div class="outline-text-5" id="text-5-19-1-2">
 <ul class="org-ul">
 <li><code>open-input-file path [#:mode flag]</code>: return an input port. mode can
-be <code>'binary</code> or <code>'text</code></li>
+  be <code>'binary</code> or <code>'text</code></li>
 <li><code>open-output-file path [#:mode flag #:exists flag]</code>: exist flag
-includes
+  includes
 <ul class="org-ul">
 <li>error</li>
 <li>append</li>
@@ -2844,8 +2848,8 @@ includes
   . any)</code>. When proc returns, the port is closed.</li>
 <li><code>call-with-output-file path proc</code></li>
 <li><code>with-input-from-file path thunk</code>: set <code>current-input-port</code> to
-file. As it is similar to <code>call-with-input-file</code>, the port is closed
-when thunk returns.</li>
+  file. As it is similar to <code>call-with-input-file</code>, the port is closed
+  when thunk returns.</li>
 <li><code>with-output-to-file path thunk</code></li>
 </ul>
 </div>
@@ -2858,8 +2862,8 @@ when thunk returns.</li>
 <li><code>open-input-string str</code>: create a string port using str</li>
 <li><code>open-output-string</code>: create a output string port</li>
 <li><code>get-output-string out</code>: read from a output string port. This should
-be used with the above method, specifically the out should be
-<code>(and/c output-port? string-port?)</code>.</li>
+  be used with the above method, specifically the out should be
+  <code>(and/c output-port? string-port?)</code>.</li>
 </ul>
 </div>
 </div>
@@ -2897,7 +2901,7 @@ helpers. All of these have bytes counterparts.
 <li><code>read-bytes-line</code></li>
 <li><code>read</code>: read a <i>datum</i> from an input port</li>
 <li><code>read-syntax</code>: like read, but produce a <i>syntax object</i>, with
-source-location information</li>
+  source-location information</li>
 </ul>
 </div>
 </div>
@@ -2915,9 +2919,9 @@ source-location information</li>
 <li><code>write</code>: write a datum so that it can be read back</li>
 <li><code>display</code>: write string without the quotes</li>
 <li><code>print</code>: this is pretty weird. The existence rationale is that,
-<i>display and write both have specific output convention</i>. But print
-has no pre-assumed convention, and the environment is free to modify
-its behavior.</li>
+  <i>display and write both have specific output convention</i>. But print
+  has no pre-assumed convention, and the environment is free to modify
+  its behavior.</li>
 <li><code>writeln</code>, <code>displayln</code>, <code>println</code></li>
 <li><code>fprintf out form v ...</code>
 <ul class="org-ul">
@@ -2975,22 +2979,22 @@ In <code>racket/os</code>
 <li><code>absolute-path?</code>, <code>relative-path?</code></li>
 <li><code>path-&gt;directory-path</code>: from <code>x/y</code> to <code>x/y/</code></li>
 <li><code>resolve-path</code>: follow soft link. Note that itself does not expand
-user path.</li>
+  user path.</li>
 <li><code>cleanse-path</code>: most racket functions clean the path before use,
-unless it does not access filesystem (i.e. onlyl do a form
-checking). <code>cleanse-path</code>, <code>expand-user-path</code>, <code>simplify-path</code> are
-exceptions in the sense that they does not access filesystem, but
-will do cleanse. But what exactly cleanse does?</li>
+  unless it does not access filesystem (i.e. onlyl do a form
+  checking). <code>cleanse-path</code>, <code>expand-user-path</code>, <code>simplify-path</code> are
+  exceptions in the sense that they does not access filesystem, but
+  will do cleanse. But what exactly cleanse does?</li>
 <li><b><code>expand-user-path</code></b>: a leading <code>~</code> is replaced by the user home
-directory.</li>
+  directory.</li>
 <li><code>simplify-path</code>: nomalize as much as possible. I.e. remove
 <ul class="org-ul">
 <li>redundant path separators (except single trailing separator)</li>
 <li><code>..</code>, <code>.</code></li>
 </ul></li>
 <li><b><code>split-path</code></b>: remove the last component (without consideration of
-trailing <code>/</code>, as we will see in the 3rd return value), and return 3
-values (e.g. "aa/bb/cc/"):
+  trailing <code>/</code>, as we will see in the 3rd return value), and return 3
+  values (e.g. "aa/bb/cc/"):
 <ul class="org-ul">
 <li>base: <code>aa/bb/</code></li>
 <li>name: <code>cc</code></li>
@@ -2998,10 +3002,10 @@ values (e.g. "aa/bb/cc/"):
 </ul></li>
 <li><code>explode-path</code>: split path extensively, the first one is root</li>
 <li><b><code>path-replace-extension path ext</code></b>: extension starts from the last
-dot. <code>ext</code> should lead by a dot. If no dot in the path, simply add
-it.</li>
+  dot. <code>ext</code> should lead by a dot. If no dot in the path, simply add
+  it.</li>
 <li><code>path-add-extension path ext [sep #"_"]</code>: add the extension. If
-there's a dot in the path, the last dot will be replaced by sep.</li>
+  there's a dot in the path, the last dot will be replaced by sep.</li>
 </ul>
 
 <p>
@@ -3016,9 +3020,9 @@ From <code>racket/path</code>
 <li><code>(find-relative-path "a/b" "a/b/c/d")</code> returns <code>c/d</code></li>
 </ul></li>
 <li><code>normalize-path path</code>: complete, expand (NOT expand-user-path,
-.. but what??), resolve soft links</li>
+  .. but what??), resolve soft links</li>
 <li><code>simple-form-path</code>: complete, then simplify. This is said to be used
-more often than <code>normalize-path</code>.</li>
+  more often than <code>normalize-path</code>.</li>
 </ul>
 </div>
 </div>
@@ -3039,16 +3043,16 @@ more often than <code>normalize-path</code>.</li>
 <li><code>file-size</code>: in bytes</li>
 <li><code>copy-file src dest</code></li>
 <li><code>make-file-or-directory-link to path</code>: create <code>path</code>, link to <code>to</code>
-(soft or hard??)</li>
+  (soft or hard??)</li>
 <li><b><code>current-directory</code></b> get or set, this is a parameter</li>
 <li><b><code>directory-exists?</code></b></li>
 <li><code>make-directory</code></li>
 <li><code>delete-directory</code></li>
 <li><b><code>directory-list [path #:build build?]</code></b>: list of all files or
-directories in <code>path</code>. path defaults to current directory, while
-build? defaults to <code>#f</code>. If <code>#:build</code> is <code>#t</code>, each of the results
-are built with prefix <code>path</code>. Note that this is not recursive, for
-that, use the <b>sequence generator <code>in-directory</code></b>.</li>
+  directories in <code>path</code>. path defaults to current directory, while
+  build? defaults to <code>#f</code>. If <code>#:build</code> is <code>#t</code>, each of the results
+  are built with prefix <code>path</code>. Note that this is not recursive, for
+  that, use the <b>sequence generator <code>in-directory</code></b>.</li>
 </ul>
 
 <p>
@@ -3057,9 +3061,9 @@ From <code>racket/file</code>:
 <ul class="org-ul">
 <li><b><code>file-&gt;string</code></b>: this READs the file content to a string</li>
 <li><code>file-&gt;value</code>: READs a single S-expression using <code>read</code>. Seems that
-the file can contain more</li>
+  the file can contain more</li>
 <li><code>file-&gt;list path [proc = read]</code>: reads the file content with proc
-until EOF</li>
+  until EOF</li>
 <li><code>file-&gt;lines</code>: read into lines, without line separators</li>
 <li><code>display-to-file v path</code>: <code>display</code> <code>v</code> to <code>path</code></li>
 <li><code>write-to-file v path</code>: <code>write</code> <code>v</code> to <code>path</code></li>
@@ -3067,13 +3071,13 @@ until EOF</li>
 <li><code>copy-directory/files src dest</code></li>
 <li><code>delete-directory/files</code></li>
 <li><code>find-files predicate [start-path]</code>: start-path defaults ot
-current. Use predicate to filter what should be returned. Seems that
-this is recursive.</li>
+  current. Use predicate to filter what should be returned. Seems that
+  this is recursive.</li>
 <li><b><code>make-directory*</code></b>: seems to be <code>mkdir -p</code></li>
 <li><b><code>make-parent-directory*</code></b>: this is very convenient in making a
-necessary directory to write a file</li>
+  necessary directory to write a file</li>
 <li><code>make-temporary-file [template copy-from-filename directory]</code>:
-create it, and return path.
+  create it, and return path.
 <ul class="org-ul">
 <li>template: <code>"rkttmp~a"</code></li>
 <li>copy-from-filename
@@ -3088,8 +3092,8 @@ create it, and return path.
 </div>
 </div>
 
-<div id="outline-container-org29733a9" class="outline-4">
-<h4 id="org29733a9"><span class="section-number-4">5.20.3</span> Networking</h4>
+<div id="outline-container-orgd25e1f9" class="outline-4">
+<h4 id="orgd25e1f9"><span class="section-number-4">5.20.3</span> Networking</h4>
 <div class="outline-text-4" id="text-5-20-3">
 <p>
 I'm not going to dig deep on this because I don't use it. Just listing
@@ -3130,11 +3134,11 @@ UDP (<code>racket/udp</code>)
 <ul class="org-ul">
 <li>the command runs ASYNC, it seems that it will run immediately</li>
 <li>If provided a port, it will use that. Otherwise (provide <code>#f</code>), it
-will create one, and get returned. The return value is exactly the
-same: <code>subprocess? port? port? port? path-string? string?</code>. <code>#f</code>
-means no, no matter as parameter or return value.</li>
+    will create one, and get returned. The return value is exactly the
+    same: <code>subprocess? port? port? port? path-string? string?</code>. <code>#f</code>
+    means no, no matter as parameter or return value.</li>
 <li>stderr can be <code>'stdout</code>, in which case the corresponding return
-value will be <code>#f</code></li>
+    value will be <code>#f</code></li>
 <li>All ports returned must be closed manually</li>
 <li>since the ports have capacity, it is possible to have deadlock</li>
 </ul></li>
@@ -3149,19 +3153,19 @@ In <code>racket/system</code>:
 </p>
 <ul class="org-ul">
 <li><code>system cmd</code>: execute cmd <b>through shell command</b>
-SYNChronously. Return #t for success, #f for fail</li>
+  SYNChronously. Return #t for success, #f for fail</li>
 <li><code>system* cmd arg ...</code>: differ in:
 <ul class="org-ul">
 <li>execute directly instead of through shell command</li>
 <li>obviously arguments are provided as arguments instead of in string</li>
 </ul></li>
 <li><code>system/exit-code cmd</code>: same as <code>system</code>, but the return is exit
-code</li>
+  code</li>
 <li><code>system*/exit-code cmd arg ...</code></li>
 <li><code>process cmd</code>: run ASYNC, through a shell, return (input port,
-output port, PID, stderr, proc). All ports must be closed
-manually. The procedure <code>proc</code> can accept one argument, and is used
-to interact with the process. The argument can be:
+  output port, PID, stderr, proc). All ports must be closed
+  manually. The procedure <code>proc</code> can accept one argument, and is used
+  to interact with the process. The argument can be:
 <ul class="org-ul">
 <li><code>'status</code>: return one of <code>'running</code>, <code>'done-ok</code>, <code>'done-error</code></li>
 <li><code>'exit-code</code></li>
@@ -3170,10 +3174,10 @@ to interact with the process. The argument can be:
 <li><code>'kill</code></li>
 </ul></li>
 <li><code>process* cmd arg ...</code>: like the difference of <code>system*</code> with
-<code>system</code></li>
+  <code>system</code></li>
 <li><code>process/ports out in error-out cmd</code>: You can provide the ports (the
-return will be <code>#f</code>), or provide <code>#f</code> (the ports are created and
-returned).</li>
+  return will be <code>#f</code>), or provide <code>#f</code> (the ports are created and
+  returned).</li>
 <li><code>process*/ports out in error-out cmd arg ...</code></li>
 </ul>
 </div>
@@ -3206,7 +3210,7 @@ The flag clauses can be:
 <li><code>#:once-each</code>: each flag can appear one time</li>
 <li><code>#:once-any</code>: one of the flag can appear</li>
 <li><code>#:final</code>: this is like <code>#:multi</code>, but no argument is treated as
-flag any more after it (means they are all left over)</li>
+  flag any more after it (means they are all left over)</li>
 </ul>
 
 <p>
@@ -3229,7 +3233,7 @@ by strings to print
 </p>
 <ul class="org-ul">
 <li><code>#:usage-help</code>: this is going to be printed right after the <i>usage</i>
-of the command</li>
+  of the command</li>
 <li><code>#:ps</code>: insert at the end of the help</li>
 </ul>
 
@@ -3378,12 +3382,12 @@ order for it to work, install <code>racket-doc</code> package.
 <li>rosetta: <a href="https://github.com/aptmcl/rosetta/tree/master">https://github.com/aptmcl/rosetta/tree/master</a>
 <ul class="org-ul">
 <li>this one is for design 2/3d models, and seems broken and not in
-official support.</li>
+    official support.</li>
 </ul></li>
 <li>2htdp/image: in teachpack</li>
 <li>racket/draw: bare-bone, object-oriented, not so interesting</li>
 <li>pict-lib pict: this one is pretty good, functional. It was in
-slideshow</li>
+  slideshow</li>
 </ul>
 </div>
 </div>
@@ -3412,8 +3416,8 @@ Use pin to create lines connecting picts
 </p>
 <ul class="org-ul">
 <li>pin-line, pin-arrow-line, pin-arrows-line: add lines onto a pict. It
-finds positions in the src and dst picts, and can set angle to
-create curve</li>
+  finds positions in the src and dst picts, and can set angle to
+  create curve</li>
 </ul>
 </div>
 
@@ -3454,7 +3458,7 @@ code
 <li>define-code</li>
 <li>code-align: align code with pict</li>
 <li>codeblock-pict: a block of code, seems to respect #lang option
-inside the code string, to decide lexer</li>
+  inside the code string, to decide lexer</li>
 </ul>
 
 <p>
@@ -3755,7 +3759,7 @@ And retrieve pinhole by
 <ul class="org-ul">
 <li><code>(line x y color)</code>: draw a line from (0,0) to (x,y).</li>
 <li><code>(add-line image x1 y1 x2 y2 color)</code>: add line to image, from
-(x1,y1) to (x2,y2)</li>
+    (x1,y1) to (x2,y2)</li>
 <li><code>add-curve</code></li>
 <li><code>add-solid-curve</code></li>
 </ul></li>
@@ -3763,7 +3767,7 @@ And retrieve pinhole by
 <ul class="org-ul">
 <li><code>(text string font-size color)</code></li>
 <li><code>text/font</code>: this will use a complete font specification,
-including
+    including
 <ul class="org-ul">
 <li>face: which font name</li>
 <li>family: default, script, modern, etc</li>
@@ -3782,14 +3786,14 @@ including
 <div class="outline-text-5" id="text-5-23-4-3">
 <ul class="org-ul">
 <li><code>overlay</code> accepts a sequence of images, with the first being on
-top. Images are aligned on their center.</li>
+  top. Images are aligned on their center.</li>
 <li><code>overlay/align x-place y-place</code> controls where to align the images.
 <ul class="org-ul">
 <li>x: left, right, middle, center, pinhole</li>
 <li>y: top, bottom, middle, center, baseline, pinhole</li>
 </ul></li>
 <li><code>overlay/offset i1 x y i2</code>: moves i2 by (x,y) compared to (0,0),
-thus to down right</li>
+  thus to down right</li>
 <li><code>overlay/align/offset</code> combines both options</li>
 <li><code>overlay/xy</code>: what's the difference from offset?</li>
 <li><code>overlay/pinhole</code></li>
@@ -3802,7 +3806,7 @@ all above.
 
 <ul class="org-ul">
 <li><code>beside</code> accepts images, and placing them in horizontal row, aligned
-on their centers</li>
+  on their centers</li>
 <li><code>beside/align y</code></li>
 <li><code>above</code>: in a vertical row</li>
 <li><code>above/align x</code></li>
@@ -3824,7 +3828,7 @@ overlay or add-line, but those does not respect the size of scene.
 <ul class="org-ul">
 <li><code>empty-scene x y color</code></li>
 <li><code>place-image image x y scene</code>: the (x,y) is according to the
-top-left corner of scene</li>
+  top-left corner of scene</li>
 <li><code>place-image/align image</code></li>
 <li><code>place-images</code>: just a list of images and a list of positions</li>
 <li><code>place-images/align</code></li>
@@ -3846,8 +3850,8 @@ top-left corner of scene</li>
 <li><code>crop x y width height image</code></li>
 <li><code>crop/align</code></li>
 <li><code>frame image</code>: return an image with a black frame around the
-<i>bounding box</i> of the it. Even if the image might be a circle, the
-bounding box is still rectangle.</li>
+  <i>bounding box</i> of the it. Even if the image might be a circle, the
+  bounding box is still rectangle.</li>
 <li><code>color-frame color image</code></li>
 </ul>
 </div>
@@ -3886,8 +3890,8 @@ Finally, you can save image to file by
 </div>
 
 
-<div id="outline-container-orgd25e1f9" class="outline-4">
-<h4 id="orgd25e1f9"><span class="section-number-4">5.23.5</span> Networking</h4>
+<div id="outline-container-orgba6d8a0" class="outline-4">
+<h4 id="orgba6d8a0"><span class="section-number-4">5.23.5</span> Networking</h4>
 <div class="outline-text-4" id="text-5-23-5">
 </div>
 <div id="outline-container-orga571f75" class="outline-5">
@@ -3923,7 +3927,7 @@ a list will be returned for matched results.
 </p>
 <ol class="org-ol">
 <li>the xexp must begin with <code>*TOP*</code>, the query result will not have
-it. So if you want to parse it again, construct it by <code>`(*TOP* ,x)</code></li>
+   it. So if you want to parse it again, construct it by <code>`(*TOP* ,x)</code></li>
 <li>the xpath starts from root (html)</li>
 <li>you can use <code>'(// table)</code> to query tables at arbitrary level</li>
 </ol>
@@ -3975,7 +3979,7 @@ e.g. <code>get-pure-port</code>.
 <li>kill-sexp (C-M-k)</li>
 <li>mark-sexp (C-M-@)</li>
 <li>transpose-sexps (C-M-t): point must be between the two sexp. After
-transpose, point will be after the two sexps</li>
+  transpose, point will be after the two sexps</li>
 </ul>
 </div>
 </div>
@@ -4011,7 +4015,7 @@ Evaluation commands:
 <li>slime-eval-defun (C-M-x): Evaluate top-level from containing point.</li>
 <li>slime-eval-last-expression (C-x C-e): Evaluate sexp before point.</li>
 <li>slime-pprint-eval-last-expression (C-c C-p): Evaluate sexp before
-point, pretty-print result.</li>
+  point, pretty-print result.</li>
 </ul>
 
 <p>
@@ -4028,9 +4032,9 @@ Finding definitions:
 </p>
 <ul class="org-ul">
 <li>slime-edit-definition (M-.): Edit the definition of the function
-called at point.</li>
+  called at point.</li>
 <li>slime-pop-find-definition-stack (M-,): Pop the definition stack to
-go back from a definition.</li>
+  go back from a definition.</li>
 </ul>
 </div>
 </div>
@@ -4076,9 +4080,9 @@ Depth-changing
 </p>
 <ul class="org-ul">
 <li>paredit-wrap-round (<code>M-(</code>): wrap parenthesis arount the sexp <b>after</b>
-point</li>
+  point</li>
 <li>paredit-splice-sexp (M-s): splice the current sexp the point <b>in</b>,
-into the outer sexp</li>
+  into the outer sexp</li>
 <li>paredit-splice-sexp-killing-backward (M-&lt;up&gt;):
 <ol class="org-ol">
 <li>kill backward until the beginning of current sexp</li>
@@ -4086,7 +4090,7 @@ into the outer sexp</li>
 </ol></li>
 <li>paredit-splice-sexp-killing-forward (M-&lt;down&gt;)</li>
 <li>paredit-raise-sexp (M-r): raise the sexp <b>after</b> point and <b>replace</b>
-the outer sexp</li>
+  the outer sexp</li>
 <li>paredit-convolute-sexp (M-?):
 <ol class="org-ol">
 <li>kill the sexp before point</li>
@@ -4160,61 +4164,61 @@ List can be used to represent different data structures.
 </p>
 <ol class="org-ol">
 <li>It can simulate a stack. <code>push</code> and <code>pop</code> are macros, and are
-defined using <code>setf</code>. <code>pushnew</code> is a variant of <code>push</code> that uses
-<code>adjoin</code> instead of <code>cons</code>.</li>
+   defined using <code>setf</code>. <code>pushnew</code> is a variant of <code>push</code> that uses
+   <code>adjoin</code> instead of <code>cons</code>.</li>
 <li>List can form a tree. When using <code>cons</code>, the pointers are
-constructed in the list, thus lists might share
-components. Sometimes you have to make a copy of a list to avoid
-chaning other lists. 
+   constructed in the list, thus lists might share
+   components. Sometimes you have to make a copy of a list to avoid
+   chaning other lists. 
 <ul class="org-ul">
 <li>There are two functions to make copies: <code>copy-list</code> and
-<code>copy-tree</code>. <code>copy-list</code> recursive calls on the cdr of the list,
-thus it is not deep copy. On the contrary, <code>copy-tree</code> recurs on
-both <code>car</code> and <code>cdr</code>, thus copy entire list.  Similarly,
-<code>tree-equal</code> can be used to test the equality of the whole tree.</li>
+     <code>copy-tree</code>. <code>copy-list</code> recursive calls on the cdr of the list,
+     thus it is not deep copy. On the contrary, <code>copy-tree</code> recurs on
+     both <code>car</code> and <code>cdr</code>, thus copy entire list.  Similarly,
+     <code>tree-equal</code> can be used to test the equality of the whole tree.</li>
 <li>To modify the structure of a list, <code>substitute</code> replace elements
-in a sequence, it does not go into deeper tree. The function
-<code>subst</code> will replaces elements in tree, deeply.  Such form that
-recursing down both car and cdr is said to be <i>doubly recursive</i>.
-<code>subst-if</code> and <code>subst-if-not</code> provides the conditional
-substitution.  Their destructive versions are available for
-efficiency <code>nsubst</code>, <code>nsubst-if</code>, <code>nsubst-if-not</code>.</li>
+     in a sequence, it does not go into deeper tree. The function
+     <code>subst</code> will replaces elements in tree, deeply.  Such form that
+     recursing down both car and cdr is said to be <i>doubly recursive</i>.
+     <code>subst-if</code> and <code>subst-if-not</code> provides the conditional
+     substitution.  Their destructive versions are available for
+     efficiency <code>nsubst</code>, <code>nsubst-if</code>, <code>nsubst-if-not</code>.</li>
 </ul></li>
 <li>List can also simulate a set. You can add an item to a set (a list)
-by <code>adjoin</code>. It will cons the item onto the list if it is not in
-the set. You can tell the member via <code>member</code>, <code>member-if</code>,
-<code>member-if-not</code>. Set operations include <code>adjoin</code>, <code>union</code>,
-<code>intersection</code>, <code>set-difference</code>, <code>set-exclusive-or</code> and their
-destructive counterparts <code>nunion</code>, <code>nintersection</code>,
-<code>nset-difference</code>, <code>nset-exclusive-or</code>.  You can predict subset
-with <code>subsetp</code> and tail with <code>tailp</code>.</li>
+   by <code>adjoin</code>. It will cons the item onto the list if it is not in
+   the set. You can tell the member via <code>member</code>, <code>member-if</code>,
+   <code>member-if-not</code>. Set operations include <code>adjoin</code>, <code>union</code>,
+   <code>intersection</code>, <code>set-difference</code>, <code>set-exclusive-or</code> and their
+   destructive counterparts <code>nunion</code>, <code>nintersection</code>,
+   <code>nset-difference</code>, <code>nset-exclusive-or</code>.  You can predict subset
+   with <code>subsetp</code> and tail with <code>tailp</code>.</li>
 <li>Finally, <i>Association Lists</i> are maps. This is often called
-<i>assoc-list</i> or <i>alist</i>, representing mapping. It is only used for
-small maps, because it is not efficient. The alist is just list of
-cons cells whose car is key, cdr is value. Apart from build the
-list of cons cells, <code>parilis</code> can be used to create a <code>alist</code> from
-lists of keys and values. Add new key value pairs onto the alist
-with <code>acons</code>. Use <code>assoc</code> to retrieve the first <b>cons cell</b> with
-the key, and <code>nil</code> if not found. Use <code>setf</code> with <code>assoc</code> to set the
-value.  The condition version of <code>assoc</code> are <code>assoc-if</code> and
-<code>assoc-if-not</code>.  Lisp allows not only map from car to cdr, but also
-cdr to car with <code>rassoc</code>, <code>rassoc-if</code>, <code>rassoc-if-not</code>. Use
-<code>copy-alist</code> to copy the alist.</li>
+   <i>assoc-list</i> or <i>alist</i>, representing mapping. It is only used for
+   small maps, because it is not efficient. The alist is just list of
+   cons cells whose car is key, cdr is value. Apart from build the
+   list of cons cells, <code>parilis</code> can be used to create a <code>alist</code> from
+   lists of keys and values. Add new key value pairs onto the alist
+   with <code>acons</code>. Use <code>assoc</code> to retrieve the first <b>cons cell</b> with
+   the key, and <code>nil</code> if not found. Use <code>setf</code> with <code>assoc</code> to set the
+   value.  The condition version of <code>assoc</code> are <code>assoc-if</code> and
+   <code>assoc-if-not</code>.  Lisp allows not only map from car to cdr, but also
+   cdr to car with <code>rassoc</code>, <code>rassoc-if</code>, <code>rassoc-if-not</code>. Use
+   <code>copy-alist</code> to copy the alist.</li>
 <li>The <i>Property list</i> (plist for short) is similar to alist, but
-structured differently. It is a flat list, with keys and values
-intersect each other. E.g. <code>(A 1 B 2)</code>. It is less flexible than
-the alist, and you can only use <code>getf</code> with a key to get the
-value. <code>getf</code> and <code>setf</code> can be used together to set the value. Use
-<code>remf</code> to remove a key value pair from the plist. You can also
-retrieve multiple key-values by <code>get-properties</code>.
+   structured differently. It is a flat list, with keys and values
+   intersect each other. E.g. <code>(A 1 B 2)</code>. It is less flexible than
+   the alist, and you can only use <code>getf</code> with a key to get the
+   value. <code>getf</code> and <code>setf</code> can be used together to set the value. Use
+   <code>remf</code> to remove a key value pair from the plist. You can also
+   retrieve multiple key-values by <code>get-properties</code>.
 <ul class="org-ul">
 <li>The special thing about plist is that, each symbol has a
-plist. It can be retrieved by <code>symbol-plist</code>, but this is rarely
-used because the whole plist is not often the focus. What you
-need is <code>get</code> that directly get the key of the plist of the
-symbol. In other words, <code>(get 'symbol 'key)</code> equals to <code>(getf
+     plist. It can be retrieved by <code>symbol-plist</code>, but this is rarely
+     used because the whole plist is not often the focus. What you
+     need is <code>get</code> that directly get the key of the plist of the
+     symbol. In other words, <code>(get 'symbol 'key)</code> equals to <code>(getf
      (symbol-plist 'symbol) 'key)</code>. <code>remprop</code> is a similar function to
-<code>remf</code>.</li>
+     <code>remf</code>.</li>
 </ul></li>
 </ol>
 
@@ -4245,8 +4249,8 @@ variables. It cna be used to bind into tree structures.
 
 
 
-<div id="outline-container-org45f6ffa" class="outline-3">
-<h3 id="org45f6ffa"><span class="section-number-3">6.3</span> Sequence</h3>
+<div id="outline-container-org16e407d" class="outline-3">
+<h3 id="org16e407d"><span class="section-number-3">6.3</span> Sequence</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Sequence contains both lists and vectors. To tell what kind of
@@ -4294,8 +4298,8 @@ the previous result in the next computation.
 </div>
 </div>
 
-<div id="outline-container-orgca64d04" class="outline-3">
-<h3 id="orgca64d04"><span class="section-number-3">6.4</span> String</h3>
+<div id="outline-container-orgbbfafed" class="outline-3">
+<h3 id="orgbbfafed"><span class="section-number-3">6.4</span> String</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 A string is a specialized vector (one-dimensional array) whose
@@ -4428,8 +4432,8 @@ convention is put <code>*</code> surrounds it.  The difference (Prefer <code>def
 <ul class="org-ul">
 <li><code>defparameter</code> will always assign the initial value</li>
 <li><code>defvar</code> will do so only if the variable is not defined; <code>defvar</code>
-can also be used without initial value, the variable will be
-unbound.</li>
+  can also be used without initial value, the variable will be
+  unbound.</li>
 </ul>
 
 <p>
@@ -4454,7 +4458,7 @@ Assigning a value to a binding is:
 </p>
 <ol class="org-ol">
 <li>change the binding only, do not change other hidden bindings for
-this symbol</li>
+    this symbol</li>
 <li>do not change the value object the binding refers to</li>
 </ol>
 
@@ -4555,17 +4559,17 @@ that. This will introduce difference when testing equility.
 
 <ul class="org-ul">
 <li><code>EQ</code> tests for object identity. Two objects are <code>EQ</code> if they're
-identical (same object).  It CANNOT compare numbers and characters,
-which gives undefined behavior.</li>
+   identical (same object).  It CANNOT compare numbers and characters,
+   which gives undefined behavior.</li>
 <li><code>EQL</code> is similar to <code>EQ</code> except that it guarantees the same numeric
-or character value is equal. <code>(eql 1 1)</code> is <code>t</code>.</li>
+   or character value is equal. <code>(eql 1 1)</code> is <code>t</code>.</li>
 <li><code>EQ</code> is more efficient than <code>EQL</code> because it does not need to check
-whether it is numeric or character.  But <code>EQL</code> has less trouble to
-understand .. so use <code>EQL</code> when possible.</li>
+   whether it is numeric or character.  But <code>EQL</code> has less trouble to
+   understand .. so use <code>EQL</code> when possible.</li>
 <li><code>EQUAL</code> is looser than <code>EQL</code>. It consider objects to be the same as
-long as they prints the same.</li>
+   long as they prints the same.</li>
 <li><code>EQUALP</code> is even looser. For example, it consider two strings are
-equal case-insensitively. NEVER use this.</li>
+   equal case-insensitively. NEVER use this.</li>
 </ul>
 </div>
 </div>
@@ -4608,8 +4612,8 @@ remember, documenting here.
 </div>
 </div>
 
-<div id="outline-container-orgc739bad" class="outline-3">
-<h3 id="orgc739bad"><span class="section-number-3">6.10</span> Numbers</h3>
+<div id="outline-container-orgdd0b23e" class="outline-3">
+<h3 id="orgdd0b23e"><span class="section-number-3">6.10</span> Numbers</h3>
 <div class="outline-text-3" id="text-6-10">
 <p>
 Numbers can use read form, e.g. <code>#b010101</code>, <code>#xaf08</code>. Predicates such
@@ -4770,19 +4774,19 @@ implementation details that you need avoid.
 <li>multiple evaluation of parameters
 <ul class="org-ul">
 <li>You must evaluate each param once, because that is the intuition
-of user of the macro.</li>
+    of user of the macro.</li>
 <li>to fix it, evaluate it ones and bind to a variable</li>
 </ul></li>
 <li>order of evaluating parameters
 <ul class="org-ul">
 <li>you need to make sure the order of evaluation of parameters is
-from left to right. Again this to follow the intuition of user.</li>
+    from left to right. Again this to follow the intuition of user.</li>
 </ul></li>
 <li>variable scope
 <ul class="org-ul">
 <li>use GENSYM to create name to use. For example the code below, the
-name is generated at expanding time, and <code>,name</code> is used whenever
-you want to use the variable.</li>
+    name is generated at expanding time, and <code>,name</code> is used whenever
+    you want to use the variable.</li>
 </ul></li>
 </ul>
 
@@ -4802,7 +4806,7 @@ you want to use the variable.</li>
 <div class="outline-text-3" id="text-6-13">
 <ul class="org-ul">
 <li>eval form: evaluate form in the current dynamic environment and a
-null lexical environment</li>
+  null lexical environment</li>
 <li>evalhook</li>
 <li>applyhook</li>
 </ul>
@@ -4876,8 +4880,8 @@ that is used in defmacro.
 </div>
 </div>
 
-<div id="outline-container-org89dc365" class="outline-3">
-<h3 id="org89dc365"><span class="section-number-3">6.14</span> Exception</h3>
+<div id="outline-container-org1bf1770" class="outline-3">
+<h3 id="org1bf1770"><span class="section-number-3">6.14</span> Exception</h3>
 <div class="outline-text-3" id="text-6-14">
 <p>
 A <code>catch</code> expression takes a tag, which can be any kind of object,
@@ -4895,8 +4899,8 @@ the lisp error handler.
 
 
 
-<div id="outline-container-org2d7d700" class="outline-3">
-<h3 id="org2d7d700"><span class="section-number-3">6.15</span> Control Structure</h3>
+<div id="outline-container-org9e3fb2f" class="outline-3">
+<h3 id="org9e3fb2f"><span class="section-number-3">6.15</span> Control Structure</h3>
 <div class="outline-text-3" id="text-6-15">
 </div>
 <div id="outline-container-orgebae1e0" class="outline-4">
@@ -5160,9 +5164,9 @@ for var
 <li>from: default to 0 when increment</li>
 <li>by: the step, must be positive integer, default to 1</li>
 <li><del>downfrom, upfrom</del>, downto, upto: control the direction of increment
-or decrease.</li>
+  or decrease.</li>
 <li>below, above: similar to upto, downto, but do not include the
-target.</li>
+  target.</li>
 </ul>
 
 <pre class="example">
@@ -5171,7 +5175,7 @@ for var in expr1 [by step-fun]
 <ul class="org-ul">
 <li>it is meant to iterate the list. Bound to element in each iteration</li>
 <li>At the end of each iteration, the step-fun is executed on the list
-to produce a successor list. default to <code>cdr</code>.</li>
+  to produce a successor list. default to <code>cdr</code>.</li>
 </ul>
 
 <pre class="example">
@@ -5187,7 +5191,7 @@ for var = expr1 [then expr2]
 <ul class="org-ul">
 <li>var is set to expr1 on first iteration</li>
 <li>var is set to expr2 on second and subsequent iterations.
-If no expr2, expr1 is still used.</li>
+  If no expr2, expr1 is still used.</li>
 </ul>
 
 <pre class="example">
@@ -5195,7 +5199,7 @@ for var across vector
 </pre>
 <ul class="org-ul">
 <li>bind to each element. The only difference is now using vector
-instead of a list.</li>
+  instead of a list.</li>
 </ul>
 
 <pre class="example">
@@ -5215,7 +5219,7 @@ for var being
 <li>in and of are also the same</li>
 <li>hash-key and hash-value controls whether to bind key or value to var</li>
 <li>using will bind the other part, i.e. value if hash-key and key if
-hash-value, to another variable for access</li>
+  hash-value, to another variable for access</li>
 </ul>
 
 <pre class="example">
@@ -5258,9 +5262,9 @@ The clauses:
 <li>while expr</li>
 <li>until expr: equal to while (not expr)</li>
 <li>always expr: terminate if expr evaluates to nil. Return nil if
-so. Otherwise return t.</li>
+  so. Otherwise return t.</li>
 <li>never expr: terminate if expr ever evalutes to non-nil. Return nil
-if so, otherwise return t</li>
+  if so, otherwise return t</li>
 <li>thereis expr: Same as never, but it return that expr.</li>
 <li>loop-finish: terminate iteration and return any accumulated result</li>
 </ul>
@@ -5272,18 +5276,18 @@ if so, otherwise return t</li>
 <div class="outline-text-4" id="text-6-16-5">
 <ul class="org-ul">
 <li>multiple accumulation can be used if they operate the same type,
-e.g. collect and append operate on list. The result will be
-combined, i.e. they operate on the same list.</li>
+  e.g. collect and append operate on list. The result will be
+  combined, i.e. they operate on the same list.</li>
 <li>If into is not provided, all the operations operate on a default
-hidden variable.</li>
+  hidden variable.</li>
 <li>If into is provided, the variable is as-if initialized in <code>with</code>
-clause.
+  clause.
 <ul class="org-ul">
 <li>will not have a default value to return</li>
 <li>the variables are visible in finally clause</li>
 </ul></li>
 <li>Only one value can be returned, but you can return multiple objects
-using <code>values</code>.</li>
+  using <code>values</code>.</li>
 </ul>
 
 <p>
@@ -5335,12 +5339,12 @@ if expr clause {and clause}*
 <ul class="org-ul">
 <li><code>if</code> and <code>when</code> are exactly the same. <code>unless</code> is equal to <code>if (not expr)</code>.</li>
 <li>in the case of nest, the else is paired with the closest preceding
-<code>when</code> or <code>if</code> that has no associated <code>else</code></li>
+  <code>when</code> or <code>if</code> that has no associated <code>else</code></li>
 <li>loop keyword <code>it</code> can be used to refer to the value of the test
-expr. This is a keyword, thus cannot be used as a variable name in
-loop.</li>
+  expr. This is a keyword, thus cannot be used as a variable name in
+  loop.</li>
 <li><code>end</code> marks the end of the clause. If not specified, the next loop
-keyword marks the end. This is useful in compound clauses.</li>
+  keyword marks the end. This is useful in compound clauses.</li>
 </ul>
 </div>
 </div>
@@ -5361,8 +5365,8 @@ keyword marks the end. This is useful in compound clauses.</li>
 <ul class="org-ul">
 <li>named: name a loop so that we can use return-from</li>
 <li>initially, finally: expressions to be evaluated before and after
-loop body. There can be multiple these clauses, all of them will be
-collected into one place inside <code>progn</code> in the order they present.</li>
+  loop body. There can be multiple these clauses, all of them will be
+  collected into one place inside <code>progn</code> in the order they present.</li>
 <li><code>return</code>, <code>always</code>, <code>never</code>, <code>thereis</code> can bypass finally</li>
 </ul>
 </div>
@@ -5377,7 +5381,7 @@ bind result to a list of variables. This can be used in <code>for</code> and
 <ul class="org-ul">
 <li>If variable list is shorter, the rest values are discarded</li>
 <li>If value list is shorter, the rest variables initialize to default
-value</li>
+  value</li>
 </ul>
 </div>
 </div>
@@ -6168,15 +6172,15 @@ loaded, will load it.
 <li>Ron Garret: Why Lisp: <a href="http://blog.rongarret.info/2015/05/why-lisp.html">http://blog.rongarret.info/2015/05/why-lisp.html</a>
 <ul class="org-ul">
 <li>the idea is that, the power of lisp comes the the minimal syntax
-of representing the code</li>
+    of representing the code</li>
 </ul></li>
 
 <li>Robert Strandh: what is wrong with lisp: <a href="http://metamodular.com/Essays/wrong.html">http://metamodular.com/Essays/wrong.html</a></li>
 <li>Kent Pitman on Genera vs. Emacs:
-<a href="https://groups.google.com/forum/?hl=en#!topic/comp.lang.lisp/XpvUwF2xKbk%5B101-125%5D">https://groups.google.com/forum/?hl=en#!topic/comp.lang.lisp/XpvUwF2xKbk%5B101-125%5D</a></li>
+  <a href="https://groups.google.com/forum/?hl=en#!topic/comp.lang.lisp/XpvUwF2xKbk%5B101-125%5D">https://groups.google.com/forum/?hl=en#!topic/comp.lang.lisp/XpvUwF2xKbk%5B101-125%5D</a></li>
 
 <li>The book: Lisp Lore: A Guide to Programming the LISP Machine
-<a href="http://www.archive.org/details/lisploreguidetop00brom">http://www.archive.org/details/lisploreguidetop00brom</a></li>
+  <a href="http://www.archive.org/details/lisploreguidetop00brom">http://www.archive.org/details/lisploreguidetop00brom</a></li>
 <li><a href="http://www.lispmachine.net/">http://www.lispmachine.net/</a></li>
 <li>A Retrospective on Paradigms of AI Programming <a href="http://norvig.com/Lisp-retro.html">http://norvig.com/Lisp-retro.html</a></li>
 </ul>
