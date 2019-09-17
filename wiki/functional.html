@@ -272,37 +272,312 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org69fcbde">1. References</a></li>
-<li><a href="#orgffdf1db">2. Expression</a></li>
-<li><a href="#orgeca1348">3. What is a Function?</a>
+<li><a href="#orgdf77550">1. References</a></li>
+<li><a href="#org78e0999">2. <span class="todo TODO">TODO</span> Haskell</a>
 <ul>
-<li><a href="#orgf54295f">3.1. Composition</a></li>
-<li><a href="#org457ffcd">3.2. Strictness</a></li>
+<li><a href="#org101b636">2.1. references</a></li>
+<li><a href="#org25b99c9">2.2. layout</a></li>
+<li><a href="#org556f57d">2.3. lexical staff</a>
+<ul>
+<li><a href="#org0487b51">2.3.1. fixity declaration</a></li>
 </ul>
 </li>
-<li><a href="#org1532892">4. Type</a>
-<ul>
-<li><a href="#org8bf2105">4.1. Type inference</a></li>
-<li><a href="#orga8733b0">4.2. List</a></li>
+<li><a href="#org814e6d9">2.4. decl</a></li>
+<li><a href="#orgc6985e4">2.5. do expression</a></li>
+<li><a href="#org777b286">2.6. list comprehension</a></li>
+<li><a href="#orgbed03e5">2.7. function and lambda</a></li>
+<li><a href="#org669c86d">2.8. let binding</a></li>
+<li><a href="#org07c894b">2.9. conditional</a></li>
+<li><a href="#orge6e8385">2.10. case expression</a></li>
 </ul>
 </li>
-<li><a href="#orgf166f46">5. Recursion</a></li>
+<li><a href="#orgfc5dbcd">3. Expression</a></li>
+<li><a href="#orgdaa96db">4. What is a Function?</a>
+<ul>
+<li><a href="#org32f2e12">4.1. Composition</a></li>
+<li><a href="#org1d0b050">4.2. Strictness</a></li>
+</ul>
+</li>
+<li><a href="#org1bbb167">5. Type</a>
+<ul>
+<li><a href="#org15a9746">5.1. Type inference</a></li>
+<li><a href="#orgcd776ae">5.2. List</a></li>
+</ul>
+</li>
+<li><a href="#orgae0aac8">6. Recursion</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org69fcbde" class="outline-2">
-<h2 id="org69fcbde"><span class="section-number-2">1</span> References</h2>
+<div id="outline-container-orgdf77550" class="outline-2">
+<h2 id="orgdf77550"><span class="section-number-2">1</span> References</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>introduction to functional programming <a class='org-ref-reference' href="#1988-Book-Bird-Introduction">1988-Book-Bird-Introduction</a></li>
+<li>introduction to functional programming cite:1988-Book-Bird-Introduction</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgffdf1db" class="outline-2">
-<h2 id="orgffdf1db"><span class="section-number-2">2</span> Expression</h2>
+<div id="outline-container-org78e0999" class="outline-2">
+<h2 id="org78e0999"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Haskell</h2>
 <div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org101b636" class="outline-3">
+<h3 id="org101b636"><span class="section-number-3">2.1</span> references</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Haskell language report 2010 <a href="https://www.haskell.org/onlinereport/haskell2010/">https://www.haskell.org/onlinereport/haskell2010/</a></li>
+<li>Haskell book, a good tutorial <a href="https://en.wikibooks.org/wiki/Haskell">https://en.wikibooks.org/wiki/Haskell</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org25b99c9" class="outline-3">
+<h3 id="org25b99c9"><span class="section-number-3">2.2</span> layout</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Layout is optional:
+</p>
+
+<blockquote>
+<p>
+Haskell <b>permits the omission of the braces and semicolons</b> used in
+several grammar productions, by using layout to convey the same
+information. This allows both layout-sensitive and layout-insensitive
+styles of coding, which can be <b>freely mixed</b> within one program.
+</p>
+</blockquote>
+
+<p>
+Formal layout rules:
+</p>
+
+<blockquote>
+<p>
+The layout (or “off-side”) rule takes effect whenever the <span class="underline">open brace
+is omitted</span> after the keyword <code>where</code>, <code>let</code>, <code>do</code>, or <code>of</code>. When this
+happens, the indentation of the next lexeme (whether or not on a new
+line) is remembered and the omitted <span class="underline">open brace is inserted</span> (the
+whitespace preceding the lexeme may include comments).
+</p>
+
+<p>
+For each subsequent line, 
+</p>
+<ul class="org-ul">
+<li>if it contains only whitespace or is <span class="underline">indented more</span>, then the
+  previous item is continued (nothing is inserted);</li>
+<li>if it is <span class="underline">indented the same</span> amount, then a new item begins (a
+  <span class="underline">semicolon is inserted</span>);</li>
+<li>and if it is <span class="underline">indented less</span>, then the layout list ends (a <span class="underline">close
+  brace is inserted</span>).</li>
+<li>If the indentation of the non-brace lexeme immediately following a
+  <code>where</code>, <code>let</code>, <code>do</code> or <code>of</code> is <span class="underline">less than or equal to</span> the current
+  indentation level, then instead of starting a layout, an empty list
+  <span class="underline">“{}” is inserted</span>, and layout processing occurs for the current
+  level (i.e. insert a semicolon or close brace)</li>
+</ul>
+</blockquote>
+
+<p>
+Explicit open brace must be closed explicitly:
+</p>
+<blockquote>
+<p>
+The layout rule matches only those open braces that it has inserted;
+<span class="underline">an explicit open brace must be matched by an explicit close
+brace</span>. Within these explicit open braces, no layout processing is
+performed for constructs outside the braces, even if a line is
+indented to the left of an earlier implicit open brace.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org556f57d" class="outline-3">
+<h3 id="org556f57d"><span class="section-number-3">2.3</span> lexical staff</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+precedence and associative:
+</p>
+<blockquote>
+<p>
+Consecutive unparenthesized operators with the same precedence must
+both be either left or right associative to avoid a syntax error.
+</p>
+</blockquote>
+
+<p>
+<code>lambda</code>, <code>let</code>, conditionals extend as far to the right as possible:
+</p>
+<blockquote>
+<p>
+The grammar is ambiguous regarding the extent of lambda abstractions,
+let expressions, and conditionals. The ambiguity is resolved by the
+meta-rule that each of these constructs extends as far to the right as
+possible.
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-org0487b51" class="outline-4">
+<h4 id="org0487b51"><span class="section-number-4">2.3.1</span> fixity declaration</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Determines the binding precedence of an operator. A fixity declaration
+may appear anywhere that a type signature appears.
+</p>
+
+<blockquote>
+<p>
+There are three kinds of fixity, non-, left- and right-associativity
+(infix, infixl, and infixr, respectively), and ten precedence levels,
+0 to 9 inclusive (<sub>level</sub> 0 binds least tightly, and level 9 binds most
+tightly_). If the digit is omitted, level 9 is assumed. Any operator
+lacking a fixity declaration is assumed to be <span class="underline">infixl 9 by default</span>.
+</p>
+</blockquote>
+
+<p>
+There is a table for all operators and their precedence levels.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org814e6d9" class="outline-3">
+<h3 id="org814e6d9"><span class="section-number-3">2.4</span> decl</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+var :: type
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc6985e4" class="outline-3">
+<h3 id="orgc6985e4"><span class="section-number-3">2.5</span> do expression</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+<pre class="src src-haskell"><code><span class="org-haskell-keyword">do</span> </code>
+<code>  stmt</code>
+<code>  <span class="org-comment-delimiter">-- </span><span class="org-comment">stmt can be</span></code>
+<code>  pat</code>
+<code>  pat <span class="org-haskell-operator">&lt;-</span> exp</code>
+<code>  <span class="org-comment-delimiter">-- </span><span class="org-comment">this is not the let expression. The binding will take effect in</span></code>
+<code>  <span class="org-comment-delimiter">-- </span><span class="org-comment">the following program</span></code>
+<code>  <span class="org-haskell-keyword">let</span> decls</code>
+<code>  <span class="org-comment-delimiter">-- </span><span class="org-comment">the last one must be an expression, and cannot have pattern binding</span></code>
+<code>  exp</code>
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org777b286" class="outline-3">
+<h3 id="org777b286"><span class="section-number-3">2.6</span> list comprehension</h3>
+<div class="outline-text-3" id="text-2-6">
+<div class="org-src-container">
+<pre class="src src-haskell"><code>[x <span class="org-haskell-operator">|</span> xs <span class="org-haskell-operator">&lt;-</span> [[(1,2),(3,4)],</code>
+<code>            [(5,4),(3,2)]],</code>
+<code>     (3,x) <span class="org-haskell-operator">&lt;-</span> xs]</code>
+</pre>
+</div>
+
+<p>
+<code>&lt;-</code> is generator syntax, and nested. Each iteration, if a value does
+not match, that value is <b>skipped</b>. Thus the above expression
+evaluates to <code>[4,2]</code>
+</p>
+
+<p>
+In general in Haskell, <code>&lt;-</code> will perform patern matching with left
+being pattern.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbed03e5" class="outline-3">
+<h3 id="orgbed03e5"><span class="section-number-3">2.7</span> function and lambda</h3>
+<div class="outline-text-3" id="text-2-7">
+<div class="org-src-container">
+<pre class="src src-haskell"><code><span class="org-haskell-definition">double</span> x <span class="org-haskell-operator">=</span> x <span class="org-haskell-operator">*</span> x</code>
+<code>  <span class="org-haskell-keyword">where</span> decls</code>
+<code><span class="org-haskell-operator">\</span> x y <span class="org-haskell-operator">-&gt;</span> x <span class="org-haskell-operator">+</span> y</code>
+</pre>
+</div>
+
+<p>
+function
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><code><span class="org-haskell-definition">funlhs</span> var <span class="org-haskell-operator">=</span> exp <span class="org-haskell-keyword">where</span> decls</code>
+<code><span class="org-haskell-definition">funlhs</span> var</code>
+<code>  <span class="org-haskell-operator">|</span> guard <span class="org-haskell-operator">=</span> exp</code>
+<code>  <span class="org-comment-delimiter">-- </span><span class="org-comment">three types of guards</span></code>
+<code>  <span class="org-haskell-operator">|</span> (3,x) <span class="org-haskell-operator">&lt;-</span> exp <span class="org-haskell-operator">=</span> exp</code>
+<code>  <span class="org-haskell-operator">|</span> <span class="org-haskell-keyword">let</span> decls <span class="org-haskell-operator">=</span> exp</code>
+<code>  <span class="org-haskell-operator">|</span> boolexp <span class="org-haskell-operator">=</span> exp</code>
+<code>  <span class="org-haskell-keyword">where</span> decls</code>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org669c86d" class="outline-3">
+<h3 id="org669c86d"><span class="section-number-3">2.8</span> let binding</h3>
+<div class="outline-text-3" id="text-2-8">
+<div class="org-src-container">
+<pre class="src src-haskell"><code><span class="org-haskell-keyword">let</span> x, y <span class="org-haskell-operator">=</span> 5,10 <span class="org-haskell-keyword">in</span> x <span class="org-haskell-operator">+</span> y <span class="org-haskell-operator">+</span> 1</code>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org07c894b" class="outline-3">
+<h3 id="org07c894b"><span class="section-number-3">2.9</span> conditional</h3>
+<div class="outline-text-3" id="text-2-9">
+<div class="org-src-container">
+<pre class="src src-haskell"><code><span class="org-haskell-keyword">if</span> e1 <span class="org-haskell-keyword">then</span> e2 <span class="org-haskell-keyword">else</span> e3</code>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge6e8385" class="outline-3">
+<h3 id="orge6e8385"><span class="section-number-3">2.10</span> case expression</h3>
+<div class="outline-text-3" id="text-2-10">
+<div class="org-src-container">
+<pre class="src src-haskell"><code><span class="org-haskell-keyword">case</span> exp <span class="org-haskell-keyword">of</span> {</code>
+<code>  pat <span class="org-haskell-operator">-&gt;</span> exp <span class="org-haskell-keyword">where</span> decls</code>
+<code>  <span class="org-comment-delimiter">-- </span><span class="org-comment">equivalent to</span></code>
+<code>  pat <span class="org-haskell-operator">|</span> <span class="org-haskell-constructor">True</span> <span class="org-haskell-operator">-&gt;</span> exp</code>
+<code></code>
+<code>  pat <span class="org-haskell-operator">|</span> guard <span class="org-haskell-keyword">where</span> decls</code>
+<code>  <span class="org-comment-delimiter">-- </span><span class="org-comment">which has three kinds of guards</span></code>
+<code>  pat <span class="org-haskell-operator">|</span> (3,x) <span class="org-haskell-operator">&lt;-</span> exp</code>
+<code>  pat <span class="org-haskell-operator">|</span> <span class="org-haskell-keyword">let</span> decls</code>
+<code>  pat <span class="org-haskell-operator">|</span> boolexp</code>
+<code>}</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orgfc5dbcd" class="outline-2">
+<h2 id="orgfc5dbcd"><span class="section-number-2">3</span> Expression</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 An expression can be <i>reduced</i> to an simpler equivalent form.  We say
 an expression is <i>canonical</i> (or in <i>normal form</i>) if it cannot be
@@ -397,8 +672,8 @@ strict f</code> iff <code>f</code> is a strict function.
 </p>
 
 <pre class="example">
-strict f x = \bot, if x = \bot
-           = f x,  otherwise
+<code>strict f x = \bot, if x = \bot</code>
+<code>           = f x,  otherwise</code>
 </pre>
 
 <p>
@@ -412,27 +687,27 @@ argument, <code>foldr</code> is often more efficient.  (<code>foldl'</code> is a
 </p>
 
 <pre class="example">
-foldl' (op) a [] = a
-foldl' (op) a (x:xs) = strict (foldl' (op)) (a op x) xs
+<code>foldl' (op) a [] = a</code>
+<code>foldl' (op) a (x:xs) = strict (foldl' (op)) (a op x) xs</code>
 </pre>
 </div>
 </div>
 
 
 
-<div id="outline-container-orgeca1348" class="outline-2">
-<h2 id="orgeca1348"><span class="section-number-2">3</span> What is a Function?</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgdaa96db" class="outline-2">
+<h2 id="orgdaa96db"><span class="section-number-2">4</span> What is a Function?</h2>
+<div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>currying: replacing structured arguments by a sequence of simple
-ones. The function application operation associates to the left,
-i.e. <code>f x y</code> means <code>((f x) y)</code>.</li>
+  ones. The function application operation associates to the left,
+  i.e. <code>f x y</code> means <code>((f x) y)</code>.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgf54295f" class="outline-3">
-<h3 id="orgf54295f"><span class="section-number-3">3.1</span> Composition</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-org32f2e12" class="outline-3">
+<h3 id="org32f2e12"><span class="section-number-3">4.1</span> Composition</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 Functional composition has the definition of
 </p>
@@ -461,9 +736,9 @@ brackets
 </div>
 </div>
 
-<div id="outline-container-org457ffcd" class="outline-3">
-<h3 id="org457ffcd"><span class="section-number-3">3.2</span> Strictness</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-org1d0b050" class="outline-3">
+<h3 id="org1d0b050"><span class="section-number-3">4.2</span> Strictness</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 The special value \(\bot\) is polymorphic: \(\bot\) is a value of every
 type. This means, any function can be applied to \(\bot\). If \(f \bot =
@@ -488,8 +763,8 @@ return the value <code>3</code>. I.e.
 </p>
 
 <pre class="example">
-three :: num -&gt; num
-three x = 3
+<code>three :: num -&gt; num</code>
+<code>three x = 3</code>
 </pre>
 
 <p>
@@ -501,8 +776,8 @@ Another example, the definition of <code>cond</code>
 </p>
 
 <pre class="example">
-cond p x y = x, if p
-           = y, otherwise
+<code>cond p x y = x, if p</code>
+<code>           = y, otherwise</code>
 </pre>
 
 <p>
@@ -523,45 +798,45 @@ for the evaluation.
 </div>
 </div>
 
-<div id="outline-container-org1532892" class="outline-2">
-<h2 id="org1532892"><span class="section-number-2">4</span> Type</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org1bbb167" class="outline-2">
+<h2 id="org1bbb167"><span class="section-number-2">5</span> Type</h2>
+<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Strong-typing: the type of an expression depends only on the type of
-its component expressions.</li>
+  its component expressions.</li>
 <li>Type variable: typically represented in Greek letters \(\alpha\),
-\(\beta\), etc. Such type can be instantiated by substitute the type
-variable with specific type.</li>
+  \(\beta\), etc. Such type can be instantiated by substitute the type
+  variable with specific type.</li>
 <li>Polymorphic type: a type that contains <i>type variables</i></li>
 <li>Enumerated type: enumeration of possible values</li>
 <li>Composite type: composite primitive type together to form new types</li>
 <li>algebraic data type: is a form of composite type, containing product
-type and sum type
+  type and sum type
 <ul class="org-ul">
 <li>sum type: this is like C union, so it is also called a tagged
-union. It can take value of either the type, but not both.</li>
+    union. It can take value of either the type, but not both.</li>
 <li>product type: this is like a C structure with different
-fields. The value set of this type is the set-theoretic product,
-i.e., the Cartesian product of the set of the field type.</li>
+    fields. The value set of this type is the set-theoretic product,
+    i.e., the Cartesian product of the set of the field type.</li>
 </ul></li>
 <li>Abstract Type: types in which the values are prescribed, but the
-operations are not, are called concrete types. A type whose values
-are not defined, but operations are, is called abstract type.</li>
+  operations are not, are called concrete types. A type whose values
+  are not defined, but operations are, is called abstract type.</li>
 </ul>
 </div>
 
-<div id="outline-container-org8bf2105" class="outline-3">
-<h3 id="org8bf2105"><span class="section-number-3">4.1</span> Type inference</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-org15a9746" class="outline-3">
+<h3 id="org15a9746"><span class="section-number-3">5.1</span> Type inference</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
 Three basic rules
 </p>
 
 <ol class="org-ol">
 <li>Application rule: if <code>f x :: t</code>, then <code>x :: t'</code> and <code>f :: t' -&gt; t</code>
-for some new type <code>t'</code></li>
+     for some new type <code>t'</code></li>
 <li>Equality rule: if both the types <code>x :: t</code> and <code>x :: t'</code> can be
-deduced for a variable <code>x</code>, then <code>t = t'</code>.</li>
+     deduced for a variable <code>x</code>, then <code>t = t'</code>.</li>
 <li>Function rule: If <code>t -&gt; u = t' -&gt; u'</code>, then <code>t = t'</code>, and <code>u = u'</code></li>
 </ol>
 
@@ -574,26 +849,26 @@ For example, consider the composition operator
 </p>
 
 <pre class="example">
-(.) f g x = f (g x)
+<code>(.) f g x = f (g x)</code>
 </pre>
 
 <p>
 The following script shows the inference steps:
 </p>
 <pre class="example">
-f :: t1
-g :: t2
-x :: t3
-f (g x) :: t4
-(.) :: t1 -&gt; t2 -&gt; t3 -&gt; t4
-g x :: t5
-f :: t5 -&gt; t4
-x :: t6
-g :: t6 -&gt; t5
-t1 = t5 -&gt; t4
-t2 = t6 -&gt; t5
-t3 = t6
-(.) :: (t5 -&gt; t4) -&gt; (t6 -&gt; t5) -&gt; t6 -&gt; t4
+<code>f :: t1</code>
+<code>g :: t2</code>
+<code>x :: t3</code>
+<code>f (g x) :: t4</code>
+<code>(.) :: t1 -&gt; t2 -&gt; t3 -&gt; t4</code>
+<code>g x :: t5</code>
+<code>f :: t5 -&gt; t4</code>
+<code>x :: t6</code>
+<code>g :: t6 -&gt; t5</code>
+<code>t1 = t5 -&gt; t4</code>
+<code>t2 = t6 -&gt; t5</code>
+<code>t3 = t6</code>
+<code>(.) :: (t5 -&gt; t4) -&gt; (t6 -&gt; t5) -&gt; t6 -&gt; t4</code>
 </pre>
 
 <p>
@@ -608,9 +883,9 @@ generic:
 </div>
 </div>
 
-<div id="outline-container-orga8733b0" class="outline-3">
-<h3 id="orga8733b0"><span class="section-number-3">4.2</span> List</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-orgcd776ae" class="outline-3">
+<h3 id="orgcd776ae"><span class="section-number-3">5.2</span> List</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
 List itself is defined as a recursive type.
 </p>
@@ -629,9 +904,9 @@ ones. With this, we can define many operators on lists:
 </p>
 
 <pre class="example">
-(++) :: [a] -&gt; [a] -&gt; [a]
-concat :: [[a]] -&gt; [a]
-concat xss = [x | xs &lt;- xss; x &lt;- xs]
+<code>(++) :: [a] -&gt; [a] -&gt; [a]</code>
+<code>concat :: [[a]] -&gt; [a]</code>
+<code>concat xss = [x | xs &lt;- xss; x &lt;- xs]</code>
 </pre>
 
 <p>
@@ -642,52 +917,52 @@ use <code>(:)</code> is that, every list can be expressed in terms of <code>[]</
 </p>
 
 <pre class="example">
-(:) :: a -&gt; [a] -&gt; [a]
-x:xs = [x] ++ xs
+<code>(:) :: a -&gt; [a] -&gt; [a]</code>
+<code>x:xs = [x] ++ xs</code>
 </pre>
 
 <p>
 We have the following operators on lists:
 </p>
 <pre class="example">
-
-(#) :: [a] -&gt; num
-#(xs ++ ys) = #xs + #ys
-
-hd :: [a] -&gt; a
-tl :: [a] -&gt; [a]
-hd ([x] ++ xs) = x
-tl ([x] ++ xs) = xs
-
-take n xs ++ drop n xs = xs
-
-takewhile :: (a -&gt; bool) -&gt; [a]  -&gt; [a]
-zip :: ([a], [b]) -&gt; [(a,b)]
-(!) :: [a] -&gt; num -&gt; a # index
-
+<code></code>
+<code>(#) :: [a] -&gt; num</code>
+<code>#(xs ++ ys) = #xs + #ys</code>
+<code></code>
+<code>hd :: [a] -&gt; a</code>
+<code>tl :: [a] -&gt; [a]</code>
+<code>hd ([x] ++ xs) = x</code>
+<code>tl ([x] ++ xs) = xs</code>
+<code></code>
+<code>take n xs ++ drop n xs = xs</code>
+<code></code>
+<code>takewhile :: (a -&gt; bool) -&gt; [a]  -&gt; [a]</code>
+<code>zip :: ([a], [b]) -&gt; [(a,b)]</code>
+<code>(!) :: [a] -&gt; num -&gt; a # index</code>
+<code></code>
 </pre>
 
 <p>
 Map and filter can be defined by:
 </p>
 <pre class="example">
-map :: (a -&gt; b) -&gt; [a] -&gt; [b]
-map f xs = [f x | x &lt;- xs]
-filter :: (a -&gt; bool) -&gt; [a] -&gt; [a]
-filter p xs = [x | x &lt;- xs; p x]
+<code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]</code>
+<code>map f xs = [f x | x &lt;- xs]</code>
+<code>filter :: (a -&gt; bool) -&gt; [a] -&gt; [a]</code>
+<code>filter p xs = [x | x &lt;- xs; p x]</code>
 </pre>
 
 <p>
 Fold:
 </p>
 <pre class="example">
-foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
-foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b
-sum = foldr (+) 0
-product = foldr (x) 1
-concat = foldr (++) []
-and = foldr (&amp;) True
-or = foldr (|) False
+<code>foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b</code>
+<code>foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b</code>
+<code>sum = foldr (+) 0</code>
+<code>product = foldr (x) 1</code>
+<code>concat = foldr (++) []</code>
+<code>and = foldr (&amp;) True</code>
+<code>or = foldr (|) False</code>
 </pre>
 
 <p>
@@ -707,53 +982,48 @@ marshalling, and <i>reduce</i> does folding.
 </div>
 </div>
 
-<div id="outline-container-orgf166f46" class="outline-2">
-<h2 id="orgf166f46"><span class="section-number-2">5</span> Recursion</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgae0aac8" class="outline-2">
+<h2 id="orgae0aac8"><span class="section-number-2">6</span> Recursion</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 Functions are often defined recursively. In this section, we see some
 of the list function definitions in recursion.
 </p>
 
 <pre class="example">
-zip([], ys) = []
-zip(x:xs, []) = []
-zip(x:xs, y:ys) = (x,y):zip(xs,ys)
+<code>zip([], ys) = []</code>
+<code>zip(x:xs, []) = []</code>
+<code>zip(x:xs, y:ys) = (x,y):zip(xs,ys)</code>
 </pre>
 
 <pre class="example">
-take 0 xs = []
-take (n+1) [] = []
-take (n+1) (x:xs) = x:take n xs
-
-drop 0 xs = xs
-drop (n+1) [] = []
-drop (n+1) (x:xs) = drop n xs
+<code>take 0 xs = []</code>
+<code>take (n+1) [] = []</code>
+<code>take (n+1) (x:xs) = x:take n xs</code>
+<code></code>
+<code>drop 0 xs = xs</code>
+<code>drop (n+1) [] = []</code>
+<code>drop (n+1) (x:xs) = drop n xs</code>
 </pre>
 
 <pre class="example">
-hd(x:xs) = x
-tl(x:xs) = xs
+<code>hd(x:xs) = x</code>
+<code>tl(x:xs) = xs</code>
 </pre>
 
 <pre class="example">
-map f [] = []
-map f (x:xs) = f x : map f xs
-filter p [] = []
-filter p (x:xs) = x : filter p xs, if p x
-                = filter p xs,     otherwise
+<code>map f [] = []</code>
+<code>map f (x:xs) = f x : map f xs</code>
+<code>filter p [] = []</code>
+<code>filter p (x:xs) = x : filter p xs, if p x</code>
+<code>                = filter p xs,     otherwise</code>
 </pre>
 
 <p>
-<h1 class='org-ref-bib-h1'>Bibliography</h1>
-<ul class='org-ref-bib'><li><a id="1988-Book-Bird-Introduction">[1988-Book-Bird-Introduction]</a> <a name="1988-Book-Bird-Introduction"></a>Bird & Wadler, Introduction to Functional Programming, (1988).</li>
-</ul>
+bibliography:../../research/bib/manual/book.bib
 </p>
 </div>
 </div>
-</div>
-<div id="postamble" class="status">
-<p class="validation"></p>
 </div>
 </body>
 </html>
