@@ -277,7 +277,14 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org9f64ea0">2.1. Tmp</a>
 <ul>
-<li><a href="#org1c50766">2.1.1. operators</a></li>
+<li><a href="#org1c50766">2.1.1. operators</a>
+<ul>
+<li><a href="#orgdf8af62">2.1.1.1. Lexical syntax:</a></li>
+<li><a href="#org707466e">2.1.1.2. Defined in Functor:</a></li>
+<li><a href="#org438a3d9">2.1.1.3. Defined in Applicative:</a></li>
+<li><a href="#orgaf6b2b0">2.1.1.4. Defined in Alternative</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#org101b636">2.2. references</a></li>
@@ -334,17 +341,69 @@ for the JavaScript code in this tag.
 <dt>referentially transparent</dt><dd>we can replace any expression by its
      value without changing the behaviour of the program.</dd>
 </dl>
+
+<p>
+About Applicative and its relation with Monad
+</p>
 </div>
 
 <div id="outline-container-org1c50766" class="outline-4">
 <h4 id="org1c50766"><span class="section-number-4">2.1.1</span> operators</h4>
 <div class="outline-text-4" id="text-2-1-1">
+</div>
+<div id="outline-container-orgdf8af62" class="outline-5">
+<h5 id="orgdf8af62"><span class="section-number-5">2.1.1.1</span> Lexical syntax:</h5>
+<div class="outline-text-5" id="text-2-1-1-1">
+<dl class="org-dl">
+<dt><code>=&gt;</code></dt><dd>context or class inheritance</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org707466e" class="outline-5">
+<h5 id="org707466e"><span class="section-number-5">2.1.1.2</span> Defined in Functor:</h5>
+<div class="outline-text-5" id="text-2-1-1-2">
 <ul class="org-ul">
 <li>&lt;$&gt;: fmap</li>
-<li>*&gt;: sequential stmts</li>
-<li>&lt;*&gt;: used with fmap</li>
-<li id="<code>=&gt;</code>">context or class inheritance</li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-org438a3d9" class="outline-5">
+<h5 id="org438a3d9"><span class="section-number-5">2.1.1.3</span> Defined in Applicative:</h5>
+<div class="outline-text-5" id="text-2-1-1-3">
+<ul class="org-ul">
+<li>&lt;*&gt;: used with fmap</li>
+<li>*&gt;: defined in Functor sequential stmts</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org887591e"></a>(2008) Applicative programming with effects<br />
+<div class="outline-text-6" id="text-2-1-1-3-1">
+<p>
+Applicative type class has the following methods:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><code><span class="org-haskell-definition">pure</span> <span class="org-haskell-operator">::</span> a <span class="org-haskell-operator">-&gt;</span> f aSource</code>
+<code>(<span class="org-haskell-definition">&lt;*&gt;</span>) <span class="org-haskell-operator">::</span> f (a <span class="org-haskell-operator">-&gt;</span> b) <span class="org-haskell-operator">-&gt;</span> f a <span class="org-haskell-operator">-&gt;</span> f b</code>
+<code><span class="org-haskell-definition">liftA2</span> <span class="org-haskell-operator">::</span> (a <span class="org-haskell-operator">-&gt;</span> b <span class="org-haskell-operator">-&gt;</span> c) <span class="org-haskell-operator">-&gt;</span> f a <span class="org-haskell-operator">-&gt;</span> f b <span class="org-haskell-operator">-&gt;</span> f c</code>
+<code>(<span class="org-haskell-definition">*&gt;</span>) <span class="org-haskell-operator">::</span> f a <span class="org-haskell-operator">-&gt;</span> f b <span class="org-haskell-operator">-&gt;</span> f b</code>
+<code>(<span class="org-haskell-definition">&lt;*</span>) <span class="org-haskell-operator">::</span> f a <span class="org-haskell-operator">-&gt;</span> f b <span class="org-haskell-operator">-&gt;</span> f a</code>
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgaf6b2b0" class="outline-5">
+<h5 id="orgaf6b2b0"><span class="section-number-5">2.1.1.4</span> Defined in Alternative</h5>
+<div class="outline-text-5" id="text-2-1-1-4">
+<dl class="org-dl">
+<dt><code>&lt;|&gt;</code></dt><dd><code>Nothing &lt;|&gt; Just a = Just a</code></dd>
+</dl>
+</div>
 </div>
 </div>
 </div>
