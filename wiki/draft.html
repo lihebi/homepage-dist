@@ -272,25 +272,25 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org181bf50">1. Remarkable</a></li>
-<li><a href="#org2f466c2">2. Android</a></li>
-<li><a href="#orgd908047">3. C</a>
+<li><a href="#org3ce79af">1. Remarkable</a></li>
+<li><a href="#org4b7db92">2. Android</a></li>
+<li><a href="#org91cc5ba">3. C</a>
 <ul>
-<li><a href="#org291782d">3.1. Context Sensitivity of C</a></li>
+<li><a href="#orgc9c1b26">3.1. Context Sensitivity of C</a></li>
 </ul>
 </li>
-<li><a href="#org917f858">4. Math</a>
+<li><a href="#orge7fc93f">4. Math</a>
 <ul>
-<li><a href="#orgf14f19a">4.1. Calculus</a></li>
-<li><a href="#org10f09d2">4.2. Lagrange multiplier</a></li>
+<li><a href="#org2d35351">4.1. Calculus</a></li>
+<li><a href="#orgca59fea">4.2. Lagrange multiplier</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org181bf50" class="outline-2">
-<h2 id="org181bf50"><span class="section-number-2">1</span> Remarkable</h2>
+<div id="outline-container-org3ce79af" class="outline-2">
+<h2 id="org3ce79af"><span class="section-number-2">1</span> Remarkable</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://github.com/reHackable/maxio">https://github.com/reHackable/maxio</a>
@@ -298,8 +298,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org2f466c2" class="outline-2">
-<h2 id="org2f466c2"><span class="section-number-2">2</span> Android</h2>
+<div id="outline-container-org4b7db92" class="outline-2">
+<h2 id="org4b7db92"><span class="section-number-2">2</span> Android</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 H2O APN setting
@@ -340,18 +340,18 @@ Everything else Not set, including
 </div>
 </div>
 
-<div id="outline-container-orgd908047" class="outline-2">
-<h2 id="orgd908047"><span class="section-number-2">3</span> C</h2>
+<div id="outline-container-org91cc5ba" class="outline-2">
+<h2 id="org91cc5ba"><span class="section-number-2">3</span> C</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org291782d" class="outline-3">
-<h3 id="org291782d"><span class="section-number-3">3.1</span> Context Sensitivity of C</h3>
+<div id="outline-container-orgc9c1b26" class="outline-3">
+<h3 id="orgc9c1b26"><span class="section-number-3">3.1</span> Context Sensitivity of C</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li><a href="https://eli.thegreenplace.net/2007/11/24/the-context-sensitivity-of-cs-grammar/">https://eli.thegreenplace.net/2007/11/24/the-context-sensitivity-of-cs-grammar/</a></li>
 <li>The lexer hack <a href="https://en.wikipedia.org/wiki/The_lexer_hack">https://en.wikipedia.org/wiki/The_lexer_hack</a></li>
 <li>Clang use a thin lexer to avoid this problem, which is what I'm
-  going to use as well</li>
+going to use as well</li>
 </ul>
 
 
@@ -366,12 +366,12 @@ Here is the C lexer rule and grammar for yacc
 </div>
 </div>
 
-<div id="outline-container-org917f858" class="outline-2">
-<h2 id="org917f858"><span class="section-number-2">4</span> Math</h2>
+<div id="outline-container-orge7fc93f" class="outline-2">
+<h2 id="orge7fc93f"><span class="section-number-2">4</span> Math</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgf14f19a" class="outline-3">
-<h3 id="orgf14f19a"><span class="section-number-3">4.1</span> Calculus</h3>
+<div id="outline-container-org2d35351" class="outline-3">
+<h3 id="org2d35351"><span class="section-number-3">4.1</span> Calculus</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Calculus has two main branches:
@@ -380,7 +380,7 @@ Calculus has two main branches:
 <li>differential calculus
 <ul class="org-ul">
 <li>it is mainly about derivative. The process of finding a derivative
-    is called differentiation.</li>
+is called differentiation.</li>
 <li>\(\frac{dy}{dx}|_{a}\) is Leibniz's notation</li>
 <li>f'(a) is Lagrange's notation</li>
 </ul></li>
@@ -393,8 +393,8 @@ Calculus has two main branches:
 </div>
 </div>
 
-<div id="outline-container-org10f09d2" class="outline-3">
-<h3 id="org10f09d2"><span class="section-number-3">4.2</span> Lagrange multiplier</h3>
+<div id="outline-container-orgca59fea" class="outline-3">
+<h3 id="orgca59fea"><span class="section-number-3">4.2</span> Lagrange multiplier</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 When solving a maxima of a function, with subject to a constraint, we
@@ -409,10 +409,10 @@ We are going to introduce the Lagrange multiplier \(\lambda\) such that
 </p>
 <ul class="org-ul">
 <li>\(L(x,y,\lambda) = f(x,y) - \lambda g(x,y)\) is called Lagrange
-  function.</li>
+function.</li>
 <li>Compute the gradient of L, and compute the stationary points. Those
-  points will be the space of the solution to the original maxima
-  problem.</li>
+points will be the space of the solution to the original maxima
+problem.</li>
 </ul>
 
 <p>
@@ -422,6 +422,9 @@ direction of any neighboring point where g = 0.
 </div>
 </div>
 </div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
 </div>
 </body>
 </html>

@@ -250,25 +250,25 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5fdcf9d">1. TMP</a></li>
-<li><a href="#org0822a22">2. Dataset Loading</a>
+<li><a href="#orgd0c6870">1. TMP</a></li>
+<li><a href="#orgd13ea29">2. Dataset Loading</a>
 <ul>
-<li><a href="#org0842ad0">2.1. Keras</a></li>
-<li><a href="#orgaaf012a">2.2. tf.data.Dataset</a>
+<li><a href="#orgd3f6fb8">2.1. Keras</a></li>
+<li><a href="#orgc461ccc">2.2. tf.data.Dataset</a>
 <ul>
-<li><a href="#org00a42ae">2.2.1. TFRecord</a></li>
-<li><a href="#org6fd92ec">2.2.2. TFRecord Creation</a></li>
+<li><a href="#org118125a">2.2.1. TFRecord</a></li>
+<li><a href="#orgcd83f35">2.2.2. TFRecord Creation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org98c110d">3. Visualization</a></li>
+<li><a href="#orga60dfd9">3. Visualization</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5fdcf9d" class="outline-2">
-<h2 id="org5fdcf9d"><span class="section-number-2">1</span> TMP</h2>
+<div id="outline-container-orgd0c6870" class="outline-2">
+<h2 id="orgd0c6870"><span class="section-number-2">1</span> TMP</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 tensorflow guide: <a href="https://www.tensorflow.org/guide/datasets">https://www.tensorflow.org/guide/datasets</a>
@@ -279,25 +279,25 @@ tensorflow guide: <a href="https://www.tensorflow.org/guide/datasets">https://ww
 </div>
 </div>
 
-<div id="outline-container-org0822a22" class="outline-2">
-<h2 id="org0822a22"><span class="section-number-2">2</span> Dataset Loading</h2>
+<div id="outline-container-orgd13ea29" class="outline-2">
+<h2 id="orgd13ea29"><span class="section-number-2">2</span> Dataset Loading</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org0842ad0" class="outline-3">
-<h3 id="org0842ad0"><span class="section-number-3">2.1</span> Keras</h3>
+<div id="outline-container-orgd3f6fb8" class="outline-3">
+<h3 id="orgd3f6fb8"><span class="section-number-3">2.1</span> Keras</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>download data: <code>tf.keras.utils.get_file(fname, url, extract=False)</code>:
-  get file into the cache if not already there, and get placed at
-  <code>~/.keras/datasets/XXX</code>. The path is returned.</li>
+get file into the cache if not already there, and get placed at
+<code>~/.keras/datasets/XXX</code>. The path is returned.</li>
 
 <li>preloaded datasets: <code>keras.datasets.mnist.load_data()</code>: this will
-  gives Tuple of Numpy arrays: <code>(x_train, y_train), (x_test, y_test)</code>.</li>
+gives Tuple of Numpy arrays: <code>(x_train, y_train), (x_test, y_test)</code>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgaaf012a" class="outline-3">
-<h3 id="orgaaf012a"><span class="section-number-3">2.2</span> tf.data.Dataset</h3>
+<div id="outline-container-orgc461ccc" class="outline-3">
+<h3 id="orgc461ccc"><span class="section-number-3">2.2</span> tf.data.Dataset</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 API doc: <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset">https://www.tensorflow.org/api_docs/python/tf/data/Dataset</a>
@@ -326,14 +326,14 @@ return a new instance. The useful APIs of this class:
 <li><code>zip</code></li>
 <li><code>shuffle</code></li>
 <li><code>repeat(count=None)</code>: by default this will make the dataset repeat
-  forever. When doing the training, you want that.</li>
+forever. When doing the training, you want that.</li>
 <li><code>batch(batch_size, drop_remainder=False)</code>: the resulting tensor will
-  have one more outer dimension that is the batch size. The size seems
-  to be a placehoder, represented by <code>?</code>. The batch may not be divided
-  evenly, thus the last batch may have a smaller batch dimension. To
-  prevent this if desired, set <code>drop_remainder</code> to true.</li>
+have one more outer dimension that is the batch size. The size seems
+to be a placehoder, represented by <code>?</code>. The batch may not be divided
+evenly, thus the last batch may have a smaller batch dimension. To
+prevent this if desired, set <code>drop_remainder</code> to true.</li>
 <li><code>prefetch(buffer_size=AUTOTUNE)</code>: `prefetch` lets the dataset fetch
-  batches, in the background while the model is training.</li>
+batches, in the background while the model is training.</li>
 <li><code>take</code>: useful for visualization</li>
 </ul>
 
@@ -342,30 +342,30 @@ An extended example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-variable-name">all_image_paths</span> = [<span class="org-string">'/path/to/img1'</span>, <span class="org-string">'/path/to/img2'</span>, ...]</code>
-<code><span class="org-variable-name">path_ds</span> = tf.data.Dataset.from_tensor_slices(all_image_paths)</code>
-<code><span class="org-variable-name">image_ds</span> = path_ds.<span class="org-builtin">map</span>(load_and_preprocess_image)</code>
-<code></code>
-<code><span class="org-variable-name">all_image_labels</span> = [<span class="org-string">'tulips'</span>, <span class="org-string">'daisy'</span>, <span class="org-string">'sunflowers'</span>, ...]</code>
-<code><span class="org-variable-name">label_ds</span> = tf.data.Dataset.from_tensor_slices(tf.cast(all_image_labels, tf.int64))</code>
-<code></code>
-<code><span class="org-variable-name">image_label_ds</span> = tf.data.Dataset.<span class="org-builtin">zip</span>((image_ds, label_ds))</code>
-<code></code>
-<code><span class="org-keyword">def</span> <span class="org-function-name">load_and_preprocess_from_path_label</span>(path, label):</code>
-<code><span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> load_and_preprocess_image(path), label</code>
-<code><span class="org-variable-name">image_label_ds</span> = ds.<span class="org-builtin">map</span>(load_and_preprocess_from_path_label)</code>
-<code></code>
-<code><span class="org-variable-name">ds</span> = tf.data.Dataset.from_tensor_slices((all_image_paths, all_image_labels))</code>
-<code><span class="org-variable-name">ds</span> = image_label_ds.shuffle(buffer_size=image_count)</code>
-<code><span class="org-variable-name">ds</span> = ds.repeat()</code>
-<code><span class="org-variable-name">ds</span> = ds.batch(BATCH_SIZE)</code>
-<code><span class="org-variable-name">ds</span> = ds.prefetch()</code>
+<pre class="src src-python"><span class="org-variable-name">all_image_paths</span> = [<span class="org-string">'/path/to/img1'</span>, <span class="org-string">'/path/to/img2'</span>, ...]
+<span class="org-variable-name">path_ds</span> = tf.data.Dataset.from_tensor_slices(all_image_paths)
+<span class="org-variable-name">image_ds</span> = path_ds.<span class="org-builtin">map</span>(load_and_preprocess_image)
+
+<span class="org-variable-name">all_image_labels</span> = [<span class="org-string">'tulips'</span>, <span class="org-string">'daisy'</span>, <span class="org-string">'sunflowers'</span>, ...]
+<span class="org-variable-name">label_ds</span> = tf.data.Dataset.from_tensor_slices(tf.cast(all_image_labels, tf.int64))
+
+<span class="org-variable-name">image_label_ds</span> = tf.data.Dataset.<span class="org-builtin">zip</span>((image_ds, label_ds))
+
+<span class="org-keyword">def</span> <span class="org-function-name">load_and_preprocess_from_path_label</span>(path, label):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> load_and_preprocess_image(path), label
+<span class="org-variable-name">image_label_ds</span> = ds.<span class="org-builtin">map</span>(load_and_preprocess_from_path_label)
+
+<span class="org-variable-name">ds</span> = tf.data.Dataset.from_tensor_slices((all_image_paths, all_image_labels))
+<span class="org-variable-name">ds</span> = image_label_ds.shuffle(buffer_size=image_count)
+<span class="org-variable-name">ds</span> = ds.repeat()
+<span class="org-variable-name">ds</span> = ds.batch(BATCH_SIZE)
+<span class="org-variable-name">ds</span> = ds.prefetch()
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org00a42ae" class="outline-4">
-<h4 id="org00a42ae"><span class="section-number-4">2.2.1</span> TFRecord</h4>
+<div id="outline-container-org118125a" class="outline-4">
+<h4 id="org118125a"><span class="section-number-4">2.2.1</span> TFRecord</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 Create TFRecord
@@ -376,8 +376,8 @@ Create TFRecord
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-variable-name">tfrec</span> = tf.data.experimental.TFRecordWriter(<span class="org-string">'images.tfrec'</span>)</code>
-<code>tfrec.write(image_ds)</code>
+<pre class="src src-python"><span class="org-variable-name">tfrec</span> = tf.data.experimental.TFRecordWriter(<span class="org-string">'images.tfrec'</span>)
+tfrec.write(image_ds)
 </pre>
 </div>
 
@@ -386,7 +386,7 @@ Reading TFRecord (<code>tf.data.TFRecordDataset</code>):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-variable-name">image_ds</span> = tf.data.TFRecordDataset(<span class="org-string">'images.tfrec'</span>).<span class="org-builtin">map</span>(preprocess_image)</code>
+<pre class="src src-python"><span class="org-variable-name">image_ds</span> = tf.data.TFRecordDataset(<span class="org-string">'images.tfrec'</span>).<span class="org-builtin">map</span>(preprocess_image)
 </pre>
 </div>
 
@@ -397,65 +397,65 @@ only the <code>__init__</code> function is different.
 </div>
 </div>
 
-<div id="outline-container-org6fd92ec" class="outline-4">
-<h4 id="org6fd92ec"><span class="section-number-4">2.2.2</span> TFRecord Creation</h4>
+<div id="outline-container-orgcd83f35" class="outline-4">
+<h4 id="orgcd83f35"><span class="section-number-4">2.2.2</span> TFRecord Creation</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 TFRecord is closely related to ProtocolBuffer.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-keyword">def</span> <span class="org-function-name">_bytes_feature</span>(value):</code>
-<code><span class="org-highlight-indentation"> </span> <span class="org-doc">"""Returns a bytes_list from a string / byte."""</span></code>
-<code><span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))</code>
-<code></code>
-<code><span class="org-keyword">def</span> <span class="org-function-name">_float_feature</span>(value):</code>
-<code><span class="org-highlight-indentation"> </span> <span class="org-doc">"""Returns a float_list from a float / double."""</span></code>
-<code><span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.train.Feature(float_list=tf.train.FloatList(value=[value]))</code>
-<code></code>
-<code><span class="org-keyword">def</span> <span class="org-function-name">_int64_feature</span>(value):</code>
-<code><span class="org-highlight-indentation"> </span> <span class="org-doc">"""Returns an int64_list from a bool / enum / int / uint."""</span></code>
-<code><span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))</code>
-<code><span class="org-keyword">def</span> <span class="org-function-name">convert_to_proto</span>(data):</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">data format example: ('0x87', ['hello', 'world'], [1.2, 0.8])</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">feature</span> = {</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'id'</span>: _bytes_feature(data[0].encode(<span class="org-string">'utf-8'</span>)),</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'mutate'</span>: _bytes_feature(tf.serialize_tensor(data[1]).numpy()),</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'label'</span>: _bytes_feature(tf.serialize_tensor(data[2]).numpy())</code>
-<code><span class="org-highlight-indentation"> </span>   }</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">exp</span> = tf.train.Example(features=tf.train.Features(feature=feature))</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> exp</code>
-<code></code>
-<code><span class="org-keyword">def</span> <span class="org-function-name">decode</span>(raw):</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">feature_description</span> = {</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'id'</span>: tf.FixedLenFeature([], tf.string, default_value=<span class="org-string">''</span>),</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'mutate'</span>: tf.FixedLenFeature([], tf.string, default_value=<span class="org-string">''</span>),</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'label'</span>: tf.FixedLenFeature([], tf.string, default_value=<span class="org-string">''</span>)</code>
-<code><span class="org-highlight-indentation"> </span>   }</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">_my_parse_function</span>(pto):</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-comment-delimiter"># </span><span class="org-comment">Parse the input tf.Example proto using the dictionary above.</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.parse_single_example(pto, feature_description)</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">decoded</span> = raw.<span class="org-builtin">map</span>(_my_parse_function)</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">need to further parse tensor</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-fic">FIXME</span><span class="org-comment"> can we define this inside protobuffer?</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">_my_parse2</span>(pto):</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> {<span class="org-string">'id'</span>: pto[<span class="org-string">'id'</span>],</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'label'</span>: tf.parse_tensor(pto[<span class="org-string">'label'</span>], out_type=tf.float32),</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'mutate'</span>: tf.parse_tensor(pto[<span class="org-string">'mutate'</span>], out_type=tf.string)}</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> decoded.<span class="org-builtin">map</span>(_my_parse2)</code>
-<code><span class="org-highlight-indentation"> </span>   </code>
-<code><span class="org-keyword">def</span> <span class="org-function-name">__test</span>():</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">exp1</span> = convert_to_proto((<span class="org-string">'0x87'</span>, [<span class="org-string">'hello'</span>, <span class="org-string">'world'</span>], [1.2, 0.8]))</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">exp2</span> = convert_to_proto((<span class="org-string">'0x333'</span>, [<span class="org-string">'yes'</span>, <span class="org-string">'and'</span>, <span class="org-string">'no'</span>], [-1, 0.33]))</code>
-<code><span class="org-highlight-indentation"> </span>   exp1</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">with</span> tf.python_io.TFRecordWriter(<span class="org-string">'111.tfrec'</span>) <span class="org-keyword">as</span> writer:</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   writer.write(exp1.SerializeToString())</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   writer.write(exp2.SerializeToString())</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">raw</span> = tf.data.TFRecordDataset(<span class="org-string">'111.tfrec'</span>)</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">out</span> = decode(raw)</code>
-<code><span class="org-highlight-indentation"> </span>   out</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> a <span class="org-keyword">in</span> out:</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(a)</code>
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">_bytes_feature</span>(value):
+<span class="org-highlight-indentation"> </span> <span class="org-doc">"""Returns a bytes_list from a string / byte."""</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
+
+<span class="org-keyword">def</span> <span class="org-function-name">_float_feature</span>(value):
+<span class="org-highlight-indentation"> </span> <span class="org-doc">"""Returns a float_list from a float / double."""</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.train.Feature(float_list=tf.train.FloatList(value=[value]))
+
+<span class="org-keyword">def</span> <span class="org-function-name">_int64_feature</span>(value):
+<span class="org-highlight-indentation"> </span> <span class="org-doc">"""Returns an int64_list from a bool / enum / int / uint."""</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
+<span class="org-keyword">def</span> <span class="org-function-name">convert_to_proto</span>(data):
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">data format example: ('0x87', ['hello', 'world'], [1.2, 0.8])</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">feature</span> = {
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'id'</span>: _bytes_feature(data[0].encode(<span class="org-string">'utf-8'</span>)),
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'mutate'</span>: _bytes_feature(tf.serialize_tensor(data[1]).numpy()),
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'label'</span>: _bytes_feature(tf.serialize_tensor(data[2]).numpy())
+<span class="org-highlight-indentation"> </span>   }
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">exp</span> = tf.train.Example(features=tf.train.Features(feature=feature))
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> exp
+
+<span class="org-keyword">def</span> <span class="org-function-name">decode</span>(raw):
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">feature_description</span> = {
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'id'</span>: tf.FixedLenFeature([], tf.string, default_value=<span class="org-string">''</span>),
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'mutate'</span>: tf.FixedLenFeature([], tf.string, default_value=<span class="org-string">''</span>),
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'label'</span>: tf.FixedLenFeature([], tf.string, default_value=<span class="org-string">''</span>)
+<span class="org-highlight-indentation"> </span>   }
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">_my_parse_function</span>(pto):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-comment-delimiter"># </span><span class="org-comment">Parse the input tf.Example proto using the dictionary above.</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">return</span> tf.parse_single_example(pto, feature_description)
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">decoded</span> = raw.<span class="org-builtin">map</span>(_my_parse_function)
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">need to further parse tensor</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-fic">FIXME</span><span class="org-comment"> can we define this inside protobuffer?</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">_my_parse2</span>(pto):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> {<span class="org-string">'id'</span>: pto[<span class="org-string">'id'</span>],
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'label'</span>: tf.parse_tensor(pto[<span class="org-string">'label'</span>], out_type=tf.float32),
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-string">'mutate'</span>: tf.parse_tensor(pto[<span class="org-string">'mutate'</span>], out_type=tf.string)}
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> decoded.<span class="org-builtin">map</span>(_my_parse2)
+<span class="org-highlight-indentation"> </span>   
+<span class="org-keyword">def</span> <span class="org-function-name">__test</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">exp1</span> = convert_to_proto((<span class="org-string">'0x87'</span>, [<span class="org-string">'hello'</span>, <span class="org-string">'world'</span>], [1.2, 0.8]))
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">exp2</span> = convert_to_proto((<span class="org-string">'0x333'</span>, [<span class="org-string">'yes'</span>, <span class="org-string">'and'</span>, <span class="org-string">'no'</span>], [-1, 0.33]))
+<span class="org-highlight-indentation"> </span>   exp1
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">with</span> tf.python_io.TFRecordWriter(<span class="org-string">'111.tfrec'</span>) <span class="org-keyword">as</span> writer:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   writer.write(exp1.SerializeToString())
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   writer.write(exp2.SerializeToString())
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">raw</span> = tf.data.TFRecordDataset(<span class="org-string">'111.tfrec'</span>)
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">out</span> = decode(raw)
+<span class="org-highlight-indentation"> </span>   out
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> a <span class="org-keyword">in</span> out:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(a)
 </pre>
 </div>
 </div>
@@ -465,17 +465,17 @@ TFRecord is closely related to ProtocolBuffer.
 
 
 
-<div id="outline-container-org98c110d" class="outline-2">
-<h2 id="org98c110d"><span class="section-number-2">3</span> Visualization</h2>
+<div id="outline-container-orga60dfd9" class="outline-2">
+<h2 id="orga60dfd9"><span class="section-number-2">3</span> Visualization</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Display an image file on disk:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-keyword">import</span> IPython.display <span class="org-keyword">as</span> display</code>
-<code><span class="org-variable-name">image</span> = display.Image(image_path)</code>
-<code>display.display(image)</code>
+<pre class="src src-python"><span class="org-keyword">import</span> IPython.display <span class="org-keyword">as</span> display
+<span class="org-variable-name">image</span> = display.Image(image_path)
+display.display(image)
 </pre>
 </div>
 
@@ -483,17 +483,17 @@ Display an image file on disk:
 Read a image file on disk into tensor:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-keyword">def</span> <span class="org-function-name">load_and_preprocess_image</span>(img_path)</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_raw</span> = tf.read_file(img_path)</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_tensor</span> = tf.image.decode_image(img_raw)</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_tensor.shape)         <span class="org-comment-delimiter"># </span><span class="org-comment">(212, 320, 3)</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_tensor.dtype)         <span class="org-comment-delimiter"># </span><span class="org-comment">&lt;dtype: 'uint8'&gt;</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_final</span> = tf.image.resize_images(img_tensor, [192, 192])</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_final</span> = img_final/255.0</code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_final.shape)          <span class="org-comment-delimiter"># </span><span class="org-comment">(192, 192, 3)</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_final.numpy().<span class="org-builtin">min</span>())  <span class="org-comment-delimiter"># </span><span class="org-comment">0.0</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_final.numpy().<span class="org-builtin">max</span>())  <span class="org-comment-delimiter"># </span><span class="org-comment">1.0</span></code>
-<code><span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> img_final</code>
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">load_and_preprocess_image</span>(img_path)
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_raw</span> = tf.read_file(img_path)
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_tensor</span> = tf.image.decode_image(img_raw)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_tensor.shape)         <span class="org-comment-delimiter"># </span><span class="org-comment">(212, 320, 3)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_tensor.dtype)         <span class="org-comment-delimiter"># </span><span class="org-comment">&lt;dtype: 'uint8'&gt;</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_final</span> = tf.image.resize_images(img_tensor, [192, 192])
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">img_final</span> = img_final/255.0
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_final.shape)          <span class="org-comment-delimiter"># </span><span class="org-comment">(192, 192, 3)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_final.numpy().<span class="org-builtin">min</span>())  <span class="org-comment-delimiter"># </span><span class="org-comment">0.0</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(img_final.numpy().<span class="org-builtin">max</span>())  <span class="org-comment-delimiter"># </span><span class="org-comment">1.0</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> img_final
 </pre>
 </div>
 
@@ -502,12 +502,12 @@ Display image data by matplotlib:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt</code>
-<code>plt.imshow(image_data)</code>
-<code>plt.grid(<span class="org-constant">False</span>)</code>
-<code>plt.xlabel(<span class="org-string">'some text'</span>)</code>
-<code>plt.title(<span class="org-string">'title'</span>)</code>
-<code><span class="org-keyword">print</span>()</code>
+<pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+plt.imshow(image_data)
+plt.grid(<span class="org-constant">False</span>)
+plt.xlabel(<span class="org-string">'some text'</span>)
+plt.title(<span class="org-string">'title'</span>)
+<span class="org-keyword">print</span>()
 </pre>
 </div>
 
@@ -515,19 +515,22 @@ Display image data by matplotlib:
 Matplotlib:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><code><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt</code>
-<code>plt.figure(figsize=(8,8))</code>
-<code><span class="org-keyword">for</span> n,image <span class="org-keyword">in</span> <span class="org-builtin">enumerate</span>(image_ds.take(4)):</code>
-<code><span class="org-highlight-indentation"> </span> plt.subplot(2,2,n+1)</code>
-<code><span class="org-highlight-indentation"> </span> plt.imshow(image)</code>
-<code><span class="org-highlight-indentation"> </span> plt.grid(<span class="org-constant">False</span>)</code>
-<code><span class="org-highlight-indentation"> </span> plt.xticks([])</code>
-<code><span class="org-highlight-indentation"> </span> plt.yticks([])</code>
-<code><span class="org-highlight-indentation"> </span> plt.xlabel(caption_image(all_image_paths[n]))</code>
+<pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+plt.figure(figsize=(8,8))
+<span class="org-keyword">for</span> n,image <span class="org-keyword">in</span> <span class="org-builtin">enumerate</span>(image_ds.take(4)):
+<span class="org-highlight-indentation"> </span> plt.subplot(2,2,n+1)
+<span class="org-highlight-indentation"> </span> plt.imshow(image)
+<span class="org-highlight-indentation"> </span> plt.grid(<span class="org-constant">False</span>)
+<span class="org-highlight-indentation"> </span> plt.xticks([])
+<span class="org-highlight-indentation"> </span> plt.yticks([])
+<span class="org-highlight-indentation"> </span> plt.xlabel(caption_image(all_image_paths[n]))
 </pre>
 </div>
 </div>
 </div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
 </div>
 </body>
 </html>
