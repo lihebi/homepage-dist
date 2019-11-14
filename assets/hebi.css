@@ -45,6 +45,7 @@ html {
 }
 body {
     background: url(./paper.png);
+    font-family: monospace;
 }
 
 #content {
