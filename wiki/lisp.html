@@ -191,7 +191,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
+<link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -322,14 +322,14 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgb58141c">5.5. Rackunit</a></li>
-<li><a href="#org5380a3b">5.6. Numbers</a></li>
+<li><a href="#orgc7c1d34">5.6. Numbers</a></li>
 <li><a href="#orga867887">5.7. Procedure</a></li>
-<li><a href="#org3b51674">5.8. Control Structure</a></li>
-<li><a href="#org2fc46b3">5.9. String</a></li>
+<li><a href="#orgb643a58">5.8. Control Structure</a></li>
+<li><a href="#org240e36c">5.9. String</a></li>
 <li><a href="#orgba510c3">5.10. Regular Expression</a></li>
 <li><a href="#orgbbe77c8">5.11. Pair, List, Vector</a></li>
 <li><a href="#orgb1bc42b">5.12. Hash Tables</a></li>
-<li><a href="#org4d3a7ef">5.13. Sequence</a></li>
+<li><a href="#org0d939d0">5.13. Sequence</a></li>
 <li><a href="#org832038f">5.14. Hash set (use racket/set)</a></li>
 <li><a href="#org940f348">5.15. structure</a>
 <ul>
@@ -340,7 +340,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org860da9a">5.16. Multiple Values</a></li>
-<li><a href="#orgb184d52">5.17. Exception</a></li>
+<li><a href="#org8b2e6b8">5.17. Exception</a></li>
 <li><a href="#org5bde9d0">5.18. Concurrency</a></li>
 <li><a href="#org4f2c54f">5.19. IO</a>
 <ul>
@@ -360,7 +360,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org79661e8">5.20.1. Path</a></li>
 <li><a href="#org818437f">5.20.2. File System</a></li>
-<li><a href="#orgb9467fb">5.20.3. Networking</a></li>
+<li><a href="#org3a688f7">5.20.3. Networking</a></li>
 <li><a href="#org217e567">5.20.4. Processes</a></li>
 <li><a href="#org038cb59">5.20.5. CMD parsing (racket/cmdline)</a></li>
 </ul>
@@ -396,7 +396,7 @@ for the JavaScript code in this tag.
 <li><a href="#org4bde621">5.23.4.7. properties</a></li>
 </ul>
 </li>
-<li><a href="#org2ac1a18">5.23.5. Networking</a>
+<li><a href="#orgd6ea4b5">5.23.5. Networking</a>
 <ul>
 <li><a href="#orge83b040">5.23.5.1. HTML parsing</a></li>
 <li><a href="#orgb2a8718">5.23.5.2. URL &amp; HTTP</a></li>
@@ -418,8 +418,8 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org434501d">6.2. List</a></li>
-<li><a href="#org72c2e84">6.3. Sequence</a></li>
-<li><a href="#org2899176">6.4. String</a></li>
+<li><a href="#org8bd4f17">6.3. Sequence</a></li>
+<li><a href="#orgfde4120">6.4. String</a></li>
 <li><a href="#org0c97635">6.5. Array</a></li>
 <li><a href="#orgd0bc373">6.6. Structure</a></li>
 <li><a href="#org40f8a7a">6.7. Hash Table</a></li>
@@ -429,7 +429,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org0673b73">6.9. Type</a></li>
-<li><a href="#org2883401">6.10. Numbers</a></li>
+<li><a href="#org89376f9">6.10. Numbers</a></li>
 <li><a href="#orgb9baa74">6.11. Function</a>
 <ul>
 <li><a href="#org7b95630">6.11.1. Defun and Lambda Expression</a></li>
@@ -437,8 +437,8 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgebb0be3">6.12. Macro</a></li>
 <li><a href="#org63dbee8">6.13. Evaluation</a></li>
-<li><a href="#orgd51fc92">6.14. Exception</a></li>
-<li><a href="#org7e9c748">6.15. Control Structure</a>
+<li><a href="#org0067260">6.14. Exception</a></li>
+<li><a href="#orgc729a7e">6.15. Control Structure</a>
 <ul>
 <li><a href="#org6eb2765">6.15.1. Sequential</a></li>
 <li><a href="#org9a2b022">6.15.2. Conditional</a></li>
@@ -1853,8 +1853,8 @@ to select tests. Create a suite using <code>(test-suite name-expr test
 </div>
 </div>
 
-<div id="outline-container-org5380a3b" class="outline-3">
-<h3 id="org5380a3b"><span class="section-number-3">5.6</span> Numbers</h3>
+<div id="outline-container-orgc7c1d34" class="outline-3">
+<h3 id="orgc7c1d34"><span class="section-number-3">5.6</span> Numbers</h3>
 <div class="outline-text-3" id="text-5-6">
 <ul class="org-ul">
 <li><code>/</code>: provide the fraction if given two numbers, not to round it.</li>
@@ -1951,8 +1951,8 @@ restricts this to exactly one value.
 </div>
 
 
-<div id="outline-container-org3b51674" class="outline-3">
-<h3 id="org3b51674"><span class="section-number-3">5.8</span> Control Structure</h3>
+<div id="outline-container-orgb643a58" class="outline-3">
+<h3 id="orgb643a58"><span class="section-number-3">5.8</span> Control Structure</h3>
 <div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li><code>if</code></li>
@@ -2004,8 +2004,8 @@ different return values.</li>
 </div>
 </div>
 
-<div id="outline-container-org2fc46b3" class="outline-3">
-<h3 id="org2fc46b3"><span class="section-number-3">5.9</span> String</h3>
+<div id="outline-container-org240e36c" class="outline-3">
+<h3 id="org240e36c"><span class="section-number-3">5.9</span> String</h3>
 <div class="outline-text-3" id="text-5-9">
 <p>
 The reading syntax of characters starts with <code>#\</code>, with following
@@ -2406,8 +2406,8 @@ From <code>racket/vector</code>:
 </div>
 </div>
 
-<div id="outline-container-org4d3a7ef" class="outline-3">
-<h3 id="org4d3a7ef"><span class="section-number-3">5.13</span> Sequence</h3>
+<div id="outline-container-org0d939d0" class="outline-3">
+<h3 id="org0d939d0"><span class="section-number-3">5.13</span> Sequence</h3>
 <div class="outline-text-3" id="text-5-13">
 <p>
 Sequence is designed to be used with <code>for</code>. Not only list and vectors
@@ -2662,8 +2662,8 @@ can destruct values can also be used.
 </div>
 </div>
 
-<div id="outline-container-orgb184d52" class="outline-3">
-<h3 id="orgb184d52"><span class="section-number-3">5.17</span> Exception</h3>
+<div id="outline-container-org8b2e6b8" class="outline-3">
+<h3 id="org8b2e6b8"><span class="section-number-3">5.17</span> Exception</h3>
 <div class="outline-text-3" id="text-5-17">
 <p>
 For now, I only care about how to handle exceptions. To do that:
@@ -3092,8 +3092,8 @@ create it, and return path.
 </div>
 </div>
 
-<div id="outline-container-orgb9467fb" class="outline-4">
-<h4 id="orgb9467fb"><span class="section-number-4">5.20.3</span> Networking</h4>
+<div id="outline-container-org3a688f7" class="outline-4">
+<h4 id="org3a688f7"><span class="section-number-4">5.20.3</span> Networking</h4>
 <div class="outline-text-4" id="text-5-20-3">
 <p>
 I'm not going to dig deep on this because I don't use it. Just listing
@@ -3890,8 +3890,8 @@ Finally, you can save image to file by
 </div>
 
 
-<div id="outline-container-org2ac1a18" class="outline-4">
-<h4 id="org2ac1a18"><span class="section-number-4">5.23.5</span> Networking</h4>
+<div id="outline-container-orgd6ea4b5" class="outline-4">
+<h4 id="orgd6ea4b5"><span class="section-number-4">5.23.5</span> Networking</h4>
 <div class="outline-text-4" id="text-5-23-5">
 </div>
 <div id="outline-container-orge83b040" class="outline-5">
@@ -4249,8 +4249,8 @@ variables. It cna be used to bind into tree structures.
 
 
 
-<div id="outline-container-org72c2e84" class="outline-3">
-<h3 id="org72c2e84"><span class="section-number-3">6.3</span> Sequence</h3>
+<div id="outline-container-org8bd4f17" class="outline-3">
+<h3 id="org8bd4f17"><span class="section-number-3">6.3</span> Sequence</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Sequence contains both lists and vectors. To tell what kind of
@@ -4298,8 +4298,8 @@ the previous result in the next computation.
 </div>
 </div>
 
-<div id="outline-container-org2899176" class="outline-3">
-<h3 id="org2899176"><span class="section-number-3">6.4</span> String</h3>
+<div id="outline-container-orgfde4120" class="outline-3">
+<h3 id="orgfde4120"><span class="section-number-3">6.4</span> String</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 A string is a specialized vector (one-dimensional array) whose
@@ -4612,8 +4612,8 @@ remember, documenting here.
 </div>
 </div>
 
-<div id="outline-container-org2883401" class="outline-3">
-<h3 id="org2883401"><span class="section-number-3">6.10</span> Numbers</h3>
+<div id="outline-container-org89376f9" class="outline-3">
+<h3 id="org89376f9"><span class="section-number-3">6.10</span> Numbers</h3>
 <div class="outline-text-3" id="text-6-10">
 <p>
 Numbers can use read form, e.g. <code>#b010101</code>, <code>#xaf08</code>. Predicates such
@@ -4880,8 +4880,8 @@ that is used in defmacro.
 </div>
 </div>
 
-<div id="outline-container-orgd51fc92" class="outline-3">
-<h3 id="orgd51fc92"><span class="section-number-3">6.14</span> Exception</h3>
+<div id="outline-container-org0067260" class="outline-3">
+<h3 id="org0067260"><span class="section-number-3">6.14</span> Exception</h3>
 <div class="outline-text-3" id="text-6-14">
 <p>
 A <code>catch</code> expression takes a tag, which can be any kind of object,
@@ -4899,8 +4899,8 @@ the lisp error handler.
 
 
 
-<div id="outline-container-org7e9c748" class="outline-3">
-<h3 id="org7e9c748"><span class="section-number-3">6.15</span> Control Structure</h3>
+<div id="outline-container-orgc729a7e" class="outline-3">
+<h3 id="orgc729a7e"><span class="section-number-3">6.15</span> Control Structure</h3>
 <div class="outline-text-3" id="text-6-15">
 </div>
 <div id="outline-container-org6eb2765" class="outline-4">
@@ -5852,22 +5852,22 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
 <h5 id="org7e3bc4b"><span class="section-number-5">6.21.2.1</span> CD database</h5>
 <div class="outline-text-5" id="text-6-21-2-1">
 <div class="org-src-container">
-<pre class="src src-lisp">   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: hello world, testing environment)</span></span>
+<pre class="src src-lisp">   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: hello world, testing environment)</span></span>
    (<span class="org-keyword">defun</span> <span class="org-function-name">hello-world</span> ()
      (format t <span class="org-string">"Hello, world!"</span>))
 
    <span class="org-comment-delimiter">;; </span><span class="org-comment">this function makes the cd</span>
    (<span class="org-keyword">defun</span> <span class="org-function-name">make-cd</span> (title artist rating ripped)
-     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: the list created is a property list. The :key is the key, and followed by the value)</span></span>
+     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: the list created is a property list. The :key is the key, and followed by the value)</span></span>
      (list <span class="org-builtin">:title</span> title <span class="org-builtin">:artist</span> artist <span class="org-builtin">:rating</span> rating <span class="org-builtin">:ripped</span> ripped))
 
    <span class="org-comment-delimiter">;; </span><span class="org-comment">make a cd record</span>
    (make-cd <span class="org-string">"Roses"</span> <span class="org-string">"Kathy Mattea"</span> 7 t)
 
-   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: the *xx* is the convention for a global variable)</span></span>
+   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: the *xx* is the convention for a global variable)</span></span>
    (<span class="org-keyword">defvar</span> <span class="org-variable-name">*db*</span> nil)
 
-   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: The push will push the cd onto the global *db*)</span></span>
+   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: The push will push the cd onto the global *db*)</span></span>
    (<span class="org-keyword">defun</span> <span class="org-function-name">add-record</span> (cd) (push cd *db*))
 
 
@@ -5879,9 +5879,9 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
 
 
    (<span class="org-keyword">defun</span> <span class="org-function-name">dump-db</span> ()
-     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: dolist)</span></span>
+     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: dolist)</span></span>
      (<span class="org-keyword">dolist</span> (cd *db*)
-       <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: format)</span></span>
+       <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: format)</span></span>
        <span class="org-comment-delimiter">;; </span><span class="org-comment">the first is the output stream, with t as standard output</span>
        <span class="org-comment-delimiter">;; </span><span class="org-comment">The ~a directive is the aesthetic directive; it means to consume one argument and output it in a human-readable form</span>
        <span class="org-comment-delimiter">;; </span><span class="org-comment">It will work for both keyword and value</span>
@@ -5890,7 +5890,7 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
        <span class="org-comment-delimiter">;; </span><span class="org-comment">~% emit a new line</span>
        (format t <span class="org-string">"~{~a:~10t~a~%~}~%"</span> cd)))
 
-   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: note: the above function can use format to iterate the whole *db* list)</span></span>
+   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: note: the above function can use format to iterate the whole *db* list)</span></span>
    (<span class="org-keyword">defun</span> <span class="org-function-name">dump-db-2</span> ()
      (format t <span class="org-string">"~{~{~a:~10t~a~%~}~%~}"</span> *db*))
 
@@ -5898,7 +5898,7 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
    (<span class="org-keyword">defun</span> <span class="org-function-name">prompt-read</span> (prompt)
      <span class="org-comment-delimiter">;; </span><span class="org-comment">the *query-io* is a global variable that contains the input stream connected to the terminal</span>
      (format *query-io* <span class="org-string">"~a: "</span> prompt)
-     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: flush)</span></span>
+     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: flush)</span></span>
      (force-output *query-io*)
      <span class="org-comment-delimiter">;; </span><span class="org-comment">read-line will read the string without the trailing newline</span>
      (read-line *query-io*))
@@ -5908,11 +5908,11 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
       <span class="org-comment-delimiter">;; </span><span class="org-comment">read a string</span>
       (prompt-read <span class="org-string">"Title"</span>)
       (prompt-read <span class="org-string">"Artist"</span>)
-      <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: parse the string to int)</span></span>
+      <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: parse the string to int)</span></span>
       <span class="org-comment-delimiter">;; </span><span class="org-comment">if nil, the parse-integer will emit error. :junk-allowed t will make it silent</span>
       <span class="org-comment-delimiter">;; </span><span class="org-comment">the surrounding "or" will make a default value of 0 instead of nil</span>
       (or (parse-integer (prompt-read <span class="org-string">"Rating"</span>) <span class="org-builtin">:junk-allowed</span> t) 0)
-      <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: y-or-n-p)</span></span><span class="org-comment"> is a builtin function. It is very robust, in the sense that it will reopen the prompt if answer is not yY or nN.</span>
+      <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: y-or-n-p)</span></span><span class="org-comment"> is a builtin function. It is very robust, in the sense that it will reopen the prompt if answer is not yY or nN.</span>
       (y-or-n-p <span class="org-string">"Ripped [y/n]: "</span>)))
 
    (<span class="org-keyword">defun</span> <span class="org-function-name">add-cds</span> ()
@@ -5921,7 +5921,7 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
         (<span class="org-keyword">if</span> (not (y-or-n-p <span class="org-string">"Another? [y/n]: "</span>)) (<span class="org-keyword">return</span>))))
 
    (<span class="org-keyword">defun</span> <span class="org-function-name">save-db</span> (filename)
-     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: open the file and store the stream)</span></span><span class="org-comment"> as variable "out"</span>
+     <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: open the file and store the stream)</span></span><span class="org-comment"> as variable "out"</span>
      <span class="org-comment-delimiter">;; </span><span class="org-comment">filename is the filename string</span>
      <span class="org-comment-delimiter">;; </span><span class="org-comment">direction defaults to :input, so if want output, need to specify</span>
      <span class="org-comment-delimiter">;; </span><span class="org-comment">if-exists, overwrite it</span>
@@ -5931,7 +5931,7 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
        <span class="org-comment-delimiter">;; </span><span class="org-comment">this is used to ensures that certain variables that affect the behavior of print are set to their standard values.</span>
        <span class="org-comment-delimiter">;; </span><span class="org-comment">be sure to use the same macro when reading the data back</span>
        (<span class="org-keyword">with-standard-io-syntax</span>
-         <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: directly print the *db* to the stream)</span></span>
+         <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: directly print the *db* to the stream)</span></span>
          <span class="org-comment-delimiter">;; </span><span class="org-comment">lisp will print the object out in the form that it can be read back</span>
          (print *db* out))))
 
@@ -5942,15 +5942,15 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
    (<span class="org-keyword">defun</span> <span class="org-function-name">load-db</span> (filename)
      (<span class="org-keyword">with-open-file</span> (in filename)
        (<span class="org-keyword">with-standard-io-syntax</span>
-         <span class="org-comment-delimiter">;; </span><span class="org-comment">use read to </span><span class="org-comment"><span class="org-my">(HEBI: read everything from the stream in)</span></span>
-         <span class="org-comment-delimiter">;; </span><span class="org-comment">use </span><span class="org-comment"><span class="org-my">(HEBI: setf)</span></span><span class="org-comment"> to set result of the read to the *db* variable</span>
+         <span class="org-comment-delimiter">;; </span><span class="org-comment">use read to </span><span class="org-comment"><span class="org-hebi-red">(HEBI: read everything from the stream in)</span></span>
+         <span class="org-comment-delimiter">;; </span><span class="org-comment">use </span><span class="org-comment"><span class="org-hebi-red">(HEBI: setf)</span></span><span class="org-comment"> to set result of the read to the *db* variable</span>
          (setf *db* (read in)))))
 
    <span class="org-comment-delimiter">;; </span><span class="org-comment">query</span>
    (<span class="org-keyword">defun</span> <span class="org-function-name">select-by-artist</span> (artist)
      <span class="org-comment-delimiter">;; </span><span class="org-comment">make a copy of *db* by removing if not the predicate, and return that copy</span>
      (remove-if-not
-      <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: getf can get the value of a plist by the key)</span></span>
+      <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: getf can get the value of a plist by the key)</span></span>
       <span class="org-comment-delimiter">;; </span><span class="org-comment">#' is the quote for function</span>
       #'(<span class="org-keyword">lambda</span> (cd) (equal (getf cd <span class="org-builtin">:artist</span>) artist))
       *db*))
@@ -5981,7 +5981,7 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
 
    (<span class="org-keyword">defun</span> <span class="org-function-name">update</span> (selector-fn <span class="org-type">&amp;key</span> title artist rating (ripped nil ripped-p))
      (setf *db*
-           <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: mapcar)</span></span><span class="org-comment"> apply the function to each element of the list, and return the list of results</span>
+           <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: mapcar)</span></span><span class="org-comment"> apply the function to each element of the list, and return the list of results</span>
            (mapcar
             #'(<span class="org-keyword">lambda</span> (row)
                 (<span class="org-keyword">when</span> (funcall selector-fn row)
@@ -6005,7 +6005,7 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
 
    <span class="org-comment-delimiter">;; </span><span class="org-comment">The solution is the MACRO, the code generator of lisp</span>
 
-   <span class="org-comment-delimiter">;;; </span><span class="org-comment"><span class="org-my">(HEBI: Macros, all kinds of quoting)</span></span>
+   <span class="org-comment-delimiter">;;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: Macros, all kinds of quoting)</span></span>
    (<span class="org-keyword">defun</span> <span class="org-function-name">make-comparison-expr</span> (field value)
      <span class="org-comment-delimiter">;; </span><span class="org-comment">' will leave the expression unevaluated.</span>
      <span class="org-comment-delimiter">;; </span><span class="org-comment">` will do the same thing, and it can do one more: can evaluate part of it</span>
@@ -6045,13 +6045,13 @@ In a buffer of mode <code>lisp</code>, <code>C-c C-c</code> will evaluate the <c
    <span class="org-comment-delimiter">;; </span><span class="org-comment">- easy to track down test failures</span>
 
 
-   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: report test name)</span></span>
+   <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: report test name)</span></span>
    (<span class="org-keyword">defmacro</span> <span class="org-function-name">deftest</span> (name parameters <span class="org-type">&amp;body</span> body)
      <span class="org-doc">"Define a test function. Within a test function we can call</span>
 <span class="org-doc">      other test functions or use 'check' to run individual test</span>
 <span class="org-doc">      cases."</span>
      `(<span class="org-keyword">defun</span> ,name ,parameters
-        <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-my">(HEBI: hierarchy test name report)</span></span>
+        <span class="org-comment-delimiter">;; </span><span class="org-comment"><span class="org-hebi-red">(HEBI: hierarchy test name report)</span></span>
        (<span class="org-keyword">let</span> ((*test-name* (append *test-name* (list ',name))))
          ,@body)))
 
@@ -6197,8 +6197,5 @@ of representing the code</li>
 
 </div>
 </div></div>
-<div id="postamble" class="status">
-<p class="validation"></p>
-</div>
 </body>
 </html>

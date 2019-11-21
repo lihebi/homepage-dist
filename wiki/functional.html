@@ -191,7 +191,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
+<link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -277,21 +277,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org076fb0e">2.1. Tmp</a>
 <ul>
-<li><a href="#org2238a73">2.1.1. operators</a>
-<ul>
-<li><a href="#org2778cdc">2.1.1.1. list difference <code>(\\)</code></a></li>
-<li><a href="#orgaad43e8">2.1.1.2. strictness declaration</a></li>
-<li><a href="#org9a32f01">2.1.1.3. infix operator <code>(+)</code> and <code>``</code></a></li>
-<li><a href="#org281f437">2.1.1.4. as-pattern</a></li>
-<li><a href="#org06a1af6">2.1.1.5. tilde</a></li>
-<li><a href="#org1a206cd">2.1.1.6. function composition</a></li>
-<li><a href="#org2888645">2.1.1.7. dollar operator</a></li>
-<li><a href="#orgbe40178">2.1.1.8. Lexical syntax:</a></li>
-<li><a href="#orgee5eb3e">2.1.1.9. Defined in Functor:</a></li>
-<li><a href="#orgded74f9">2.1.1.10. Defined in Applicative:</a></li>
-<li><a href="#org4ce11ee">2.1.1.11. Defined in Alternative</a></li>
-</ul>
-</li>
+<li><a href="#org2238a73">2.1.1. operators</a></li>
 </ul>
 </li>
 <li><a href="#org6d21489">2.2. references</a></li>
@@ -363,18 +349,17 @@ to search for operator symbols!
 </p>
 </div>
 
-<div id="outline-container-org2778cdc" class="outline-5">
-<h5 id="org2778cdc"><span class="section-number-5">2.1.1.1</span> list difference <code>(\\)</code></h5>
+<ol class="org-ol">
+<li><a id="org2778cdc"></a>list difference <code>(\\)</code><br />
 <div class="outline-text-5" id="text-2-1-1-1">
 <p>
 The <code>(\\)</code> function is list difference (non-associative).  The result
 of <code>xs \\ ys</code> is a smaller <code>xs</code>, with <code>ys</code> removed.
 </p>
 </div>
-</div>
+</li>
 
-<div id="outline-container-orgaad43e8" class="outline-5">
-<h5 id="orgaad43e8"><span class="section-number-5">2.1.1.2</span> strictness declaration</h5>
+<li><a id="orgaad43e8"></a>strictness declaration<br />
 <div class="outline-text-5" id="text-2-1-1-2">
 <p>
 From <a href="https://stackoverflow.com/questions/993112/what-does-the-exclamation-mark-mean-in-a-haskell-declaration">a stackoverflow question</a>
@@ -385,10 +370,9 @@ From <a href="https://stackoverflow.com/questions/993112/what-does-the-exclamati
 </pre>
 </div>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org9a32f01" class="outline-5">
-<h5 id="org9a32f01"><span class="section-number-5">2.1.1.3</span> infix operator <code>(+)</code> and <code>``</code></h5>
+<li><a id="org9a32f01"></a>infix operator <code>(+)</code> and <code>``</code><br />
 <div class="outline-text-5" id="text-2-1-1-3">
 <p>
 Haskell functions ar typically used using prefix notation. However,
@@ -403,11 +387,10 @@ you to use them as infix functions. It is typically used for
 parentheses.
 </p>
 </div>
-</div>
+</li>
 
 
-<div id="outline-container-org281f437" class="outline-5">
-<h5 id="org281f437"><span class="section-number-5">2.1.1.4</span> as-pattern</h5>
+<li><a id="org281f437"></a>as-pattern<br />
 <div class="outline-text-5" id="text-2-1-1-4">
 <div class="org-src-container">
 <pre class="src src-haskell"><span class="org-haskell-definition">f</span> (x<span class="org-haskell-constructor">:</span>xs) <span class="org-haskell-operator">=</span> x<span class="org-haskell-constructor">:</span>x<span class="org-haskell-constructor">:</span>xs
@@ -415,10 +398,9 @@ parentheses.
 </pre>
 </div>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org06a1af6" class="outline-5">
-<h5 id="org06a1af6"><span class="section-number-5">2.1.1.5</span> tilde</h5>
+<li><a id="org06a1af6"></a>tilde<br />
 <div class="outline-text-5" id="text-2-1-1-5">
 <p>
 When using patten matching, a tilde makes two things:
@@ -434,10 +416,9 @@ match. If not matching, it will result in runtime error.</li>
 </pre>
 </div>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org1a206cd" class="outline-5">
-<h5 id="org1a206cd"><span class="section-number-5">2.1.1.6</span> function composition</h5>
+<li><a id="org1a206cd"></a>function composition<br />
 <div class="outline-text-5" id="text-2-1-1-6">
 <div class="org-src-container">
 <pre class="src src-haskell">(f <span class="org-haskell-operator">.</span> g) x <span class="org-haskell-operator">=</span> f (g x)
@@ -448,10 +429,9 @@ match. If not matching, it will result in runtime error.</li>
 It has precedence 9.
 </p>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org2888645" class="outline-5">
-<h5 id="org2888645"><span class="section-number-5">2.1.1.7</span> dollar operator</h5>
+<li><a id="org2888645"></a>dollar operator<br />
 <div class="outline-text-5" id="text-2-1-1-7">
 <div class="org-src-container">
 <pre class="src src-haskell">(<span class="org-haskell-definition">$</span>) <span class="org-haskell-operator">::</span> (a <span class="org-haskell-operator">-&gt;</span> b) <span class="org-haskell-operator">-&gt;</span> a <span class="org-haskell-operator">-&gt;</span> b
@@ -468,28 +448,25 @@ operator associativity. Also commonly used to separate large arguments.
 </pre>
 </div>
 </div>
-</div>
+</li>
 
-<div id="outline-container-orgbe40178" class="outline-5">
-<h5 id="orgbe40178"><span class="section-number-5">2.1.1.8</span> Lexical syntax:</h5>
+<li><a id="orgbe40178"></a>Lexical syntax:<br />
 <div class="outline-text-5" id="text-2-1-1-8">
 <dl class="org-dl">
 <dt><code>=&gt;</code></dt><dd>context or class inheritance</dd>
 </dl>
 </div>
-</div>
+</li>
 
-<div id="outline-container-orgee5eb3e" class="outline-5">
-<h5 id="orgee5eb3e"><span class="section-number-5">2.1.1.9</span> Defined in Functor:</h5>
+<li><a id="orgee5eb3e"></a>Defined in Functor:<br />
 <div class="outline-text-5" id="text-2-1-1-9">
 <ul class="org-ul">
 <li>&lt;$&gt;: fmap</li>
 </ul>
 </div>
-</div>
+</li>
 
-<div id="outline-container-orgded74f9" class="outline-5">
-<h5 id="orgded74f9"><span class="section-number-5">2.1.1.10</span> Defined in Applicative:</h5>
+<li><a id="orgded74f9"></a>Defined in Applicative:<br />
 <div class="outline-text-5" id="text-2-1-1-10">
 <ul class="org-ul">
 <li>&lt;*&gt;: used with fmap</li>
@@ -514,16 +491,16 @@ Applicative type class has the following methods:
 </div>
 </li>
 </ol>
-</div>
+</li>
 
-<div id="outline-container-org4ce11ee" class="outline-5">
-<h5 id="org4ce11ee"><span class="section-number-5">2.1.1.11</span> Defined in Alternative</h5>
+<li><a id="org4ce11ee"></a>Defined in Alternative<br />
 <div class="outline-text-5" id="text-2-1-1-11">
 <dl class="org-dl">
 <dt><code>&lt;|&gt;</code></dt><dd><code>Nothing &lt;|&gt; Just a = Just a</code></dd>
 </dl>
 </div>
-</div>
+</li>
+</ol>
 </div>
 </div>
 
@@ -1232,9 +1209,6 @@ filter p (x:xs) = x : filter p xs, if p x
 </p>
 </div>
 </div>
-</div>
-<div id="postamble" class="status">
-<p class="validation"></p>
 </div>
 </body>
 </html>
