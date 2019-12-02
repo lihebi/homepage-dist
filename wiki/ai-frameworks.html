@@ -250,25 +250,25 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd0c6870">1. TMP</a></li>
-<li><a href="#orgd13ea29">2. Dataset Loading</a>
+<li><a href="#orgad894ab">1. TMP</a></li>
+<li><a href="#org12f366e">2. Dataset Loading</a>
 <ul>
-<li><a href="#orgd3f6fb8">2.1. Keras</a></li>
-<li><a href="#orgc461ccc">2.2. tf.data.Dataset</a>
+<li><a href="#org6b140d5">2.1. Keras</a></li>
+<li><a href="#org23b4661">2.2. tf.data.Dataset</a>
 <ul>
-<li><a href="#org118125a">2.2.1. TFRecord</a></li>
-<li><a href="#orgcd83f35">2.2.2. TFRecord Creation</a></li>
+<li><a href="#org53520d4">2.2.1. TFRecord</a></li>
+<li><a href="#orgb3ef065">2.2.2. TFRecord Creation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga60dfd9">3. Visualization</a></li>
+<li><a href="#org18b5c7c">3. Visualization</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd0c6870" class="outline-2">
-<h2 id="orgd0c6870"><span class="section-number-2">1</span> TMP</h2>
+<div id="outline-container-orgad894ab" class="outline-2">
+<h2 id="orgad894ab"><span class="section-number-2">1</span> TMP</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 tensorflow guide: <a href="https://www.tensorflow.org/guide/datasets">https://www.tensorflow.org/guide/datasets</a>
@@ -279,12 +279,12 @@ tensorflow guide: <a href="https://www.tensorflow.org/guide/datasets">https://ww
 </div>
 </div>
 
-<div id="outline-container-orgd13ea29" class="outline-2">
-<h2 id="orgd13ea29"><span class="section-number-2">2</span> Dataset Loading</h2>
+<div id="outline-container-org12f366e" class="outline-2">
+<h2 id="org12f366e"><span class="section-number-2">2</span> Dataset Loading</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgd3f6fb8" class="outline-3">
-<h3 id="orgd3f6fb8"><span class="section-number-3">2.1</span> Keras</h3>
+<div id="outline-container-org6b140d5" class="outline-3">
+<h3 id="org6b140d5"><span class="section-number-3">2.1</span> Keras</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>download data: <code>tf.keras.utils.get_file(fname, url, extract=False)</code>:
@@ -296,8 +296,8 @@ gives Tuple of Numpy arrays: <code>(x_train, y_train), (x_test, y_test)</code>.<
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc461ccc" class="outline-3">
-<h3 id="orgc461ccc"><span class="section-number-3">2.2</span> tf.data.Dataset</h3>
+<div id="outline-container-org23b4661" class="outline-3">
+<h3 id="org23b4661"><span class="section-number-3">2.2</span> tf.data.Dataset</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 API doc: <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset">https://www.tensorflow.org/api_docs/python/tf/data/Dataset</a>
@@ -364,8 +364,8 @@ An extended example:
 </div>
 </div>
 
-<div id="outline-container-org118125a" class="outline-4">
-<h4 id="org118125a"><span class="section-number-4">2.2.1</span> TFRecord</h4>
+<div id="outline-container-org53520d4" class="outline-4">
+<h4 id="org53520d4"><span class="section-number-4">2.2.1</span> TFRecord</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 Create TFRecord
@@ -397,8 +397,8 @@ only the <code>__init__</code> function is different.
 </div>
 </div>
 
-<div id="outline-container-orgcd83f35" class="outline-4">
-<h4 id="orgcd83f35"><span class="section-number-4">2.2.2</span> TFRecord Creation</h4>
+<div id="outline-container-orgb3ef065" class="outline-4">
+<h4 id="orgb3ef065"><span class="section-number-4">2.2.2</span> TFRecord Creation</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 TFRecord is closely related to ProtocolBuffer.
@@ -465,8 +465,8 @@ TFRecord is closely related to ProtocolBuffer.
 
 
 
-<div id="outline-container-orga60dfd9" class="outline-2">
-<h2 id="orga60dfd9"><span class="section-number-2">3</span> Visualization</h2>
+<div id="outline-container-org18b5c7c" class="outline-2">
+<h2 id="org18b5c7c"><span class="section-number-2">3</span> Visualization</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Display an image file on disk:

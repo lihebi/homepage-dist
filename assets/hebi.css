@@ -44,6 +44,7 @@ html {
     background-color: #F8F8F8;
 }
 body {
+    /* From https://pomax.github.io/bezierinfo/. */
     /* background: url(./paper.png); */
     background-color: white;
     margin: 16px auto;

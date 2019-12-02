@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Reading</title>
+<title>Implementation Notes</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -245,290 +245,146 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="/"> HOME </a>
 </div><div id="content">
-<h1 class="title">Reading</h1>
+<h1 class="title">Implementation Notes</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org506ad7a">1. The Moon and Sixpence 月亮与六便士</a>
+<li><a href="#org452fde7">1. Tmp</a>
 <ul>
-<li><a href="#org4f54aad">1.1. 小人物</a></li>
-<li><a href="#org3f238c2">1.2. Other Interesting points</a></li>
+<li><a href="#org545fa10">1.1. moving tool tip</a></li>
+<li><a href="#org9363ce8">1.2. lisppaste style https://common-lisp.net/project/mcclim/</a></li>
 </ul>
 </li>
-<li><a href="#org2d3fee4">2. 沉默的大多数 －－ 王小波</a></li>
-<li><a href="#org9da1b8e">3. 韩寒</a>
+<li><a href="#org939e43c">2. TODOs</a>
 <ul>
-<li><a href="#orgf27a968">3.1. 三重门</a></li>
-<li><a href="#orga8c7fc5">3.2. 1988:我想和这个世界谈谈</a></li>
+<li><a href="#org5de2074">2.1. wiki internal/external links</a>
+<ul>
+<li><a href="#orgec28cf3">2.1.1. <span class="done DONE">DONE</span> styling</a></li>
+<li><a href="#org0c49d6d">2.1.2. js file to change target=<sub>blank</sub></a></li>
+<li><a href="#org01680e1">2.1.3. change links to have name</a></li>
+</ul>
+</li>
+<li><a href="#org32ae2ac">2.2. wiki quotation author</a></li>
+<li><a href="#orgdb89cab">2.3. blog create and last modify time, modify history</a></li>
+<li><a href="#org155e1cb">2.4. <span class="todo TODO">TODO</span> https://ambrevar.xyz/ org-publish and last-update is interesting</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org506ad7a" class="outline-2">
-<h2 id="org506ad7a"><span class="section-number-2">1</span> The Moon and Sixpence 月亮与六便士</h2>
+<div id="outline-container-org452fde7" class="outline-2">
+<h2 id="org452fde7"><span class="section-number-2">1</span> Tmp</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-by William Somerset Maugham
-</p>
-
-<blockquote>
-<p>
-我不想谋生，我想生活。 －－ 奥斯卡×王尔德
-</p>
-</blockquote>
-
-<p>
-本书书名来源于《泰晤士报》的书评“为天上的月亮神魂颠倒，对脚下的六便士
-视而不见”。此名信手拈来，也倒符和主人公不羁的性格。
-</p>
-
-<p>
-主人公原型为高更（Gauguin），其于孤倒岛墙壁上创作 “Where do we come
-from? What are we? Where are we going?”
-</p>
-
-<p>
-即使毛姆不是“我”，即使斯特里克兰才桀骜不驯，“我”内心也是如此狂热，从而
-对斯特里克兰的表现是认同的，并与其成为朋友，毛姆才会创作斯特里克兰的形
-象：
-</p>
-
-<blockquote>
-<p>
-我的血液里有一种强烈的冲动，渴望一种桀骜不驯的旅程。这样的安逸总让我惊
-惧。我的心渴望更加惊险的生活。只要我能有所改变－－改变和不可预知的冒险，
-我将踏上嶙峋怪石，哪怕激流险滩。
-</p>
-</blockquote>
-
-<p>
-斯特里克兰在大部分人的标准下，自私，一意孤行，这种人不被认可。然而，又
-有多少人披着良心的外衣被其奴役，只为被大众价值认可？
-</p>
-
-<p>
-只有诚实，真挚的灵魂才感知得到美：
-</p>
-
-<blockquote>
-<p>
-人们随随便便谈论美，却不知美为何物，这个词已被用滥了，失去了它原有的力
-量；所有的鸡零狗碎都以美为名，使美本身的含义荡然无存。
-</p>
-
-<p>
-但是斯特洛夫，这个本性难移的小丑，对于美，却有着诚实，真挚的理解，就像
-他灵魂的诚实，真挚一样。美对他来说，就像信徒心中的上帝，当他真看见了，
-却感到害怕。
-</p>
-</blockquote>
-
-<p>
-斯特里克兰来到塔希提岛，便定居了下来，相对于荷兰，这才是故乡：
-</p>
-<blockquote>
-<p>
-有些人，并未生在他们的理想之所。机缘将他们偶然抛入某种环境，他们却始终
-对心中的故土满怀乡愁；这故乡在哪里，他们并不知道。在他们的出生地，他们
-是异乡人，从童年时代就熟悉的林荫小巷，或者曾经玩耍过的拥挤街道，只不过
-是人生旅途中的驿站。他们仿佛身处异地，举目无亲，孤身一人。也许，正是这
-种陌生感，才让他们远走他乡，去寻找属于他们的永恒居所。或许，某种根深蒂
-固的返祖现象，让这些游子再次回到他们的祖先在远古时代就已离开的土地。有
-时候，一个人偶然来到某个地方，他会神秘地感觉，这下是他始终怀想的栖身之
-所。这是他一直在寻找的家园，他会在这从未见过的场景中，在他从不认识的人
-群中定居下来，就好像他生来就熟悉这一切。在这里，他终于有了着落。
-</p>
-</blockquote>
-
-<p>
-斯特里克兰无疑个性十足：
-</p>
-<blockquote>
-<p>
-一个人因为看到另一种生活更有意义，只经过片刻思索就抛弃大好前程，这才需
-要足够的个性。勇敢走出这一步，绝不后悔，这才真有个性。
-</p>
-</blockquote>
-
-<p>
-结尾，“我“想象斯特里克兰的儿子在帆船上，于太平洋中，于手风琴中，头顶蔚
-蓝的天空，跳着原始而疯狂的舞蹈。
-</p>
 </div>
-
-<div id="outline-container-org4f54aad" class="outline-3">
-<h3 id="org4f54aad"><span class="section-number-3">1.1</span> 小人物</h3>
+<div id="outline-container-org545fa10" class="outline-3">
+<h3 id="org545fa10"><span class="section-number-3">1.1</span> moving tool tip</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-小人物常态：
+very interesting, see demo at <a href="https://www.knopper.net/">https://www.knopper.net/</a>
 </p>
-<blockquote>
-<p>
-上校茫然地望向空中，我不知道有认能像他这样，故作清白。
-</p>
-</blockquote>
 
 <p>
-斯特里克兰夫人被迫开了一家打印店谋生，却虚荣掩饰：
+And also this: <a href="http://tomasp.net/blog/2018/write-your-own-excel/">http://tomasp.net/blog/2018/write-your-own-excel/</a>
 </p>
-<blockquote>
-<p>
-但她觉得，自己开门谋生不那么体面，所以总提醒你，她出身高贵。与人谈话，
-她时不时就提她认识的一些人物，让你知道，她社会地位一点儿不低。
-</p>
-</blockquote>
-
-<p>
-斯特里克兰夫人是痛苦的，这痛苦不会带来“高贵”，而是仇恨：
-</p>
-<blockquote>
-<p>
-让人行动高尚的，是自满得意；而痛苦，往往使人变得心胸狭窄，充满仇恨。
-</p>
-</blockquote>
 </div>
 </div>
 
-
-<div id="outline-container-org3f238c2" class="outline-3">
-<h3 id="org3f238c2"><span class="section-number-3">1.2</span> Other Interesting points</h3>
+<div id="outline-container-org9363ce8" class="outline-3">
+<h3 id="org9363ce8"><span class="section-number-3">1.2</span> lisppaste style <a href="https://common-lisp.net/project/mcclim/">https://common-lisp.net/project/mcclim/</a></h3>
 <div class="outline-text-3" id="text-1-2">
-<blockquote>
 <p>
-要打人，就把他伤得重一些。这样你就有时间思考，接下来怎么办。
+An interesting lisp code style that hover different levels and show background
+color for different levels. The core css snippets:
 </p>
-</blockquote>
+
+<div class="org-src-container">
+<pre class="src src-css"><span class="org-comment-delimiter">/* </span><span class="org-comment">Stolen from lisppaste for the colorize output of 3bmd </span><span class="org-comment-delimiter">*/</span>
+<span class="org-css-selector">.paste </span>{ <span class="org-css-property">background-color</span>: <span class="custom-19">#F4F4F4</span>; <span class="org-css-property">color</span>: <span class="custom-18">black</span>; }
+<span class="org-css-selector">.paste:hover </span>{ <span class="org-css-property">background-color</span>: <span class="custom-19">#F4F4F4</span>; <span class="org-css-property">color</span>: <span class="custom-18">black</span>; }
+<span class="org-css-selector">.symbol </span>{ <span class="org-css-property">color</span> : <span class="custom-17">#770055</span>; <span class="org-css-property">background-color</span> : transparent; <span class="org-css-property">border</span>: 0px; <span class="org-css-property">margin</span>: 0px;}
+<span class="org-css-selector">.special </span>{ <span class="org-css-property">color</span> : <span class="custom-16">#FF5000</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.keyword </span>{<span class="org-css-property">color</span> : <span class="custom-15">#770000</span>;<span class="org-css-property">background-color</span> : inherit;}
+<span class="org-css-selector">.comment </span>{ <span class="org-css-property">color</span> : <span class="custom-14">#007777</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.string </span>{ <span class="org-css-property">color</span> : <span class="custom-13">#777777</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.atom </span>{ <span class="org-css-property">color</span> : <span class="custom-12">#314F4F</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.macro </span>{ <span class="org-css-property">color</span> : <span class="custom-16">#FF5000</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.variable </span>{ <span class="org-css-property">color</span> : <span class="custom-11">#36648B</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.function </span>{ <span class="org-css-property">color</span> : <span class="custom-10">#8B4789</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.attribute </span>{ <span class="org-css-property">color</span> : <span class="custom-16">#FF5000</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.character </span>{ <span class="org-css-property">color</span> : <span class="custom-9">#0055AA</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.syntaxerror </span>{ <span class="org-css-property">color</span> : <span class="custom-8">#FF0000</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.diff-deleted </span>{ <span class="org-css-property">color</span> : <span class="custom-7">#5F2121</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">.diff-added </span>{ <span class="org-css-property">color</span> : <span class="custom-6">#215F21</span>; <span class="org-css-property">background-color</span> : inherit; }
+<span class="org-css-selector">span.paren1 </span>{ <span class="org-css-property">background-color</span> : inherit; <span class="org-css-proprietary-property">-webkit-transition</span>: background-color 0.2s linear; }
+<span class="org-css-selector">span.paren1:hover </span>{ <span class="org-css-property">color</span> : inherit; <span class="org-css-property">background-color</span> : <span class="custom-5">#BAFFFF</span>; }
+<span class="org-css-selector">span.paren2 </span>{ <span class="org-css-property">background-color</span> : inherit; <span class="org-css-proprietary-property">-webkit-transition</span>: background-color 0.2s linear; }
+<span class="org-css-selector">span.paren2:hover </span>{ <span class="org-css-property">color</span> : inherit; <span class="org-css-property">background-color</span> : <span class="custom-4">#FFCACA</span>; }
+<span class="org-css-selector">span.paren3 </span>{ <span class="org-css-property">background-color</span> : inherit; <span class="org-css-proprietary-property">-webkit-transition</span>: background-color 0.2s linear; }
+<span class="org-css-selector">span.paren3:hover </span>{ <span class="org-css-property">color</span> : inherit; <span class="org-css-property">background-color</span> : <span class="custom-3">#FFFFBA</span>; }
+<span class="org-css-selector">span.paren4 </span>{ <span class="org-css-property">background-color</span> : inherit; <span class="org-css-proprietary-property">-webkit-transition</span>: background-color 0.2s linear; }
+<span class="org-css-selector">span.paren4:hover </span>{ <span class="org-css-property">color</span> : inherit; <span class="org-css-property">background-color</span> : <span class="custom-2">#CACAFF</span>; }
+<span class="org-css-selector">span.paren5 </span>{ <span class="org-css-property">background-color</span> : inherit; <span class="org-css-proprietary-property">-webkit-transition</span>: background-color 0.2s linear; }
+<span class="org-css-selector">span.paren5:hover </span>{ <span class="org-css-property">color</span> : inherit; <span class="org-css-property">background-color</span> : <span class="custom-1">#CAFFCA</span>; }
+<span class="org-css-selector">span.paren6 </span>{ <span class="org-css-property">background-color</span> : inherit; <span class="org-css-proprietary-property">-webkit-transition</span>: background-color 0.2s linear; }
+<span class="org-css-selector">span.paren6:hover </span>{ <span class="org-css-property">color</span> : inherit; <span class="org-css-property">background-color</span> : <span class="custom">#FFBAFF</span>; }
+</pre>
+</div>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org2d3fee4" class="outline-2">
-<h2 id="org2d3fee4"><span class="section-number-2">2</span> 沉默的大多数 －－ 王小波</h2>
+<div id="outline-container-org939e43c" class="outline-2">
+<h2 id="org939e43c"><span class="section-number-2">2</span> TODOs</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-说明“红”话语的贫之：
-</p>
-<blockquote>
-<p>
-用它来说话都相当困难，更不要说用它来思想了。
-</p>
-</blockquote>
-
-<p>
-在道德的梱绑前，先诚实的面对自己。
-</p>
-<blockquote>
-<p>
-在这世界上的一切人之中，我最希望予提升的一个，就是我自己。这话很卑鄙，
-很自私，也很诚实。
-</p>
-</blockquote>
-
-<p>
-聪明比道德更重要：
-</p>
-<blockquote>
-<p>
-假设我相信上帝，并且正在为善恶不分而苦恼，我就会请求上帝让我聪明到足以
-明辨是非的程度，而绝不会请他让我愚蠢到让人家给我灌输善恶标准的程度。假
-若上帝要我负起灌输的任务，我就要请求他让我在此项任务和下地狱中做一选择，
-并且我坚定不移的决心是：选择后者。
-</p>
-</blockquote>
-
-<p>
-关于聪明人和愚蠢人，以及judge：
-</p>
-<blockquote>
-<p>
-在一切价值判断之中，最坏的一种是：想得太多，太深奥，超过了某些人的理解
-程度是一种罪恶。我们在体验思想的快乐时，并没有伤害到任何人；不幸的是，
-总有人觉得自己手受了伤害。诚然，这种快乐不是每一个人都能体验到的，但我
-们不该对此负责任。我看不出有会么理由要取消这种快乐，除非把卑鄙的嫉妒计
-算在内－－这世界上有人喜欢丰富，有人喜欢单纯；我未见过喜欢丰富的人妒恨，
-伤害喜欢单纯的人，我见到的情形总是相反。
-</p>
-</blockquote>
-
-<p>
-花剌子模信使问题：
-</p>
-<blockquote>
-<p>
-中亚古国花剌子模有一古怪的风俗，凡是给君王带来好消息的信使，就会得到提
-升，给君王带来坏消息的人则会被送去喂老虎。
-</p>
-</blockquote>
+</div>
+<div id="outline-container-org5de2074" class="outline-3">
+<h3 id="org5de2074"><span class="section-number-3">2.1</span> wiki internal/external links</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgec28cf3" class="outline-4">
+<h4 id="orgec28cf3"><span class="section-number-4">2.1.1</span> <span class="done DONE">DONE</span> styling</h4>
+<div class="outline-text-4" id="text-2-1-1">
 </div>
 </div>
 
-<div id="outline-container-org9da1b8e" class="outline-2">
-<h2 id="org9da1b8e"><span class="section-number-2">3</span> 韩寒</h2>
-<div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-orgf27a968" class="outline-3">
-<h3 id="orgf27a968"><span class="section-number-3">3.1</span> 三重门</h3>
-<div class="outline-text-3" id="text-3-1">
-<blockquote>
+<div id="outline-container-org0c49d6d" class="outline-4">
+<h4 id="org0c49d6d"><span class="section-number-4">2.1.2</span> js file to change target=<sub>blank</sub></h4>
+<div class="outline-text-4" id="text-2-1-2">
 <p>
-他极关爱学生，把学生当数学一样爱护，学生却把他当文学一样糟践。
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-愚蠢和幽默往往只有语气之别。
+Tensorflow page <a href="https://www.tensorflow.org/install/docker">https://www.tensorflow.org/install/docker</a> has the following
 </p>
 
-<p>
-这小镇最穷的是教育最富的是教育局。
-</p>
-
-<p>
-懂事只是指一种克制，不让自己的本性露出来，本性终究是本性，过久了就会自
-己露出来。
-</p>
-
-<p>
-所谓看破红尘就是把原本美好的红尘看成了破烂！”
-</p>
-</blockquote>
+<pre class="example">
+a[href*="oracle.com"]::after, a.external::after
+content: "open_in_new"
+font: normal normal normal 24px/1 "Material Icons"
+font-size: 18px
+margin: 0 0 0 4px
+vertical-align: text-bottom
+</pre>
 </div>
 </div>
 
+<div id="outline-container-org01680e1" class="outline-4">
+<h4 id="org01680e1"><span class="section-number-4">2.1.3</span> change links to have name</h4>
+</div>
+</div>
 
-<div id="outline-container-orga8c7fc5" class="outline-3">
-<h3 id="orga8c7fc5"><span class="section-number-3">3.2</span> 1988:我想和这个世界谈谈</h3>
-<div class="outline-text-3" id="text-3-2">
-<blockquote>
+<div id="outline-container-org32ae2ac" class="outline-3">
+<h3 id="org32ae2ac"><span class="section-number-3">2.2</span> wiki quotation author</h3>
+</div>
+<div id="outline-container-orgdb89cab" class="outline-3">
+<h3 id="orgdb89cab"><span class="section-number-3">2.3</span> blog create and last modify time, modify history</h3>
+</div>
+<div id="outline-container-org155e1cb" class="outline-3">
+<h3 id="org155e1cb"><span class="section-number-3">2.4</span> <span class="todo TODO">TODO</span> <a href="https://ambrevar.xyz/">https://ambrevar.xyz/</a> org-publish and last-update is interesting</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
-丁丁哥哥说，你懂得越多，你就越像这个世界的孤儿。
+<span class="timestamp-wrapper"><span class="timestamp">[2018-08-29 Wed 04:38]</span></span>
 </p>
-
-<p>
-我只记得我是一个查眼保健操的时候同学们有没有闭眼的人，这就是曰复一日机
-械的工作带给人们的恶果。
-</p>
-
-<p>
-连电话丢了，都能一个电话就搞定了。
-</p>
-
-<p>
-在这样一个世界里，你用脑子想过的事情，你总是以为你已经做过了。
-</p>
-
-<p>
-他们先行，我替他们收拾着因为跑太快从口袋里跌落的扑克牌，我始终跑在他们
-划破的气流里，不过我也不曾觉得风阻会减小一些，只是他们替我撞过了每一堵
-我可能要撞的高墙，摔落了每一道我可能要落进的沟壑，然后告诉我，这条路没
-有错，继续前行吧，但是你已经用掉了一次帮助的机会，再见了朋友。
-</p>
-</blockquote>
 </div>
 </div>
 </div>

@@ -250,270 +250,279 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0b43529">1. Tmp</a>
+<li><a href="#org0143c3e">1. Tmp</a>
 <ul>
-<li><a href="#orgbeb4d30">1.1. sudo</a></li>
-<li><a href="#org5d6de53">1.2. compilation and linking</a></li>
-<li><a href="#orgafe72d0">1.3. Arduino</a></li>
-<li><a href="#org1af24e8">1.4. Deep Learning Framework GPU setup</a></li>
+<li><a href="#orgb2d2c76">1.1. sudo</a></li>
+<li><a href="#orga277e41">1.2. compilation and linking</a></li>
+<li><a href="#org42beccd">1.3. Arduino</a></li>
+<li><a href="#orgb780a73">1.4. Deep Learning Framework GPU setup</a></li>
 </ul>
 </li>
-<li><a href="#orge055249">2. Installation</a>
+<li><a href="#org90ff995">2. Installation</a>
 <ul>
-<li><a href="#orgcad9484">2.1. Virtualization</a></li>
+<li><a href="#org6492a1a">2.1. Virtualization</a></li>
 </ul>
 </li>
-<li><a href="#orgd55525c">3. GuixSD</a>
+<li><a href="#orgdaa096b">3. NixOS</a>
 <ul>
-<li><a href="#orgb4efe20">3.1. Qemu Image</a></li>
-<li><a href="#org34c338e">3.2. Guile</a></li>
-<li><a href="#org186e83f">3.3. Guix</a></li>
-<li><a href="#orgdeb7ccb">3.4. Developing Guix packages</a></li>
-<li><a href="#org6a88de2">3.5. Bootloader</a></li>
-<li><a href="#org404b9a3">3.6. Nvidia driver</a></li>
-<li><a href="#orga746831">3.7. Guix on Foreign distribution</a>
-<ul>
-<li><a href="#orge5f6692">3.7.1. Trouble Shooting</a></li>
+<li><a href="#org347975d">3.1. nixos</a></li>
+<li><a href="#org4890492">3.2. package development</a></li>
+<li><a href="#org5c9ed01">3.3. package management</a></li>
+<li><a href="#org4c5b9ba">3.4. <span class="todo TODO">TODO</span> local package manifest</a></li>
+<li><a href="#org97985d4">3.5. channel</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org2a6fe3f">4. Git</a>
+<li><a href="#org1655cfa">4. GuixSD</a>
 <ul>
-<li><a href="#orgd96faa8">4.1. Configuration</a></li>
-<li><a href="#org97d26a4">4.2. Server</a>
+<li><a href="#orgf140b00">4.1. Qemu Image</a></li>
+<li><a href="#org14ae570">4.2. Guile</a></li>
+<li><a href="#org2c4f64c">4.3. Guix</a></li>
+<li><a href="#org61fef4c">4.4. Developing Guix packages</a></li>
+<li><a href="#org1f4e6a5">4.5. Bootloader</a></li>
+<li><a href="#orgd3ec265">4.6. Nvidia driver</a></li>
+<li><a href="#orgb646682">4.7. Guix on Foreign distribution</a>
 <ul>
-<li><a href="#orga50afbd">4.2.1. <span class="todo TODO">TODO</span> gitolite</a></li>
-</ul>
-</li>
-<li><a href="#org5a64537">4.3. Individual tools</a>
-<ul>
-<li><a href="#orgc3c212e">4.3.1. git-bisect</a>
-<ul>
-<li><a href="#orga7178cc">4.3.1.1. start</a></li>
-<li><a href="#org44f9906">4.3.1.2. answer the question</a></li>
-<li><a href="#org349edbe">4.3.1.3. multiple good</a></li>
-<li><a href="#org5c5d0de">4.3.1.4. run script</a></li>
-<li><a href="#orgd15d8f5">4.3.1.5. Some work flows</a></li>
-</ul>
-</li>
-<li><a href="#orgd5fcc16">4.3.2. git-blame</a></li>
+<li><a href="#orgc1b3d94">4.7.1. Trouble Shooting</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5d32d5e">5. Network</a>
+<li><a href="#org432ae12">5. Git</a>
 <ul>
-<li><a href="#orgf9e73c3">5.1. SSH</a></li>
-<li><a href="#org5dc1477">5.2. Wireless Networking</a></li>
-<li><a href="#orga079358">5.3. VPN</a>
+<li><a href="#org9febfc9">5.1. Configuration</a></li>
+<li><a href="#org51eca11">5.2. Server</a>
 <ul>
-<li><a href="#org6b85d28">5.3.1. L2tp, IPSec</a></li>
-<li><a href="#orgd45efcf">5.3.2. OpenVPN</a>
+<li><a href="#org5187571">5.2.1. <span class="todo TODO">TODO</span> gitolite</a></li>
+</ul>
+</li>
+<li><a href="#org48cb2f6">5.3. Individual tools</a>
 <ul>
-<li><a href="#org2f8af0d">5.3.2.1. Server Setup</a></li>
-<li><a href="#org1177af6">5.3.2.2. Client Setup</a></li>
+<li><a href="#orgc1e7fd1">5.3.1. git-bisect</a>
+<ul>
+<li><a href="#org86e688b">5.3.1.1. start</a></li>
+<li><a href="#org5f8ee30">5.3.1.2. answer the question</a></li>
+<li><a href="#orgb788543">5.3.1.3. multiple good</a></li>
+<li><a href="#orgd46be40">5.3.1.4. run script</a></li>
+<li><a href="#org4f731cc">5.3.1.5. Some work flows</a></li>
+</ul>
+</li>
+<li><a href="#org44abc3f">5.3.2. git-blame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3453917">6. Network</a>
+<ul>
+<li><a href="#orga3b477d">6.1. SSH</a></li>
+<li><a href="#orgbfe71ba">6.2. Wireless Networking</a></li>
+<li><a href="#org85075ce">6.3. VPN</a>
+<ul>
+<li><a href="#orga550520">6.3.1. L2tp, IPSec</a></li>
+<li><a href="#orgcdde16f">6.3.2. OpenVPN</a>
+<ul>
+<li><a href="#orgdf9ab9f">6.3.2.1. Server Setup</a></li>
+<li><a href="#orgbed0c4e">6.3.2.2. Client Setup</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org0d22e82">6. App</a>
+<li><a href="#orgcab54d6">7. App</a>
 <ul>
-<li><a href="#orgdc5154f">6.1. mplayer</a></li>
-<li><a href="#orgce224fa">6.2. youtube-dl</a></li>
-<li><a href="#orga8feeea">6.3. chrome extensions</a></li>
-<li><a href="#org28483ff">6.4. Remove viewer</a></li>
-<li><a href="#org1190656">6.5. mpd</a></li>
-<li><a href="#orgff8dead">6.6. fontforge</a></li>
-<li><a href="#org96ff122">6.7. tmux</a></li>
+<li><a href="#orgbb2dd8c">7.1. mplayer</a></li>
+<li><a href="#orgf39a0c3">7.2. youtube-dl</a></li>
+<li><a href="#orgc480f89">7.3. chrome extensions</a></li>
+<li><a href="#org4ea83cc">7.4. Remove viewer</a></li>
+<li><a href="#org043ed02">7.5. mpd</a></li>
+<li><a href="#orge6aff66">7.6. fontforge</a></li>
+<li><a href="#org45997c8">7.7. tmux</a></li>
 </ul>
 </li>
-<li><a href="#orgffe9132">7. Window System</a>
+<li><a href="#orgcc995b9">8. Window System</a>
 <ul>
-<li><a href="#org2e4c894">7.1. xkill</a></li>
-<li><a href="#org1d74d59">7.2. Display Manager</a></li>
-<li><a href="#orgbb5f2ed">7.3. screen</a></li>
-<li><a href="#org9cb778e">7.4. cursor</a></li>
-<li><a href="#org537def9">7.5. Natural Scrolling</a></li>
-<li><a href="#org014445b">7.6. ratpoison</a></li>
-<li><a href="#org6625e00">7.7. StumpWM</a>
+<li><a href="#org212581b">8.1. xkill</a></li>
+<li><a href="#org531ff11">8.2. Display Manager</a></li>
+<li><a href="#org845d508">8.3. screen</a></li>
+<li><a href="#orgf4b6683">8.4. cursor</a></li>
+<li><a href="#org176c93a">8.5. Natural Scrolling</a></li>
+<li><a href="#org0bf84af">8.6. ratpoison</a></li>
+<li><a href="#org18cb365">8.7. StumpWM</a>
 <ul>
-<li><a href="#org595fec1">7.7.1. Installation</a>
+<li><a href="#orgd421f32">8.7.1. Installation</a>
 <ul>
-<li><a href="#orge1edf5d">7.7.1.1. A better way to install stumpwm</a></li>
-<li><a href="#org7e39fe2">7.7.1.2. Live Debugging</a></li>
+<li><a href="#orga320cd5">8.7.1.1. A better way to install stumpwm</a></li>
+<li><a href="#org43483ca">8.7.1.2. Live Debugging</a></li>
 </ul>
 </li>
-<li><a href="#org6896afe">7.7.2. General</a>
+<li><a href="#orgbb71f83">8.7.2. General</a>
 <ul>
-<li><a href="#org5a0ee10">7.7.2.1. Get Help</a></li>
+<li><a href="#org01e4c0b">8.7.2.1. Get Help</a></li>
 </ul>
 </li>
-<li><a href="#org3c5c87d">7.7.3. Window</a></li>
-<li><a href="#org27c6d64">7.7.4. Frame</a></li>
-<li><a href="#org1d457c8">7.7.5. Groups</a></li>
-<li><a href="#orgfce49f3">7.7.6. Configuration</a></li>
+<li><a href="#org87c3f73">8.7.3. Window</a></li>
+<li><a href="#orgf6bd4d9">8.7.4. Frame</a></li>
+<li><a href="#org9a27c29">8.7.5. Groups</a></li>
+<li><a href="#org098f22c">8.7.6. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#org813d984">7.8. Xmonad</a></li>
-<li><a href="#org6771802">7.9. VNC</a></li>
+<li><a href="#org705a4da">8.8. Xmonad</a></li>
+<li><a href="#orgac16d4b">8.9. VNC</a></li>
 </ul>
 </li>
-<li><a href="#org96ff62e">8. System Management</a>
+<li><a href="#orgdabb052">9. System Management</a>
 <ul>
-<li><a href="#org28933ed">8.1. Audio</a></li>
-<li><a href="#org4343059">8.2. Power Management</a></li>
-<li><a href="#orgbb12b14">8.3. Booting</a></li>
-<li><a href="#orgffc75af">8.4. User Management</a></li>
-<li><a href="#orgf1e59f0">8.5. File Management</a>
+<li><a href="#org7e052bb">9.1. Audio</a></li>
+<li><a href="#org6b31d99">9.2. Power Management</a></li>
+<li><a href="#orge5410e6">9.3. Booting</a></li>
+<li><a href="#org1fa6072">9.4. User Management</a></li>
+<li><a href="#org4b142ec">9.5. File Management</a>
 <ul>
-<li><a href="#orgb60b2c2">8.5.1. Swap File</a></li>
-<li><a href="#orgecd7ea1">8.5.2. Back Up &amp; Syncing</a></li>
-<li><a href="#org7dd2353">8.5.3. MIME</a></li>
+<li><a href="#org37c5982">9.5.1. Swap File</a></li>
+<li><a href="#org17e97dc">9.5.2. Back Up &amp; Syncing</a></li>
+<li><a href="#orgaae30b8">9.5.3. MIME</a></li>
 </ul>
 </li>
-<li><a href="#org46a22f8">8.6. LVM</a></li>
-<li><a href="#orgef88959">8.7. Monitor the system information</a></li>
-<li><a href="#org17c3449">8.8. Extending a logical volume</a></li>
-<li><a href="#org375d439">8.9. Reduce a logical volume</a></li>
+<li><a href="#org483b6ba">9.6. LVM</a></li>
+<li><a href="#org4d8bc60">9.7. Monitor the system information</a></li>
+<li><a href="#orga46f035">9.8. Extending a logical volume</a></li>
+<li><a href="#org223ca6f">9.9. Reduce a logical volume</a></li>
 </ul>
 </li>
-<li><a href="#org2fb380d">9. Arch Linux</a>
+<li><a href="#org4f53195">10. Arch Linux</a>
 <ul>
-<li><a href="#org3ddab27">9.1. Installation</a>
+<li><a href="#orgdb41908">10.1. Installation</a>
 <ul>
-<li><a href="#org0035707">9.1.1. Verify UEFI</a></li>
-<li><a href="#orgbe8e5d5">9.1.2. System clock</a></li>
-<li><a href="#org17b4d65">9.1.3. Partition</a></li>
-<li><a href="#org2197fb5">9.1.4. Select mirror</a></li>
-<li><a href="#org0144d1e">9.1.5. Install base system</a></li>
-<li><a href="#org5e9cbb3">9.1.6. chroot</a></li>
-<li><a href="#org3ce367f">9.1.7. Configure</a></li>
-<li><a href="#orgf9bd378">9.1.8. Config</a></li>
-<li><a href="#org48b820c">9.1.9. Dual boot with Windows</a></li>
+<li><a href="#org46d814e">10.1.1. Verify UEFI</a></li>
+<li><a href="#org0a156e9">10.1.2. System clock</a></li>
+<li><a href="#org762fc6c">10.1.3. Partition</a></li>
+<li><a href="#orgce3deea">10.1.4. Select mirror</a></li>
+<li><a href="#org91d7546">10.1.5. Install base system</a></li>
+<li><a href="#orga922206">10.1.6. chroot</a></li>
+<li><a href="#org4fe16f3">10.1.7. Configure</a></li>
+<li><a href="#org0776a9c">10.1.8. Config</a></li>
+<li><a href="#orgc795f0c">10.1.9. Dual boot with Windows</a></li>
 </ul>
 </li>
-<li><a href="#org3e5d102">9.2. Pacman</a></li>
-<li><a href="#org72952c8">9.3. AUR</a></li>
+<li><a href="#org71d2117">10.2. Pacman</a></li>
+<li><a href="#org953037f">10.3. AUR</a></li>
 </ul>
 </li>
-<li><a href="#org5ed9380">10. CentOS</a></li>
-<li><a href="#orgc566d58">11. Debian</a>
+<li><a href="#org3334de3">11. CentOS</a></li>
+<li><a href="#orge08816e">12. Debian</a>
 <ul>
-<li><a href="#orgb6150b4">11.1. Package</a></li>
-<li><a href="#orgd16f680">11.2. Configuration</a>
+<li><a href="#org76f324c">12.1. Package</a></li>
+<li><a href="#org34b03df">12.2. Configuration</a>
 <ul>
-<li><a href="#org973cac7">11.2.1. update-alternatives</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org7bda4d9">12. Docker</a>
-<ul>
-<li><a href="#org0ada695">12.1. Images</a></li>
-<li><a href="#orgb94a209">12.2. Instance</a></li>
-<li><a href="#orgcb9b49c">12.3. Volume</a></li>
-</ul>
-</li>
-<li><a href="#orgb6a1867">13. Unix Programming</a>
-<ul>
-<li><a href="#org1d071c3">13.1. Low-level IO</a>
-<ul>
-<li><a href="#org11f0321">13.1.1. open</a></li>
-<li><a href="#orgf9a8f9e">13.1.2. close</a></li>
-<li><a href="#orga1721c9">13.1.3. read</a></li>
-<li><a href="#org166f528">13.1.4. write</a></li>
-<li><a href="#org32f2097">13.1.5. fdopen</a></li>
-<li><a href="#org9d571af">13.1.6. fileno</a></li>
-<li><a href="#org9e1a318">13.1.7. fd<sub>set</sub></a></li>
-<li><a href="#orge6275b3">13.1.8. select - synchronous I/O multiplexing</a></li>
-<li><a href="#orga57a295">13.1.9. sync</a></li>
-<li><a href="#orgeea1e06">13.1.10. dup</a></li>
-</ul>
-</li>
-<li><a href="#orgabf0b3b">13.2. Date and Time</a>
-<ul>
-<li><a href="#orge18fca8">13.2.1. struct timeval</a></li>
-<li><a href="#org32c7e30">13.2.2. struct timespec</a></li>
-<li><a href="#org616fe16">13.2.3. difftime</a></li>
-<li><a href="#org88bcab0">13.2.4. time<sub>t</sub></a></li>
-<li><a href="#orgd9e6c9a">13.2.5. alarm</a>
-<ul>
-<li><a href="#org6341c1b">13.2.5.1. struct itimerval</a></li>
-<li><a href="#org6a9154f">13.2.5.2. setitimer</a></li>
-<li><a href="#orgda4ae25">13.2.5.3. getitimer(int which, struct itimerval *old)</a></li>
-<li><a href="#org0538e6b">13.2.5.4. alarm</a></li>
+<li><a href="#orgbb65811">12.2.1. update-alternatives</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6f35397">13.3. Process</a>
+<li><a href="#org2c4f121">13. Docker</a>
 <ul>
-<li><a href="#org57add3c">13.3.1. system</a></li>
-<li><a href="#org4b0d343">13.3.2. getpid</a></li>
-<li><a href="#org73def9b">13.3.3. fork</a></li>
-<li><a href="#orgf7f4a23">13.3.4. pipe</a></li>
-<li><a href="#org65b172f">13.3.5. exec</a></li>
-<li><a href="#org53340e0">13.3.6. wait</a>
+<li><a href="#org2d016f9">13.1. Images</a></li>
+<li><a href="#orgb36aca9">13.2. Instance</a></li>
+<li><a href="#orgc39fb6b">13.3. Volume</a></li>
+</ul>
+</li>
+<li><a href="#org6548ee0">14. Unix Programming</a>
 <ul>
-<li><a href="#orgcd49155">13.3.6.1. Status</a></li>
+<li><a href="#org27cc4e3">14.1. Low-level IO</a>
+<ul>
+<li><a href="#org5f5e8ea">14.1.1. open</a></li>
+<li><a href="#orgec0bda8">14.1.2. close</a></li>
+<li><a href="#org8711ea1">14.1.3. read</a></li>
+<li><a href="#orgb344cbd">14.1.4. write</a></li>
+<li><a href="#org0ad57e2">14.1.5. fdopen</a></li>
+<li><a href="#orgf65996c">14.1.6. fileno</a></li>
+<li><a href="#orgeb012ed">14.1.7. fd<sub>set</sub></a></li>
+<li><a href="#orgb623e5c">14.1.8. select - synchronous I/O multiplexing</a></li>
+<li><a href="#orgaaf802c">14.1.9. sync</a></li>
+<li><a href="#org4ec6e79">14.1.10. dup</a></li>
+</ul>
+</li>
+<li><a href="#org207aa6b">14.2. Date and Time</a>
+<ul>
+<li><a href="#org89bd67f">14.2.1. struct timeval</a></li>
+<li><a href="#org479da75">14.2.2. struct timespec</a></li>
+<li><a href="#orgc506dc9">14.2.3. difftime</a></li>
+<li><a href="#org524ab1d">14.2.4. time<sub>t</sub></a></li>
+<li><a href="#org5ababc9">14.2.5. alarm</a>
+<ul>
+<li><a href="#org8f80b1b">14.2.5.1. struct itimerval</a></li>
+<li><a href="#org8c7f517">14.2.5.2. setitimer</a></li>
+<li><a href="#org9162245">14.2.5.3. getitimer(int which, struct itimerval *old)</a></li>
+<li><a href="#org23d1f50">14.2.5.4. alarm</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org846e883">13.4. Unix Signal Handling</a>
+<li><a href="#org14de6f6">14.3. Process</a>
 <ul>
-<li><a href="#org7ceebab">13.4.1. Ordinary signal handling</a></li>
-<li><a href="#orgb08adbe">13.4.2. SIGSEGV handling</a>
+<li><a href="#orgb527688">14.3.1. system</a></li>
+<li><a href="#org86adec1">14.3.2. getpid</a></li>
+<li><a href="#orge4db116">14.3.3. fork</a></li>
+<li><a href="#orga046210">14.3.4. pipe</a></li>
+<li><a href="#org63fcad6">14.3.5. exec</a></li>
+<li><a href="#org3ce2ed2">14.3.6. wait</a>
 <ul>
-<li><a href="#orgb0c54e0">13.4.2.1. Motivation</a></li>
-<li><a href="#org044dbf2">13.4.2.2. a new stack</a></li>
-<li><a href="#orge6663c7">13.4.2.3. libsigsegv</a></li>
+<li><a href="#org185a0af">14.3.6.1. Status</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb16255e">13.5. pThread</a>
+<li><a href="#orgea0988c">14.4. Unix Signal Handling</a>
 <ul>
-<li><a href="#org7ab0e26">13.5.1. Create threads</a></li>
-<li><a href="#org832f33a">13.5.2. Join and Detach</a></li>
+<li><a href="#orgba65e36">14.4.1. Ordinary signal handling</a></li>
+<li><a href="#orgd842f8a">14.4.2. SIGSEGV handling</a>
+<ul>
+<li><a href="#org16c2470">14.4.2.1. Motivation</a></li>
+<li><a href="#org79cc1c2">14.4.2.2. a new stack</a></li>
+<li><a href="#orgea807f5">14.4.2.3. libsigsegv</a></li>
 </ul>
 </li>
-<li><a href="#org77bbc9f">13.6. Other</a></li>
 </ul>
 </li>
-<li><a href="#org28928cb">14. Shell Utilities</a>
+<li><a href="#orgee12bc0">14.5. pThread</a>
 <ul>
-<li><a href="#org8a55b5b">14.1. Patch System</a></li>
-<li><a href="#orga4c7729">14.2. tr: translate characters</a></li>
-<li><a href="#org2f4a125">14.3. uniq: report or filter out repeated lines in a file</a></li>
-<li><a href="#org98097f5">14.4. Find</a></li>
+<li><a href="#org43a696a">14.5.1. Create threads</a></li>
+<li><a href="#org52f426d">14.5.2. Join and Detach</a></li>
 </ul>
 </li>
-<li><a href="#org116cb8f">15. Trouble Shooting</a>
+<li><a href="#orga1ecc4e">14.6. Other</a></li>
+</ul>
+</li>
+<li><a href="#orgcf8c6b6">15. Shell Utilities</a>
 <ul>
-<li><a href="#orga3eb823">15.1. Cannot su root</a></li>
-<li><a href="#orgc2de304">15.2. in docker, cannot open chromium</a></li>
-<li><a href="#orgb411962">15.3. Encoding</a></li>
-<li><a href="#orgaf53c12">15.4. Cannot open shared library</a></li>
-<li><a href="#org28e9c5a">15.5. auto expansion error for latex font</a></li>
-<li><a href="#org77f354b">15.6. time not up-to-date</a></li>
-<li><a href="#org0f50e3f">15.7. backlight on TP25</a></li>
-<li><a href="#orga5a9712">15.8. xinit won't start</a></li>
+<li><a href="#org057a145">15.1. Patch System</a></li>
+<li><a href="#orgf781bbe">15.2. tr: translate characters</a></li>
+<li><a href="#orgd36d859">15.3. uniq: report or filter out repeated lines in a file</a></li>
+<li><a href="#orgd1a4dcd">15.4. Find</a></li>
+</ul>
+</li>
+<li><a href="#orgd5718a2">16. Trouble Shooting</a>
+<ul>
+<li><a href="#orgd08baac">16.1. Cannot su root</a></li>
+<li><a href="#org22f3da0">16.2. in docker, cannot open chromium</a></li>
+<li><a href="#org67a6fdb">16.3. Encoding</a></li>
+<li><a href="#org0745e18">16.4. Cannot open shared library</a></li>
+<li><a href="#org42191c1">16.5. auto expansion error for latex font</a></li>
+<li><a href="#org7433a06">16.6. time not up-to-date</a></li>
+<li><a href="#org20f1689">16.7. backlight on TP25</a></li>
+<li><a href="#orgcbd1972">16.8. xinit won't start</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0b43529" class="outline-2">
-<h2 id="org0b43529"><span class="section-number-2">1</span> Tmp</h2>
+<div id="outline-container-org0143c3e" class="outline-2">
+<h2 id="org0143c3e"><span class="section-number-2">1</span> Tmp</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgbeb4d30" class="outline-3">
-<h3 id="orgbeb4d30"><span class="section-number-3">1.1</span> sudo</h3>
+<div id="outline-container-orgb2d2c76" class="outline-3">
+<h3 id="orgb2d2c76"><span class="section-number-3">1.1</span> sudo</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 <code>sudo -i</code> will drop you to root shell, even if you don't know root
@@ -527,8 +536,8 @@ password!
 </div>
 
 
-<div id="outline-container-org5d6de53" class="outline-3">
-<h3 id="org5d6de53"><span class="section-number-3">1.2</span> compilation and linking</h3>
+<div id="outline-container-orga277e41" class="outline-3">
+<h3 id="orga277e41"><span class="section-number-3">1.2</span> compilation and linking</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 LD<sub>LIBRARY</sub><sub>PATH</sub> is searched when the program starts, LIBRARY<sub>PATH</sub> is
@@ -578,8 +587,8 @@ rpath. <a href="https://amir.rachum.com/blog/2016/09/17/shared-libraries/">https
 </div>
 </div>
 
-<div id="outline-container-orgafe72d0" class="outline-3">
-<h3 id="orgafe72d0"><span class="section-number-3">1.3</span> Arduino</h3>
+<div id="outline-container-org42beccd" class="outline-3">
+<h3 id="org42beccd"><span class="section-number-3">1.3</span> Arduino</h3>
 <div class="outline-text-3" id="text-1-3">
 <pre class="example">
 pacman -S arduino arduino-docs arduino-avr-core
@@ -590,8 +599,8 @@ modprobe cdc-acm
 </div>
 </div>
 
-<div id="outline-container-org1af24e8" class="outline-3">
-<h3 id="org1af24e8"><span class="section-number-3">1.4</span> Deep Learning Framework GPU setup</h3>
+<div id="outline-container-orgb780a73" class="outline-3">
+<h3 id="orgb780a73"><span class="section-number-3">1.4</span> Deep Learning Framework GPU setup</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 In ubuntu 18.04:
@@ -643,8 +652,8 @@ sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 
 
-<div id="outline-container-orge055249" class="outline-2">
-<h2 id="orge055249"><span class="section-number-2">2</span> Installation</h2>
+<div id="outline-container-org90ff995" class="outline-2">
+<h2 id="org90ff995"><span class="section-number-2">2</span> Installation</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 On windows, you need <code>unetbootin</code>. On linux:
@@ -678,8 +687,8 @@ sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstal
 </pre>
 </div>
 
-<div id="outline-container-orgcad9484" class="outline-3">
-<h3 id="orgcad9484"><span class="section-number-3">2.1</span> Virtualization</h3>
+<div id="outline-container-org6492a1a" class="outline-3">
+<h3 id="org6492a1a"><span class="section-number-3">2.1</span> Virtualization</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Make sure the kernel module <code>kvm</code> and <code>virtio</code> is loaded. Make sure
@@ -734,10 +743,243 @@ TODO: try SPICE.
 </div>
 </div>
 
-
-<div id="outline-container-orgd55525c" class="outline-2">
-<h2 id="orgd55525c"><span class="section-number-2">3</span> GuixSD</h2>
+<div id="outline-container-orgdaa096b" class="outline-2">
+<h2 id="orgdaa096b"><span class="section-number-2">3</span> NixOS</h2>
 <div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org347975d" class="outline-3">
+<h3 id="org347975d"><span class="section-number-3">3.1</span> nixos</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<code>man configuration.nix</code> shows all options offline.
+</p>
+
+<p>
+build a system without switch to it, for testing
+</p>
+
+<pre class="example">
+nixos-rebuild build
+</pre>
+
+<p>
+build and switch
+</p>
+
+<pre class="example">
+nixos-rebuild switch
+</pre>
+
+<p>
+To rebuild nixos with a local nixpkgs tree:
+</p>
+
+<pre class="example">
+nixos-rebuild switch -I nixpkgs=/path/to/nixpkgs
+</pre>
+
+<p>
+To run repl
+</p>
+
+<pre class="example">
+nix repl
+</pre>
+
+<p>
+Inside REPL, you can query the value of each option.
+</p>
+
+<p>
+<code>/var/log</code> goes into <code>~/.nix-profile/var/log/</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4890492" class="outline-3">
+<h3 id="org4890492"><span class="section-number-3">3.2</span> package development</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+To build a nix script
+</p>
+
+<pre class="example">
+nix-build xxx.nix
+</pre>
+
+<p>
+The script should return a derivation, i.e. the result of applying
+<code>stdenv.mkDerivation</code> function.
+</p>
+
+<p>
+To access pkgs in .nix:
+</p>
+<pre class="example">
+pkgs = import &lt;nixpkgs&gt; {};
+</pre>
+
+
+<p>
+If you are in a nixpkgs local checkout root directory, you can use that and
+specify a package to build:
+</p>
+
+<pre class="example">
+nix-build -A rPackages.RcppArmadillo
+</pre>
+
+<p>
+You can also use your current default path, <code>'&lt;nixpkgs&gt;'</code> (HEBI: How to is it resolved?)
+</p>
+
+<pre class="example">
+nix-build '&lt;nixpkgs&gt;' -A rPackages.RcppArmadillo
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5c9ed01" class="outline-3">
+<h3 id="org5c9ed01"><span class="section-number-3">3.3</span> package management</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+search
+</p>
+
+<pre class="example">
+nix-env -qaP '.*emacs.*'
+</pre>
+
+<p>
+To install packages
+</p>
+
+<pre class="example">
+nix-env -iA nixos.thunderbird
+</pre>
+
+<p>
+<code>nix-env -f '&lt;nixpkgs&gt;' -ia emacs</code> sets nixpkgs repo explicitly, the default is
+<code>~/.nix-defexpr</code>, which has <code>nixos</code> link to <code>/nix/store/xxx-nixos-19.09</code>. During
+system installation, it seems to be recommanded to use <code>-f
+'&lt;nixpkgs&gt;'</code>. <code>&lt;nixpkgs&gt;</code> seems to be the channel name.
+</p>
+
+<p>
+uninstall a package
+</p>
+
+<pre class="example">
+nix-env -e thunderbird
+</pre>
+
+<p>
+list installed
+</p>
+
+<pre class="example">
+nix-env -q
+</pre>
+
+<p>
+list generation:
+</p>
+
+<pre class="example">
+nix-env --list-generations
+</pre>
+
+<p>
+roll back
+</p>
+
+<pre class="example">
+nix-env --rollback
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org4c5b9ba" class="outline-3">
+<h3 id="org4c5b9ba"><span class="section-number-3">3.4</span> <span class="todo TODO">TODO</span> local package manifest</h3>
+</div>
+
+
+<div id="outline-container-org97985d4" class="outline-3">
+<h3 id="org97985d4"><span class="section-number-3">3.5</span> channel</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+list current channel:
+</p>
+
+<pre class="example">
+sudo nix-channel --list
+# &gt;&gt;&gt; nixos https://nixos.org/channels/nixos-19.09
+</pre>
+
+<p>
+Add the unstable channel:
+</p>
+
+<pre class="example">
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+</pre>
+
+<p>
+Note that I'll need to remove the old channel to use the new channel:
+</p>
+
+<pre class="example">
+nix-channel --remove nixpkgs
+</pre>
+
+<p>
+However, when doing nixos-rebuild, it complains about missing <code>nixos</code>, which I
+guess is hardcoded. So I'll need to add the package as name "nixos" instead of
+"nixpkgs":
+</p>
+
+<pre class="example">
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
+</pre>
+
+<p>
+Obtain the latest content from the channels:
+</p>
+
+<pre class="example">
+nix-channel --update
+</pre>
+
+<p>
+Do a full upgrade:
+</p>
+
+<pre class="example">
+sudo nixos-rebuild switch --upgrade
+</pre>
+
+<p>
+This command will do channel update for you.
+</p>
+
+<p>
+Note that the channel setting is per-user, so for system upgrade, you need to set the root's channel.
+</p>
+
+<p>
+To upgrade all your local packages that are installed via <code>nix-env</code>:
+</p>
+
+<pre class="example">
+nix-env -u
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1655cfa" class="outline-2">
+<h2 id="org1655cfa"><span class="section-number-2">4</span> GuixSD</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Actually the installation process is very joyful, except that no wifi
 driver available.
@@ -875,9 +1117,9 @@ guix package -m manifest-file
 </div>
 
 
-<div id="outline-container-orgb4efe20" class="outline-3">
-<h3 id="orgb4efe20"><span class="section-number-3">3.1</span> Qemu Image</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgf140b00" class="outline-3">
+<h3 id="orgf140b00"><span class="section-number-3">4.1</span> Qemu Image</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 Running GuixSD in Qemu is probably the easiest way. Download the Qemu
 image, uncompress it, and run:
@@ -980,9 +1222,9 @@ export GIT_EXEC_PATH="/root/.guix-profile/libexec/git-core"
 
 
 
-<div id="outline-container-org34c338e" class="outline-3">
-<h3 id="org34c338e"><span class="section-number-3">3.2</span> Guile</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-org14ae570" class="outline-3">
+<h3 id="org14ae570"><span class="section-number-3">4.2</span> Guile</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 When debugging guile files, use <code>C-c C-s</code> to change to scheme to
 <code>guile</code>, that would enable following definitions, otherwise it will
@@ -992,9 +1234,9 @@ run-geiser</code>.
 </div>
 </div>
 
-<div id="outline-container-org186e83f" class="outline-3">
-<h3 id="org186e83f"><span class="section-number-3">3.3</span> Guix</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-org2c4f64c" class="outline-3">
+<h3 id="org2c4f64c"><span class="section-number-3">4.3</span> Guix</h3>
+<div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>guix package &#x2013;search-paths: show search path</li>
 <li>guix channel: ???</li>
@@ -1015,9 +1257,9 @@ failed to create path for auto-compiled file "/home/hebi/.config/guix/channels.s
 </div>
 
 
-<div id="outline-container-orgdeb7ccb" class="outline-3">
-<h3 id="orgdeb7ccb"><span class="section-number-3">3.4</span> Developing Guix packages</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-org61fef4c" class="outline-3">
+<h3 id="org61fef4c"><span class="section-number-3">4.4</span> Developing Guix packages</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 To get the hash:
 </p>
@@ -1040,18 +1282,18 @@ git checkout c6e10a
 
 
 
-<div id="outline-container-org6a88de2" class="outline-3">
-<h3 id="org6a88de2"><span class="section-number-3">3.5</span> Bootloader</h3>
-<div class="outline-text-3" id="text-3-5">
+<div id="outline-container-org1f4e6a5" class="outline-3">
+<h3 id="org1f4e6a5"><span class="section-number-3">4.5</span> Bootloader</h3>
+<div class="outline-text-3" id="text-4-5">
 <pre class="example">
 /gnu/store/9nqaksx40zh5d6cg5rim3f3spy56bfb9-raw-initrd/initrd.cpio.gz
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org404b9a3" class="outline-3">
-<h3 id="org404b9a3"><span class="section-number-3">3.6</span> Nvidia driver</h3>
-<div class="outline-text-3" id="text-3-6">
+<div id="outline-container-orgd3ec265" class="outline-3">
+<h3 id="orgd3ec265"><span class="section-number-3">4.6</span> Nvidia driver</h3>
+<div class="outline-text-3" id="text-4-6">
 <p>
 To install Nvidia driver, we need to kernel source tree. However,
 there is no such a package in Guix. Thus, we need to build the kernel
@@ -1137,13 +1379,13 @@ nouveau, i.e. in <code>config.scm</code>, you should have:
 </div>
 
 
-<div id="outline-container-orga746831" class="outline-3">
-<h3 id="orga746831"><span class="section-number-3">3.7</span> Guix on Foreign distribution</h3>
-<div class="outline-text-3" id="text-3-7">
+<div id="outline-container-orgb646682" class="outline-3">
+<h3 id="orgb646682"><span class="section-number-3">4.7</span> Guix on Foreign distribution</h3>
+<div class="outline-text-3" id="text-4-7">
 </div>
-<div id="outline-container-orge5f6692" class="outline-4">
-<h4 id="orge5f6692"><span class="section-number-4">3.7.1</span> Trouble Shooting</h4>
-<div class="outline-text-4" id="text-3-7-1">
+<div id="outline-container-orgc1b3d94" class="outline-4">
+<h4 id="orgc1b3d94"><span class="section-number-4">4.7.1</span> Trouble Shooting</h4>
+<div class="outline-text-4" id="text-4-7-1">
 <p>
 On Ubuntu, every time I run <code>guix package</code>, I got the warning:
 </p>
@@ -1187,9 +1429,9 @@ Reference: <a href="https://lists.gnu.org/archive/html/help-guix/2019-01/msg0021
 </div>
 
 
-<div id="outline-container-org2a6fe3f" class="outline-2">
-<h2 id="org2a6fe3f"><span class="section-number-2">4</span> Git</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org432ae12" class="outline-2">
+<h2 id="org432ae12"><span class="section-number-2">5</span> Git</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Withdraw remote commit is actually fairly easy. First, reset local
 commit, then force pushing.
@@ -1231,9 +1473,9 @@ git submodule update --init --recursive
 </div>
 
 
-<div id="outline-container-orgd96faa8" class="outline-3">
-<h3 id="orgd96faa8"><span class="section-number-3">4.1</span> Configuration</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-org9febfc9" class="outline-3">
+<h3 id="org9febfc9"><span class="section-number-3">5.1</span> Configuration</h3>
+<div class="outline-text-3" id="text-5-1">
 <pre class="example">
 git config --global user.email 'xxx@xxx'
 git config --global user.name 'xxx'
@@ -1243,9 +1485,9 @@ git config --global credential.helper 'cache --timeout=3600' # set in sec
 </div>
 </div>
 
-<div id="outline-container-org97d26a4" class="outline-3">
-<h3 id="org97d26a4"><span class="section-number-3">4.2</span> Server</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-org51eca11" class="outline-3">
+<h3 id="org51eca11"><span class="section-number-3">5.2</span> Server</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
 There are several protocols. The smart HTTP protocol seems to be the
 way to go, because it supports both anonymous and authentication.
@@ -1460,18 +1702,18 @@ address. Thus, nothing can be done actually.
 </pre>
 </div>
 
-<div id="outline-container-orga50afbd" class="outline-4">
-<h4 id="orga50afbd"><span class="section-number-4">4.2.1</span> <span class="todo TODO">TODO</span> gitolite</h4>
+<div id="outline-container-org5187571" class="outline-4">
+<h4 id="org5187571"><span class="section-number-4">5.2.1</span> <span class="todo TODO">TODO</span> gitolite</h4>
 </div>
 </div>
 
-<div id="outline-container-org5a64537" class="outline-3">
-<h3 id="org5a64537"><span class="section-number-3">4.3</span> Individual tools</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-org48cb2f6" class="outline-3">
+<h3 id="org48cb2f6"><span class="section-number-3">5.3</span> Individual tools</h3>
+<div class="outline-text-3" id="text-5-3">
 </div>
-<div id="outline-container-orgc3c212e" class="outline-4">
-<h4 id="orgc3c212e"><span class="section-number-4">4.3.1</span> git-bisect</h4>
-<div class="outline-text-4" id="text-4-3-1">
+<div id="outline-container-orgc1e7fd1" class="outline-4">
+<h4 id="orgc1e7fd1"><span class="section-number-4">5.3.1</span> git-bisect</h4>
+<div class="outline-text-4" id="text-5-3-1">
 <p>
 This command uses a binary search algorithm to find which commit in your project's history introduced a bug.
 </p>
@@ -1483,9 +1725,9 @@ This command uses a binary search algorithm to find which commit in your project
 </ol>
 </div>
 
-<div id="outline-container-orga7178cc" class="outline-5">
-<h5 id="orga7178cc"><span class="section-number-5">4.3.1.1</span> start</h5>
-<div class="outline-text-5" id="text-4-3-1-1">
+<div id="outline-container-org86e688b" class="outline-5">
+<h5 id="org86e688b"><span class="section-number-5">5.3.1.1</span> start</h5>
+<div class="outline-text-5" id="text-5-3-1-1">
 <pre class="example">
   $ git bisect start
   $ git bisect bad                 # Current version is bad
@@ -1493,9 +1735,9 @@ This command uses a binary search algorithm to find which commit in your project
 </pre>
 </div>
 </div>
-<div id="outline-container-org44f9906" class="outline-5">
-<h5 id="org44f9906"><span class="section-number-5">4.3.1.2</span> answer the question</h5>
-<div class="outline-text-5" id="text-4-3-1-2">
+<div id="outline-container-org5f8ee30" class="outline-5">
+<h5 id="org5f8ee30"><span class="section-number-5">5.3.1.2</span> answer the question</h5>
+<div class="outline-text-5" id="text-5-3-1-2">
 <p>
 Each time testing a commit, answer the question by:
 </p>
@@ -1504,9 +1746,9 @@ Each time testing a commit, answer the question by:
 </pre>
 </div>
 </div>
-<div id="outline-container-org349edbe" class="outline-5">
-<h5 id="org349edbe"><span class="section-number-5">4.3.1.3</span> multiple good</h5>
-<div class="outline-text-5" id="text-4-3-1-3">
+<div id="outline-container-orgb788543" class="outline-5">
+<h5 id="orgb788543"><span class="section-number-5">5.3.1.3</span> multiple good</h5>
+<div class="outline-text-5" id="text-5-3-1-3">
 <p>
 If you know beforehand more than one good commit,
 you can narrow the bisect space down by specifying all of the good commits immediately after the bad commit when issuing the bisect start command
@@ -1521,9 +1763,9 @@ you can narrow the bisect space down by specifying all of the good commits immed
 </pre>
 </div>
 </div>
-<div id="outline-container-org5c5d0de" class="outline-5">
-<h5 id="org5c5d0de"><span class="section-number-5">4.3.1.4</span> run script</h5>
-<div class="outline-text-5" id="text-4-3-1-4">
+<div id="outline-container-orgd46be40" class="outline-5">
+<h5 id="orgd46be40"><span class="section-number-5">5.3.1.4</span> run script</h5>
+<div class="outline-text-5" id="text-5-3-1-4">
 <p>
 If you have a script that can tell if the current source code is good or bad, you can bisect by issuing the command:
 </p>
@@ -1533,9 +1775,9 @@ If you have a script that can tell if the current source code is good or bad, yo
 </div>
 </div>
 
-<div id="outline-container-orgd15d8f5" class="outline-5">
-<h5 id="orgd15d8f5"><span class="section-number-5">4.3.1.5</span> Some work flows</h5>
-<div class="outline-text-5" id="text-4-3-1-5">
+<div id="outline-container-org4f731cc" class="outline-5">
+<h5 id="org4f731cc"><span class="section-number-5">5.3.1.5</span> Some work flows</h5>
+<div class="outline-text-5" id="text-5-3-1-5">
 <p>
 Automatically bisect a broken build between v1.2 and HEAD:
 In this case, only find the one that cause compile failure.
@@ -1574,9 +1816,9 @@ Use a custom script.
 </div>
 </div>
 
-<div id="outline-container-orgd5fcc16" class="outline-4">
-<h4 id="orgd5fcc16"><span class="section-number-4">4.3.2</span> git-blame</h4>
-<div class="outline-text-4" id="text-4-3-2">
+<div id="outline-container-org44abc3f" class="outline-4">
+<h4 id="org44abc3f"><span class="section-number-4">5.3.2</span> git-blame</h4>
+<div class="outline-text-4" id="text-5-3-2">
 <p>
 Annotates each line in the given file with information from the revision which last modified the line.
 </p>
@@ -1589,9 +1831,9 @@ Annotates each line in the given file with information from the revision which l
 
 
 
-<div id="outline-container-org5d32d5e" class="outline-2">
-<h2 id="org5d32d5e"><span class="section-number-2">5</span> Network</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org3453917" class="outline-2">
+<h2 id="org3453917"><span class="section-number-2">6</span> Network</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 When using docker container, host system cannot resolve the name of
 container to the specific IP. I have to specify it manually. To
@@ -1619,9 +1861,9 @@ To kill apps listening on a port, use <code>sudo fuser -k 8080/tcp</code>.
 </p>
 </div>
 
-<div id="outline-container-orgf9e73c3" class="outline-3">
-<h3 id="orgf9e73c3"><span class="section-number-3">5.1</span> SSH</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-orga3b477d" class="outline-3">
+<h3 id="orga3b477d"><span class="section-number-3">6.1</span> SSH</h3>
+<div class="outline-text-3" id="text-6-1">
 <p>
 Dropbear is a replacement of OpenSSH.
 </p>
@@ -1665,9 +1907,9 @@ A side note: remarkable password can be changed by editing
 </div>
 </div>
 
-<div id="outline-container-org5dc1477" class="outline-3">
-<h3 id="org5dc1477"><span class="section-number-3">5.2</span> Wireless Networking</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-orgbfe71ba" class="outline-3">
+<h3 id="orgbfe71ba"><span class="section-number-3">6.2</span> Wireless Networking</h3>
+<div class="outline-text-3" id="text-6-2">
 <p>
 DHCP is not enabled by default. It is the philloshophy for Arch:
 installing a package will not enable any service. Enable it by;
@@ -1794,13 +2036,13 @@ wpa_supplicant -B -i wlp4s0 -c /path/to/wifi.conf
 
 
 
-<div id="outline-container-orga079358" class="outline-3">
-<h3 id="orga079358"><span class="section-number-3">5.3</span> VPN</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-org85075ce" class="outline-3">
+<h3 id="org85075ce"><span class="section-number-3">6.3</span> VPN</h3>
+<div class="outline-text-3" id="text-6-3">
 </div>
-<div id="outline-container-org6b85d28" class="outline-4">
-<h4 id="org6b85d28"><span class="section-number-4">5.3.1</span> L2tp, IPSec</h4>
-<div class="outline-text-4" id="text-5-3-1">
+<div id="outline-container-orga550520" class="outline-4">
+<h4 id="orga550520"><span class="section-number-4">6.3.1</span> L2tp, IPSec</h4>
+<div class="outline-text-4" id="text-6-3-1">
 <pre class="example">
 apt-get purge "lxc-docker*"
 apt-get purge "docker.io*"
@@ -1864,13 +2106,13 @@ docker exec -it l2tp-ipsec-vpn-server ipsec status
 </div>
 </div>
 
-<div id="outline-container-orgd45efcf" class="outline-4">
-<h4 id="orgd45efcf"><span class="section-number-4">5.3.2</span> OpenVPN</h4>
-<div class="outline-text-4" id="text-5-3-2">
+<div id="outline-container-orgcdde16f" class="outline-4">
+<h4 id="orgcdde16f"><span class="section-number-4">6.3.2</span> OpenVPN</h4>
+<div class="outline-text-4" id="text-6-3-2">
 </div>
-<div id="outline-container-org2f8af0d" class="outline-5">
-<h5 id="org2f8af0d"><span class="section-number-5">5.3.2.1</span> Server Setup</h5>
-<div class="outline-text-5" id="text-5-3-2-1">
+<div id="outline-container-orgdf9ab9f" class="outline-5">
+<h5 id="orgdf9ab9f"><span class="section-number-5">6.3.2.1</span> Server Setup</h5>
+<div class="outline-text-5" id="text-6-3-2-1">
 <p>
 <a href="https://github.com/kylemanna/docker-openvpn">https://github.com/kylemanna/docker-openvpn</a>
 It is very interesting to use docker this way.
@@ -1909,9 +2151,9 @@ docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient CLIE
 </div>
 </div>
 
-<div id="outline-container-org1177af6" class="outline-5">
-<h5 id="org1177af6"><span class="section-number-5">5.3.2.2</span> Client Setup</h5>
-<div class="outline-text-5" id="text-5-3-2-2">
+<div id="outline-container-orgbed0c4e" class="outline-5">
+<h5 id="orgbed0c4e"><span class="section-number-5">6.3.2.2</span> Client Setup</h5>
+<div class="outline-text-5" id="text-6-3-2-2">
 <p>
 On arch, copy hebi.ovpn to /etc/openvpn/client/hebi.conf. Then the
 service openvpn-client@hebi will be available for systemd. On ubuntu,
@@ -1948,13 +2190,13 @@ the conf file.
 </div>
 
 
-<div id="outline-container-org0d22e82" class="outline-2">
-<h2 id="org0d22e82"><span class="section-number-2">6</span> App</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgcab54d6" class="outline-2">
+<h2 id="orgcab54d6"><span class="section-number-2">7</span> App</h2>
+<div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgdc5154f" class="outline-3">
-<h3 id="orgdc5154f"><span class="section-number-3">6.1</span> mplayer</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-orgbb2dd8c" class="outline-3">
+<h3 id="orgbb2dd8c"><span class="section-number-3">7.1</span> mplayer</h3>
+<div class="outline-text-3" id="text-7-1">
 <p>
 Interactive controls:
 </p>
@@ -1972,9 +2214,9 @@ screen, pass the <code>-zoom</code> option when starting.
 </div>
 </div>
 
-<div id="outline-container-orgce224fa" class="outline-3">
-<h3 id="orgce224fa"><span class="section-number-3">6.2</span> youtube-dl</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-orgf39a0c3" class="outline-3">
+<h3 id="orgf39a0c3"><span class="section-number-3">7.2</span> youtube-dl</h3>
+<div class="outline-text-3" id="text-7-2">
 <p>
 When downloading a playlist, you can make the template to number the
 files
@@ -1992,9 +2234,9 @@ youtube-dl --extract-audio --audio-format flac &lt;url&gt;
 </div>
 </div>
 
-<div id="outline-container-orga8feeea" class="outline-3">
-<h3 id="orga8feeea"><span class="section-number-3">6.3</span> chrome extensions</h3>
-<div class="outline-text-3" id="text-6-3">
+<div id="outline-container-orgc480f89" class="outline-3">
+<h3 id="orgc480f89"><span class="section-number-3">7.3</span> chrome extensions</h3>
+<div class="outline-text-3" id="text-7-3">
 <ul class="org-ul">
 <li><code>html5outliner</code>: give you a toc of the page. VERY NICE!</li>
 <li id="<code>markdown here</code>">render for email</li>
@@ -2006,9 +2248,9 @@ youtube-dl --extract-audio --audio-format flac &lt;url&gt;
 </div>
 
 
-<div id="outline-container-org28483ff" class="outline-3">
-<h3 id="org28483ff"><span class="section-number-3">6.4</span> Remove viewer</h3>
-<div class="outline-text-3" id="text-6-4">
+<div id="outline-container-org4ea83cc" class="outline-3">
+<h3 id="org4ea83cc"><span class="section-number-3">7.4</span> Remove viewer</h3>
+<div class="outline-text-3" id="text-7-4">
 <p>
 The lab machines are accessed via spice. The client for spice is
 virt-viewer. It can be installed through package manager. The actual
@@ -2018,9 +2260,9 @@ the command to connect to the .vv file: <code>remove-viewer console.vv</code>.
 </div>
 </div>
 
-<div id="outline-container-org1190656" class="outline-3">
-<h3 id="org1190656"><span class="section-number-3">6.5</span> mpd</h3>
-<div class="outline-text-3" id="text-6-5">
+<div id="outline-container-org043ed02" class="outline-3">
+<h3 id="org043ed02"><span class="section-number-3">7.5</span> mpd</h3>
+<div class="outline-text-3" id="text-7-5">
 <p>
 music play daemon
 </p>
@@ -2069,9 +2311,9 @@ mpd client. mpc is a command line client.
 </div>
 
 
-<div id="outline-container-orgff8dead" class="outline-3">
-<h3 id="orgff8dead"><span class="section-number-3">6.6</span> fontforge</h3>
-<div class="outline-text-3" id="text-6-6">
+<div id="outline-container-orge6aff66" class="outline-3">
+<h3 id="orge6aff66"><span class="section-number-3">7.6</span> fontforge</h3>
+<div class="outline-text-3" id="text-7-6">
 <p>
 How I made the WenQuanYi Micro Hei ttf font (clx-truetype only
 recognizes ttf, not ttc):
@@ -2089,9 +2331,9 @@ The validation failed, but doesn't matter
 </div>
 </div>
 
-<div id="outline-container-org96ff122" class="outline-3">
-<h3 id="org96ff122"><span class="section-number-3">6.7</span> tmux</h3>
-<div class="outline-text-3" id="text-6-7">
+<div id="outline-container-org45997c8" class="outline-3">
+<h3 id="org45997c8"><span class="section-number-3">7.7</span> tmux</h3>
+<div class="outline-text-3" id="text-7-7">
 <div class="org-src-container">
 <pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">start a new session, with the session name set to "helium"</span>
 tmux new -s helium
@@ -2124,9 +2366,9 @@ Commands
 </div>
 </div>
 
-<div id="outline-container-orgffe9132" class="outline-2">
-<h2 id="orgffe9132"><span class="section-number-2">7</span> Window System</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgcc995b9" class="outline-2">
+<h2 id="orgcc995b9"><span class="section-number-2">8</span> Window System</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 X generally distinguishes between two types of selection, the PRIMARY
 and the CLIPBOARD. Every time you select a piece of text with the
@@ -2138,9 +2380,9 @@ pasting using the paste function will insert the CLIPBOARD.
 </div>
 
 
-<div id="outline-container-org2e4c894" class="outline-3">
-<h3 id="org2e4c894"><span class="section-number-3">7.1</span> xkill</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-org212581b" class="outline-3">
+<h3 id="org212581b"><span class="section-number-3">8.1</span> xkill</h3>
+<div class="outline-text-3" id="text-8-1">
 <p>
 Kill all Xorg instances
 </p>
@@ -2163,9 +2405,9 @@ error.
 </div>
 </div>
 
-<div id="outline-container-org1d74d59" class="outline-3">
-<h3 id="org1d74d59"><span class="section-number-3">7.2</span> Display Manager</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-org531ff11" class="outline-3">
+<h3 id="org531ff11"><span class="section-number-3">8.2</span> Display Manager</h3>
+<div class="outline-text-3" id="text-8-2">
 <p>
 Install xdm. It will use the file <code>$HOME/.xsession</code>, so
 </p>
@@ -2192,9 +2434,9 @@ Change (three approaches):
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbb5f2ed" class="outline-3">
-<h3 id="orgbb5f2ed"><span class="section-number-3">7.3</span> screen</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-org845d508" class="outline-3">
+<h3 id="org845d508"><span class="section-number-3">8.3</span> screen</h3>
+<div class="outline-text-3" id="text-8-3">
 <p>
 Multi screen, stumpwm detect as one.  Install <code>xdpyinfo</code>. It is used
 to detect the heads.
@@ -2244,9 +2486,9 @@ xinput map-to-output &lt;device-id&gt; &lt;screen-id&gt;
 </div>
 
 
-<div id="outline-container-org9cb778e" class="outline-3">
-<h3 id="org9cb778e"><span class="section-number-3">7.4</span> cursor</h3>
-<div class="outline-text-3" id="text-7-4">
+<div id="outline-container-orgf4b6683" class="outline-3">
+<h3 id="orgf4b6683"><span class="section-number-3">8.4</span> cursor</h3>
+<div class="outline-text-3" id="text-8-4">
 <p>
 Install xcursor-themes:
 </p>
@@ -2264,9 +2506,9 @@ Xcursor.theme: redglass
 </div>
 </div>
 
-<div id="outline-container-org537def9" class="outline-3">
-<h3 id="org537def9"><span class="section-number-3">7.5</span> Natural Scrolling</h3>
-<div class="outline-text-3" id="text-7-5">
+<div id="outline-container-org176c93a" class="outline-3">
+<h3 id="org176c93a"><span class="section-number-3">8.5</span> Natural Scrolling</h3>
+<div class="outline-text-3" id="text-8-5">
 <p>
 The old solution is to swap the pointer button "4" and "5", by
 <code>xmodmap</code> or <code>xinput</code>:
@@ -2311,9 +2553,9 @@ xinput set-prop &lt;deviceID&gt; &lt;propID&gt; &lt;value&gt;
 </div>
 </div>
 
-<div id="outline-container-org014445b" class="outline-3">
-<h3 id="org014445b"><span class="section-number-3">7.6</span> ratpoison</h3>
-<div class="outline-text-3" id="text-7-6">
+<div id="outline-container-org0bf84af" class="outline-3">
+<h3 id="org0bf84af"><span class="section-number-3">8.6</span> ratpoison</h3>
+<div class="outline-text-3" id="text-8-6">
 <p>
 This is actually a wonderful WM.  To start:
 </p>
@@ -2359,13 +2601,13 @@ one, but
 
 
 
-<div id="outline-container-org6625e00" class="outline-3">
-<h3 id="org6625e00"><span class="section-number-3">7.7</span> StumpWM</h3>
-<div class="outline-text-3" id="text-7-7">
+<div id="outline-container-org18cb365" class="outline-3">
+<h3 id="org18cb365"><span class="section-number-3">8.7</span> StumpWM</h3>
+<div class="outline-text-3" id="text-8-7">
 </div>
-<div id="outline-container-org595fec1" class="outline-4">
-<h4 id="org595fec1"><span class="section-number-4">7.7.1</span> Installation</h4>
-<div class="outline-text-4" id="text-7-7-1">
+<div id="outline-container-orgd421f32" class="outline-4">
+<h4 id="orgd421f32"><span class="section-number-4">8.7.1</span> Installation</h4>
+<div class="outline-text-4" id="text-8-7-1">
 <p>
 In order to use <code>ttf-fonts</code> module, the lisp <code>clx-truetype</code> package needs to be installed.
 Install the slime IDE for emacs, install quicklisp, then install it using quicklisp.
@@ -2373,9 +2615,9 @@ Follow the description in lisp wiki page.
 </p>
 </div>
 
-<div id="outline-container-orge1edf5d" class="outline-5">
-<h5 id="orge1edf5d"><span class="section-number-5">7.7.1.1</span> A better way to install stumpwm</h5>
-<div class="outline-text-5" id="text-7-7-1-1">
+<div id="outline-container-orga320cd5" class="outline-5">
+<h5 id="orga320cd5"><span class="section-number-5">8.7.1.1</span> A better way to install stumpwm</h5>
+<div class="outline-text-5" id="text-8-7-1-1">
 <ul class="org-ul">
 <li>This seems a better way to install stumpwm <code>(ql:quickload
   "stumpwm")</code></li>
@@ -2424,9 +2666,9 @@ sbcl --load /path/to/startstump
 </div>
 </div>
 
-<div id="outline-container-org7e39fe2" class="outline-5">
-<h5 id="org7e39fe2"><span class="section-number-5">7.7.1.2</span> Live Debugging</h5>
-<div class="outline-text-5" id="text-7-7-1-2">
+<div id="outline-container-org43483ca" class="outline-5">
+<h5 id="org43483ca"><span class="section-number-5">8.7.1.2</span> Live Debugging</h5>
+<div class="outline-text-5" id="text-8-7-1-2">
 <p>
 To debug it live, you might need this in .stumpwmrc:
 </p>
@@ -2484,9 +2726,9 @@ and operate the window, like this:
 </div>
 </div>
 
-<div id="outline-container-org6896afe" class="outline-4">
-<h4 id="org6896afe"><span class="section-number-4">7.7.2</span> General</h4>
-<div class="outline-text-4" id="text-7-7-2">
+<div id="outline-container-orgbb71f83" class="outline-4">
+<h4 id="orgbb71f83"><span class="section-number-4">8.7.2</span> General</h4>
+<div class="outline-text-4" id="text-8-7-2">
 <p>
 Same as ratpoison:
 </p>
@@ -2504,9 +2746,9 @@ Same as ratpoison:
 </ul>
 </div>
 
-<div id="outline-container-org5a0ee10" class="outline-5">
-<h5 id="org5a0ee10"><span class="section-number-5">7.7.2.1</span> Get Help</h5>
-<div class="outline-text-5" id="text-7-7-2-1">
+<div id="outline-container-org01e4c0b" class="outline-5">
+<h5 id="org01e4c0b"><span class="section-number-5">8.7.2.1</span> Get Help</h5>
+<div class="outline-text-5" id="text-8-7-2-1">
 <ul class="org-ul">
 <li><code>C-t h k</code>: from key binding to command: <code>describe-key</code></li>
 <li><code>C-t h w</code>: from command to key binding: <code>where-is</code></li>
@@ -2520,9 +2762,9 @@ Same as ratpoison:
 </div>
 </div>
 
-<div id="outline-container-org3c5c87d" class="outline-4">
-<h4 id="org3c5c87d"><span class="section-number-4">7.7.3</span> Window</h4>
-<div class="outline-text-4" id="text-7-7-3">
+<div id="outline-container-org87c3f73" class="outline-4">
+<h4 id="org87c3f73"><span class="section-number-4">8.7.3</span> Window</h4>
+<div class="outline-text-4" id="text-8-7-3">
 <ul class="org-ul">
 <li><code>C-t n</code></li>
 <li><code>C-t p</code></li>
@@ -2535,9 +2777,9 @@ Same as ratpoison:
 </div>
 
 
-<div id="outline-container-org27c6d64" class="outline-4">
-<h4 id="org27c6d64"><span class="section-number-4">7.7.4</span> Frame</h4>
-<div class="outline-text-4" id="text-7-7-4">
+<div id="outline-container-orgf6bd4d9" class="outline-4">
+<h4 id="orgf6bd4d9"><span class="section-number-4">8.7.4</span> Frame</h4>
+<div class="outline-text-4" id="text-8-7-4">
 <ul class="org-ul">
 <li><code>C-t s</code>: hsplit</li>
 <li><code>C-t S</code>: vsplit</li>
@@ -2562,9 +2804,9 @@ To resize frames interactively, <code>C-t r</code> and then use the arrows.
 </div>
 </div>
 
-<div id="outline-container-org1d457c8" class="outline-4">
-<h4 id="org1d457c8"><span class="section-number-4">7.7.5</span> Groups</h4>
-<div class="outline-text-4" id="text-7-7-5">
+<div id="outline-container-org9a27c29" class="outline-4">
+<h4 id="org9a27c29"><span class="section-number-4">8.7.5</span> Groups</h4>
+<div class="outline-text-4" id="text-8-7-5">
 <p>
 Shortcuts:
 </p>
@@ -2585,9 +2827,9 @@ Shortcuts:
 </div>
 
 
-<div id="outline-container-orgfce49f3" class="outline-4">
-<h4 id="orgfce49f3"><span class="section-number-4">7.7.6</span> Configuration</h4>
-<div class="outline-text-4" id="text-7-7-6">
+<div id="outline-container-org098f22c" class="outline-4">
+<h4 id="org098f22c"><span class="section-number-4">8.7.6</span> Configuration</h4>
+<div class="outline-text-4" id="text-8-7-6">
 <pre class="example">
 (stumpwm:define-key stumpwm:*root-map* (stumpwm:kbd "C-z") "echo Zzzzz...")
 </pre>
@@ -2596,9 +2838,9 @@ Shortcuts:
 </div>
 
 
-<div id="outline-container-org813d984" class="outline-3">
-<h3 id="org813d984"><span class="section-number-3">7.8</span> Xmonad</h3>
-<div class="outline-text-3" id="text-7-8">
+<div id="outline-container-org705a4da" class="outline-3">
+<h3 id="org705a4da"><span class="section-number-3">8.8</span> Xmonad</h3>
+<div class="outline-text-3" id="text-8-8">
 <p>
 I use Xmonad in vncserver, and it works nicely with host WM StumpWM
 because it uses a different set of keys. It has a red frame around
@@ -2647,9 +2889,9 @@ To load, use <code>Mod-q</code>. This will re-compile and load the configure fil
 
 
 
-<div id="outline-container-org6771802" class="outline-3">
-<h3 id="org6771802"><span class="section-number-3">7.9</span> VNC</h3>
-<div class="outline-text-3" id="text-7-9">
+<div id="outline-container-orgac16d4b" class="outline-3">
+<h3 id="orgac16d4b"><span class="section-number-3">8.9</span> VNC</h3>
+<div class="outline-text-3" id="text-8-9">
 <p>
 I use tigervnc because it seems to be fast.
 </p>
@@ -2710,9 +2952,9 @@ some random settings in <code>xstartup</code>:
 
 
 
-<div id="outline-container-org96ff62e" class="outline-2">
-<h2 id="org96ff62e"><span class="section-number-2">8</span> System Management</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-orgdabb052" class="outline-2">
+<h2 id="orgdabb052"><span class="section-number-2">9</span> System Management</h2>
+<div class="outline-text-2" id="text-9">
 <p>
 The hardware beep sound is known as PC Speaker. To disable, simply
 remove the kernel module:
@@ -2727,9 +2969,9 @@ machine, run <code>ssh-keygen</code>. Then <code>ssh-copy-id user@server</code>.
 </p>
 </div>
 
-<div id="outline-container-org28933ed" class="outline-3">
-<h3 id="org28933ed"><span class="section-number-3">8.1</span> Audio</h3>
-<div class="outline-text-3" id="text-8-1">
+<div id="outline-container-org7e052bb" class="outline-3">
+<h3 id="org7e052bb"><span class="section-number-3">9.1</span> Audio</h3>
+<div class="outline-text-3" id="text-9-1">
 <p>
 Bluetooth headsets:
 </p>
@@ -2769,9 +3011,9 @@ $ pulseaudio -k
 
 
 
-<div id="outline-container-org4343059" class="outline-3">
-<h3 id="org4343059"><span class="section-number-3">8.2</span> Power Management</h3>
-<div class="outline-text-3" id="text-8-2">
+<div id="outline-container-org6b31d99" class="outline-3">
+<h3 id="org6b31d99"><span class="section-number-3">9.2</span> Power Management</h3>
+<div class="outline-text-3" id="text-9-2">
 <p>
 Power management is done through <code>systmed</code> can handle it, by <code>acpid</code>.
 The configure file is <code>/etc/systemd/logind.conf</code>.  <code>man logind.conf</code>
@@ -2786,9 +3028,9 @@ HandleLidSwitch=suspend
 </div>
 </div>
 
-<div id="outline-container-orgbb12b14" class="outline-3">
-<h3 id="orgbb12b14"><span class="section-number-3">8.3</span> Booting</h3>
-<div class="outline-text-3" id="text-8-3">
+<div id="outline-container-orge5410e6" class="outline-3">
+<h3 id="orge5410e6"><span class="section-number-3">9.3</span> Booting</h3>
+<div class="outline-text-3" id="text-9-3">
 <p>
 The grub2 menu configure file is located at <code>/boot/grub/grub.cfg</code>.  It
 is generated by <code>/usr/sbin/update-grub</code> (8) using templates from
@@ -2806,9 +3048,9 @@ means reboot.
 </div>
 </div>
 
-<div id="outline-container-orgffc75af" class="outline-3">
-<h3 id="orgffc75af"><span class="section-number-3">8.4</span> User Management</h3>
-<div class="outline-text-3" id="text-8-4">
+<div id="outline-container-org1fa6072" class="outline-3">
+<h3 id="org1fa6072"><span class="section-number-3">9.4</span> User Management</h3>
+<div class="outline-text-3" id="text-9-4">
 <p>
 The account will use the values on command line, <b>plus</b> the default
 value for system. A group will also be created by default.
@@ -2826,13 +3068,13 @@ will choose for you.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf1e59f0" class="outline-3">
-<h3 id="orgf1e59f0"><span class="section-number-3">8.5</span> File Management</h3>
-<div class="outline-text-3" id="text-8-5">
+<div id="outline-container-org4b142ec" class="outline-3">
+<h3 id="org4b142ec"><span class="section-number-3">9.5</span> File Management</h3>
+<div class="outline-text-3" id="text-9-5">
 </div>
-<div id="outline-container-orgb60b2c2" class="outline-4">
-<h4 id="orgb60b2c2"><span class="section-number-4">8.5.1</span> Swap File</h4>
-<div class="outline-text-4" id="text-8-5-1">
+<div id="outline-container-org37c5982" class="outline-4">
+<h4 id="org37c5982"><span class="section-number-4">9.5.1</span> Swap File</h4>
+<div class="outline-text-4" id="text-9-5-1">
 <p>
 A swap file can also be used as swap memory. When doing linking, the
 <code>ld</code> might fail because of lack of memory.
@@ -2891,9 +3133,9 @@ This will not be in effect after reboot. To automatically swap it on, in <code>/
 </pre>
 </div>
 </div>
-<div id="outline-container-orgecd7ea1" class="outline-4">
-<h4 id="orgecd7ea1"><span class="section-number-4">8.5.2</span> Back Up &amp; Syncing</h4>
-<div class="outline-text-4" id="text-8-5-2">
+<div id="outline-container-org17e97dc" class="outline-4">
+<h4 id="org17e97dc"><span class="section-number-4">9.5.2</span> Back Up &amp; Syncing</h4>
+<div class="outline-text-4" id="text-9-5-2">
 <p>
 <code>rsync</code> commnad is used to sync from source to destination. It does
 not perform double way transfer. It decides a change if either of
@@ -2906,9 +3148,9 @@ these happens:
 </div>
 </div>
 
-<div id="outline-container-org7dd2353" class="outline-4">
-<h4 id="org7dd2353"><span class="section-number-4">8.5.3</span> MIME</h4>
-<div class="outline-text-4" id="text-8-5-3">
+<div id="outline-container-orgaae30b8" class="outline-4">
+<h4 id="orgaae30b8"><span class="section-number-4">9.5.3</span> MIME</h4>
+<div class="outline-text-4" id="text-9-5-3">
 <p>
 check the MIME of a file.
 </p>
@@ -2955,13 +3197,13 @@ update-alternative --config x-www-browser
 
 
 
-<div id="outline-container-org46a22f8" class="outline-3">
-<h3 id="org46a22f8"><span class="section-number-3">8.6</span> LVM</h3>
+<div id="outline-container-org483b6ba" class="outline-3">
+<h3 id="org483b6ba"><span class="section-number-3">9.6</span> LVM</h3>
 </div>
 
-<div id="outline-container-orgef88959" class="outline-3">
-<h3 id="orgef88959"><span class="section-number-3">8.7</span> Monitor the system information</h3>
-<div class="outline-text-3" id="text-8-7">
+<div id="outline-container-org4d8bc60" class="outline-3">
+<h3 id="org4d8bc60"><span class="section-number-3">9.7</span> Monitor the system information</h3>
+<div class="outline-text-3" id="text-9-7">
 <pre class="example">
 lvs
 vgs
@@ -2973,9 +3215,9 @@ lvdisplay /dev/debian-vg/home
 </div>
 </div>
 
-<div id="outline-container-org17c3449" class="outline-3">
-<h3 id="org17c3449"><span class="section-number-3">8.8</span> Extending a logical volume</h3>
-<div class="outline-text-3" id="text-8-8">
+<div id="outline-container-orga46f035" class="outline-3">
+<h3 id="orga46f035"><span class="section-number-3">9.8</span> Extending a logical volume</h3>
+<div class="outline-text-3" id="text-9-8">
 <pre class="example">
 lvextend -L10G /dev/debian-vg/tmp # to 10G
 lvextend -L+1G /dev/debian-vg/tmp # + 1G
@@ -2985,9 +3227,9 @@ resize2fs /dev/debian-vg/tmp
 </div>
 
 
-<div id="outline-container-org375d439" class="outline-3">
-<h3 id="org375d439"><span class="section-number-3">8.9</span> Reduce a logical volume</h3>
-<div class="outline-text-3" id="text-8-9">
+<div id="outline-container-org223ca6f" class="outline-3">
+<h3 id="org223ca6f"><span class="section-number-3">9.9</span> Reduce a logical volume</h3>
+<div class="outline-text-3" id="text-9-9">
 <p>
 The home is 890G.
 </p>
@@ -3007,17 +3249,17 @@ mount /dev/debian-vg/home /home
 </div>
 
 
-<div id="outline-container-org2fb380d" class="outline-2">
-<h2 id="org2fb380d"><span class="section-number-2">9</span> Arch Linux</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-org4f53195" class="outline-2">
+<h2 id="org4f53195"><span class="section-number-2">10</span> Arch Linux</h2>
+<div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org3ddab27" class="outline-3">
-<h3 id="org3ddab27"><span class="section-number-3">9.1</span> Installation</h3>
-<div class="outline-text-3" id="text-9-1">
+<div id="outline-container-orgdb41908" class="outline-3">
+<h3 id="orgdb41908"><span class="section-number-3">10.1</span> Installation</h3>
+<div class="outline-text-3" id="text-10-1">
 </div>
-<div id="outline-container-org0035707" class="outline-4">
-<h4 id="org0035707"><span class="section-number-4">9.1.1</span> Verify UEFI</h4>
-<div class="outline-text-4" id="text-9-1-1">
+<div id="outline-container-org46d814e" class="outline-4">
+<h4 id="org46d814e"><span class="section-number-4">10.1.1</span> Verify UEFI</h4>
+<div class="outline-text-4" id="text-10-1-1">
 <p>
 Nowadays (start from 2017) Arch only supports 64 bits &#x2026; and seems to
 prefer UEFI .. Fine
@@ -3033,18 +3275,18 @@ ls /sys/firmware/efi/efivars
 </div>
 </div>
 
-<div id="outline-container-orgbe8e5d5" class="outline-4">
-<h4 id="orgbe8e5d5"><span class="section-number-4">9.1.2</span> System clock</h4>
-<div class="outline-text-4" id="text-9-1-2">
+<div id="outline-container-org0a156e9" class="outline-4">
+<h4 id="org0a156e9"><span class="section-number-4">10.1.2</span> System clock</h4>
+<div class="outline-text-4" id="text-10-1-2">
 <pre class="example">
 timedatectl set-ntp true
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org17b4d65" class="outline-4">
-<h4 id="org17b4d65"><span class="section-number-4">9.1.3</span> Partition</h4>
-<div class="outline-text-4" id="text-9-1-3">
+<div id="outline-container-org762fc6c" class="outline-4">
+<h4 id="org762fc6c"><span class="section-number-4">10.1.3</span> Partition</h4>
+<div class="outline-text-4" id="text-10-1-3">
 <pre class="example">
 parted /dev/sda mklabel gpt
 parted /dev/sda mkpart ESP fat32 1MiB 513MiB
@@ -3082,9 +3324,9 @@ mount /dev/sda1 /mnt/boot
 </div>
 
 
-<div id="outline-container-org2197fb5" class="outline-4">
-<h4 id="org2197fb5"><span class="section-number-4">9.1.4</span> Select mirror</h4>
-<div class="outline-text-4" id="text-9-1-4">
+<div id="outline-container-orgce3deea" class="outline-4">
+<h4 id="orgce3deea"><span class="section-number-4">10.1.4</span> Select mirror</h4>
+<div class="outline-text-4" id="text-10-1-4">
 <p>
 look into <code>/etc/pacman.d/mirrorlist</code> and modify if necessary. The order
 matters. The file will be copied to new system.
@@ -3092,18 +3334,18 @@ matters. The file will be copied to new system.
 </div>
 </div>
 
-<div id="outline-container-org0144d1e" class="outline-4">
-<h4 id="org0144d1e"><span class="section-number-4">9.1.5</span> Install base system</h4>
-<div class="outline-text-4" id="text-9-1-5">
+<div id="outline-container-org91d7546" class="outline-4">
+<h4 id="org91d7546"><span class="section-number-4">10.1.5</span> Install base system</h4>
+<div class="outline-text-4" id="text-10-1-5">
 <pre class="example">
 pacstrap /mnt base
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org5e9cbb3" class="outline-4">
-<h4 id="org5e9cbb3"><span class="section-number-4">9.1.6</span> chroot</h4>
-<div class="outline-text-4" id="text-9-1-6">
+<div id="outline-container-orga922206" class="outline-4">
+<h4 id="orga922206"><span class="section-number-4">10.1.6</span> chroot</h4>
+<div class="outline-text-4" id="text-10-1-6">
 <pre class="example">
 genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
 arch-chroot /mnt
@@ -3111,9 +3353,9 @@ arch-chroot /mnt
 </div>
 </div>
 
-<div id="outline-container-org3ce367f" class="outline-4">
-<h4 id="org3ce367f"><span class="section-number-4">9.1.7</span> Configure</h4>
-<div class="outline-text-4" id="text-9-1-7">
+<div id="outline-container-org4fe16f3" class="outline-4">
+<h4 id="org4fe16f3"><span class="section-number-4">10.1.7</span> Configure</h4>
+<div class="outline-text-4" id="text-10-1-7">
 <p>
 Now we are in the new system.
 </p>
@@ -3178,9 +3420,9 @@ Now reboot
 </div>
 
 
-<div id="outline-container-orgf9bd378" class="outline-4">
-<h4 id="orgf9bd378"><span class="section-number-4">9.1.8</span> Config</h4>
-<div class="outline-text-4" id="text-9-1-8">
+<div id="outline-container-org0776a9c" class="outline-4">
+<h4 id="org0776a9c"><span class="section-number-4">10.1.8</span> Config</h4>
+<div class="outline-text-4" id="text-10-1-8">
 <p>
 Install the packages, and config the system using my scripts:
 </p>
@@ -3192,9 +3434,9 @@ Install the packages, and config the system using my scripts:
 </div>
 
 
-<div id="outline-container-org48b820c" class="outline-4">
-<h4 id="org48b820c"><span class="section-number-4">9.1.9</span> Dual boot with Windows</h4>
-<div class="outline-text-4" id="text-9-1-9">
+<div id="outline-container-orgc795f0c" class="outline-4">
+<h4 id="orgc795f0c"><span class="section-number-4">10.1.9</span> Dual boot with Windows</h4>
+<div class="outline-text-4" id="text-10-1-9">
 <p>
 The only difference is that, you do not need to create the EFI boot
 partition, but use the existing one. Just mount it to boot. The rest
@@ -3204,9 +3446,9 @@ is the same.
 </div>
 </div>
 
-<div id="outline-container-org3e5d102" class="outline-3">
-<h3 id="org3e5d102"><span class="section-number-3">9.2</span> Pacman</h3>
-<div class="outline-text-3" id="text-9-2">
+<div id="outline-container-org71d2117" class="outline-3">
+<h3 id="org71d2117"><span class="section-number-3">10.2</span> Pacman</h3>
+<div class="outline-text-3" id="text-10-2">
 <p>
 Option
 </p>
@@ -3252,9 +3494,9 @@ paccache -rk 1
 </div>
 </div>
 
-<div id="outline-container-org72952c8" class="outline-3">
-<h3 id="org72952c8"><span class="section-number-3">9.3</span> AUR</h3>
-<div class="outline-text-3" id="text-9-3">
+<div id="outline-container-org953037f" class="outline-3">
+<h3 id="org953037f"><span class="section-number-3">10.3</span> AUR</h3>
+<div class="outline-text-3" id="text-10-3">
 <p>
 Have to search through its web interface. Find the git download link
 and clone it. It is pullable.
@@ -3281,9 +3523,9 @@ md5sum value inside the quotes with <code>'SKIP'</code>.
 </div>
 </div>
 
-<div id="outline-container-org5ed9380" class="outline-2">
-<h2 id="org5ed9380"><span class="section-number-2">10</span> CentOS</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org3334de3" class="outline-2">
+<h2 id="org3334de3"><span class="section-number-2">11</span> CentOS</h2>
+<div class="outline-text-2" id="text-11">
 <p>
 On installing a new instance of CentOS, issue the following commands:
 </p>
@@ -3302,13 +3544,13 @@ usermod -aG wheel myname
 </div>
 </div>
 
-<div id="outline-container-orgc566d58" class="outline-2">
-<h2 id="orgc566d58"><span class="section-number-2">11</span> Debian</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-orge08816e" class="outline-2">
+<h2 id="orge08816e"><span class="section-number-2">12</span> Debian</h2>
+<div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-orgb6150b4" class="outline-3">
-<h3 id="orgb6150b4"><span class="section-number-3">11.1</span> Package</h3>
-<div class="outline-text-3" id="text-11-1">
+<div id="outline-container-org76f324c" class="outline-3">
+<h3 id="org76f324c"><span class="section-number-3">12.1</span> Package</h3>
+<div class="outline-text-3" id="text-12-1">
 <ul class="org-ul">
 <li><code>/etc/apt/sources.list</code></li>
 <li><code>/var/cache/apt/archives/</code></li>
@@ -3354,13 +3596,13 @@ apt --fix-broken install
 
 
 
-<div id="outline-container-orgd16f680" class="outline-3">
-<h3 id="orgd16f680"><span class="section-number-3">11.2</span> Configuration</h3>
-<div class="outline-text-3" id="text-11-2">
+<div id="outline-container-org34b03df" class="outline-3">
+<h3 id="org34b03df"><span class="section-number-3">12.2</span> Configuration</h3>
+<div class="outline-text-3" id="text-12-2">
 </div>
-<div id="outline-container-org973cac7" class="outline-4">
-<h4 id="org973cac7"><span class="section-number-4">11.2.1</span> update-alternatives</h4>
-<div class="outline-text-4" id="text-11-2-1">
+<div id="outline-container-orgbb65811" class="outline-4">
+<h4 id="orgbb65811"><span class="section-number-4">12.2.1</span> update-alternatives</h4>
+<div class="outline-text-4" id="text-12-2-1">
 <p>
 Options:
 </p>
@@ -3382,9 +3624,9 @@ Some examples:
 
 
 
-<div id="outline-container-org7bda4d9" class="outline-2">
-<h2 id="org7bda4d9"><span class="section-number-2">12</span> Docker</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-org2c4f121" class="outline-2">
+<h2 id="org2c4f121"><span class="section-number-2">13</span> Docker</h2>
+<div class="outline-text-2" id="text-13">
 <p>
 To remove the requirement of <code>sudo</code>:
 </p>
@@ -3421,9 +3663,9 @@ Network config:
 </div>
 
 
-<div id="outline-container-org0ada695" class="outline-3">
-<h3 id="org0ada695"><span class="section-number-3">12.1</span> Images</h3>
-<div class="outline-text-3" id="text-12-1">
+<div id="outline-container-org2d016f9" class="outline-3">
+<h3 id="org2d016f9"><span class="section-number-3">13.1</span> Images</h3>
+<div class="outline-text-3" id="text-13-1">
 <p>
 Docker images are template of VMs. <code>docker images</code> list available
 images locally.
@@ -3558,9 +3800,9 @@ docker push lihebi/my-image
 </div>
 </div>
 
-<div id="outline-container-orgb94a209" class="outline-3">
-<h3 id="orgb94a209"><span class="section-number-3">12.2</span> Instance</h3>
-<div class="outline-text-3" id="text-12-2">
+<div id="outline-container-orgb36aca9" class="outline-3">
+<h3 id="orgb36aca9"><span class="section-number-3">13.2</span> Instance</h3>
+<div class="outline-text-3" id="text-13-2">
 <p>
 To create an instance of an image and <i>run</i> it, use the <code>docker run</code>
 command. Specifically,
@@ -3698,9 +3940,9 @@ and reference it.
 </div>
 
 
-<div id="outline-container-orgcb9b49c" class="outline-3">
-<h3 id="orgcb9b49c"><span class="section-number-3">12.3</span> Volume</h3>
-<div class="outline-text-3" id="text-12-3">
+<div id="outline-container-orgc39fb6b" class="outline-3">
+<h3 id="orgc39fb6b"><span class="section-number-3">13.3</span> Volume</h3>
+<div class="outline-text-3" id="text-13-3">
 <p>
 You can create a volume by itself, using <code>docker volume create hello</code>,
 or create together with a container.
@@ -3745,9 +3987,9 @@ To manage a volume:
 
 
 
-<div id="outline-container-orgb6a1867" class="outline-2">
-<h2 id="orgb6a1867"><span class="section-number-2">13</span> Unix Programming</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-org6548ee0" class="outline-2">
+<h2 id="org6548ee0"><span class="section-number-2">14</span> Unix Programming</h2>
+<div class="outline-text-2" id="text-14">
 <p>
 <a href="http://pubs.opengroup.org/onlinepubs/9699919799/">POSIX</a> defines
  the operating system interface. The starndard contains volumes:
@@ -3766,13 +4008,13 @@ utilities such as awk.
 </p>
 </div>
 
-<div id="outline-container-org1d071c3" class="outline-3">
-<h3 id="org1d071c3"><span class="section-number-3">13.1</span> Low-level IO</h3>
-<div class="outline-text-3" id="text-13-1">
+<div id="outline-container-org27cc4e3" class="outline-3">
+<h3 id="org27cc4e3"><span class="section-number-3">14.1</span> Low-level IO</h3>
+<div class="outline-text-3" id="text-14-1">
 </div>
-<div id="outline-container-org11f0321" class="outline-4">
-<h4 id="org11f0321"><span class="section-number-4">13.1.1</span> open</h4>
-<div class="outline-text-4" id="text-13-1-1">
+<div id="outline-container-org5f5e8ea" class="outline-4">
+<h4 id="org5f5e8ea"><span class="section-number-4">14.1.1</span> open</h4>
+<div class="outline-text-4" id="text-14-1-1">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">open</span>(<span class="org-keyword">const</span> <span class="org-type">char</span> *<span class="org-variable-name">filename</span>, <span class="org-type">int</span> <span class="org-variable-name">flags</span>[, <span class="org-type">mode_t</span> <span class="org-variable-name">mode</span>])
 </pre>
@@ -3783,9 +4025,9 @@ Create and return a file descriptor.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf9a8f9e" class="outline-4">
-<h4 id="orgf9a8f9e"><span class="section-number-4">13.1.2</span> close</h4>
-<div class="outline-text-4" id="text-13-1-2">
+<div id="outline-container-orgec0bda8" class="outline-4">
+<h4 id="orgec0bda8"><span class="section-number-4">14.1.2</span> close</h4>
+<div class="outline-text-4" id="text-14-1-2">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">close</span>(<span class="org-type">int</span> <span class="org-variable-name">filedes</span>)
 </pre>
@@ -3804,9 +4046,9 @@ Return
 </div>
 </div>
 
-<div id="outline-container-orga1721c9" class="outline-4">
-<h4 id="orga1721c9"><span class="section-number-4">13.1.3</span> read</h4>
-<div class="outline-text-4" id="text-13-1-3">
+<div id="outline-container-org8711ea1" class="outline-4">
+<h4 id="org8711ea1"><span class="section-number-4">14.1.3</span> read</h4>
+<div class="outline-text-4" id="text-14-1-3">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">ssize_t</span> <span class="org-function-name">read</span>(<span class="org-type">int</span> <span class="org-variable-name">filedes</span>, <span class="org-type">void</span> *<span class="org-variable-name">buffer</span>, <span class="org-type">size_t</span> <span class="org-variable-name">size</span>)
 </pre>
@@ -3824,9 +4066,9 @@ Return
 </div>
 </div>
 
-<div id="outline-container-org166f528" class="outline-4">
-<h4 id="org166f528"><span class="section-number-4">13.1.4</span> write</h4>
-<div class="outline-text-4" id="text-13-1-4">
+<div id="outline-container-orgb344cbd" class="outline-4">
+<h4 id="orgb344cbd"><span class="section-number-4">14.1.4</span> write</h4>
+<div class="outline-text-4" id="text-14-1-4">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">ssize_t</span> <span class="org-function-name">write</span>(<span class="org-type">int</span> <span class="org-variable-name">filedes</span>, <span class="org-keyword">const</span> <span class="org-type">void</span> *<span class="org-variable-name">buffer</span>, <span class="org-type">size_t</span> <span class="org-variable-name">size</span>)
 </pre>
@@ -3845,9 +4087,9 @@ Return
 </div>
 </div>
 
-<div id="outline-container-org32f2097" class="outline-4">
-<h4 id="org32f2097"><span class="section-number-4">13.1.5</span> fdopen</h4>
-<div class="outline-text-4" id="text-13-1-5">
+<div id="outline-container-org0ad57e2" class="outline-4">
+<h4 id="org0ad57e2"><span class="section-number-4">14.1.5</span> fdopen</h4>
+<div class="outline-text-4" id="text-14-1-5">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">FILE</span> *<span class="org-function-name">fdopen</span>(<span class="org-type">int</span> <span class="org-variable-name">filedes</span>, <span class="org-keyword">const</span> <span class="org-type">char</span> *<span class="org-variable-name">opentype</span>)
 </pre>
@@ -3859,9 +4101,9 @@ from file descriptor, get the stream
 </div>
 </div>
 
-<div id="outline-container-org9d571af" class="outline-4">
-<h4 id="org9d571af"><span class="section-number-4">13.1.6</span> fileno</h4>
-<div class="outline-text-4" id="text-13-1-6">
+<div id="outline-container-orgf65996c" class="outline-4">
+<h4 id="orgf65996c"><span class="section-number-4">14.1.6</span> fileno</h4>
+<div class="outline-text-4" id="text-14-1-6">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">fileno</span>(<span class="org-type">FILE</span> *<span class="org-variable-name">stream</span>)
 </pre>
@@ -3873,9 +4115,9 @@ from stream to file descriptor
 </div>
 </div>
 
-<div id="outline-container-org9e1a318" class="outline-4">
-<h4 id="org9e1a318"><span class="section-number-4">13.1.7</span> fd<sub>set</sub></h4>
-<div class="outline-text-4" id="text-13-1-7">
+<div id="outline-container-orgeb012ed" class="outline-4">
+<h4 id="orgeb012ed"><span class="section-number-4">14.1.7</span> fd<sub>set</sub></h4>
+<div class="outline-text-4" id="text-14-1-7">
 <p>
 This is a bit array.
 </p>
@@ -3887,9 +4129,9 @@ This is a bit array.
 </ul>
 </div>
 </div>
-<div id="outline-container-orge6275b3" class="outline-4">
-<h4 id="orge6275b3"><span class="section-number-4">13.1.8</span> select - synchronous I/O multiplexing</h4>
-<div class="outline-text-4" id="text-13-1-8">
+<div id="outline-container-orgb623e5c" class="outline-4">
+<h4 id="orgb623e5c"><span class="section-number-4">14.1.8</span> select - synchronous I/O multiplexing</h4>
+<div class="outline-text-4" id="text-14-1-8">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">select</span>(<span class="org-type">int</span> <span class="org-variable-name">nfds</span>, <span class="org-type">fd_set</span> *<span class="org-variable-name">readfds</span>, <span class="org-type">fd_set</span> *<span class="org-variable-name">writefds</span>, <span class="org-type">fd_set</span> *<span class="org-variable-name">errorfds</span>, <span class="org-keyword">struct</span> <span class="org-type">timeval</span> *<span class="org-variable-name">timeout</span>)
 </pre>
@@ -3941,9 +4183,9 @@ timeout.tv_usec = 0;
 </div>
 </div>
 
-<div id="outline-container-orga57a295" class="outline-4">
-<h4 id="orga57a295"><span class="section-number-4">13.1.9</span> sync</h4>
-<div class="outline-text-4" id="text-13-1-9">
+<div id="outline-container-orgaaf802c" class="outline-4">
+<h4 id="orgaaf802c"><span class="section-number-4">14.1.9</span> sync</h4>
+<div class="outline-text-4" id="text-14-1-9">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">void</span> <span class="org-function-name">sync</span>(<span class="org-type">void</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">sync all dirty files</span>
 <span class="org-type">int</span> <span class="org-function-name">fsync</span>(<span class="org-type">int</span> <span class="org-variable-name">filedes</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">sync only that file</span>
@@ -3952,9 +4194,9 @@ timeout.tv_usec = 0;
 </div>
 </div>
 
-<div id="outline-container-orgeea1e06" class="outline-4">
-<h4 id="orgeea1e06"><span class="section-number-4">13.1.10</span> dup</h4>
-<div class="outline-text-4" id="text-13-1-10">
+<div id="outline-container-org4ec6e79" class="outline-4">
+<h4 id="org4ec6e79"><span class="section-number-4">14.1.10</span> dup</h4>
+<div class="outline-text-4" id="text-14-1-10">
 <p>
 You can create a new descriptor to refer to the same file. They
 </p>
@@ -3990,9 +4232,9 @@ If old is invalid, it does nothing (does not close <code>new</code>)!
 </div>
 </div>
 
-<div id="outline-container-orgabf0b3b" class="outline-3">
-<h3 id="orgabf0b3b"><span class="section-number-3">13.2</span> Date and Time</h3>
-<div class="outline-text-3" id="text-13-2">
+<div id="outline-container-org207aa6b" class="outline-3">
+<h3 id="org207aa6b"><span class="section-number-3">14.2</span> Date and Time</h3>
+<div class="outline-text-3" id="text-14-2">
 <ul class="org-ul">
 <li>calendar time: absolute time, e.g. 2017/6/29</li>
 <li>interval: between two calendar times</li>
@@ -4005,9 +4247,9 @@ process run on CPU</li>
 </ul>
 </div>
 
-<div id="outline-container-orge18fca8" class="outline-4">
-<h4 id="orge18fca8"><span class="section-number-4">13.2.1</span> struct timeval</h4>
-<div class="outline-text-4" id="text-13-2-1">
+<div id="outline-container-org89bd67f" class="outline-4">
+<h4 id="org89bd67f"><span class="section-number-4">14.2.1</span> struct timeval</h4>
+<div class="outline-text-4" id="text-14-2-1">
 <ul class="org-ul">
 <li>time<sub>t</sub> tv<sub>sec</sub>: seconds</li>
 <li>long int tv<sub>usec</sub>: micro seconds, must be less than 1 million</li>
@@ -4015,9 +4257,9 @@ process run on CPU</li>
 </div>
 </div>
 
-<div id="outline-container-org32c7e30" class="outline-4">
-<h4 id="org32c7e30"><span class="section-number-4">13.2.2</span> struct timespec</h4>
-<div class="outline-text-4" id="text-13-2-2">
+<div id="outline-container-org479da75" class="outline-4">
+<h4 id="org479da75"><span class="section-number-4">14.2.2</span> struct timespec</h4>
+<div class="outline-text-4" id="text-14-2-2">
 <ul class="org-ul">
 <li>time<sub>t</sub> tv<sub>sec</sub></li>
 <li>long int tv<sub>nsec</sub>: nanoseconds. Must be less than 1 billion</li>
@@ -4025,9 +4267,9 @@ process run on CPU</li>
 </div>
 </div>
 
-<div id="outline-container-org616fe16" class="outline-4">
-<h4 id="org616fe16"><span class="section-number-4">13.2.3</span> difftime</h4>
-<div class="outline-text-4" id="text-13-2-3">
+<div id="outline-container-orgc506dc9" class="outline-4">
+<h4 id="orgc506dc9"><span class="section-number-4">14.2.3</span> difftime</h4>
+<div class="outline-text-4" id="text-14-2-3">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">double</span> <span class="org-function-name">difftime</span> (<span class="org-type">time_t</span> <span class="org-variable-name">time1</span>, <span class="org-type">time_t</span> <span class="org-variable-name">time0</span>)
 </pre>
@@ -4035,9 +4277,9 @@ process run on CPU</li>
 </div>
 </div>
 
-<div id="outline-container-org88bcab0" class="outline-4">
-<h4 id="org88bcab0"><span class="section-number-4">13.2.4</span> time<sub>t</sub></h4>
-<div class="outline-text-4" id="text-13-2-4">
+<div id="outline-container-org524ab1d" class="outline-4">
+<h4 id="org524ab1d"><span class="section-number-4">14.2.4</span> time<sub>t</sub></h4>
+<div class="outline-text-4" id="text-14-2-4">
 <p>
 On GNU it is long int. It should be the seconds elapsed since 00:00:00
 Jan 1 1970, Coordinated Universal Time.
@@ -4053,22 +4295,22 @@ get current calenddar time:
 </div>
 </div>
 
-<div id="outline-container-orgd9e6c9a" class="outline-4">
-<h4 id="orgd9e6c9a"><span class="section-number-4">13.2.5</span> alarm</h4>
-<div class="outline-text-4" id="text-13-2-5">
+<div id="outline-container-org5ababc9" class="outline-4">
+<h4 id="org5ababc9"><span class="section-number-4">14.2.5</span> alarm</h4>
+<div class="outline-text-4" id="text-14-2-5">
 </div>
-<div id="outline-container-org6341c1b" class="outline-5">
-<h5 id="org6341c1b"><span class="section-number-5">13.2.5.1</span> struct itimerval</h5>
-<div class="outline-text-5" id="text-13-2-5-1">
+<div id="outline-container-org8f80b1b" class="outline-5">
+<h5 id="org8f80b1b"><span class="section-number-5">14.2.5.1</span> struct itimerval</h5>
+<div class="outline-text-5" id="text-14-2-5-1">
 <ul class="org-ul">
 <li>struct timeval it<sub>interval</sub>: 0 to send alarm once, non-zero to send every interval</li>
 <li>struct timeval it<sub>value</sub>: time left to alarm. If 0, the alarm is disabled</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6a9154f" class="outline-5">
-<h5 id="org6a9154f"><span class="section-number-5">13.2.5.2</span> setitimer</h5>
-<div class="outline-text-5" id="text-13-2-5-2">
+<div id="outline-container-org8c7f517" class="outline-5">
+<h5 id="org8c7f517"><span class="section-number-5">14.2.5.2</span> setitimer</h5>
+<div class="outline-text-5" id="text-14-2-5-2">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">setitimer</span>(<span class="org-type">int</span> <span class="org-variable-name">which</span>, <span class="org-keyword">const</span> <span class="org-keyword">struct</span> <span class="org-type">itimerval</span> *<span class="org-variable-name">new</span>, <span class="org-keyword">struct</span> <span class="org-type">itimerval</span> *<span class="org-variable-name">old</span>)
 </pre>
@@ -4081,18 +4323,18 @@ get current calenddar time:
 </div>
 </div>
 
-<div id="outline-container-orgda4ae25" class="outline-5">
-<h5 id="orgda4ae25"><span class="section-number-5">13.2.5.3</span> getitimer(int which, struct itimerval *old)</h5>
-<div class="outline-text-5" id="text-13-2-5-3">
+<div id="outline-container-org9162245" class="outline-5">
+<h5 id="org9162245"><span class="section-number-5">14.2.5.3</span> getitimer(int which, struct itimerval *old)</h5>
+<div class="outline-text-5" id="text-14-2-5-3">
 <p>
 get the timer
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0538e6b" class="outline-5">
-<h5 id="org0538e6b"><span class="section-number-5">13.2.5.4</span> alarm</h5>
-<div class="outline-text-5" id="text-13-2-5-4">
+<div id="outline-container-org23d1f50" class="outline-5">
+<h5 id="org23d1f50"><span class="section-number-5">14.2.5.4</span> alarm</h5>
+<div class="outline-text-5" id="text-14-2-5-4">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-function-name">alarm</span>(<span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-variable-name">seconds</span>)
 </pre>
@@ -4127,9 +4369,9 @@ Return:
 </div>
 </div>
 
-<div id="outline-container-org6f35397" class="outline-3">
-<h3 id="org6f35397"><span class="section-number-3">13.3</span> Process</h3>
-<div class="outline-text-3" id="text-13-3">
+<div id="outline-container-org14de6f6" class="outline-3">
+<h3 id="org14de6f6"><span class="section-number-3">14.3</span> Process</h3>
+<div class="outline-text-3" id="text-14-3">
 <p>
 Three steps
 </p>
@@ -4139,9 +4381,9 @@ Three steps
 <li>coordinate the results with parent</li>
 </ul>
 </div>
-<div id="outline-container-org57add3c" class="outline-4">
-<h4 id="org57add3c"><span class="section-number-4">13.3.1</span> system</h4>
-<div class="outline-text-4" id="text-13-3-1">
+<div id="outline-container-orgb527688" class="outline-4">
+<h4 id="orgb527688"><span class="section-number-4">14.3.1</span> system</h4>
+<div class="outline-text-4" id="text-14-3-1">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">system</span>(<span class="org-keyword">const</span> <span class="org-type">char</span> *<span class="org-variable-name">command</span>)
 </pre>
@@ -4153,9 +4395,9 @@ Three steps
 </ul>
 </div>
 </div>
-<div id="outline-container-org4b0d343" class="outline-4">
-<h4 id="org4b0d343"><span class="section-number-4">13.3.2</span> getpid</h4>
-<div class="outline-text-4" id="text-13-3-2">
+<div id="outline-container-org86adec1" class="outline-4">
+<h4 id="org86adec1"><span class="section-number-4">14.3.2</span> getpid</h4>
+<div class="outline-text-4" id="text-14-3-2">
 <ul class="org-ul">
 <li>pid<sub>t</sub> getpid(void): return PID of current process</li>
 <li>pid<sub>t</sub> getppid(void): PID of parent process</li>
@@ -4163,9 +4405,9 @@ Three steps
 </div>
 </div>
 
-<div id="outline-container-org73def9b" class="outline-4">
-<h4 id="org73def9b"><span class="section-number-4">13.3.3</span> fork</h4>
-<div class="outline-text-4" id="text-13-3-3">
+<div id="outline-container-orge4db116" class="outline-4">
+<h4 id="orge4db116"><span class="section-number-4">14.3.3</span> fork</h4>
+<div class="outline-text-4" id="text-14-3-3">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">pid_t</span> <span class="org-function-name">fork</span>(<span class="org-type">void</span>)
 </pre>
@@ -4181,9 +4423,9 @@ return
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf7f4a23" class="outline-4">
-<h4 id="orgf7f4a23"><span class="section-number-4">13.3.4</span> pipe</h4>
-<div class="outline-text-4" id="text-13-3-4">
+<div id="outline-container-orga046210" class="outline-4">
+<h4 id="orga046210"><span class="section-number-4">14.3.4</span> pipe</h4>
+<div class="outline-text-4" id="text-14-3-4">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">pipe</span>(<span class="org-type">int</span> <span class="org-variable-name">filedes</span>[2])
 </pre>
@@ -4201,9 +4443,9 @@ Return:
 </div>
 </div>
 
-<div id="outline-container-org65b172f" class="outline-4">
-<h4 id="org65b172f"><span class="section-number-4">13.3.5</span> exec</h4>
-<div class="outline-text-4" id="text-13-3-5">
+<div id="outline-container-org63fcad6" class="outline-4">
+<h4 id="org63fcad6"><span class="section-number-4">14.3.5</span> exec</h4>
+<div class="outline-text-4" id="text-14-3-5">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-type">int</span> <span class="org-function-name">execv</span> (<span class="org-keyword">const</span> <span class="org-type">char</span> *<span class="org-variable-name">filename</span>, <span class="org-type">char</span> *<span class="org-keyword">const</span> <span class="org-variable-name">argv</span>[])
 <span class="org-type">int</span> <span class="org-function-name">execl</span> (<span class="org-keyword">const</span> <span class="org-type">char</span> *<span class="org-variable-name">filename</span>, <span class="org-keyword">const</span> <span class="org-type">char</span> *<span class="org-variable-name">arg0</span>, ...)
@@ -4225,9 +4467,9 @@ Return:
 </div>
 </div>
 
-<div id="outline-container-org53340e0" class="outline-4">
-<h4 id="org53340e0"><span class="section-number-4">13.3.6</span> wait</h4>
-<div class="outline-text-4" id="text-13-3-6">
+<div id="outline-container-org3ce2ed2" class="outline-4">
+<h4 id="org3ce2ed2"><span class="section-number-4">14.3.6</span> wait</h4>
+<div class="outline-text-4" id="text-14-3-6">
 <p>
 This should be used in parent process.
 </p>
@@ -4263,9 +4505,9 @@ This should be used in parent process.
 </p>
 </div>
 
-<div id="outline-container-orgcd49155" class="outline-5">
-<h5 id="orgcd49155"><span class="section-number-5">13.3.6.1</span> Status</h5>
-<div class="outline-text-5" id="text-13-3-6-1">
+<div id="outline-container-org185a0af" class="outline-5">
+<h5 id="org185a0af"><span class="section-number-5">14.3.6.1</span> Status</h5>
+<div class="outline-text-5" id="text-14-3-6-1">
 <p>
 The signature is <code>int NAME(int status)</code>.
 </p>
@@ -4285,20 +4527,20 @@ cause the child to stop</li>
 </div>
 
 <ol class="org-ol">
-<li><a id="orga0e40b5"></a><span class="todo TODO">TODO</span> What is the difference between terminate and stop?<br /></li>
+<li><a id="orgcefac7a"></a><span class="todo TODO">TODO</span> What is the difference between terminate and stop?<br /></li>
 </ol>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org846e883" class="outline-3">
-<h3 id="org846e883"><span class="section-number-3">13.4</span> Unix Signal Handling</h3>
-<div class="outline-text-3" id="text-13-4">
+<div id="outline-container-orgea0988c" class="outline-3">
+<h3 id="orgea0988c"><span class="section-number-3">14.4</span> Unix Signal Handling</h3>
+<div class="outline-text-3" id="text-14-4">
 </div>
-<div id="outline-container-org7ceebab" class="outline-4">
-<h4 id="org7ceebab"><span class="section-number-4">13.4.1</span> Ordinary signal handling</h4>
-<div class="outline-text-4" id="text-13-4-1">
+<div id="outline-container-orgba65e36" class="outline-4">
+<h4 id="orgba65e36"><span class="section-number-4">14.4.1</span> Ordinary signal handling</h4>
+<div class="outline-text-4" id="text-14-4-1">
 <p>
 The handling of ordinary signals are easy:
 </p>
@@ -4324,13 +4566,13 @@ The handling of ordinary signals are easy:
 </div>
 </div>
 
-<div id="outline-container-orgb08adbe" class="outline-4">
-<h4 id="orgb08adbe"><span class="section-number-4">13.4.2</span> SIGSEGV handling</h4>
-<div class="outline-text-4" id="text-13-4-2">
+<div id="outline-container-orgd842f8a" class="outline-4">
+<h4 id="orgd842f8a"><span class="section-number-4">14.4.2</span> SIGSEGV handling</h4>
+<div class="outline-text-4" id="text-14-4-2">
 </div>
-<div id="outline-container-orgb0c54e0" class="outline-5">
-<h5 id="orgb0c54e0"><span class="section-number-5">13.4.2.1</span> Motivation</h5>
-<div class="outline-text-5" id="text-13-4-2-1">
+<div id="outline-container-org16c2470" class="outline-5">
+<h5 id="org16c2470"><span class="section-number-5">14.4.2.1</span> Motivation</h5>
+<div class="outline-text-5" id="text-14-4-2-1">
 <p>
 The reason that I want to handle the <code>SIGSEGV</code> is that I want to get the coverage from <code>gcov</code>.
 Gcov will not report any coverage information if the program terminates by receiving some signals.
@@ -4360,9 +4602,9 @@ This possibly because the handler is running on a different stack.</li>
 </div>
 
 
-<div id="outline-container-org044dbf2" class="outline-5">
-<h5 id="org044dbf2"><span class="section-number-5">13.4.2.2</span> a new stack</h5>
-<div class="outline-text-5" id="text-13-4-2-2">
+<div id="outline-container-org79cc1c2" class="outline-5">
+<h5 id="org79cc1c2"><span class="section-number-5">14.4.2.2</span> a new stack</h5>
+<div class="outline-text-5" id="text-14-4-2-2">
 <p>
 However, handling the SIGSEGV is challenging.
 The above will not work <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
@@ -4415,9 +4657,9 @@ Instead, we need to make a new stack and install the handler on that stack.
 
 
 
-<div id="outline-container-orge6663c7" class="outline-5">
-<h5 id="orge6663c7"><span class="section-number-5">13.4.2.3</span> libsigsegv</h5>
-<div class="outline-text-5" id="text-13-4-2-3">
+<div id="outline-container-orgea807f5" class="outline-5">
+<h5 id="orgea807f5"><span class="section-number-5">14.4.2.3</span> libsigsegv</h5>
+<div class="outline-text-5" id="text-14-4-2-3">
 <p>
 I also tried another library, the libsigsegv <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 I followed two of their methods, but I cannot make either work.
@@ -4448,9 +4690,9 @@ The code lists here as a reference:
 </div>
 
 
-<div id="outline-container-orgb16255e" class="outline-3">
-<h3 id="orgb16255e"><span class="section-number-3">13.5</span> pThread</h3>
-<div class="outline-text-3" id="text-13-5">
+<div id="outline-container-orgee12bc0" class="outline-3">
+<h3 id="orgee12bc0"><span class="section-number-3">14.5</span> pThread</h3>
+<div class="outline-text-3" id="text-14-5">
 <div class="org-src-container">
 <pre class="src src-cpp"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;pthread.h&gt;</span>
 pthread_create (thread, attr, start_routine, arg)
@@ -4461,9 +4703,9 @@ pthread_detach (threadid)
 </div>
 </div>
 
-<div id="outline-container-org7ab0e26" class="outline-4">
-<h4 id="org7ab0e26"><span class="section-number-4">13.5.1</span> Create threads</h4>
-<div class="outline-text-4" id="text-13-5-1">
+<div id="outline-container-org43a696a" class="outline-4">
+<h4 id="org43a696a"><span class="section-number-4">14.5.1</span> Create threads</h4>
+<div class="outline-text-4" id="text-14-5-1">
 <p>
 If main() finishes before the threads it has created, and exits with
 pthread<sub>exit</sub>(), the other threads will continue to execute. Otherwise,
@@ -4501,9 +4743,9 @@ they will be automatically terminated when main() finishes.
 </div>
 </div>
 
-<div id="outline-container-org832f33a" class="outline-4">
-<h4 id="org832f33a"><span class="section-number-4">13.5.2</span> Join and Detach</h4>
-<div class="outline-text-4" id="text-13-5-2">
+<div id="outline-container-org52f426d" class="outline-4">
+<h4 id="org52f426d"><span class="section-number-4">14.5.2</span> Join and Detach</h4>
+<div class="outline-text-4" id="text-14-5-2">
 <div class="org-src-container">
 <pre class="src src-cpp">  <span class="org-type">int</span> <span class="org-function-name">main</span> () {
     <span class="org-type">int</span> <span class="org-variable-name">rc</span>;
@@ -4553,9 +4795,9 @@ they will be automatically terminated when main() finishes.
 
 
 
-<div id="outline-container-org77bbc9f" class="outline-3">
-<h3 id="org77bbc9f"><span class="section-number-3">13.6</span> Other</h3>
-<div class="outline-text-3" id="text-13-6">
+<div id="outline-container-orga1ecc4e" class="outline-3">
+<h3 id="orga1ecc4e"><span class="section-number-3">14.6</span> Other</h3>
+<div class="outline-text-3" id="text-14-6">
 <p>
 sleep
 </p>
@@ -4570,9 +4812,9 @@ sleep
 </div>
 </div>
 
-<div id="outline-container-org28928cb" class="outline-2">
-<h2 id="org28928cb"><span class="section-number-2">14</span> Shell Utilities</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-orgcf8c6b6" class="outline-2">
+<h2 id="orgcf8c6b6"><span class="section-number-2">15</span> Shell Utilities</h2>
+<div class="outline-text-2" id="text-15">
 <ul class="org-ul">
 <li>sort -k 4 -n</li>
 <li>tee</li>
@@ -4633,9 +4875,9 @@ ls -l ~find ...~
 </div>
 
 
-<div id="outline-container-org8a55b5b" class="outline-3">
-<h3 id="org8a55b5b"><span class="section-number-3">14.1</span> Patch System</h3>
-<div class="outline-text-3" id="text-14-1">
+<div id="outline-container-org057a145" class="outline-3">
+<h3 id="org057a145"><span class="section-number-3">15.1</span> Patch System</h3>
+<div class="outline-text-3" id="text-15-1">
 <p>
 Create a patch (notice the order: old then new):
 </p>
@@ -4670,9 +4912,9 @@ This works as if you swapped the old and new file when creating the patch.
 </div>
 </div>
 
-<div id="outline-container-orga4c7729" class="outline-3">
-<h3 id="orga4c7729"><span class="section-number-3">14.2</span> tr: translate characters</h3>
-<div class="outline-text-3" id="text-14-2">
+<div id="outline-container-orgf781bbe" class="outline-3">
+<h3 id="orgf781bbe"><span class="section-number-3">15.2</span> tr: translate characters</h3>
+<div class="outline-text-3" id="text-15-2">
 <p>
 tr &lt;string1&gt; &lt;string2&gt;
 </p>
@@ -4703,9 +4945,9 @@ any characters will represent itself if not:
 </div>
 </div>
 
-<div id="outline-container-org2f4a125" class="outline-3">
-<h3 id="org2f4a125"><span class="section-number-3">14.3</span> uniq: report or filter out repeated lines in a file</h3>
-<div class="outline-text-3" id="text-14-3">
+<div id="outline-container-orgd36d859" class="outline-3">
+<h3 id="orgd36d859"><span class="section-number-3">15.3</span> uniq: report or filter out repeated lines in a file</h3>
+<div class="outline-text-3" id="text-15-3">
 <p>
 Repeated lines in the input will not be detected if they are not adjacent,
 so it may be necessary to sort the files first.
@@ -4721,9 +4963,9 @@ space. You can then comtine this with <code>sort -n</code></li>
 </div>
 </div>
 
-<div id="outline-container-org98097f5" class="outline-3">
-<h3 id="org98097f5"><span class="section-number-3">14.4</span> Find</h3>
-<div class="outline-text-3" id="text-14-4">
+<div id="outline-container-orgd1a4dcd" class="outline-3">
+<h3 id="orgd1a4dcd"><span class="section-number-3">15.4</span> Find</h3>
+<div class="outline-text-3" id="text-15-4">
 <div class="org-src-container">
 <pre class="src src-shell">find . -type f -name *.flac -exec mv {} ../out/ <span class="org-string">\;</span>
 </pre>
@@ -4748,13 +4990,13 @@ find ~/data/fast/pick-master/ -name '*.[ch]'
 
 
 
-<div id="outline-container-org116cb8f" class="outline-2">
-<h2 id="org116cb8f"><span class="section-number-2">15</span> Trouble Shooting</h2>
-<div class="outline-text-2" id="text-15">
+<div id="outline-container-orgd5718a2" class="outline-2">
+<h2 id="orgd5718a2"><span class="section-number-2">16</span> Trouble Shooting</h2>
+<div class="outline-text-2" id="text-16">
 </div>
-<div id="outline-container-orga3eb823" class="outline-3">
-<h3 id="orga3eb823"><span class="section-number-3">15.1</span> Cannot su root</h3>
-<div class="outline-text-3" id="text-15-1">
+<div id="outline-container-orgd08baac" class="outline-3">
+<h3 id="orgd08baac"><span class="section-number-3">16.1</span> Cannot su root</h3>
+<div class="outline-text-3" id="text-16-1">
 <p>
 When su cannot change to root, run
 </p>
@@ -4764,9 +5006,9 @@ chmod u+s /bin/su
 </div>
 </div>
 
-<div id="outline-container-orgc2de304" class="outline-3">
-<h3 id="orgc2de304"><span class="section-number-3">15.2</span> in docker, cannot open chromium</h3>
-<div class="outline-text-3" id="text-15-2">
+<div id="outline-container-org22f3da0" class="outline-3">
+<h3 id="org22f3da0"><span class="section-number-3">16.2</span> in docker, cannot open chromium</h3>
+<div class="outline-text-3" id="text-16-2">
 <blockquote>
 <p>
 failed to move to new namespace: PID namespaces supported, Network
@@ -4782,9 +5024,9 @@ chromium --no-sandbox
 </pre>
 </div>
 </div>
-<div id="outline-container-orgb411962" class="outline-3">
-<h3 id="orgb411962"><span class="section-number-3">15.3</span> Encoding</h3>
-<div class="outline-text-3" id="text-15-3">
+<div id="outline-container-org67a6fdb" class="outline-3">
+<h3 id="org67a6fdb"><span class="section-number-3">16.3</span> Encoding</h3>
+<div class="outline-text-3" id="text-16-3">
 <p>
 When converting MS windows format to unix format, you can use emacs
 and call <code>set-buffer-file-coding-system</code> and set to unix.  Or you can
@@ -4797,9 +5039,9 @@ find . -name *.java | xargs dos2unix
 </div>
 </div>
 
-<div id="outline-container-orgaf53c12" class="outline-3">
-<h3 id="orgaf53c12"><span class="section-number-3">15.4</span> Cannot open shared library</h3>
-<div class="outline-text-3" id="text-15-4">
+<div id="outline-container-org0745e18" class="outline-3">
+<h3 id="org0745e18"><span class="section-number-3">16.4</span> Cannot open shared library</h3>
+<div class="outline-text-3" id="text-16-4">
 <p>
 On <code>CentOS</code>, the default <code>LD_LIBRARY_PATH</code> does not contains the
 <code>/usr/local/lib</code>.  The consequence is the <code>-lpugi</code> and <code>-lctags</code> are
@@ -4811,9 +5053,9 @@ edit <code>/etc/ld.conf.d/local.conf</code> and add the path.  After that, run
 </div>
 
 
-<div id="outline-container-org28e9c5a" class="outline-3">
-<h3 id="org28e9c5a"><span class="section-number-3">15.5</span> auto expansion error for latex font</h3>
-<div class="outline-text-3" id="text-15-5">
+<div id="outline-container-org42191c1" class="outline-3">
+<h3 id="org42191c1"><span class="section-number-3">16.5</span> auto expansion error for latex font</h3>
+<div class="outline-text-3" id="text-16-5">
 <p>
 when compiling latex using acmart template, auto expansion error is
 reported.
@@ -4833,9 +5075,9 @@ Reference: <a href="https://github.com/borisveytsman/acmart/issues/95">https://g
 </div>
 </div>
 
-<div id="outline-container-org77f354b" class="outline-3">
-<h3 id="org77f354b"><span class="section-number-3">15.6</span> time not up-to-date</h3>
-<div class="outline-text-3" id="text-15-6">
+<div id="outline-container-org7433a06" class="outline-3">
+<h3 id="org7433a06"><span class="section-number-3">16.6</span> time not up-to-date</h3>
+<div class="outline-text-3" id="text-16-6">
 <p>
 Although I set the right timezone (check by <code>timedatectl</code>), the clock
 is still incorrect. To fix that, install <code>ntp</code> package and run
@@ -4847,9 +5089,9 @@ sudo ntpd -qg
 </div>
 </div>
 
-<div id="outline-container-org0f50e3f" class="outline-3">
-<h3 id="org0f50e3f"><span class="section-number-3">15.7</span> backlight on TP25</h3>
-<div class="outline-text-3" id="text-15-7">
+<div id="outline-container-org20f1689" class="outline-3">
+<h3 id="org20f1689"><span class="section-number-3">16.7</span> backlight on TP25</h3>
+<div class="outline-text-3" id="text-16-7">
 <p>
 For regular laptops, using debian
 </p>
@@ -4882,9 +5124,9 @@ The command is still <code>xbacklight</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-orga5a9712" class="outline-3">
-<h3 id="orga5a9712"><span class="section-number-3">15.8</span> xinit won't start</h3>
-<div class="outline-text-3" id="text-15-8">
+<div id="outline-container-orgcbd1972" class="outline-3">
+<h3 id="orgcbd1972"><span class="section-number-3">16.8</span> xinit won't start</h3>
+<div class="outline-text-3" id="text-16-8">
 <p>
 On Debian, when I <code>dist-upgrade</code> Debian 8 Jessie to 9 Stretch,
 the <code>startx</code> stop working.
