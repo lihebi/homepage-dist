@@ -250,116 +250,121 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc03b271">1. R lang</a>
+<li><a href="#org966cce6">1. R lang</a>
 <ul>
-<li><a href="#orgcefe436">1.1. Setting up</a>
+<li><a href="#org2755657">1.1. References</a></li>
+<li><a href="#org69dcd9e">1.2. Setting up</a>
 <ul>
-<li><a href="#org98d377a">1.1.1. Packages</a></li>
-<li><a href="#org6446d65">1.1.2. Emacs ESS</a></li>
-<li><a href="#orgf756db3">1.1.3. Interactive command</a></li>
-<li><a href="#orgdb467ff">1.1.4. Commonly used functions</a></li>
+<li><a href="#org0498eff">1.2.1. Packages</a></li>
+<li><a href="#org4ec7b38">1.2.2. Emacs ESS</a></li>
+<li><a href="#org5192f59">1.2.3. Interactive command</a></li>
+<li><a href="#org3213df3">1.2.4. Commonly used functions</a></li>
 </ul>
 </li>
-<li><a href="#orge977b6f">1.2. Scope</a></li>
-<li><a href="#org85235b3">1.3. Objects</a>
+<li><a href="#org68f29ca">1.3. Scope</a></li>
+<li><a href="#orgf4852cf">1.4. Types</a>
 <ul>
-<li><a href="#org2df350a">1.3.1. Vector</a></li>
-<li><a href="#orge65fb00">1.3.2. Indexing</a></li>
-<li><a href="#orgfa46646">1.3.3. list</a></li>
-<li><a href="#orgd7765ab">1.3.4. Data frame</a></li>
-<li><a href="#orgd022ae3">1.3.5. type conversion</a></li>
-<li><a href="#org520668a">1.3.6. <span class="todo TODO">TODO</span> data loading</a></li>
-<li><a href="#org9875573">1.3.7. <span class="todo TODO">TODO</span> missing value</a></li>
-<li><a href="#org3c87ff7">1.3.8. <span class="todo TODO">TODO</span> set</a></li>
-<li><a href="#orge31f47b">1.3.9. <span class="todo TODO">TODO</span> string</a></li>
-<li><a href="#orgf6e9b8b">1.3.10. Evaluation rules (broadcast)</a></li>
+<li><a href="#org801c112">1.4.1. primitives</a></li>
+<li><a href="#org1059a29">1.4.2. Vector</a></li>
+<li><a href="#orgce089da">1.4.3. Indexing</a></li>
+<li><a href="#orgc6c45e5">1.4.4. cbind &amp; rbind</a></li>
+<li><a href="#orge0bbda5">1.4.5. matrix</a></li>
+<li><a href="#orgaa6be98">1.4.6. list</a></li>
+<li><a href="#orge0c41f7">1.4.7. Data frame</a></li>
+<li><a href="#org0cc8c5a">1.4.8. type conversion</a></li>
+<li><a href="#org05fd325">1.4.9. <span class="todo TODO">TODO</span> data loading</a></li>
+<li><a href="#org695540f">1.4.10. <span class="todo TODO">TODO</span> missing value</a></li>
+<li><a href="#org3b4ade6">1.4.11. <span class="todo TODO">TODO</span> set</a></li>
+<li><a href="#org377ee42">1.4.12. <span class="todo TODO">TODO</span> string</a></li>
+<li><a href="#orgdb19ea1">1.4.13. Evaluation rules (broadcast)</a></li>
 </ul>
 </li>
-<li><a href="#org82d41ff">1.4. Operators</a></li>
-<li><a href="#orgf8627c3">1.5. Control Structure</a>
+<li><a href="#org3ab9b38">1.5. Operators</a></li>
+<li><a href="#orgce0357f">1.6. Control Structure</a>
 <ul>
-<li><a href="#org9204e13">1.5.1. Conditional</a></li>
-<li><a href="#org0016103">1.5.2. Loop</a></li>
+<li><a href="#orgcfdbf84">1.6.1. Conditional</a></li>
+<li><a href="#org6075ebe">1.6.2. Loop</a></li>
 </ul>
 </li>
-<li><a href="#org5ad14ba">1.6. Function</a></li>
-<li><a href="#org472abe3">1.7. Quote (!!)</a></li>
-<li><a href="#orgbd83343">1.8. Models</a>
+<li><a href="#orgfa299c6">1.7. Function</a></li>
+<li><a href="#orga843a97">1.8. Quote (!!)</a></li>
+<li><a href="#orgc95d8a4">1.9. Models</a>
 <ul>
-<li><a href="#org0c1d940">1.8.1. Linear model</a></li>
+<li><a href="#org461667d">1.9.1. Linear model</a></li>
 </ul>
 </li>
-<li><a href="#orgcf37cf9">1.9. Plot</a>
+<li><a href="#org2d3252e">1.10. Plot</a>
 <ul>
-<li><a href="#org9d93b46">1.9.1. Decoration</a></li>
-<li><a href="#orga717aac">1.9.2. Plot Types</a>
+<li><a href="#org768d195">1.10.1. Decoration</a></li>
+<li><a href="#org838f0b6">1.10.2. Plot Types</a>
 <ul>
-<li><a href="#orgde73fac">1.9.2.1. plot</a></li>
-<li><a href="#orge940922">1.9.2.2. barplot</a></li>
-<li><a href="#org1e1f849">1.9.2.3. pie</a></li>
-<li><a href="#org348b622">1.9.2.4. boxplot</a></li>
-<li><a href="#org4f89147">1.9.2.5. hist</a></li>
-<li><a href="#org2f59f86">1.9.2.6. <span class="todo TODO">TODO</span> stem</a></li>
-<li><a href="#orge04516c">1.9.2.7. <span class="todo TODO">TODO</span> mosaicplot</a></li>
-<li><a href="#org494d81f">1.9.2.8. pairs</a></li>
+<li><a href="#orgc964fa9">1.10.2.1. plot</a></li>
+<li><a href="#org77e09f3">1.10.2.2. barplot</a></li>
+<li><a href="#orga73f0cd">1.10.2.3. pie</a></li>
+<li><a href="#orgf528dd4">1.10.2.4. boxplot</a></li>
+<li><a href="#org068d9dd">1.10.2.5. hist</a></li>
+<li><a href="#orgc1c6534">1.10.2.6. <span class="todo TODO">TODO</span> stem</a></li>
+<li><a href="#org5ebe25a">1.10.2.7. <span class="todo TODO">TODO</span> mosaicplot</a></li>
+<li><a href="#org85e3d07">1.10.2.8. pairs</a></li>
 </ul>
 </li>
-<li><a href="#orged26dda">1.9.3. Device Driver</a></li>
+<li><a href="#org02d7f7c">1.10.3. Device Driver</a></li>
 </ul>
 </li>
-<li><a href="#org6eb484f">1.10. Packages</a>
+<li><a href="#org98c596a">1.11. FFI</a></li>
+<li><a href="#org5049188">1.12. Packages</a>
 <ul>
-<li><a href="#org72fb132">1.10.1. ggplot2</a></li>
-<li><a href="#org351a930">1.10.2. plot(x, y, &#x2026;)</a></li>
-<li><a href="#org1de9253">1.10.3. dplyr</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org17d86a3">2. Julia</a>
-<ul>
-<li><a href="#org14a45d4">2.1. Julia Libraries</a>
-<ul>
-<li><a href="#org3796f2c">2.1.1. Optimizers</a>
-<ul>
-<li><a href="#org21603dd">2.1.1.1. Optim.jl</a></li>
-<li><a href="#org6a35dd8">2.1.1.2. JuMP.jl</a></li>
-</ul>
-</li>
-<li><a href="#org8291aaf">2.1.2. Datasets</a>
-<ul>
-<li><a href="#org5e7530b">2.1.2.1. METADATA.jl</a></li>
-<li><a href="#org9d4657c">2.1.2.2. Metalhead.jl</a></li>
-</ul>
-</li>
-<li><a href="#orgd61a82e">2.1.3. Images</a>
-<ul>
-<li><a href="#orgf945850">2.1.3.1. ColorTypes.jl</a></li>
-<li><a href="#org461ac86">2.1.3.2. ImageFiltering.jl</a></li>
-<li><a href="#orga732434">2.1.3.3. Images</a></li>
-</ul>
-</li>
-<li><a href="#orge91fc5d">2.1.4. Compiler tools</a>
-<ul>
-<li><a href="#org31c9850">2.1.4.1. MacroTools.jl</a></li>
-<li><a href="#orgbac8a26">2.1.4.2. PackageCompiler.jl</a></li>
-</ul>
-</li>
-<li><a href="#orgd83c746">2.1.5. Probablistic packages</a>
-<ul>
-<li><a href="#orge4eb970">2.1.5.1. Distributions.jl</a></li>
+<li><a href="#org276e0ca">1.12.1. ggplot2</a></li>
+<li><a href="#orge5ba1f4">1.12.2. plot(x, y, &#x2026;)</a></li>
+<li><a href="#org63f9944">1.12.3. dplyr</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org7dcbb50">2.2. Using Pkg</a></li>
+<li><a href="#org48c83b0">2. Julia</a>
+<ul>
+<li><a href="#orgc74d59f">2.1. Julia Libraries</a>
+<ul>
+<li><a href="#orgb33b0b4">2.1.1. Optimizers</a>
+<ul>
+<li><a href="#org4cc409c">2.1.1.1. Optim.jl</a></li>
+<li><a href="#orgee577f4">2.1.1.2. JuMP.jl</a></li>
 </ul>
 </li>
-<li><a href="#org6d0fd71">3. Back</a>
+<li><a href="#org0521a69">2.1.2. Datasets</a>
+<ul>
+<li><a href="#orgca54a7c">2.1.2.1. METADATA.jl</a></li>
+<li><a href="#orgdbdff08">2.1.2.2. Metalhead.jl</a></li>
+</ul>
+</li>
+<li><a href="#org72780cb">2.1.3. Images</a>
+<ul>
+<li><a href="#org59e4803">2.1.3.1. ColorTypes.jl</a></li>
+<li><a href="#orgd35cced">2.1.3.2. ImageFiltering.jl</a></li>
+<li><a href="#orgdf41677">2.1.3.3. Images.jl</a></li>
+</ul>
+</li>
+<li><a href="#org03c51db">2.1.4. Compiler tools</a>
+<ul>
+<li><a href="#orgda0ebac">2.1.4.1. MacroTools.jl</a></li>
+<li><a href="#orgb293904">2.1.4.2. PackageCompiler.jl</a></li>
+</ul>
+</li>
+<li><a href="#org5a705d8">2.1.5. Probablistic packages</a>
+<ul>
+<li><a href="#org0250f2d">2.1.5.1. Distributions.jl</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge75bc47">2.2. Using Pkg</a></li>
+</ul>
+</li>
+<li><a href="#org537e4a6">3. Back</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgd7b75b2">3.0.1. data example</a></li>
+<li><a href="#org299d994">3.0.1. data example</a></li>
 </ul>
 </li>
 </ul>
@@ -368,17 +373,27 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc03b271" class="outline-2">
-<h2 id="orgc03b271"><span class="section-number-2">1</span> R lang</h2>
+<div id="outline-container-org966cce6" class="outline-2">
+<h2 id="org966cce6"><span class="section-number-2">1</span> R lang</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgcefe436" class="outline-3">
-<h3 id="orgcefe436"><span class="section-number-3">1.1</span> Setting up</h3>
+<div id="outline-container-org2755657" class="outline-3">
+<h3 id="org2755657"><span class="section-number-3">1.1</span> References</h3>
 <div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html">official introduction tutorial</a></li>
+<li><a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html">the language reference</a></li>
+</ul>
 </div>
-<div id="outline-container-org98d377a" class="outline-4">
-<h4 id="org98d377a"><span class="section-number-4">1.1.1</span> Packages</h4>
-<div class="outline-text-4" id="text-1-1-1">
+</div>
+
+<div id="outline-container-org69dcd9e" class="outline-3">
+<h3 id="org69dcd9e"><span class="section-number-3">1.2</span> Setting up</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org0498eff" class="outline-4">
+<h4 id="org0498eff"><span class="section-number-4">1.2.1</span> Packages</h4>
+<div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li><code>library()</code> see the list of installed packages.</li>
 <li><code>library(class)</code> load the package <code>class</code>.</li>
@@ -388,9 +403,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org6446d65" class="outline-4">
-<h4 id="org6446d65"><span class="section-number-4">1.1.2</span> Emacs ESS</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-org4ec7b38" class="outline-4">
+<h4 id="org4ec7b38"><span class="section-number-4">1.2.2</span> Emacs ESS</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <p>
 To start ESS session, run command <code>S</code>.
 ESS will create a command interface as a buffer.
@@ -436,9 +451,9 @@ To export some summary data:
 </div>
 </div>
 
-<div id="outline-container-orgf756db3" class="outline-4">
-<h4 id="orgf756db3"><span class="section-number-4">1.1.3</span> Interactive command</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-org5192f59" class="outline-4">
+<h4 id="org5192f59"><span class="section-number-4">1.2.3</span> Interactive command</h4>
+<div class="outline-text-4" id="text-1-2-3">
 <p>
 We need to know what's going on in the current workspace.  <code>getwd()</code>
 and <code>setwd()</code> get and set the current dir.  <code>ls()</code> list the objects
@@ -469,6 +484,22 @@ Finally, <code>q()</code> quit R.
 The <code>print</code> function can output the value of a variable.
 </p>
 
+<div class="org-src-container">
+<pre class="src src-R">print(<span class="org-string">"hello"</span>)
+cat(<span class="org-string">"world"</span>, <span class="org-string">"!"</span>, <span class="org-string">"\n"</span>)
+print(c(1,2,3))
+</pre>
+</div>
+
+<pre class="example">
+[1] "hello"
+world ! 
+[1] 1 2 3
+</pre>
+
+
+
+
 <p>
 To enter the debugger, a call to <code>browser</code> function suffices.  This allows you
 to browse the values at that point.  A more powerful debugger is by a call to
@@ -481,9 +512,9 @@ function is invoked, the return value will be printed as trace.
 </div>
 </div>
 
-<div id="outline-container-orgdb467ff" class="outline-4">
-<h4 id="orgdb467ff"><span class="section-number-4">1.1.4</span> Commonly used functions</h4>
-<div class="outline-text-4" id="text-1-1-4">
+<div id="outline-container-org3213df3" class="outline-4">
+<h4 id="org3213df3"><span class="section-number-4">1.2.4</span> Commonly used functions</h4>
+<div class="outline-text-4" id="text-1-2-4">
 <ul class="org-ul">
 <li><code>str</code> show the structure of arbitrary type</li>
 <li><code>summary</code> print the summary</li>
@@ -504,9 +535,9 @@ To see the data, you can use:
 </div>
 </div>
 
-<div id="outline-container-orge977b6f" class="outline-3">
-<h3 id="orge977b6f"><span class="section-number-3">1.2</span> Scope</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org68f29ca" class="outline-3">
+<h3 id="org68f29ca"><span class="section-number-3">1.3</span> Scope</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 The scope is pretty weired, it is lexical scoping, but assign to the variable
 has no effect. You have to use <code>&lt;&lt;-</code> to assign.
@@ -540,18 +571,77 @@ l$print()
 [1] 0
 [1] -1
 </pre>
+
+
+<p>
+The function parameter is always local, changing it have no effect outside:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="org-function-name">f</span> <span class="org-ess-assignment">&lt;-</span> <span class="org-ess-keyword">function</span> (var) {
+  var[1] <span class="org-ess-assignment">&lt;-</span> 8
+}
+x <span class="org-ess-assignment">&lt;-</span> c(1,2,3)
+f(x)
+x
+</pre>
+</div>
+
+<pre class="example">
+[1] 1 2 3
+</pre>
+
+
+<p>
+It is call by value, for all objects. You can NOT even change a global variable,
+even using <code>&lt;&lt;-</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">x <span class="org-ess-assignment">&lt;-</span> 1
+<span class="org-function-name">f</span> <span class="org-ess-assignment">&lt;-</span> <span class="org-ess-keyword">function</span>() {
+  x <span class="org-ess-assignment">&lt;&lt;-</span> 2
+}
+x
+</pre>
+</div>
+
+<pre class="example">
+[1] 1
+</pre>
 </div>
 </div>
 
 
 
-<div id="outline-container-org85235b3" class="outline-3">
-<h3 id="org85235b3"><span class="section-number-3">1.3</span> Objects</h3>
-<div class="outline-text-3" id="text-1-3">
+
+<div id="outline-container-orgf4852cf" class="outline-3">
+<h3 id="orgf4852cf"><span class="section-number-3">1.4</span> Types</h3>
+<div class="outline-text-3" id="text-1-4">
 </div>
-<div id="outline-container-org2df350a" class="outline-4">
-<h4 id="org2df350a"><span class="section-number-4">1.3.1</span> Vector</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-org801c112" class="outline-4">
+<h4 id="org801c112"><span class="section-number-4">1.4.1</span> primitives</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+Looks like all numbers are double by default:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">typeof(1)
+typeof(1L)
+</pre>
+</div>
+
+<pre class="example">
+[1] "double"
+[1] "integer"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1059a29" class="outline-4">
+<h4 id="org1059a29"><span class="section-number-4">1.4.2</span> Vector</h4>
+<div class="outline-text-4" id="text-1-4-2">
 <p>
 Create a vector by <code>c()</code>, which is append:
 </p>
@@ -671,9 +761,9 @@ typeof(x)
 </div>
 
 
-<div id="outline-container-orge65fb00" class="outline-4">
-<h4 id="orge65fb00"><span class="section-number-4">1.3.2</span> Indexing</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-orgce089da" class="outline-4">
+<h4 id="orgce089da"><span class="section-number-4">1.4.3</span> Indexing</h4>
+<div class="outline-text-4" id="text-1-4-3">
 <p>
 Vectors can be indexed by integers, starting from 1.
 </p>
@@ -754,19 +844,44 @@ x[c(<span class="org-string">"hello"</span>, <span class="org-string">"world"</s
 </div>
 
 <pre class="example">
-hello world  lala 
-    1     2     3 
-&lt;NA&gt; 
-  NA 
-hello 
-    1 
-hello world 
-    1     2 
+hello world  lala
+    1     2     3
+&lt;NA&gt;
+  NA
+hello
+    1
+hello world
+    1     2
 </pre>
+</div>
+</div>
+
+<div id="outline-container-orgc6c45e5" class="outline-4">
+<h4 id="orgc6c45e5"><span class="section-number-4">1.4.4</span> cbind &amp; rbind</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<p>
+This is to <b>combine</b> (for matrix, similar to append for vector) arguments in
+row-wise or column-wise, and creates matrix. This will apply broadcast.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">cbind(0, rbind(1, 1:3))
+</pre>
+</div>
+
+<pre class="example">
+     [,1] [,2] [,3] [,4]
+[1,]    0    1    1    1
+[2,]    0    1    2    3
+</pre>
+</div>
+</div>
 
 
 
-
+<div id="outline-container-orge0bbda5" class="outline-4">
+<h4 id="orge0bbda5"><span class="section-number-4">1.4.5</span> matrix</h4>
+<div class="outline-text-4" id="text-1-4-5">
 <p>
 Matrix can be created by the <code>matrix</code> function.
 </p>
@@ -784,12 +899,50 @@ dim(x)
 [2,]    2    4    6    8
 [1] 2 4
 </pre>
+
+
+<p>
+Specify dimnames:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">matrix(1:6, nrow = 2, dimnames = list(c(<span class="org-string">"a"</span>, <span class="org-string">"b"</span>), LETTERS[1:3]))
+</pre>
+</div>
+
+<pre class="example">
+  A B C
+a 1 3 5
+b 2 4 6
+</pre>
+
+
+<p>
+When indexing, the drop argument (defaulting to TRUE), if TRUE, the result is
+coerced to the lowest possible dimension:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">m <span class="org-ess-assignment">&lt;-</span> matrix(1:6, nrow = 2, dimnames = list(c(<span class="org-string">"a"</span>, <span class="org-string">"b"</span>), LETTERS[1:3]))
+m[1,]
+m[1, , drop = <span class="org-ess-constant">FALSE</span>]
+</pre>
+</div>
+
+<pre class="example">
+A B C 
+1 3 5 
+  A B C
+a 1 3 5
+</pre>
 </div>
 </div>
 
-<div id="outline-container-orgfa46646" class="outline-4">
-<h4 id="orgfa46646"><span class="section-number-4">1.3.3</span> list</h4>
-<div class="outline-text-4" id="text-1-3-3">
+
+
+<div id="outline-container-orgaa6be98" class="outline-4">
+<h4 id="orgaa6be98"><span class="section-number-4">1.4.6</span> list</h4>
+<div class="outline-text-4" id="text-1-4-6">
 <p>
 list is a misnomer, it is a dict
 </p>
@@ -812,14 +965,41 @@ $world
 [1] 1
 [1] 2
 </pre>
+
+
+
+<p>
+When indexing lists, <code>[]</code> retains names, while <code>[[]]</code> returns only the element:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">c(abc = 123)[1]
+</pre>
+</div>
+
+<pre class="example">
+abc 
+123 
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-R">c(abc = 123)[[1]]
+</pre>
+</div>
+
+<pre class="example">
+[1] 123
+</pre>
 </div>
 </div>
 
 
 
-<div id="outline-container-orgd7765ab" class="outline-4">
-<h4 id="orgd7765ab"><span class="section-number-4">1.3.4</span> Data frame</h4>
-<div class="outline-text-4" id="text-1-3-4">
+<div id="outline-container-orge0c41f7" class="outline-4">
+<h4 id="orge0c41f7"><span class="section-number-4">1.4.7</span> Data frame</h4>
+<div class="outline-text-4" id="text-1-4-7">
 <dl class="org-dl">
 <dt><code>na.omit</code></dt><dd>can omit the NA values in data frame</dd>
 </dl>
@@ -838,9 +1018,9 @@ You cannot use a vector as index.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd022ae3" class="outline-4">
-<h4 id="orgd022ae3"><span class="section-number-4">1.3.5</span> type conversion</h4>
-<div class="outline-text-4" id="text-1-3-5">
+<div id="outline-container-org0cc8c5a" class="outline-4">
+<h4 id="org0cc8c5a"><span class="section-number-4">1.4.8</span> type conversion</h4>
+<div class="outline-text-4" id="text-1-4-8">
 <p>
 you can change a type of a vector by
 </p>
@@ -853,9 +1033,9 @@ you can change a type of a vector by
 
 
 
-<div id="outline-container-org520668a" class="outline-4">
-<h4 id="org520668a"><span class="section-number-4">1.3.6</span> <span class="todo TODO">TODO</span> data loading</h4>
-<div class="outline-text-4" id="text-1-3-6">
+<div id="outline-container-org05fd325" class="outline-4">
+<h4 id="org05fd325"><span class="section-number-4">1.4.9</span> <span class="todo TODO">TODO</span> data loading</h4>
+<div class="outline-text-4" id="text-1-4-9">
 <ul class="org-ul">
 <li><code>read.csv</code></li>
 <li><code>write</code></li>
@@ -881,9 +1061,9 @@ you can change a type of a vector by
 
 
 
-<div id="outline-container-org9875573" class="outline-4">
-<h4 id="org9875573"><span class="section-number-4">1.3.7</span> <span class="todo TODO">TODO</span> missing value</h4>
-<div class="outline-text-4" id="text-1-3-7">
+<div id="outline-container-org695540f" class="outline-4">
+<h4 id="org695540f"><span class="section-number-4">1.4.10</span> <span class="todo TODO">TODO</span> missing value</h4>
+<div class="outline-text-4" id="text-1-4-10">
 <p>
 The missing values are <code>NA</code>, tested by <code>is.na</code>.  Illegal computations produces
 <code>NaN</code>, e.g. <code>0/0</code>.
@@ -891,18 +1071,18 @@ The missing values are <code>NA</code>, tested by <code>is.na</code>.  Illegal c
 </div>
 </div>
 
-<div id="outline-container-org3c87ff7" class="outline-4">
-<h4 id="org3c87ff7"><span class="section-number-4">1.3.8</span> <span class="todo TODO">TODO</span> set</h4>
-<div class="outline-text-4" id="text-1-3-8">
+<div id="outline-container-org3b4ade6" class="outline-4">
+<h4 id="org3b4ade6"><span class="section-number-4">1.4.11</span> <span class="todo TODO">TODO</span> set</h4>
+<div class="outline-text-4" id="text-1-4-11">
 <p>
 subset
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge31f47b" class="outline-4">
-<h4 id="orge31f47b"><span class="section-number-4">1.3.9</span> <span class="todo TODO">TODO</span> string</h4>
-<div class="outline-text-4" id="text-1-3-9">
+<div id="outline-container-org377ee42" class="outline-4">
+<h4 id="org377ee42"><span class="section-number-4">1.4.12</span> <span class="todo TODO">TODO</span> string</h4>
+<div class="outline-text-4" id="text-1-4-12">
 <p>
 substr
 </p>
@@ -910,9 +1090,9 @@ substr
 </div>
 
 
-<div id="outline-container-orgf6e9b8b" class="outline-4">
-<h4 id="orgf6e9b8b"><span class="section-number-4">1.3.10</span> Evaluation rules (broadcast)</h4>
-<div class="outline-text-4" id="text-1-3-10">
+<div id="outline-container-orgdb19ea1" class="outline-4">
+<h4 id="orgdb19ea1"><span class="section-number-4">1.4.13</span> Evaluation rules (broadcast)</h4>
+<div class="outline-text-4" id="text-1-4-13">
 <ul class="org-ul">
 <li>recycling rules: the shortest list is recycled to the length of longest.</li>
 <li>dimensional attributes: the dimension of matrix must match. No recycle for a matrix.</li>
@@ -921,9 +1101,9 @@ substr
 </div>
 </div>
 
-<div id="outline-container-org82d41ff" class="outline-3">
-<h3 id="org82d41ff"><span class="section-number-3">1.4</span> Operators</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org3ab9b38" class="outline-3">
+<h3 id="org3ab9b38"><span class="section-number-3">1.5</span> Operators</h3>
+<div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>arithmetic: <code>+-*/</code>, <code>^</code> for exp, <code>%%</code> for modulus</li>
 <li>matrix: <code>%*%</code> matrix product, <code>%o%</code> outer product</li>
@@ -953,34 +1133,96 @@ numeric.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf8627c3" class="outline-3">
-<h3 id="orgf8627c3"><span class="section-number-3">1.5</span> Control Structure</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgce0357f" class="outline-3">
+<h3 id="orgce0357f"><span class="section-number-3">1.6</span> Control Structure</h3>
+<div class="outline-text-3" id="text-1-6">
 <p>
 The compound statements are the same as C, can be a single statement without the braces.
 </p>
 </div>
 
-<div id="outline-container-org9204e13" class="outline-4">
-<h4 id="org9204e13"><span class="section-number-4">1.5.1</span> Conditional</h4>
-<div class="outline-text-4" id="text-1-5-1">
+<div id="outline-container-orgcfdbf84" class="outline-4">
+<h4 id="orgcfdbf84"><span class="section-number-4">1.6.1</span> Conditional</h4>
+<div class="outline-text-4" id="text-1-6-1">
 <ul class="org-ul">
 <li>if: <code>if (STMT) STMT else if (STMT) STMT else STMT</code></li>
-<li>Switch: <code>switch (STMT, LIST)</code>
-<ul class="org-ul">
-<li>the STMT is first evaluated</li>
-<li>if the value is within 1 and the length of the LIST, evaluate LIST[i], and return</li>
-<li>return NULL</li>
-<li>Notice that the LIST can be a comma separated argument of switch &#x2026; which
-means switch actually accepts <code>...</code></li>
-</ul></li>
 </ul>
+
+<p>
+The switch is quite interesting. It is
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="org-ess-keyword">switch</span>(x, list...)
+</pre>
+</div>
+
+<p>
+The semantic is to find x in the list and return the value. If x is not in list,
+return NULL.
+</p>
+
+<p>
+An unnamed list has implicit index as name:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="org-ess-keyword">switch</span>(2,1,2,3)
+</pre>
+</div>
+
+<pre class="example">
+[1] 2
+</pre>
+
+
+<p>
+Using name:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="org-ess-keyword">switch</span>(<span class="org-string">"hello"</span>, hello=1, world=2)
+</pre>
+</div>
+
+<pre class="example">
+[1] 1
+</pre>
+
+
+<p>
+not found, return NULL:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">is.null(<span class="org-ess-keyword">switch</span>(<span class="org-string">"nothing"</span>, hello=1))
+</pre>
+</div>
+
+<pre class="example">
+[1] TRUE
+</pre>
+
+
+<p>
+Interestingly, even for named list, we can still use the index:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="org-ess-keyword">switch</span>(2, hello=1, world=2)
+</pre>
+</div>
+
+<pre class="example">
+[1] 2
+</pre>
 </div>
 </div>
 
-<div id="outline-container-org0016103" class="outline-4">
-<h4 id="org0016103"><span class="section-number-4">1.5.2</span> Loop</h4>
-<div class="outline-text-4" id="text-1-5-2">
+
+<div id="outline-container-org6075ebe" class="outline-4">
+<h4 id="org6075ebe"><span class="section-number-4">1.6.2</span> Loop</h4>
+<div class="outline-text-4" id="text-1-6-2">
 <ul class="org-ul">
 <li>for loop: <code>for (NAME in VECTOR) STMT</code></li>
 <li>while loop: <code>while (STMT) STMT</code></li>
@@ -1006,9 +1248,9 @@ ret
 </div>
 
 
-<div id="outline-container-org5ad14ba" class="outline-3">
-<h3 id="org5ad14ba"><span class="section-number-3">1.6</span> Function</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-orgfa299c6" class="outline-3">
+<h3 id="orgfa299c6"><span class="section-number-3">1.7</span> Function</h3>
+<div class="outline-text-3" id="text-1-7">
 <p>
 <code>function (ARGLIST) BODY</code>
 </p>
@@ -1044,25 +1286,31 @@ f(1,2,3)
 </div>
 
 
-<div id="outline-container-org472abe3" class="outline-3">
-<h3 id="org472abe3"><span class="section-number-3">1.7</span> Quote (!!)</h3>
-<div class="outline-text-3" id="text-1-7">
-<p>
-The quote will wrap the expression into an object without evaluating it.
-The resulting object has the mode of <code>call</code>.
-The <code>eval</code> is used to evaluate it.
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-orgbd83343" class="outline-3">
-<h3 id="orgbd83343"><span class="section-number-3">1.8</span> Models</h3>
+<div id="outline-container-orga843a97" class="outline-3">
+<h3 id="orga843a97"><span class="section-number-3">1.8</span> Quote (!!)</h3>
 <div class="outline-text-3" id="text-1-8">
+<p>
+The quote will wrap the expression into an object without evaluating it.  The
+resulting object has the mode of <code>call</code>.  The <code>eval</code> is used to evaluate it.
+</p>
+
+<ul class="org-ul">
+<li><code>quote</code></li>
+<li><code>substitute</code></li>
+<li><code>eval</code></li>
+<li><code>call</code></li>
+</ul>
 </div>
-<div id="outline-container-org0c1d940" class="outline-4">
-<h4 id="org0c1d940"><span class="section-number-4">1.8.1</span> Linear model</h4>
-<div class="outline-text-4" id="text-1-8-1">
+</div>
+
+
+<div id="outline-container-orgc95d8a4" class="outline-3">
+<h3 id="orgc95d8a4"><span class="section-number-3">1.9</span> Models</h3>
+<div class="outline-text-3" id="text-1-9">
+</div>
+<div id="outline-container-org461667d" class="outline-4">
+<h4 id="org461667d"><span class="section-number-4">1.9.1</span> Linear model</h4>
+<div class="outline-text-4" id="text-1-9-1">
 <p>
 A linear model is created <b>and fitted</b> by <code>lm()</code> function, with the model
 formula and data frame. For example:
@@ -1081,18 +1329,18 @@ Call:
 lm(formula = y ~ x, data = df)
 
 Residuals:
-1 2 3 
-0 0 0 
+1 2 3
+0 0 0
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)        0          0      NA       NA    
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)        0          0      NA       NA
 x                  2          0     Inf   &lt;2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0 on 1 degrees of freedom
-Multiple R-squared:      1,	Adjusted R-squared:      1 
+Multiple R-squared:      1,	Adjusted R-squared:      1
 F-statistic:   Inf on 1 and 1 DF,  p-value: &lt; 2.2e-16
 
 </pre>
@@ -1125,9 +1373,9 @@ fs <span class="org-ess-assignment">&lt;-</span> update(fs, sqrt(.) ~ .)
 </div>
 </div>
 
-<div id="outline-container-orgcf37cf9" class="outline-3">
-<h3 id="orgcf37cf9"><span class="section-number-3">1.9</span> Plot</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-org2d3252e" class="outline-3">
+<h3 id="org2d3252e"><span class="section-number-3">1.10</span> Plot</h3>
+<div class="outline-text-3" id="text-1-10">
 <p>
 Process data:
 </p>
@@ -1137,9 +1385,9 @@ Process data:
 </ul>
 </div>
 
-<div id="outline-container-org9d93b46" class="outline-4">
-<h4 id="org9d93b46"><span class="section-number-4">1.9.1</span> Decoration</h4>
-<div class="outline-text-4" id="text-1-9-1">
+<div id="outline-container-org768d195" class="outline-4">
+<h4 id="org768d195"><span class="section-number-4">1.10.1</span> Decoration</h4>
+<div class="outline-text-4" id="text-1-10-1">
 <ul class="org-ul">
 <li>box</li>
 <li>axis</li>
@@ -1152,54 +1400,54 @@ Process data:
 </ul>
 </div>
 </div>
-<div id="outline-container-orga717aac" class="outline-4">
-<h4 id="orga717aac"><span class="section-number-4">1.9.2</span> Plot Types</h4>
-<div class="outline-text-4" id="text-1-9-2">
+<div id="outline-container-org838f0b6" class="outline-4">
+<h4 id="org838f0b6"><span class="section-number-4">1.10.2</span> Plot Types</h4>
+<div class="outline-text-4" id="text-1-10-2">
 </div>
-<div id="outline-container-orgde73fac" class="outline-5">
-<h5 id="orgde73fac"><span class="section-number-5">1.9.2.1</span> plot</h5>
-<div class="outline-text-5" id="text-1-9-2-1">
+<div id="outline-container-orgc964fa9" class="outline-5">
+<h5 id="orgc964fa9"><span class="section-number-5">1.10.2.1</span> plot</h5>
+<div class="outline-text-5" id="text-1-10-2-1">
 <ul class="org-ul">
 <li>lines</li>
 <li>abline</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge940922" class="outline-5">
-<h5 id="orge940922"><span class="section-number-5">1.9.2.2</span> barplot</h5>
+<div id="outline-container-org77e09f3" class="outline-5">
+<h5 id="org77e09f3"><span class="section-number-5">1.10.2.2</span> barplot</h5>
 </div>
-<div id="outline-container-org1e1f849" class="outline-5">
-<h5 id="org1e1f849"><span class="section-number-5">1.9.2.3</span> pie</h5>
+<div id="outline-container-orga73f0cd" class="outline-5">
+<h5 id="orga73f0cd"><span class="section-number-5">1.10.2.3</span> pie</h5>
 </div>
-<div id="outline-container-org348b622" class="outline-5">
-<h5 id="org348b622"><span class="section-number-5">1.9.2.4</span> boxplot</h5>
-<div class="outline-text-5" id="text-1-9-2-4">
+<div id="outline-container-orgf528dd4" class="outline-5">
+<h5 id="orgf528dd4"><span class="section-number-5">1.10.2.4</span> boxplot</h5>
+<div class="outline-text-5" id="text-1-10-2-4">
 <ul class="org-ul">
 <li>quantile</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4f89147" class="outline-5">
-<h5 id="org4f89147"><span class="section-number-5">1.9.2.5</span> hist</h5>
-<div class="outline-text-5" id="text-1-9-2-5">
+<div id="outline-container-org068d9dd" class="outline-5">
+<h5 id="org068d9dd"><span class="section-number-5">1.10.2.5</span> hist</h5>
+<div class="outline-text-5" id="text-1-10-2-5">
 <ul class="org-ul">
 <li>lines(density(data))</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2f59f86" class="outline-5">
-<h5 id="org2f59f86"><span class="section-number-5">1.9.2.6</span> <span class="todo TODO">TODO</span> stem</h5>
+<div id="outline-container-orgc1c6534" class="outline-5">
+<h5 id="orgc1c6534"><span class="section-number-5">1.10.2.6</span> <span class="todo TODO">TODO</span> stem</h5>
 </div>
-<div id="outline-container-orge04516c" class="outline-5">
-<h5 id="orge04516c"><span class="section-number-5">1.9.2.7</span> <span class="todo TODO">TODO</span> mosaicplot</h5>
+<div id="outline-container-org5ebe25a" class="outline-5">
+<h5 id="org5ebe25a"><span class="section-number-5">1.10.2.7</span> <span class="todo TODO">TODO</span> mosaicplot</h5>
 </div>
-<div id="outline-container-org494d81f" class="outline-5">
-<h5 id="org494d81f"><span class="section-number-5">1.9.2.8</span> pairs</h5>
+<div id="outline-container-org85e3d07" class="outline-5">
+<h5 id="org85e3d07"><span class="section-number-5">1.10.2.8</span> pairs</h5>
 </div>
 </div>
-<div id="outline-container-orged26dda" class="outline-4">
-<h4 id="orged26dda"><span class="section-number-4">1.9.3</span> Device Driver</h4>
-<div class="outline-text-4" id="text-1-9-3">
+<div id="outline-container-org02d7f7c" class="outline-4">
+<h4 id="org02d7f7c"><span class="section-number-4">1.10.3</span> Device Driver</h4>
+<div class="outline-text-4" id="text-1-10-3">
 <p>
 When outputting some image, you have to tell R which format you want
 to use. The default on linux is X11, that's why it opens a image
@@ -1236,13 +1484,56 @@ To output to a file TODO to open plot in emacs:
 </div>
 </div>
 
-<div id="outline-container-org6eb484f" class="outline-3">
-<h3 id="org6eb484f"><span class="section-number-3">1.10</span> Packages</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-org98c596a" class="outline-3">
+<h3 id="org98c596a"><span class="section-number-3">1.11</span> FFI</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+To call a C function in R, first load the C shared library:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">dyn.load()
+dyn.unload()
+</pre>
 </div>
-<div id="outline-container-org72fb132" class="outline-4">
-<h4 id="org72fb132"><span class="section-number-4">1.10.1</span> ggplot2</h4>
-<div class="outline-text-4" id="text-1-10-1">
+
+<p>
+Then, you can directly call a C function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">.C(<span class="org-string">"foo"</span>, as.double(a), as.integer(b))
+</pre>
+</div>
+
+<p>
+Or, if you need to pass a R object to the C function, you use
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">.Call(<span class="org-string">"foo"</span>, a, b)
+.External(<span class="org-string">"foo"</span>, a, b)
+</pre>
+</div>
+
+<p>
+R also provides a command to create shared object, instead of using raw gcc:
+</p>
+
+<pre class="example">
+R CMD SHLIB foo.c
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org5049188" class="outline-3">
+<h3 id="org5049188"><span class="section-number-3">1.12</span> Packages</h3>
+<div class="outline-text-3" id="text-1-12">
+</div>
+<div id="outline-container-org276e0ca" class="outline-4">
+<h4 id="org276e0ca"><span class="section-number-4">1.12.1</span> ggplot2</h4>
+<div class="outline-text-4" id="text-1-12-1">
 <div class="org-src-container">
 <pre class="src src-R">qplot(totbill, tip, geom=<span class="org-string">"point"</span>, data=tips) <span class="org-comment-delimiter"># </span><span class="org-comment">scatter plot</span>
 qplot(totbill, tip, geom=<span class="org-string">"point"</span>, data=tips) + geom_smooth(method=<span class="org-string">"lm"</span>) <span class="org-comment-delimiter"># </span><span class="org-comment">with linear relationship line</span>
@@ -1257,14 +1548,14 @@ qplot(totbill, tip, geom=<span class="org-string">"point"</span>, colour=day, da
 </div>
 </div>
 </div>
-<div id="outline-container-org351a930" class="outline-4">
-<h4 id="org351a930"><span class="section-number-4">1.10.2</span> plot(x, y, &#x2026;)</h4>
-<div class="outline-text-4" id="text-1-10-2">
+<div id="outline-container-orge5ba1f4" class="outline-4">
+<h4 id="orge5ba1f4"><span class="section-number-4">1.12.2</span> plot(x, y, &#x2026;)</h4>
+<div class="outline-text-4" id="text-1-12-2">
 <p>
 Possible <code>...</code> arguments:
 </p>
 <ul class="org-ul">
-<li><code>type</code> what type of plot: 
+<li><code>type</code> what type of plot:
 <ul class="org-ul">
 <li><code>p</code> for points,</li>
 <li><code>l</code> for lines,</li>
@@ -1278,74 +1569,67 @@ Possible <code>...</code> arguments:
 </div>
 </div>
 
-<div id="outline-container-org1de9253" class="outline-4">
-<h4 id="org1de9253"><span class="section-number-4">1.10.3</span> dplyr</h4>
-<div class="outline-text-4" id="text-1-10-3">
+<div id="outline-container-org63f9944" class="outline-4">
+<h4 id="org63f9944"><span class="section-number-4">1.12.3</span> dplyr</h4>
+<div class="outline-text-4" id="text-1-12-3">
 <p>
 A Grammar of Data Manipulation
-<a href="https://cran.r-project.org/web/packages/dplyr/index.html">https://cran.r-project.org/web/packages/dplyr/index.html</a>
-<a href="https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html">https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html</a>
 </p>
+<ul class="org-ul">
+<li><a href="https://cran.r-project.org/web/packages/dplyr/index.html">cran page</a></li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org17d86a3" class="outline-2">
-<h2 id="org17d86a3"><span class="section-number-2">2</span> Julia</h2>
+<div id="outline-container-org48c83b0" class="outline-2">
+<h2 id="org48c83b0"><span class="section-number-2">2</span> Julia</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org14a45d4" class="outline-3">
-<h3 id="org14a45d4"><span class="section-number-3">2.1</span> Julia Libraries</h3>
+<div id="outline-container-orgc74d59f" class="outline-3">
+<h3 id="orgc74d59f"><span class="section-number-3">2.1</span> Julia Libraries</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org3796f2c" class="outline-4">
-<h4 id="org3796f2c"><span class="section-number-4">2.1.1</span> Optimizers</h4>
+<div id="outline-container-orgb33b0b4" class="outline-4">
+<h4 id="orgb33b0b4"><span class="section-number-4">2.1.1</span> Optimizers</h4>
 <div class="outline-text-4" id="text-2-1-1">
 </div>
-<div id="outline-container-org21603dd" class="outline-5">
-<h5 id="org21603dd"><span class="section-number-5">2.1.1.1</span> Optim.jl</h5>
+<div id="outline-container-org4cc409c" class="outline-5">
+<h5 id="org4cc409c"><span class="section-number-5">2.1.1.1</span> <a href="https://github.com/JuliaNLSolvers/Optim.jl">Optim.jl</a></h5>
 <div class="outline-text-5" id="text-2-1-1-1">
 <p>
-optimization <a href="https://github.com/JuliaNLSolvers/Optim.jl">https://github.com/JuliaNLSolvers/Optim.jl</a>
+optimization
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6a35dd8" class="outline-5">
-<h5 id="org6a35dd8"><span class="section-number-5">2.1.1.2</span> JuMP.jl</h5>
+<div id="outline-container-orgee577f4" class="outline-5">
+<h5 id="orgee577f4"><span class="section-number-5">2.1.1.2</span> <a href="https://github.com/JuliaOpt/JuMP.jl">JuMP.jl</a></h5>
 <div class="outline-text-5" id="text-2-1-1-2">
 <p>
-another optimizer with more solvers <a href="https://github.com/JuliaOpt/JuMP.jl">https://github.com/JuliaOpt/JuMP.jl</a>
+another optimizer with more solvers
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8291aaf" class="outline-4">
-<h4 id="org8291aaf"><span class="section-number-4">2.1.2</span> Datasets</h4>
+<div id="outline-container-org0521a69" class="outline-4">
+<h4 id="org0521a69"><span class="section-number-4">2.1.2</span> Datasets</h4>
 <div class="outline-text-4" id="text-2-1-2">
 </div>
-<div id="outline-container-org5e7530b" class="outline-5">
-<h5 id="org5e7530b"><span class="section-number-5">2.1.2.1</span> METADATA.jl</h5>
+<div id="outline-container-orgca54a7c" class="outline-5">
+<h5 id="orgca54a7c"><span class="section-number-5">2.1.2.1</span> <a href="https://github.com/JuliaLang/METADATA.jl">METADATA.jl</a></h5>
 <div class="outline-text-5" id="text-2-1-2-1">
 <p>
 Used for <a href="https://pkg.julialang.org/docs/">official package registry</a>
 </p>
-
-<p>
-<a href="https://github.com/JuliaLang/METADATA.jl">https://github.com/JuliaLang/METADATA.jl</a>
-</p>
 </div>
 </div>
 
-<div id="outline-container-org9d4657c" class="outline-5">
-<h5 id="org9d4657c"><span class="section-number-5">2.1.2.2</span> Metalhead.jl</h5>
+<div id="outline-container-orgdbdff08" class="outline-5">
+<h5 id="orgdbdff08"><span class="section-number-5">2.1.2.2</span> <a href="https://github.com/FluxML/Metalhead.jl">Metalhead.jl</a></h5>
 <div class="outline-text-5" id="text-2-1-2-2">
-<p>
-<a href="https://github.com/FluxML/Metalhead.jl">https://github.com/FluxML/Metalhead.jl</a>
-</p>
-
 <p>
 Some vision models and dataset
 </p>
@@ -1353,35 +1637,21 @@ Some vision models and dataset
 </div>
 </div>
 
-<div id="outline-container-orgd61a82e" class="outline-4">
-<h4 id="orgd61a82e"><span class="section-number-4">2.1.3</span> Images</h4>
+<div id="outline-container-org72780cb" class="outline-4">
+<h4 id="org72780cb"><span class="section-number-4">2.1.3</span> Images</h4>
 <div class="outline-text-4" id="text-2-1-3">
 </div>
-<div id="outline-container-orgf945850" class="outline-5">
-<h5 id="orgf945850"><span class="section-number-5">2.1.3.1</span> ColorTypes.jl</h5>
-<div class="outline-text-5" id="text-2-1-3-1">
-<p>
-<a href="https://github.com/JuliaGraphics/ColorTypes.jl">https://github.com/JuliaGraphics/ColorTypes.jl</a>
-</p>
-</div>
+<div id="outline-container-org59e4803" class="outline-5">
+<h5 id="org59e4803"><span class="section-number-5">2.1.3.1</span> <a href="https://github.com/JuliaGraphics/ColorTypes.jl">ColorTypes.jl</a></h5>
 </div>
 
-<div id="outline-container-org461ac86" class="outline-5">
-<h5 id="org461ac86"><span class="section-number-5">2.1.3.2</span> ImageFiltering.jl</h5>
-<div class="outline-text-5" id="text-2-1-3-2">
-<p>
-<a href="https://github.com/JuliaImages/ImageFiltering.jl">https://github.com/JuliaImages/ImageFiltering.jl</a>
-</p>
-</div>
+<div id="outline-container-orgd35cced" class="outline-5">
+<h5 id="orgd35cced"><span class="section-number-5">2.1.3.2</span> <a href="https://github.com/JuliaImages/ImageFiltering.jl">ImageFiltering.jl</a></h5>
 </div>
 
-<div id="outline-container-orga732434" class="outline-5">
-<h5 id="orga732434"><span class="section-number-5">2.1.3.3</span> Images</h5>
+<div id="outline-container-orgdf41677" class="outline-5">
+<h5 id="orgdf41677"><span class="section-number-5">2.1.3.3</span> <a href="https://github.com/JuliaImages/Images.jl">Images.jl</a></h5>
 <div class="outline-text-5" id="text-2-1-3-3">
-<p>
-<a href="https://github.com/JuliaImages/Images.jl">https://github.com/JuliaImages/Images.jl</a>
-</p>
-
 <p>
 colorview, channelview, RGB
 </p>
@@ -1389,47 +1659,36 @@ colorview, channelview, RGB
 </div>
 </div>
 
-<div id="outline-container-orge91fc5d" class="outline-4">
-<h4 id="orge91fc5d"><span class="section-number-4">2.1.4</span> Compiler tools</h4>
+<div id="outline-container-org03c51db" class="outline-4">
+<h4 id="org03c51db"><span class="section-number-4">2.1.4</span> Compiler tools</h4>
 <div class="outline-text-4" id="text-2-1-4">
 </div>
-<div id="outline-container-org31c9850" class="outline-5">
-<h5 id="org31c9850"><span class="section-number-5">2.1.4.1</span> MacroTools.jl</h5>
-<div class="outline-text-5" id="text-2-1-4-1">
-<p>
-<a href="https://github.com/MikeInnes/MacroTools.jl">https://github.com/MikeInnes/MacroTools.jl</a>
-</p>
+<div id="outline-container-orgda0ebac" class="outline-5">
+<h5 id="orgda0ebac"><span class="section-number-5">2.1.4.1</span> <a href="https://github.com/MikeInnes/MacroTools.jl">MacroTools.jl</a></h5>
 </div>
-</div>
-<div id="outline-container-orgbac8a26" class="outline-5">
-<h5 id="orgbac8a26"><span class="section-number-5">2.1.4.2</span> PackageCompiler.jl</h5>
+
+<div id="outline-container-orgb293904" class="outline-5">
+<h5 id="orgb293904"><span class="section-number-5">2.1.4.2</span> <a href="https://github.com/JuliaLang/PackageCompiler.jl">PackageCompiler.jl</a></h5>
 <div class="outline-text-5" id="text-2-1-4-2">
 <p>
 To remove JIT compile overhead
-<a href="https://github.com/JuliaLang/PackageCompiler.jl">https://github.com/JuliaLang/PackageCompiler.jl</a>
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd83c746" class="outline-4">
-<h4 id="orgd83c746"><span class="section-number-4">2.1.5</span> Probablistic packages</h4>
+<div id="outline-container-org5a705d8" class="outline-4">
+<h4 id="org5a705d8"><span class="section-number-4">2.1.5</span> Probablistic packages</h4>
 <div class="outline-text-4" id="text-2-1-5">
 </div>
-<div id="outline-container-orge4eb970" class="outline-5">
-<h5 id="orge4eb970"><span class="section-number-5">2.1.5.1</span> Distributions.jl</h5>
-<div class="outline-text-5" id="text-2-1-5-1">
-<p>
-<a href="https://github.com/JuliaStats/Distributions.jl">https://github.com/JuliaStats/Distributions.jl</a>
-</p>
-</div>
+<div id="outline-container-org0250f2d" class="outline-5">
+<h5 id="org0250f2d"><span class="section-number-5">2.1.5.1</span> <a href="https://github.com/JuliaStats/Distributions.jl">Distributions.jl</a></h5>
 </div>
 </div>
 </div>
 
-
-<div id="outline-container-org7dcbb50" class="outline-3">
-<h3 id="org7dcbb50"><span class="section-number-3">2.2</span> Using Pkg</h3>
+<div id="outline-container-orge75bc47" class="outline-3">
+<h3 id="orge75bc47"><span class="section-number-3">2.2</span> Using Pkg</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-julia"><span class="org-keyword">using</span> Pkg
@@ -1467,8 +1726,8 @@ You will see:
 </div>
 </div>
 
-<div id="outline-container-org6d0fd71" class="outline-2">
-<h2 id="org6d0fd71"><span class="section-number-2">3</span> Back</h2>
+<div id="outline-container-org537e4a6" class="outline-2">
+<h2 id="org537e4a6"><span class="section-number-2">3</span> Back</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>For vectors, <code>[]</code> returns the element.</li>
@@ -1489,8 +1748,8 @@ z[,,]
 </div>
 </div>
 
-<div id="outline-container-orgd7b75b2" class="outline-4">
-<h4 id="orgd7b75b2"><span class="section-number-4">3.0.1</span> data example</h4>
+<div id="outline-container-org299d994" class="outline-4">
+<h4 id="org299d994"><span class="section-number-4">3.0.1</span> data example</h4>
 <div class="outline-text-4" id="text-3-0-1">
 <div class="org-src-container">
 <pre class="src src-R"><span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: Command line arguments)</span></span>
