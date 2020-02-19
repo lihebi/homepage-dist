@@ -465,16 +465,16 @@ For example, typed racket:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">outline annotation</span>
-(: distance (-&gt; pt pt Real))
-(define (distance p1 p2)
-  (sqrt (+ (sqr (- (pt-x p2) (pt-x p1)))
-           (sqr (- (pt-y p2) (pt-y p1))))))
+<pre class="src src-racket"><span class="org-comment-delimiter">;; </span><span class="org-comment">outline annotation</span>
+(<span class="org-builtin">:</span> distance (<span class="org-builtin">-&gt;</span> pt pt <span class="org-type">Real</span>))
+(<span class="org-keyword">define</span> (<span class="org-function-name">distance</span> p1 p2)
+  (<span class="org-builtin">sqrt</span> (<span class="org-builtin">+</span> (<span class="org-builtin">sqr</span> (<span class="org-builtin">-</span> (pt-x p2) (pt-x p1)))
+           (<span class="org-builtin">sqr</span> (<span class="org-builtin">-</span> (pt-y p2) (pt-y p1))))))
 
 <span class="org-comment-delimiter">;; </span><span class="org-comment">inline annotations</span>
-(<span class="org-keyword">let</span> ([x : Number 7])
-  (add1 x))
-(<span class="org-keyword">lambda</span> ([x : Number] [y : String]) (+ x 5))
+(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> <span class="org-builtin">:</span> <span class="org-type">Number</span> <span class="org-racket-selfeval">7</span>])
+  (<span class="org-builtin">add1</span> x))
+(<span class="org-keyword">lambda</span> ([x <span class="org-builtin">:</span> <span class="org-type">Number</span>] [y <span class="org-builtin">:</span> <span class="org-type">String</span>]) (<span class="org-builtin">+</span> x <span class="org-racket-selfeval">5</span>))
 </pre>
 </div>
 
