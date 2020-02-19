@@ -264,6 +264,13 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+<blockquote>
+<p>
+Bisp is a lisp, with a little less parenthesis, infix/postfix-notation when it
+makes sense, Julia-like optional static typing and multi-dispatching.
+</p>
+</blockquote>
+
 
 <div id="outline-container-org1e981e6" class="outline-2">
 <h2 id="org1e981e6"><span class="section-number-2">1</span> Rationale</h2>
@@ -278,50 +285,43 @@ Parenthesis is a good thing, as always, because:
 </ul>
 
 <p>
-However, abusing parenthesis creates readability problem, less elegent than
-Haskell, OCaml and Julia. 
+However, too much parenthesis creates readability problem, less elegent than
+Haskell, OCaml and Julia.
 </p>
 
 <p>
 And due to insisting on parenthesis, some intuitive syntax becomes cubersome:
 </p>
 <ul class="org-ul">
-<li>hard to do <b>inline type annotations</b>. Prior art: typed racket, contracts,
-clojure specs</li>
 <li><b>struct field accessing</b>, the dot-notation, is missing</li>
 <li>hard to do <b>array indexing and slicing</b>, e.g. arr[3,0:7,:]</li>
 </ul>
+
+<p>
+Lisp sytems traditionally use dynamic typing. But static typing can be very
+useful annotations for programming in general, and is crutial for
+multi-dispatching describe below. It is hard to add <b>inline type annotations</b>
+elegently due that additional parenthesis must be created for grouping purpose.
+Prior art: typed racket, contracts, clojure specs.
+</p>
+
 
 <p>
 Lisp dialects also fall short on <b>multi-dispatch generic
 functions</b>. Multi-dispatch generic functions is a great feature of Julia. It
 allows to override the same function name for different type and number of
 arguments. This matters a lot to save the namespace of functions, and makes the
-program elegent and extensible. Howver, in lisp dialects the support for
-multi-dispatch is not that good due to no proper type systems, for example
-generic method in racket and gerbil, defmulti in clojure.
+program elegent and extensible.  Prior art: generic method in racket and gerbil,
+defmulti in clojure.
 </p>
 
-
 <p>
-Thus my design goal for Bisp includes:
-</p>
-<ul class="org-ul">
-<li>retain all the <b>good parts of parenthesis</b>: syntactic abstraction, unambiguity,
-structural editing</li>
-<li><b>less parenthesis when appropriate</b> for better readability</li>
-<li><b>dot-notation</b> for struct field accessing</li>
-<li>support multi-dimensional arrays: <b>array indexing and slicing</b></li>
-<li><b>multi-dispatch generic methods</b>, by default</li>
-</ul>
-
-
-<p>
-In a word, Bisp is a lisp with a little less parenthesis, infix/postfix-notation
-when approprite, and multi-dispatching.
+Bisp is designed to maintain the good part of lisp, while overcoming the
+afore-mentioned cons.
 </p>
 </div>
 </div>
+
 
 <div id="outline-container-org2a47fef" class="outline-2">
 <h2 id="org2a47fef"><span class="section-number-2">2</span> Implementation</h2>
