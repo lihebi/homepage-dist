@@ -191,13 +191,13 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" />
+<link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -272,183 +272,183 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgff4fbbd">1. Basics</a>
+<li><a href="#orgad9e1f9">1. Basics</a>
 <ul>
-<li><a href="#org4776472">1.1. Order of growth</a></li>
-<li><a href="#orgd2379fb">1.2. <span class="todo TODO">TODO</span> how to analyze the running time</a></li>
-<li><a href="#org48869a1">1.3. <span class="todo TODO">TODO</span> Amortized Analysis</a></li>
+<li><a href="#orgd04420c">1.1. Order of growth</a></li>
+<li><a href="#org047e9a0">1.2. <span class="todo TODO">TODO</span> how to analyze the running time</a></li>
+<li><a href="#org2370572">1.3. <span class="todo TODO">TODO</span> Amortized Analysis</a></li>
 </ul>
 </li>
-<li><a href="#orgca9277d">2. Sorting algorithms</a>
+<li><a href="#org0ded176">2. Sorting algorithms</a>
 <ul>
-<li><a href="#orga320b3a">2.1. Bubble sort</a></li>
-<li><a href="#org15080d7">2.2. insertion sort</a></li>
-<li><a href="#orga72f1f1">2.3. merge sort</a></li>
-<li><a href="#orgdf1b922">2.4. Heap sort</a></li>
-<li><a href="#org84cee01">2.5. Quick sort</a></li>
-<li><a href="#orgfcfe272">2.6. Linear time sorting</a>
+<li><a href="#org6d85176">2.1. Bubble sort</a></li>
+<li><a href="#orgdcbb080">2.2. insertion sort</a></li>
+<li><a href="#org06895ba">2.3. merge sort</a></li>
+<li><a href="#org80d56f7">2.4. Heap sort</a></li>
+<li><a href="#org783a068">2.5. Quick sort</a></li>
+<li><a href="#org5fb152e">2.6. Linear time sorting</a>
 <ul>
-<li><a href="#org7c9894c">2.6.1. couting sort</a></li>
-<li><a href="#org3f1045f">2.6.2. <span class="todo TODO">TODO</span> Radix sort</a></li>
-<li><a href="#org83b990d">2.6.3. <span class="todo TODO">TODO</span> Bucket sort</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org22d0eca">3. Data structure</a>
-<ul>
-<li><a href="#org7c547e6">3.1. linked list</a></li>
-<li><a href="#orgdeb4e44">3.2. stack &amp; queue</a>
-<ul>
-<li><a href="#orgcc632ec">3.2.1. priority queue</a></li>
-</ul>
-</li>
-<li><a href="#orgac9246c">3.3. hash table</a></li>
-</ul>
-</li>
-<li><a href="#org753564a">4. Trees</a>
-<ul>
-<li><a href="#org0d0cc9c">4.1. Search</a></li>
-<li><a href="#org715f859">4.2. Traversal</a></li>
-<li><a href="#orgaf422a5">4.3. Special Trees</a>
-<ul>
-<li><a href="#org469d2b7">4.3.1. Binary search tree</a></li>
-<li><a href="#org3d0c195">4.3.2. red-black tree</a></li>
-<li><a href="#orgb885dca">4.3.3. interval tree</a></li>
-<li><a href="#org6583cef">4.3.4. B-tree</a></li>
-<li><a href="#orgee95c17">4.3.5. prefix-tree</a></li>
-</ul>
-</li>
-<li><a href="#orgfd5660d">4.4. Heap</a>
-<ul>
-<li><a href="#org25f17fe">4.4.1. <span class="todo TODO">TODO</span> Fibonacci Heap</a></li>
+<li><a href="#org42eb97d">2.6.1. couting sort</a></li>
+<li><a href="#org26a5cab">2.6.2. <span class="todo TODO">TODO</span> Radix sort</a></li>
+<li><a href="#orgd67181a">2.6.3. <span class="todo TODO">TODO</span> Bucket sort</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org05b841d">5. Graph</a>
+<li><a href="#org1042ecf">3. Data structure</a>
 <ul>
-<li><a href="#orgf75438c">5.1. DFS &amp; BFS</a></li>
-<li><a href="#org6c6003e">5.2. topological sort</a></li>
-<li><a href="#orgeeff09d">5.3. Minimum Spanning Tree</a>
+<li><a href="#orgbcbf53e">3.1. linked list</a></li>
+<li><a href="#orgd19f18b">3.2. stack &amp; queue</a>
 <ul>
-<li><a href="#org35c5146">5.3.1. Kruskal's algorithm</a></li>
-<li><a href="#orgf7a29b6">5.3.2. Prim's algorithm</a></li>
+<li><a href="#orgc7d530c">3.2.1. <span class="priority">[A]</span> priority queue</a></li>
 </ul>
 </li>
-<li><a href="#org73cf359">5.4. Shortest path</a>
-<ul>
-<li><a href="#org1c87be2">5.4.1. Bellman-Ford algorithm</a></li>
-<li><a href="#orgf275007">5.4.2. Dijkstra's algorithm</a></li>
+<li><a href="#org1cfed30">3.3. hash table</a></li>
 </ul>
 </li>
-<li><a href="#org12f3768">5.5. Network Flow Problems</a>
+<li><a href="#orgb0e503d">4. Trees</a>
 <ul>
-<li><a href="#org4ba5b5e">5.5.1. Ford-Fulkerson method</a></li>
-<li><a href="#org19f772d">5.5.2. Edmonds-Karp algorithm</a></li>
+<li><a href="#orgb117634">4.1. <span class="priority">[A]</span> Search</a></li>
+<li><a href="#orgef6256d">4.2. <span class="priority">[A]</span> Traversal</a></li>
+<li><a href="#org1677f2a">4.3. Special Trees</a>
+<ul>
+<li><a href="#org9d85158">4.3.1. Binary search tree</a></li>
+<li><a href="#orgf921f7d">4.3.2. red-black tree</a></li>
+<li><a href="#orgdc1d386">4.3.3. interval tree</a></li>
+<li><a href="#org62db28e">4.3.4. B-tree</a></li>
+<li><a href="#org73ac767">4.3.5. prefix-tree</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org7464d34">6. <span class="todo TODO">TODO</span> String algorithms</a>
+<li><a href="#orge9fdc33">4.4. Heap</a>
 <ul>
-<li><a href="#orgfa6c6cf">6.1. <span class="todo TODO">TODO</span> Substring matching</a></li>
-<li><a href="#orge0d9a73">6.2. <span class="todo TODO">TODO</span> Rabin-Karp algorithm</a></li>
-<li><a href="#org8634205">6.3. <span class="todo TODO">TODO</span> Knuth-Morris-Pratt algorithm</a></li>
-</ul>
-</li>
-<li><a href="#orgb70e124">7. <span class="todo TODO">TODO</span> Dynamic Programming</a>
-<ul>
-<li><a href="#org9742982">7.1. The rod-cutting problem</a></li>
-<li><a href="#orge5b815a">7.2. <span class="todo TODO">TODO</span> Largest common subsequence</a></li>
-</ul>
-</li>
-<li><a href="#org3be0eef">8. Other Named Algorithm</a>
-<ul>
-<li><a href="#org4908747">8.1. Bloom Filter</a></li>
-</ul>
-</li>
-<li><a href="#org55c8ff0">9. <span class="todo TODO">TODO</span> NP-Completeness</a>
-<ul>
-<li><a href="#orgae7a62f">9.1. Approximation algorithms</a>
-<ul>
-<li><a href="#org1a4f841">9.1.1. the vertex-cover problem</a></li>
-<li><a href="#org50b4c62">9.1.2. the traveling-salesman problem</a></li>
-<li><a href="#org8206577">9.1.3. the set-covering problem</a></li>
-<li><a href="#org20d5efc">9.1.4. the subset-sum problem</a></li>
+<li><a href="#orgdbe4ffa">4.4.1. <span class="todo TODO">TODO</span> Fibonacci Heap</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org130566a">10. <span class="todo TODO">TODO</span> Linear Programming (LP)</a>
+<li><a href="#org0d9f611">5. Graph</a>
 <ul>
-<li><a href="#orgf5b4e22">10.1. Standard and slack forms</a></li>
-<li><a href="#org9c094e6">10.2. Formulating</a></li>
-<li><a href="#orgb54e7d4">10.3. Simplex algorithm</a></li>
-<li><a href="#org7938307">10.4. Duality</a></li>
+<li><a href="#orgfa45c2c">5.1. DFS &amp; BFS</a></li>
+<li><a href="#org11b59cf">5.2. topological sort</a></li>
+<li><a href="#org6169f3f">5.3. Minimum Spanning Tree</a>
+<ul>
+<li><a href="#org39479ff">5.3.1. Kruskal's algorithm</a></li>
+<li><a href="#org1d81e71">5.3.2. Prim's algorithm</a></li>
 </ul>
 </li>
-<li><a href="#orga46cb4e">11. Tips</a>
+<li><a href="#org092439c">5.4. Shortest path</a>
 <ul>
-<li><a href="#org3013879">11.1. <span class="todo TODO">TODO</span> Devide-and-Conquer</a></li>
-<li><a href="#org7a127c7">11.2. Recursive</a></li>
-<li><a href="#org65cd598">11.3. Dynamic Programming</a></li>
+<li><a href="#orgb456665">5.4.1. Bellman-Ford algorithm</a></li>
+<li><a href="#org2134a49">5.4.2. Dijkstra's algorithm</a></li>
 </ul>
 </li>
-<li><a href="#org6d82d93">12. Old Writings</a>
+<li><a href="#org352e8c7">5.5. Network Flow Problems</a>
 <ul>
-<li><a href="#org9f5986e">12.1. Barrel shifter</a>
-<ul>
-<li><a href="#org8ce4ab6">12.1.1. shift register</a></li>
-</ul>
-</li>
-<li><a href="#org0aa2894">12.2. Linear congruential generator</a></li>
-<li><a href="#org7778ca5">12.3. Dynamic Programming</a>
-<ul>
-<li><a href="#orgf8a9ca5">12.3.1. One dimension</a>
-<ul>
-<li><a href="#org57e0868">12.3.1.1. Define sub-problems</a></li>
-<li><a href="#orgb6a0f34">12.3.1.2. Recurrence formula</a></li>
-</ul>
-</li>
-<li><a href="#org90b9712">12.3.2. Two Dimensions</a>
-<ul>
-<li><a href="#orgaead9a6">12.3.2.1. Define sub-problems</a></li>
-<li><a href="#orgcc3d4b0">12.3.2.2. Recurrence formula</a></li>
-</ul>
-</li>
-<li><a href="#org18fdbf1">12.3.3. Interval DP</a>
-<ul>
-<li><a href="#org20412d5">12.3.3.1. Define sub-problem</a></li>
-<li><a href="#orgfac564e">12.3.3.2. Recurrence formula</a></li>
-</ul>
-</li>
-<li><a href="#org04f0b69">12.3.4. Tree DP</a>
-<ul>
-<li><a href="#orgef36cfa">12.3.4.1. Define</a></li>
-<li><a href="#orgc822a99">12.3.4.2. Recurrence</a></li>
+<li><a href="#org2289f62">5.5.1. Ford-Fulkerson method</a></li>
+<li><a href="#org98e2bd7">5.5.2. Edmonds-Karp algorithm</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4b9c939">12.4. String Algorithm</a>
+<li><a href="#org01d80f6">6. <span class="todo TODO">TODO</span> String algorithms</a>
 <ul>
-<li><a href="#org56695e1">12.4.1. Knuth–Morris–Pratt(KMP)</a>
-<ul>
-<li><a href="#org42d82b4">12.4.1.1. 214. Shortest Palindrome</a></li>
+<li><a href="#orge4e4b3d">6.1. <span class="todo TODO">TODO</span> Substring matching</a></li>
+<li><a href="#org58da853">6.2. <span class="todo TODO">TODO</span> Rabin-Karp algorithm</a></li>
+<li><a href="#org97805f1">6.3. <span class="todo TODO">TODO</span> Knuth-Morris-Pratt algorithm</a></li>
 </ul>
 </li>
-<li><a href="#orga5eb82e">12.4.2. Boyer Moore</a>
+<li><a href="#orgf0624d2">7. <span class="todo TODO">TODO</span> Dynamic Programming</a>
 <ul>
-<li><a href="#orgcca676a">12.4.2.1. Bad Character Rule</a></li>
-<li><a href="#org99c3b1b">12.4.2.2. Good Suffix Rule</a></li>
-<li><a href="#org719df8d">12.4.2.3. Galil Rule</a></li>
+<li><a href="#org2ec6960">7.1. The rod-cutting problem</a></li>
+<li><a href="#orgf894ec7">7.2. <span class="todo TODO">TODO</span> Largest common subsequence</a></li>
 </ul>
 </li>
-<li><a href="#orgd032103">12.4.3. Rabin-Karp Algorithm</a>
+<li><a href="#orgc185888">8. Other Named Algorithm</a>
 <ul>
-<li><a href="#orgfa241e3">12.4.3.1. Rolling Hash</a></li>
-<li><a href="#org70f90ff">12.4.3.2. Tabulation hashing</a></li>
+<li><a href="#org299831b">8.1. Bloom Filter</a></li>
+</ul>
+</li>
+<li><a href="#org073f429">9. <span class="todo TODO">TODO</span> NP-Completeness</a>
+<ul>
+<li><a href="#org6032fb0">9.1. Approximation algorithms</a>
+<ul>
+<li><a href="#orgab12bc6">9.1.1. the vertex-cover problem</a></li>
+<li><a href="#org47aadb9">9.1.2. the traveling-salesman problem</a></li>
+<li><a href="#org2956360">9.1.3. the set-covering problem</a></li>
+<li><a href="#org5f276b4">9.1.4. the subset-sum problem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org43cd624">10. <span class="todo TODO">TODO</span> Linear Programming (LP)</a>
+<ul>
+<li><a href="#org6ced70c">10.1. Standard and slack forms</a></li>
+<li><a href="#org9c88eed">10.2. Formulating</a></li>
+<li><a href="#orgbbe3bdb">10.3. Simplex algorithm</a></li>
+<li><a href="#org7412d44">10.4. Duality</a></li>
+</ul>
+</li>
+<li><a href="#orgfb37975">11. Tips</a>
+<ul>
+<li><a href="#org9a84f1c">11.1. <span class="todo TODO">TODO</span> Devide-and-Conquer</a></li>
+<li><a href="#org98f7e52">11.2. Recursive</a></li>
+<li><a href="#org6aed097">11.3. Dynamic Programming</a></li>
+</ul>
+</li>
+<li><a href="#org04405cd">12. Old Writings</a>
+<ul>
+<li><a href="#org5e73d7c">12.1. Barrel shifter</a>
+<ul>
+<li><a href="#orgcd1be2f">12.1.1. shift register</a></li>
+</ul>
+</li>
+<li><a href="#org5e16ae5">12.2. Linear congruential generator</a></li>
+<li><a href="#org31e42d6">12.3. Dynamic Programming</a>
+<ul>
+<li><a href="#orgd7f8b1a">12.3.1. One dimension</a>
+<ul>
+<li><a href="#org3ed42f7">12.3.1.1. Define sub-problems</a></li>
+<li><a href="#org6320868">12.3.1.2. Recurrence formula</a></li>
+</ul>
+</li>
+<li><a href="#org5cf8941">12.3.2. Two Dimensions</a>
+<ul>
+<li><a href="#org68cda87">12.3.2.1. Define sub-problems</a></li>
+<li><a href="#org532ed00">12.3.2.2. Recurrence formula</a></li>
+</ul>
+</li>
+<li><a href="#org7a33fae">12.3.3. Interval DP</a>
+<ul>
+<li><a href="#org666c0ef">12.3.3.1. Define sub-problem</a></li>
+<li><a href="#orgc594a39">12.3.3.2. Recurrence formula</a></li>
+</ul>
+</li>
+<li><a href="#org1279404">12.3.4. Tree DP</a>
+<ul>
+<li><a href="#org4dd3b69">12.3.4.1. Define</a></li>
+<li><a href="#orga0e6d87">12.3.4.2. Recurrence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4b2a728">12.4. String Algorithm</a>
+<ul>
+<li><a href="#org5e6e07b">12.4.1. Knuth–Morris–Pratt(KMP)</a>
+<ul>
+<li><a href="#orgbd8788e">12.4.1.1. 214. Shortest Palindrome</a></li>
+</ul>
+</li>
+<li><a href="#org9d75da2">12.4.2. Boyer Moore</a>
+<ul>
+<li><a href="#orgd7e44de">12.4.2.1. Bad Character Rule</a></li>
+<li><a href="#orgee4df13">12.4.2.2. Good Suffix Rule</a></li>
+<li><a href="#org794e501">12.4.2.3. Galil Rule</a></li>
+</ul>
+</li>
+<li><a href="#org2112e36">12.4.3. Rabin-Karp Algorithm</a>
+<ul>
+<li><a href="#orgba7e008">12.4.3.1. Rolling Hash</a></li>
+<li><a href="#org3276214">12.4.3.2. Tabulation hashing</a></li>
 </ul>
 </li>
 </ul>
@@ -462,12 +462,12 @@ for the JavaScript code in this tag.
 <a class='org-ref-reference' href="#2009-Book-Cormen-Introduction">2009-Book-Cormen-Introduction</a>
 </p>
 
-<div id="outline-container-orgff4fbbd" class="outline-2">
-<h2 id="orgff4fbbd"><span class="section-number-2">1</span> Basics</h2>
+<div id="outline-container-orgad9e1f9" class="outline-2">
+<h2 id="orgad9e1f9"><span class="section-number-2">1</span> Basics</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org4776472" class="outline-3">
-<h3 id="org4776472"><span class="section-number-3">1.1</span> Order of growth</h3>
+<div id="outline-container-orgd04420c" class="outline-3">
+<h3 id="orgd04420c"><span class="section-number-3">1.1</span> Order of growth</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 In this section, &exist; c<sub>1,c</sub><sub>2,n</sub><sub>0</sub> means there exists positive
@@ -505,16 +505,16 @@ f(n) for all n &ge; n<sub>0</sub>}</li>
 
 
 
-<div id="outline-container-orgd2379fb" class="outline-3">
-<h3 id="orgd2379fb"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> how to analyze the running time</h3>
+<div id="outline-container-org047e9a0" class="outline-3">
+<h3 id="org047e9a0"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> how to analyze the running time</h3>
 </div>
-<div id="outline-container-org48869a1" class="outline-3">
-<h3 id="org48869a1"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> Amortized Analysis</h3>
+<div id="outline-container-org2370572" class="outline-3">
+<h3 id="org2370572"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> Amortized Analysis</h3>
 </div>
 </div>
 
-<div id="outline-container-orgca9277d" class="outline-2">
-<h2 id="orgca9277d"><span class="section-number-2">2</span> Sorting algorithms</h2>
+<div id="outline-container-org0ded176" class="outline-2">
+<h2 id="org0ded176"><span class="section-number-2">2</span> Sorting algorithms</h2>
 <div class="outline-text-2" id="text-2">
 <table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
 
@@ -589,8 +589,8 @@ f(n) for all n &ge; n<sub>0</sub>}</li>
 </table>
 </div>
 
-<div id="outline-container-orga320b3a" class="outline-3">
-<h3 id="orga320b3a"><span class="section-number-3">2.1</span> Bubble sort</h3>
+<div id="outline-container-org6d85176" class="outline-3">
+<h3 id="org6d85176"><span class="section-number-3">2.1</span> Bubble sort</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Go through the array n items. Each time, swap two adjacent items a and
@@ -608,8 +608,8 @@ bubbles up.
 </div>
 </div>
 
-<div id="outline-container-org15080d7" class="outline-3">
-<h3 id="org15080d7"><span class="section-number-3">2.2</span> insertion sort</h3>
+<div id="outline-container-orgdcbb080" class="outline-3">
+<h3 id="orgdcbb080"><span class="section-number-3">2.2</span> insertion sort</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Each loop, make sure the first i items are sorted. In the i-th loop,
@@ -630,8 +630,8 @@ insert the i-th item into the correct position.
 </div>
 
 
-<div id="outline-container-orga72f1f1" class="outline-3">
-<h3 id="orga72f1f1"><span class="section-number-3">2.3</span> merge sort</h3>
+<div id="outline-container-org06895ba" class="outline-3">
+<h3 id="org06895ba"><span class="section-number-3">2.3</span> merge sort</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Uses divide-and-conquer, recursively solve the left and right
@@ -664,8 +664,8 @@ subarray, and merge the two sorted arrays (in linear time).
 </div>
 
 
-<div id="outline-container-orgdf1b922" class="outline-3">
-<h3 id="orgdf1b922"><span class="section-number-3">2.4</span> Heap sort</h3>
+<div id="outline-container-org80d56f7" class="outline-3">
+<h3 id="org80d56f7"><span class="section-number-3">2.4</span> Heap sort</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Binary heap is a nearly complete binary tree, i.e. completely filled
@@ -734,8 +734,8 @@ replace it with the last element in the heap, and do <code>heapify</code>.
 </div>
 </div>
 
-<div id="outline-container-org84cee01" class="outline-3">
-<h3 id="org84cee01"><span class="section-number-3">2.5</span> Quick sort</h3>
+<div id="outline-container-org783a068" class="outline-3">
+<h3 id="org783a068"><span class="section-number-3">2.5</span> Quick sort</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 The worst running time is \(\Theta(n^2)\), but it is often the best
@@ -798,8 +798,8 @@ specify the implementation of <code>partition</code> function, as it is obvious:
 </div>
 </div>
 
-<div id="outline-container-orgfcfe272" class="outline-3">
-<h3 id="orgfcfe272"><span class="section-number-3">2.6</span> Linear time sorting</h3>
+<div id="outline-container-org5fb152e" class="outline-3">
+<h3 id="org5fb152e"><span class="section-number-3">2.6</span> Linear time sorting</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 All sorting algorithms above are comparison sorts, which can be proved
@@ -808,8 +808,8 @@ section makes certain assumptions to the array.
 </p>
 </div>
 
-<div id="outline-container-org7c9894c" class="outline-4">
-<h4 id="org7c9894c"><span class="section-number-4">2.6.1</span> couting sort</h4>
+<div id="outline-container-org42eb97d" class="outline-4">
+<h4 id="org42eb97d"><span class="section-number-4">2.6.1</span> couting sort</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <p>
 Assume each of the elements are integers, in the range of [0,k].
@@ -827,11 +827,11 @@ or equal to <code>i</code></li>
 </div>
 </div>
 
-<div id="outline-container-org3f1045f" class="outline-4">
-<h4 id="org3f1045f"><span class="section-number-4">2.6.2</span> <span class="todo TODO">TODO</span> Radix sort</h4>
+<div id="outline-container-org26a5cab" class="outline-4">
+<h4 id="org26a5cab"><span class="section-number-4">2.6.2</span> <span class="todo TODO">TODO</span> Radix sort</h4>
 </div>
-<div id="outline-container-org83b990d" class="outline-4">
-<h4 id="org83b990d"><span class="section-number-4">2.6.3</span> <span class="todo TODO">TODO</span> Bucket sort</h4>
+<div id="outline-container-orgd67181a" class="outline-4">
+<h4 id="orgd67181a"><span class="section-number-4">2.6.3</span> <span class="todo TODO">TODO</span> Bucket sort</h4>
 <div class="outline-text-4" id="text-2-6-3">
 <p>
 Assume the input is drawn from a uniform distribution. The average
@@ -842,8 +842,8 @@ running time is linear.
 </div>
 </div>
 
-<div id="outline-container-org22d0eca" class="outline-2">
-<h2 id="org22d0eca"><span class="section-number-2">3</span> Data structure</h2>
+<div id="outline-container-org1042ecf" class="outline-2">
+<h2 id="org1042ecf"><span class="section-number-2">3</span> Data structure</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 This section is mostly empty, because these are obvious. Most
@@ -852,8 +852,8 @@ their operations.
 </p>
 </div>
 
-<div id="outline-container-org7c547e6" class="outline-3">
-<h3 id="org7c547e6"><span class="section-number-3">3.1</span> linked list</h3>
+<div id="outline-container-orgbcbf53e" class="outline-3">
+<h3 id="orgbcbf53e"><span class="section-number-3">3.1</span> linked list</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>linked list
@@ -870,8 +870,8 @@ their operations.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdeb4e44" class="outline-3">
-<h3 id="orgdeb4e44"><span class="section-number-3">3.2</span> stack &amp; queue</h3>
+<div id="outline-container-orgd19f18b" class="outline-3">
+<h3 id="orgd19f18b"><span class="section-number-3">3.2</span> stack &amp; queue</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>push</li>
@@ -881,8 +881,8 @@ their operations.
 </ul>
 </div>
 
-<div id="outline-container-orgcc632ec" class="outline-4">
-<h4 id="orgcc632ec"><span class="section-number-4">3.2.1</span> priority queue</h4>
+<div id="outline-container-orgc7d530c" class="outline-4">
+<h4 id="orgc7d530c"><span class="section-number-4">3.2.1</span> <span class="priority">[A]</span> priority queue</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 It is implemented using a heap. Each item has a value. The <code>dequeue</code>
@@ -893,17 +893,17 @@ max-priority queue and min-priority queue, respectively.
 </div>
 </div>
 
-<div id="outline-container-orgac9246c" class="outline-3">
-<h3 id="orgac9246c"><span class="section-number-3">3.3</span> hash table</h3>
+<div id="outline-container-org1cfed30" class="outline-3">
+<h3 id="org1cfed30"><span class="section-number-3">3.3</span> hash table</h3>
 </div>
 </div>
 
-<div id="outline-container-org753564a" class="outline-2">
-<h2 id="org753564a"><span class="section-number-2">4</span> Trees</h2>
+<div id="outline-container-orgb0e503d" class="outline-2">
+<h2 id="orgb0e503d"><span class="section-number-2">4</span> Trees</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org0d0cc9c" class="outline-3">
-<h3 id="org0d0cc9c"><span class="section-number-3">4.1</span> Search</h3>
+<div id="outline-container-orgb117634" class="outline-3">
+<h3 id="orgb117634"><span class="section-number-3">4.1</span> <span class="priority">[A]</span> Search</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Using binary tree as example.  &amp; 
@@ -940,8 +940,8 @@ DFS:
 
 
 
-<div id="outline-container-org715f859" class="outline-3">
-<h3 id="org715f859"><span class="section-number-3">4.2</span> Traversal</h3>
+<div id="outline-container-orgef6256d" class="outline-3">
+<h3 id="orgef6256d"><span class="section-number-3">4.2</span> <span class="priority">[A]</span> Traversal</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Only defined for DFS.
@@ -985,12 +985,12 @@ Post-order:
 </div>
 </div>
 
-<div id="outline-container-orgaf422a5" class="outline-3">
-<h3 id="orgaf422a5"><span class="section-number-3">4.3</span> Special Trees</h3>
+<div id="outline-container-org1677f2a" class="outline-3">
+<h3 id="org1677f2a"><span class="section-number-3">4.3</span> Special Trees</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-org469d2b7" class="outline-4">
-<h4 id="org469d2b7"><span class="section-number-4">4.3.1</span> Binary search tree</h4>
+<div id="outline-container-org9d85158" class="outline-4">
+<h4 id="org9d85158"><span class="section-number-4">4.3.1</span> Binary search tree</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <p>
 The value of a node is larger than all values in its left subtree, but
@@ -1000,8 +1000,8 @@ it is mostly used for searching a value.
 </div>
 </div>
 
-<div id="outline-container-org3d0c195" class="outline-4">
-<h4 id="org3d0c195"><span class="section-number-4">4.3.2</span> red-black tree</h4>
+<div id="outline-container-orgf921f7d" class="outline-4">
+<h4 id="orgf921f7d"><span class="section-number-4">4.3.2</span> red-black tree</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <p>
 A problem of search tree is that, the height may be very large, and
@@ -1038,8 +1038,8 @@ Operations:
 </div>
 </div>
 
-<div id="outline-container-orgb885dca" class="outline-4">
-<h4 id="orgb885dca"><span class="section-number-4">4.3.3</span> interval tree</h4>
+<div id="outline-container-orgdc1d386" class="outline-4">
+<h4 id="orgdc1d386"><span class="section-number-4">4.3.3</span> interval tree</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <p>
 This is an example of augmenting data structures. It is an augmented
@@ -1051,8 +1051,8 @@ contains the value at all.
 </div>
 </div>
 
-<div id="outline-container-org6583cef" class="outline-4">
-<h4 id="org6583cef"><span class="section-number-4">4.3.4</span> B-tree</h4>
+<div id="outline-container-org62db28e" class="outline-4">
+<h4 id="org62db28e"><span class="section-number-4">4.3.4</span> B-tree</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <p>
 B-tree is a balanced search tree, designed to work well on storage
@@ -1084,8 +1084,8 @@ than \(t\), it must be merged.</li>
 </div>
 </div>
 
-<div id="outline-container-orgee95c17" class="outline-4">
-<h4 id="orgee95c17"><span class="section-number-4">4.3.5</span> prefix-tree</h4>
+<div id="outline-container-org73ac767" class="outline-4">
+<h4 id="org73ac767"><span class="section-number-4">4.3.5</span> prefix-tree</h4>
 <div class="outline-text-4" id="text-4-3-5">
 <p>
 The prefix tree, also called <i>Trie</i>, <i>digital tree</i>, <i>radix tree</i>, is
@@ -1096,18 +1096,18 @@ common prefix.
 </div>
 </div>
 
-<div id="outline-container-orgfd5660d" class="outline-3">
-<h3 id="orgfd5660d"><span class="section-number-3">4.4</span> Heap</h3>
+<div id="outline-container-orge9fdc33" class="outline-3">
+<h3 id="orge9fdc33"><span class="section-number-3">4.4</span> Heap</h3>
 <div class="outline-text-3" id="text-4-4">
 </div>
-<div id="outline-container-org25f17fe" class="outline-4">
-<h4 id="org25f17fe"><span class="section-number-4">4.4.1</span> <span class="todo TODO">TODO</span> Fibonacci Heap</h4>
+<div id="outline-container-orgdbe4ffa" class="outline-4">
+<h4 id="orgdbe4ffa"><span class="section-number-4">4.4.1</span> <span class="todo TODO">TODO</span> Fibonacci Heap</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org05b841d" class="outline-2">
-<h2 id="org05b841d"><span class="section-number-2">5</span> Graph</h2>
+<div id="outline-container-org0d9f611" class="outline-2">
+<h2 id="org0d9f611"><span class="section-number-2">5</span> Graph</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 The representation of a graph can be either a adjacent list or adjacent matrix.
@@ -1132,8 +1132,8 @@ property.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgf75438c" class="outline-3">
-<h3 id="orgf75438c"><span class="section-number-3">5.1</span> DFS &amp; BFS</h3>
+<div id="outline-container-orgfa45c2c" class="outline-3">
+<h3 id="orgfa45c2c"><span class="section-number-3">5.1</span> DFS &amp; BFS</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Same as trees, except checking for repeat (by coloring).
@@ -1141,8 +1141,8 @@ Same as trees, except checking for repeat (by coloring).
 </div>
 </div>
 
-<div id="outline-container-org6c6003e" class="outline-3">
-<h3 id="org6c6003e"><span class="section-number-3">5.2</span> topological sort</h3>
+<div id="outline-container-org11b59cf" class="outline-3">
+<h3 id="org11b59cf"><span class="section-number-3">5.2</span> topological sort</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Run DFS (or BFS) and print out the nodes.
@@ -1150,8 +1150,8 @@ Run DFS (or BFS) and print out the nodes.
 </div>
 </div>
 
-<div id="outline-container-orgeeff09d" class="outline-3">
-<h3 id="orgeeff09d"><span class="section-number-3">5.3</span> Minimum Spanning Tree</h3>
+<div id="outline-container-org6169f3f" class="outline-3">
+<h3 id="org6169f3f"><span class="section-number-3">5.3</span> Minimum Spanning Tree</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Given a graph (V,E), and each edge has a weight. Find the subset of
@@ -1202,8 +1202,8 @@ Then the light edge connecting \(C_i\) to \(C_j\) is safe to A.
 </blockquote>
 </div>
 
-<div id="outline-container-org35c5146" class="outline-4">
-<h4 id="org35c5146"><span class="section-number-4">5.3.1</span> Kruskal's algorithm</h4>
+<div id="outline-container-org39479ff" class="outline-4">
+<h4 id="org39479ff"><span class="section-number-4">5.3.1</span> Kruskal's algorithm</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <p>
 This algorithm <b>grow the edges, or forest</b>. It sorts all edges.
@@ -1221,8 +1221,8 @@ for (u,v) in edges:
 </div>
 </div>
 
-<div id="outline-container-orgf7a29b6" class="outline-4">
-<h4 id="orgf7a29b6"><span class="section-number-4">5.3.2</span> Prim's algorithm</h4>
+<div id="outline-container-org1d81e71" class="outline-4">
+<h4 id="org1d81e71"><span class="section-number-4">5.3.2</span> Prim's algorithm</h4>
 <div class="outline-text-4" id="text-5-3-2">
 <p>
 This algorithm will <b>grow the tree</b>, i.e. at any given time, the
@@ -1247,8 +1247,8 @@ while Q:
 </div>
 </div>
 
-<div id="outline-container-org73cf359" class="outline-3">
-<h3 id="org73cf359"><span class="section-number-3">5.4</span> Shortest path</h3>
+<div id="outline-container-org092439c" class="outline-3">
+<h3 id="org092439c"><span class="section-number-3">5.4</span> Shortest path</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Given a weighted, directed graph, the shortest path from u to v is the
@@ -1279,8 +1279,8 @@ setting v.pred to u improve v.d:
 </div>
 
 
-<div id="outline-container-org1c87be2" class="outline-4">
-<h4 id="org1c87be2"><span class="section-number-4">5.4.1</span> Bellman-Ford algorithm</h4>
+<div id="outline-container-orgb456665" class="outline-4">
+<h4 id="orgb456665"><span class="section-number-4">5.4.1</span> Bellman-Ford algorithm</h4>
 <div class="outline-text-4" id="text-5-4-1">
 <p>
 This is kind of a brute force algorithm. It relax all edges \(|V|-1\)
@@ -1303,8 +1303,8 @@ The running time is |V||E|
 </div>
 </div>
 
-<div id="outline-container-orgf275007" class="outline-4">
-<h4 id="orgf275007"><span class="section-number-4">5.4.2</span> Dijkstra's algorithm</h4>
+<div id="outline-container-org2134a49" class="outline-4">
+<h4 id="org2134a49"><span class="section-number-4">5.4.2</span> Dijkstra's algorithm</h4>
 <div class="outline-text-4" id="text-5-4-2">
 <p>
 In addition to weighted, directly graph, it assumes all weights are
@@ -1340,8 +1340,8 @@ log |V| + |E|\).
 </div>
 
 
-<div id="outline-container-org12f3768" class="outline-3">
-<h3 id="org12f3768"><span class="section-number-3">5.5</span> Network Flow Problems</h3>
+<div id="outline-container-org352e8c7" class="outline-3">
+<h3 id="org352e8c7"><span class="section-number-3">5.5</span> Network Flow Problems</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 The constraints of a flow network:
@@ -1405,8 +1405,8 @@ minimum cut of G.</li>
 </ol>
 </div>
 
-<div id="outline-container-org4ba5b5e" class="outline-4">
-<h4 id="org4ba5b5e"><span class="section-number-4">5.5.1</span> Ford-Fulkerson method</h4>
+<div id="outline-container-org2289f62" class="outline-4">
+<h4 id="org2289f62"><span class="section-number-4">5.5.1</span> Ford-Fulkerson method</h4>
 <div class="outline-text-4" id="text-5-5-1">
 <p>
 It is a method instead of an algorithm because it has several
@@ -1435,8 +1435,8 @@ poorly, it may not terminate.
 </div>
 </div>
 
-<div id="outline-container-org19f772d" class="outline-4">
-<h4 id="org19f772d"><span class="section-number-4">5.5.2</span> Edmonds-Karp algorithm</h4>
+<div id="outline-container-org98e2bd7" class="outline-4">
+<h4 id="org98e2bd7"><span class="section-number-4">5.5.2</span> Edmonds-Karp algorithm</h4>
 <div class="outline-text-4" id="text-5-5-2">
 <p>
 This algorithm is to use BFS for finding the augmenting path. The
@@ -1449,23 +1449,23 @@ way. It runs in O(VE<sup>2</sup>), i.e. polynomial time.
 </div>
 
 
-<div id="outline-container-org7464d34" class="outline-2">
-<h2 id="org7464d34"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> String algorithms</h2>
+<div id="outline-container-org01d80f6" class="outline-2">
+<h2 id="org01d80f6"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> String algorithms</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgfa6c6cf" class="outline-3">
-<h3 id="orgfa6c6cf"><span class="section-number-3">6.1</span> <span class="todo TODO">TODO</span> Substring matching</h3>
+<div id="outline-container-orge4e4b3d" class="outline-3">
+<h3 id="orge4e4b3d"><span class="section-number-3">6.1</span> <span class="todo TODO">TODO</span> Substring matching</h3>
 </div>
-<div id="outline-container-orge0d9a73" class="outline-3">
-<h3 id="orge0d9a73"><span class="section-number-3">6.2</span> <span class="todo TODO">TODO</span> Rabin-Karp algorithm</h3>
+<div id="outline-container-org58da853" class="outline-3">
+<h3 id="org58da853"><span class="section-number-3">6.2</span> <span class="todo TODO">TODO</span> Rabin-Karp algorithm</h3>
 </div>
-<div id="outline-container-org8634205" class="outline-3">
-<h3 id="org8634205"><span class="section-number-3">6.3</span> <span class="todo TODO">TODO</span> Knuth-Morris-Pratt algorithm</h3>
+<div id="outline-container-org97805f1" class="outline-3">
+<h3 id="org97805f1"><span class="section-number-3">6.3</span> <span class="todo TODO">TODO</span> Knuth-Morris-Pratt algorithm</h3>
 </div>
 </div>
 
-<div id="outline-container-orgb70e124" class="outline-2">
-<h2 id="orgb70e124"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Dynamic Programming</h2>
+<div id="outline-container-orgf0624d2" class="outline-2">
+<h2 id="orgf0624d2"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Dynamic Programming</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 The core idea is to store the solution to subproblems, thus avoid
@@ -1488,8 +1488,8 @@ directly uses the results from the smaller subproblems.</li>
 </div>
 
 
-<div id="outline-container-org9742982" class="outline-3">
-<h3 id="org9742982"><span class="section-number-3">7.1</span> The rod-cutting problem</h3>
+<div id="outline-container-org2ec6960" class="outline-3">
+<h3 id="org2ec6960"><span class="section-number-3">7.1</span> The rod-cutting problem</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 Given a rod of length n, and a price table mapping from lengths to
@@ -1511,17 +1511,17 @@ selling the rod.
 </div>
 </div>
 
-<div id="outline-container-orge5b815a" class="outline-3">
-<h3 id="orge5b815a"><span class="section-number-3">7.2</span> <span class="todo TODO">TODO</span> Largest common subsequence</h3>
+<div id="outline-container-orgf894ec7" class="outline-3">
+<h3 id="orgf894ec7"><span class="section-number-3">7.2</span> <span class="todo TODO">TODO</span> Largest common subsequence</h3>
 </div>
 </div>
 
-<div id="outline-container-org3be0eef" class="outline-2">
-<h2 id="org3be0eef"><span class="section-number-2">8</span> Other Named Algorithm</h2>
+<div id="outline-container-orgc185888" class="outline-2">
+<h2 id="orgc185888"><span class="section-number-2">8</span> Other Named Algorithm</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org4908747" class="outline-3">
-<h3 id="org4908747"><span class="section-number-3">8.1</span> Bloom Filter</h3>
+<div id="outline-container-org299831b" class="outline-3">
+<h3 id="org299831b"><span class="section-number-3">8.1</span> Bloom Filter</h3>
 <div class="outline-text-3" id="text-8-1">
 <p>
 It is used to judge whether an item is in a set or not.
@@ -1548,68 +1548,68 @@ Otherwise return false.
 </div>
 
 
-<div id="outline-container-org55c8ff0" class="outline-2">
-<h2 id="org55c8ff0"><span class="section-number-2">9</span> <span class="todo TODO">TODO</span> NP-Completeness</h2>
+<div id="outline-container-org073f429" class="outline-2">
+<h2 id="org073f429"><span class="section-number-2">9</span> <span class="todo TODO">TODO</span> NP-Completeness</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-orgae7a62f" class="outline-3">
-<h3 id="orgae7a62f"><span class="section-number-3">9.1</span> Approximation algorithms</h3>
+<div id="outline-container-org6032fb0" class="outline-3">
+<h3 id="org6032fb0"><span class="section-number-3">9.1</span> Approximation algorithms</h3>
 <div class="outline-text-3" id="text-9-1">
 </div>
-<div id="outline-container-org1a4f841" class="outline-4">
-<h4 id="org1a4f841"><span class="section-number-4">9.1.1</span> the vertex-cover problem</h4>
+<div id="outline-container-orgab12bc6" class="outline-4">
+<h4 id="orgab12bc6"><span class="section-number-4">9.1.1</span> the vertex-cover problem</h4>
 </div>
-<div id="outline-container-org50b4c62" class="outline-4">
-<h4 id="org50b4c62"><span class="section-number-4">9.1.2</span> the traveling-salesman problem</h4>
+<div id="outline-container-org47aadb9" class="outline-4">
+<h4 id="org47aadb9"><span class="section-number-4">9.1.2</span> the traveling-salesman problem</h4>
 </div>
-<div id="outline-container-org8206577" class="outline-4">
-<h4 id="org8206577"><span class="section-number-4">9.1.3</span> the set-covering problem</h4>
+<div id="outline-container-org2956360" class="outline-4">
+<h4 id="org2956360"><span class="section-number-4">9.1.3</span> the set-covering problem</h4>
 </div>
-<div id="outline-container-org20d5efc" class="outline-4">
-<h4 id="org20d5efc"><span class="section-number-4">9.1.4</span> the subset-sum problem</h4>
+<div id="outline-container-org5f276b4" class="outline-4">
+<h4 id="org5f276b4"><span class="section-number-4">9.1.4</span> the subset-sum problem</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org130566a" class="outline-2">
-<h2 id="org130566a"><span class="section-number-2">10</span> <span class="todo TODO">TODO</span> Linear Programming (LP)</h2>
+<div id="outline-container-org43cd624" class="outline-2">
+<h2 id="org43cd624"><span class="section-number-2">10</span> <span class="todo TODO">TODO</span> Linear Programming (LP)</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-orgf5b4e22" class="outline-3">
-<h3 id="orgf5b4e22"><span class="section-number-3">10.1</span> Standard and slack forms</h3>
+<div id="outline-container-org6ced70c" class="outline-3">
+<h3 id="org6ced70c"><span class="section-number-3">10.1</span> Standard and slack forms</h3>
 </div>
-<div id="outline-container-org9c094e6" class="outline-3">
-<h3 id="org9c094e6"><span class="section-number-3">10.2</span> Formulating</h3>
+<div id="outline-container-org9c88eed" class="outline-3">
+<h3 id="org9c88eed"><span class="section-number-3">10.2</span> Formulating</h3>
 </div>
-<div id="outline-container-orgb54e7d4" class="outline-3">
-<h3 id="orgb54e7d4"><span class="section-number-3">10.3</span> Simplex algorithm</h3>
+<div id="outline-container-orgbbe3bdb" class="outline-3">
+<h3 id="orgbbe3bdb"><span class="section-number-3">10.3</span> Simplex algorithm</h3>
 </div>
-<div id="outline-container-org7938307" class="outline-3">
-<h3 id="org7938307"><span class="section-number-3">10.4</span> Duality</h3>
+<div id="outline-container-org7412d44" class="outline-3">
+<h3 id="org7412d44"><span class="section-number-3">10.4</span> Duality</h3>
 </div>
 </div>
 
-<div id="outline-container-orga46cb4e" class="outline-2">
-<h2 id="orga46cb4e"><span class="section-number-2">11</span> Tips</h2>
+<div id="outline-container-orgfb37975" class="outline-2">
+<h2 id="orgfb37975"><span class="section-number-2">11</span> Tips</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-org3013879" class="outline-3">
-<h3 id="org3013879"><span class="section-number-3">11.1</span> <span class="todo TODO">TODO</span> Devide-and-Conquer</h3>
+<div id="outline-container-org9a84f1c" class="outline-3">
+<h3 id="org9a84f1c"><span class="section-number-3">11.1</span> <span class="todo TODO">TODO</span> Devide-and-Conquer</h3>
 </div>
-<div id="outline-container-org7a127c7" class="outline-3">
-<h3 id="org7a127c7"><span class="section-number-3">11.2</span> Recursive</h3>
+<div id="outline-container-org98f7e52" class="outline-3">
+<h3 id="org98f7e52"><span class="section-number-3">11.2</span> Recursive</h3>
 </div>
-<div id="outline-container-org65cd598" class="outline-3">
-<h3 id="org65cd598"><span class="section-number-3">11.3</span> Dynamic Programming</h3>
+<div id="outline-container-org6aed097" class="outline-3">
+<h3 id="org6aed097"><span class="section-number-3">11.3</span> Dynamic Programming</h3>
 </div>
 </div>
 
-<div id="outline-container-org6d82d93" class="outline-2">
-<h2 id="org6d82d93"><span class="section-number-2">12</span> Old Writings</h2>
+<div id="outline-container-org04405cd" class="outline-2">
+<h2 id="org04405cd"><span class="section-number-2">12</span> Old Writings</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-org9f5986e" class="outline-3">
-<h3 id="org9f5986e"><span class="section-number-3">12.1</span> Barrel shifter</h3>
+<div id="outline-container-org5e73d7c" class="outline-3">
+<h3 id="org5e73d7c"><span class="section-number-3">12.1</span> Barrel shifter</h3>
 <div class="outline-text-3" id="text-12-1">
 <p>
 A barrel shifter is a digital circuit that can shift a data word
@@ -1632,8 +1632,8 @@ not.
 </p>
 </div>
 
-<div id="outline-container-org8ce4ab6" class="outline-4">
-<h4 id="org8ce4ab6"><span class="section-number-4">12.1.1</span> shift register</h4>
+<div id="outline-container-orgcd1be2f" class="outline-4">
+<h4 id="orgcd1be2f"><span class="section-number-4">12.1.1</span> shift register</h4>
 <div class="outline-text-4" id="text-12-1-1">
 
 <div class="figure">
@@ -1652,8 +1652,8 @@ F0、F1、F2、F3是四个边沿触发的D触发器，每个触发器的输出�
 </div>
 </div>
 
-<div id="outline-container-org0aa2894" class="outline-3">
-<h3 id="org0aa2894"><span class="section-number-3">12.2</span> Linear congruential generator</h3>
+<div id="outline-container-org5e16ae5" class="outline-3">
+<h3 id="org5e16ae5"><span class="section-number-3">12.2</span> Linear congruential generator</h3>
 <div class="outline-text-3" id="text-12-2">
 <p>
 A linear congruential generator (LCG)
@@ -1689,24 +1689,24 @@ If c ≠ 0, the method is called a mixed congruential generator.
 </div>
 
 
-<div id="outline-container-org7778ca5" class="outline-3">
-<h3 id="org7778ca5"><span class="section-number-3">12.3</span> Dynamic Programming</h3>
+<div id="outline-container-org31e42d6" class="outline-3">
+<h3 id="org31e42d6"><span class="section-number-3">12.3</span> Dynamic Programming</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 Solve problem by breaking down into simpler sub-problems.
 </p>
 </div>
 
-<div id="outline-container-orgf8a9ca5" class="outline-4">
-<h4 id="orgf8a9ca5"><span class="section-number-4">12.3.1</span> One dimension</h4>
+<div id="outline-container-orgd7f8b1a" class="outline-4">
+<h4 id="orgd7f8b1a"><span class="section-number-4">12.3.1</span> One dimension</h4>
 <div class="outline-text-4" id="text-12-3-1">
 <p>
 Given n, find the number of different ways to write n as the sum of 1,3,4
 </p>
 </div>
 
-<div id="outline-container-org57e0868" class="outline-5">
-<h5 id="org57e0868"><span class="section-number-5">12.3.1.1</span> Define sub-problems</h5>
+<div id="outline-container-org3ed42f7" class="outline-5">
+<h5 id="org3ed42f7"><span class="section-number-5">12.3.1.1</span> Define sub-problems</h5>
 <div class="outline-text-5" id="text-12-3-1-1">
 <p>
 D<sub>n</sub> is the number of ways to write n as sum of 1,3,4
@@ -1714,8 +1714,8 @@ D<sub>n</sub> is the number of ways to write n as sum of 1,3,4
 </div>
 </div>
 
-<div id="outline-container-orgb6a0f34" class="outline-5">
-<h5 id="orgb6a0f34"><span class="section-number-5">12.3.1.2</span> Recurrence formula</h5>
+<div id="outline-container-org6320868" class="outline-5">
+<h5 id="org6320868"><span class="section-number-5">12.3.1.2</span> Recurrence formula</h5>
 <div class="outline-text-5" id="text-12-3-1-2">
 <p>
 D<sub>n</sub> = D<sub>n-1</sub> + D<sub>n-3</sub> + D<sub>n-4</sub>
@@ -1724,16 +1724,16 @@ D<sub>n</sub> = D<sub>n-1</sub> + D<sub>n-3</sub> + D<sub>n-4</sub>
 </div>
 </div>
 
-<div id="outline-container-org90b9712" class="outline-4">
-<h4 id="org90b9712"><span class="section-number-4">12.3.2</span> Two Dimensions</h4>
+<div id="outline-container-org5cf8941" class="outline-4">
+<h4 id="org5cf8941"><span class="section-number-4">12.3.2</span> Two Dimensions</h4>
 <div class="outline-text-4" id="text-12-3-2">
 <p>
 Given two string x and y, find the length of longest common sub-sequence.
 </p>
 </div>
 
-<div id="outline-container-orgaead9a6" class="outline-5">
-<h5 id="orgaead9a6"><span class="section-number-5">12.3.2.1</span> Define sub-problems</h5>
+<div id="outline-container-org68cda87" class="outline-5">
+<h5 id="org68cda87"><span class="section-number-5">12.3.2.1</span> Define sub-problems</h5>
 <div class="outline-text-5" id="text-12-3-2-1">
 <p>
 D<sub>ij</sub> is the length for x<sub>i..i</sub> and y<sub>1..j</sub>
@@ -1741,8 +1741,8 @@ D<sub>ij</sub> is the length for x<sub>i..i</sub> and y<sub>1..j</sub>
 </div>
 </div>
 
-<div id="outline-container-orgcc3d4b0" class="outline-5">
-<h5 id="orgcc3d4b0"><span class="section-number-5">12.3.2.2</span> Recurrence formula</h5>
+<div id="outline-container-org532ed00" class="outline-5">
+<h5 id="org532ed00"><span class="section-number-5">12.3.2.2</span> Recurrence formula</h5>
 <div class="outline-text-5" id="text-12-3-2-2">
 <p>
 D<sub>ij</sub> =
@@ -1755,8 +1755,8 @@ D<sub>ij</sub> =
 </div>
 </div>
 
-<div id="outline-container-org18fdbf1" class="outline-4">
-<h4 id="org18fdbf1"><span class="section-number-4">12.3.3</span> Interval DP</h4>
+<div id="outline-container-org7a33fae" class="outline-4">
+<h4 id="org7a33fae"><span class="section-number-4">12.3.3</span> Interval DP</h4>
 <div class="outline-text-4" id="text-12-3-3">
 <p>
 Given a string x=x<sub>1..n</sub>,
@@ -1764,8 +1764,8 @@ find the minimum number of characters that need to be inserted to make it a pali
 </p>
 </div>
 
-<div id="outline-container-org20412d5" class="outline-5">
-<h5 id="org20412d5"><span class="section-number-5">12.3.3.1</span> Define sub-problem</h5>
+<div id="outline-container-org666c0ef" class="outline-5">
+<h5 id="org666c0ef"><span class="section-number-5">12.3.3.1</span> Define sub-problem</h5>
 <div class="outline-text-5" id="text-12-3-3-1">
 <p>
 D<sub>i,j</sub> be the minimum number of characters.
@@ -1773,8 +1773,8 @@ D<sub>i,j</sub> be the minimum number of characters.
 </div>
 </div>
 
-<div id="outline-container-orgfac564e" class="outline-5">
-<h5 id="orgfac564e"><span class="section-number-5">12.3.3.2</span> Recurrence formula</h5>
+<div id="outline-container-orgc594a39" class="outline-5">
+<h5 id="orgc594a39"><span class="section-number-5">12.3.3.2</span> Recurrence formula</h5>
 <div class="outline-text-5" id="text-12-3-3-2">
 <p>
 say y<sub>1..k</sub> is the palindrome for x<sub>i..j</sub>,
@@ -1792,16 +1792,16 @@ D<sub>ij</sub> =
 </div>
 </div>
 
-<div id="outline-container-org04f0b69" class="outline-4">
-<h4 id="org04f0b69"><span class="section-number-4">12.3.4</span> Tree DP</h4>
+<div id="outline-container-org1279404" class="outline-4">
+<h4 id="org1279404"><span class="section-number-4">12.3.4</span> Tree DP</h4>
 <div class="outline-text-4" id="text-12-3-4">
 <p>
 Given a tree, color nodes black as many as possible without coloring two adjacent nodes.
 </p>
 </div>
 
-<div id="outline-container-orgef36cfa" class="outline-5">
-<h5 id="orgef36cfa"><span class="section-number-5">12.3.4.1</span> Define</h5>
+<div id="outline-container-org4dd3b69" class="outline-5">
+<h5 id="org4dd3b69"><span class="section-number-5">12.3.4.1</span> Define</h5>
 <div class="outline-text-5" id="text-12-3-4-1">
 <ul class="org-ul">
 <li>B(r) as the maximum nodes if the (root) node r is colored black.</li>
@@ -1810,8 +1810,8 @@ Given a tree, color nodes black as many as possible without coloring two adjacen
 </div>
 </div>
 
-<div id="outline-container-orgc822a99" class="outline-5">
-<h5 id="orgc822a99"><span class="section-number-5">12.3.4.2</span> Recurrence</h5>
+<div id="outline-container-orga0e6d87" class="outline-5">
+<h5 id="orga0e6d87"><span class="section-number-5">12.3.4.2</span> Recurrence</h5>
 <div class="outline-text-5" id="text-12-3-4-2">
 <ul class="org-ul">
 <li>B(v) = 1 + &sum;<sub>children</sub> W(c)</li>
@@ -1823,12 +1823,12 @@ Given a tree, color nodes black as many as possible without coloring two adjacen
 </div>
 
 
-<div id="outline-container-org4b9c939" class="outline-3">
-<h3 id="org4b9c939"><span class="section-number-3">12.4</span> String Algorithm</h3>
+<div id="outline-container-org4b2a728" class="outline-3">
+<h3 id="org4b2a728"><span class="section-number-3">12.4</span> String Algorithm</h3>
 <div class="outline-text-3" id="text-12-4">
 </div>
-<div id="outline-container-org56695e1" class="outline-4">
-<h4 id="org56695e1"><span class="section-number-4">12.4.1</span> Knuth–Morris–Pratt(KMP)</h4>
+<div id="outline-container-org5e6e07b" class="outline-4">
+<h4 id="org5e6e07b"><span class="section-number-4">12.4.1</span> Knuth–Morris–Pratt(KMP)</h4>
 <div class="outline-text-4" id="text-12-4-1">
 <blockquote>
 <p>
@@ -1881,8 +1881,8 @@ The algorithm to build the table:
 </div>
 </div>
 
-<div id="outline-container-org42d82b4" class="outline-5">
-<h5 id="org42d82b4"><span class="section-number-5">12.4.1.1</span> 214. Shortest Palindrome</h5>
+<div id="outline-container-orgbd8788e" class="outline-5">
+<h5 id="orgbd8788e"><span class="section-number-5">12.4.1.1</span> 214. Shortest Palindrome</h5>
 <div class="outline-text-5" id="text-12-4-1-1">
 <blockquote>
 <p>
@@ -1892,7 +1892,7 @@ Given a string S, you are allowed to convert it to a palindrome by adding charac
 </div>
 
 <ol class="org-ol">
-<li><a id="org0f5271d"></a>KMP<br />
+<li><a id="orgf89432b"></a>KMP<br />
 <div class="outline-text-6" id="text-12-4-1-1-1">
 <p>
 It is easy to convert the problem to find the longest Palindrome at the beginning of s.
@@ -1903,7 +1903,7 @@ What we need is to find the largest number inside KMP table.
 </div>
 </li>
 
-<li><a id="orgcda4873"></a>brute force<br />
+<li><a id="orgf5e5d59"></a>brute force<br />
 <div class="outline-text-6" id="text-12-4-1-1-2">
 <p>
 I have a brute-force that "just" pass the tests.
@@ -1976,8 +1976,8 @@ I have a brute-force that "just" pass the tests.
 </div>
 </div>
 
-<div id="outline-container-orga5eb82e" class="outline-4">
-<h4 id="orga5eb82e"><span class="section-number-4">12.4.2</span> Boyer Moore</h4>
+<div id="outline-container-org9d75da2" class="outline-4">
+<h4 id="org9d75da2"><span class="section-number-4">12.4.2</span> Boyer Moore</h4>
 <div class="outline-text-4" id="text-12-4-2">
 <p>
 It is a string match algorithm.
@@ -1993,8 +1993,8 @@ In the following examples, the lower case denote the matched or unmatched part f
 They are upper case when considering matching.
 </p>
 </div>
-<div id="outline-container-orgcca676a" class="outline-5">
-<h5 id="orgcca676a"><span class="section-number-5">12.4.2.1</span> Bad Character Rule</h5>
+<div id="outline-container-orgd7e44de" class="outline-5">
+<h5 id="orgd7e44de"><span class="section-number-5">12.4.2.1</span> Bad Character Rule</h5>
 <div class="outline-text-5" id="text-12-4-2-1">
 <p>
 Match from last. In the below example, the suffix <code>MAN</code> matches, but <code>N</code> does not match. Shift the pattern so that the first N (counted from last) go to the <code>N</code> place.
@@ -2016,8 +2016,8 @@ find to left a `n`, then shift it to the position.
 </div>
 </div>
 
-<div id="outline-container-org99c3b1b" class="outline-5">
-<h5 id="org99c3b1b"><span class="section-number-5">12.4.2.2</span> Good Suffix Rule</h5>
+<div id="outline-container-orgee4df13" class="outline-5">
+<h5 id="orgee4df13"><span class="section-number-5">12.4.2.2</span> Good Suffix Rule</h5>
 <div class="outline-text-5" id="text-12-4-2-2">
 <p>
 Similar to the bad rule, find the matched, in this case <code>NAM</code>.
@@ -2040,8 +2040,8 @@ and shift it to the position.
 </div>
 </div>
 
-<div id="outline-container-org719df8d" class="outline-5">
-<h5 id="org719df8d"><span class="section-number-5">12.4.2.3</span> Galil Rule</h5>
+<div id="outline-container-org794e501" class="outline-5">
+<h5 id="org794e501"><span class="section-number-5">12.4.2.3</span> Galil Rule</h5>
 <div class="outline-text-5" id="text-12-4-2-3">
 <p>
 As opposed to shifting, the Galil rule deals with speeding up the actual comparisons done at each alignment by skipping sections that are known to match.
@@ -2058,8 +2058,8 @@ the Galil rule is required for proving linear-time execution in the worst case.
 </div>
 </div>
 
-<div id="outline-container-orgd032103" class="outline-4">
-<h4 id="orgd032103"><span class="section-number-4">12.4.3</span> Rabin-Karp Algorithm</h4>
+<div id="outline-container-org2112e36" class="outline-4">
+<h4 id="org2112e36"><span class="section-number-4">12.4.3</span> Rabin-Karp Algorithm</h4>
 <div class="outline-text-4" id="text-12-4-3">
 <p>
 It is a string searching algorithm.
@@ -2134,14 +2134,14 @@ K patterns, in a large string s, find any one of the K patterns.
 </p>
 </div>
 
-<div id="outline-container-orgfa241e3" class="outline-5">
-<h5 id="orgfa241e3"><span class="section-number-5">12.4.3.1</span> Rolling Hash</h5>
+<div id="outline-container-orgba7e008" class="outline-5">
+<h5 id="orgba7e008"><span class="section-number-5">12.4.3.1</span> Rolling Hash</h5>
 <div class="outline-text-5" id="text-12-4-3-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgd220405"></a>Rabin-Karp rolling hash<br /></li>
+<li><a id="org73db948"></a>Rabin-Karp rolling hash<br /></li>
 
-<li><a id="org0d57dae"></a>Cyclic Polynomial (Buzhash)<br />
+<li><a id="org477cf48"></a>Cyclic Polynomial (Buzhash)<br />
 <div class="outline-text-6" id="text-12-4-3-1-2">
 <p>
 <code>s(a)</code> means shift a left.
@@ -2167,8 +2167,8 @@ H = s(H) \oplus s^k(h(c_1)) \oplus h(c_{k+1})
 </ol>
 </div>
 
-<div id="outline-container-org70f90ff" class="outline-5">
-<h5 id="org70f90ff"><span class="section-number-5">12.4.3.2</span> Tabulation hashing</h5>
+<div id="outline-container-org3276214" class="outline-5">
+<h5 id="org3276214"><span class="section-number-5">12.4.3.2</span> Tabulation hashing</h5>
 <div class="outline-text-5" id="text-12-4-3-2">
 <p>
 input key is <code>p</code> bits, output is <code>q</code> bits.

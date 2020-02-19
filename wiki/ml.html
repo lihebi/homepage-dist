@@ -191,13 +191,13 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" />
+<link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -272,30 +272,30 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org34c1967">1. Tmp</a></li>
-<li><a href="#orga572f01">2. Supervised Learning</a>
+<li><a href="#org8eee132">1. Tmp</a></li>
+<li><a href="#org87e192b">2. Supervised Learning</a>
 <ul>
-<li><a href="#org74b2c65">2.1. General Concepts</a></li>
-<li><a href="#org258ceb6">2.2. Linear Regression</a></li>
-<li><a href="#orga3e8f0a">2.3. Linear Classification</a></li>
-<li><a href="#orgc20a43f">2.4. Basis Expansion and Regularization</a></li>
-<li><a href="#org0302bd6">2.5. KNN</a></li>
-<li><a href="#orge4a4a01">2.6. Subset selection</a></li>
-<li><a href="#orgc1181d2">2.7. Kernel Methods and local regression</a></li>
-<li><a href="#orge9b489d">2.8. High Dimension</a></li>
-<li><a href="#org8c648b9">2.9. Model Assessment</a></li>
-<li><a href="#org99507be">2.10. Model Inference</a></li>
-<li><a href="#org266f349">2.11. Maximum Likelihood Inference</a></li>
-<li><a href="#org46e3db2">2.12. Tree-based method</a></li>
-<li><a href="#orgc2c9365">2.13. Additive Model</a></li>
-<li><a href="#org86676e4">2.14. Other</a></li>
+<li><a href="#orgb62100e">2.1. General Concepts</a></li>
+<li><a href="#org83c43b4">2.2. Linear Regression</a></li>
+<li><a href="#org9886cf3">2.3. Linear Classification</a></li>
+<li><a href="#orgb57a2e2">2.4. Basis Expansion and Regularization</a></li>
+<li><a href="#org7ff19bf">2.5. KNN</a></li>
+<li><a href="#orgcd85e87">2.6. Subset selection</a></li>
+<li><a href="#org193c155">2.7. Kernel Methods and local regression</a></li>
+<li><a href="#org7e25f79">2.8. High Dimension</a></li>
+<li><a href="#org6d46da1">2.9. Model Assessment</a></li>
+<li><a href="#org79b2bab">2.10. Model Inference</a></li>
+<li><a href="#orgff544a5">2.11. Maximum Likelihood Inference</a></li>
+<li><a href="#org282a5f7">2.12. Tree-based method</a></li>
+<li><a href="#org63ba0fd">2.13. Additive Model</a></li>
+<li><a href="#org2cb670d">2.14. Other</a></li>
 </ul>
 </li>
-<li><a href="#orgc36c9a5">3. Support Vector Machine</a></li>
-<li><a href="#org0a33049">4. Unsupervised Learning</a>
+<li><a href="#orgf4529d6">3. Support Vector Machine</a></li>
+<li><a href="#org03a24d2">4. Unsupervised Learning</a>
 <ul>
-<li><a href="#orge215d28">4.1. K-means</a></li>
-<li><a href="#orgb34ed9f">4.2. Hierarchical Clustering</a></li>
+<li><a href="#org4e439f5">4.1. K-means</a></li>
+<li><a href="#org6f4ba15">4.2. Hierarchical Clustering</a></li>
 </ul>
 </li>
 </ul>
@@ -307,8 +307,8 @@ All models are wrong, but some are useful.
 </p>
 </blockquote>
 
-<div id="outline-container-org34c1967" class="outline-2">
-<h2 id="org34c1967"><span class="section-number-2">1</span> Tmp</h2>
+<div id="outline-container-org8eee132" class="outline-2">
+<h2 id="org8eee132"><span class="section-number-2">1</span> Tmp</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>false positive: error, output true, but supposed to output false</li>
@@ -319,8 +319,8 @@ All models are wrong, but some are useful.
 </div>
 </div>
 
-<div id="outline-container-orga572f01" class="outline-2">
-<h2 id="orga572f01"><span class="section-number-2">2</span> Supervised Learning</h2>
+<div id="outline-container-org87e192b" class="outline-2">
+<h2 id="org87e192b"><span class="section-number-2">2</span> Supervised Learning</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The <i>input</i> is also called <i>predictors</i>, <i>independent variables</i>, or
@@ -347,8 +347,8 @@ many situations.
 </p>
 </div>
 
-<div id="outline-container-org74b2c65" class="outline-3">
-<h3 id="org74b2c65"><span class="section-number-3">2.1</span> General Concepts</h3>
+<div id="outline-container-orgb62100e" class="outline-3">
+<h3 id="orgb62100e"><span class="section-number-3">2.1</span> General Concepts</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Euclidean distance</li>
@@ -362,8 +362,8 @@ required.</li>
 </div>
 
 
-<div id="outline-container-org258ceb6" class="outline-3">
-<h3 id="org258ceb6"><span class="section-number-3">2.2</span> Linear Regression</h3>
+<div id="outline-container-org83c43b4" class="outline-3">
+<h3 id="org83c43b4"><span class="section-number-3">2.2</span> Linear Regression</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <i>Least square</i> method is the one that train the model by minimizing
@@ -446,8 +446,8 @@ another's least square estimate.
 </div>
 </div>
 
-<div id="outline-container-orga3e8f0a" class="outline-3">
-<h3 id="orga3e8f0a"><span class="section-number-3">2.3</span> Linear Classification</h3>
+<div id="outline-container-org9886cf3" class="outline-3">
+<h3 id="org9886cf3"><span class="section-number-3">2.3</span> Linear Classification</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 This kind of problem estimate \(Pr(G=k|X=x)\) where G is the categories.
@@ -548,8 +548,8 @@ log-likelihood \(Pr(X,G=k)\).
 </div>
 </div>
 
-<div id="outline-container-orgc20a43f" class="outline-3">
-<h3 id="orgc20a43f"><span class="section-number-3">2.4</span> Basis Expansion and Regularization</h3>
+<div id="outline-container-orgb57a2e2" class="outline-3">
+<h3 id="orgb57a2e2"><span class="section-number-3">2.4</span> Basis Expansion and Regularization</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 These linear model can be extended to non-linear through simple
@@ -665,8 +665,8 @@ The first term is a <i>loss function</i>, nd second is a <i>penalty term</i>.
 </div>
 </div>
 
-<div id="outline-container-org0302bd6" class="outline-3">
-<h3 id="org0302bd6"><span class="section-number-3">2.5</span> KNN</h3>
+<div id="outline-container-org7ff19bf" class="outline-3">
+<h3 id="org7ff19bf"><span class="section-number-3">2.5</span> KNN</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 In KNN, all data are the model. The prediction is made by averaging
@@ -684,8 +684,8 @@ sample.
 </div>
 </div>
 
-<div id="outline-container-orge4a4a01" class="outline-3">
-<h3 id="orge4a4a01"><span class="section-number-3">2.6</span> Subset selection</h3>
+<div id="outline-container-orgcd85e87" class="outline-3">
+<h3 id="orgcd85e87"><span class="section-number-3">2.6</span> Subset selection</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 For two reasons we might want to use subset of input:
@@ -811,8 +811,8 @@ smaller than the M-th largest.
 </div>
 </div>
 
-<div id="outline-container-orgc1181d2" class="outline-3">
-<h3 id="orgc1181d2"><span class="section-number-3">2.7</span> Kernel Methods and local regression</h3>
+<div id="outline-container-org193c155" class="outline-3">
+<h3 id="org193c155"><span class="section-number-3">2.7</span> Kernel Methods and local regression</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 Kernel means local. Kernel method is generally applicable, e.g. to
@@ -841,8 +841,8 @@ some structural assumption about the model.
 </div>
 </div>
 
-<div id="outline-container-orge9b489d" class="outline-3">
-<h3 id="orge9b489d"><span class="section-number-3">2.8</span> High Dimension</h3>
+<div id="outline-container-org7e25f79" class="outline-3">
+<h3 id="org7e25f79"><span class="section-number-3">2.8</span> High Dimension</h3>
 <div class="outline-text-3" id="text-2-8">
 <p>
 It seems that for KNN, if given more data, we can make more precise
@@ -917,8 +917,8 @@ that has not been explained by the first PLS direction</li>
 </div>
 
 
-<div id="outline-container-org8c648b9" class="outline-3">
-<h3 id="org8c648b9"><span class="section-number-3">2.9</span> Model Assessment</h3>
+<div id="outline-container-org6d46da1" class="outline-3">
+<h3 id="org6d46da1"><span class="section-number-3">2.9</span> Model Assessment</h3>
 <div class="outline-text-3" id="text-2-9">
 <p>
 <i>Test error</i> is also called <i>generalization error</i>, <i>prediction
@@ -1001,8 +1001,8 @@ are examined.
 </div>
 </div>
 
-<div id="outline-container-org99507be" class="outline-3">
-<h3 id="org99507be"><span class="section-number-3">2.10</span> Model Inference</h3>
+<div id="outline-container-org79b2bab" class="outline-3">
+<h3 id="org79b2bab"><span class="section-number-3">2.10</span> Model Inference</h3>
 <div class="outline-text-3" id="text-2-10">
 <dl class="org-dl">
 <dt>prediction</dt><dd>\(\hat{f}\) is treated as black box</dd>
@@ -1098,8 +1098,8 @@ helps the fitting to avoid getting stuck in (some?) local minima.
 </div>
 </div>
 
-<div id="outline-container-org266f349" class="outline-3">
-<h3 id="org266f349"><span class="section-number-3">2.11</span> Maximum Likelihood Inference</h3>
+<div id="outline-container-orgff544a5" class="outline-3">
+<h3 id="orgff544a5"><span class="section-number-3">2.11</span> Maximum Likelihood Inference</h3>
 <div class="outline-text-3" id="text-2-11">
 <p>
 Given a probability density or probability mass function for the
@@ -1137,8 +1137,8 @@ method of maximum likelihood chooses the value of \(\theta\) to maximize
 </div>
 </div>
 
-<div id="outline-container-org46e3db2" class="outline-3">
-<h3 id="org46e3db2"><span class="section-number-3">2.12</span> Tree-based method</h3>
+<div id="outline-container-org282a5f7" class="outline-3">
+<h3 id="org282a5f7"><span class="section-number-3">2.12</span> Tree-based method</h3>
 <div class="outline-text-3" id="text-2-12">
 <p>
 <i>Tree-based methods</i> partition the feature space into a set of
@@ -1199,8 +1199,8 @@ together by the gating network.
 </div>
 </div>
 
-<div id="outline-container-orgc2c9365" class="outline-3">
-<h3 id="orgc2c9365"><span class="section-number-3">2.13</span> Additive Model</h3>
+<div id="outline-container-org63ba0fd" class="outline-3">
+<h3 id="org63ba0fd"><span class="section-number-3">2.13</span> Additive Model</h3>
 <div class="outline-text-3" id="text-2-13">
 <p>
 <i>Generalized Additive Model (GAM)</i> has the form
@@ -1244,8 +1244,8 @@ Sampled Learning Ensemble (ISLE)</i> is one ensemble-generation method.
 </div>
 </div>
 
-<div id="outline-container-org86676e4" class="outline-3">
-<h3 id="org86676e4"><span class="section-number-3">2.14</span> Other</h3>
+<div id="outline-container-org2cb670d" class="outline-3">
+<h3 id="org2cb670d"><span class="section-number-3">2.14</span> Other</h3>
 <div class="outline-text-3" id="text-2-14">
 <p>
 <i>Multivariate Adaptive Regression Splines (MARS)</i> is an adaptive
@@ -1257,8 +1257,8 @@ regression.
 </div>
 </div>
 
-<div id="outline-container-orgc36c9a5" class="outline-2">
-<h2 id="orgc36c9a5"><span class="section-number-2">3</span> Support Vector Machine</h2>
+<div id="outline-container-orgf4529d6" class="outline-2">
+<h2 id="orgf4529d6"><span class="section-number-2">3</span> Support Vector Machine</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 A linear hyperplane can separate classes, but there exists an infinite
@@ -1337,16 +1337,16 @@ classification</i> computes all one versus all other SVMs.
 </div>
 
 
-<div id="outline-container-org0a33049" class="outline-2">
-<h2 id="org0a33049"><span class="section-number-2">4</span> Unsupervised Learning</h2>
+<div id="outline-container-org03a24d2" class="outline-2">
+<h2 id="org03a24d2"><span class="section-number-2">4</span> Unsupervised Learning</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <i>Unsupervised learning</i> is typically used for <i>Clustering</i>.
 </p>
 </div>
 
-<div id="outline-container-orge215d28" class="outline-3">
-<h3 id="orge215d28"><span class="section-number-3">4.1</span> K-means</h3>
+<div id="outline-container-org4e439f5" class="outline-3">
+<h3 id="org4e439f5"><span class="section-number-3">4.1</span> K-means</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <i>K-means</i> method ensures the total within-cluster variation, summed
@@ -1385,8 +1385,8 @@ This algorithm guarantee to decrease the objective formula above.
 </div>
 </div>
 
-<div id="outline-container-orgb34ed9f" class="outline-3">
-<h3 id="orgb34ed9f"><span class="section-number-3">4.2</span> Hierarchical Clustering</h3>
+<div id="outline-container-org6f4ba15" class="outline-3">
+<h3 id="org6f4ba15"><span class="section-number-3">4.2</span> Hierarchical Clustering</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 The downside of K-mean is the need for predefined number of

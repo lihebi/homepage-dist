@@ -99,6 +99,11 @@ blockquote::before{
     margin: 0 15px 3em 15px;
 }
 
+/* for side-by-side divs FIXME this should apply to .outline-* */
+div.outline-3 {
+    clear: both;
+}
+
 #table-of-contents a {
     text-decoration: none;
 }

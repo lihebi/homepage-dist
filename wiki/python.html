@@ -191,13 +191,13 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="assets/org.css" /><link rel="stylesheet" type="text/css" href="assets/hebi.css" /><link rel="stylesheet" type="text/css" href="../assets/org.css" /><link rel="stylesheet" type="text/css" href="../assets/hebi.css" />
+<link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -272,153 +272,154 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9fad18a">1. Random</a>
+<li><a href="#org1a5a5e3">1. Random</a>
 <ul>
-<li><a href="#org196214a">1.1. imsave</a></li>
-<li><a href="#org376d5dc">1.2. Meta Programming</a></li>
-<li><a href="#org3ddeff2">1.3. Function def and call</a></li>
-<li><a href="#org33b66be">1.4. List object model</a></li>
+<li><a href="#orgb87cd8e">1.1. pip mirror</a></li>
+<li><a href="#orgfa760f0">1.2. imsave</a></li>
+<li><a href="#org43e4b4c">1.3. Meta Programming</a></li>
+<li><a href="#org66fa611">1.4. Function def and call</a></li>
+<li><a href="#orgae18b2f">1.5. List object model</a></li>
 </ul>
 </li>
-<li><a href="#org62f8afa">2. Language</a></li>
-<li><a href="#org2bed46a">3. Emacs support</a></li>
-<li><a href="#orgfdf3b8c">4. Unit Test</a></li>
-<li><a href="#orgcff9c2f">5. Concept</a>
+<li><a href="#org3672172">2. Language</a></li>
+<li><a href="#org5051818">3. Emacs support</a></li>
+<li><a href="#org9054fc8">4. Unit Test</a></li>
+<li><a href="#org0bf31a5">5. Concept</a>
 <ul>
-<li><a href="#orgb82c763">5.1. Scoping</a></li>
-<li><a href="#org588b6f5">5.2. Collection</a>
+<li><a href="#org14d98a7">5.1. Scoping</a></li>
+<li><a href="#org80812b9">5.2. Collection</a>
 <ul>
-<li><a href="#org254fc97">5.2.1. String</a>
+<li><a href="#org022f4ec">5.2.1. String</a>
 <ul>
-<li><a href="#orgf93124d">5.2.1.1. Concatenation</a></li>
-<li><a href="#orga38f058">5.2.1.2. split</a></li>
-<li><a href="#orgac7fe9b">5.2.1.3. Slicing</a></li>
+<li><a href="#org8c2732b">5.2.1.1. Concatenation</a></li>
+<li><a href="#orgb72a80a">5.2.1.2. split</a></li>
+<li><a href="#org2d67c1d">5.2.1.3. Slicing</a></li>
 </ul>
 </li>
-<li><a href="#orgee764f4">5.2.2. <span class="todo TODO">TODO</span> tuple</a></li>
-<li><a href="#org05426f7">5.2.3. List</a>
+<li><a href="#orgd0011dc">5.2.2. <span class="todo TODO">TODO</span> tuple</a></li>
+<li><a href="#orgb9afb6b">5.2.3. List</a>
 <ul>
-<li><a href="#orgea44718">5.2.3.1. Slicing</a></li>
-<li><a href="#org0f21fe7">5.2.3.2. create a list</a></li>
-<li><a href="#orgeab1f8b">5.2.3.3. Modify a list</a></li>
+<li><a href="#orgbfb8284">5.2.3.1. Slicing</a></li>
+<li><a href="#org9ac7027">5.2.3.2. create a list</a></li>
+<li><a href="#org41736f7">5.2.3.3. Modify a list</a></li>
 </ul>
 </li>
-<li><a href="#org0ca799e">5.2.4. Dictionary</a></li>
-<li><a href="#orgbb5a86d">5.2.5. Set</a></li>
+<li><a href="#org4536677">5.2.4. Dictionary</a></li>
+<li><a href="#org3dc2fe4">5.2.5. Set</a></li>
 </ul>
 </li>
-<li><a href="#org876670b">5.3. Algorithm</a>
+<li><a href="#org47daf7b">5.3. Algorithm</a>
 <ul>
-<li><a href="#org6d82f06">5.3.1. <span class="todo TODO">TODO</span> sort</a></li>
+<li><a href="#orgede4cd6">5.3.1. <span class="todo TODO">TODO</span> sort</a></li>
 </ul>
 </li>
-<li><a href="#org43d2d07">5.4. Function</a>
+<li><a href="#orgb33df91">5.4. Function</a>
 <ul>
-<li><a href="#org223c09e">5.4.1. variadic parameter</a></li>
+<li><a href="#org0a480f3">5.4.1. variadic parameter</a></li>
 </ul>
 </li>
-<li><a href="#orgd037992">5.5. Exception</a></li>
-<li><a href="#org070dcf4">5.6. Lambda</a></li>
-<li><a href="#orgc2d2475">5.7. Packaging</a>
+<li><a href="#org5681770">5.5. Exception</a></li>
+<li><a href="#org9da505b">5.6. Lambda</a></li>
+<li><a href="#org497d3d5">5.7. Packaging</a>
 <ul>
-<li><a href="#org5eb0b1c">5.7.1. importing</a></li>
+<li><a href="#org234d74b">5.7.1. importing</a></li>
 </ul>
 </li>
-<li><a href="#orgbdb06c2">5.8. Thread</a></li>
+<li><a href="#org390b91a">5.8. Thread</a></li>
 </ul>
 </li>
-<li><a href="#org3a5a1bd">6. Type</a>
+<li><a href="#orgf966bcc">6. Type</a>
 <ul>
-<li><a href="#org6338aec">6.1. Boolean</a></li>
-<li><a href="#org5a1e14f">6.2. Integer</a></li>
-<li><a href="#org248afba">6.3. conversion</a></li>
+<li><a href="#org206d037">6.1. Boolean</a></li>
+<li><a href="#org4aba41a">6.2. Integer</a></li>
+<li><a href="#org35e3531">6.3. conversion</a></li>
 </ul>
 </li>
-<li><a href="#orga79a773">7. Black Tech</a></li>
-<li><a href="#org60a113c">8. Pep8</a>
+<li><a href="#org2383c89">7. Black Tech</a></li>
+<li><a href="#org48edc0b">8. Pep8</a>
 <ul>
-<li><a href="#org90c21db">8.1. document</a></li>
+<li><a href="#org78b4b2d">8.1. document</a></li>
 </ul>
 </li>
-<li><a href="#org793e9df">9. IO</a></li>
-<li><a href="#org020a171">10. Operating System</a>
+<li><a href="#orgef9e0e4">9. IO</a></li>
+<li><a href="#orgcf8cb14">10. Operating System</a>
 <ul>
-<li><a href="#orgc29e884">10.1. Work filesystem:</a></li>
-<li><a href="#org1f9824c">10.2. Shell command</a></li>
+<li><a href="#org3152ddd">10.1. Work filesystem:</a></li>
+<li><a href="#org50aabc6">10.2. Shell command</a></li>
 </ul>
 </li>
-<li><a href="#org1038cd8">11. Standard Library</a>
+<li><a href="#org3d20820">11. Standard Library</a>
 <ul>
-<li><a href="#org1e8f13b">11.1. Built-in exceptions</a></li>
-<li><a href="#org34d412c">11.2. Built-in</a></li>
-<li><a href="#org00f7285">11.3. Printing</a></li>
-<li><a href="#orgffae14b">11.4. File System</a>
+<li><a href="#org6937f9b">11.1. Built-in exceptions</a></li>
+<li><a href="#org6ccff9c">11.2. Built-in</a></li>
+<li><a href="#orga716053">11.3. Printing</a></li>
+<li><a href="#orgd87e172">11.4. File System</a>
 <ul>
-<li><a href="#orge829b98">11.4.1. os.path</a></li>
-<li><a href="#orgfc4ef9f">11.4.2. pathlib</a></li>
-<li><a href="#orgf43a325">11.4.3. <span class="todo TODO">TODO</span> tempfile</a></li>
+<li><a href="#org23c9980">11.4.1. os.path</a></li>
+<li><a href="#orgac0db8d">11.4.2. pathlib</a></li>
+<li><a href="#orgb57d1ec">11.4.3. <span class="todo TODO">TODO</span> tempfile</a></li>
 </ul>
 </li>
-<li><a href="#orgd00361b">11.5. os</a>
+<li><a href="#org31fd17a">11.5. os</a>
 <ul>
-<li><a href="#orgfdd549e">11.5.1. Env</a></li>
-<li><a href="#org15e18ac">11.5.2. Filesystem</a></li>
-<li><a href="#org8eef0f3">11.5.3. shutil</a></li>
-<li><a href="#orgb0a6a20">11.5.4. Process</a></li>
+<li><a href="#orgdc54578">11.5.1. Env</a></li>
+<li><a href="#orge0ac059">11.5.2. Filesystem</a></li>
+<li><a href="#org1970c20">11.5.3. shutil</a></li>
+<li><a href="#orge5f6bb6">11.5.4. Process</a></li>
 </ul>
 </li>
-<li><a href="#org24424c8">11.6. io</a>
+<li><a href="#orgaf66566">11.6. io</a>
 <ul>
-<li><a href="#org2291728">11.6.1. IOBase</a></li>
-<li><a href="#org85d89b6">11.6.2. RawIOBase : IOBase (should not use directly)</a></li>
-<li><a href="#org657a0db">11.6.3. BufferedIOBase</a></li>
-<li><a href="#org054b824">11.6.4. FileIO : RawIOBase</a></li>
-<li><a href="#org76e7085">11.6.5. BytesIO : BufferedIOBase</a></li>
-<li><a href="#org74ba112">11.6.6. BufferedReader(raw)</a></li>
-<li><a href="#org8203d0c">11.6.7. BufferedWriter(raw)</a></li>
-<li><a href="#org9028095">11.6.8. TextIOBase : IOBase</a></li>
-<li><a href="#org2347aa5">11.6.9. TextIOWrapper(buffer) : TextIOBase</a></li>
-<li><a href="#orgd4bbfb9">11.6.10. StringIO</a></li>
+<li><a href="#org83b5c08">11.6.1. IOBase</a></li>
+<li><a href="#orgc1821a3">11.6.2. RawIOBase : IOBase (should not use directly)</a></li>
+<li><a href="#org061f18c">11.6.3. BufferedIOBase</a></li>
+<li><a href="#orga605b79">11.6.4. FileIO : RawIOBase</a></li>
+<li><a href="#org795677c">11.6.5. BytesIO : BufferedIOBase</a></li>
+<li><a href="#org1d91abe">11.6.6. BufferedReader(raw)</a></li>
+<li><a href="#org878269f">11.6.7. BufferedWriter(raw)</a></li>
+<li><a href="#org908307f">11.6.8. TextIOBase : IOBase</a></li>
+<li><a href="#org7a6aa86">11.6.9. TextIOWrapper(buffer) : TextIOBase</a></li>
+<li><a href="#orge543a97">11.6.10. StringIO</a></li>
 </ul>
 </li>
-<li><a href="#org1c4cfcf">11.7. time</a></li>
-<li><a href="#org70b5905">11.8. argparse</a></li>
-<li><a href="#org94cb4ad">11.9. contextlib</a></li>
-<li><a href="#orgde6df44">11.10. Regular Expression</a></li>
-<li><a href="#org84fc83f">11.11. Concurrent</a>
+<li><a href="#org27cd475">11.7. time</a></li>
+<li><a href="#org0f3c465">11.8. argparse</a></li>
+<li><a href="#org910762e">11.9. contextlib</a></li>
+<li><a href="#orga9810fa">11.10. Regular Expression</a></li>
+<li><a href="#orgb5369f7">11.11. Concurrent</a>
 <ul>
-<li><a href="#org88fde05">11.11.1. threading</a></li>
-<li><a href="#org90e6b40">11.11.2. Thread Sync</a>
+<li><a href="#orgeb4f6eb">11.11.1. threading</a></li>
+<li><a href="#org531574b">11.11.2. Thread Sync</a>
 <ul>
-<li><a href="#org336301e">11.11.2.1. Using with statement</a></li>
+<li><a href="#orga0fe756">11.11.2.1. Using with statement</a></li>
 </ul>
 </li>
-<li><a href="#org9325c31">11.11.3. multiprocessing</a></li>
-<li><a href="#org1f1e392">11.11.4. Process (subprocess module)</a></li>
+<li><a href="#org3fc7f35">11.11.3. multiprocessing</a></li>
+<li><a href="#org03f7be9">11.11.4. Process (subprocess module)</a></li>
 </ul>
 </li>
-<li><a href="#orgc49be82">11.12. Internet</a>
+<li><a href="#org2ef2266">11.12. Internet</a>
 <ul>
-<li><a href="#orgfe02aab">11.12.1. urllib.request</a></li>
-<li><a href="#org8a299f4">11.12.2. urllib.parse</a></li>
+<li><a href="#org41a9aa7">11.12.1. urllib.request</a></li>
+<li><a href="#org0bc2092">11.12.2. urllib.parse</a></li>
 </ul>
 </li>
-<li><a href="#org2b0a323">11.13. Data</a>
+<li><a href="#orgc758c7d">11.13. Data</a>
 <ul>
-<li><a href="#org3e185a7">11.13.1. Json</a></li>
+<li><a href="#org55d9e69">11.13.1. Json</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4743483">12. Third party libraries</a>
+<li><a href="#org2af3e92">12. Third party libraries</a>
 <ul>
-<li><a href="#org76e329d">12.1. urllib</a></li>
-<li><a href="#org5e1e14f">12.2. XML</a></li>
-<li><a href="#org4104183">12.3. Requests</a></li>
-<li><a href="#org96f6496">12.4. BeautifulSoup</a></li>
-<li><a href="#org2d32e2f">12.5. click http://click.pocoo.org/5/</a></li>
-<li><a href="#orgf6c4415">12.6. matplotlib</a></li>
-<li><a href="#orgd5466c0">12.7. Deep Learning Framework</a></li>
+<li><a href="#orgfd394d6">12.1. urllib</a></li>
+<li><a href="#org906608a">12.2. XML</a></li>
+<li><a href="#org36c1870">12.3. Requests</a></li>
+<li><a href="#org8ef72ef">12.4. BeautifulSoup</a></li>
+<li><a href="#org627eea2">12.5. click http://click.pocoo.org/5/</a></li>
+<li><a href="#orgde513f9">12.6. matplotlib</a></li>
+<li><a href="#orgc6967cd">12.7. Deep Learning Framework</a></li>
 </ul>
 </li>
 </ul>
@@ -461,8 +462,8 @@ something is wrong with the language.
 </p>
 </blockquote>
 
-<div id="outline-container-org9fad18a" class="outline-2">
-<h2 id="org9fad18a"><span class="section-number-2">1</span> Random</h2>
+<div id="outline-container-org1a5a5e3" class="outline-2">
+<h2 id="org1a5a5e3"><span class="section-number-2">1</span> Random</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
 export PYTHONPATH="$PYTHONPATH:/home/hebi/github/reading/models"
@@ -532,9 +533,41 @@ from p2.yyy import foo
 </pre>
 </div>
 
-<div id="outline-container-org196214a" class="outline-3">
-<h3 id="org196214a"><span class="section-number-3">1.1</span> imsave</h3>
+<div id="outline-container-orgb87cd8e" class="outline-3">
+<h3 id="orgb87cd8e"><span class="section-number-3">1.1</span> pip mirror</h3>
 <div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>ustc mirror: <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></li>
+</ul>
+
+<p>
+to use one-time, simply:
+</p>
+
+<pre class="example">
+pip3 install xxx -i https://pypi.mirrors.ustc.edu.cn/simple/
+
+# don't need this when using https
+# --trusted-host pypi.mirrors.ustc.edu.cn
+</pre>
+
+<p>
+global configuration <b>seems</b> to be:
+</p>
+<pre class="example">
+pip3 config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
+</pre>
+
+<p>
+In China, pytorch cannot be installed due to 1. large 2. cpu only has a specific
+url. Thus I'm using conda mirror <a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa760f0" class="outline-3">
+<h3 id="orgfa760f0"><span class="section-number-3">1.2</span> imsave</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 <code>imsave</code> is deprecated, change from
 </p>
@@ -557,9 +590,9 @@ to
 
 
 
-<div id="outline-container-org376d5dc" class="outline-3">
-<h3 id="org376d5dc"><span class="section-number-3">1.2</span> Meta Programming</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org43e4b4c" class="outline-3">
+<h3 id="org43e4b4c"><span class="section-number-3">1.3</span> Meta Programming</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 Basically <code>eval</code> (return value) and <code>exec</code> (no return value), with
 either string or <i>code object</i> created by <code>compile</code>. They can use the
@@ -581,9 +614,9 @@ names bound by current namespace.
 </div>
 </div>
 
-<div id="outline-container-org3ddeff2" class="outline-3">
-<h3 id="org3ddeff2"><span class="section-number-3">1.3</span> Function def and call</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org66fa611" class="outline-3">
+<h3 id="org66fa611"><span class="section-number-3">1.4</span> Function def and call</h3>
+<div class="outline-text-3" id="text-1-4">
 <p>
 The default value of an argument is evaluated once at the function
 definition. Thus, the object is shared for all the invoke of the
@@ -617,9 +650,9 @@ a <span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; [
 </div>
 
 
-<div id="outline-container-org33b66be" class="outline-3">
-<h3 id="org33b66be"><span class="section-number-3">1.4</span> List object model</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-orgae18b2f" class="outline-3">
+<h3 id="orgae18b2f"><span class="section-number-3">1.5</span> List object model</h3>
+<div class="outline-text-3" id="text-1-5">
 <p>
 Lists are mutable.  The behavior of slicing is a bit confusing. If the
 slicing is used directly as the target of an assignment statement, it
@@ -700,8 +733,8 @@ fairly safe to use string.
 </div>
 
 
-<div id="outline-container-org62f8afa" class="outline-2">
-<h2 id="org62f8afa"><span class="section-number-2">2</span> Language</h2>
+<div id="outline-container-org3672172" class="outline-2">
+<h2 id="org3672172"><span class="section-number-2">2</span> Language</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The ultimate reference:
@@ -780,8 +813,8 @@ Note the out-most braces are required, which also creates a scope.
 </div>
 </div>
 
-<div id="outline-container-org2bed46a" class="outline-2">
-<h2 id="org2bed46a"><span class="section-number-2">3</span> Emacs support</h2>
+<div id="outline-container-org5051818" class="outline-2">
+<h2 id="org5051818"><span class="section-number-2">3</span> Emacs support</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Install the <code>elpy</code> package. It provides:
@@ -804,8 +837,8 @@ pylint --generate-rcfile &gt; ~/.pylintrc
 </div>
 
 
-<div id="outline-container-orgfdf3b8c" class="outline-2">
-<h2 id="orgfdf3b8c"><span class="section-number-2">4</span> Unit Test</h2>
+<div id="outline-container-org9054fc8" class="outline-2">
+<h2 id="org9054fc8"><span class="section-number-2">4</span> Unit Test</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">MyTest</span>(unittest.TestCase):
@@ -822,12 +855,12 @@ the file must be named <code>test_xxx.py</code>, and run the <code>python -m uni
 </div>
 </div>
 
-<div id="outline-container-orgcff9c2f" class="outline-2">
-<h2 id="orgcff9c2f"><span class="section-number-2">5</span> Concept</h2>
+<div id="outline-container-org0bf31a5" class="outline-2">
+<h2 id="org0bf31a5"><span class="section-number-2">5</span> Concept</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb82c763" class="outline-3">
-<h3 id="orgb82c763"><span class="section-number-3">5.1</span> Scoping</h3>
+<div id="outline-container-org14d98a7" class="outline-3">
+<h3 id="org14d98a7"><span class="section-number-3">5.1</span> Scoping</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 There're four levels:
@@ -874,16 +907,16 @@ outer()
 </div>
 </div>
 
-<div id="outline-container-org588b6f5" class="outline-3">
-<h3 id="org588b6f5"><span class="section-number-3">5.2</span> Collection</h3>
+<div id="outline-container-org80812b9" class="outline-3">
+<h3 id="org80812b9"><span class="section-number-3">5.2</span> Collection</h3>
 <div class="outline-text-3" id="text-5-2">
 </div>
-<div id="outline-container-org254fc97" class="outline-4">
-<h4 id="org254fc97"><span class="section-number-4">5.2.1</span> String</h4>
+<div id="outline-container-org022f4ec" class="outline-4">
+<h4 id="org022f4ec"><span class="section-number-4">5.2.1</span> String</h4>
 <div class="outline-text-4" id="text-5-2-1">
 </div>
-<div id="outline-container-orgf93124d" class="outline-5">
-<h5 id="orgf93124d"><span class="section-number-5">5.2.1.1</span> Concatenation</h5>
+<div id="outline-container-org8c2732b" class="outline-5">
+<h5 id="org8c2732b"><span class="section-number-5">5.2.1.1</span> Concatenation</h5>
 <div class="outline-text-5" id="text-5-2-1-1">
 <ul class="org-ul">
 <li>concatenate two strings directly by <code>+</code>.</li>
@@ -893,8 +926,8 @@ outer()
 </div>
 </div>
 
-<div id="outline-container-orga38f058" class="outline-5">
-<h5 id="orga38f058"><span class="section-number-5">5.2.1.2</span> split</h5>
+<div id="outline-container-orgb72a80a" class="outline-5">
+<h5 id="orgb72a80a"><span class="section-number-5">5.2.1.2</span> split</h5>
 <div class="outline-text-5" id="text-5-2-1-2">
 <dl class="org-dl">
 <dt><code>str.split(sep=None)</code></dt><dd>default by white space</dd>
@@ -907,8 +940,8 @@ outer()
 </div>
 </div>
 
-<div id="outline-container-orgac7fe9b" class="outline-5">
-<h5 id="orgac7fe9b"><span class="section-number-5">5.2.1.3</span> Slicing</h5>
+<div id="outline-container-org2d67c1d" class="outline-5">
+<h5 id="org2d67c1d"><span class="section-number-5">5.2.1.3</span> Slicing</h5>
 <div class="outline-text-5" id="text-5-2-1-3">
 <p>
 String is an immutable object. It can use slicing. E.g. reversing a
@@ -941,15 +974,15 @@ first and then reverse it.
 </div>
 </div>
 
-<div id="outline-container-orgee764f4" class="outline-4">
-<h4 id="orgee764f4"><span class="section-number-4">5.2.2</span> <span class="todo TODO">TODO</span> tuple</h4>
+<div id="outline-container-orgd0011dc" class="outline-4">
+<h4 id="orgd0011dc"><span class="section-number-4">5.2.2</span> <span class="todo TODO">TODO</span> tuple</h4>
 </div>
-<div id="outline-container-org05426f7" class="outline-4">
-<h4 id="org05426f7"><span class="section-number-4">5.2.3</span> List</h4>
+<div id="outline-container-orgb9afb6b" class="outline-4">
+<h4 id="orgb9afb6b"><span class="section-number-4">5.2.3</span> List</h4>
 <div class="outline-text-4" id="text-5-2-3">
 </div>
-<div id="outline-container-orgea44718" class="outline-5">
-<h5 id="orgea44718"><span class="section-number-5">5.2.3.1</span> Slicing</h5>
+<div id="outline-container-orgbfb8284" class="outline-5">
+<h5 id="orgbfb8284"><span class="section-number-5">5.2.3.1</span> Slicing</h5>
 <div class="outline-text-5" id="text-5-2-3-1">
 <p>
 The slicing syntax is <code>l[start:end:step]</code>.
@@ -982,8 +1015,8 @@ Also, assign to a new variable only assign the reference:
 </div>
 </div>
 
-<div id="outline-container-org0f21fe7" class="outline-5">
-<h5 id="org0f21fe7"><span class="section-number-5">5.2.3.2</span> create a list</h5>
+<div id="outline-container-org9ac7027" class="outline-5">
+<h5 id="org9ac7027"><span class="section-number-5">5.2.3.2</span> create a list</h5>
 <div class="outline-text-5" id="text-5-2-3-2">
 <ul class="org-ul">
 <li><code>range(stop)</code></li>
@@ -1000,8 +1033,8 @@ Creating a matrix:
 </div>
 </div>
 
-<div id="outline-container-orgeab1f8b" class="outline-5">
-<h5 id="orgeab1f8b"><span class="section-number-5">5.2.3.3</span> Modify a list</h5>
+<div id="outline-container-org41736f7" class="outline-5">
+<h5 id="org41736f7"><span class="section-number-5">5.2.3.3</span> Modify a list</h5>
 <div class="outline-text-5" id="text-5-2-3-3">
 <ul class="org-ul">
 <li>list.append</li>
@@ -1011,8 +1044,8 @@ Creating a matrix:
 </div>
 </div>
 
-<div id="outline-container-org0ca799e" class="outline-4">
-<h4 id="org0ca799e"><span class="section-number-4">5.2.4</span> Dictionary</h4>
+<div id="outline-container-org4536677" class="outline-4">
+<h4 id="org4536677"><span class="section-number-4">5.2.4</span> Dictionary</h4>
 <div class="outline-text-4" id="text-5-2-4">
 <p>
 Create:
@@ -1043,8 +1076,8 @@ z.update(y)
 </div>
 </div>
 
-<div id="outline-container-orgbb5a86d" class="outline-4">
-<h4 id="orgbb5a86d"><span class="section-number-4">5.2.5</span> Set</h4>
+<div id="outline-container-org3dc2fe4" class="outline-4">
+<h4 id="org3dc2fe4"><span class="section-number-4">5.2.5</span> Set</h4>
 <div class="outline-text-4" id="text-5-2-5">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-variable-name">s</span> = <span class="org-builtin">set</span>()
@@ -1057,12 +1090,12 @@ s.add(x)
 </div>
 </div>
 
-<div id="outline-container-org876670b" class="outline-3">
-<h3 id="org876670b"><span class="section-number-3">5.3</span> Algorithm</h3>
+<div id="outline-container-org47daf7b" class="outline-3">
+<h3 id="org47daf7b"><span class="section-number-3">5.3</span> Algorithm</h3>
 <div class="outline-text-3" id="text-5-3">
 </div>
-<div id="outline-container-org6d82f06" class="outline-4">
-<h4 id="org6d82f06"><span class="section-number-4">5.3.1</span> <span class="todo TODO">TODO</span> sort</h4>
+<div id="outline-container-orgede4cd6" class="outline-4">
+<h4 id="orgede4cd6"><span class="section-number-4">5.3.1</span> <span class="todo TODO">TODO</span> sort</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <p>
 sort a dictionary by value:
@@ -1077,12 +1110,12 @@ sort a dictionary by value:
 </div>
 
 
-<div id="outline-container-org43d2d07" class="outline-3">
-<h3 id="org43d2d07"><span class="section-number-3">5.4</span> Function</h3>
+<div id="outline-container-orgb33df91" class="outline-3">
+<h3 id="orgb33df91"><span class="section-number-3">5.4</span> Function</h3>
 <div class="outline-text-3" id="text-5-4">
 </div>
-<div id="outline-container-org223c09e" class="outline-4">
-<h4 id="org223c09e"><span class="section-number-4">5.4.1</span> variadic parameter</h4>
+<div id="outline-container-org0a480f3" class="outline-4">
+<h4 id="org0a480f3"><span class="section-number-4">5.4.1</span> variadic parameter</h4>
 <div class="outline-text-4" id="text-5-4-1">
 <p>
 use <code>*args</code> syntax, and <code>args</code> will be a <i>tuple</i>:
@@ -1138,8 +1171,8 @@ first,*<span class="org-variable-name">l</span>,<span class="org-variable-name">
 </div>
 </div>
 
-<div id="outline-container-orgd037992" class="outline-3">
-<h3 id="orgd037992"><span class="section-number-3">5.5</span> Exception</h3>
+<div id="outline-container-org5681770" class="outline-3">
+<h3 id="org5681770"><span class="section-number-3">5.5</span> Exception</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 To give a quick feel:
@@ -1162,8 +1195,8 @@ To give a quick feel:
 </div>
 </div>
 
-<div id="outline-container-org070dcf4" class="outline-3">
-<h3 id="org070dcf4"><span class="section-number-3">5.6</span> Lambda</h3>
+<div id="outline-container-org9da505b" class="outline-3">
+<h3 id="org9da505b"><span class="section-number-3">5.6</span> Lambda</h3>
 <div class="outline-text-3" id="text-5-6">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">lambda</span> x : x+2
@@ -1180,8 +1213,8 @@ The usage of lambda is often in <i>map</i> and <i>filter</i>.
 </div>
 </div>
 
-<div id="outline-container-orgc2d2475" class="outline-3">
-<h3 id="orgc2d2475"><span class="section-number-3">5.7</span> Packaging</h3>
+<div id="outline-container-org497d3d5" class="outline-3">
+<h3 id="org497d3d5"><span class="section-number-3">5.7</span> Packaging</h3>
 <div class="outline-text-3" id="text-5-7">
 <p>
 Exposing API: the following only expose <code>foo</code> but not <code>bar</code>.
@@ -1196,8 +1229,8 @@ Exposing API: the following only expose <code>foo</code> but not <code>bar</code
 </div>
 </div>
 
-<div id="outline-container-org5eb0b1c" class="outline-4">
-<h4 id="org5eb0b1c"><span class="section-number-4">5.7.1</span> importing</h4>
+<div id="outline-container-org234d74b" class="outline-4">
+<h4 id="org234d74b"><span class="section-number-4">5.7.1</span> importing</h4>
 <div class="outline-text-4" id="text-5-7-1">
 <p>
 The local structure directory must contain the <code>__init__.py</code> file to be able to import.
@@ -1227,8 +1260,8 @@ The import statements should be:
 </div>
 
 
-<div id="outline-container-orgbdb06c2" class="outline-3">
-<h3 id="orgbdb06c2"><span class="section-number-3">5.8</span> Thread</h3>
+<div id="outline-container-org390b91a" class="outline-3">
+<h3 id="org390b91a"><span class="section-number-3">5.8</span> Thread</h3>
 <div class="outline-text-3" id="text-5-8">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">from</span> threading <span class="org-keyword">import</span> Thread
@@ -1248,12 +1281,12 @@ t.start()
 </div>
 </div>
 
-<div id="outline-container-org3a5a1bd" class="outline-2">
-<h2 id="org3a5a1bd"><span class="section-number-2">6</span> Type</h2>
+<div id="outline-container-orgf966bcc" class="outline-2">
+<h2 id="orgf966bcc"><span class="section-number-2">6</span> Type</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org6338aec" class="outline-3">
-<h3 id="org6338aec"><span class="section-number-3">6.1</span> Boolean</h3>
+<div id="outline-container-org206d037" class="outline-3">
+<h3 id="org206d037"><span class="section-number-3">6.1</span> Boolean</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li><code>not True</code></li>
@@ -1261,8 +1294,8 @@ t.start()
 </div>
 </div>
 
-<div id="outline-container-org5a1e14f" class="outline-3">
-<h3 id="org5a1e14f"><span class="section-number-3">6.2</span> Integer</h3>
+<div id="outline-container-org4aba41a" class="outline-3">
+<h3 id="org4aba41a"><span class="section-number-3">6.2</span> Integer</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li><code>i += 1</code></li>
@@ -1270,8 +1303,8 @@ t.start()
 </div>
 </div>
 
-<div id="outline-container-org248afba" class="outline-3">
-<h3 id="org248afba"><span class="section-number-3">6.3</span> conversion</h3>
+<div id="outline-container-org35e3531" class="outline-3">
+<h3 id="org35e3531"><span class="section-number-3">6.3</span> conversion</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>string to integer: <code>int('45')</code></li>
@@ -1283,8 +1316,8 @@ t.start()
 </div>
 </div>
 
-<div id="outline-container-orga79a773" class="outline-2">
-<h2 id="orga79a773"><span class="section-number-2">7</span> Black Tech</h2>
+<div id="outline-container-org2383c89" class="outline-2">
+<h2 id="org2383c89"><span class="section-number-2">7</span> Black Tech</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 If else or:
@@ -1307,8 +1340,8 @@ list comprehension
 </div>
 </div>
 
-<div id="outline-container-org60a113c" class="outline-2">
-<h2 id="org60a113c"><span class="section-number-2">8</span> Pep8</h2>
+<div id="outline-container-org48edc0b" class="outline-2">
+<h2 id="org48edc0b"><span class="section-number-2">8</span> Pep8</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Indent:
@@ -1372,8 +1405,8 @@ Import
 </ul>
 </div>
 
-<div id="outline-container-org90c21db" class="outline-3">
-<h3 id="org90c21db"><span class="section-number-3">8.1</span> document</h3>
+<div id="outline-container-org78b4b2d" class="outline-3">
+<h3 id="org78b4b2d"><span class="section-number-3">8.1</span> document</h3>
 <div class="outline-text-3" id="text-8-1">
 <p>
 One can use one line or multi-line document.
@@ -1395,8 +1428,8 @@ The doc string can be retrieved by <code>func.__doc__</code>.
 </div>
 </div>
 
-<div id="outline-container-org793e9df" class="outline-2">
-<h2 id="org793e9df"><span class="section-number-2">9</span> IO</h2>
+<div id="outline-container-orgef9e0e4" class="outline-2">
+<h2 id="orgef9e0e4"><span class="section-number-2">9</span> IO</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">'xxx'</span>, end=<span class="org-string">''</span>)
@@ -1433,12 +1466,12 @@ get command line argument: <code>sys.argv</code>
 </div>
 
 
-<div id="outline-container-org020a171" class="outline-2">
-<h2 id="org020a171"><span class="section-number-2">10</span> Operating System</h2>
+<div id="outline-container-orgcf8cb14" class="outline-2">
+<h2 id="orgcf8cb14"><span class="section-number-2">10</span> Operating System</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-orgc29e884" class="outline-3">
-<h3 id="orgc29e884"><span class="section-number-3">10.1</span> Work filesystem:</h3>
+<div id="outline-container-org3152ddd" class="outline-3">
+<h3 id="org3152ddd"><span class="section-number-3">10.1</span> Work filesystem:</h3>
 <div class="outline-text-3" id="text-10-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> os
@@ -1459,8 +1492,8 @@ get command line argument: <code>sys.argv</code>
 
 
 
-<div id="outline-container-org1f9824c" class="outline-3">
-<h3 id="org1f9824c"><span class="section-number-3">10.2</span> Shell command</h3>
+<div id="outline-container-org50aabc6" class="outline-3">
+<h3 id="org50aabc6"><span class="section-number-3">10.2</span> Shell command</h3>
 <div class="outline-text-3" id="text-10-2">
 <dl class="org-dl">
 <dt><code>os.system</code></dt><dd>simply run command</dd>
@@ -1500,12 +1533,12 @@ p.stdout.read()
 </div>
 </div>
 
-<div id="outline-container-org1038cd8" class="outline-2">
-<h2 id="org1038cd8"><span class="section-number-2">11</span> Standard Library</h2>
+<div id="outline-container-org3d20820" class="outline-2">
+<h2 id="org3d20820"><span class="section-number-2">11</span> Standard Library</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-org1e8f13b" class="outline-3">
-<h3 id="org1e8f13b"><span class="section-number-3">11.1</span> Built-in exceptions</h3>
+<div id="outline-container-org6937f9b" class="outline-3">
+<h3 id="org6937f9b"><span class="section-number-3">11.1</span> Built-in exceptions</h3>
 <div class="outline-text-3" id="text-11-1">
 <pre class="example">
 BaseException
@@ -1562,8 +1595,8 @@ BaseException
 </div>
 </div>
 
-<div id="outline-container-org34d412c" class="outline-3">
-<h3 id="org34d412c"><span class="section-number-3">11.2</span> Built-in</h3>
+<div id="outline-container-org6ccff9c" class="outline-3">
+<h3 id="org6ccff9c"><span class="section-number-3">11.2</span> Built-in</h3>
 <div class="outline-text-3" id="text-11-2">
 <p>
 These functions are always available.
@@ -1652,8 +1685,8 @@ Other
 </div>
 </div>
 
-<div id="outline-container-org00f7285" class="outline-3">
-<h3 id="org00f7285"><span class="section-number-3">11.3</span> Printing</h3>
+<div id="outline-container-orga716053" class="outline-3">
+<h3 id="orga716053"><span class="section-number-3">11.3</span> Printing</h3>
 <div class="outline-text-3" id="text-11-3">
 <ul class="org-ul">
 <li>pprint.pprint(object, stream=None): pretty print</li>
@@ -1662,12 +1695,12 @@ Other
 </div>
 </div>
 
-<div id="outline-container-orgffae14b" class="outline-3">
-<h3 id="orgffae14b"><span class="section-number-3">11.4</span> File System</h3>
+<div id="outline-container-orgd87e172" class="outline-3">
+<h3 id="orgd87e172"><span class="section-number-3">11.4</span> File System</h3>
 <div class="outline-text-3" id="text-11-4">
 </div>
-<div id="outline-container-orge829b98" class="outline-4">
-<h4 id="orge829b98"><span class="section-number-4">11.4.1</span> os.path</h4>
+<div id="outline-container-org23c9980" class="outline-4">
+<h4 id="org23c9980"><span class="section-number-4">11.4.1</span> os.path</h4>
 <div class="outline-text-4" id="text-11-4-1">
 <p>
 If parameter is not listed, it means a single path.
@@ -1697,8 +1730,8 @@ path. normpath(join(os.getcwd(), path))</li>
 </div>
 </div>
 
-<div id="outline-container-orgfc4ef9f" class="outline-4">
-<h4 id="orgfc4ef9f"><span class="section-number-4">11.4.2</span> pathlib</h4>
+<div id="outline-container-orgac0db8d" class="outline-4">
+<h4 id="orgac0db8d"><span class="section-number-4">11.4.2</span> pathlib</h4>
 <div class="outline-text-4" id="text-11-4-2">
 <p>
 Object-oriented filesystem paths.
@@ -1851,17 +1884,17 @@ shell pattern, e.g. <code>p.glob('*/*.py')</code></li>
 
 
 
-<div id="outline-container-orgf43a325" class="outline-4">
-<h4 id="orgf43a325"><span class="section-number-4">11.4.3</span> <span class="todo TODO">TODO</span> tempfile</h4>
+<div id="outline-container-orgb57d1ec" class="outline-4">
+<h4 id="orgb57d1ec"><span class="section-number-4">11.4.3</span> <span class="todo TODO">TODO</span> tempfile</h4>
 </div>
 </div>
 
-<div id="outline-container-orgd00361b" class="outline-3">
-<h3 id="orgd00361b"><span class="section-number-3">11.5</span> os</h3>
+<div id="outline-container-org31fd17a" class="outline-3">
+<h3 id="org31fd17a"><span class="section-number-3">11.5</span> os</h3>
 <div class="outline-text-3" id="text-11-5">
 </div>
-<div id="outline-container-orgfdd549e" class="outline-4">
-<h4 id="orgfdd549e"><span class="section-number-4">11.5.1</span> Env</h4>
+<div id="outline-container-orgdc54578" class="outline-4">
+<h4 id="orgdc54578"><span class="section-number-4">11.5.1</span> Env</h4>
 <div class="outline-text-4" id="text-11-5-1">
 <ul class="org-ul">
 <li>os.environ['HOME']</li>
@@ -1872,8 +1905,8 @@ shell pattern, e.g. <code>p.glob('*/*.py')</code></li>
 </div>
 </div>
 
-<div id="outline-container-org15e18ac" class="outline-4">
-<h4 id="org15e18ac"><span class="section-number-4">11.5.2</span> Filesystem</h4>
+<div id="outline-container-orge0ac059" class="outline-4">
+<h4 id="orge0ac059"><span class="section-number-4">11.5.2</span> Filesystem</h4>
 <div class="outline-text-4" id="text-11-5-2">
 <ul class="org-ul">
 <li>os.getcwd(): current working directory</li>
@@ -1899,8 +1932,8 @@ it yields 3-tuple (dirpath, dirnames, filenames). E.g. <code>for root,dirs,files
 </div>
 </div>
 
-<div id="outline-container-org8eef0f3" class="outline-4">
-<h4 id="org8eef0f3"><span class="section-number-4">11.5.3</span> shutil</h4>
+<div id="outline-container-org1970c20" class="outline-4">
+<h4 id="org1970c20"><span class="section-number-4">11.5.3</span> shutil</h4>
 <div class="outline-text-4" id="text-11-5-3">
 <ul class="org-ul">
 <li>copy(src,dst)</li>
@@ -1915,8 +1948,8 @@ popen family is deprecated. Use subprocess.
 </div>
 </div>
 
-<div id="outline-container-orgb0a6a20" class="outline-4">
-<h4 id="orgb0a6a20"><span class="section-number-4">11.5.4</span> Process</h4>
+<div id="outline-container-orge5f6bb6" class="outline-4">
+<h4 id="orge5f6bb6"><span class="section-number-4">11.5.4</span> Process</h4>
 <div class="outline-text-4" id="text-11-5-4">
 <ul class="org-ul">
 <li>os.abort()</li>
@@ -1948,8 +1981,8 @@ popen family is deprecated. Use subprocess.
 </div>
 </div>
 
-<div id="outline-container-org24424c8" class="outline-3">
-<h3 id="org24424c8"><span class="section-number-3">11.6</span> io</h3>
+<div id="outline-container-orgaf66566" class="outline-3">
+<h3 id="orgaf66566"><span class="section-number-3">11.6</span> io</h3>
 <div class="outline-text-3" id="text-11-6">
 <ul class="org-ul">
 <li>f = open('file.txt')</li>
@@ -1959,8 +1992,8 @@ popen family is deprecated. Use subprocess.
 <li>support <i>with statement</i>: <code>with open('file.txt') as file:</code></li>
 </ul>
 </div>
-<div id="outline-container-org2291728" class="outline-4">
-<h4 id="org2291728"><span class="section-number-4">11.6.1</span> IOBase</h4>
+<div id="outline-container-org83b5c08" class="outline-4">
+<h4 id="org83b5c08"><span class="section-number-4">11.6.1</span> IOBase</h4>
 <div class="outline-text-4" id="text-11-6-1">
 <p>
 Methods:
@@ -1982,8 +2015,8 @@ Methods:
 </div>
 </div>
 
-<div id="outline-container-org85d89b6" class="outline-4">
-<h4 id="org85d89b6"><span class="section-number-4">11.6.2</span> RawIOBase : IOBase (should not use directly)</h4>
+<div id="outline-container-orgc1821a3" class="outline-4">
+<h4 id="orgc1821a3"><span class="section-number-4">11.6.2</span> RawIOBase : IOBase (should not use directly)</h4>
 <div class="outline-text-4" id="text-11-6-2">
 <ul class="org-ul">
 <li>read()</li>
@@ -1994,8 +2027,8 @@ Methods:
 </div>
 </div>
 
-<div id="outline-container-org657a0db" class="outline-4">
-<h4 id="org657a0db"><span class="section-number-4">11.6.3</span> BufferedIOBase</h4>
+<div id="outline-container-org061f18c" class="outline-4">
+<h4 id="org061f18c"><span class="section-number-4">11.6.3</span> BufferedIOBase</h4>
 <div class="outline-text-4" id="text-11-6-3">
 <ul class="org-ul">
 <li>read(): read all</li>
@@ -2003,14 +2036,14 @@ Methods:
 </ul>
 </div>
 </div>
-<div id="outline-container-org054b824" class="outline-4">
-<h4 id="org054b824"><span class="section-number-4">11.6.4</span> FileIO : RawIOBase</h4>
+<div id="outline-container-orga605b79" class="outline-4">
+<h4 id="orga605b79"><span class="section-number-4">11.6.4</span> FileIO : RawIOBase</h4>
 </div>
-<div id="outline-container-org76e7085" class="outline-4">
-<h4 id="org76e7085"><span class="section-number-4">11.6.5</span> BytesIO : BufferedIOBase</h4>
+<div id="outline-container-org795677c" class="outline-4">
+<h4 id="org795677c"><span class="section-number-4">11.6.5</span> BytesIO : BufferedIOBase</h4>
 </div>
-<div id="outline-container-org74ba112" class="outline-4">
-<h4 id="org74ba112"><span class="section-number-4">11.6.6</span> BufferedReader(raw)</h4>
+<div id="outline-container-org1d91abe" class="outline-4">
+<h4 id="org1d91abe"><span class="section-number-4">11.6.6</span> BufferedReader(raw)</h4>
 <div class="outline-text-4" id="text-11-6-6">
 <ul class="org-ul">
 <li>peek()</li>
@@ -2018,8 +2051,8 @@ Methods:
 </ul>
 </div>
 </div>
-<div id="outline-container-org8203d0c" class="outline-4">
-<h4 id="org8203d0c"><span class="section-number-4">11.6.7</span> BufferedWriter(raw)</h4>
+<div id="outline-container-org878269f" class="outline-4">
+<h4 id="org878269f"><span class="section-number-4">11.6.7</span> BufferedWriter(raw)</h4>
 <div class="outline-text-4" id="text-11-6-7">
 <ul class="org-ul">
 <li>flush()</li>
@@ -2027,8 +2060,8 @@ Methods:
 </ul>
 </div>
 </div>
-<div id="outline-container-org9028095" class="outline-4">
-<h4 id="org9028095"><span class="section-number-4">11.6.8</span> TextIOBase : IOBase</h4>
+<div id="outline-container-org908307f" class="outline-4">
+<h4 id="org908307f"><span class="section-number-4">11.6.8</span> TextIOBase : IOBase</h4>
 <div class="outline-text-4" id="text-11-6-8">
 <ul class="org-ul">
 <li>read()</li>
@@ -2039,11 +2072,11 @@ Methods:
 </ul>
 </div>
 </div>
-<div id="outline-container-org2347aa5" class="outline-4">
-<h4 id="org2347aa5"><span class="section-number-4">11.6.9</span> TextIOWrapper(buffer) : TextIOBase</h4>
+<div id="outline-container-org7a6aa86" class="outline-4">
+<h4 id="org7a6aa86"><span class="section-number-4">11.6.9</span> TextIOWrapper(buffer) : TextIOBase</h4>
 </div>
-<div id="outline-container-orgd4bbfb9" class="outline-4">
-<h4 id="orgd4bbfb9"><span class="section-number-4">11.6.10</span> StringIO</h4>
+<div id="outline-container-orge543a97" class="outline-4">
+<h4 id="orge543a97"><span class="section-number-4">11.6.10</span> StringIO</h4>
 <div class="outline-text-4" id="text-11-6-10">
 <ul class="org-ul">
 <li>getvalue()</li>
@@ -2052,8 +2085,8 @@ Methods:
 </div>
 </div>
 
-<div id="outline-container-org1c4cfcf" class="outline-3">
-<h3 id="org1c4cfcf"><span class="section-number-3">11.7</span> time</h3>
+<div id="outline-container-org27cd475" class="outline-3">
+<h3 id="org27cd475"><span class="section-number-3">11.7</span> time</h3>
 <div class="outline-text-3" id="text-11-7">
 <ul class="org-ul">
 <li>time.sleep(secs)</li>
@@ -2088,8 +2121,8 @@ class time.struct<sub>time</sub>: returned by gmtime(), localtime() and strptime
 </div>
 </div>
 
-<div id="outline-container-org70b5905" class="outline-3">
-<h3 id="org70b5905"><span class="section-number-3">11.8</span> argparse</h3>
+<div id="outline-container-org0f3c465" class="outline-3">
+<h3 id="org0f3c465"><span class="section-number-3">11.8</span> argparse</h3>
 <div class="outline-text-3" id="text-11-8">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> argparse
@@ -2149,8 +2182,8 @@ can use <code>parser.parse_args(['-f', '1', 'bar'])</code>.
 </div>
 </div>
 
-<div id="outline-container-org94cb4ad" class="outline-3">
-<h3 id="org94cb4ad"><span class="section-number-3">11.9</span> contextlib</h3>
+<div id="outline-container-org910762e" class="outline-3">
+<h3 id="org910762e"><span class="section-number-3">11.9</span> contextlib</h3>
 <div class="outline-text-3" id="text-11-9">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">from</span> contextlib <span class="org-keyword">import</span> redirect_stdout
@@ -2192,8 +2225,8 @@ It can also be a predefined handle, like <code>sys.stderr</code>:
 
 
 
-<div id="outline-container-orgde6df44" class="outline-3">
-<h3 id="orgde6df44"><span class="section-number-3">11.10</span> Regular Expression</h3>
+<div id="outline-container-orga9810fa" class="outline-3">
+<h3 id="orga9810fa"><span class="section-number-3">11.10</span> Regular Expression</h3>
 <div class="outline-text-3" id="text-11-10">
 <p>
 construction
@@ -2237,12 +2270,12 @@ re.search(<span class="org-string">"pattern"</span>, <span class="org-string">"s
 </div>
 </div>
 
-<div id="outline-container-org84fc83f" class="outline-3">
-<h3 id="org84fc83f"><span class="section-number-3">11.11</span> Concurrent</h3>
+<div id="outline-container-orgb5369f7" class="outline-3">
+<h3 id="orgb5369f7"><span class="section-number-3">11.11</span> Concurrent</h3>
 <div class="outline-text-3" id="text-11-11">
 </div>
-<div id="outline-container-org88fde05" class="outline-4">
-<h4 id="org88fde05"><span class="section-number-4">11.11.1</span> threading</h4>
+<div id="outline-container-orgeb4f6eb" class="outline-4">
+<h4 id="orgeb4f6eb"><span class="section-number-4">11.11.1</span> threading</h4>
 <div class="outline-text-4" id="text-11-11-1">
 <p>
 The package name is <code>threading</code>, the object is <code>Thread</code>.
@@ -2283,8 +2316,8 @@ thread. The thread terminate when <code>run</code> terminate</li>
 </div>
 </div>
 
-<div id="outline-container-org90e6b40" class="outline-4">
-<h4 id="org90e6b40"><span class="section-number-4">11.11.2</span> Thread Sync</h4>
+<div id="outline-container-org531574b" class="outline-4">
+<h4 id="org531574b"><span class="section-number-4">11.11.2</span> Thread Sync</h4>
 <div class="outline-text-4" id="text-11-11-2">
 <p>
 class threading.Lock
@@ -2375,8 +2408,8 @@ and do things simultaneously.</li>
 </ul>
 </div>
 
-<div id="outline-container-org336301e" class="outline-5">
-<h5 id="org336301e"><span class="section-number-5">11.11.2.1</span> Using with statement</h5>
+<div id="outline-container-orga0fe756" class="outline-5">
+<h5 id="orga0fe756"><span class="section-number-5">11.11.2.1</span> Using with statement</h5>
 <div class="outline-text-5" id="text-11-11-2-1">
 <p>
 Lock, RLock, Condition, Semaphore can be used.
@@ -2403,8 +2436,8 @@ is equivalent to:
 </div>
 </div>
 
-<div id="outline-container-org9325c31" class="outline-4">
-<h4 id="org9325c31"><span class="section-number-4">11.11.3</span> multiprocessing</h4>
+<div id="outline-container-org3fc7f35" class="outline-4">
+<h4 id="org3fc7f35"><span class="section-number-4">11.11.3</span> multiprocessing</h4>
 <div class="outline-text-4" id="text-11-11-3">
 <p>
 This provide multiprocessing.Process class, having similar API with
@@ -2415,8 +2448,8 @@ sharing of memory of course).
 </div>
 </div>
 
-<div id="outline-container-org1f1e392" class="outline-4">
-<h4 id="org1f1e392"><span class="section-number-4">11.11.4</span> Process (subprocess module)</h4>
+<div id="outline-container-org03f7be9" class="outline-4">
+<h4 id="org03f7be9"><span class="section-number-4">11.11.4</span> Process (subprocess module)</h4>
 <div class="outline-text-4" id="text-11-11-4">
 <ul class="org-ul">
 <li>subprocess.run(args, *, stdin=None, input=None, stdout=None,
@@ -2522,12 +2555,12 @@ stdout, stderr should be set to PIPE.
 </div>
 </div>
 
-<div id="outline-container-orgc49be82" class="outline-3">
-<h3 id="orgc49be82"><span class="section-number-3">11.12</span> Internet</h3>
+<div id="outline-container-org2ef2266" class="outline-3">
+<h3 id="org2ef2266"><span class="section-number-3">11.12</span> Internet</h3>
 <div class="outline-text-3" id="text-11-12">
 </div>
-<div id="outline-container-orgfe02aab" class="outline-4">
-<h4 id="orgfe02aab"><span class="section-number-4">11.12.1</span> urllib.request</h4>
+<div id="outline-container-org41a9aa7" class="outline-4">
+<h4 id="org41a9aa7"><span class="section-number-4">11.12.1</span> urllib.request</h4>
 <div class="outline-text-4" id="text-11-12-1">
 <p>
 package urllib.request
@@ -2584,8 +2617,8 @@ methods:
 </div>
 </div>
 
-<div id="outline-container-org8a299f4" class="outline-4">
-<h4 id="org8a299f4"><span class="section-number-4">11.12.2</span> urllib.parse</h4>
+<div id="outline-container-org0bc2092" class="outline-4">
+<h4 id="org0bc2092"><span class="section-number-4">11.12.2</span> urllib.parse</h4>
 <div class="outline-text-4" id="text-11-12-2">
 <ul class="org-ul">
 <li>quote(string)</li>
@@ -2598,12 +2631,12 @@ methods:
 </div>
 </div>
 
-<div id="outline-container-org2b0a323" class="outline-3">
-<h3 id="org2b0a323"><span class="section-number-3">11.13</span> Data</h3>
+<div id="outline-container-orgc758c7d" class="outline-3">
+<h3 id="orgc758c7d"><span class="section-number-3">11.13</span> Data</h3>
 <div class="outline-text-3" id="text-11-13">
 </div>
-<div id="outline-container-org3e185a7" class="outline-4">
-<h4 id="org3e185a7"><span class="section-number-4">11.13.1</span> Json</h4>
+<div id="outline-container-org55d9e69" class="outline-4">
+<h4 id="org55d9e69"><span class="section-number-4">11.13.1</span> Json</h4>
 <div class="outline-text-4" id="text-11-13-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> json
@@ -2619,12 +2652,12 @@ json.load(fp)
 </div>
 </div>
 
-<div id="outline-container-org4743483" class="outline-2">
-<h2 id="org4743483"><span class="section-number-2">12</span> Third party libraries</h2>
+<div id="outline-container-org2af3e92" class="outline-2">
+<h2 id="org2af3e92"><span class="section-number-2">12</span> Third party libraries</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-org76e329d" class="outline-3">
-<h3 id="org76e329d"><span class="section-number-3">12.1</span> urllib</h3>
+<div id="outline-container-orgfd394d6" class="outline-3">
+<h3 id="orgfd394d6"><span class="section-number-3">12.1</span> urllib</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">from</span> urllib <span class="org-keyword">import</span> request
@@ -2643,8 +2676,8 @@ json.load(fp)
 </div>
 </div>
 
-<div id="outline-container-org5e1e14f" class="outline-3">
-<h3 id="org5e1e14f"><span class="section-number-3">12.2</span> XML</h3>
+<div id="outline-container-org906608a" class="outline-3">
+<h3 id="org906608a"><span class="section-number-3">12.2</span> XML</h3>
 <div class="outline-text-3" id="text-12-2">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> xml.etree.ElementTree <span class="org-keyword">as</span> ET
@@ -2668,8 +2701,8 @@ APIs
 </ul>
 </div>
 </div>
-<div id="outline-container-org4104183" class="outline-3">
-<h3 id="org4104183"><span class="section-number-3">12.3</span> Requests</h3>
+<div id="outline-container-org36c1870" class="outline-3">
+<h3 id="org36c1870"><span class="section-number-3">12.3</span> Requests</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 <a href="http://docs.python-requests.org/en/master/">http://docs.python-requests.org/en/master/</a>
@@ -2677,8 +2710,8 @@ APIs
 </div>
 </div>
 
-<div id="outline-container-org96f6496" class="outline-3">
-<h3 id="org96f6496"><span class="section-number-3">12.4</span> BeautifulSoup</h3>
+<div id="outline-container-org8ef72ef" class="outline-3">
+<h3 id="org8ef72ef"><span class="section-number-3">12.4</span> BeautifulSoup</h3>
 <div class="outline-text-3" id="text-12-4">
 <p>
 The package is called <code>BeautifulSoup4</code>.
@@ -2753,11 +2786,11 @@ has some support for id and class, the <code>select</code> is easier to use.
 
 
 
-<div id="outline-container-org2d32e2f" class="outline-3">
-<h3 id="org2d32e2f"><span class="section-number-3">12.5</span> click <a href="http://click.pocoo.org/5/">http://click.pocoo.org/5/</a></h3>
+<div id="outline-container-org627eea2" class="outline-3">
+<h3 id="org627eea2"><span class="section-number-3">12.5</span> click <a href="http://click.pocoo.org/5/">http://click.pocoo.org/5/</a></h3>
 </div>
-<div id="outline-container-orgf6c4415" class="outline-3">
-<h3 id="orgf6c4415"><span class="section-number-3">12.6</span> matplotlib</h3>
+<div id="outline-container-orgde513f9" class="outline-3">
+<h3 id="orgde513f9"><span class="section-number-3">12.6</span> matplotlib</h3>
 <div class="outline-text-3" id="text-12-6">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
@@ -2813,8 +2846,8 @@ plt.savefig(filename)
 
 
 
-<div id="outline-container-orgd5466c0" class="outline-3">
-<h3 id="orgd5466c0"><span class="section-number-3">12.7</span> Deep Learning Framework</h3>
+<div id="outline-container-orgc6967cd" class="outline-3">
+<h3 id="orgc6967cd"><span class="section-number-3">12.7</span> Deep Learning Framework</h3>
 <div class="outline-text-3" id="text-12-7">
 <p>
 Select visible GPU in a multi-GPU setting:
