@@ -100,9 +100,16 @@ blockquote::before{
 }
 
 /* for side-by-side divs FIXME this should apply to .outline-* */
-div.outline-3 {
-    clear: both;
-}
+/* div.outline-3 { */
+/*     clear: both; */
+/* } */
+
+/* div.hebi-left { */
+/*     /\* or 60% *\/ */
+/*     max-width: 600px; */
+/*     float: left; */
+/*     margin-right: 20px; */
+/* } */
 
 #table-of-contents a {
     text-decoration: none;
