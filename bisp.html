@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bisp</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><div id="content">
+<h1 class="title">Bisp</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1e981e6">1. Rationale</a></li>
+<li><a href="#org2a47fef">2. Implementation</a></li>
+<li><a href="#org1b235f6">3. The Language</a>
+<ul>
+<li><a href="#org4578e51">3.1. Field Accessing with Dot-Notation</a></li>
+<li><a href="#org45a8c51">3.2. Multi-Dimensional Array: Indexing and Slicing</a></li>
+<li><a href="#org9c5ecdb">3.3. Optional Inline Type Annotation</a></li>
+<li><a href="#org38871cd">3.4. Multi-Dispatch Generic Functions by Default</a></li>
+<li><a href="#org2c9476e">3.5. function defs, default and keyword arguments</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1e981e6" class="outline-2">
+<h2 id="org1e981e6"><span class="section-number-2">1</span> Rationale</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Parenthesis is a good thing, as always, because:
+</p>
+<ul class="org-ul">
+<li>easy to parse, thus easy for syntax extension</li>
+<li>unambiguous</li>
+<li>structural editing</li>
+</ul>
+
+<p>
+However, abusing parenthesis creates readability problem, less elegent than
+Haskell, OCaml and Julia. 
+</p>
+
+<p>
+And due to insisting on parenthesis, some intuitive syntax becomes cubersome:
+</p>
+<ul class="org-ul">
+<li>hard to do <b>inline type annotations</b>. Prior art: typed racket, contracts,
+clojure specs</li>
+<li><b>struct field accessing</b>, the dot-notation, is missing</li>
+<li>hard to do <b>array indexing and slicing</b>, e.g. arr[3,0:7,:]</li>
+</ul>
+
+<p>
+Lisp dialects also fall short on <b>multi-dispatch generic
+functions</b>. Multi-dispatch generic functions is a great feature of Julia. It
+allows to override the same function name for different type and number of
+arguments. This matters a lot to save the namespace of functions, and makes the
+program elegent and extensible. Howver, in lisp dialects the support for
+multi-dispatch is not that good due to no proper type systems, for example
+generic method in racket and gerbil, defmulti in clojure.
+</p>
+
+
+<p>
+Thus my design goal for Bisp includes:
+</p>
+<ul class="org-ul">
+<li>retain all the <b>good parts of parenthesis</b>: syntactic abstraction, unambiguity,
+structural editing</li>
+<li><b>less parenthesis when appropriate</b> for better readability</li>
+<li><b>dot-notation</b> for struct field accessing</li>
+<li>support multi-dimensional arrays: <b>array indexing and slicing</b></li>
+<li><b>multi-dispatch generic methods</b>, by default</li>
+</ul>
+
+
+<p>
+In a word, Bisp is a lisp with a little less parenthesis, infix/postfix-notation
+when approprite, and multi-dispatching.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2a47fef" class="outline-2">
+<h2 id="org2a47fef"><span class="section-number-2">2</span> Implementation</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The semantic is mostly identical to that of Julia. Thus, it is probably best to
+implement the syntax atop Julia or Julia's IR.
+</p>
+
+<p>
+It might also make sense to freely mix Julia and Bisp at the top-level and by a
+<code>(JL 1+2*3)</code> syntax for e.g. mathematical equations:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">julia code</span>
+struct Pad end
+foo(a,b) = a + b
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Bisp code</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">bar</span> [a] (foo a 1))
+(<span class="org-keyword">def</span> <span class="org-variable-name">var</span> (JL
+          1 .+ ones(3,2) .* zeros(2,3)))
+</pre>
+</div>
+
+<p>
+Julia and Bisp functions can be freely called by each other as well.
+</p>
+
+<p>
+In summary, implementing Bisp on top of Julia gives:
+</p>
+<ul class="org-ul">
+<li>easy to implement</li>
+<li>Julia's JIT compiler, optimization, LLVM backend provides a solid performance
+fundation.</li>
+<li>access to all those Julia libraries, thus this might be the first lisp-for-statistics</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org1b235f6" class="outline-2">
+<h2 id="org1b235f6"><span class="section-number-2">3</span> The Language</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org4578e51" class="outline-3">
+<h3 id="org4578e51"><span class="section-number-3">3.1</span> Field Accessing with Dot-Notation</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<div style="width: 550px; float: left; margin-right: 20px;">
+</p>
+
+<p>
+Prior art: cubersome struct field accessing, the dot-notation is missing
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span class="org-comment-delimiter">;; </span><span class="org-comment">struct</span>
+(<span class="org-keyword">struct</span> Rect w h)
+(<span class="org-keyword">let</span> ([<span class="org-variable-name">r</span> (Rect <span class="org-racket-selfeval">2</span> <span class="org-racket-selfeval">3</span>)])
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">field accessing is cubersome</span>
+  (<span class="org-builtin">*</span> (Rect-w r)
+     (Rect-h r)))
+</pre>
+</div>
+
+<p>
+The problems:
+</p>
+<ul class="org-ul">
+<li><code>(foo-a x)</code>, not elegent</li>
+<li>The pattern matching with destructuring binds
+<ul class="org-ul">
+<li>fragile</li>
+<li>have to bind all the fields</li>
+</ul></li>
+</ul>
+
+<p>
+</div>
+</p>
+
+<p>
+Instead, Bisp uses dot-notation:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure">(<span class="org-keyword">defstruct</span> <span class="org-type">Rect</span>
+  w<span class="org-clojure-keyword">::Number</span> h)
+
+(<span class="org-keyword">defstruct</span> <span class="org-type">Circle</span> r)
+
+(<span class="org-keyword">let</span> [a (Rect)
+      b (Circle)]
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">access using dot notation</span>
+  (+ a.w b.r))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org45a8c51" class="outline-3">
+<h3 id="org45a8c51"><span class="section-number-3">3.2</span> Multi-Dimensional Array: Indexing and Slicing</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<div style="width: 550px; float: left; margin-right: 20px;">
+</p>
+
+<p>
+Prior art: hard to do array indexing and slicing, e.g. the racket way:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span class="org-comment-delimiter">;; </span><span class="org-comment">array indexing and slicing</span>
+(array-ref arr #(<span class="org-racket-selfeval">2</span> <span class="org-racket-selfeval">3</span>))
+(array-set! brr #(<span class="org-racket-selfeval">2</span> <span class="org-racket-selfeval">3</span>) <span class="org-racket-selfeval">10</span>)
+(array-slice-ref arr (<span class="org-builtin">list</span> (::) (:: <span class="org-racket-selfeval">#f</span> <span class="org-racket-selfeval">#f</span> <span class="org-racket-selfeval">-1</span>)))
+</pre>
+</div>
+
+<p>
+</div>
+</p>
+
+<p>
+Bisp uses postfix indexing and slicing:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">define an array</span>
+(<span class="org-keyword">def</span> <span class="org-variable-name">arr</span> (ones 3 2))
+<span class="org-comment-delimiter">;; </span><span class="org-comment">indexing: I found comma probably makes it more clear here</span>
+arr[1, 2]
+<span class="org-comment-delimiter">;; </span><span class="org-comment">slicing</span>
+arr[:, 0:1]
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">array type</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::Array</span>{Any 3} b]
+  <span class="org-constant">nil</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9c5ecdb" class="outline-3">
+<h3 id="org9c5ecdb"><span class="section-number-3">3.3</span> Optional Inline Type Annotation</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+<div style="width: 550px; float: left; margin-right: 20px;">
+</p>
+
+<p>
+Previous lisp is hard to do inline type annotations.  Prior art: typed racket,
+contracts, clojure specs.
+</p>
+
+<p>
+For example, typed racket:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span class="org-comment-delimiter">;; </span><span class="org-comment">outline annotation</span>
+(<span class="org-builtin">:</span> distance (<span class="org-builtin">-&gt;</span> pt pt <span class="org-type">Real</span>))
+(<span class="org-keyword">define</span> (<span class="org-function-name">distance</span> p1 p2)
+  (<span class="org-builtin">sqrt</span> (<span class="org-builtin">+</span> (<span class="org-builtin">sqr</span> (<span class="org-builtin">-</span> (pt-x p2) (pt-x p1)))
+           (<span class="org-builtin">sqr</span> (<span class="org-builtin">-</span> (pt-y p2) (pt-y p1))))))
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">inline annotations</span>
+(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> <span class="org-builtin">:</span> <span class="org-type">Number</span> <span class="org-racket-selfeval">7</span>])
+  (<span class="org-builtin">add1</span> x))
+(<span class="org-keyword">lambda</span> ([x <span class="org-builtin">:</span> <span class="org-type">Number</span>] [y <span class="org-builtin">:</span> <span class="org-type">String</span>]) (<span class="org-builtin">+</span> x <span class="org-racket-selfeval">5</span>))
+</pre>
+</div>
+
+<p>
+The problems:
+</p>
+<ul class="org-ul">
+<li>I prefer inline type annotation</li>
+<li>the inline notation of the typed racket introduces extra parenthesis, due to
+added spaced words.</li>
+</ul>
+
+<p>
+</div>
+</p>
+
+<p>
+Instead, the type annotations in Bisp simply uses <code>y::String</code> <b>without extra
+spaces</b>, and it should be nice and clear:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">optional type</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::Number</span> b] <span class="org-constant">nil</span>)
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::String</span> b] <span class="org-constant">nil</span>)
+<span class="org-comment-delimiter">;; </span><span class="org-comment">union type</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::Union</span>{Integer, Float} b] <span class="org-constant">nil</span>)
+</pre>
+</div>
+
+<p>
+Support parametric types
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">parametric type</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::Number</span> b c<span class="org-clojure-keyword">::T</span> d<span class="org-clojure-keyword">::T</span>
+           #<span class="org-clojure-keyword">:where</span> (&lt;: T Real)]
+  <span class="org-constant">nil</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org38871cd" class="outline-3">
+<h3 id="org38871cd"><span class="section-number-3">3.4</span> Multi-Dispatch Generic Functions by Default</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+ALL functions are generic methods. You define the same name multiple times
+(instead of define <code>foobar-number</code>, <code>foobar-string</code>), and they are dispatched
+upon calling:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">by default, all functions are methods</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a] <span class="org-constant">nil</span>)
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a b] <span class="org-string">"no annotation"</span>)
+<span class="org-comment-delimiter">;; </span><span class="org-comment">optional type</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::Number</span> b] <span class="org-string">"number"</span>)
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::String</span> b] <span class="org-string">"string"</span>)
+
+foo
+<span class="org-comment-delimiter">; </span><span class="org-comment">=&gt; generic function with 4 methods</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c9476e" class="outline-3">
+<h3 id="org2c9476e"><span class="section-number-3">3.5</span> function defs, default and keyword arguments</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+Bisp is lisp-1, i.e. unified namespace for functions and variables. Functions
+are first-class, the following defs are equivalent:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure">(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a b] <span class="org-constant">nil</span>)
+<span class="org-comment-delimiter">;; </span><span class="org-comment">same as</span>
+(<span class="org-keyword">def</span> <span class="org-variable-name">foo</span> (&#955; [a b] <span class="org-constant">nil</span>))
+</pre>
+</div>
+
+<p>
+Default arguments are given by infix notation. You don't specify type and
+default value together because it can be inferred by the value. All default
+values must be after non-default ones.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure">(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a b=3 c=<span class="org-string">"default"</span>] <span class="org-constant">nil</span>)
+<span class="org-comment-delimiter">;; </span><span class="org-comment">keyword arguments separated by #:key. Here default values can be in any order</span>
+</pre>
+</div>
+
+<p>
+Keyword arguments are whatever after <code>&amp;</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure">(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::Number</span> b c=3
+           &amp; x<span class="org-clojure-keyword">::String</span> y z=<span class="org-string">"defz"</span>]
+  <span class="org-constant">nil</span>)
+<span class="org-comment-delimiter">;; </span><span class="org-comment">function call with keyword arguments</span>
+(foo 1 2 x=<span class="org-string">"X"</span> y=8)
+</pre>
+</div>
+
+<p>
+varargs support with intuitive <code>...</code> syntax as Julia, in both function defs and
+callsite, and wherever makes sense:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">var args in both function definition and callsite</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">foo</span> [a<span class="org-clojure-keyword">::String</span> b<span class="org-clojure-keyword">::Number</span> args...]
+  body)
+(foo <span class="org-string">"hello"</span> 8 '(a l i s t)...)
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">also support slicing inside a list or wherever appropriate, not just function callsite</span>
+(1 2 '(3 4 5)... 6 7)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
