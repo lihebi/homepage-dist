@@ -163,13 +163,14 @@ pre.example {
 }
 
 
-.figure {
-    display: inline;
-}
+/* FIXME why display: inline? */
+/* .figure { */
+/*     display: inline; */
+/* } */
 
-.figure p {
-    display: inline;
-}
+/* .figure p { */
+/*     display: inline; */
+/* } */
 
 
 /* TODO Admonitions from
