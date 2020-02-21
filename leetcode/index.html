@@ -276,11 +276,10 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org90bb21a">1.1. <span class="todo TODO">TODO</span> dynamic programming</a>
 <ul>
-<li><a href="#org0217384">1.1.1. 546 remove-boxes</a>
-<ul>
-<li><a href="#orgd1848e4">1.1.1.1. 312 burst-balloons</a></li>
-</ul>
-</li>
+<li><a href="#org85e5405">1.1.1. 546 remove-boxes (extra-state DP)</a></li>
+<li><a href="#org0feec93">1.1.2. 312 burst-balloons (complement's DP)</a></li>
+<li><a href="#orgc6133d9">1.1.3. 887 egg drop (complement's DP)</a></li>
+<li><a href="#org1a8e552">1.1.4. (920) number of playlists</a></li>
 </ul>
 </li>
 <li><a href="#org9163df3">1.2. <span class="todo TODO">TODO</span> recursion</a></li>
@@ -308,8 +307,8 @@ for the JavaScript code in this tag.
 <h3 id="org90bb21a"><span class="section-number-3">1.1</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/dynamic-programming/">dynamic programming</a></h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org0217384" class="outline-4">
-<h4 id="org0217384"><span class="section-number-4">1.1.1</span> <a href="https://leetcode.com/problems/remove-boxes/">546 remove-boxes</a></h4>
+<div id="outline-container-org85e5405" class="outline-4">
+<h4 id="org85e5405"><span class="section-number-4">1.1.1</span> <a href="https://leetcode.com/problems/remove-boxes/">546 remove-boxes</a> (extra-state DP)</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 This is very good problem. This extends simple DP with
@@ -415,28 +414,157 @@ Some tests:
 </pre>
 </div>
 </div>
+</div>
 
-
-
-
-
-
-
-
-<div id="outline-container-orgd1848e4" class="outline-5">
-<h5 id="orgd1848e4"><span class="section-number-5">1.1.1.1</span> <a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a></h5>
-<div class="outline-text-5" id="text-1-1-1-1">
+<div id="outline-container-org0feec93" class="outline-4">
+<h4 id="org0feec93"><span class="section-number-4">1.1.2</span> <a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a> (complement's DP)</h4>
+<div class="outline-text-4" id="text-1-1-2">
 <p>
 This related, and contains not only one k, but two ks for left and right.
 </p>
 
 <p>
-See <a href="https://leetcode.com/problems/burst-balloons/discuss/76228/share-some-analysis-and-explanations">this post</a>.
+See <a href="https://leetcode.com/problems/burst-balloons/discuss/76228/">this post</a> and <a href="https://leetcode.com/problems/burst-balloons/discuss/76229/">this</a>.
 </p>
+
+<p>
+This actually <i>much easier</i>, and not related to remove boxes at all. But there's
+one tricky thing to notice: <code>dp(i,j)</code> should indicates the maximum coins we get
+when we <b>burst all bolloons</b> in <code>[i:j]</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">maxCoins</span>(<span class="org-keyword">self</span>, nums: List[<span class="org-builtin">int</span>]) -&gt; <span class="org-builtin">int</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">n</span> = <span class="org-builtin">len</span>(nums)
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span> = np.zeros((n, n), <span class="org-builtin">int</span>)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">coins</span>(i, j, k):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> nums[k] * (nums[i] <span class="org-keyword">if</span> i&gt;=0 <span class="org-keyword">else</span> 1) * (nums[j] <span class="org-keyword">if</span> j&lt;n <span class="org-keyword">else</span> 1)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">dp</span>(i, j):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">the max coins we get when we burst all bolloons [i:j]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> i &gt; j: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> i == j: <span class="org-keyword">return</span> coins(i-1,j+1,i)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> mem[i,j] &gt; 0: <span class="org-keyword">return</span> mem[i,j]
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">cands</span> = []
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> k <span class="org-keyword">in</span> <span class="org-builtin">range</span>(i,j+1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">cand</span> = dp(i, k-1) + dp(k+1, j) + coins(i-1, j+1, k)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   cands.append(cand)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = <span class="org-builtin">max</span>(cands)
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span>[i,j] = res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> dp(0, n-1)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">167</span>
+maxCoins([3,1,5,8])
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc6133d9" class="outline-4">
+<h4 id="orgc6133d9"><span class="section-number-4">1.1.3</span> <a href="https://leetcode.com/problems/super-egg-drop/">887 egg drop</a> (complement's DP)</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+See the first discussion in <a href="https://leetcode.com/problems/super-egg-drop/discuss/158974">this post</a>.  This looks like a number trick, but
+turns out not. Looks like we have to use DP. There are several tricks:
+</p>
+<ol class="org-ol">
+<li>Work on <b><code>dp(M,K)</code> instead of <code>dp(N,K)</code></b>. I.e. in M moves and K eggs, what is
+   the largest number N of floors we can check.</li>
+<li>the dp equation is tricky:</li>
+</ol>
+
+<pre class="example">
+dp(m,k) = dp(m-1,k-1) + dp(m-1,k) + 1
+</pre>
+
+<p>
+We first try <code>dp(m-1,k-1)</code>, i.e. one less move, one less eggs, so that we have
+room for next experiment. So, the first floor we try is <code>dp(m-1,k-1)+1</code>. If it
+breaks, we use check the lower floors with <code>dp(m-1,k-1)</code>. If it doesn't break,
+we still have <code>k</code> eggs, and we can check <code>dp(m-1,k)</code> more. Thus the equation.
+</p>
+
+<p>
+Reference to <a href="https://leetcode.com/problems/number-of-music-playlists/discuss/180338">this post</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+<span class="org-keyword">import</span> numpy <span class="org-keyword">as</span> np
+<span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">superEggDrop</span>(<span class="org-keyword">self</span>, K: <span class="org-builtin">int</span>, N: <span class="org-builtin">int</span>) -&gt; <span class="org-builtin">int</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span> = np.zeros((N+1,K+1), <span class="org-builtin">int</span>)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">dp</span>(m,k):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> m==0 <span class="org-keyword">or</span> k==0: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> m==1 <span class="org-keyword">and</span> k==1: <span class="org-keyword">return</span> 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> mem[m,k] &gt; 0: <span class="org-keyword">return</span> mem[m,k]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = dp(m-1, k-1) + dp(m-1,k) + 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span>[m,k] = res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> m <span class="org-keyword">in</span> <span class="org-builtin">range</span>(N+1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> dp(m,K) &gt;= N:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> m
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">assert</span> <span class="org-constant">False</span>
+
+Solution().superEggDrop(1,2)    <span class="org-comment-delimiter"># </span><span class="org-comment">2</span>
+Solution().superEggDrop(2,6)    <span class="org-comment-delimiter"># </span><span class="org-comment">3</span>
+Solution().superEggDrop(3,14)   <span class="org-comment-delimiter"># </span><span class="org-comment">4</span>
+Solution().superEggDrop(2,2)    <span class="org-comment-delimiter"># </span><span class="org-comment">2</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1a8e552" class="outline-4">
+<h4 id="org1a8e552"><span class="section-number-4">1.1.4</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+The second requirement is ambigious. Other than that, the DP equation is pretty
+regular. However, two things worth noticing:
+</p>
+<ol class="org-ol">
+<li>the initial condition</li>
+<li>the recursion version is so much slower</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">numMusicPlaylists</span>(<span class="org-keyword">self</span>, N: <span class="org-builtin">int</span>, L: <span class="org-builtin">int</span>, K: <span class="org-builtin">int</span>) -&gt; <span class="org-builtin">int</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mod</span> = 10 ** 9 + 7
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span> = np.zeros((N+1, L+1), <span class="org-builtin">int</span>)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">dp</span>(n, l):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> l == 0 <span class="org-keyword">and</span> n == 0: <span class="org-keyword">return</span> 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> n == 0 <span class="org-keyword">and</span> l &gt; 0: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> l == 0 <span class="org-keyword">and</span> n &gt; 0: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> mem[n,l] &gt;0: <span class="org-keyword">return</span> mem[n,l]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = dp(n-1, l-1) * n + dp(n, l-1) * <span class="org-builtin">max</span>(n-K, 0)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span>[n,l] = res % mod
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> mem[n,l]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">return dp(N,L) % mod</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter">#</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">ok, this is much faster!!</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span>[0,0] = 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> ni <span class="org-keyword">in</span> <span class="org-builtin">range</span>(1,N+1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> li <span class="org-keyword">in</span> <span class="org-builtin">range</span>(ni,L+1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span>[ni,li] = (mem[ni-1,li-1] * ni + mem[ni,li-1] * <span class="org-builtin">max</span>(ni-K,0)) % mod
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> mem[N,L]
+
+Solution().numMusicPlaylists(3,3,1)  <span class="org-comment-delimiter"># </span><span class="org-comment">6</span>
+Solution().numMusicPlaylists(2,3,0)  <span class="org-comment-delimiter"># </span><span class="org-comment">6</span>
+Solution().numMusicPlaylists(2,3,1)  <span class="org-comment-delimiter"># </span><span class="org-comment">2</span>
+Solution().numMusicPlaylists(1,1,0)  <span class="org-comment-delimiter"># </span><span class="org-comment">1</span>
+
+Solution().numMusicPlaylists(16, 16, 4)  <span class="org-comment-delimiter"># </span><span class="org-comment">789741546</span>
+Solution().numMusicPlaylists(25, 28, 5)  <span class="org-comment-delimiter"># </span><span class="org-comment">906368459</span>
+</pre>
 </div>
 </div>
 </div>
 </div>
+
 
 <div id="outline-container-org9163df3" class="outline-3">
 <h3 id="org9163df3"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/recursion/">recursion</a></h3>
