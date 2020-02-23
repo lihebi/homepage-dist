@@ -796,6 +796,7 @@ and record two sets:
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">stop</span> = <span class="org-builtin">set</span>()
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.flag = <span class="org-constant">True</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">visit</span>(item):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">cycle</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> item <span class="org-keyword">in</span> done:
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.flag = <span class="org-constant">False</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span>
@@ -807,6 +808,7 @@ and record two sets:
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">l</span> = leftChild[item]
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">r</span> = rightChild[item]
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   visit(item)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">early return if cycle</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-keyword">self</span>.flag:
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   travel(l)
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   travel(r)
@@ -815,9 +817,10 @@ and record two sets:
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   travel(i)
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   stop.add(i)
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   done.remove(i)
-<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">count stop</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-keyword">not</span> <span class="org-keyword">self</span>.flag: <span class="org-keyword">return</span> <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">separated graph</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">len</span>(stop) &gt; 1: <span class="org-keyword">return</span> <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">early stoped (should be unnecessary)</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">len</span>(done) != n-1: <span class="org-keyword">return</span> <span class="org-constant">False</span>
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-constant">True</span>
 </pre>
