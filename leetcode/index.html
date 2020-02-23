@@ -288,10 +288,49 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgfd04f1b">2. <span class="priority">[A]</span> special problems</a>
 <ul>
-<li><a href="#orgd92665a">2.1. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> bit manipulation</a></li>
-<li><a href="#org31877a0">2.2. <span class="todo TODO">TODO</span> union find (29)</a></li>
-<li><a href="#org490f743">2.3. <span class="todo TODO">TODO</span> two pointers</a></li>
-<li><a href="#org799db16">2.4. <span class="todo TODO">TODO</span> sliding window</a></li>
+<li><a href="#org1472849">2.1. Number theory</a>
+<ul>
+<li><a href="#org6e300d9">2.1.1. 1363. Largest Multiple of Three</a></li>
+</ul>
+</li>
+<li><a href="#orgd92665a">2.2. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> bit manipulation</a></li>
+<li><a href="#org31877a0">2.3. <span class="todo TODO">TODO</span> union find (29)</a></li>
+<li><a href="#org490f743">2.4. <span class="todo TODO">TODO</span> two pointers</a></li>
+<li><a href="#org799db16">2.5. <span class="todo TODO">TODO</span> sliding window</a></li>
+</ul>
+</li>
+<li><a href="#orgb12e02c">3. random tricks</a>
+<ul>
+<li><a href="#orgda24e23">3.1. string functions</a></li>
+</ul>
+</li>
+<li><a href="#org9a25b45">4. data structures</a>
+<ul>
+<li><a href="#org64c2fc1">4.1. linear</a>
+<ul>
+<li><a href="#orgc8f903c">4.1.1. stack</a></li>
+<li><a href="#org486df7c">4.1.2. linked list</a></li>
+<li><a href="#org8621d09">4.1.3. queue</a></li>
+</ul>
+</li>
+<li><a href="#org23c83df">4.2. hash table</a>
+<ul>
+<li><a href="#org9bfeddd">4.2.1. ordered map</a></li>
+</ul>
+</li>
+<li><a href="#org9a149de">4.3. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> tree</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org8517a24">4.3.0.1. 1361. Validate Binary Tree Nodes</a></li>
+</ul>
+</li>
+<li><a href="#org1d537f2">4.3.1. trie</a></li>
+<li><a href="#org519c057">4.3.2. heap</a></li>
+<li><a href="#orga1e3bfa">4.3.3. segment tree</a></li>
+</ul>
+</li>
+<li><a href="#orgc2df350">4.4. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</a></li>
 </ul>
 </li>
 </ul>
@@ -578,12 +617,78 @@ Solution().numMusicPlaylists(25, 28, 5)  <span class="org-comment-delimiter"># <
 <h2 id="orgfd04f1b"><span class="section-number-2">2</span> <span class="priority">[A]</span> special problems</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgd92665a" class="outline-3">
-<h3 id="orgd92665a"><span class="section-number-3">2.1</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> <a href="https://leetcode.com/tag/bit-manipulation/">bit manipulation</a></h3>
+<div id="outline-container-org1472849" class="outline-3">
+<h3 id="org1472849"><span class="section-number-3">2.1</span> Number theory</h3>
+<div class="outline-text-3" id="text-2-1">
 </div>
+<div id="outline-container-org6e300d9" class="outline-4">
+<h4 id="org6e300d9"><span class="section-number-4">2.1.1</span> <a href="https://leetcode.com/problems/largest-multiple-of-three/">1363. Largest Multiple of Three</a></h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+A typical mod-of-3 problem. The trick is to <code>reduce_147</code> (1 mod 3) or
+<code>reduce_258</code> (2 mod 3) either 1 or 2 times.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">largestMultipleOfThree</span>(<span class="org-keyword">self</span>, digits: List[<span class="org-builtin">int</span>]) -&gt; <span class="org-builtin">str</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">digits</span> = <span class="org-builtin">sorted</span>(digits, reverse=<span class="org-constant">True</span>)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">d</span> = {}
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(10):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">d</span>[i] = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i <span class="org-keyword">in</span> digits:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">d</span>[i] += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">construct</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = <span class="org-string">''</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(9,-1,-1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += <span class="org-builtin">str</span>(i) * d[i]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-keyword">not</span> res: <span class="org-keyword">return</span> res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-builtin">str</span>(<span class="org-builtin">int</span>(res))
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">reduce_258</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> d[2] &gt;= 1: <span class="org-variable-name">d</span>[2] -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> d[5] &gt;= 1: <span class="org-variable-name">d</span>[5] -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> d[8] &gt;= 1: <span class="org-variable-name">d</span>[8] -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>: <span class="org-keyword">assert</span> <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">reduce_147</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> d[1] &gt;= 1: <span class="org-variable-name">d</span>[1] -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> d[4] &gt;= 1: <span class="org-variable-name">d</span>[4] -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> d[7] &gt;= 1: <span class="org-variable-name">d</span>[7] -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>: <span class="org-keyword">assert</span> <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">sum</span>(digits) % 3 == 0:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> construct()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">sum</span>(digits) % 3 == 1:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> d[1] + d[4] + d[7] &gt;= 1:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   reduce_147()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> construct()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> d[2] + d[5] + d[8] &gt;= 2:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   reduce_258()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   reduce_258()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> construct()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>: <span class="org-keyword">return</span> <span class="org-string">''</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">sum</span>(digits) % 3 == 2:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> d[2] + d[5] + d[8] &gt;= 1:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   reduce_258()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> construct()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> d[1] + d[4] + d[7] &gt;= 2:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   reduce_147()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   reduce_147()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> construct()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>: <span class="org-keyword">return</span> <span class="org-string">''</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd92665a" class="outline-3">
+<h3 id="orgd92665a"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> <a href="https://leetcode.com/tag/bit-manipulation/">bit manipulation</a></h3>
+</div>
+
+
 <div id="outline-container-org31877a0" class="outline-3">
-<h3 id="org31877a0"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/union-find/">union find (29)</a></h3>
-<div class="outline-text-3" id="text-2-2">
+<h3 id="org31877a0"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/union-find/">union find (29)</a></h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 This looks interesting
 </p>
@@ -591,8 +696,8 @@ This looks interesting
 </div>
 
 <div id="outline-container-org490f743" class="outline-3">
-<h3 id="org490f743"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/two-pointers/">two pointers</a></h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="org490f743"><span class="section-number-3">2.4</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/two-pointers/">two pointers</a></h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
 (HEBI: ??) but looks interesting
 </p>
@@ -600,12 +705,142 @@ This looks interesting
 </div>
 
 <div id="outline-container-org799db16" class="outline-3">
-<h3 id="org799db16"><span class="section-number-3">2.4</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/sliding-window/">sliding window</a></h3>
-<div class="outline-text-3" id="text-2-4">
+<h3 id="org799db16"><span class="section-number-3">2.5</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/sliding-window/">sliding window</a></h3>
+<div class="outline-text-3" id="text-2-5">
 <p>
 Looks like sequence matching
 </p>
 </div>
+</div>
+</div>
+
+<div id="outline-container-orgb12e02c" class="outline-2">
+<h2 id="orgb12e02c"><span class="section-number-2">3</span> random tricks</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+integer to binary string: <code>bin(324)</code>
+</p>
+
+<p>
+sort with multiple keys:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-builtin">sorted</span>([0,1,2,3,4,5,6,7,8], key=<span class="org-keyword">lambda</span> x: (x%3, x))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgda24e23" class="outline-3">
+<h3 id="orgda24e23"><span class="section-number-3">3.1</span> string functions</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-doc">'hello'</span>.count(<span class="org-doc">'l'</span>)
+<span class="org-doc">'hello'</span>.index(<span class="org-doc">'e'</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9a25b45" class="outline-2">
+<h2 id="org9a25b45"><span class="section-number-2">4</span> data structures</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org64c2fc1" class="outline-3">
+<h3 id="org64c2fc1"><span class="section-number-3">4.1</span> linear</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-orgc8f903c" class="outline-4">
+<h4 id="orgc8f903c"><span class="section-number-4">4.1.1</span> stack</h4>
+</div>
+<div id="outline-container-org486df7c" class="outline-4">
+<h4 id="org486df7c"><span class="section-number-4">4.1.2</span> linked list</h4>
+</div>
+<div id="outline-container-org8621d09" class="outline-4">
+<h4 id="org8621d09"><span class="section-number-4">4.1.3</span> queue</h4>
+</div>
+</div>
+
+<div id="outline-container-org23c83df" class="outline-3">
+<h3 id="org23c83df"><span class="section-number-3">4.2</span> hash table</h3>
+<div class="outline-text-3" id="text-4-2">
+</div>
+<div id="outline-container-org9bfeddd" class="outline-4">
+<h4 id="org9bfeddd"><span class="section-number-4">4.2.1</span> ordered map</h4>
+</div>
+</div>
+
+<div id="outline-container-org9a149de" class="outline-3">
+<h3 id="org9a149de"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> tree</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-org8517a24" class="outline-5">
+<h5 id="org8517a24"><span class="section-number-5">4.3.0.1</span> <a href="https://leetcode.com/problems/validate-binary-tree-nodes/">1361. Validate Binary Tree Nodes</a></h5>
+<div class="outline-text-5" id="text-4-3-0-1">
+<p>
+This is a pretty typical problem. The tree is valid if there's no (not
+necessarily directed) cycle. To do that, traverse the tree from any given point,
+and record two sets:
+</p>
+<ul class="org-ul">
+<li><code>stop</code>: current active given point. Other traversal should stop here.</li>
+<li><code>done</code>: all visited nodes except the current active stop points.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">validateBinaryTreeNodes</span>(<span class="org-keyword">self</span>, n: <span class="org-builtin">int</span>, leftChild: List[<span class="org-builtin">int</span>], rightChild: List[<span class="org-builtin">int</span>]) -&gt; <span class="org-builtin">bool</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">done</span> = <span class="org-builtin">set</span>()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">stop</span> = <span class="org-builtin">set</span>()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.flag = <span class="org-constant">True</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">visit</span>(item):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> item <span class="org-keyword">in</span> done:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.flag = <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> item <span class="org-keyword">in</span> stop:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   stop.remove(item)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   done.add(item)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">travel</span>(item):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> item == -1: <span class="org-keyword">return</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">l</span> = leftChild[item]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">r</span> = rightChild[item]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   visit(item)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-keyword">self</span>.flag:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   travel(l)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   travel(r)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(n):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-keyword">not</span> i <span class="org-keyword">in</span> done <span class="org-keyword">and</span> <span class="org-keyword">not</span> i <span class="org-keyword">in</span> stop:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   travel(i)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   stop.add(i)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   done.remove(i)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">count stop</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-keyword">not</span> <span class="org-keyword">self</span>.flag: <span class="org-keyword">return</span> <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">len</span>(stop) &gt; 1: <span class="org-keyword">return</span> <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">len</span>(done) != n-1: <span class="org-keyword">return</span> <span class="org-constant">False</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org1d537f2" class="outline-4">
+<h4 id="org1d537f2"><span class="section-number-4">4.3.1</span> trie</h4>
+</div>
+<div id="outline-container-org519c057" class="outline-4">
+<h4 id="org519c057"><span class="section-number-4">4.3.2</span> heap</h4>
+</div>
+<div id="outline-container-orga1e3bfa" class="outline-4">
+<h4 id="orga1e3bfa"><span class="section-number-4">4.3.3</span> segment tree</h4>
+</div>
+</div>
+
+<div id="outline-container-orgc2df350" class="outline-3">
+<h3 id="orgc2df350"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</h3>
 </div>
 </div>
 </div>
