@@ -272,36 +272,42 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaece143">1. <span class="priority">[A]</span> approaches</a>
+<li><a href="#orgb12e02c">1. random tricks</a>
 <ul>
-<li><a href="#org90bb21a">1.1. <span class="todo TODO">TODO</span> dynamic programming</a>
-<ul>
-<li><a href="#org85e5405">1.1.1. 546 remove-boxes (extra-state DP)</a></li>
-<li><a href="#org0feec93">1.1.2. 312 burst-balloons (complement's DP)</a></li>
-<li><a href="#orgc6133d9">1.1.3. 887 egg drop (complement's DP)</a></li>
-<li><a href="#org1a8e552">1.1.4. (920) number of playlists</a></li>
+<li><a href="#orgda24e23">1.1. string functions</a></li>
 </ul>
 </li>
-<li><a href="#org9163df3">1.2. <span class="todo TODO">TODO</span> recursion</a></li>
-<li><a href="#org6fc76ef">1.3. <span class="todo TODO">TODO</span> divide and conquer</a></li>
+<li><a href="#orgaece143">2. <span class="priority">[A]</span> approaches</a>
+<ul>
+<li><a href="#org90bb21a">2.1. <span class="todo TODO">TODO</span> dynamic programming</a>
+<ul>
+<li><a href="#orgd11c4d0">2.1.1. (extra-state DP)</a></li>
+<li><a href="#org42cd31d">2.1.2. complement's DP</a></li>
+<li><a href="#org488cc42">2.1.3. complement's DP</a></li>
+<li><a href="#org5e72612">2.1.4. Palindromic</a></li>
+<li><a href="#orgbbf2f75">2.1.5. nested DP</a></li>
+<li><a href="#org362f049">2.1.6. Other (easy) DP problems</a>
+<ul>
+<li><a href="#org1a8e552">2.1.6.1. (920) number of playlists</a></li>
 </ul>
 </li>
-<li><a href="#orgfd04f1b">2. <span class="priority">[A]</span> special problems</a>
-<ul>
-<li><a href="#org1472849">2.1. Number theory</a>
-<ul>
-<li><a href="#org6e300d9">2.1.1. 1363. Largest Multiple of Three</a></li>
 </ul>
 </li>
-<li><a href="#orgd92665a">2.2. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> bit manipulation</a></li>
-<li><a href="#org31877a0">2.3. <span class="todo TODO">TODO</span> union find (29)</a></li>
-<li><a href="#org490f743">2.4. <span class="todo TODO">TODO</span> two pointers</a></li>
-<li><a href="#org799db16">2.5. <span class="todo TODO">TODO</span> sliding window</a></li>
+<li><a href="#org9163df3">2.2. <span class="todo TODO">TODO</span> recursion</a></li>
+<li><a href="#org6fc76ef">2.3. <span class="todo TODO">TODO</span> divide and conquer</a></li>
 </ul>
 </li>
-<li><a href="#orgb12e02c">3. random tricks</a>
+<li><a href="#orgfd04f1b">3. <span class="priority">[A]</span> special problems</a>
 <ul>
-<li><a href="#orgda24e23">3.1. string functions</a></li>
+<li><a href="#org1472849">3.1. Number theory</a>
+<ul>
+<li><a href="#org6e300d9">3.1.1. 1363. Largest Multiple of Three</a></li>
+</ul>
+</li>
+<li><a href="#orgd92665a">3.2. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> bit manipulation</a></li>
+<li><a href="#org31877a0">3.3. <span class="todo TODO">TODO</span> union find (29)</a></li>
+<li><a href="#org490f743">3.4. <span class="todo TODO">TODO</span> two pointers</a></li>
+<li><a href="#org799db16">3.5. <span class="todo TODO">TODO</span> sliding window</a></li>
 </ul>
 </li>
 <li><a href="#org9a25b45">4. data structures</a>
@@ -333,22 +339,82 @@ for the JavaScript code in this tag.
 <li><a href="#orgc2df350">4.4. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</a></li>
 </ul>
 </li>
+<li><a href="#orga031912">5. Tricky problems</a>
+<ul>
+<li><a href="#orge4d9a85">5.1. 466. Count The Repetitions (ultra large but repetitive subsequence finding)</a></li>
 </ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb12e02c" class="outline-2">
+<h2 id="orgb12e02c"><span class="section-number-2">1</span> random tricks</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+integer to binary string: <code>bin(324)</code>
+</p>
+
+<p>
+sort with multiple keys:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-builtin">sorted</span>([0,1,2,3,4,5,6,7,8], key=<span class="org-keyword">lambda</span> x: (x%3, x))
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>ord</li>
+<li>chr</li>
+</ul>
+
+<p>
+<code>@lru_cache</code> decorator can be used for implementing DP, but looks like I have
+to  use it carefully to always increase the argument:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> functools <span class="org-keyword">import</span> lru_cache
+
+<span class="org-type">@lru_cache</span>(maxsize=<span class="org-constant">None</span>)
+<span class="org-keyword">def</span> <span class="org-function-name">fibonacci_recursive</span>(n):
+</pre>
+</div>
+
+<p>
+9//2 is same as math.floor(9/2)
+</p>
+</div>
+
+
+<div id="outline-container-orgda24e23" class="outline-3">
+<h3 id="orgda24e23"><span class="section-number-3">1.1</span> string functions</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-doc">'hello'</span>.count(<span class="org-doc">'l'</span>)
+<span class="org-doc">'hello'</span>.index(<span class="org-doc">'e'</span>)
+</pre>
+</div>
+</div>
 </div>
 </div>
 
 
 <div id="outline-container-orgaece143" class="outline-2">
-<h2 id="orgaece143"><span class="section-number-2">1</span> <span class="priority">[A]</span> approaches</h2>
-<div class="outline-text-2" id="text-1">
+<h2 id="orgaece143"><span class="section-number-2">2</span> <span class="priority">[A]</span> approaches</h2>
+<div class="outline-text-2" id="text-2">
 </div>
 <div id="outline-container-org90bb21a" class="outline-3">
-<h3 id="org90bb21a"><span class="section-number-3">1.1</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/dynamic-programming/">dynamic programming</a></h3>
-<div class="outline-text-3" id="text-1-1">
+<h3 id="org90bb21a"><span class="section-number-3">2.1</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/dynamic-programming/">dynamic programming</a></h3>
+<div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org85e5405" class="outline-4">
-<h4 id="org85e5405"><span class="section-number-4">1.1.1</span> <a href="https://leetcode.com/problems/remove-boxes/">546 remove-boxes</a> (extra-state DP)</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-orgd11c4d0" class="outline-4">
+<h4 id="orgd11c4d0"><span class="section-number-4">2.1.1</span> (extra-state DP)</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+<a href="https://leetcode.com/problems/remove-boxes/">546 remove-boxes</a>
+</p>
+
 <p>
 This is very good problem. This extends simple DP with
 </p>
@@ -455,9 +521,13 @@ Some tests:
 </div>
 </div>
 
-<div id="outline-container-org0feec93" class="outline-4">
-<h4 id="org0feec93"><span class="section-number-4">1.1.2</span> <a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a> (complement's DP)</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-org42cd31d" class="outline-4">
+<h4 id="org42cd31d"><span class="section-number-4">2.1.2</span> complement's DP</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+<a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a> 
+</p>
+
 <p>
 This related, and contains not only one k, but two ks for left and right.
 </p>
@@ -501,9 +571,13 @@ maxCoins([3,1,5,8])
 </div>
 </div>
 
-<div id="outline-container-orgc6133d9" class="outline-4">
-<h4 id="orgc6133d9"><span class="section-number-4">1.1.3</span> <a href="https://leetcode.com/problems/super-egg-drop/">887 egg drop</a> (complement's DP)</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-org488cc42" class="outline-4">
+<h4 id="org488cc42"><span class="section-number-4">2.1.3</span> complement's DP</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+<a href="https://leetcode.com/problems/super-egg-drop/">887 egg drop</a>
+</p>
+
 <p>
 See the first discussion in <a href="https://leetcode.com/problems/super-egg-drop/discuss/158974">this post</a>.  This looks like a number trick, but
 turns out not. Looks like we have to use DP. There are several tricks:
@@ -556,10 +630,173 @@ Solution().superEggDrop(2,2)    <span class="org-comment-delimiter"># </span><sp
 </div>
 </div>
 
+<div id="outline-container-org5e72612" class="outline-4">
+<h4 id="org5e72612"><span class="section-number-4">2.1.4</span> Palindromic</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+<a href="https://leetcode.com/problems/count-different-palindromic-subsequences/">730. Count Different Palindromic Subsequences</a>
+</p>
 
-<div id="outline-container-org1a8e552" class="outline-4">
-<h4 id="org1a8e552"><span class="section-number-4">1.1.4</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h4>
-<div class="outline-text-4" id="text-1-1-4">
+<p>
+This could be the standard reference to Palindromic problems. It is quite
+clever. Not a lot of discussions, most are pretty bad, except <a href="https://leetcode.com/problems/count-different-palindromic-subsequences/discuss/272297/DP-C%2B%2B-Clear-solution-explained">this post</a>. So the
+idea:
+</p>
+
+<p>
+For non-distinct:
+</p>
+
+<ul class="org-ul">
+<li>dp(i,j) means the result for S[i:j]</li>
+<li>if S[i] ! S[j]:
+<ul class="org-ul">
+<li>dp(i,j) = dp(i+1,j) + dp(i,j-1) - dp(i+1,j-1)</li>
+<li>i.e. remove the overlap</li>
+</ul></li>
+<li>if S[i] == S[j]:
+<ul class="org-ul">
+<li>first, same: dp(i,j) = dp(i+1,j) + dp(i,j-1) - dp(i+1,j-1)</li>
+<li>but, with additional: + dp(i+1,j-1) + 1</li>
+<li>so finally: dp(i,j) = dp(i+1,j) + dp(i,j-1) + 1</li>
+</ul></li>
+</ul>
+
+<p>
+But non-distinct is not really meaningful. So here's the distince one:
+</p>
+
+<ul class="org-ul">
+<li>dp(i,j,a) means number of distinct palindromic bordered by 'a inside S[i:j]</li>
+<li>if S[i] <code>= S[j] =</code> a: <b>very important</b>
+<ul class="org-ul">
+<li>dp(i,j,a) = sum([dp(i+1,j-1,x) for x in a,b,c,d]) + 2</li>
+</ul></li>
+<li>else: dp(i,j,a) = dp(i+1,j,a) + dp(i,j-1,a) - dp(i+1,j-1,a)</li>
+</ul>
+
+
+<p>
+<b>One more thing</b>: the initial value must be -1, otherwise there might be
+infinite loop!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">countPalindromicSubsequences</span>(<span class="org-keyword">self</span>, S: <span class="org-builtin">str</span>) -&gt; <span class="org-builtin">int</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mod</span> = 10 ** 9 + 7
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span> = [[[-1 <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(4)] <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(S))] <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(S))]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">dp</span>(i,j,a):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> i &gt; j: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> i == j:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> S[i] == a: <span class="org-keyword">return</span> 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>: <span class="org-keyword">return</span> 0
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> mem[i][j][<span class="org-builtin">ord</span>(a)-<span class="org-builtin">ord</span>(<span class="org-string">'a'</span>)] &gt;= 0:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> mem[i][j][<span class="org-builtin">ord</span>(a)-<span class="org-builtin">ord</span>(<span class="org-string">'a'</span>)]
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">number of distinct pal bordered by 'a inside S[i:j]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> S[i] == S[j] == a:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = 2
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> b <span class="org-keyword">in</span> [<span class="org-string">'a'</span>, <span class="org-string">'b'</span>, <span class="org-string">'c'</span>, <span class="org-string">'d'</span>]:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += dp(i+1, j-1, b)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = dp(i+1,j,a)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += dp(i,j-1,a)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> -= dp(i+1,j-1,a)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   mem[i][j][<span class="org-builtin">ord</span>(a)-<span class="org-builtin">ord</span>(<span class="org-string">'a'</span>)] = res % mod
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> a <span class="org-keyword">in</span> [<span class="org-string">'a'</span>, <span class="org-string">'b'</span>, <span class="org-string">'c'</span>, <span class="org-string">'d'</span>]:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += dp(0,<span class="org-builtin">len</span>(S)-1,a)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res % mod
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbbf2f75" class="outline-4">
+<h4 id="orgbbf2f75"><span class="section-number-4">2.1.5</span> nested DP</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<p>
+<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/">188. Best Time to Buy and Sell Stock IV</a>
+</p>
+
+<p>
+This is pretty interesting. Turns out the DP equation is not very difficulty to
+write.
+</p>
+
+<ul class="org-ul">
+<li><code>dp(day, ntrans)</code> means from 1:day days, up to ntrans transactions, what is
+  the max profit.</li>
+<li>dp(day, ntrans) = max(max([dp(t,ntrans-1) + prices[day] - prices[t] for t in range(day-1)]), dp(day-1,ntrans))</li>
+</ul>
+
+<p>
+The interesting part:
+</p>
+<ol class="org-ol">
+<li>there's a loop in the DP equation</li>
+<li>the loop actually turns out to be slow, and itself can be calculated using
+   DP, so it is "nested DP"</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">maxProfit</span>(<span class="org-keyword">self</span>, k: <span class="org-builtin">int</span>, prices: List[<span class="org-builtin">int</span>]) -&gt; <span class="org-builtin">int</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-fic">HACK</span><span class="org-comment"> this fails at one test case, even to allocate the memory</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/discuss/426692/</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> k &gt; <span class="org-builtin">len</span>(prices):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(prices)-1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += <span class="org-builtin">max</span>(0, prices[i+1] - prices[i])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span> = [[-1 <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(k+1)] <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(prices))]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem2</span> = [[<span class="org-constant">None</span> <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(k+1)] <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(prices))]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">dp2</span>(t, ntrans):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">this</span> = dp(t, ntrans) - prices[t]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> t == 0: <span class="org-keyword">return</span> this
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> mem2[t][ntrans] != <span class="org-constant">None</span>: <span class="org-keyword">return</span> mem2[t][ntrans]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = <span class="org-builtin">max</span>(dp2(t-1, ntrans), this)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   mem2[t][ntrans] = res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">dp</span>(day, ntrans):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> day &lt;= 0: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> ntrans == 0: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> mem[day][ntrans] &gt;= 0: <span class="org-keyword">return</span> mem[day][ntrans]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">Non-DP solution, TLE at some test cases</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">max_tmp = 0</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">for t in range(day):</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter">#     </span><span class="org-comment">tmp = dp(t, ntrans-1)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter">#     </span><span class="org-comment">tmp += prices[day] - prices[t]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter">#     </span><span class="org-comment">if tmp &gt; max_tmp:</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter">#         </span><span class="org-comment">max_tmp = tmp</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">max_tmp</span> = dp2(day-1, ntrans-1) + prices[day]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   mem[day][ntrans] = <span class="org-builtin">max</span>(max_tmp, dp(day-1, ntrans))
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">print(day, ntrans, mem[day][ntrans])</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> mem[day][ntrans]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> dp(<span class="org-builtin">len</span>(prices)-1, k)
+<span class="org-keyword">def</span> <span class="org-function-name">test</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">2</span>
+<span class="org-highlight-indentation"> </span>   Solution().maxProfit(2, [2,4,1])
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">7</span>
+<span class="org-highlight-indentation"> </span>   Solution().maxProfit(2, [3,2,6,5,0,3])
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">0</span>
+<span class="org-highlight-indentation"> </span>   Solution().maxProfit(2, [])
+<span class="org-highlight-indentation"> </span>   Solution().maxProfit(100, l)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org362f049" class="outline-4">
+<h4 id="org362f049"><span class="section-number-4">2.1.6</span> Other (easy) DP problems</h4>
+<div class="outline-text-4" id="text-2-1-6">
+</div>
+<div id="outline-container-org1a8e552" class="outline-5">
+<h5 id="org1a8e552"><span class="section-number-5">2.1.6.1</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h5>
+<div class="outline-text-5" id="text-2-1-6-1">
 <p>
 The second requirement is ambigious. Other than that, the DP equation is pretty
 regular. However, two things worth noticing:
@@ -603,27 +840,28 @@ Solution().numMusicPlaylists(25, 28, 5)  <span class="org-comment-delimiter"># <
 </div>
 </div>
 </div>
+</div>
 
 
 <div id="outline-container-org9163df3" class="outline-3">
-<h3 id="org9163df3"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/recursion/">recursion</a></h3>
+<h3 id="org9163df3"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/recursion/">recursion</a></h3>
 </div>
 <div id="outline-container-org6fc76ef" class="outline-3">
-<h3 id="org6fc76ef"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/divide-and-conquer/">divide and conquer</a></h3>
+<h3 id="org6fc76ef"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/divide-and-conquer/">divide and conquer</a></h3>
 </div>
 </div>
 
 <div id="outline-container-orgfd04f1b" class="outline-2">
-<h2 id="orgfd04f1b"><span class="section-number-2">2</span> <span class="priority">[A]</span> special problems</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="orgfd04f1b"><span class="section-number-2">3</span> <span class="priority">[A]</span> special problems</h2>
+<div class="outline-text-2" id="text-3">
 </div>
 <div id="outline-container-org1472849" class="outline-3">
-<h3 id="org1472849"><span class="section-number-3">2.1</span> Number theory</h3>
-<div class="outline-text-3" id="text-2-1">
+<h3 id="org1472849"><span class="section-number-3">3.1</span> Number theory</h3>
+<div class="outline-text-3" id="text-3-1">
 </div>
 <div id="outline-container-org6e300d9" class="outline-4">
-<h4 id="org6e300d9"><span class="section-number-4">2.1.1</span> <a href="https://leetcode.com/problems/largest-multiple-of-three/">1363. Largest Multiple of Three</a></h4>
-<div class="outline-text-4" id="text-2-1-1">
+<h4 id="org6e300d9"><span class="section-number-4">3.1.1</span> <a href="https://leetcode.com/problems/largest-multiple-of-three/">1363. Largest Multiple of Three</a></h4>
+<div class="outline-text-4" id="text-3-1-1">
 <p>
 A typical mod-of-3 problem. The trick is to <code>reduce_147</code> (1 mod 3) or
 <code>reduce_258</code> (2 mod 3) either 1 or 2 times.
@@ -682,13 +920,13 @@ A typical mod-of-3 problem. The trick is to <code>reduce_147</code> (1 mod 3) or
 
 
 <div id="outline-container-orgd92665a" class="outline-3">
-<h3 id="orgd92665a"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> <a href="https://leetcode.com/tag/bit-manipulation/">bit manipulation</a></h3>
+<h3 id="orgd92665a"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> <a href="https://leetcode.com/tag/bit-manipulation/">bit manipulation</a></h3>
 </div>
 
 
 <div id="outline-container-org31877a0" class="outline-3">
-<h3 id="org31877a0"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/union-find/">union find (29)</a></h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="org31877a0"><span class="section-number-3">3.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/union-find/">union find (29)</a></h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 This looks interesting
 </p>
@@ -696,8 +934,8 @@ This looks interesting
 </div>
 
 <div id="outline-container-org490f743" class="outline-3">
-<h3 id="org490f743"><span class="section-number-3">2.4</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/two-pointers/">two pointers</a></h3>
-<div class="outline-text-3" id="text-2-4">
+<h3 id="org490f743"><span class="section-number-3">3.4</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/two-pointers/">two pointers</a></h3>
+<div class="outline-text-3" id="text-3-4">
 <p>
 (HEBI: ??) but looks interesting
 </p>
@@ -705,39 +943,11 @@ This looks interesting
 </div>
 
 <div id="outline-container-org799db16" class="outline-3">
-<h3 id="org799db16"><span class="section-number-3">2.5</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/sliding-window/">sliding window</a></h3>
-<div class="outline-text-3" id="text-2-5">
+<h3 id="org799db16"><span class="section-number-3">3.5</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/sliding-window/">sliding window</a></h3>
+<div class="outline-text-3" id="text-3-5">
 <p>
 Looks like sequence matching
 </p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgb12e02c" class="outline-2">
-<h2 id="orgb12e02c"><span class="section-number-2">3</span> random tricks</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-integer to binary string: <code>bin(324)</code>
-</p>
-
-<p>
-sort with multiple keys:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-builtin">sorted</span>([0,1,2,3,4,5,6,7,8], key=<span class="org-keyword">lambda</span> x: (x%3, x))
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orgda24e23" class="outline-3">
-<h3 id="orgda24e23"><span class="section-number-3">3.1</span> string functions</h3>
-<div class="outline-text-3" id="text-3-1">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-doc">'hello'</span>.count(<span class="org-doc">'l'</span>)
-<span class="org-doc">'hello'</span>.index(<span class="org-doc">'e'</span>)
-</pre>
-</div>
 </div>
 </div>
 </div>
@@ -844,6 +1054,266 @@ and record two sets:
 
 <div id="outline-container-orgc2df350" class="outline-3">
 <h3 id="orgc2df350"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</h3>
+</div>
+</div>
+
+<div id="outline-container-orga031912" class="outline-2">
+<h2 id="orga031912"><span class="section-number-2">5</span> Tricky problems</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orge4d9a85" class="outline-3">
+<h3 id="orge4d9a85"><span class="section-number-3">5.1</span> <a href="https://leetcode.com/problems/count-the-repetitions/">466. Count The Repetitions</a> (ultra large but repetitive subsequence finding)</h3>
+<div class="outline-text-3" id="text-5-1">
+<blockquote>
+<p>
+Define S = [s,n] as the string S which consists of n connected strings s. For
+example, ["abc", 3] ="abcabcabc".
+</p>
+
+<p>
+On the other hand, we define that string s1 can be obtained from string s2 if we
+can remove some characters from s2 such that it becomes s1. For example, “abc”
+can be obtained from “abdbec” based on our definition, but it can not be
+obtained from “acbbe”.
+</p>
+
+<p>
+You are given two non-empty strings s1 and s2 (each at most 100 characters long)
+and two integers 0 ≤ n1 ≤ 106 and 1 ≤ n2 ≤ 106. Now consider the strings S1 and
+S2, where S1=[s1,n1] and S2=[s2,n2]. Find the maximum integer M such that [S2,M]
+can be obtained from S1.
+</p>
+</blockquote>
+
+<p>
+To translate:
+</p>
+
+<blockquote>
+<p>
+def rep(s,n) = s * n
+S1 = rep(s1, n1)
+S2 = rep(s2, n2)
+</p>
+</blockquote>
+
+
+<p>
+This is not DP. It is "repetitive patterns".
+</p>
+
+<p>
+First, we are finding <code>s2</code> inside <code>s1</code>. Thus, we need to first have a map of
+finding <code>s2</code> in <code>s1[i:]</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span> = [<span class="org-constant">None</span> <span class="org-keyword">for</span> _ <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(s1))]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">fill_mem</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">i</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(s1)):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">idx</span> = i
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">ct</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> c <span class="org-keyword">in</span> s2:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">idx</span> = (s1+s1).index(c, idx)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> idx + 1 &gt;= <span class="org-builtin">len</span>(s1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">ct</span> += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">idx</span> = (idx + 1) % <span class="org-builtin">len</span>(s1)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mem</span>[i] = (idx, ct)
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">try</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   fill_mem()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">except</span> <span class="org-type">Exception</span> <span class="org-keyword">as</span> e:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> 0
+</pre>
+</div>
+
+
+
+<p>
+Then, to save computation, we need to find the repetitive patterns:
+</p>
+
+<p>
+For example, we have:
+</p>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">i</th>
+<th scope="col" class="org-right">j</th>
+<th scope="col" class="org-right">ct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">5</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">7</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">9</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">7</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">9</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">7</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-right">&#x2026;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Now we found the pattern. It starts from 7, takes one s1, and produces 3 s2.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">find_circle</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">use that to come up with a repetitive patten</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">repetitive</span> = <span class="org-builtin">set</span>()
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">find the circle</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">i</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> <span class="org-constant">True</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> i <span class="org-keyword">in</span> repetitive: <span class="org-keyword">return</span> i
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   repetitive.add(i)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">i</span>, <span class="org-variable-name">_</span> = mem[i]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">i</span> = i % <span class="org-builtin">len</span>(s1)
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">circle_i</span> = find_circle()
+</pre>
+</div>
+
+<p>
+Then, for the circle, we need to get the number of <code>s1</code> used, and the number of <code>s2</code> matched:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">find_circle_t</span>(ci):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">i</span> = ci
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">number of s1 consumed in the circle</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res_from</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">number of s2 found in the circle</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res_to</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> <span class="org-constant">True</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">i</span>, <span class="org-variable-name">c</span> = mem[i]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res_to</span> += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res_from</span> += c
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> i &gt;= <span class="org-builtin">len</span>(s1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res_from</span> += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">i</span> = i % <span class="org-builtin">len</span>(s1)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> i == ci:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res_from, res_to
+
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">circle_from</span>, <span class="org-variable-name">circle_to</span> = find_circle_t(circle_i)
+</pre>
+</div>
+
+<p>
+Finally, we count s2 in s1 by using the repetitive pattern. The actual number
+is pretty sensitivie to off-by-one problems.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">the actual count s2 in s1</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">count</span> = 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">idx</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> count &lt;= n1:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> idx == circle_i:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">fast forward</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">rep</span> = math.floor((n1 - count) / circle_from)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += rep * circle_to
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">count</span> += rep * circle_from
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">print('fast forward', rep, res, count)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">idx</span>, <span class="org-variable-name">ct</span> = mem[idx]
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">count</span> += ct
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">if not matching exactly in the last s1, subtract one because we</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">used more</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> idx != 0: <span class="org-variable-name">res</span> -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">use n2 is fairly easy</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> math.floor((res - 1) / n2)
+</pre>
+</div>
+
+<p>
+Wow, that's a lot of code. It is possible to mix these logic together, but I
+suspect that would be hard to understand.
+</p>
+
+<p>
+Some tests:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">test</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">2</span>
+<span class="org-highlight-indentation"> </span>   Solution().getMaxRepetitions(<span class="org-string">"acb"</span>, 4, <span class="org-string">"ab"</span>, 2)
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">3</span>
+<span class="org-highlight-indentation"> </span>   Solution().getMaxRepetitions(<span class="org-string">"abacb"</span>, 6, <span class="org-string">"bcaa"</span>, 1)
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">4</span>
+<span class="org-highlight-indentation"> </span>   Solution().getMaxRepetitions(<span class="org-string">"aaa"</span>, 3, <span class="org-string">"aa"</span>, 1)
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">2</span>
+<span class="org-highlight-indentation"> </span>   Solution().getMaxRepetitions(<span class="org-string">"bacaba"</span>, 3, <span class="org-string">"abacab"</span>, 1)
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">0</span>
+<span class="org-highlight-indentation"> </span>   Solution().getMaxRepetitions(<span class="org-string">"musicforever"</span>, 10, <span class="org-string">"lovelive"</span>, 100000)
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">170</span>
+<span class="org-highlight-indentation"> </span>   Solution().getMaxRepetitions(<span class="org-string">"aaaaaaaaaaaaaaaaa"</span>, 10000000, <span class="org-string">"a"</span>, 1000000)
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
