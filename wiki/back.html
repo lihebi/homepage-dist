@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hebi Li</title>
+<title>Backup writing for all wiki pages</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -245,240 +245,182 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="/"> HOME </a>
 </div><div id="content">
-<h1 class="title">Hebi Li</h1>
-
-<div class="figure">
-<p><img src="./assets/hebi.png" alt="hebi.png" width="200px" id="me" />
-</p>
-</div>
-
+<h1 class="title">Backup writing for all wiki pages</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org26c15c6">1. Projects</a>
+<li><a href="#org59c1b76">1. Pep8</a>
 <ul>
-<li><a href="#orgeacf2c0">1.1. AI, Causality &amp; NLP</a></li>
-<li><a href="#org6177fd3">1.2. Program Analysis</a></li>
-<li><a href="#org3638885">1.3. USTC RoboGame</a></li>
-<li><a href="#orgeb734a0">1.4. Other random projects</a></li>
+<li><a href="#org0578673">1.1. document</a></li>
 </ul>
 </li>
-<li><a href="#org9b7a4dd">2. Wiki</a></li>
-<li><a href="#orgdc15209">3. Essays</a></li>
-<li><a href="#org87be05d">4. Misc</a></li>
+<li><a href="#org2fd5ea4">2. R</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org5ac9fe8">2.0.1. data example</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-
-<blockquote>
-<p>
-If you look on the ground in search of a sixpence, you don't look up,
-and so miss the moon. &#x2014; a 1956 letter from Maugham
-</p>
-</blockquote>
-
-
-<blockquote>
-<p>
-Do the right thing, in the right way.
-</p>
-</blockquote>
-
-
-<p>
-I'm currently a PhD student in <a href="https://www.cs.iastate.edu/">CS@ISU</a>
-starting 2014 Fall.  I graduated from Electrical Engineering (1010) of
-<a href="http://en.ustc.edu.cn/">USTC</a> in 2014. See details in my
-<a href="CV-Hebi.pdf">CV(pdf)</a>.
-</p>
-
-<p>
-My research interests:
-</p>
-<ul class="org-ul">
-<li>Programming Language</li>
-<li>Artificial Intelligence</li>
-<li>Operating System</li>
-<li>Embedded system</li>
-</ul>
-
-<p>
-Links:
-</p>
-<ul class="org-ul">
-<li><a href="hn.html">My favorite HN articles</a></li>
-<li>GitHub <a href="https://github.com/lihebi">@lihebi</a></li>
-</ul>
-
-
-<div id="outline-container-org26c15c6" class="outline-2">
-<h2 id="org26c15c6"><span class="section-number-2">1</span> Projects</h2>
+<div id="outline-container-org59c1b76" class="outline-2">
+<h2 id="org59c1b76"><span class="section-number-2">1</span> Pep8</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+Indent:
+</p>
+<ul class="org-ul">
+<li><b>function and class</b> should be separated by <b>2 lines</b></li>
+<li><b>In a class</b>, function should be separated by <b>1 line</b></li>
+<li>1 space before and after variable assignment</li>
+</ul>
+
+<p>
+Naming
+</p>
+<ul class="org-ul">
+<li>function, variable, attribute: <code>func_var_attr</code></li>
+<li>protected instance attributes: <code>_protected_field</code></li>
+<li>private instance attributes: <code>__private_field</code></li>
+<li>class and exception: <code>ClassExceptionName</code></li>
+<li>module level constants: <code>CONSTANT</code></li>
+<li>instance method of class should use <code>self</code> as first parameter, refer to the object</li>
+<li>class method should use <code>cls</code> as first parameter, refer to the class</li>
+</ul>
+
+<p>
+Expression
+</p>
+
+<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">use</th>
+<th scope="col" class="org-left">DONT use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>a is not b</code></td>
+<td class="org-left"><del><code>not a is b</code></del></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>if not list</code></td>
+<td class="org-left"><del><code>if len(list) == 0</code></del></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Import
+</p>
+<ul class="org-ul">
+<li>always use absolute path</li>
+<li>if must use relative, use <code>from . import foo</code> instead of <del><code>import foo</code></del></li>
+</ul>
 </div>
-<div id="outline-container-orgeacf2c0" class="outline-3">
-<h3 id="orgeacf2c0"><span class="section-number-3">1.1</span> AI, Causality &amp; NLP</h3>
+
+<div id="outline-container-org0578673" class="outline-3">
+<h3 id="org0578673"><span class="section-number-3">1.1</span> document</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-Spring 2018 - Present
+One can use one line or multi-line document.
+The doc string can be retrieved by <code>func.__doc__</code>.
 </p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">func</span>():
+<span class="org-highlight-indentation"> </span> <span class="org-doc">"""one line doc"""</span>
 
-<p>
-<a href="https://arxiv.org/abs/1905.10729">&#91;arXiv&#93;</a>
-<a href="https://arxiv.org/pdf/1905.10729.pdf">&#91;pdf&#93;</a>
-<a href="https://github.com/lihebi/AdvAE">&#91;code&#93;</a>
-Li, Hebi, Qi Xiao, Shixin Tian, and Jin Tian. "Purifying Adversarial
-Perturbation with Adversarially Trained Auto-encoders." arXiv preprint
-arXiv:1905.10729 (2019).
-</p>
+<span class="org-keyword">def</span> <span class="org-function-name">func</span>():
+<span class="org-highlight-indentation"> </span> <span class="org-doc">"""The outline</span>
+
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc"> The above empty line is required.</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc"> Here's the detailed documentation.</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc"> """</span>
+</pre>
 </div>
-</div>
-
-<div id="outline-container-org6177fd3" class="outline-3">
-<h3 id="org6177fd3"><span class="section-number-3">1.2</span> Program Analysis</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-Summer 2015 - Spring 2018
-</p>
-
-<p>
-I was researching in Program Language and Analysis. We designed an
-on-demand dynamic analysis framework.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org3638885" class="outline-3">
-<h3 id="org3638885"><span class="section-number-3">1.3</span> USTC RoboGame</h3>
-<div class="outline-text-3" id="text-1-3">
-<p>
-2012 Summer
-</p>
-
-<p>
-I was the leader of a team in USTC RoboGame 2012, and we ranked 3rd among 26
-teams. The robot precisely fetched a bunch of flowers, found routes using image
-processing, climbing the ladders, and finally put the followers precisely in
-front of the sculpture of Jici Yan. You can see <a href="https://www.youtube.com/watch?v=N0EbvINeiy4">a small video</a> of our robot in
-the competition that day. Check out the <a href="assets/robogame2012-proposal.pdf">proposal (pdf, chinese)</a> and the
-<a href="assets/robogame2012-technical-report.pdf">technical report (pdf, chinese)</a>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgeb734a0" class="outline-3">
-<h3 id="orgeb734a0"><span class="section-number-3">1.4</span> Other random projects</h3>
-<div class="outline-text-3" id="text-1-4">
-<ul class="org-ul">
-<li><a href="bisp.html">bisp (WIP)</a>: everyone has his own lisp</li>
-<li><a href="https://github.com/lihebi/biber">biber</a>: crawl CS conferences for bib files, the output bib files are at
-<a href="https://github.com/lihebi/biber-dist">biber-dist</a></li>
-</ul>
-
-<p>
-Emacs tools:
-</p>
-<ul class="org-ul">
-<li><a href="https://github.com/lihebi/hn.el">hn.el</a>: A Hacker News Client for Emacs</li>
-<li><a href="https://github.com/lihebi/simple-drill.el">simple-drill.el</a>: A Flashcard Program for Emacs</li>
-<li><a href="https://github.com/lihebi/smart-scholar.el">smart-scholar.el</a>: dynamically loading bib files for org-ref in Emacs</li>
-<li><a href="https://github.com/lihebi/repo-tracker.el">repo-tracker.el</a>: track all local projects for git status</li>
-</ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9b7a4dd" class="outline-2">
-<h2 id="org9b7a4dd"><span class="section-number-2">2</span> Wiki</h2>
+
+<div id="outline-container-org2fd5ea4" class="outline-2">
+<h2 id="org2fd5ea4"><span class="section-number-2">2</span> R</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-This is a personal wiki, on various topics. An old archive of articles
-can be found on at
-<a href="https://wiki.lihebi.com">wiki.lihebi.com</a>. Although I name it
-"wiki", it is different from hyper-linked wikis aiming at connecting
-concepts. Instead, these articles document highly integrated and
-hierarchical knowledge, typically one big page per-topic. In this
-sense it is more like a reference. There are many benefits of writing
-a personal reference instead of using official ones:
-</p>
-<ol class="org-ol">
-<li>I can control the granularity and focus on the topic</li>
-<li>possibly add my thoughts, and</li>
-<li>a consistent writing style</li>
-</ol>
-
-<blockquote>
-<p>
-Disclaimer: these are <i>my understandings</i>, not necessarily 100%
-correct. Read at your own risk.
-</p>
-</blockquote>
-
 <ul class="org-ul">
-<li><a href="wiki/functional.html">functional programming</a></li>
-<li><a href="wiki/lisp.html">lisp</a>: the language of the history and, of
-course, the future</li>
-<li><a href="wiki/python.html">Python</a>: communication language</li>
-<li><a href="wiki/writing.html">markup languages for writing</a>: org, latex</li>
-<li><a href="wiki/linux.html">Linux</a>: the OS to-go, before the revival of
-Lisp Machine</li>
-<li><a href="wiki/emacs.html">Emacs</a>: poor-man's lisp machine</li>
-<li><a href="wiki/algorithm.html">Algorithm</a></li>
+<li>For vectors, <code>[]</code> returns the element.</li>
+<li>For lists, <code>[]</code> will return the the element inside a list, while <code>[[]]</code> will
+return the single element.</li>
+<li><code>$</code> can be used for indexing with character.</li>
+<li>The empty index <code>[]</code> will returns the entire vector with <i>irrelevant</i>
+attributes removed. The only retained ones are the <code>names</code>, <code>dim</code> and
+<code>dimnames</code> attributes.</li>
 </ul>
 
-<p>
-ML/AI related:
-</p>
-<ul class="org-ul">
-<li><a href="wiki/ai.html">AI</a> and <a href="wiki/ai-frameworks.html">AI Frameworks</a></li>
-<li><a href="wiki/ml.html">ML</a>: machine learning theories</li>
-<li><a href="wiki/r.html">R</a> and <a href="wiki/julia.html">Julia</a></li>
-</ul>
+
+<div class="org-src-container">
+<pre class="src src-R">dim(z) <span class="org-ess-assignment">&lt;-</span> c(3,5,100)~
+z[2,,]
+z[,,]
+</pre>
 </div>
 </div>
 
+<div id="outline-container-org5ac9fe8" class="outline-4">
+<h4 id="org5ac9fe8"><span class="section-number-4">2.0.1</span> data example</h4>
+<div class="outline-text-4" id="text-2-0-1">
+<div class="org-src-container">
+<pre class="src src-R"><span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: Command line arguments)</span></span>
+args = commandArgs(trailingOnly=<span class="org-ess-constant">TRUE</span>)
+csvfile = args[1]
+csv = read.csv(csvfile, header=<span class="org-ess-constant">TRUE</span>)
 
-<div id="outline-container-orgdc15209" class="outline-2">
-<h2 id="orgdc15209"><span class="section-number-2">3</span> Essays</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-I have this section to write down variety of my thoughts, for anyone
-who wants to know what kind of person I am, and whether they want and
-to get to know me and make friends or the other way around.
-</p>
+total_test <span class="org-ess-assignment">&lt;-</span> dim(csv)[[1]]
+sub = subset(csv, reach_code&gt;=5)
+total_reach_poi <span class="org-ess-assignment">&lt;-</span> dim(sub)[[1]]
+sub = subset(csv, reach_code==5 &amp; status_code == 1)
+total_fail_poi <span class="org-ess-assignment">&lt;-</span> dim(sub)[[1]]
 
-<p>
-The essays are not finished, and will be consistently updated.
-</p>
+sub <span class="org-ess-assignment">&lt;-</span> sub[1:(length(csv)-2)]
+<span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: calling a function)</span></span>
+funcs = TransferFunction(sub);
 
-<p>
-First of all, I document the <a href="quotes.html">quotes</a> from the
-great minds.
-</p>
+<span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: define a function)</span></span>
+<span class="org-function-name">Constant</span> <span class="org-ess-assignment">&lt;-</span> <span class="org-ess-keyword">function</span>(data) {
+  <span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: return value as a vector)</span></span>
+  ret <span class="org-ess-assignment">&lt;-</span> c()
+  i <span class="org-ess-assignment">&lt;-</span> 1
+  <span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: a for loop using the vector as range)</span></span>
+  <span class="org-ess-keyword">for</span> (i <span class="org-ess-keyword">in</span> c(1:length(data))) {
+    col = data[i];
+    <span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: Get the name of a column)</span></span>
+    name = names(col);
+    <span class="org-ess-keyword">if</span> (substr(name, 1, 6) == <span class="org-string">"output"</span>) {
+      <span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: remove of NA)</span></span>
+      newcol = col[!is.na(col)];
+      <span class="org-ess-keyword">if</span> (length(newcol) &gt; 2) {
+        value <span class="org-ess-assignment">&lt;-</span> newcol[1]
+        <span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: check the value of the vector is all the same)</span></span>
+        <span class="org-ess-keyword">if</span> (length(newcol[newcol != value]) == 0) {
+          <span class="org-comment-delimiter">## </span><span class="org-comment"><span class="org-hebi-red">(HEBI: pushing a new value to the return vector)</span></span>
+          ret <span class="org-ess-assignment">&lt;-</span> c(ret, paste(<span class="org-string">"name = "</span>,  value))}}}}
+  <span class="org-ess-keyword">return</span>(ret)}
+
+</pre>
 </div>
 </div>
-
-<div id="outline-container-org87be05d" class="outline-2">
-<h2 id="org87be05d"><span class="section-number-2">4</span> Misc</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><a href="vehicle.html">vehicle</a></li>
-</ul>
-
-<p>
-I run full marathon in <a href="assets/finisher_certificate_2017.pdf">2017 (4h
- 35m) (pdf)</a>, <a href="assets/finisher_certificate_2018.pdf">2018 (4h 59m)
- (pdf)</a>, and <a href="assets/finisher_certificate_2019.pdf">2019 (4h 46m)
- (pdf)</a>.
-</p>
-
-<p>
-The site has a full <a href="sitemap.html">site-map</a>.
-</p>
-
-<p>
-<a href="leetcode/index.html">leetcode notes</a>
-</p>
 </div>
 </div>
 </div>

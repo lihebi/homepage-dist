@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Python</title>
+<title>Python, the language</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -267,159 +267,150 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="/"> HOME </a>
 </div><div id="content">
-<h1 class="title">Python</h1>
+<h1 class="title">Python, the language</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a5a5e3">1. Random</a>
+<li><a href="#org884ccb8">1. Tools &amp; Reference</a>
 <ul>
-<li><a href="#orgb87cd8e">1.1. pip mirror</a></li>
-<li><a href="#orgfa760f0">1.2. imsave</a></li>
-<li><a href="#org43e4b4c">1.3. Meta Programming</a></li>
-<li><a href="#org66fa611">1.4. Function def and call</a></li>
-<li><a href="#orgae18b2f">1.5. List object model</a></li>
+<li><a href="#org5051818">1.1. Emacs support</a></li>
+<li><a href="#orgb87cd8e">1.2. pip mirror</a></li>
 </ul>
 </li>
-<li><a href="#org3672172">2. Language</a></li>
-<li><a href="#org5051818">3. Emacs support</a></li>
-<li><a href="#org9054fc8">4. Unit Test</a></li>
-<li><a href="#org0bf31a5">5. Concept</a>
+<li><a href="#org3672172">2. Language</a>
 <ul>
-<li><a href="#org14d98a7">5.1. Scoping</a></li>
-<li><a href="#org80812b9">5.2. Collection</a>
+<li><a href="#orgc48382a">2.1. data type</a>
 <ul>
-<li><a href="#org022f4ec">5.2.1. String</a>
-<ul>
-<li><a href="#org8c2732b">5.2.1.1. Concatenation</a></li>
-<li><a href="#orgb72a80a">5.2.1.2. split</a></li>
-<li><a href="#org2d67c1d">5.2.1.3. Slicing</a></li>
+<li><a href="#org35e3531">2.1.1. conversion</a></li>
 </ul>
 </li>
-<li><a href="#orgd0011dc">5.2.2. <span class="todo TODO">TODO</span> tuple</a></li>
-<li><a href="#orgb9afb6b">5.2.3. List</a>
+<li><a href="#org14d98a7">2.2. Scoping</a></li>
+<li><a href="#org04b6d71">2.3. Conditional</a></li>
+<li><a href="#org847a00b">2.4. Loop</a></li>
+<li><a href="#orgb33df91">2.5. Function</a>
 <ul>
-<li><a href="#orgbfb8284">5.2.3.1. Slicing</a></li>
-<li><a href="#org9ac7027">5.2.3.2. create a list</a></li>
-<li><a href="#org41736f7">5.2.3.3. Modify a list</a></li>
+<li><a href="#org66fa611">2.5.1. Function def and call</a></li>
+<li><a href="#org9da505b">2.5.2. Lambda</a></li>
+<li><a href="#org0a480f3">2.5.3. variadic parameter</a></li>
 </ul>
 </li>
-<li><a href="#org4536677">5.2.4. Dictionary</a></li>
-<li><a href="#org3dc2fe4">5.2.5. Set</a></li>
+<li><a href="#org43e4b4c">2.6. Meta Programming</a></li>
+<li><a href="#org5681770">2.7. Exception</a>
+<ul>
+<li><a href="#org6937f9b">2.7.1. Built-in exceptions</a></li>
 </ul>
 </li>
-<li><a href="#org47daf7b">5.3. Algorithm</a>
+<li><a href="#org4e509da">2.8. Module</a>
 <ul>
-<li><a href="#orgede4cd6">5.3.1. <span class="todo TODO">TODO</span> sort</a></li>
-</ul>
-</li>
-<li><a href="#orgb33df91">5.4. Function</a>
-<ul>
-<li><a href="#org0a480f3">5.4.1. variadic parameter</a></li>
-</ul>
-</li>
-<li><a href="#org5681770">5.5. Exception</a></li>
-<li><a href="#org9da505b">5.6. Lambda</a></li>
-<li><a href="#org497d3d5">5.7. Packaging</a>
-<ul>
-<li><a href="#org234d74b">5.7.1. importing</a></li>
-</ul>
-</li>
-<li><a href="#org390b91a">5.8. Thread</a></li>
-</ul>
-</li>
-<li><a href="#orgf966bcc">6. Type</a>
-<ul>
-<li><a href="#org206d037">6.1. Boolean</a></li>
-<li><a href="#org4aba41a">6.2. Integer</a></li>
-<li><a href="#org35e3531">6.3. conversion</a></li>
-</ul>
-</li>
-<li><a href="#org2383c89">7. Black Tech</a></li>
-<li><a href="#org48edc0b">8. Pep8</a>
-<ul>
-<li><a href="#org78b4b2d">8.1. document</a></li>
-</ul>
-</li>
-<li><a href="#orgef9e0e4">9. IO</a></li>
-<li><a href="#orgcf8cb14">10. Operating System</a>
-<ul>
-<li><a href="#org3152ddd">10.1. Work filesystem:</a></li>
-<li><a href="#org50aabc6">10.2. Shell command</a></li>
-</ul>
-</li>
-<li><a href="#org3d20820">11. Standard Library</a>
-<ul>
-<li><a href="#org6937f9b">11.1. Built-in exceptions</a></li>
-<li><a href="#org6ccff9c">11.2. Built-in</a></li>
-<li><a href="#orga716053">11.3. Printing</a></li>
-<li><a href="#orgd87e172">11.4. File System</a>
-<ul>
-<li><a href="#org23c9980">11.4.1. os.path</a></li>
-<li><a href="#orgac0db8d">11.4.2. pathlib</a></li>
-<li><a href="#orgb57d1ec">11.4.3. <span class="todo TODO">TODO</span> tempfile</a></li>
-</ul>
-</li>
-<li><a href="#org31fd17a">11.5. os</a>
-<ul>
-<li><a href="#orgdc54578">11.5.1. Env</a></li>
-<li><a href="#orge0ac059">11.5.2. Filesystem</a></li>
-<li><a href="#org1970c20">11.5.3. shutil</a></li>
-<li><a href="#orge5f6bb6">11.5.4. Process</a></li>
-</ul>
-</li>
-<li><a href="#orgaf66566">11.6. io</a>
-<ul>
-<li><a href="#org83b5c08">11.6.1. IOBase</a></li>
-<li><a href="#orgc1821a3">11.6.2. RawIOBase : IOBase (should not use directly)</a></li>
-<li><a href="#org061f18c">11.6.3. BufferedIOBase</a></li>
-<li><a href="#orga605b79">11.6.4. FileIO : RawIOBase</a></li>
-<li><a href="#org795677c">11.6.5. BytesIO : BufferedIOBase</a></li>
-<li><a href="#org1d91abe">11.6.6. BufferedReader(raw)</a></li>
-<li><a href="#org878269f">11.6.7. BufferedWriter(raw)</a></li>
-<li><a href="#org908307f">11.6.8. TextIOBase : IOBase</a></li>
-<li><a href="#org7a6aa86">11.6.9. TextIOWrapper(buffer) : TextIOBase</a></li>
-<li><a href="#orge543a97">11.6.10. StringIO</a></li>
-</ul>
-</li>
-<li><a href="#org27cd475">11.7. time</a></li>
-<li><a href="#org0f3c465">11.8. argparse</a></li>
-<li><a href="#org910762e">11.9. contextlib</a></li>
-<li><a href="#orga9810fa">11.10. Regular Expression</a></li>
-<li><a href="#orgb5369f7">11.11. Concurrent</a>
-<ul>
-<li><a href="#orgeb4f6eb">11.11.1. threading</a></li>
-<li><a href="#org531574b">11.11.2. Thread Sync</a>
-<ul>
-<li><a href="#orga0fe756">11.11.2.1. Using with statement</a></li>
-</ul>
-</li>
-<li><a href="#org3fc7f35">11.11.3. multiprocessing</a></li>
-<li><a href="#org03f7be9">11.11.4. Process (subprocess module)</a></li>
-</ul>
-</li>
-<li><a href="#org2ef2266">11.12. Internet</a>
-<ul>
-<li><a href="#org41a9aa7">11.12.1. urllib.request</a></li>
-<li><a href="#org0bc2092">11.12.2. urllib.parse</a></li>
-</ul>
-</li>
-<li><a href="#orgc758c7d">11.13. Data</a>
-<ul>
-<li><a href="#org55d9e69">11.13.1. Json</a></li>
+<li><a href="#org234d74b">2.8.1. importing</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org2af3e92">12. Third party libraries</a>
+<li><a href="#org1baa8af">3. Collections</a>
 <ul>
-<li><a href="#orgfd394d6">12.1. urllib</a></li>
-<li><a href="#org906608a">12.2. XML</a></li>
-<li><a href="#org36c1870">12.3. Requests</a></li>
-<li><a href="#org8ef72ef">12.4. BeautifulSoup</a></li>
-<li><a href="#org627eea2">12.5. click http://click.pocoo.org/5/</a></li>
-<li><a href="#orgde513f9">12.6. matplotlib</a></li>
-<li><a href="#orgc6967cd">12.7. Deep Learning Framework</a></li>
+<li><a href="#orgb9afb6b">3.1. List</a>
+<ul>
+<li><a href="#orgd0011dc">3.1.1. <span class="todo TODO">TODO</span> tuple</a></li>
+<li><a href="#org9f0c875">3.1.2. <span class="todo TODO">TODO</span> sorted</a></li>
+<li><a href="#orgd0cfcba">3.1.3. Slicing</a></li>
+<li><a href="#org9ac7027">3.1.4. create a list</a></li>
+<li><a href="#org41736f7">3.1.5. Modify a list</a></li>
+<li><a href="#orgae18b2f">3.1.6. List object model</a></li>
+</ul>
+</li>
+<li><a href="#org022f4ec">3.2. String</a>
+<ul>
+<li><a href="#org8c2732b">3.2.1. Concatenation</a></li>
+<li><a href="#orgb72a80a">3.2.2. split</a></li>
+<li><a href="#orgd67e05b">3.2.3. Slicing</a></li>
+</ul>
+</li>
+<li><a href="#org4536677">3.3. Dictionary</a>
+<ul>
+<li><a href="#org3dc2fe4">3.3.1. Set</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3d20820">4. Standard Library</a>
+<ul>
+<li><a href="#orgcf8cb14">4.1. Operating System</a>
+<ul>
+<li><a href="#orgdc54578">4.1.1. Env</a></li>
+<li><a href="#org50aabc6">4.1.2. Shell command</a></li>
+<li><a href="#orge5f6bb6">4.1.3. Process</a></li>
+</ul>
+</li>
+<li><a href="#orgef9e0e4">4.2. IO</a>
+<ul>
+<li><a href="#orgb976c99">4.2.1. File IO</a></li>
+<li><a href="#orga716053">4.2.2. Printing</a></li>
+<li><a href="#org68bd6cc">4.2.3. redirect stdout</a></li>
+</ul>
+</li>
+<li><a href="#orgd87e172">4.3. File System</a>
+<ul>
+<li><a href="#org8bd43fa">4.3.1. os.walk</a></li>
+<li><a href="#org99e8275">4.3.2. FS Operations</a></li>
+<li><a href="#org1970c20">4.3.3. shutil</a></li>
+<li><a href="#org23c9980">4.3.4. os.path</a></li>
+<li><a href="#orgac0db8d">4.3.5. pathlib</a></li>
+<li><a href="#orgb57d1ec">4.3.6. <span class="todo TODO">TODO</span> tempfile</a></li>
+</ul>
+</li>
+<li><a href="#orgae8c350">4.4. unittest</a></li>
+<li><a href="#org27cd475">4.5. time</a>
+<ul>
+<li><a href="#org66d9852">4.5.1. datetime</a></li>
+</ul>
+</li>
+<li><a href="#org1432e6e">4.6. csv</a></li>
+<li><a href="#org55d9e69">4.7. Json</a></li>
+<li><a href="#org0f3c465">4.8. argparse</a></li>
+<li><a href="#orga9810fa">4.9. Regular Expression</a></li>
+<li><a href="#org7319319">4.10. Concurrent programming</a>
+<ul>
+<li><a href="#orgeb4f6eb">4.10.1. threading</a></li>
+<li><a href="#org531574b">4.10.2. Thread Sync</a>
+<ul>
+<li><a href="#orga0fe756">4.10.2.1. Using with statement</a></li>
+</ul>
+</li>
+<li><a href="#org3fc7f35">4.10.3. multiprocessing</a></li>
+<li><a href="#org8fea3ee">4.10.4. subprocess</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2af3e92">5. Third party libraries</a>
+<ul>
+<li><a href="#orgfd394d6">5.1. urllib</a>
+<ul>
+<li><a href="#org41a9aa7">5.1.1. urllib.request</a></li>
+<li><a href="#org0bc2092">5.1.2. urllib.parse</a></li>
+</ul>
+</li>
+<li><a href="#org906608a">5.2. XML</a></li>
+<li><a href="#org36c1870">5.3. Requests</a></li>
+<li><a href="#org8ef72ef">5.4. BeautifulSoup</a></li>
+<li><a href="#org627eea2">5.5. click http://click.pocoo.org/5/</a></li>
+<li><a href="#org8710de2">5.6. pandas</a></li>
+<li><a href="#orgfc002c0">5.7. numpy</a></li>
+<li><a href="#orgc719613">5.8. scipy</a></li>
+<li><a href="#org5f7c329">5.9. scikit-learn</a></li>
+<li><a href="#orgde513f9">5.10. matplotlib</a>
+<ul>
+<li><a href="#org86ed31a">5.10.1. type of figures</a></li>
+<li><a href="#org616777e">5.10.2. <span class="todo TODO">TODO</span> plot options</a></li>
+<li><a href="#orgf04190e">5.10.3. legends, axis, more settings</a></li>
+<li><a href="#org00d1c3c">5.10.4. Subplots</a></li>
+<li><a href="#org7aa04e5">5.10.5. export to files</a></li>
+</ul>
+</li>
+<li><a href="#orgfa760f0">5.11. imsave</a></li>
+<li><a href="#org5d64911">5.12. Nvidia GPU setting</a></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +418,7 @@ for the JavaScript code in this tag.
 </div>
 <blockquote>
 <p>
-Pseudocode which runs.
+Pseudocode which runs. &#x2013; Peter Norvig (?)
 </p>
 </blockquote>
 
@@ -437,16 +428,15 @@ The best program to do a job is one which already ships the solution.
 </p>
 </blockquote>
 
-<p>
-Aphorism 13 in the Zen of Python by Tim Peters:
-</p>
-
 <blockquote>
 <p>
 There should be one – and preferably only one – obvious way to do it.
 </p>
-</blockquote>
 
+<p>
+&#x2013; Aphorism 13 in the Zen of Python by Tim Peters:
+</p>
+</blockquote>
 
 <p>
 Python is nice, sure.  But only until it stats warping your mind in
@@ -462,9 +452,475 @@ something is wrong with the language.
 </p>
 </blockquote>
 
-<div id="outline-container-org1a5a5e3" class="outline-2">
-<h2 id="org1a5a5e3"><span class="section-number-2">1</span> Random</h2>
+<div id="outline-container-org884ccb8" class="outline-2">
+<h2 id="org884ccb8"><span class="section-number-2">1</span> Tools &amp; Reference</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+For python 3
+</p>
+<ul class="org-ul">
+<li><a href="https://docs.python.org/3/reference/">https://docs.python.org/3/reference/</a></li>
+<li><a href="https://docs.python.org/3/library/">https://docs.python.org/3/library/</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org5051818" class="outline-3">
+<h3 id="org5051818"><span class="section-number-3">1.1</span> Emacs support</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Install the <code>elpy</code> package. It provides:
+</p>
+<ul class="org-ul">
+<li><code>C-c C-c</code> runs the shell and send the current buffer</li>
+<li><code>C-c C-d</code> runs <code>elpy-doc</code></li>
+<li><code>C-c C-t</code> runs <code>elpy-test</code>, which runs the unittest discover</li>
+</ul>
+
+<p>
+To enable linter python in emacs, use pylint. It will use <code>pylint</code>
+executable. And it also needs the configure file. Generate it:
+</p>
+
+<pre class="example">
+pylint --generate-rcfile &gt; ~/.pylintrc
+</pre>
+</div>
+</div>
+<div id="outline-container-orgb87cd8e" class="outline-3">
+<h3 id="orgb87cd8e"><span class="section-number-3">1.2</span> pip mirror</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>ustc mirror: <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></li>
+</ul>
+
+<p>
+to use one-time, simply:
+</p>
+
+<pre class="example">
+pip3 install xxx -i https://pypi.mirrors.ustc.edu.cn/simple/
+
+# don't need this when using https
+# --trusted-host pypi.mirrors.ustc.edu.cn
+</pre>
+
+<p>
+global configuration <b>seems</b> to be:
+</p>
+<pre class="example">
+pip3 config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
+</pre>
+
+<p>
+In China, pytorch cannot be installed due to 1. large 2. cpu only has a specific
+url. Thus I'm using conda mirror <a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3672172" class="outline-2">
+<h2 id="org3672172"><span class="section-number-2">2</span> Language</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc48382a" class="outline-3">
+<h3 id="orgc48382a"><span class="section-number-3">2.1</span> data type</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>type(obj): get the type of obj</li>
+</ul>
+
+<p>
+Numerical functions:
+</p>
+<ul class="org-ul">
+<li>abs(x): absolute value</li>
+<li>divmod(a,b): a pair (a // b, a % b)</li>
+<li>max(arg1, arg2, *args)</li>
+<li>min(arg1, arg2, *args)</li>
+<li>pow(x,y): x<sup>y</sup></li>
+<li>round(x, ndigits=0)</li>
+<li>sum(iterable)</li>
+</ul>
+
+<p>
+Boolean:
+</p>
+<ul class="org-ul">
+<li>all(iterable): true if all items are true. empty =&gt; True</li>
+<li>any(iterable): true if any item is true. empty =&gt; False</li>
+<li>cmp(x,y)
+<ul class="org-ul">
+<li>x&lt;y =&gt; negative</li>
+<li>x=y =&gt; 0</li>
+<li>x&gt;y =&gt; positive</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org35e3531" class="outline-4">
+<h4 id="org35e3531"><span class="section-number-4">2.1.1</span> conversion</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li><code>chr()</code>: ASCII to char</li>
+<li><code>ord()</code>: char to ASCII</li>
+
+<li><code>float(x)</code></li>
+<li><code>long(x)</code></li>
+<li><code>bool(x)</code>: convert x to bool</li>
+<li><code>int()</code>: string to integer</li>
+<li><code>str()</code>: integer to string
+<ul class="org-ul">
+<li><code>hex(x)</code>: convert integer to lowercase hex string prefix with '0x'</li>
+<li><code>oct(x)</code>: integer to octal string</li>
+<li><code>bin(x)</code>: an integer to binary string</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org14d98a7" class="outline-3">
+<h3 id="org14d98a7"><span class="section-number-3">2.2</span> Scoping</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+There're four levels:
+</p>
+<ul class="org-ul">
+<li>current scope</li>
+<li>parent scope</li>
+<li>module scope (global)</li>
+<li>built-in scope</li>
+</ul>
+
+<p>
+<code>nonlocal</code> keyword specify this variable should be referenced to the parent scope.
+But, this will not reach global.
+Instead, the <code>global</code> keyword declares the listed variables to be in the module level scope.
+</p>
+
+<blockquote>
+<p>
+The nonlocal statement causes the listed identifiers to refer to previously bound variables in the nearest enclosing scope excluding globals.
+</p>
+</blockquote>
+
+<p>
+As an example:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">var</span> = 0 <span class="org-comment-delimiter"># </span><span class="org-comment">global</span>
+
+<span class="org-keyword">def</span> <span class="org-function-name">outer</span>():
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">var</span> = 1 <span class="org-comment-delimiter"># </span><span class="org-comment">parent</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">inner</span>():
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">nonlocal</span> var
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">var</span> = 2 <span class="org-comment-delimiter"># </span><span class="org-comment">local</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">global</span> var
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">var</span> =3
+<span class="org-highlight-indentation"> </span> inner()
+<span class="org-highlight-indentation"> </span> <span class="org-comment-delimiter"># </span><span class="org-comment">var = 2</span>
+
+outer()
+<span class="org-comment-delimiter"># </span><span class="org-comment">global var = 3</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org04b6d71" class="outline-3">
+<h3 id="org04b6d71"><span class="section-number-3">2.3</span> Conditional</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+If else or:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">var</span> = d.get(<span class="org-string">'key'</span>) <span class="org-keyword">or</span> 0
+<span class="org-comment-delimiter"># </span><span class="org-comment">is equal to:</span>
+<span class="org-variable-name">var</span> = d.get(<span class="org-string">'key'</span>) <span class="org-keyword">if</span> d.get(<span class="org-string">'key'</span>) <span class="org-keyword">else</span> 0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org847a00b" class="outline-3">
+<h3 id="org847a00b"><span class="section-number-3">2.4</span> Loop</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>len(s): length</li>
+<li>next(iterator)</li>
+<li>range(stop): [0,stop)</li>
+<li>range(start, stop, step=1)</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb33df91" class="outline-3">
+<h3 id="orgb33df91"><span class="section-number-3">2.5</span> Function</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-org66fa611" class="outline-4">
+<h4 id="org66fa611"><span class="section-number-4">2.5.1</span> Function def and call</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+The default value of an argument is evaluated once at the function
+definition. Thus, the object is shared for all the invoke of the
+function. This is typically not desired behavior.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">foo</span>(a=[]):
+<span class="org-highlight-indentation"> </span>   a.append(3)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> a
+foo()
+foo()
+<span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; [3,3] !!!</span>
+</pre>
+</div>
+
+<p>
+Python function pass-by-object. If you pass a list, you can modify the
+list, and the original list is modified.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = [1,2]
+<span class="org-keyword">def</span> <span class="org-function-name">foo</span>(x):
+<span class="org-highlight-indentation"> </span>   x.append(3)
+foo(a)
+a <span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; [1,2,3]</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9da505b" class="outline-4">
+<h4 id="org9da505b"><span class="section-number-4">2.5.2</span> Lambda</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">lambda</span> x : x+2
+<span class="org-keyword">lambda</span> x: x%2==0
+</pre>
+</div>
+
+<p>
+The usage of lambda is often in <i>map</i> and <i>filter</i>.
+</p>
+<ul class="org-ul">
+<li><code>map(lambda_exp, mylist)</code> will execute the lambda expression on each element
+of the list, and return a list containing the results.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0a480f3" class="outline-4">
+<h4 id="org0a480f3"><span class="section-number-4">2.5.3</span> variadic parameter</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<p>
+use <code>*args</code> syntax, and <code>args</code> will be a <i>tuple</i>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">foo</span>(*args):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> a <span class="org-keyword">in</span> args:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span> a
+</pre>
+</div>
+
+<p>
+use <code>**args</code> to capture all <i>keyword arguments</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">bar</span>(**kwargs):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> a <span class="org-keyword">in</span> kwargs:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span> a, kwargs[a]
+</pre>
+</div>
+
+<p>
+Combine them together:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">foobar</span>(kind, *args, **kwargs):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+</pre>
+</div>
+
+<p>
+Also, there's a concept for the reverse thing: unpack argument list from a list, with <code>*list</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">foo</span>(a,b):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+
+<span class="org-variable-name">l</span> = [1,2]
+foo(*l)
+</pre>
+</div>
+
+<p>
+on python3, this syntax can appear on left side
+</p>
+<div class="org-src-container">
+<pre class="src src-python">first, *<span class="org-variable-name">rest</span> = [1,2,3,4]
+first,*<span class="org-variable-name">l</span>,<span class="org-variable-name">last</span> = [1,2,3,4]
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org43e4b4c" class="outline-3">
+<h3 id="org43e4b4c"><span class="section-number-3">2.6</span> Meta Programming</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Basically <code>eval</code> (return value) and <code>exec</code> (no return value), with
+either string or <i>code object</i> created by <code>compile</code>. They can use the
+names bound by current namespace.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-builtin">eval</span>(<span class="org-string">"1+2"</span>)
+<span class="org-variable-name">a</span>=2
+<span class="org-builtin">eval</span>(<span class="org-string">"1+a"</span>)
+<span class="org-keyword">def</span> <span class="org-function-name">foo</span>(a):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> a+3
+<span class="org-builtin">eval</span>(<span class="org-string">"foo(a)"</span>)
+<span class="org-comment-delimiter"># </span><span class="org-comment">no return</span>
+<span class="org-keyword">exec</span>(<span class="org-string">"foo(a)"</span>)
+<span class="org-builtin">eval</span>(<span class="org-builtin">compile</span>(<span class="org-string">"1+a"</span>, <span class="org-string">''</span>, <span class="org-string">'eval'</span>))
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5681770" class="outline-3">
+<h3 id="org5681770"><span class="section-number-3">2.7</span> Exception</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+To give a quick feel:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">try</span>:
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+<span class="org-keyword">except</span> <span class="org-type">TypeError</span> <span class="org-keyword">as</span> e: <span class="org-comment-delimiter"># </span><span class="org-comment">capture the exception into a variable</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+<span class="org-keyword">except</span> AnotherError: <span class="org-comment-delimiter"># </span><span class="org-comment">does not capture</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+<span class="org-keyword">except</span>: <span class="org-comment-delimiter"># </span><span class="org-comment">all exception</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+<span class="org-keyword">else</span>: <span class="org-comment-delimiter"># </span><span class="org-comment">if doesn't raise an exception</span>
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+<span class="org-keyword">finally</span>:
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6937f9b" class="outline-4">
+<h4 id="org6937f9b"><span class="section-number-4">2.7.1</span> Built-in exceptions</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<pre class="example">
+BaseException
+ +-- SystemExit
+ +-- KeyboardInterrupt
+ +-- GeneratorExit
+ +-- Exception
+      +-- StopIteration
+      +-- StandardError
+      |    +-- BufferError
+      |    +-- ArithmeticError
+      |    |    +-- FloatingPointError
+      |    |    +-- OverflowError
+      |    |    +-- ZeroDivisionError
+      |    +-- AssertionError
+      |    +-- AttributeError
+      |    +-- EnvironmentError
+      |    |    +-- IOError
+      |    |    +-- OSError
+      |    |         +-- WindowsError (Windows)
+      |    |         +-- VMSError (VMS)
+      |    +-- EOFError
+      |    +-- ImportError
+      |    +-- LookupError
+      |    |    +-- IndexError
+      |    |    +-- KeyError
+      |    +-- MemoryError
+      |    +-- NameError
+      |    |    +-- UnboundLocalError
+      |    +-- ReferenceError
+      |    +-- RuntimeError
+      |    |    +-- NotImplementedError
+      |    +-- SyntaxError
+      |    |    +-- IndentationError
+      |    |         +-- TabError
+      |    +-- SystemError
+      |    +-- TypeError
+      |    +-- ValueError
+      |         +-- UnicodeError
+      |              +-- UnicodeDecodeError
+      |              +-- UnicodeEncodeError
+      |              +-- UnicodeTranslateError
+      +-- Warning
+           +-- DeprecationWarning
+           +-- PendingDeprecationWarning
+           +-- RuntimeWarning
+           +-- SyntaxWarning
+           +-- UserWarning
+           +-- FutureWarning
+	   +-- ImportWarning
+	   +-- UnicodeWarning
+	   +-- BytesWarning
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org4e509da" class="outline-3">
+<h3 id="org4e509da"><span class="section-number-3">2.8</span> Module</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+Exposing API: the following only expose <code>foo</code> but not <code>bar</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-builtin">__all__</span> = [<span class="org-string">'foo'</span>]
+<span class="org-keyword">def</span> <span class="org-function-name">foo</span>():
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+<span class="org-keyword">def</span> <span class="org-function-name">bar</span>():
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org234d74b" class="outline-4">
+<h4 id="org234d74b"><span class="section-number-4">2.8.1</span> importing</h4>
+<div class="outline-text-4" id="text-2-8-1">
+<p>
+The local structure directory must contain the <code>__init__.py</code> file to be able to import.
+</p>
+<pre class="example">
+|-- main.py
+|-- mypackage
+    |-- __init__.py
+    |-- a.py
+    |-- b.py
+    |-- subdir
+        |-- __init__.py
+        |-- c.py
+</pre>
+
+<p>
+The import statements should be:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> mypackage <span class="org-keyword">import</span> a
+<span class="org-keyword">from</span> mypackage.b <span class="org-keyword">import</span> foo <span class="org-keyword">as</span> myfoo
+<span class="org-keyword">from</span> mypackage.subdir <span class="org-keyword">import</span> c
+</pre>
+</div>
+
 <pre class="example">
 export PYTHONPATH="$PYTHONPATH:/home/hebi/github/reading/models"
 </pre>
@@ -532,127 +988,112 @@ from p1 import xxx
 from p2.yyy import foo
 </pre>
 </div>
+</div>
+</div>
+</div>
 
-<div id="outline-container-orgb87cd8e" class="outline-3">
-<h3 id="orgb87cd8e"><span class="section-number-3">1.1</span> pip mirror</h3>
-<div class="outline-text-3" id="text-1-1">
+
+
+<div id="outline-container-org1baa8af" class="outline-2">
+<h2 id="org1baa8af"><span class="section-number-2">3</span> Collections</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgb9afb6b" class="outline-3">
+<h3 id="orgb9afb6b"><span class="section-number-3">3.1</span> List</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-orgd0011dc" class="outline-4">
+<h4 id="orgd0011dc"><span class="section-number-4">3.1.1</span> <span class="todo TODO">TODO</span> tuple</h4>
+</div>
+<div id="outline-container-org9f0c875" class="outline-4">
+<h4 id="org9f0c875"><span class="section-number-4">3.1.2</span> <span class="todo TODO">TODO</span> sorted</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+sort a dictionary by value:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-builtin">sorted</span>(dict1, key=dict1.get) <span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; list</span>
+<span class="org-builtin">sorted</span>(dict1, key=dict1.get, reverse=<span class="org-constant">True</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd0cfcba" class="outline-4">
+<h4 id="orgd0cfcba"><span class="section-number-4">3.1.3</span> Slicing</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+The slicing syntax is <code>l[start:end:step]</code>.
+The slicing will return a <i>new</i> list. Change to that list will not change the original one.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">l[4]
+l[4:]
+l[::2]
+l[:-1]
+</pre>
+</div>
+
+<p>
+However, assign to the slicing itself <i>will change</i> the original one:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">l</span>[1:2] = [4,5,6]
+</pre>
+</div>
+
+<p>
+Also, assign to a new variable only assign the reference:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = [1,2,3]
+<span class="org-variable-name">b</span> = a <span class="org-comment-delimiter"># </span><span class="org-comment">only a reference</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ac7027" class="outline-4">
+<h4 id="org9ac7027"><span class="section-number-4">3.1.4</span> create a list</h4>
+<div class="outline-text-4" id="text-3-1-4">
 <ul class="org-ul">
-<li>ustc mirror: <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></li>
+<li><code>range(stop)</code></li>
+<li><code>range(start, stop[, step])</code></li>
 </ul>
 
 <p>
-to use one-time, simply:
+Creating a matrix:
 </p>
-
-<pre class="example">
-pip3 install xxx -i https://pypi.mirrors.ustc.edu.cn/simple/
-
-# don't need this when using https
-# --trusted-host pypi.mirrors.ustc.edu.cn
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">newmat</span>=[[-1 <span class="org-keyword">for</span> x <span class="org-keyword">in</span> <span class="org-builtin">range</span>(height)] <span class="org-keyword">for</span> y <span class="org-keyword">in</span> <span class="org-builtin">range</span>(width)]
 </pre>
-
-<p>
-global configuration <b>seems</b> to be:
-</p>
-<pre class="example">
-pip3 config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
-</pre>
-
-<p>
-In China, pytorch cannot be installed due to 1. large 2. cpu only has a specific
-url. Thus I'm using conda mirror <a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/</a>
-</p>
-</div>
 </div>
 
-<div id="outline-container-orgfa760f0" class="outline-3">
-<h3 id="orgfa760f0"><span class="section-number-3">1.2</span> imsave</h3>
-<div class="outline-text-3" id="text-1-2">
 <p>
-<code>imsave</code> is deprecated, change from
+list comprehension
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">from</span> scipy.misc <span class="org-keyword">import</span> imsave
-</pre>
-</div>
-
-<p>
-to
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">from</span> imageio <span class="org-keyword">import</span> imwrite <span class="org-keyword">as</span> imsave
+<pre class="src src-python"><span class="org-variable-name">even_squares</span> = [x**2 <span class="org-keyword">for</span> x <span class="org-keyword">in</span> l <span class="org-keyword">if</span> x%2 == 0]
 </pre>
 </div>
 </div>
 </div>
 
 
-
-<div id="outline-container-org43e4b4c" class="outline-3">
-<h3 id="org43e4b4c"><span class="section-number-3">1.3</span> Meta Programming</h3>
-<div class="outline-text-3" id="text-1-3">
-<p>
-Basically <code>eval</code> (return value) and <code>exec</code> (no return value), with
-either string or <i>code object</i> created by <code>compile</code>. They can use the
-names bound by current namespace.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-builtin">eval</span>(<span class="org-string">"1+2"</span>)
-<span class="org-variable-name">a</span>=2
-<span class="org-builtin">eval</span>(<span class="org-string">"1+a"</span>)
-<span class="org-keyword">def</span> <span class="org-function-name">foo</span>(a):
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> a+3
-<span class="org-builtin">eval</span>(<span class="org-string">"foo(a)"</span>)
-<span class="org-comment-delimiter"># </span><span class="org-comment">no return</span>
-<span class="org-keyword">exec</span>(<span class="org-string">"foo(a)"</span>)
-<span class="org-builtin">eval</span>(<span class="org-builtin">compile</span>(<span class="org-string">"1+a"</span>, <span class="org-string">''</span>, <span class="org-string">'eval'</span>))
-</pre>
-</div>
+<div id="outline-container-org41736f7" class="outline-4">
+<h4 id="org41736f7"><span class="section-number-4">3.1.5</span> Modify a list</h4>
+<div class="outline-text-4" id="text-3-1-5">
+<ul class="org-ul">
+<li>list.append</li>
+<li>list.pop</li>
+</ul>
 </div>
 </div>
 
-<div id="outline-container-org66fa611" class="outline-3">
-<h3 id="org66fa611"><span class="section-number-3">1.4</span> Function def and call</h3>
-<div class="outline-text-3" id="text-1-4">
-<p>
-The default value of an argument is evaluated once at the function
-definition. Thus, the object is shared for all the invoke of the
-function. This is typically not desired behavior.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">foo</span>(a=[]):
-<span class="org-highlight-indentation"> </span>   a.append(3)
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> a
-foo()
-foo()
-<span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; [3,3] !!!</span>
-</pre>
-</div>
-
-<p>
-Python function pass-by-object. If you pass a list, you can modify the
-list, and the original list is modified.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">a</span> = [1,2]
-<span class="org-keyword">def</span> <span class="org-function-name">foo</span>(x):
-<span class="org-highlight-indentation"> </span>   x.append(3)
-foo(a)
-a <span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; [1,2,3]</span>
-</pre>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-orgae18b2f" class="outline-3">
-<h3 id="orgae18b2f"><span class="section-number-3">1.5</span> List object model</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgae18b2f" class="outline-4">
+<h4 id="orgae18b2f"><span class="section-number-4">3.1.6</span> List object model</h4>
+<div class="outline-text-4" id="text-3-1-6">
 <p>
 Lists are mutable.  The behavior of slicing is a bit confusing. If the
 slicing is used directly as the target of an assignment statement, it
@@ -733,191 +1174,13 @@ fairly safe to use string.
 </div>
 
 
-<div id="outline-container-org3672172" class="outline-2">
-<h2 id="org3672172"><span class="section-number-2">2</span> Language</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-The ultimate reference:
-</p>
-
-<p>
-For python 3
-</p>
-<ul class="org-ul">
-<li><a href="https://docs.python.org/3.7/reference/">https://docs.python.org/3.7/reference/</a></li>
-<li><a href="https://docs.python.org/3.7/library/">https://docs.python.org/3.7/library/</a></li>
-</ul>
-
-
-<p>
-<code>atom</code> is the most basic expression, while the <code>enclosure</code> is interesting.
-</p>
-
-<pre class="example">
-atom      ::=  identifier | literal | enclosure
-enclosure ::=  parenth_form | list_display | dict_display | set_display
-               | generator_expression | yield_atom
-</pre>
-
-<p>
-The <code>display</code> is a special syntax for python to create lists and dicts, using <i>comprehension</i>.
-</p>
-
-<pre class="example">
-list_display ::=  "[" [starred_list | comprehension] "]"
-set_display ::=  "{" (starred_list | comprehension) "}"
-
-dict_display       ::=  "{" [key_datum_list | dict_comprehension] "}"
-key_datum_list     ::=  key_datum ("," key_datum)* [","]
-key_datum          ::=  expression ":" expression | "**" or_expr
-dict_comprehension ::=  expression ":" expression comp_for
-</pre>
-
-<p>
-And the comprehension grammar:
-</p>
-<pre class="example">
-comprehension ::=  expression comp_for
-comp_for      ::=  [ASYNC] "for" target_list "in" or_test [comp_iter]
-comp_iter     ::=  comp_for | comp_if
-comp_if       ::=  "if" expression_nocond [comp_iter]
-</pre>
-
-<p>
-The <code>comp_for</code> non-terminal contains one or more <code>for</code> clause, and zero or more <code>if</code> clause.
-</p>
-
-<p>
-The evaluation of these displays will evaluate from left to right, so
-the last assignment will prevail in the case of set and dict. The
-comprehension is executed by nesting the for and if clauses from left
-to right.
-</p>
-
-<p>
-So some examples:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">((a,b) <span class="org-keyword">for</span> a <span class="org-keyword">in</span> <span class="org-builtin">range</span>(2) <span class="org-keyword">for</span> b <span class="org-keyword">in</span> <span class="org-builtin">range</span>(3))
-[(a,b) <span class="org-keyword">for</span> a <span class="org-keyword">in</span> <span class="org-builtin">range</span>(2) <span class="org-keyword">for</span> b <span class="org-keyword">in</span> <span class="org-builtin">range</span>(3)]
-{(a,b) <span class="org-keyword">for</span> a <span class="org-keyword">in</span> <span class="org-builtin">range</span>(2) <span class="org-keyword">for</span> b <span class="org-keyword">in</span> <span class="org-builtin">range</span>(3)}
-
-{a:b <span class="org-keyword">for</span> a <span class="org-keyword">in</span> (1,2) <span class="org-keyword">for</span> b <span class="org-keyword">in</span> (3,4)}
-</pre>
+<div id="outline-container-org022f4ec" class="outline-3">
+<h3 id="org022f4ec"><span class="section-number-3">3.2</span> String</h3>
+<div class="outline-text-3" id="text-3-2">
 </div>
-
-<p>
-Note the out-most braces are required, which also creates a scope.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org5051818" class="outline-2">
-<h2 id="org5051818"><span class="section-number-2">3</span> Emacs support</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-Install the <code>elpy</code> package. It provides:
-</p>
-<ul class="org-ul">
-<li><code>C-c C-c</code> runs the shell and send the current buffer</li>
-<li><code>C-c C-d</code> runs <code>elpy-doc</code></li>
-<li><code>C-c C-t</code> runs <code>elpy-test</code>, which runs the unittest discover</li>
-</ul>
-
-<p>
-To enable linter python in emacs, use pylint. It will use <code>pylint</code>
-executable. And it also needs the configure file. Generate it:
-</p>
-
-<pre class="example">
-pylint --generate-rcfile &gt; ~/.pylintrc
-</pre>
-</div>
-</div>
-
-
-<div id="outline-container-org9054fc8" class="outline-2">
-<h2 id="org9054fc8"><span class="section-number-2">4</span> Unit Test</h2>
-<div class="outline-text-2" id="text-4">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">MyTest</span>(unittest.TestCase):
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">test_me</span>(<span class="org-keyword">self</span>):
-<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.assertEqual(1,2)
-unittest.main()
-</pre>
-</div>
-
-<p>
-python unit test can support automatic test discovery. To use that,
-the file must be named <code>test_xxx.py</code>, and run the <code>python -m unittest discover</code>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org0bf31a5" class="outline-2">
-<h2 id="org0bf31a5"><span class="section-number-2">5</span> Concept</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-org14d98a7" class="outline-3">
-<h3 id="org14d98a7"><span class="section-number-3">5.1</span> Scoping</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-There're four levels:
-</p>
-<ul class="org-ul">
-<li>current scope</li>
-<li>parent scope</li>
-<li>module scope (global)</li>
-<li>built-in scope</li>
-</ul>
-
-<p>
-<code>nonlocal</code> keyword specify this variable should be referenced to the parent scope.
-But, this will not reach global.
-Instead, the <code>global</code> keyword declares the listed variables to be in the module level scope.
-</p>
-
-<blockquote>
-<p>
-The nonlocal statement causes the listed identifiers to refer to previously bound variables in the nearest enclosing scope excluding globals.
-</p>
-</blockquote>
-
-<p>
-As an example:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">var</span> = 0 <span class="org-comment-delimiter"># </span><span class="org-comment">global</span>
-
-<span class="org-keyword">def</span> <span class="org-function-name">outer</span>():
-<span class="org-highlight-indentation"> </span> <span class="org-variable-name">var</span> = 1 <span class="org-comment-delimiter"># </span><span class="org-comment">parent</span>
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">inner</span>():
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">nonlocal</span> var
-<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">var</span> = 2 <span class="org-comment-delimiter"># </span><span class="org-comment">local</span>
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">global</span> var
-<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">var</span> =3
-<span class="org-highlight-indentation"> </span> inner()
-<span class="org-highlight-indentation"> </span> <span class="org-comment-delimiter"># </span><span class="org-comment">var = 2</span>
-
-outer()
-<span class="org-comment-delimiter"># </span><span class="org-comment">global var = 3</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org80812b9" class="outline-3">
-<h3 id="org80812b9"><span class="section-number-3">5.2</span> Collection</h3>
-<div class="outline-text-3" id="text-5-2">
-</div>
-<div id="outline-container-org022f4ec" class="outline-4">
-<h4 id="org022f4ec"><span class="section-number-4">5.2.1</span> String</h4>
-<div class="outline-text-4" id="text-5-2-1">
-</div>
-<div id="outline-container-org8c2732b" class="outline-5">
-<h5 id="org8c2732b"><span class="section-number-5">5.2.1.1</span> Concatenation</h5>
-<div class="outline-text-5" id="text-5-2-1-1">
+<div id="outline-container-org8c2732b" class="outline-4">
+<h4 id="org8c2732b"><span class="section-number-4">3.2.1</span> Concatenation</h4>
+<div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>concatenate two strings directly by <code>+</code>.</li>
 <li>need to convert integer to string before concatenate: <code>s + str(35)</code></li>
@@ -926,9 +1189,9 @@ outer()
 </div>
 </div>
 
-<div id="outline-container-orgb72a80a" class="outline-5">
-<h5 id="orgb72a80a"><span class="section-number-5">5.2.1.2</span> split</h5>
-<div class="outline-text-5" id="text-5-2-1-2">
+<div id="outline-container-orgb72a80a" class="outline-4">
+<h4 id="orgb72a80a"><span class="section-number-4">3.2.2</span> split</h4>
+<div class="outline-text-4" id="text-3-2-2">
 <dl class="org-dl">
 <dt><code>str.split(sep=None)</code></dt><dd>default by white space</dd>
 <dt><code>str.strip()</code></dt><dd>strip out white space at both begin and end</dd>
@@ -940,9 +1203,9 @@ outer()
 </div>
 </div>
 
-<div id="outline-container-org2d67c1d" class="outline-5">
-<h5 id="org2d67c1d"><span class="section-number-5">5.2.1.3</span> Slicing</h5>
-<div class="outline-text-5" id="text-5-2-1-3">
+<div id="outline-container-orgd67e05b" class="outline-4">
+<h4 id="orgd67e05b"><span class="section-number-4">3.2.3</span> Slicing</h4>
+<div class="outline-text-4" id="text-3-2-3">
 <p>
 String is an immutable object. It can use slicing. E.g. reversing a
 string is as easy as <code>"hello"[::-1]</code>!
@@ -974,79 +1237,9 @@ first and then reverse it.
 </div>
 </div>
 
-<div id="outline-container-orgd0011dc" class="outline-4">
-<h4 id="orgd0011dc"><span class="section-number-4">5.2.2</span> <span class="todo TODO">TODO</span> tuple</h4>
-</div>
-<div id="outline-container-orgb9afb6b" class="outline-4">
-<h4 id="orgb9afb6b"><span class="section-number-4">5.2.3</span> List</h4>
-<div class="outline-text-4" id="text-5-2-3">
-</div>
-<div id="outline-container-orgbfb8284" class="outline-5">
-<h5 id="orgbfb8284"><span class="section-number-5">5.2.3.1</span> Slicing</h5>
-<div class="outline-text-5" id="text-5-2-3-1">
-<p>
-The slicing syntax is <code>l[start:end:step]</code>.
-The slicing will return a <i>new</i> list. Change to that list will not change the original one.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">l[4]
-l[4:]
-l[::2]
-l[:-1]
-</pre>
-</div>
-
-<p>
-However, assign to the slicing itself <i>will change</i> the original one:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">l</span>[1:2] = [4,5,6]
-</pre>
-</div>
-
-<p>
-Also, assign to a new variable only assign the reference:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">a</span> = [1,2,3]
-<span class="org-variable-name">b</span> = a <span class="org-comment-delimiter"># </span><span class="org-comment">only a reference</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org9ac7027" class="outline-5">
-<h5 id="org9ac7027"><span class="section-number-5">5.2.3.2</span> create a list</h5>
-<div class="outline-text-5" id="text-5-2-3-2">
-<ul class="org-ul">
-<li><code>range(stop)</code></li>
-<li><code>range(start, stop[, step])</code></li>
-</ul>
-
-<p>
-Creating a matrix:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">newmat</span>=[[-1 <span class="org-keyword">for</span> x <span class="org-keyword">in</span> <span class="org-builtin">range</span>(height)] <span class="org-keyword">for</span> y <span class="org-keyword">in</span> <span class="org-builtin">range</span>(width)]
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org41736f7" class="outline-5">
-<h5 id="org41736f7"><span class="section-number-5">5.2.3.3</span> Modify a list</h5>
-<div class="outline-text-5" id="text-5-2-3-3">
-<ul class="org-ul">
-<li>list.append</li>
-<li>list.pop</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org4536677" class="outline-4">
-<h4 id="org4536677"><span class="section-number-4">5.2.4</span> Dictionary</h4>
-<div class="outline-text-4" id="text-5-2-4">
+<div id="outline-container-org4536677" class="outline-3">
+<h3 id="org4536677"><span class="section-number-3">3.3</span> Dictionary</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 Create:
 </p>
@@ -1074,11 +1267,10 @@ z.update(y)
 </pre>
 </div>
 </div>
-</div>
 
 <div id="outline-container-org3dc2fe4" class="outline-4">
-<h4 id="org3dc2fe4"><span class="section-number-4">5.2.5</span> Set</h4>
-<div class="outline-text-4" id="text-5-2-5">
+<h4 id="org3dc2fe4"><span class="section-number-4">3.3.1</span> Set</h4>
+<div class="outline-text-4" id="text-3-3-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-variable-name">s</span> = <span class="org-builtin">set</span>()
 s.add(x)
@@ -1089,412 +1281,34 @@ s.add(x)
 </div>
 </div>
 </div>
-
-<div id="outline-container-org47daf7b" class="outline-3">
-<h3 id="org47daf7b"><span class="section-number-3">5.3</span> Algorithm</h3>
-<div class="outline-text-3" id="text-5-3">
-</div>
-<div id="outline-container-orgede4cd6" class="outline-4">
-<h4 id="orgede4cd6"><span class="section-number-4">5.3.1</span> <span class="todo TODO">TODO</span> sort</h4>
-<div class="outline-text-4" id="text-5-3-1">
-<p>
-sort a dictionary by value:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-builtin">sorted</span>(dict1, key=dict1.get) <span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; list</span>
-<span class="org-builtin">sorted</span>(dict1, key=dict1.get, reverse=<span class="org-constant">True</span>)
-</pre>
-</div>
-</div>
-</div>
 </div>
 
 
-<div id="outline-container-orgb33df91" class="outline-3">
-<h3 id="orgb33df91"><span class="section-number-3">5.4</span> Function</h3>
-<div class="outline-text-3" id="text-5-4">
-</div>
-<div id="outline-container-org0a480f3" class="outline-4">
-<h4 id="org0a480f3"><span class="section-number-4">5.4.1</span> variadic parameter</h4>
-<div class="outline-text-4" id="text-5-4-1">
-<p>
-use <code>*args</code> syntax, and <code>args</code> will be a <i>tuple</i>:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">foo</span>(*args):
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> a <span class="org-keyword">in</span> args:
-<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span> a
-</pre>
-</div>
 
-<p>
-use <code>**args</code> to capture all <i>keyword arguments</i>.
-</p>
 
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">bar</span>(**kwargs):
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> a <span class="org-keyword">in</span> kwargs:
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span> a, kwargs[a]
-</pre>
+<div id="outline-container-org3d20820" class="outline-2">
+<h2 id="org3d20820"><span class="section-number-2">4</span> Standard Library</h2>
+<div class="outline-text-2" id="text-4">
 </div>
-
-<p>
-Combine them together:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">foobar</span>(kind, *args, **kwargs):
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-</pre>
+<div id="outline-container-orgcf8cb14" class="outline-3">
+<h3 id="orgcf8cb14"><span class="section-number-3">4.1</span> Operating System</h3>
+<div class="outline-text-3" id="text-4-1">
 </div>
-
-<p>
-Also, there's a concept for the reverse thing: unpack argument list from a list, with <code>*list</code>:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">foo</span>(a,b):
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-
-<span class="org-variable-name">l</span> = [1,2]
-foo(*l)
-</pre>
-</div>
-
-<p>
-on python3, this syntax can appear on left side
-</p>
-<div class="org-src-container">
-<pre class="src src-python">first, *<span class="org-variable-name">rest</span> = [1,2,3,4]
-first,*<span class="org-variable-name">l</span>,<span class="org-variable-name">last</span> = [1,2,3,4]
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5681770" class="outline-3">
-<h3 id="org5681770"><span class="section-number-3">5.5</span> Exception</h3>
-<div class="outline-text-3" id="text-5-5">
-<p>
-To give a quick feel:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">try</span>:
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-<span class="org-keyword">except</span> <span class="org-type">TypeError</span> <span class="org-keyword">as</span> e: <span class="org-comment-delimiter"># </span><span class="org-comment">capture the exception into a variable</span>
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-<span class="org-keyword">except</span> AnotherError: <span class="org-comment-delimiter"># </span><span class="org-comment">does not capture</span>
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-<span class="org-keyword">except</span>: <span class="org-comment-delimiter"># </span><span class="org-comment">all exception</span>
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-<span class="org-keyword">else</span>: <span class="org-comment-delimiter"># </span><span class="org-comment">if doesn't raise an exception</span>
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-<span class="org-keyword">finally</span>:
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org9da505b" class="outline-3">
-<h3 id="org9da505b"><span class="section-number-3">5.6</span> Lambda</h3>
-<div class="outline-text-3" id="text-5-6">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">lambda</span> x : x+2
-<span class="org-keyword">lambda</span> x: x%2==0
-</pre>
-</div>
-
-<p>
-The usage of lambda is often in <i>map</i> and <i>filter</i>.
-</p>
+<div id="outline-container-orgdc54578" class="outline-4">
+<h4 id="orgdc54578"><span class="section-number-4">4.1.1</span> Env</h4>
+<div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
-<li><code>map(lambda_exp, mylist)</code> will execute the lambda expression on each element of the list, and return a list containing the results.</li>
+<li>os.environ['HOME']</li>
+<li>os.getenv(name)</li>
+<li>os.putenv(name, value)</li>
+<li>os.unsetenv(name)</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org497d3d5" class="outline-3">
-<h3 id="org497d3d5"><span class="section-number-3">5.7</span> Packaging</h3>
-<div class="outline-text-3" id="text-5-7">
-<p>
-Exposing API: the following only expose <code>foo</code> but not <code>bar</code>.
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-builtin">__all__</span> = [<span class="org-string">'foo'</span>]
-<span class="org-keyword">def</span> <span class="org-function-name">foo</span>():
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-<span class="org-keyword">def</span> <span class="org-function-name">bar</span>():
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">pass</span>
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org234d74b" class="outline-4">
-<h4 id="org234d74b"><span class="section-number-4">5.7.1</span> importing</h4>
-<div class="outline-text-4" id="text-5-7-1">
-<p>
-The local structure directory must contain the <code>__init__.py</code> file to be able to import.
-</p>
-<pre class="example">
-|-- main.py
-|-- mypackage
-    |-- __init__.py
-    |-- a.py
-    |-- b.py
-    |-- subdir
-        |-- __init__.py
-        |-- c.py
-</pre>
-
-<p>
-The import statements should be:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">from</span> mypackage <span class="org-keyword">import</span> a
-<span class="org-keyword">from</span> mypackage.b <span class="org-keyword">import</span> foo <span class="org-keyword">as</span> myfoo
-<span class="org-keyword">from</span> mypackage.subdir <span class="org-keyword">import</span> c
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org390b91a" class="outline-3">
-<h3 id="org390b91a"><span class="section-number-3">5.8</span> Thread</h3>
-<div class="outline-text-3" id="text-5-8">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">from</span> threading <span class="org-keyword">import</span> Thread
-
-<span class="org-keyword">class</span> <span class="org-type">MyThread</span>(Thread):
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, arg):
-<span class="org-highlight-indentation"> </span>   Thread.__init__(<span class="org-keyword">self</span>)
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.arg = arg
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">run</span>(<span class="org-keyword">self</span>):
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">pass</span>
-
-<span class="org-variable-name">t</span> = MyThread(arg)
-t.start()
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf966bcc" class="outline-2">
-<h2 id="orgf966bcc"><span class="section-number-2">6</span> Type</h2>
-<div class="outline-text-2" id="text-6">
-</div>
-<div id="outline-container-org206d037" class="outline-3">
-<h3 id="org206d037"><span class="section-number-3">6.1</span> Boolean</h3>
-<div class="outline-text-3" id="text-6-1">
-<ul class="org-ul">
-<li><code>not True</code></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org4aba41a" class="outline-3">
-<h3 id="org4aba41a"><span class="section-number-3">6.2</span> Integer</h3>
-<div class="outline-text-3" id="text-6-2">
-<ul class="org-ul">
-<li><code>i += 1</code></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org35e3531" class="outline-3">
-<h3 id="org35e3531"><span class="section-number-3">6.3</span> conversion</h3>
-<div class="outline-text-3" id="text-6-3">
-<ul class="org-ul">
-<li>string to integer: <code>int('45')</code></li>
-<li>integer to string: <code>str(45)</code></li>
-<li>ASCII to char: <code>chr(100)</code> returns 'd'</li>
-<li>char to ASCII: <code>ord('d')</code> returns 100</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org2383c89" class="outline-2">
-<h2 id="org2383c89"><span class="section-number-2">7</span> Black Tech</h2>
-<div class="outline-text-2" id="text-7">
-<p>
-If else or:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">var</span> = d.get(<span class="org-string">'key'</span>) <span class="org-keyword">or</span> 0
-<span class="org-comment-delimiter"># </span><span class="org-comment">is equal to:</span>
-<span class="org-variable-name">var</span> = d.get(<span class="org-string">'key'</span>) <span class="org-keyword">if</span> d.get(<span class="org-string">'key'</span>) <span class="org-keyword">else</span> 0
-</pre>
-</div>
-
-<p>
-list comprehension
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">even_squares</span> = [x**2 <span class="org-keyword">for</span> x <span class="org-keyword">in</span> l <span class="org-keyword">if</span> x%2 == 0]
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org48edc0b" class="outline-2">
-<h2 id="org48edc0b"><span class="section-number-2">8</span> Pep8</h2>
-<div class="outline-text-2" id="text-8">
-<p>
-Indent:
-</p>
-<ul class="org-ul">
-<li><b>function and class</b> should be separated by <b>2 lines</b></li>
-<li><b>In a class</b>, function should be separated by <b>1 line</b></li>
-<li>1 space before and after variable assignment</li>
-</ul>
-
-<p>
-Naming
-</p>
-<ul class="org-ul">
-<li>function, variable, attribute: <code>func_var_attr</code></li>
-<li>protected instance attributes: <code>_protected_field</code></li>
-<li>private instance attributes: <code>__private_field</code></li>
-<li>class and exception: <code>ClassExceptionName</code></li>
-<li>module level constants: <code>CONSTANT</code></li>
-<li>instance method of class should use <code>self</code> as first parameter, refer to the object</li>
-<li>class method should use <code>cls</code> as first parameter, refer to the class</li>
-</ul>
-
-<p>
-Expression
-</p>
-
-<table border="2" cellspacing="2" cellpadding="6" rules="groups" frame="border">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">use</th>
-<th scope="col" class="org-left">DONT use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><code>a is not b</code></td>
-<td class="org-left"><del><code>not a is b</code></del></td>
-</tr>
-
-<tr>
-<td class="org-left"><code>if not list</code></td>
-<td class="org-left"><del><code>if len(list) == 0</code></del></td>
-</tr>
-</tbody>
-</table>
-
-<p>
-Import
-</p>
-<ul class="org-ul">
-<li>always use absolute path</li>
-<li>if must use relative, use <code>from . import foo</code> instead of <del><code>import foo</code></del></li>
-</ul>
-</div>
-
-<div id="outline-container-org78b4b2d" class="outline-3">
-<h3 id="org78b4b2d"><span class="section-number-3">8.1</span> document</h3>
-<div class="outline-text-3" id="text-8-1">
-<p>
-One can use one line or multi-line document.
-The doc string can be retrieved by <code>func.__doc__</code>.
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">func</span>():
-<span class="org-highlight-indentation"> </span> <span class="org-doc">"""one line doc"""</span>
-
-<span class="org-keyword">def</span> <span class="org-function-name">func</span>():
-<span class="org-highlight-indentation"> </span> <span class="org-doc">"""The outline</span>
-
-<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc"> The above empty line is required.</span>
-<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc"> Here's the detailed documentation.</span>
-<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc"> """</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgef9e0e4" class="outline-2">
-<h2 id="orgef9e0e4"><span class="section-number-2">9</span> IO</h2>
-<div class="outline-text-2" id="text-9">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">'xxx'</span>, end=<span class="org-string">''</span>)
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-highlight-indentation"> </span> <span class="org-variable-name">f</span> = <span class="org-builtin">open</span>(<span class="org-string">'text.txt'</span>)
-<span class="org-highlight-indentation"> </span> f.read() <span class="org-comment-delimiter"># </span><span class="org-comment">return all content</span>
-
-<span class="org-highlight-indentation"> </span> <span class="org-variable-name">f</span> = <span class="org-builtin">open</span>(<span class="org-string">'text.txt'</span>)
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> line <span class="org-keyword">in</span> f:
-<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span>(line)
-
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">with</span> <span class="org-builtin">open</span>(<span class="org-string">'a.txt'</span>) <span class="org-keyword">as</span> f:
-<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> line <span class="org-keyword">in</span> f:
-<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span>(line)
-</pre>
-</div>
-
-<p>
-read from stdin:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">for</span> line <span class="org-keyword">in</span> sys.stdin:
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span>(line)
-</pre>
-</div>
-
-<p>
-get command line argument: <code>sys.argv</code>
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-orgcf8cb14" class="outline-2">
-<h2 id="orgcf8cb14"><span class="section-number-2">10</span> Operating System</h2>
-<div class="outline-text-2" id="text-10">
-</div>
-<div id="outline-container-org3152ddd" class="outline-3">
-<h3 id="org3152ddd"><span class="section-number-3">10.1</span> Work filesystem:</h3>
-<div class="outline-text-3" id="text-10-1">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">import</span> os
-<span class="org-keyword">for</span> root,dirs,files <span class="org-keyword">in</span> os.walk(<span class="org-string">'.'</span>):
-<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> f <span class="org-keyword">in</span> files:
-<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span> f
-</pre>
-</div>
-
-<ul class="org-ul">
-<li><code>os.path.abspath('relative/path/to/file')</code></li>
-<li><code>os.path.exists("/path/to/file")</code></li>
-<li><code>os.rename('old', 'new')</code></li>
-<li><code>os.path.isfile</code></li>
-</ul>
-</div>
-</div>
-
-
-
-<div id="outline-container-org50aabc6" class="outline-3">
-<h3 id="org50aabc6"><span class="section-number-3">10.2</span> Shell command</h3>
-<div class="outline-text-3" id="text-10-2">
+<div id="outline-container-org50aabc6" class="outline-4">
+<h4 id="org50aabc6"><span class="section-number-4">4.1.2</span> Shell command</h4>
+<div class="outline-text-4" id="text-4-1-2">
 <dl class="org-dl">
 <dt><code>os.system</code></dt><dd>simply run command</dd>
 </dl>
@@ -1531,177 +1345,235 @@ p.stdout.read()
 </div>
 </div>
 </div>
+<div id="outline-container-orge5f6bb6" class="outline-4">
+<h4 id="orge5f6bb6"><span class="section-number-4">4.1.3</span> Process</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<ul class="org-ul">
+<li>os.abort()</li>
+<li>os.execl(path, arg0, arg1, &#x2026;)</li>
+<li>os.execle(path, arg0, arg1, &#x2026;, env)</li>
+<li>os.execlp(file, arg0, arg1, &#x2026;)</li>
+<li>os.execlpe(file, arg0, arg1, &#x2026;, env)</li>
+<li>os.execv(path, args)</li>
+<li>os.execve(path, args, env)</li>
+<li>os.execvp(file, args)</li>
+<li>os.execvpe(file, args, env)</li>
+<li>os.folk</li>
+<li>os.wait()</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>os.system(cmd): run cmd, return exit code</li>
+<li>os.times(): 5-tuple
+<ul class="org-ul">
+<li>user time</li>
+<li>system time</li>
+<li>childrens user time</li>
+<li>childrens system time</li>
+<li>elapsed real time</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org3d20820" class="outline-2">
-<h2 id="org3d20820"><span class="section-number-2">11</span> Standard Library</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-orgef9e0e4" class="outline-3">
+<h3 id="orgef9e0e4"><span class="section-number-3">4.2</span> IO</h3>
+<div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-org6937f9b" class="outline-3">
-<h3 id="org6937f9b"><span class="section-number-3">11.1</span> Built-in exceptions</h3>
-<div class="outline-text-3" id="text-11-1">
-<pre class="example">
-BaseException
- +-- SystemExit
- +-- KeyboardInterrupt
- +-- GeneratorExit
- +-- Exception
-      +-- StopIteration
-      +-- StandardError
-      |    +-- BufferError
-      |    +-- ArithmeticError
-      |    |    +-- FloatingPointError
-      |    |    +-- OverflowError
-      |    |    +-- ZeroDivisionError
-      |    +-- AssertionError
-      |    +-- AttributeError
-      |    +-- EnvironmentError
-      |    |    +-- IOError
-      |    |    +-- OSError
-      |    |         +-- WindowsError (Windows)
-      |    |         +-- VMSError (VMS)
-      |    +-- EOFError
-      |    +-- ImportError
-      |    +-- LookupError
-      |    |    +-- IndexError
-      |    |    +-- KeyError
-      |    +-- MemoryError
-      |    +-- NameError
-      |    |    +-- UnboundLocalError
-      |    +-- ReferenceError
-      |    +-- RuntimeError
-      |    |    +-- NotImplementedError
-      |    +-- SyntaxError
-      |    |    +-- IndentationError
-      |    |         +-- TabError
-      |    +-- SystemError
-      |    +-- TypeError
-      |    +-- ValueError
-      |         +-- UnicodeError
-      |              +-- UnicodeDecodeError
-      |              +-- UnicodeEncodeError
-      |              +-- UnicodeTranslateError
-      +-- Warning
-           +-- DeprecationWarning
-           +-- PendingDeprecationWarning
-           +-- RuntimeWarning
-           +-- SyntaxWarning
-           +-- UserWarning
-           +-- FutureWarning
-	   +-- ImportWarning
-	   +-- UnicodeWarning
-	   +-- BytesWarning
+<div id="outline-container-orgb976c99" class="outline-4">
+<h4 id="orgb976c99"><span class="section-number-4">4.2.1</span> File IO</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<p>
+Reading:
+</p>
+<ul class="org-ul">
+<li>read()</li>
+<li>readline(size=1)</li>
+<li>readlines()</li>
+</ul>
+
+<p>
+Seeking:
+</p>
+<ul class="org-ul">
+<li>seek(offset=0)
+<ul class="org-ul">
+<li>0 start</li>
+<li>1 current</li>
+<li>2 end</li>
+</ul></li>
+<li>tell(): current position</li>
+</ul>
+
+<p>
+Writing:
+</p>
+<ul class="org-ul">
+<li>write(s): finally the string!</li>
+<li>writelines(lines): write a list of lines</li>
+<li>flush()</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-highlight-indentation"> </span> <span class="org-variable-name">f</span> = <span class="org-builtin">open</span>(<span class="org-string">'text.txt'</span>)
+<span class="org-highlight-indentation"> </span> f.read() <span class="org-comment-delimiter"># </span><span class="org-comment">return all content</span>
+
+<span class="org-highlight-indentation"> </span> <span class="org-variable-name">f</span> = <span class="org-builtin">open</span>(<span class="org-string">'text.txt'</span>)
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> line <span class="org-keyword">in</span> f:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span>(line)
+
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">with</span> <span class="org-builtin">open</span>(<span class="org-string">'a.txt'</span>) <span class="org-keyword">as</span> f:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> line <span class="org-keyword">in</span> f:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span>(line)
 </pre>
 </div>
-</div>
-
-<div id="outline-container-org6ccff9c" class="outline-3">
-<h3 id="org6ccff9c"><span class="section-number-3">11.2</span> Built-in</h3>
-<div class="outline-text-3" id="text-11-2">
-<p>
-These functions are always available.
-</p>
 
 <p>
-Numbers:
+Other IO:
 </p>
 <ul class="org-ul">
-<li>abs(x): absolute value</li>
-<li>divmod(a,b): a pair (a // b, a % b)</li>
-<li>max(arg1, arg2, *args)</li>
-<li>min(arg1, arg2, *args)</li>
-<li>pow(x,y): x<sup>y</sup></li>
-<li>round(x, ndigits=0)</li>
-<li>sum(iterable)</li>
-</ul>
-
-<p>
-Convertion
-</p>
-<ul class="org-ul">
-<li>int(x)</li>
-<li>float(x)</li>
-<li>long(x)</li>
-<li>chr(x): ASCII to char</li>
-<li>ord(c): char to ASCII</li>
-<li>bool(x): convert x to bool</li>
-<li>hex(x): convert integer to lowercase hex string prefix with '0x'</li>
-<li>oct(x): integer to octal string</li>
-<li>bin(x): an integer to binary string</li>
-</ul>
-
-<p>
-Boolean:
-</p>
-<ul class="org-ul">
-<li>all(iterable): true if all items are true. empty =&gt; True</li>
-<li>any(iterable): true if any item is true. empty =&gt; False</li>
-<li>cmp(x,y)
-<ul class="org-ul">
-<li>x&lt;y =&gt; negative</li>
-<li>x=y =&gt; 0</li>
-<li>x&gt;y =&gt; positive</li>
-</ul></li>
-</ul>
-
-<p>
-Symbol Table
-</p>
-<ul class="org-ul">
-<li>locals()</li>
-<li>globals()</li>
-<li>dir()</li>
-</ul>
-
-<p>
-Creation
-</p>
-<ul class="org-ul">
-<li>dict</li>
-<li>list</li>
-<li>set</li>
-<li>tuple</li>
-</ul>
-
-<p>
-Other
-</p>
-<ul class="org-ul">
-<li>len(s): length</li>
-<li>next(iterator)</li>
-<li>print(*objects, sep='', end='\n', file=sys.stdout)</li>
-<li>range(stop): [0,stop)</li>
-<li>range(start, stop, step=1)</li>
-<li>sorted(iterable, cmp, key, reverse=False)
-<ul class="org-ul">
-<li>key=lambda x: x[1]</li>
-</ul></li>
-<li>type(obj): get the type of obj</li>
-<li>open(name, mode): return an object of file type.
-<ul class="org-ul">
-<li>r,w,a,b; + for read and write</li>
-</ul></li>
+<li>f = io.StringIO("some string"): in memory text stream</li>
+<li>f = io.BytesIO(b"some binary data \x00\x01")</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga716053" class="outline-3">
-<h3 id="orga716053"><span class="section-number-3">11.3</span> Printing</h3>
-<div class="outline-text-3" id="text-11-3">
+<div id="outline-container-orga716053" class="outline-4">
+<h4 id="orga716053"><span class="section-number-4">4.2.2</span> Printing</h4>
+<div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>pprint.pprint(object, stream=None): pretty print</li>
 <li>'string {0}, {hello}'.format('yes', hello=2)</li>
 </ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">'xxx'</span>, end=<span class="org-string">''</span>)
+</pre>
+</div>
+
+<p>
+read from stdin:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">for</span> line <span class="org-keyword">in</span> sys.stdin:
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">print</span>(line)
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-orgd87e172" class="outline-3">
-<h3 id="orgd87e172"><span class="section-number-3">11.4</span> File System</h3>
-<div class="outline-text-3" id="text-11-4">
+<div id="outline-container-org68bd6cc" class="outline-4">
+<h4 id="org68bd6cc"><span class="section-number-4">4.2.3</span> redirect stdout</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> contextlib <span class="org-keyword">import</span> redirect_stdout
+<span class="org-keyword">with</span> <span class="org-builtin">open</span>(<span class="org-string">'xxx.txt'</span>, <span class="org-string">'w'</span>) <span class="org-keyword">as</span> f:
+<span class="org-highlight-indentation"> </span>   redirect_stdout(f)
+</pre>
 </div>
+
+<p>
+Or:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">sys.stdout</span> = f
+</pre>
+</div>
+
+<p>
+The file handle can be:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">f</span> = <span class="org-builtin">open</span>(os.devnull, <span class="org-string">'w'</span>)
+</pre>
+</div>
+
+<p>
+It can also be a predefined handle, like <code>sys.stderr</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">with</span> redirect_stdout(sys.stderr):
+<span class="org-highlight-indentation"> </span>   <span class="org-builtin">help</span>(<span class="org-builtin">dir</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd87e172" class="outline-3">
+<h3 id="orgd87e172"><span class="section-number-3">4.3</span> File System</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-org8bd43fa" class="outline-4">
+<h4 id="org8bd43fa"><span class="section-number-4">4.3.1</span> os.walk</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> os
+<span class="org-keyword">for</span> root,dirs,files <span class="org-keyword">in</span> os.walk(<span class="org-string">'.'</span>):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">for</span> f <span class="org-keyword">in</span> files:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span> f
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>os.path.abspath('relative/path/to/file')</code></li>
+<li><code>os.path.exists("/path/to/file")</code></li>
+<li><code>os.rename('old', 'new')</code></li>
+<li><code>os.path.isfile</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org99e8275" class="outline-4">
+<h4 id="org99e8275"><span class="section-number-4">4.3.2</span> FS Operations</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<ul class="org-ul">
+<li>os.getcwd(): current working directory</li>
+<li>os.chdir(path): change cwd</li>
+<li>os.mkdir(path)</li>
+<li><code>os.listdir(path='.')</code>: list all in this dir. E.g. <code>for item in os.listdir('/path'): print (item)</code></li>
+<li><code>os.makedirs(path)</code>: GOOD this is the way to go the make directories</li>
+<li><code>os.remove(path)</code>: remove a file</li>
+<li><code>os.rmdir()</code>: remove an empty dir.</li>
+<li>os.removedirs(path): foo/bar/aaa will try to remove aaa, than bar,
+then foo. Don't use! To recursively remove all contents, use
+<code>shutil.rmtree</code></li>
+<li>os.rename(src, dst)</li>
+<li>os.renames(old, new)</li>
+<li>os.rmdir(path): only work if dir is empty</li>
+<li>os.tempnam(): a reasonable absolute name for creating temporary file
+<ul class="org-ul">
+<li>seems to be vulnerable</li>
+</ul></li>
+<li>os.walk(top, topdown=True): for each directory including top itself,
+it yields 3-tuple (dirpath, dirnames, filenames). E.g. <code>for root,dirs,files in os.walk('/path'): for f in files: print (f);</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1970c20" class="outline-4">
+<h4 id="org1970c20"><span class="section-number-4">4.3.3</span> shutil</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<ul class="org-ul">
+<li>copy(src,dst)</li>
+<li>copytree(src, dst): recursive</li>
+<li>rmtree(path): rm -r</li>
+<li>move(src, dst)</li>
+</ul>
+
+<p>
+popen family is deprecated. Use subprocess.
+</p>
+</div>
+</div>
+
 <div id="outline-container-org23c9980" class="outline-4">
-<h4 id="org23c9980"><span class="section-number-4">11.4.1</span> os.path</h4>
-<div class="outline-text-4" id="text-11-4-1">
+<h4 id="org23c9980"><span class="section-number-4">4.3.4</span> os.path</h4>
+<div class="outline-text-4" id="text-4-3-4">
 <p>
 If parameter is not listed, it means a single path.
 </p>
@@ -1731,8 +1603,8 @@ path. normpath(join(os.getcwd(), path))</li>
 </div>
 
 <div id="outline-container-orgac0db8d" class="outline-4">
-<h4 id="orgac0db8d"><span class="section-number-4">11.4.2</span> pathlib</h4>
-<div class="outline-text-4" id="text-11-4-2">
+<h4 id="orgac0db8d"><span class="section-number-4">4.3.5</span> pathlib</h4>
+<div class="outline-text-4" id="text-4-3-5">
 <p>
 Object-oriented filesystem paths.
 <a href="https://docs.python.org/3/library/pathlib.html">https://docs.python.org/3/library/pathlib.html</a>
@@ -1881,217 +1753,49 @@ shell pattern, e.g. <code>p.glob('*/*.py')</code></li>
 </div>
 </div>
 
-
-
-
 <div id="outline-container-orgb57d1ec" class="outline-4">
-<h4 id="orgb57d1ec"><span class="section-number-4">11.4.3</span> <span class="todo TODO">TODO</span> tempfile</h4>
+<h4 id="orgb57d1ec"><span class="section-number-4">4.3.6</span> <span class="todo TODO">TODO</span> tempfile</h4>
 </div>
 </div>
 
-<div id="outline-container-org31fd17a" class="outline-3">
-<h3 id="org31fd17a"><span class="section-number-3">11.5</span> os</h3>
-<div class="outline-text-3" id="text-11-5">
+<div id="outline-container-orgae8c350" class="outline-3">
+<h3 id="orgae8c350"><span class="section-number-3">4.4</span> unittest</h3>
+<div class="outline-text-3" id="text-4-4">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">MyTest</span>(unittest.TestCase):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">test_me</span>(<span class="org-keyword">self</span>):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.assertEqual(1,2)
+unittest.main()
+</pre>
 </div>
-<div id="outline-container-orgdc54578" class="outline-4">
-<h4 id="orgdc54578"><span class="section-number-4">11.5.1</span> Env</h4>
-<div class="outline-text-4" id="text-11-5-1">
-<ul class="org-ul">
-<li>os.environ['HOME']</li>
-<li>os.getenv(name)</li>
-<li>os.putenv(name, value)</li>
-<li>os.unsetenv(name)</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orge0ac059" class="outline-4">
-<h4 id="orge0ac059"><span class="section-number-4">11.5.2</span> Filesystem</h4>
-<div class="outline-text-4" id="text-11-5-2">
-<ul class="org-ul">
-<li>os.getcwd(): current working directory</li>
-<li>os.chdir(path): change cwd</li>
-<li>os.mkdir(path)</li>
-<li><code>os.listdir(path='.')</code>: list all in this dir. E.g. <code>for item in os.listdir('/path'): print (item)</code></li>
-<li><code>os.makedirs(path)</code>: GOOD this is the way to go the make directories</li>
-<li><code>os.remove(path)</code>: remove a file</li>
-<li><code>os.rmdir()</code>: remove an empty dir.</li>
-<li>os.removedirs(path): foo/bar/aaa will try to remove aaa, than bar,
-then foo. Don't use! To recursively remove all contents, use
-<code>shutil.rmtree</code></li>
-<li>os.rename(src, dst)</li>
-<li>os.renames(old, new)</li>
-<li>os.rmdir(path): only work if dir is empty</li>
-<li>os.tempnam(): a reasonable absolute name for creating temporary file
-<ul class="org-ul">
-<li>seems to be vulnerable</li>
-</ul></li>
-<li>os.walk(top, topdown=True): for each directory including top itself,
-it yields 3-tuple (dirpath, dirnames, filenames). E.g. <code>for root,dirs,files in os.walk('/path'): for f in files: print (f);</code></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org1970c20" class="outline-4">
-<h4 id="org1970c20"><span class="section-number-4">11.5.3</span> shutil</h4>
-<div class="outline-text-4" id="text-11-5-3">
-<ul class="org-ul">
-<li>copy(src,dst)</li>
-<li>copytree(src, dst): recursive</li>
-<li>rmtree(path): rm -r</li>
-<li>move(src, dst)</li>
-</ul>
 
 <p>
-popen family is deprecated. Use subprocess.
+python unit test can support automatic test discovery. To use that,
+the file must be named <code>test_xxx.py</code>, and run the <code>python -m unittest discover</code>.
 </p>
-</div>
-</div>
-
-<div id="outline-container-orge5f6bb6" class="outline-4">
-<h4 id="orge5f6bb6"><span class="section-number-4">11.5.4</span> Process</h4>
-<div class="outline-text-4" id="text-11-5-4">
-<ul class="org-ul">
-<li>os.abort()</li>
-<li>os.execl(path, arg0, arg1, &#x2026;)</li>
-<li>os.execle(path, arg0, arg1, &#x2026;, env)</li>
-<li>os.execlp(file, arg0, arg1, &#x2026;)</li>
-<li>os.execlpe(file, arg0, arg1, &#x2026;, env)</li>
-<li>os.execv(path, args)</li>
-<li>os.execve(path, args, env)</li>
-<li>os.execvp(file, args)</li>
-<li>os.execvpe(file, args, env)</li>
-<li>os.folk</li>
-<li>os.wait()</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>os.system(cmd): run cmd, return exit code</li>
-<li>os.times(): 5-tuple
-<ul class="org-ul">
-<li>user time</li>
-<li>system time</li>
-<li>childrens user time</li>
-<li>childrens system time</li>
-<li>elapsed real time</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgaf66566" class="outline-3">
-<h3 id="orgaf66566"><span class="section-number-3">11.6</span> io</h3>
-<div class="outline-text-3" id="text-11-6">
-<ul class="org-ul">
-<li>f = open('file.txt')</li>
-<li>f = io.StringIO("some string"): in memory text stream</li>
-<li>f = open('file', 'rb')</li>
-<li>f = io.BytesIO(b"some binary data \x00\x01")</li>
-<li>support <i>with statement</i>: <code>with open('file.txt') as file:</code></li>
-</ul>
-</div>
-<div id="outline-container-org83b5c08" class="outline-4">
-<h4 id="org83b5c08"><span class="section-number-4">11.6.1</span> IOBase</h4>
-<div class="outline-text-4" id="text-11-6-1">
-<p>
-Methods:
-</p>
-<ul class="org-ul">
-<li>close()</li>
-<li>flush()</li>
-<li>readline(): return one line</li>
-<li>readlines(): return a list of lines</li>
-<li>seek(offset=0)
-<ul class="org-ul">
-<li>0 start</li>
-<li>1 current</li>
-<li>2 end</li>
-</ul></li>
-<li>tell(): current position</li>
-<li>writelines(lines): write a list of lines</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgc1821a3" class="outline-4">
-<h4 id="orgc1821a3"><span class="section-number-4">11.6.2</span> RawIOBase : IOBase (should not use directly)</h4>
-<div class="outline-text-4" id="text-11-6-2">
-<ul class="org-ul">
-<li>read()</li>
-<li>readall()</li>
-<li>readinto(b)</li>
-<li>write(b)</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org061f18c" class="outline-4">
-<h4 id="org061f18c"><span class="section-number-4">11.6.3</span> BufferedIOBase</h4>
-<div class="outline-text-4" id="text-11-6-3">
-<ul class="org-ul">
-<li>read(): read all</li>
-<li>write(b)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orga605b79" class="outline-4">
-<h4 id="orga605b79"><span class="section-number-4">11.6.4</span> FileIO : RawIOBase</h4>
-</div>
-<div id="outline-container-org795677c" class="outline-4">
-<h4 id="org795677c"><span class="section-number-4">11.6.5</span> BytesIO : BufferedIOBase</h4>
-</div>
-<div id="outline-container-org1d91abe" class="outline-4">
-<h4 id="org1d91abe"><span class="section-number-4">11.6.6</span> BufferedReader(raw)</h4>
-<div class="outline-text-4" id="text-11-6-6">
-<ul class="org-ul">
-<li>peek()</li>
-<li>read()</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org878269f" class="outline-4">
-<h4 id="org878269f"><span class="section-number-4">11.6.7</span> BufferedWriter(raw)</h4>
-<div class="outline-text-4" id="text-11-6-7">
-<ul class="org-ul">
-<li>flush()</li>
-<li>write()</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org908307f" class="outline-4">
-<h4 id="org908307f"><span class="section-number-4">11.6.8</span> TextIOBase : IOBase</h4>
-<div class="outline-text-4" id="text-11-6-8">
-<ul class="org-ul">
-<li>read()</li>
-<li>readline(size=1)</li>
-<li>seek(offset=0)</li>
-<li>tell()</li>
-<li>write(s): finally the string!</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org7a6aa86" class="outline-4">
-<h4 id="org7a6aa86"><span class="section-number-4">11.6.9</span> TextIOWrapper(buffer) : TextIOBase</h4>
-</div>
-<div id="outline-container-orge543a97" class="outline-4">
-<h4 id="orge543a97"><span class="section-number-4">11.6.10</span> StringIO</h4>
-<div class="outline-text-4" id="text-11-6-10">
-<ul class="org-ul">
-<li>getvalue()</li>
-</ul>
-</div>
 </div>
 </div>
 
 <div id="outline-container-org27cd475" class="outline-3">
-<h3 id="org27cd475"><span class="section-number-3">11.7</span> time</h3>
-<div class="outline-text-3" id="text-11-7">
+<h3 id="org27cd475"><span class="section-number-3">4.5</span> time</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Create time object:
+</p>
 <ul class="org-ul">
 <li>time.sleep(secs)</li>
 <li>time.time(): time in seconds since epoch</li>
+<li>gmtime(): in seconds, from epoch</li>
+<li>localtime(): convert gmtime() to local</li>
+<li>clock(): processor time as floating number in seconds</li>
+</ul>
 
+<p>
+The returned time object is <code>class time.struct_time</code>: returned by gmtime(),
+localtime() and strptime().  Time to format string:
+</p>
+
+<ul class="org-ul">
 <li>strptime(string[, format]): parse a string into time object
 <ul class="org-ul">
 <li>format default: "%a %b %d %H:%M:%S %Y"</li>
@@ -2110,20 +1814,75 @@ Methods:
 <li>%M: Minute [00,59]</li>
 <li>%S: second [00,61]</li>
 </ul></li>
-<li>gmtime(): in seconds, from epoch</li>
-<li>localtime(): convert gmtime() to local</li>
-<li>clock(): processor time as floating number in seconds</li>
+</ul>
+</div>
+
+<div id="outline-container-org66d9852" class="outline-4">
+<h4 id="org66d9852"><span class="section-number-4">4.5.1</span> datetime</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li><code>date</code> has year, month, day</li>
+<li><code>time</code> has hour, minute, second</li>
+<li><code>datetime</code> has both</li>
 </ul>
 
-<p>
-class time.struct<sub>time</sub>: returned by gmtime(), localtime() and strptime()
-</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> datetime
+
+<span class="org-variable-name">t1</span> = datetime.date.fromisoformat(<span class="org-string">'2019-12-04'</span>)
+<span class="org-variable-name">t2</span> = datetime.date.fromisoformat(<span class="org-string">'2018-11-24'</span>)
+
+<span class="org-variable-name">delta</span> = t1 - t2
+delta.days
+
+<span class="org-variable-name">t3</span> = datetime.date.today()
+<span class="org-variable-name">t4</span> = datetime.date.date(2019, 12, 20)
+
+<span class="org-variable-name">t0</span> = datetime.date.fromtimestamp(time.time())
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1432e6e" class="outline-3">
+<h3 id="org1432e6e"><span class="section-number-3">4.6</span> csv</h3>
+<div class="outline-text-3" id="text-4-6">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> csv
+<span class="org-keyword">with</span> <span class="org-builtin">open</span>(<span class="org-string">'some.csv'</span>, newline=<span class="org-string">''</span>) <span class="org-keyword">as</span> f:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">reader</span> = csv.reader(f)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> row <span class="org-keyword">in</span> reader:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(row)
+
+<span class="org-keyword">import</span> csv
+<span class="org-keyword">with</span> <span class="org-builtin">open</span>(<span class="org-string">'some.csv'</span>, <span class="org-string">'w'</span>, newline=<span class="org-string">''</span>) <span class="org-keyword">as</span> f:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">writer</span> = csv.writer(f)
+<span class="org-highlight-indentation"> </span>   writer.writerow(row)
+<span class="org-highlight-indentation"> </span>   writer.writerows(someiterable)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55d9e69" class="outline-3">
+<h3 id="org55d9e69"><span class="section-number-3">4.7</span> Json</h3>
+<div class="outline-text-3" id="text-4-7">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> json
+json.dumps({<span class="org-string">"C"</span>: 0, <span class="org-string">"D"</span>: 1})
+json.loads(<span class="org-string">"a string of json"</span>)
+
+json.dump(obj, fp, indent=2)
+json.load(fp)
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org0f3c465" class="outline-3">
-<h3 id="org0f3c465"><span class="section-number-3">11.8</span> argparse</h3>
-<div class="outline-text-3" id="text-11-8">
+<h3 id="org0f3c465"><span class="section-number-3">4.8</span> argparse</h3>
+<div class="outline-text-3" id="text-4-8">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> argparse
 <span class="org-variable-name">parser</span> = argparse.ArgumentParser(descripton=<span class="org-string">'Description here'</span>)
@@ -2182,52 +1941,10 @@ can use <code>parser.parse_args(['-f', '1', 'bar'])</code>.
 </div>
 </div>
 
-<div id="outline-container-org910762e" class="outline-3">
-<h3 id="org910762e"><span class="section-number-3">11.9</span> contextlib</h3>
-<div class="outline-text-3" id="text-11-9">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">from</span> contextlib <span class="org-keyword">import</span> redirect_stdout
-<span class="org-keyword">with</span> <span class="org-builtin">open</span>(<span class="org-string">'xxx.txt'</span>, <span class="org-string">'w'</span>) <span class="org-keyword">as</span> f:
-<span class="org-highlight-indentation"> </span>   redirect_stdout(f)
-</pre>
-</div>
-
-<p>
-Or:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">sys.stdout</span> = f
-</pre>
-</div>
-
-<p>
-The file handle can be:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-variable-name">f</span> = <span class="org-builtin">open</span>(os.devnull, <span class="org-string">'w'</span>)
-</pre>
-</div>
-
-<p>
-It can also be a predefined handle, like <code>sys.stderr</code>:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">with</span> redirect_stdout(sys.stderr):
-<span class="org-highlight-indentation"> </span>   <span class="org-builtin">help</span>(<span class="org-builtin">dir</span>)
-</pre>
-</div>
-</div>
-</div>
-
-
-
-
-
 
 <div id="outline-container-orga9810fa" class="outline-3">
-<h3 id="orga9810fa"><span class="section-number-3">11.10</span> Regular Expression</h3>
-<div class="outline-text-3" id="text-11-10">
+<h3 id="orga9810fa"><span class="section-number-3">4.9</span> Regular Expression</h3>
+<div class="outline-text-3" id="text-4-9">
 <p>
 construction
 </p>
@@ -2270,13 +1987,29 @@ re.search(<span class="org-string">"pattern"</span>, <span class="org-string">"s
 </div>
 </div>
 
-<div id="outline-container-orgb5369f7" class="outline-3">
-<h3 id="orgb5369f7"><span class="section-number-3">11.11</span> Concurrent</h3>
-<div class="outline-text-3" id="text-11-11">
+<div id="outline-container-org7319319" class="outline-3">
+<h3 id="org7319319"><span class="section-number-3">4.10</span> Concurrent programming</h3>
+<div class="outline-text-3" id="text-4-10">
 </div>
 <div id="outline-container-orgeb4f6eb" class="outline-4">
-<h4 id="orgeb4f6eb"><span class="section-number-4">11.11.1</span> threading</h4>
-<div class="outline-text-4" id="text-11-11-1">
+<h4 id="orgeb4f6eb"><span class="section-number-4">4.10.1</span> threading</h4>
+<div class="outline-text-4" id="text-4-10-1">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> threading <span class="org-keyword">import</span> Thread
+
+<span class="org-keyword">class</span> <span class="org-type">MyThread</span>(Thread):
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, arg):
+<span class="org-highlight-indentation"> </span>   Thread.__init__(<span class="org-keyword">self</span>)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">self</span>.arg = arg
+<span class="org-highlight-indentation"> </span> <span class="org-keyword">def</span> <span class="org-function-name">run</span>(<span class="org-keyword">self</span>):
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">pass</span>
+
+<span class="org-variable-name">t</span> = MyThread(arg)
+t.start()
+</pre>
+</div>
+
+
 <p>
 The package name is <code>threading</code>, the object is <code>Thread</code>.
 </p>
@@ -2317,8 +2050,8 @@ thread. The thread terminate when <code>run</code> terminate</li>
 </div>
 
 <div id="outline-container-org531574b" class="outline-4">
-<h4 id="org531574b"><span class="section-number-4">11.11.2</span> Thread Sync</h4>
-<div class="outline-text-4" id="text-11-11-2">
+<h4 id="org531574b"><span class="section-number-4">4.10.2</span> Thread Sync</h4>
+<div class="outline-text-4" id="text-4-10-2">
 <p>
 class threading.Lock
 </p>
@@ -2409,8 +2142,8 @@ and do things simultaneously.</li>
 </div>
 
 <div id="outline-container-orga0fe756" class="outline-5">
-<h5 id="orga0fe756"><span class="section-number-5">11.11.2.1</span> Using with statement</h5>
-<div class="outline-text-5" id="text-11-11-2-1">
+<h5 id="orga0fe756"><span class="section-number-5">4.10.2.1</span> Using with statement</h5>
+<div class="outline-text-5" id="text-4-10-2-1">
 <p>
 Lock, RLock, Condition, Semaphore can be used.
 </p>
@@ -2437,8 +2170,8 @@ is equivalent to:
 </div>
 
 <div id="outline-container-org3fc7f35" class="outline-4">
-<h4 id="org3fc7f35"><span class="section-number-4">11.11.3</span> multiprocessing</h4>
-<div class="outline-text-4" id="text-11-11-3">
+<h4 id="org3fc7f35"><span class="section-number-4">4.10.3</span> multiprocessing</h4>
+<div class="outline-text-4" id="text-4-10-3">
 <p>
 This provide multiprocessing.Process class, having similar API with
 Thread.  It seems to use fork but don't have explicit exec on the
@@ -2448,9 +2181,9 @@ sharing of memory of course).
 </div>
 </div>
 
-<div id="outline-container-org03f7be9" class="outline-4">
-<h4 id="org03f7be9"><span class="section-number-4">11.11.4</span> Process (subprocess module)</h4>
-<div class="outline-text-4" id="text-11-11-4">
+<div id="outline-container-org8fea3ee" class="outline-4">
+<h4 id="org8fea3ee"><span class="section-number-4">4.10.4</span> subprocess</h4>
+<div class="outline-text-4" id="text-4-10-4">
 <ul class="org-ul">
 <li>subprocess.run(args, *, stdin=None, input=None, stdout=None,
 stderr=None, shell=False, timeout=None, check=False)
@@ -2554,14 +2287,37 @@ stdout, stderr should be set to PIPE.
 </div>
 </div>
 </div>
-
-<div id="outline-container-org2ef2266" class="outline-3">
-<h3 id="org2ef2266"><span class="section-number-3">11.12</span> Internet</h3>
-<div class="outline-text-3" id="text-11-12">
 </div>
+
+
+
+
+<div id="outline-container-org2af3e92" class="outline-2">
+<h2 id="org2af3e92"><span class="section-number-2">5</span> Third party libraries</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgfd394d6" class="outline-3">
+<h3 id="orgfd394d6"><span class="section-number-3">5.1</span> urllib</h3>
+<div class="outline-text-3" id="text-5-1">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> urllib <span class="org-keyword">import</span> request
+<span class="org-keyword">import</span> json
+
+<span class="org-variable-name">url</span> = <span class="org-string">'https://api.github.com'</span>
+<span class="org-variable-name">api</span> = <span class="org-string">'/search/repositories'</span>
+<span class="org-variable-name">query</span> = <span class="org-string">'language:C&amp;stars:&gt;10&amp;per_page='</span>+size
+<span class="org-variable-name">response</span> = request.urlopen(url+api+<span class="org-string">"?q="</span>+query)
+
+<span class="org-variable-name">s</span> = response.read().decode(<span class="org-string">'utf8'</span>)
+<span class="org-variable-name">j</span> = json.loads(s)
+<span class="org-comment-delimiter"># </span><span class="org-comment">j will be a mix of list and dict</span>
+</pre>
+</div>
+</div>
+
 <div id="outline-container-org41a9aa7" class="outline-4">
-<h4 id="org41a9aa7"><span class="section-number-4">11.12.1</span> urllib.request</h4>
-<div class="outline-text-4" id="text-11-12-1">
+<h4 id="org41a9aa7"><span class="section-number-4">5.1.1</span> urllib.request</h4>
+<div class="outline-text-4" id="text-5-1-1">
 <p>
 package urllib.request
 </p>
@@ -2618,8 +2374,8 @@ methods:
 </div>
 
 <div id="outline-container-org0bc2092" class="outline-4">
-<h4 id="org0bc2092"><span class="section-number-4">11.12.2</span> urllib.parse</h4>
-<div class="outline-text-4" id="text-11-12-2">
+<h4 id="org0bc2092"><span class="section-number-4">5.1.2</span> urllib.parse</h4>
+<div class="outline-text-4" id="text-5-1-2">
 <ul class="org-ul">
 <li>quote(string)</li>
 <li>quote<sub>plus</sub>(string)</li>
@@ -2631,54 +2387,10 @@ methods:
 </div>
 </div>
 
-<div id="outline-container-orgc758c7d" class="outline-3">
-<h3 id="orgc758c7d"><span class="section-number-3">11.13</span> Data</h3>
-<div class="outline-text-3" id="text-11-13">
-</div>
-<div id="outline-container-org55d9e69" class="outline-4">
-<h4 id="org55d9e69"><span class="section-number-4">11.13.1</span> Json</h4>
-<div class="outline-text-4" id="text-11-13-1">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">import</span> json
-json.dumps({<span class="org-string">"C"</span>: 0, <span class="org-string">"D"</span>: 1})
-json.loads(<span class="org-string">"a string of json"</span>)
-
-json.dump(obj, fp, indent=2)
-json.load(fp)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org2af3e92" class="outline-2">
-<h2 id="org2af3e92"><span class="section-number-2">12</span> Third party libraries</h2>
-<div class="outline-text-2" id="text-12">
-</div>
-<div id="outline-container-orgfd394d6" class="outline-3">
-<h3 id="orgfd394d6"><span class="section-number-3">12.1</span> urllib</h3>
-<div class="outline-text-3" id="text-12-1">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">from</span> urllib <span class="org-keyword">import</span> request
-<span class="org-keyword">import</span> json
-
-<span class="org-variable-name">url</span> = <span class="org-string">'https://api.github.com'</span>
-<span class="org-variable-name">api</span> = <span class="org-string">'/search/repositories'</span>
-<span class="org-variable-name">query</span> = <span class="org-string">'language:C&amp;stars:&gt;10&amp;per_page='</span>+size
-<span class="org-variable-name">response</span> = request.urlopen(url+api+<span class="org-string">"?q="</span>+query)
-
-<span class="org-variable-name">s</span> = response.read().decode(<span class="org-string">'utf8'</span>)
-<span class="org-variable-name">j</span> = json.loads(s)
-<span class="org-comment-delimiter"># </span><span class="org-comment">j will be a mix of list and dict</span>
-</pre>
-</div>
-</div>
-</div>
 
 <div id="outline-container-org906608a" class="outline-3">
-<h3 id="org906608a"><span class="section-number-3">12.2</span> XML</h3>
-<div class="outline-text-3" id="text-12-2">
+<h3 id="org906608a"><span class="section-number-3">5.2</span> XML</h3>
+<div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> xml.etree.ElementTree <span class="org-keyword">as</span> ET
 <span class="org-variable-name">root</span> = ET.fromstring(s)
@@ -2702,8 +2414,8 @@ APIs
 </div>
 </div>
 <div id="outline-container-org36c1870" class="outline-3">
-<h3 id="org36c1870"><span class="section-number-3">12.3</span> Requests</h3>
-<div class="outline-text-3" id="text-12-3">
+<h3 id="org36c1870"><span class="section-number-3">5.3</span> Requests</h3>
+<div class="outline-text-3" id="text-5-3">
 <p>
 <a href="http://docs.python-requests.org/en/master/">http://docs.python-requests.org/en/master/</a>
 </p>
@@ -2711,8 +2423,8 @@ APIs
 </div>
 
 <div id="outline-container-org8ef72ef" class="outline-3">
-<h3 id="org8ef72ef"><span class="section-number-3">12.4</span> BeautifulSoup</h3>
-<div class="outline-text-3" id="text-12-4">
+<h3 id="org8ef72ef"><span class="section-number-3">5.4</span> BeautifulSoup</h3>
+<div class="outline-text-3" id="text-5-4">
 <p>
 The package is called <code>BeautifulSoup4</code>.
 </p>
@@ -2787,18 +2499,137 @@ has some support for id and class, the <code>select</code> is easier to use.
 
 
 <div id="outline-container-org627eea2" class="outline-3">
-<h3 id="org627eea2"><span class="section-number-3">12.5</span> click <a href="http://click.pocoo.org/5/">http://click.pocoo.org/5/</a></h3>
+<h3 id="org627eea2"><span class="section-number-3">5.5</span> click <a href="http://click.pocoo.org/5/">http://click.pocoo.org/5/</a></h3>
 </div>
+
+<div id="outline-container-org8710de2" class="outline-3">
+<h3 id="org8710de2"><span class="section-number-3">5.6</span> pandas</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+Looks like it is a dataframe library
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfc002c0" class="outline-3">
+<h3 id="orgfc002c0"><span class="section-number-3">5.7</span> numpy</h3>
+<div class="outline-text-3" id="text-5-7">
+<p>
+C-implementation of multi-dimensional arrays
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc719613" class="outline-3">
+<h3 id="orgc719613"><span class="section-number-3">5.8</span> scipy</h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+scitific computing algorithms, including:
+</p>
+
+<ul class="org-ul">
+<li>linaer algebra</li>
+<li>optimization</li>
+<li>interpolation</li>
+<li>integration and differential equation</li>
+<li>clustering algorithms</li>
+<li>statistical distributions</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5f7c329" class="outline-3">
+<h3 id="org5f7c329"><span class="section-number-3">5.9</span> scikit-learn</h3>
+<div class="outline-text-3" id="text-5-9">
+<p>
+Learning library.
+</p>
+<ul class="org-ul">
+<li><a href="https://scikit-learn.org/stable/index.html">website</a></li>
+<li><a href="https://scikit-learn.org/stable/user_guide.html">user guide</a></li>
+</ul>
+
+<p>
+Supervised learning:
+</p>
+<ul class="org-ul">
+<li>linear models</li>
+<li>SVM</li>
+<li>Gaussian Processes</li>
+<li>Naive Bayes</li>
+<li>Decision Trees</li>
+<li>KNN</li>
+</ul>
+
+
+<p>
+Unsupervised learning:
+</p>
+<ul class="org-ul">
+<li>Gaussian Mixture Models</li>
+<li>Manifold learning</li>
+<li>clustering
+<ul class="org-ul">
+<li>k-means</li>
+</ul></li>
+</ul>
+
+
+<p>
+Other topics
+</p>
+<ul class="org-ul">
+<li>Ensemble methods</li>
+<li>Feature Selection</li>
+<li>Outlier detection</li>
+<li>model selection
+<ul class="org-ul">
+<li>grid search</li>
+<li>cross validation</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
 <div id="outline-container-orgde513f9" class="outline-3">
-<h3 id="orgde513f9"><span class="section-number-3">12.6</span> matplotlib</h3>
-<div class="outline-text-3" id="text-12-6">
+<h3 id="orgde513f9"><span class="section-number-3">5.10</span> matplotlib</h3>
+<div class="outline-text-3" id="text-5-10">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+</pre>
+</div>
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">plot some random staff</span>
-plt.plot([1,2,3,4])
-plt.show()
+<p>
+Reference
+</p>
+<ul class="org-ul">
+<li><a href="https://matplotlib.org/gallery/index.html">gallery</a></li>
+<li><a href="https://matplotlib.org/tutorials/index.html">tutorials</a></li>
+<li><a href="https://matplotlib.org/api/pyplot_summary.html">pyplot API</a></li>
+</ul>
+</div>
 
+<div id="outline-container-org86ed31a" class="outline-4">
+<h4 id="org86ed31a"><span class="section-number-4">5.10.1</span> type of figures</h4>
+<div class="outline-text-4" id="text-5-10-1">
+<ul class="org-ul">
+<li>plt.bar</li>
+<li>plt.scatter</li>
+<li>plt.plot: line plot</li>
+<li>plt.hist</li>
+<li>plt.pie</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python">plt.plot([1,2,3,4])
+</pre>
+</div>
+
+<p>
+Image via <code>plt.imshow()</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
 <span class="org-comment-delimiter"># </span><span class="org-comment">plot a mnist digit</span>
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 <span class="org-comment-delimiter"># </span><span class="org-comment">since the data is just an array (28,28), imshow must have converted</span>
@@ -2811,22 +2642,43 @@ plt.show()
 
 </pre>
 </div>
-
-<p>
-plot to a file
-</p>
-<div class="org-src-container">
-<pre class="src src-python">pylab.ioff()
-plot([1, 2, 3])
-savefig(<span class="org-string">"/tmp/test.png"</span>)
-</pre>
+</div>
 </div>
 
+<div id="outline-container-org616777e" class="outline-4">
+<h4 id="org616777e"><span class="section-number-4">5.10.2</span> <span class="todo TODO">TODO</span> plot options</h4>
+</div>
+
+<div id="outline-container-orgf04190e" class="outline-4">
+<h4 id="orgf04190e"><span class="section-number-4">5.10.3</span> legends, axis, more settings</h4>
+<div class="outline-text-4" id="text-5-10-3">
+<p>
+Texts:
+</p>
+<ul class="org-ul">
+<li>plt.xlabel()</li>
+<li>plt.ylabel()</li>
+<li>plt.title()</li>
+<li>plt.axis()</li>
+<li>plt.text()</li>
+<li>plt.annotate</li>
+<li>plt.grid(True)</li>
+<li>plt.table(): attach a table to an axis!</li>
+</ul>
 
 <p>
-Subplots:
+Scale:
 </p>
+<ul class="org-ul">
+<li>plt.xscale('linear')</li>
+<li>plt.yscale('log')</li>
+</ul>
+</div>
+</div>
 
+<div id="outline-container-org00d1c3c" class="outline-4">
+<h4 id="org00d1c3c"><span class="section-number-4">5.10.4</span> Subplots</h4>
+<div class="outline-text-4" id="text-5-10-4">
 <div class="org-src-container">
 <pre class="src src-python">plt.ioff()
 <span class="org-variable-name">figure</span> = plt.figure()
@@ -2841,14 +2693,84 @@ figure.canvas.set_window_title(<span class="org-string">'My Grid Visualization'<
 plt.savefig(filename)
 </pre>
 </div>
+
+<p>
+Or better, create figure and axis, and plot for each axis:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+<span class="org-keyword">import</span> numpy <span class="org-keyword">as</span> np
+
+np.random.seed(19680801)
+<span class="org-variable-name">data</span> = np.random.randn(2, 100)
+
+<span class="org-variable-name">fig</span>, <span class="org-variable-name">axs</span> = plt.subplots(2, 2, figsize=(5, 5))
+axs[0, 0].hist(data[0])
+axs[1, 0].scatter(data[0], data[1])
+axs[0, 1].plot(data[0], data[1])
+axs[1, 1].hist2d(data[0], data[1])
+
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org7aa04e5" class="outline-4">
+<h4 id="org7aa04e5"><span class="section-number-4">5.10.5</span> export to files</h4>
+<div class="outline-text-4" id="text-5-10-5">
+<p>
+Visualize using OS GUI toolkit:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">plt.show()
+</pre>
+</div>
+
+<p>
+Plot to a file:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">pylab.ioff()
+plot([1, 2, 3])
+savefig(<span class="org-string">"/tmp/test.png"</span>)
+</pre>
+</div>
+</div>
 </div>
 </div>
 
 
+<div id="outline-container-orgfa760f0" class="outline-3">
+<h3 id="orgfa760f0"><span class="section-number-3">5.11</span> imsave</h3>
+<div class="outline-text-3" id="text-5-11">
+<p>
+<code>imsave</code> is deprecated, change from
+</p>
 
-<div id="outline-container-orgc6967cd" class="outline-3">
-<h3 id="orgc6967cd"><span class="section-number-3">12.7</span> Deep Learning Framework</h3>
-<div class="outline-text-3" id="text-12-7">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> scipy.misc <span class="org-keyword">import</span> imsave
+</pre>
+</div>
+
+<p>
+to
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> imageio <span class="org-keyword">import</span> imwrite <span class="org-keyword">as</span> imsave
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5d64911" class="outline-3">
+<h3 id="org5d64911"><span class="section-number-3">5.12</span> Nvidia GPU setting</h3>
+<div class="outline-text-3" id="text-5-12">
 <p>
 Select visible GPU in a multi-GPU setting:
 </p>
