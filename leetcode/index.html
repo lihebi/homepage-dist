@@ -282,13 +282,15 @@ for the JavaScript code in this tag.
 <li><a href="#org90bb21a">2.1. <span class="todo TODO">TODO</span> dynamic programming</a>
 <ul>
 <li><a href="#orgd11c4d0">2.1.1. (extra-state DP)</a></li>
-<li><a href="#org2424d16">2.1.2. complement's DP</a></li>
-<li><a href="#org2cc19fe">2.1.3. complement's DP</a></li>
+<li><a href="#orgeefaad6">2.1.2. complement's DP</a></li>
+<li><a href="#orgb55df33">2.1.3. complement's DP</a></li>
 <li><a href="#org5e72612">2.1.4. Palindromic</a></li>
 <li><a href="#orgbbf2f75">2.1.5. nested DP</a></li>
-<li><a href="#org362f049">2.1.6. Other (easy) DP problems</a>
+<li><a href="#orge4b87bb">2.1.6. 1388. Pizza With 3n Slices</a></li>
+<li><a href="#org362f049">2.1.7. Other (easy) DP problems</a>
 <ul>
-<li><a href="#org1a8e552">2.1.6.1. (920) number of playlists</a></li>
+<li><a href="#org1a8e552">2.1.7.1. (920) number of playlists</a></li>
+<li><a href="#orgc6944e9">2.1.7.2. 1386. Cinema Seat Allocation</a></li>
 </ul>
 </li>
 </ul>
@@ -540,8 +542,8 @@ Some tests:
 </div>
 </div>
 
-<div id="outline-container-org2424d16" class="outline-4">
-<h4 id="org2424d16"><span class="section-number-4">2.1.2</span> complement's DP</h4>
+<div id="outline-container-orgeefaad6" class="outline-4">
+<h4 id="orgeefaad6"><span class="section-number-4">2.1.2</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 <a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a>
@@ -590,8 +592,8 @@ maxCoins([3,1,5,8])
 </div>
 </div>
 
-<div id="outline-container-org2cc19fe" class="outline-4">
-<h4 id="org2cc19fe"><span class="section-number-4">2.1.3</span> complement's DP</h4>
+<div id="outline-container-orgb55df33" class="outline-4">
+<h4 id="orgb55df33"><span class="section-number-4">2.1.3</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 <a href="https://leetcode.com/problems/super-egg-drop/">887 egg drop</a>
@@ -809,13 +811,47 @@ DP, so it is "nested DP"</li>
 </div>
 </div>
 
-<div id="outline-container-org362f049" class="outline-4">
-<h4 id="org362f049"><span class="section-number-4">2.1.6</span> Other (easy) DP problems</h4>
+<div id="outline-container-orge4b87bb" class="outline-4">
+<h4 id="orge4b87bb"><span class="section-number-4">2.1.6</span> <a href="https://leetcode.com/problems/pizza-with-3n-slices/">1388. Pizza With 3n Slices</a></h4>
 <div class="outline-text-4" id="text-2-1-6">
+<p>
+From <a href="https://leetcode.com/problems/pizza-with-3n-slices/discuss/546474/Python-Robber-n3-Houses-in-Cycle">this post</a>.  The trick is, not thinking about the process of taking slices,
+but the process of how many slices <b>to take</b>. Here, dp(i,j,k) means from i to j,
+take k slices, what's the max. There are some additional tricks for this problem:
+</p>
+
+<ol class="org-ol">
+<li>use a invalid condition. The invalid condition is <code>j - i + 1 &lt; k * 2 - 1</code>,
+<code>k*2</code> instead of <code>k*3</code>, because we can pick every 2 nodes without problems.</li>
+<li>the initial is cycle, the that is indicated by cycle variable. Only the
+initial one is 1, all other are non-cycles (i.e. i and j can be taken at the
+same time)</li>
+<li>we only have two branches, to take j or not</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">maxSizeSlices</span>(<span class="org-keyword">self</span>, A):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">dp</span>(i, j, k, cycle=0):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> k == 1: <span class="org-keyword">return</span> <span class="org-builtin">max</span>(A[i:j + 1])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> j - i + 1 &lt; k * 2 - 1: <span class="org-keyword">return</span> -<span class="org-builtin">float</span>(<span class="org-string">'inf'</span>)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-builtin">max</span>(dp(i + cycle, j - 2, k - 1) + A[j], dp(i, j - 1, k))
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> dp(0, <span class="org-builtin">len</span>(A) - 1, <span class="org-builtin">len</span>(A) // 3, 1)
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org362f049" class="outline-4">
+<h4 id="org362f049"><span class="section-number-4">2.1.7</span> Other (easy) DP problems</h4>
+<div class="outline-text-4" id="text-2-1-7">
 </div>
 <div id="outline-container-org1a8e552" class="outline-5">
-<h5 id="org1a8e552"><span class="section-number-5">2.1.6.1</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h5>
-<div class="outline-text-5" id="text-2-1-6-1">
+<h5 id="org1a8e552"><span class="section-number-5">2.1.7.1</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h5>
+<div class="outline-text-5" id="text-2-1-7-1">
 <p>
 The second requirement is ambigious. Other than that, the DP equation is pretty
 regular. However, two things worth noticing:
@@ -858,8 +894,52 @@ Solution().numMusicPlaylists(25, 28, 5)  <span class="org-comment-delimiter"># <
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgc6944e9" class="outline-5">
+<h5 id="orgc6944e9"><span class="section-number-5">2.1.7.2</span> <a href="https://leetcode.com/contest/biweekly-contest-22/problems/cinema-seat-allocation/">1386. Cinema Seat Allocation</a></h5>
+<div class="outline-text-5" id="text-2-1-7-2">
+<p>
+This is not hard but worth looking at:
+</p>
+<ol class="org-ol">
+<li>use 1&lt;&lt;c trick to mark the position</li>
+<li>use dictionary to record dp solutions</li>
+<li>for each key not listed, simply +2 for the final solution, to save
+computation instead of putting inside loop</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">maxNumberOfFamilies</span>(<span class="org-keyword">self</span>, n: <span class="org-builtin">int</span>, reservedSeats: List[List[<span class="org-builtin">int</span>]]) -&gt; <span class="org-builtin">int</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">1. sort reserved seats (index by row index)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">groups</span> = defaultdict(<span class="org-keyword">lambda</span>:[])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> (row, col) <span class="org-keyword">in</span> seats:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   groups[row].append(col)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">foo</span>(cols):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">2. calculate: a. (2,3), (4,5), (6,7), (8,9)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">gene</span> = <span class="org-builtin">sum</span>([1 &lt;&lt; col <span class="org-keyword">for</span> col <span class="org-keyword">in</span> cols])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">one</span> = <span class="org-builtin">sum</span>(1&lt;&lt;c <span class="org-keyword">for</span> c <span class="org-keyword">in</span> [2,3,4,5])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">two</span> = <span class="org-builtin">sum</span>(1&lt;&lt;c <span class="org-keyword">for</span> c <span class="org-keyword">in</span> [4,5,6,7])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">three</span> = <span class="org-builtin">sum</span>(1&lt;&lt;c <span class="org-keyword">for</span> c <span class="org-keyword">in</span> [6,7,8,9])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">a</span> = gene &amp; one == 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">b</span> = gene &amp; two == 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">c</span> = gene &amp; three == 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> a <span class="org-keyword">and</span> c: <span class="org-keyword">return</span> 2
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> a <span class="org-keyword">or</span> b <span class="org-keyword">or</span> c: <span class="org-keyword">return</span> 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> key <span class="org-keyword">in</span> groups:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += foo(groups[key])
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">for all other, +2</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res + (n - <span class="org-builtin">len</span>(groups)) * 2
+</pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+
+
 
 
 <div id="outline-container-org9163df3" class="outline-3">
@@ -1589,7 +1669,7 @@ each time.
 </p>
 
 <p>
-Another point is keep an eye on the <code>heapq</code> python library.
+Another point is keep an eye on the <a href="https://docs.python.org/3.8/library/heapq.html">heapq</a> python library.
 </p>
 
 <div class="org-src-container">
