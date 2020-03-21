@@ -282,11 +282,11 @@ for the JavaScript code in this tag.
 <li><a href="#org90bb21a">2.1. <span class="todo TODO">TODO</span> dynamic programming</a>
 <ul>
 <li><a href="#orgd11c4d0">2.1.1. (extra-state DP)</a></li>
-<li><a href="#orgeefaad6">2.1.2. complement's DP</a></li>
-<li><a href="#orgb55df33">2.1.3. complement's DP</a></li>
+<li><a href="#orgb55df33">2.1.2. complement's DP</a></li>
+<li><a href="#orgeacf2f1">2.1.3. complement's DP</a></li>
 <li><a href="#org5e72612">2.1.4. Palindromic</a></li>
 <li><a href="#orgbbf2f75">2.1.5. nested DP</a></li>
-<li><a href="#orge4b87bb">2.1.6. 1388. Pizza With 3n Slices</a></li>
+<li><a href="#org6b7558a">2.1.6. FROM take 1 TO how many to take</a></li>
 <li><a href="#org362f049">2.1.7. Other (easy) DP problems</a>
 <ul>
 <li><a href="#org1a8e552">2.1.7.1. (920) number of playlists</a></li>
@@ -542,8 +542,8 @@ Some tests:
 </div>
 </div>
 
-<div id="outline-container-orgeefaad6" class="outline-4">
-<h4 id="orgeefaad6"><span class="section-number-4">2.1.2</span> complement's DP</h4>
+<div id="outline-container-orgb55df33" class="outline-4">
+<h4 id="orgb55df33"><span class="section-number-4">2.1.2</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 <a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a>
@@ -592,8 +592,8 @@ maxCoins([3,1,5,8])
 </div>
 </div>
 
-<div id="outline-container-orgb55df33" class="outline-4">
-<h4 id="orgb55df33"><span class="section-number-4">2.1.3</span> complement's DP</h4>
+<div id="outline-container-orgeacf2f1" class="outline-4">
+<h4 id="orgeacf2f1"><span class="section-number-4">2.1.3</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 <a href="https://leetcode.com/problems/super-egg-drop/">887 egg drop</a>
@@ -811,9 +811,14 @@ DP, so it is "nested DP"</li>
 </div>
 </div>
 
-<div id="outline-container-orge4b87bb" class="outline-4">
-<h4 id="orge4b87bb"><span class="section-number-4">2.1.6</span> <a href="https://leetcode.com/problems/pizza-with-3n-slices/">1388. Pizza With 3n Slices</a></h4>
+<div id="outline-container-org6b7558a" class="outline-4">
+<h4 id="org6b7558a"><span class="section-number-4">2.1.6</span> FROM take 1 TO how many to take</h4>
 <div class="outline-text-4" id="text-2-1-6">
+<p>
+<a href="https://leetcode.com/problems/pizza-with-3n-slices/">1388. Pizza With 3n Slices</a>
+</p>
+
+
 <p>
 From <a href="https://leetcode.com/problems/pizza-with-3n-slices/discuss/546474/Python-Robber-n3-Houses-in-Cycle">this post</a>.  The trick is, not thinking about the process of taking slices,
 but the process of how many slices <b>to take</b>. Here, dp(i,j,k) means from i to j,
