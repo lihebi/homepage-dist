@@ -282,15 +282,16 @@ for the JavaScript code in this tag.
 <li><a href="#org90bb21a">2.1. <span class="todo TODO">TODO</span> dynamic programming</a>
 <ul>
 <li><a href="#orgd11c4d0">2.1.1. (extra-state DP)</a></li>
-<li><a href="#orgb55df33">2.1.2. complement's DP</a></li>
-<li><a href="#orgeacf2f1">2.1.3. complement's DP</a></li>
+<li><a href="#orgeacf2f1">2.1.2. complement's DP</a></li>
+<li><a href="#orgb240491">2.1.3. complement's DP</a></li>
 <li><a href="#org5e72612">2.1.4. Palindromic</a></li>
 <li><a href="#orgbbf2f75">2.1.5. nested DP</a></li>
 <li><a href="#org6b7558a">2.1.6. FROM take 1 TO how many to take</a></li>
 <li><a href="#org362f049">2.1.7. Other (easy) DP problems</a>
 <ul>
-<li><a href="#org1a8e552">2.1.7.1. (920) number of playlists</a></li>
-<li><a href="#orgc6944e9">2.1.7.2. 1386. Cinema Seat Allocation</a></li>
+<li><a href="#org78e5e2c">2.1.7.1. (5391) build-array-where-you-can-find-the-maximum-exactly-k-comparisons</a></li>
+<li><a href="#org1a8e552">2.1.7.2. (920) number of playlists</a></li>
+<li><a href="#orgc6944e9">2.1.7.3. 1386. Cinema Seat Allocation</a></li>
 </ul>
 </li>
 </ul>
@@ -348,6 +349,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgb4878ba">5.2. 1366. Rank Teams by Votes</a></li>
 <li><a href="#orgf8088b9">5.3. 1371. Find the Longest Substring Containing Vowels in Even Counts</a></li>
 <li><a href="#orgd7e3f94">5.4. 5359. Maximum Performance of a Team</a></li>
+<li><a href="#orga455201">5.5. 1392. Longest Happy Prefix</a></li>
 </ul>
 </li>
 </ul>
@@ -542,8 +544,8 @@ Some tests:
 </div>
 </div>
 
-<div id="outline-container-orgb55df33" class="outline-4">
-<h4 id="orgb55df33"><span class="section-number-4">2.1.2</span> complement's DP</h4>
+<div id="outline-container-orgeacf2f1" class="outline-4">
+<h4 id="orgeacf2f1"><span class="section-number-4">2.1.2</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 <a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a>
@@ -592,8 +594,8 @@ maxCoins([3,1,5,8])
 </div>
 </div>
 
-<div id="outline-container-orgeacf2f1" class="outline-4">
-<h4 id="orgeacf2f1"><span class="section-number-4">2.1.3</span> complement's DP</h4>
+<div id="outline-container-orgb240491" class="outline-4">
+<h4 id="orgb240491"><span class="section-number-4">2.1.3</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 <a href="https://leetcode.com/problems/super-egg-drop/">887 egg drop</a>
@@ -854,9 +856,57 @@ same time)</li>
 <h4 id="org362f049"><span class="section-number-4">2.1.7</span> Other (easy) DP problems</h4>
 <div class="outline-text-4" id="text-2-1-7">
 </div>
-<div id="outline-container-org1a8e552" class="outline-5">
-<h5 id="org1a8e552"><span class="section-number-5">2.1.7.1</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h5>
+<div id="outline-container-org78e5e2c" class="outline-5">
+<h5 id="org78e5e2c"><span class="section-number-5">2.1.7.1</span> (5391) build-array-where-you-can-find-the-maximum-exactly-k-comparisons</h5>
 <div class="outline-text-5" id="text-2-1-7-1">
+<p>
+<a href="https://leetcode-cn.com/contest/weekly-contest-185/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/">https://leetcode-cn.com/contest/weekly-contest-185/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/</a>
+</p>
+
+<p>
+The problem is straight forward. I was using peak position and peak value
+formulation, and it turned out to be complicated. A simpler "prev" just works.
+</p>
+
+<p>
+Some tricks:
+</p>
+<ul class="org-ul">
+<li>the <code>lru_cache(None)</code> is really magick for speeding up</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">by minz-2 </span>
+<span class="org-keyword">from</span> functools <span class="org-keyword">import</span> lru_cache
+<span class="org-keyword">class</span> <span class="org-type">Solution</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">def</span> <span class="org-function-name">numOfArrays</span>(<span class="org-keyword">self</span>, n: <span class="org-builtin">int</span>, m: <span class="org-builtin">int</span>, k: <span class="org-builtin">int</span>) -&gt; <span class="org-builtin">int</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> dp(-1, n, m, k)
+
+<span class="org-type">@lru_cache</span>(<span class="org-constant">None</span>)
+<span class="org-keyword">def</span> <span class="org-function-name">dp</span>(prev, n, m, k):
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mod</span> = 10**9+7
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> n == 0:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> k == 0: <span class="org-keyword">return</span> 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> k &lt; 0: <span class="org-keyword">return</span> 0
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> mi <span class="org-keyword">in</span> <span class="org-builtin">range</span>(1,m+1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> prev &gt;= mi:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += dp(prev, n-1, m, k)
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span> += dp(mi, n-1, m, k-1)
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> res % mod
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org1a8e552" class="outline-5">
+<h5 id="org1a8e552"><span class="section-number-5">2.1.7.2</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h5>
+<div class="outline-text-5" id="text-2-1-7-2">
 <p>
 The second requirement is ambigious. Other than that, the DP equation is pretty
 regular. However, two things worth noticing:
@@ -901,8 +951,8 @@ Solution().numMusicPlaylists(25, 28, 5)  <span class="org-comment-delimiter"># <
 </div>
 
 <div id="outline-container-orgc6944e9" class="outline-5">
-<h5 id="orgc6944e9"><span class="section-number-5">2.1.7.2</span> <a href="https://leetcode.com/contest/biweekly-contest-22/problems/cinema-seat-allocation/">1386. Cinema Seat Allocation</a></h5>
-<div class="outline-text-5" id="text-2-1-7-2">
+<h5 id="orgc6944e9"><span class="section-number-5">2.1.7.3</span> <a href="https://leetcode.com/contest/biweekly-contest-22/problems/cinema-seat-allocation/">1386. Cinema Seat Allocation</a></h5>
+<div class="outline-text-5" id="text-2-1-7-3">
 <p>
 This is not hard but worth looking at:
 </p>
@@ -1695,6 +1745,31 @@ Another point is keep an eye on the <a href="https://docs.python.org/3.8/library
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span>(heap, result)
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">totalSum</span> += engineers[i][0]
 <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> result % (10 ** 9 + 7)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga455201" class="outline-3">
+<h3 id="orga455201"><span class="section-number-3">5.5</span> <a href="https://leetcode.com/problems/longest-happy-prefix/">1392. Longest Happy Prefix</a></h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+This seems to be just KMP (TODO).
+</p>
+
+<p>
+An interesting hashing solution in <a href="https://leetcode.com/problems/longest-happy-prefix/discuss/547237/Python-Rolling-Hash">this post</a>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">longestPrefix</span>(<span class="org-keyword">self</span>, s):
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">res</span>, <span class="org-variable-name">l</span>, <span class="org-variable-name">r</span>, <span class="org-variable-name">mod</span> = 0, 0, 0, 10**9 + 7
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">xrange</span>(<span class="org-builtin">len</span>(s) - 1):
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">l</span> = (l * 128 + <span class="org-builtin">ord</span>(s[i])) % mod
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">r</span> = (r + <span class="org-builtin">pow</span>(128, i, mod) * <span class="org-builtin">ord</span>(s[~i])) % mod
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> l == r: <span class="org-variable-name">res</span> = i + 1
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> s[:res]
 </pre>
 </div>
 </div>
