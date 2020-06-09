@@ -308,8 +308,9 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgf0d7909">5.1. Basic</a>
 <ul>
-<li><a href="#orga83c53e">5.1.1. Local binding</a></li>
-<li><a href="#org62bfee8">5.1.2. require</a></li>
+<li><a href="#org8c5a2ee">5.1.1. evaluation model</a></li>
+<li><a href="#orga83c53e">5.1.2. Local binding</a></li>
+<li><a href="#org62bfee8">5.1.3. require</a></li>
 </ul>
 </li>
 <li><a href="#org67a0f68">5.2. Black Magic</a></li>
@@ -322,14 +323,14 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org6212247">5.5. Rackunit</a></li>
-<li><a href="#org6f34cd2">5.6. Numbers</a></li>
+<li><a href="#org2c77679">5.6. Numbers</a></li>
 <li><a href="#orgeef0dff">5.7. Procedure</a></li>
-<li><a href="#org43012a3">5.8. Control Structure</a></li>
-<li><a href="#org99d6377">5.9. String</a></li>
+<li><a href="#orga8a595b">5.8. Control Structure</a></li>
+<li><a href="#org4178aee">5.9. String</a></li>
 <li><a href="#org43abd3c">5.10. Regular Expression</a></li>
 <li><a href="#org97ef3d7">5.11. Pair, List, Vector</a></li>
 <li><a href="#org7d38c15">5.12. Hash Tables</a></li>
-<li><a href="#orgd6a75a0">5.13. Sequence</a></li>
+<li><a href="#orgadd3cb8">5.13. Sequence</a></li>
 <li><a href="#org91b1404">5.14. Hash set (use racket/set)</a></li>
 <li><a href="#orge32e5e2">5.15. structure</a>
 <ul>
@@ -340,7 +341,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org9076a60">5.16. Multiple Values</a></li>
-<li><a href="#org3c3d1ec">5.17. Exception</a></li>
+<li><a href="#orga7322e3">5.17. Exception</a></li>
 <li><a href="#orga565b59">5.18. Concurrency</a></li>
 <li><a href="#orge592ea0">5.19. IO</a>
 <ul>
@@ -360,7 +361,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org10ba3c5">5.20.1. Path</a></li>
 <li><a href="#org0970461">5.20.2. File System</a></li>
-<li><a href="#orgb3dac3e">5.20.3. Networking</a></li>
+<li><a href="#org327e36d">5.20.3. Networking</a></li>
 <li><a href="#org71ce329">5.20.4. Processes</a></li>
 <li><a href="#org3580cbc">5.20.5. CMD parsing (racket/cmdline)</a></li>
 </ul>
@@ -396,12 +397,13 @@ for the JavaScript code in this tag.
 <li><a href="#orgddeaaea">5.23.4.7. properties</a></li>
 </ul>
 </li>
-<li><a href="#org327e36d">5.23.5. Networking</a>
+<li><a href="#org438aaea">5.23.5. Networking</a>
 <ul>
 <li><a href="#org5cfef7a">5.23.5.1. HTML parsing</a></li>
 <li><a href="#org4d57e7c">5.23.5.2. URL &amp; HTTP</a></li>
 </ul>
 </li>
+<li><a href="#orge17c935">5.23.6. Parsec</a></li>
 </ul>
 </li>
 </ul>
@@ -418,8 +420,8 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org2b48e73">6.2. List</a></li>
-<li><a href="#orgadd3cb8">6.3. Sequence</a></li>
-<li><a href="#org4178aee">6.4. String</a></li>
+<li><a href="#org283cb08">6.3. Sequence</a></li>
+<li><a href="#org76f5b54">6.4. String</a></li>
 <li><a href="#orgf65f541">6.5. Array</a></li>
 <li><a href="#org472c8cf">6.6. Structure</a></li>
 <li><a href="#org51b0ae6">6.7. Hash Table</a></li>
@@ -429,7 +431,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org95f2567">6.9. Type</a></li>
-<li><a href="#org2c77679">6.10. Numbers</a></li>
+<li><a href="#org6201b79">6.10. Numbers</a></li>
 <li><a href="#orgbbe6f2a">6.11. Function</a>
 <ul>
 <li><a href="#org5956e23">6.11.1. Defun and Lambda Expression</a></li>
@@ -437,8 +439,8 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0268ce6">6.12. Macro</a></li>
 <li><a href="#org6ed3b77">6.13. Evaluation</a></li>
-<li><a href="#orga7322e3">6.14. Exception</a></li>
-<li><a href="#orga8a595b">6.15. Control Structure</a>
+<li><a href="#orgb74ea46">6.14. Exception</a></li>
+<li><a href="#org600793e">6.15. Control Structure</a>
 <ul>
 <li><a href="#org19b46d5">6.15.1. Sequential</a></li>
 <li><a href="#org7be8cff">6.15.2. Conditional</a></li>
@@ -1240,9 +1242,18 @@ for all latin letters.</li>
 <h3 id="orgf0d7909"><span class="section-number-3">5.1</span> Basic</h3>
 <div class="outline-text-3" id="text-5-1">
 </div>
-<div id="outline-container-orga83c53e" class="outline-4">
-<h4 id="orga83c53e"><span class="section-number-4">5.1.1</span> Local binding</h4>
+<div id="outline-container-org8c5a2ee" class="outline-4">
+<h4 id="org8c5a2ee"><span class="section-number-4">5.1.1</span> evaluation model</h4>
 <div class="outline-text-4" id="text-5-1-1">
+<p>
+To get the "ID" of an object, use <code>eq-hash-code</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga83c53e" class="outline-4">
+<h4 id="orga83c53e"><span class="section-number-4">5.1.2</span> Local binding</h4>
+<div class="outline-text-4" id="text-5-1-2">
 <p>
 The local binding is established by <code>let</code> family. Apart from normal
 <code>let</code>, racket has a second form, known as <b>named let</b>.
@@ -1275,8 +1286,8 @@ Within the body, <code>proc-id</code> is bound to the procedure itself.
 </div>
 
 <div id="outline-container-org62bfee8" class="outline-4">
-<h4 id="org62bfee8"><span class="section-number-4">5.1.2</span> require</h4>
-<div class="outline-text-4" id="text-5-1-2">
+<h4 id="org62bfee8"><span class="section-number-4">5.1.3</span> require</h4>
+<div class="outline-text-4" id="text-5-1-3">
 <p>
 <code>require</code> introduces bindings. It can only be used in two context, the
 top-level context, or the module context (in which it introduce module
@@ -1853,8 +1864,8 @@ to select tests. Create a suite using <code>(test-suite name-expr test
 </div>
 </div>
 
-<div id="outline-container-org6f34cd2" class="outline-3">
-<h3 id="org6f34cd2"><span class="section-number-3">5.6</span> Numbers</h3>
+<div id="outline-container-org2c77679" class="outline-3">
+<h3 id="org2c77679"><span class="section-number-3">5.6</span> Numbers</h3>
 <div class="outline-text-3" id="text-5-6">
 <ul class="org-ul">
 <li><code>/</code>: provide the fraction if given two numbers, not to round it.</li>
@@ -1951,8 +1962,8 @@ restricts this to exactly one value.
 </div>
 
 
-<div id="outline-container-org43012a3" class="outline-3">
-<h3 id="org43012a3"><span class="section-number-3">5.8</span> Control Structure</h3>
+<div id="outline-container-orga8a595b" class="outline-3">
+<h3 id="orga8a595b"><span class="section-number-3">5.8</span> Control Structure</h3>
 <div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li><code>if</code></li>
@@ -2004,8 +2015,8 @@ different return values.</li>
 </div>
 </div>
 
-<div id="outline-container-org99d6377" class="outline-3">
-<h3 id="org99d6377"><span class="section-number-3">5.9</span> String</h3>
+<div id="outline-container-org4178aee" class="outline-3">
+<h3 id="org4178aee"><span class="section-number-3">5.9</span> String</h3>
 <div class="outline-text-3" id="text-5-9">
 <p>
 The reading syntax of characters starts with <code>#\</code>, with following
@@ -2406,8 +2417,8 @@ From <code>racket/vector</code>:
 </div>
 </div>
 
-<div id="outline-container-orgd6a75a0" class="outline-3">
-<h3 id="orgd6a75a0"><span class="section-number-3">5.13</span> Sequence</h3>
+<div id="outline-container-orgadd3cb8" class="outline-3">
+<h3 id="orgadd3cb8"><span class="section-number-3">5.13</span> Sequence</h3>
 <div class="outline-text-3" id="text-5-13">
 <p>
 Sequence is designed to be used with <code>for</code>. Not only list and vectors
@@ -2662,8 +2673,8 @@ can destruct values can also be used.
 </div>
 </div>
 
-<div id="outline-container-org3c3d1ec" class="outline-3">
-<h3 id="org3c3d1ec"><span class="section-number-3">5.17</span> Exception</h3>
+<div id="outline-container-orga7322e3" class="outline-3">
+<h3 id="orga7322e3"><span class="section-number-3">5.17</span> Exception</h3>
 <div class="outline-text-3" id="text-5-17">
 <p>
 For now, I only care about how to handle exceptions. To do that:
@@ -3092,8 +3103,8 @@ create it, and return path.
 </div>
 </div>
 
-<div id="outline-container-orgb3dac3e" class="outline-4">
-<h4 id="orgb3dac3e"><span class="section-number-4">5.20.3</span> Networking</h4>
+<div id="outline-container-org327e36d" class="outline-4">
+<h4 id="org327e36d"><span class="section-number-4">5.20.3</span> Networking</h4>
 <div class="outline-text-4" id="text-5-20-3">
 <p>
 I'm not going to dig deep on this because I don't use it. Just listing
@@ -3890,8 +3901,8 @@ Finally, you can save image to file by
 </div>
 
 
-<div id="outline-container-org327e36d" class="outline-4">
-<h4 id="org327e36d"><span class="section-number-4">5.23.5</span> Networking</h4>
+<div id="outline-container-org438aaea" class="outline-4">
+<h4 id="org438aaea"><span class="section-number-4">5.23.5</span> Networking</h4>
 <div class="outline-text-4" id="text-5-23-5">
 </div>
 <div id="outline-container-org5cfef7a" class="outline-5">
@@ -3958,10 +3969,20 @@ e.g. <code>get-pure-port</code>.
 </div>
 </div>
 </div>
-</div>
-</div>
 
 
+
+<div id="outline-container-orge17c935" class="outline-4">
+<h4 id="orge17c935"><span class="section-number-4">5.23.6</span> Parsec</h4>
+<div class="outline-text-4" id="text-5-23-6">
+<ul class="org-ul">
+<li><a href="https://docs.racket-lang.org/megaparsack/index.html">https://docs.racket-lang.org/megaparsack/index.html</a></li>
+<li><a href="https://docs.racket-lang.org/parsack/index.html">https://docs.racket-lang.org/parsack/index.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 
 <div id="outline-container-org6830f83" class="outline-2">
 <h2 id="org6830f83"><span class="section-number-2">6</span> Common Lisp</h2>
@@ -4249,8 +4270,8 @@ variables. It cna be used to bind into tree structures.
 
 
 
-<div id="outline-container-orgadd3cb8" class="outline-3">
-<h3 id="orgadd3cb8"><span class="section-number-3">6.3</span> Sequence</h3>
+<div id="outline-container-org283cb08" class="outline-3">
+<h3 id="org283cb08"><span class="section-number-3">6.3</span> Sequence</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Sequence contains both lists and vectors. To tell what kind of
@@ -4298,8 +4319,8 @@ the previous result in the next computation.
 </div>
 </div>
 
-<div id="outline-container-org4178aee" class="outline-3">
-<h3 id="org4178aee"><span class="section-number-3">6.4</span> String</h3>
+<div id="outline-container-org76f5b54" class="outline-3">
+<h3 id="org76f5b54"><span class="section-number-3">6.4</span> String</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 A string is a specialized vector (one-dimensional array) whose
@@ -4612,8 +4633,8 @@ remember, documenting here.
 </div>
 </div>
 
-<div id="outline-container-org2c77679" class="outline-3">
-<h3 id="org2c77679"><span class="section-number-3">6.10</span> Numbers</h3>
+<div id="outline-container-org6201b79" class="outline-3">
+<h3 id="org6201b79"><span class="section-number-3">6.10</span> Numbers</h3>
 <div class="outline-text-3" id="text-6-10">
 <p>
 Numbers can use read form, e.g. <code>#b010101</code>, <code>#xaf08</code>. Predicates such
@@ -4880,8 +4901,8 @@ that is used in defmacro.
 </div>
 </div>
 
-<div id="outline-container-orga7322e3" class="outline-3">
-<h3 id="orga7322e3"><span class="section-number-3">6.14</span> Exception</h3>
+<div id="outline-container-orgb74ea46" class="outline-3">
+<h3 id="orgb74ea46"><span class="section-number-3">6.14</span> Exception</h3>
 <div class="outline-text-3" id="text-6-14">
 <p>
 A <code>catch</code> expression takes a tag, which can be any kind of object,
@@ -4899,8 +4920,8 @@ the lisp error handler.
 
 
 
-<div id="outline-container-orga8a595b" class="outline-3">
-<h3 id="orga8a595b"><span class="section-number-3">6.15</span> Control Structure</h3>
+<div id="outline-container-org600793e" class="outline-3">
+<h3 id="org600793e"><span class="section-number-3">6.15</span> Control Structure</h3>
 <div class="outline-text-3" id="text-6-15">
 </div>
 <div id="outline-container-org19b46d5" class="outline-4">

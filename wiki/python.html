@@ -314,7 +314,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgd0011dc">3.1.1. <span class="todo TODO">TODO</span> tuple</a></li>
 <li><a href="#org9f0c875">3.1.2. <span class="todo TODO">TODO</span> sorted</a></li>
-<li><a href="#orgd0cfcba">3.1.3. Slicing</a></li>
+<li><a href="#orgd67e05b">3.1.3. Slicing</a></li>
 <li><a href="#org9ac7027">3.1.4. create a list</a></li>
 <li><a href="#org41736f7">3.1.5. Modify a list</a></li>
 <li><a href="#orgae18b2f">3.1.6. List object model</a></li>
@@ -324,7 +324,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org8c2732b">3.2.1. Concatenation</a></li>
 <li><a href="#orgb72a80a">3.2.2. split</a></li>
-<li><a href="#orgd67e05b">3.2.3. Slicing</a></li>
+<li><a href="#org5cc4ca7">3.2.3. Slicing</a></li>
 </ul>
 </li>
 <li><a href="#org4536677">3.3. Dictionary</a>
@@ -1019,8 +1019,8 @@ sort a dictionary by value:
 </div>
 </div>
 
-<div id="outline-container-orgd0cfcba" class="outline-4">
-<h4 id="orgd0cfcba"><span class="section-number-4">3.1.3</span> Slicing</h4>
+<div id="outline-container-orgd67e05b" class="outline-4">
+<h4 id="orgd67e05b"><span class="section-number-4">3.1.3</span> Slicing</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 The slicing syntax is <code>l[start:end:step]</code>.
@@ -1203,8 +1203,8 @@ fairly safe to use string.
 </div>
 </div>
 
-<div id="outline-container-orgd67e05b" class="outline-4">
-<h4 id="orgd67e05b"><span class="section-number-4">3.2.3</span> Slicing</h4>
+<div id="outline-container-org5cc4ca7" class="outline-4">
+<h4 id="org5cc4ca7"><span class="section-number-4">3.2.3</span> Slicing</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 String is an immutable object. It can use slicing. E.g. reversing a
@@ -1755,8 +1755,25 @@ shell pattern, e.g. <code>p.glob('*/*.py')</code></li>
 
 <div id="outline-container-orgb57d1ec" class="outline-4">
 <h4 id="orgb57d1ec"><span class="section-number-4">4.3.6</span> <span class="todo TODO">TODO</span> tempfile</h4>
+<div class="outline-text-4" id="text-4-3-6">
+<ul class="org-ul">
+<li><code>mkstemp</code> creates temp file, but this file is opened. The return value is the
+file descriptor (int) of the opened file, the same as that gets returned by
+<code>os.open</code>, thus not easy to work with</li>
+<li><code>mkdtemp</code> creates temp dir. I would just use this when creating temporary files.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">folder</span> = tempfile.mkdtemp()
+<span class="org-variable-name">fd</span>, <span class="org-variable-name">fname</span> = tempfile.mkstemp()
+</pre>
 </div>
 </div>
+</div>
+</div>
+
+
+
 
 <div id="outline-container-orgae8c350" class="outline-3">
 <h3 id="orgae8c350"><span class="section-number-3">4.4</span> unittest</h3>

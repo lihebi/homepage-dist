@@ -255,7 +255,7 @@ for the JavaScript code in this tag.
 <li><a href="#org05a406d">1.1. References</a></li>
 <li><a href="#org4ae0f5a">1.2. Setting up</a>
 <ul>
-<li><a href="#org5c74d60">1.2.1. Packages</a></li>
+<li><a href="#org40930b9">1.2.1. Packages</a></li>
 <li><a href="#orge408459">1.2.2. Emacs ESS</a></li>
 <li><a href="#org5e4c31a">1.2.3. Interactive command</a></li>
 <li><a href="#org8eb9fa9">1.2.4. Commonly used functions</a></li>
@@ -312,7 +312,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgbed183e">1.11. FFI</a></li>
-<li><a href="#org40930b9">1.12. Packages</a>
+<li><a href="#org94d5141">1.12. Packages</a>
 <ul>
 <li><a href="#org8236bde">1.12.1. ggplot2</a></li>
 <li><a href="#org795789a">1.12.2. plot(x, y, &#x2026;)</a></li>
@@ -343,8 +343,8 @@ for the JavaScript code in this tag.
 <h3 id="org4ae0f5a"><span class="section-number-3">1.2</span> Setting up</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org5c74d60" class="outline-4">
-<h4 id="org5c74d60"><span class="section-number-4">1.2.1</span> Packages</h4>
+<div id="outline-container-org40930b9" class="outline-4">
+<h4 id="org40930b9"><span class="section-number-4">1.2.1</span> Packages</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li><code>library()</code> see the list of installed packages.</li>
@@ -352,8 +352,28 @@ for the JavaScript code in this tag.
 <li><code>search()</code> see the list of loaded packages.</li>
 <li><code>install.packages()</code> and <code>update.packages()</code> install and update packages.</li>
 </ul>
+
+<p>
+If a library is "not available", you probably should add the repository:
+</p>
+
+<ul class="org-ul">
+<li><code>setRepositories()</code> and select something like <code>bioc*</code> or <code>R-Forge</code>. If that
+still doesn't work, you can download and install from source:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-R">install.packages(<span class="org-string">"/path/to/file.tar.gz"</span>, repos=<span class="org-ess-constant">NULL</span>)
+</pre>
+</div>
+
+<p>
+But seems that you need to install the dependencies manually.
+</p>
 </div>
 </div>
+
+
 
 <div id="outline-container-orge408459" class="outline-4">
 <h4 id="orge408459"><span class="section-number-4">1.2.2</span> Emacs ESS</h4>
@@ -1279,8 +1299,8 @@ R CMD SHLIB foo.c
 </div>
 
 
-<div id="outline-container-org40930b9" class="outline-3">
-<h3 id="org40930b9"><span class="section-number-3">1.12</span> Packages</h3>
+<div id="outline-container-org94d5141" class="outline-3">
+<h3 id="org94d5141"><span class="section-number-3">1.12</span> Packages</h3>
 <div class="outline-text-3" id="text-1-12">
 </div>
 <div id="outline-container-org8236bde" class="outline-4">

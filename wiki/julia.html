@@ -250,60 +250,82 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4e738b0">1. Julia Lang</a>
+<li><a href="#org671aa58">1. Random tricks</a></li>
+<li><a href="#org4e738b0">2. Julia Lang</a>
 <ul>
-<li><a href="#orgd25bff3">1.1. Macros</a></li>
+<li><a href="#orgd25bff3">2.1. Macros</a></li>
 </ul>
 </li>
-<li><a href="#org0d62d46">2. Standard library</a>
+<li><a href="#org0d62d46">3. Standard library</a>
 <ul>
-<li><a href="#orga0bf7a0">2.1. string</a></li>
-<li><a href="#org3ad9f45">2.2. I/O</a></li>
-<li><a href="#org1d742a2">2.3. FS</a></li>
-<li><a href="#orgd8f93f4">2.4. random numbers</a></li>
-<li><a href="#orgf7fc398">2.5. network</a></li>
-<li><a href="#org5f2ec7b">2.6. Useful functions</a></li>
+<li><a href="#orga0bf7a0">3.1. string</a></li>
+<li><a href="#org3ad9f45">3.2. I/O</a></li>
+<li><a href="#org1d742a2">3.3. FS</a></li>
+<li><a href="#orgd8f93f4">3.4. random numbers</a></li>
+<li><a href="#orgf7fc398">3.5. network</a></li>
+<li><a href="#org5f2ec7b">3.6. Useful functions</a></li>
 </ul>
 </li>
-<li><a href="#org8c18ef0">3. Tools</a>
+<li><a href="#org8c18ef0">4. Tools</a>
 <ul>
-<li><a href="#orgcd59258">3.1. profiling</a></li>
-<li><a href="#orgac240fb">3.2. Using Pkg</a></li>
+<li><a href="#orgcd59258">4.1. profiling</a></li>
+<li><a href="#orgac240fb">4.2. Using Pkg</a></li>
 </ul>
 </li>
-<li><a href="#orgf52c19a">4. Third-party Libraries</a>
+<li><a href="#orgf52c19a">5. Third-party Libraries</a>
 <ul>
-<li><a href="#orga8ba9c0">4.1. Tmp</a></li>
-<li><a href="#orgbe3d0b6">4.2. reference</a></li>
-<li><a href="#org22b0b4a">4.3. ML library</a></li>
-<li><a href="#orgef6e97d">4.4. Optimizers</a></li>
-<li><a href="#org0797b13">4.5. GPU computing</a></li>
-<li><a href="#org863b83a">4.6. Plots</a></li>
-<li><a href="#orgc73109b">4.7. Datasets</a></li>
-<li><a href="#orga19e86f">4.8. Images</a></li>
-<li><a href="#org22190e2">4.9. Graph</a>
+<li><a href="#orga8ba9c0">5.1. Tmp</a></li>
+<li><a href="#orgc658586">5.2. web &amp; servers</a></li>
+<li><a href="#org603e6e7">5.3. Static compilation</a></li>
+<li><a href="#orgbe3d0b6">5.4. reference</a></li>
+<li><a href="#org22b0b4a">5.5. ML library</a>
 <ul>
-<li><a href="#org10256cf">4.9.1. LightGraphs.jl</a></li>
-<li><a href="#org195ef08">4.9.2. MetaGraphs.jl</a></li>
-<li><a href="#org1b23bc0">4.9.3. Compose.jl</a></li>
-<li><a href="#org831365b">4.9.4. GraphLayout.jl</a></li>
+<li><a href="#orge15747e">5.5.1. <span class="todo TODO">TODO</span> cstjean/ScikitLearn.jl</a></li>
 </ul>
 </li>
-<li><a href="#orgc03684a">4.10. Compiler tools</a></li>
-<li><a href="#orgd470ca3">4.11. Probablistic packages</a></li>
+<li><a href="#orge2b2353">5.6. Data Representation</a></li>
+<li><a href="#orgef6e97d">5.7. Optimizers</a></li>
+<li><a href="#org0797b13">5.8. GPU computing</a></li>
+<li><a href="#org863b83a">5.9. Plots</a></li>
+<li><a href="#orgc73109b">5.10. Datasets</a>
+<ul>
+<li><a href="#org0e21d4f">5.10.1. DataFrames.jl</a></li>
+<li><a href="#org6f9d5c0">5.10.2. CSV.jl</a></li>
+</ul>
+</li>
+<li><a href="#orga19e86f">5.11. Images</a></li>
+<li><a href="#org22190e2">5.12. Graph</a>
+<ul>
+<li><a href="#org10256cf">5.12.1. LightGraphs.jl</a></li>
+<li><a href="#org195ef08">5.12.2. MetaGraphs.jl</a></li>
+<li><a href="#org1b23bc0">5.12.3. Compose.jl</a></li>
+<li><a href="#org831365b">5.12.4. GraphLayout.jl</a></li>
+</ul>
+</li>
+<li><a href="#orgee2abb6">5.13. Language &amp; Compiler tools</a></li>
+<li><a href="#orgd470ca3">5.14. Probablistic packages</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4e738b0" class="outline-2">
-<h2 id="org4e738b0"><span class="section-number-2">1</span> Julia Lang</h2>
+<div id="outline-container-org671aa58" class="outline-2">
+<h2 id="org671aa58"><span class="section-number-2">1</span> Random tricks</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><code>collect(Set(1,2))</code> returns Array</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4e738b0" class="outline-2">
+<h2 id="org4e738b0"><span class="section-number-2">2</span> Julia Lang</h2>
+<div class="outline-text-2" id="text-2">
 </div>
 <div id="outline-container-orgd25bff3" class="outline-3">
-<h3 id="orgd25bff3"><span class="section-number-3">1.1</span> Macros</h3>
-<div class="outline-text-3" id="text-1-1">
+<h3 id="orgd25bff3"><span class="section-number-3">2.1</span> Macros</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Julia macros are hygienic:
 </p>
@@ -350,12 +372,12 @@ A common pattern:
 
 
 <div id="outline-container-org0d62d46" class="outline-2">
-<h2 id="org0d62d46"><span class="section-number-2">2</span> Standard library</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="org0d62d46"><span class="section-number-2">3</span> Standard library</h2>
+<div class="outline-text-2" id="text-3">
 </div>
 <div id="outline-container-orga0bf7a0" class="outline-3">
-<h3 id="orga0bf7a0"><span class="section-number-3">2.1</span> string</h3>
-<div class="outline-text-3" id="text-2-1">
+<h3 id="orga0bf7a0"><span class="section-number-3">3.1</span> string</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 interpolation:
 </p>
@@ -377,6 +399,9 @@ concatenation:
 <pre class="src src-julia">findfirst(isequal(<span class="org-string">'c'</span>), <span class="org-string">"abcdc"</span>)
 findnext(isequal(<span class="org-string">'c'</span>), <span class="org-string">"abcdc"</span>, 3)
 occursin(<span class="org-string">"world"</span>, <span class="org-string">"hello world"</span>)
+startswith(s, prefix)
+endswith(s, suffix)
+strip(s)
 </pre>
 </div>
 
@@ -409,8 +434,8 @@ parse:
 </div>
 
 <div id="outline-container-org3ad9f45" class="outline-3">
-<h3 id="org3ad9f45"><span class="section-number-3">2.2</span> I/O</h3>
-<div class="outline-text-3" id="text-2-2">
+<h3 id="org3ad9f45"><span class="section-number-3">3.2</span> I/O</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 IO descriptors
 </p>
@@ -462,8 +487,8 @@ To test IO functions, use <code>io=IOBuffer("hello world")</code>
 </div>
 
 <div id="outline-container-org1d742a2" class="outline-3">
-<h3 id="org1d742a2"><span class="section-number-3">2.3</span> FS</h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="org1d742a2"><span class="section-number-3">3.3</span> FS</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 In <code>Base.Filesystem</code>
 </p>
@@ -536,8 +561,8 @@ expanduser(path)
 </div>
 
 <div id="outline-container-orgd8f93f4" class="outline-3">
-<h3 id="orgd8f93f4"><span class="section-number-3">2.4</span> random numbers</h3>
-<div class="outline-text-3" id="text-2-4">
+<h3 id="orgd8f93f4"><span class="section-number-3">3.4</span> random numbers</h3>
+<div class="outline-text-3" id="text-3-4">
 <p>
 basic:
 </p>
@@ -569,8 +594,8 @@ rand(dist, 100)
 
 
 <div id="outline-container-orgf7fc398" class="outline-3">
-<h3 id="orgf7fc398"><span class="section-number-3">2.5</span> network</h3>
-<div class="outline-text-3" id="text-2-5">
+<h3 id="orgf7fc398"><span class="section-number-3">3.5</span> network</h3>
+<div class="outline-text-3" id="text-3-5">
 <div class="org-src-container">
 <pre class="src src-julia">download(url, localfile)
 </pre>
@@ -585,8 +610,8 @@ rand(dist, 100)
 
 
 <div id="outline-container-org5f2ec7b" class="outline-3">
-<h3 id="org5f2ec7b"><span class="section-number-3">2.6</span> Useful functions</h3>
-<div class="outline-text-3" id="text-2-6">
+<h3 id="org5f2ec7b"><span class="section-number-3">3.6</span> Useful functions</h3>
+<div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li><code>sortperm(v)</code>: Return a permutation vector I that puts v[I] in sorted order.</li>
 <li><code>findfirst(predicate::Function, A)</code>: Return the index or key of the first
@@ -608,12 +633,12 @@ intuitive ones:
 </div>
 
 <div id="outline-container-org8c18ef0" class="outline-2">
-<h2 id="org8c18ef0"><span class="section-number-2">3</span> Tools</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="org8c18ef0"><span class="section-number-2">4</span> Tools</h2>
+<div class="outline-text-2" id="text-4">
 </div>
 <div id="outline-container-orgcd59258" class="outline-3">
-<h3 id="orgcd59258"><span class="section-number-3">3.1</span> profiling</h3>
-<div class="outline-text-3" id="text-3-1">
+<h3 id="orgcd59258"><span class="section-number-3">4.1</span> profiling</h3>
+<div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>manual: <a href="https://docs.julialang.org/en/v1/manual/profile/">https://docs.julialang.org/en/v1/manual/profile/</a></li>
 <li>graphical viewer: <a href="https://github.com/timholy/ProfileView.jl">timholy/ProfileView.jl</a></li>
@@ -632,8 +657,8 @@ Profile.print()
 </div>
 
 <div id="outline-container-orgac240fb" class="outline-3">
-<h3 id="orgac240fb"><span class="section-number-3">3.2</span> Using Pkg</h3>
-<div class="outline-text-3" id="text-3-2">
+<h3 id="orgac240fb"><span class="section-number-3">4.2</span> Using Pkg</h3>
+<div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
 <pre class="src src-julia"><span class="org-keyword">using</span> Pkg
 Pkg.add(PackageSpec(url=<span class="org-string">"https://github.com/lihebi/julia-repl"</span>, rev=<span class="org-string">"master"</span>))
@@ -672,21 +697,92 @@ You will see:
 
 
 <div id="outline-container-orgf52c19a" class="outline-2">
-<h2 id="orgf52c19a"><span class="section-number-2">4</span> Third-party Libraries</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="orgf52c19a"><span class="section-number-2">5</span> Third-party Libraries</h2>
+<div class="outline-text-2" id="text-5">
 </div>
 <div id="outline-container-orga8ba9c0" class="outline-3">
-<h3 id="orga8ba9c0"><span class="section-number-3">4.1</span> Tmp</h3>
-<div class="outline-text-3" id="text-4-1">
+<h3 id="orga8ba9c0"><span class="section-number-3">5.1</span> Tmp</h3>
+<div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li><a href="https://github.com/timholy/Revise.jl">timholy/Revise.jl</a></li>
+<li><a href="https://github.com/JuliaMath/Interpolations.jl">JuliaMath/Interpolations.jl</a></li>
+<li><a href="https://github.com/JuliaMath/Calculus.jl">JuliaMath/Calculus.jl</a></li>
 </ul>
 </div>
 </div>
 
+<div id="outline-container-orgc658586" class="outline-3">
+<h3 id="orgc658586"><span class="section-number-3">5.2</span> web &amp; servers</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li><a href="https://github.com/JuliaWeb/JuliaWebAPI.jl">JuliaWeb/JuliaWebAPI.jl</a>: this is interesting, it wraps a julia function as a
+remote callable API.</li>
+<li><a href="https://github.com/GenieFramework/Genie.jl">GenieFramework/Genie.jl</a>: this is a MVC framework, for building web apps with
+sophiscated routing. It should work but probably too complex for my purpose.</li>
+<li><a href="https://github.com/JuliaWeb/HTTP.jl">JuliaWeb/HTTP.jl</a>: seems to be more mature.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org603e6e7" class="outline-3">
+<h3 id="org603e6e7"><span class="section-number-3">5.3</span> Static compilation</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+<a href="https://github.com/JuliaLang/PackageCompiler.jl">JuliaLang/PackageCompiler.jl</a>: it has two modes:
+</p>
+<ul class="org-ul">
+<li>build a sysimage, still requires juila to run, but is faster to start. When
+running it seems to be a regular julia session.</li>
+<li>app. This can be run without julia.</li>
+</ul>
+
+<p>
+I'm interested in the sysimage one. Specifically, you can do this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">create_sysimage([<span class="org-julia-quoted-symbol">:CuArrays</span>, <span class="org-julia-quoted-symbol">:Zygote</span>,
+                 <span class="org-julia-quoted-symbol">:Distributions</span>,
+                 <span class="org-julia-quoted-symbol">:LightGraphs</span>, <span class="org-julia-quoted-symbol">:MetaGraphs</span>,
+                 <span class="org-julia-quoted-symbol">:CSV</span>, <span class="org-julia-quoted-symbol">:Plots</span>, <span class="org-julia-quoted-symbol">:DataFrames</span>, <span class="org-julia-quoted-symbol">:HDF5</span>,
+                 <span class="org-julia-quoted-symbol">:TensorOperations</span>],
+                sysimage_path=<span class="org-string">"myimage.so"</span>,
+                replace_default=<span class="org-constant">true</span>)
+</pre>
+</div>
+
+
+<p>
+And start <code>julia</code> like this:
+</p>
+
+<pre class="example">
+julia --sysimage myimage.so
+</pre>
+
+<p>
+The <code>replace_default</code> argument, if set to <code>true</code>, will replace julia's default
+image, thus you don't need to specify the sysimage anymore. To restore to
+default, use
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">restore_default_sysimage()
+</pre>
+</div>
+
+
+
+
+<p>
+It seems also possible to precompile only some functions.
+</p>
+</div>
+</div>
+
 <div id="outline-container-orgbe3d0b6" class="outline-3">
-<h3 id="orgbe3d0b6"><span class="section-number-3">4.2</span> reference</h3>
-<div class="outline-text-3" id="text-4-2">
+<h3 id="orgbe3d0b6"><span class="section-number-3">5.4</span> reference</h3>
+<div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>juliastats: <a href="https://juliastats.org/">https://juliastats.org/</a></li>
 
@@ -697,28 +793,44 @@ You will see:
 </div>
 
 <div id="outline-container-org22b0b4a" class="outline-3">
-<h3 id="org22b0b4a"><span class="section-number-3">4.3</span> ML library</h3>
-<div class="outline-text-3" id="text-4-3">
+<h3 id="org22b0b4a"><span class="section-number-3">5.5</span> ML library</h3>
+<div class="outline-text-3" id="text-5-5">
 <ul class="org-ul">
-<li><a href="https://github.com/cstjean/ScikitLearn.jl">cstjean/ScikitLearn.jl</a></li>
 <li><a href="https://github.com/mpastell/LIBSVM.jl">mpastell/LIBSVM.jl</a>: Interface to <a href="https://www.csie.ntu.edu.tw/~cjlin/libsvm/">libsvm</a></li>
+
+<li><a href="https://github.com/willtebbutt/Stheno.jl">willtebbutt/Stheno.jl</a>: Gaussian Process</li>
+<li><a href="https://github.com/STOR-i/GaussianProcesses.jl">STOR-i/GaussianProcesses.jl</a>: Gaussian Process</li>
+<li><a href="https://github.com/alan-turing-institute/MLJ.jl">alan-turing-institute/MLJ.jl</a></li>
+</ul>
+</div>
+<div id="outline-container-orge15747e" class="outline-4">
+<h4 id="orge15747e"><span class="section-number-4">5.5.1</span> <span class="todo TODO">TODO</span> <a href="https://github.com/cstjean/ScikitLearn.jl">cstjean/ScikitLearn.jl</a></h4>
+</div>
+</div>
+
+<div id="outline-container-orge2b2353" class="outline-3">
+<h3 id="orge2b2353"><span class="section-number-3">5.6</span> Data Representation</h3>
+<div class="outline-text-3" id="text-5-6">
+<ul class="org-ul">
+<li><a href="https://github.com/JuliaMath/FixedPointNumbers.jl">JuliaMath/FixedPointNumbers.jl</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-orgef6e97d" class="outline-3">
-<h3 id="orgef6e97d"><span class="section-number-3">4.4</span> Optimizers</h3>
-<div class="outline-text-3" id="text-4-4">
+<h3 id="orgef6e97d"><span class="section-number-3">5.7</span> Optimizers</h3>
+<div class="outline-text-3" id="text-5-7">
 <ul class="org-ul">
 <li><a href="https://github.com/JuliaNLSolvers/Optim.jl">Optim.jl</a>: optimization</li>
 <li><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP.jl</a>: another optimizer with more solvers</li>
+<li><a href="https://github.com/JuliaMath/IterativeSolvers.jl">JuliaMath/IterativeSolvers.jl</a>: CG method for solving linear equations</li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-org0797b13" class="outline-3">
-<h3 id="org0797b13"><span class="section-number-3">4.5</span> GPU computing</h3>
-<div class="outline-text-3" id="text-4-5">
+<h3 id="org0797b13"><span class="section-number-3">5.8</span> GPU computing</h3>
+<div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li>CuArrays.jl: <a href="https://github.com/JuliaGPU/CuArrays.jl">https://github.com/JuliaGPU/CuArrays.jl</a></li>
 <li>CUDAapi.jl: <a href="https://github.com/JuliaGPU/CUDAapi.jl">https://github.com/JuliaGPU/CUDAapi.jl</a></li>
@@ -729,8 +841,8 @@ You will see:
 </div>
 
 <div id="outline-container-org863b83a" class="outline-3">
-<h3 id="org863b83a"><span class="section-number-3">4.6</span> Plots</h3>
-<div class="outline-text-3" id="text-4-6">
+<h3 id="org863b83a"><span class="section-number-3">5.9</span> Plots</h3>
+<div class="outline-text-3" id="text-5-9">
 <ul class="org-ul">
 <li><a href="https://github.com/JuliaPlots/Plots.jl">JuliaPlots/Plots.jl</a></li>
 <li><a href="https://github.com/JuliaPlots/StatsPlots.jl">JuliaPlots/StatsPlots.jl</a></li>
@@ -740,19 +852,117 @@ You will see:
 </div>
 
 <div id="outline-container-orgc73109b" class="outline-3">
-<h3 id="orgc73109b"><span class="section-number-3">4.7</span> Datasets</h3>
-<div class="outline-text-3" id="text-4-7">
+<h3 id="orgc73109b"><span class="section-number-3">5.10</span> Datasets</h3>
+<div class="outline-text-3" id="text-5-10">
 <ul class="org-ul">
 <li><a href="https://github.com/JuliaLang/METADATA.jl">METADATA.jl</a>: Used for <a href="https://pkg.julialang.org/docs/">official package registry</a></li>
 <li><a href="https://github.com/FluxML/Metalhead.jl">Metalhead.jl</a>: Some vision models and dataset</li>
-<li><a href="https://github.com/JuliaData/DataFrames.jl">DataFrames.jl</a></li>
+<li><a href="https://github.com/JuliaIO/HDF5.jl">JuliaIO/HDF5.jl</a></li>
 </ul>
+</div>
+
+<div id="outline-container-org0e21d4f" class="outline-4">
+<h4 id="org0e21d4f"><span class="section-number-4">5.10.1</span> <a href="https://github.com/JuliaData/DataFrames.jl">DataFrames.jl</a></h4>
+<div class="outline-text-4" id="text-5-10-1">
+<p>
+This is actually pretty easy to use.
+</p>
+
+<p>
+Construction:
+</p>
+<div class="org-src-container">
+<pre class="src src-julia">df = DataFrame(A = 1:4, B = [<span class="org-string">"M"</span>, <span class="org-string">"F"</span>, <span class="org-string">"F"</span>, <span class="org-string">"M"</span>])
+</pre>
+</div>
+
+<p>
+Colum-by-column construction:
+</p>
+<div class="org-src-container">
+<pre class="src src-julia">df = DataFrame()
+df.A = 1:8
+df.B = [<span class="org-string">"M"</span>, <span class="org-string">"F"</span>, <span class="org-string">"F"</span>, <span class="org-string">"M"</span>, <span class="org-string">"F"</span>, <span class="org-string">"M"</span>, <span class="org-string">"M"</span>, <span class="org-string">"F"</span>]
+</pre>
+</div>
+
+<p>
+Row-by-row construction:
+</p>
+<div class="org-src-container">
+<pre class="src src-julia">df = DataFrame(A = <span class="org-type">Int</span>[], B = <span class="org-type">String</span>[])
+push!(df, (1, <span class="org-string">"M"</span>))
+push!(df, [2, <span class="org-string">"N"</span>])
+push!(df, <span class="org-type">Dict</span>(<span class="org-julia-quoted-symbol">:B</span> =&gt; <span class="org-string">"F"</span>, <span class="org-julia-quoted-symbol">:A</span> =&gt; 3))
+</pre>
+</div>
+
+<p>
+Data can be accessed using dot-notation. e.g. <code>df.A</code>. You can also pass selector
+expressions to filter data out.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">df[df.A .&gt; 1, :]
+</pre>
+</div>
+
+<p>
+sorting:
+</p>
+<div class="org-src-container">
+<pre class="src src-julia">sort(df, [<span class="org-julia-quoted-symbol">:A</span>, <span class="org-julia-quoted-symbol">:B</span>])
+</pre>
+</div>
 </div>
 </div>
 
+
+
+
+
+<div id="outline-container-org6f9d5c0" class="outline-4">
+<h4 id="org6f9d5c0"><span class="section-number-4">5.10.2</span> <a href="https://github.com/JuliaData/CSV.jl">CSV.jl</a></h4>
+<div class="outline-text-4" id="text-5-10-2">
+<p>
+Reading
+</p>
+
+<p>
+<code>CSV.read()</code> reads a file into data frames. The columns can be accessed using
+<code>$</code> syntax.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">df = CSV.read(fname)
+df$a
+df$b
+</pre>
+</div>
+
+<p>
+<code>CSV.Rows()</code> returns, well, <code>CSV.Rows</code>, you can access the column by <code>dot</code> notation.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia"><span class="org-keyword">for</span> row <span class="org-keyword">in</span> CSV.Rows(fname)
+    <span class="org-julia-macro">@show</span> row.a row.b
+<span class="org-keyword">end</span>
+</pre>
+</div>
+
+<p>
+Writing. <code>CSV.write(fname, table)</code>. The interface seems to be <a href="https://github.com/JuliaData/Tables.jl">Tables.jl</a>. It
+could be just <code>DataFrame</code>.
+</p>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-orga19e86f" class="outline-3">
-<h3 id="orga19e86f"><span class="section-number-3">4.8</span> Images</h3>
-<div class="outline-text-3" id="text-4-8">
+<h3 id="orga19e86f"><span class="section-number-3">5.11</span> Images</h3>
+<div class="outline-text-3" id="text-5-11">
 <ul class="org-ul">
 <li><a href="https://github.com/JuliaGraphics/ColorTypes.jl">ColorTypes.jl</a></li>
 <li><a href="https://github.com/JuliaImages/ImageFiltering.jl">ImageFiltering.jl</a></li>
@@ -765,12 +975,12 @@ colorview, channelview, RGB
 </div>
 </div>
 <div id="outline-container-org22190e2" class="outline-3">
-<h3 id="org22190e2"><span class="section-number-3">4.9</span> Graph</h3>
-<div class="outline-text-3" id="text-4-9">
+<h3 id="org22190e2"><span class="section-number-3">5.12</span> Graph</h3>
+<div class="outline-text-3" id="text-5-12">
 </div>
 <div id="outline-container-org10256cf" class="outline-4">
-<h4 id="org10256cf"><span class="section-number-4">4.9.1</span> <a href="https://github.com/JuliaGraphs/LightGraphs.jl">LightGraphs.jl</a></h4>
-<div class="outline-text-4" id="text-4-9-1">
+<h4 id="org10256cf"><span class="section-number-4">5.12.1</span> <a href="https://github.com/JuliaGraphs/LightGraphs.jl">LightGraphs.jl</a></h4>
+<div class="outline-text-4" id="text-5-12-1">
 <p>
 A great package for
 </p>
@@ -789,8 +999,8 @@ A great package for
 </div>
 </div>
 <div id="outline-container-org195ef08" class="outline-4">
-<h4 id="org195ef08"><span class="section-number-4">4.9.2</span> <a href="https://github.com/JuliaGraphs/MetaGraphs.jl">MetaGraphs.jl</a></h4>
-<div class="outline-text-4" id="text-4-9-2">
+<h4 id="org195ef08"><span class="section-number-4">5.12.2</span> <a href="https://github.com/JuliaGraphs/MetaGraphs.jl">MetaGraphs.jl</a></h4>
+<div class="outline-text-4" id="text-5-12-2">
 <p>
 LightGraphs with arbitrary data on nodes.
 </p>
@@ -798,8 +1008,8 @@ LightGraphs with arbitrary data on nodes.
 </div>
 
 <div id="outline-container-org1b23bc0" class="outline-4">
-<h4 id="org1b23bc0"><span class="section-number-4">4.9.3</span> <a href="https://github.com/GiovineItalia/Compose.jl">Compose.jl</a></h4>
-<div class="outline-text-4" id="text-4-9-3">
+<h4 id="org1b23bc0"><span class="section-number-4">5.12.3</span> <a href="https://github.com/GiovineItalia/Compose.jl">Compose.jl</a></h4>
+<div class="outline-text-4" id="text-5-12-3">
 <p>
 The racket/pict for Julia.
 </p>
@@ -807,8 +1017,8 @@ The racket/pict for Julia.
 </div>
 
 <div id="outline-container-org831365b" class="outline-4">
-<h4 id="org831365b"><span class="section-number-4">4.9.4</span> <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout.jl</a></h4>
-<div class="outline-text-4" id="text-4-9-4">
+<h4 id="org831365b"><span class="section-number-4">5.12.4</span> <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout.jl</a></h4>
+<div class="outline-text-4" id="text-5-12-4">
 <p>
 Alternatives:
 </p>
@@ -821,19 +1031,33 @@ Alternatives:
 </div>
 
 
-<div id="outline-container-orgc03684a" class="outline-3">
-<h3 id="orgc03684a"><span class="section-number-3">4.10</span> Compiler tools</h3>
-<div class="outline-text-3" id="text-4-10">
+<div id="outline-container-orgee2abb6" class="outline-3">
+<h3 id="orgee2abb6"><span class="section-number-3">5.13</span> Language &amp; Compiler tools</h3>
+<div class="outline-text-3" id="text-5-13">
 <ul class="org-ul">
 <li><a href="https://github.com/MikeInnes/MacroTools.jl">MacroTools.jl</a></li>
-<li><a href="https://github.com/JuliaLang/PackageCompiler.jl">PackageCompiler.jl</a>: To remove JIT compile overhead</li>
+<li><a href="https://github.com/kmsquire/Match.jl">kmsquire/Match.jl</a></li>
+<li><a href="https://github.com/SciML/RecursiveArrayTools.jl">SciML/RecursiveArrayTools.jl</a>: this is to solve array of array
+problem. Specifically, the splitting syntax in <code>cat</code> can cause stack overflow
+if the array is to large. Some discussions:
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/47021821/julia-flattening-array-of-array-tuples">stack overflow link</a></li>
+<li><a href="https://stackoverflow.com/questions/37476815/julia-converting-vector-of-arrays-to-array-for-arbitrary-dimensions/37488453#37488453">stack overflow link</a></li>
+<li><a href="https://stackoverflow.com/questions/28539382/julia-is-slow-with-cat-command">stack overflow link</a></li>
+<li><a href="https://github.com/JuliaLang/julia/issues/21672">github issue</a></li>
+<li>or iterator.flatten may work
+<ul class="org-ul">
+<li><code>collect(Iterators.flatten([[1, 2, 3], [4, 5, 6]]))</code></li>
+</ul></li>
+</ul></li>
 </ul>
 </div>
 </div>
 
+
 <div id="outline-container-orgd470ca3" class="outline-3">
-<h3 id="orgd470ca3"><span class="section-number-3">4.11</span> Probablistic packages</h3>
-<div class="outline-text-3" id="text-4-11">
+<h3 id="orgd470ca3"><span class="section-number-3">5.14</span> Probablistic packages</h3>
+<div class="outline-text-3" id="text-5-14">
 <ul class="org-ul">
 <li><a href="https://github.com/JuliaStats/Distributions.jl">Distributions.jl</a></li>
 <li><a href="https://github.com/JuliaStats/GLM.jl">GLM.jl</a> (!!!)</li>
