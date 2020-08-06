@@ -193,50 +193,28 @@
 </style>
 <link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -272,145 +250,145 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org884ccb8">1. Tools &amp; Reference</a>
+<li><a href="#orga53ea3a">1. Tools &amp; Reference</a>
 <ul>
-<li><a href="#org5051818">1.1. Emacs support</a></li>
-<li><a href="#orgb87cd8e">1.2. pip mirror</a></li>
+<li><a href="#orge7c958a">1.1. Emacs support</a></li>
+<li><a href="#org2dc1245">1.2. pip mirror</a></li>
 </ul>
 </li>
-<li><a href="#org3672172">2. Language</a>
+<li><a href="#org3dd7905">2. Language</a>
 <ul>
-<li><a href="#orgc48382a">2.1. data type</a>
+<li><a href="#org21a971e">2.1. data type</a>
 <ul>
-<li><a href="#org35e3531">2.1.1. conversion</a></li>
+<li><a href="#org695d94e">2.1.1. conversion</a></li>
 </ul>
 </li>
-<li><a href="#org14d98a7">2.2. Scoping</a></li>
-<li><a href="#org04b6d71">2.3. Conditional</a></li>
-<li><a href="#org847a00b">2.4. Loop</a></li>
-<li><a href="#orgb33df91">2.5. Function</a>
+<li><a href="#orgff5b7e5">2.2. Scoping</a></li>
+<li><a href="#org9cd5cdd">2.3. Conditional</a></li>
+<li><a href="#orgc491eeb">2.4. Loop</a></li>
+<li><a href="#org7abf834">2.5. Function</a>
 <ul>
-<li><a href="#org66fa611">2.5.1. Function def and call</a></li>
-<li><a href="#org9da505b">2.5.2. Lambda</a></li>
-<li><a href="#org0a480f3">2.5.3. variadic parameter</a></li>
+<li><a href="#org8ea658a">2.5.1. Function def and call</a></li>
+<li><a href="#orgf88becd">2.5.2. Lambda</a></li>
+<li><a href="#orgb7c6e60">2.5.3. variadic parameter</a></li>
 </ul>
 </li>
-<li><a href="#org43e4b4c">2.6. Meta Programming</a></li>
-<li><a href="#org5681770">2.7. Exception</a>
+<li><a href="#orga2325f8">2.6. Meta Programming</a></li>
+<li><a href="#orgf81ce1e">2.7. Exception</a>
 <ul>
-<li><a href="#org6937f9b">2.7.1. Built-in exceptions</a></li>
+<li><a href="#org0f88faa">2.7.1. Built-in exceptions</a></li>
 </ul>
 </li>
-<li><a href="#org4e509da">2.8. Module</a>
+<li><a href="#org7c356a9">2.8. Module</a>
 <ul>
-<li><a href="#org234d74b">2.8.1. importing</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org1baa8af">3. Collections</a>
-<ul>
-<li><a href="#orgb9afb6b">3.1. List</a>
-<ul>
-<li><a href="#orgd0011dc">3.1.1. <span class="todo TODO">TODO</span> tuple</a></li>
-<li><a href="#org9f0c875">3.1.2. <span class="todo TODO">TODO</span> sorted</a></li>
-<li><a href="#orgd67e05b">3.1.3. Slicing</a></li>
-<li><a href="#org9ac7027">3.1.4. create a list</a></li>
-<li><a href="#org41736f7">3.1.5. Modify a list</a></li>
-<li><a href="#orgae18b2f">3.1.6. List object model</a></li>
-</ul>
-</li>
-<li><a href="#org022f4ec">3.2. String</a>
-<ul>
-<li><a href="#org8c2732b">3.2.1. Concatenation</a></li>
-<li><a href="#orgb72a80a">3.2.2. split</a></li>
-<li><a href="#org5cc4ca7">3.2.3. Slicing</a></li>
-</ul>
-</li>
-<li><a href="#org4536677">3.3. Dictionary</a>
-<ul>
-<li><a href="#org3dc2fe4">3.3.1. Set</a></li>
+<li><a href="#org323f06d">2.8.1. importing</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3d20820">4. Standard Library</a>
+<li><a href="#org1aa7b29">3. Collections</a>
 <ul>
-<li><a href="#orgcf8cb14">4.1. Operating System</a>
+<li><a href="#org5d4eaa6">3.1. List</a>
 <ul>
-<li><a href="#orgdc54578">4.1.1. Env</a></li>
-<li><a href="#org50aabc6">4.1.2. Shell command</a></li>
-<li><a href="#orge5f6bb6">4.1.3. Process</a></li>
+<li><a href="#org05c6426">3.1.1. <span class="todo TODO">TODO</span> tuple</a></li>
+<li><a href="#orge30b3c8">3.1.2. <span class="todo TODO">TODO</span> sorted</a></li>
+<li><a href="#orgbcd10a2">3.1.3. Slicing</a></li>
+<li><a href="#org6109fb5">3.1.4. create a list</a></li>
+<li><a href="#org09602fe">3.1.5. Modify a list</a></li>
+<li><a href="#orgb0fac36">3.1.6. List object model</a></li>
 </ul>
 </li>
-<li><a href="#orgef9e0e4">4.2. IO</a>
+<li><a href="#orga7f4df5">3.2. String</a>
 <ul>
-<li><a href="#orgb976c99">4.2.1. File IO</a></li>
-<li><a href="#orga716053">4.2.2. Printing</a></li>
-<li><a href="#org68bd6cc">4.2.3. redirect stdout</a></li>
+<li><a href="#orge6d8f51">3.2.1. Concatenation</a></li>
+<li><a href="#orgc0da037">3.2.2. split</a></li>
+<li><a href="#orga7a8713">3.2.3. Slicing</a></li>
 </ul>
 </li>
-<li><a href="#orgd87e172">4.3. File System</a>
+<li><a href="#orgdc8e2b5">3.3. Dictionary</a>
 <ul>
-<li><a href="#org8bd43fa">4.3.1. os.walk</a></li>
-<li><a href="#org99e8275">4.3.2. FS Operations</a></li>
-<li><a href="#org1970c20">4.3.3. shutil</a></li>
-<li><a href="#org23c9980">4.3.4. os.path</a></li>
-<li><a href="#orgac0db8d">4.3.5. pathlib</a></li>
-<li><a href="#orgb57d1ec">4.3.6. <span class="todo TODO">TODO</span> tempfile</a></li>
-</ul>
-</li>
-<li><a href="#orgae8c350">4.4. unittest</a></li>
-<li><a href="#org27cd475">4.5. time</a>
-<ul>
-<li><a href="#org66d9852">4.5.1. datetime</a></li>
-</ul>
-</li>
-<li><a href="#org1432e6e">4.6. csv</a></li>
-<li><a href="#org55d9e69">4.7. Json</a></li>
-<li><a href="#org0f3c465">4.8. argparse</a></li>
-<li><a href="#orga9810fa">4.9. Regular Expression</a></li>
-<li><a href="#org7319319">4.10. Concurrent programming</a>
-<ul>
-<li><a href="#orgeb4f6eb">4.10.1. threading</a></li>
-<li><a href="#org531574b">4.10.2. Thread Sync</a>
-<ul>
-<li><a href="#orga0fe756">4.10.2.1. Using with statement</a></li>
-</ul>
-</li>
-<li><a href="#org3fc7f35">4.10.3. multiprocessing</a></li>
-<li><a href="#org8fea3ee">4.10.4. subprocess</a></li>
+<li><a href="#orgf5c3068">3.3.1. Set</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org2af3e92">5. Third party libraries</a>
+<li><a href="#org07a9e3a">4. Standard Library</a>
 <ul>
-<li><a href="#orgfd394d6">5.1. urllib</a>
+<li><a href="#org0802d7b">4.1. Operating System</a>
 <ul>
-<li><a href="#org41a9aa7">5.1.1. urllib.request</a></li>
-<li><a href="#org0bc2092">5.1.2. urllib.parse</a></li>
+<li><a href="#org752ce55">4.1.1. Env</a></li>
+<li><a href="#org405a31a">4.1.2. Shell command</a></li>
+<li><a href="#orga85a2db">4.1.3. Process</a></li>
 </ul>
 </li>
-<li><a href="#org906608a">5.2. XML</a></li>
-<li><a href="#org36c1870">5.3. Requests</a></li>
-<li><a href="#org8ef72ef">5.4. BeautifulSoup</a></li>
-<li><a href="#org627eea2">5.5. click http://click.pocoo.org/5/</a></li>
-<li><a href="#org8710de2">5.6. pandas</a></li>
-<li><a href="#orgfc002c0">5.7. numpy</a></li>
-<li><a href="#orgc719613">5.8. scipy</a></li>
-<li><a href="#org5f7c329">5.9. scikit-learn</a></li>
-<li><a href="#orgde513f9">5.10. matplotlib</a>
+<li><a href="#org67f30cd">4.2. IO</a>
 <ul>
-<li><a href="#org86ed31a">5.10.1. type of figures</a></li>
-<li><a href="#org616777e">5.10.2. <span class="todo TODO">TODO</span> plot options</a></li>
-<li><a href="#orgf04190e">5.10.3. legends, axis, more settings</a></li>
-<li><a href="#org00d1c3c">5.10.4. Subplots</a></li>
-<li><a href="#org7aa04e5">5.10.5. export to files</a></li>
+<li><a href="#org516fa87">4.2.1. File IO</a></li>
+<li><a href="#org34cc250">4.2.2. Printing</a></li>
+<li><a href="#org1ae6de4">4.2.3. redirect stdout</a></li>
 </ul>
 </li>
-<li><a href="#orgfa760f0">5.11. imsave</a></li>
-<li><a href="#org5d64911">5.12. Nvidia GPU setting</a></li>
+<li><a href="#orgeaaea94">4.3. File System</a>
+<ul>
+<li><a href="#org6ba95b0">4.3.1. os.walk</a></li>
+<li><a href="#org5dbd6c8">4.3.2. FS Operations</a></li>
+<li><a href="#org80f5e75">4.3.3. shutil</a></li>
+<li><a href="#org0a0992a">4.3.4. os.path</a></li>
+<li><a href="#orge15c130">4.3.5. pathlib</a></li>
+<li><a href="#org67beb3e">4.3.6. <span class="todo TODO">TODO</span> tempfile</a></li>
+</ul>
+</li>
+<li><a href="#orgd4cb2cc">4.4. unittest</a></li>
+<li><a href="#org05942f1">4.5. time</a>
+<ul>
+<li><a href="#orgf3b1238">4.5.1. datetime</a></li>
+</ul>
+</li>
+<li><a href="#orgb5f46d3">4.6. csv</a></li>
+<li><a href="#org12bca49">4.7. Json</a></li>
+<li><a href="#org9c9b9d7">4.8. argparse</a></li>
+<li><a href="#org1f1ffcd">4.9. Regular Expression</a></li>
+<li><a href="#org1b06186">4.10. Concurrent programming</a>
+<ul>
+<li><a href="#org79936b4">4.10.1. threading</a></li>
+<li><a href="#orga975ab0">4.10.2. Thread Sync</a>
+<ul>
+<li><a href="#org4bfce27">4.10.2.1. Using with statement</a></li>
+</ul>
+</li>
+<li><a href="#orge3a65e4">4.10.3. multiprocessing</a></li>
+<li><a href="#org072564c">4.10.4. subprocess</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd1cac5f">5. Third party libraries</a>
+<ul>
+<li><a href="#orgc871cc2">5.1. urllib</a>
+<ul>
+<li><a href="#org0e1693b">5.1.1. urllib.request</a></li>
+<li><a href="#orgce7ccce">5.1.2. urllib.parse</a></li>
+</ul>
+</li>
+<li><a href="#orgbe56383">5.2. XML</a></li>
+<li><a href="#orgef30665">5.3. Requests</a></li>
+<li><a href="#org5d4f44c">5.4. BeautifulSoup</a></li>
+<li><a href="#org058f4a1">5.5. click http://click.pocoo.org/5/</a></li>
+<li><a href="#orge09c442">5.6. pandas</a></li>
+<li><a href="#org659e007">5.7. numpy</a></li>
+<li><a href="#org9ce2f52">5.8. scipy</a></li>
+<li><a href="#org1aca3d9">5.9. scikit-learn</a></li>
+<li><a href="#org22bd492">5.10. matplotlib</a>
+<ul>
+<li><a href="#orgff4598a">5.10.1. type of figures</a></li>
+<li><a href="#org330da02">5.10.2. <span class="todo TODO">TODO</span> plot options</a></li>
+<li><a href="#orgc617e06">5.10.3. legends, axis, more settings</a></li>
+<li><a href="#orgf1a5a45">5.10.4. Subplots</a></li>
+<li><a href="#orgc1dca5f">5.10.5. export to files</a></li>
+</ul>
+</li>
+<li><a href="#org6746aae">5.11. imsave</a></li>
+<li><a href="#org7e1f6b1">5.12. Nvidia GPU setting</a></li>
 </ul>
 </li>
 </ul>
@@ -452,8 +430,8 @@ something is wrong with the language.
 </p>
 </blockquote>
 
-<div id="outline-container-org884ccb8" class="outline-2">
-<h2 id="org884ccb8"><span class="section-number-2">1</span> Tools &amp; Reference</h2>
+<div id="outline-container-orga53ea3a" class="outline-2">
+<h2 id="orga53ea3a"><span class="section-number-2">1</span> Tools &amp; Reference</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 For python 3
@@ -464,8 +442,8 @@ For python 3
 </ul>
 </div>
 
-<div id="outline-container-org5051818" class="outline-3">
-<h3 id="org5051818"><span class="section-number-3">1.1</span> Emacs support</h3>
+<div id="outline-container-orge7c958a" class="outline-3">
+<h3 id="orge7c958a"><span class="section-number-3">1.1</span> Emacs support</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Install the <code>elpy</code> package. It provides:
@@ -486,8 +464,8 @@ pylint --generate-rcfile &gt; ~/.pylintrc
 </pre>
 </div>
 </div>
-<div id="outline-container-orgb87cd8e" class="outline-3">
-<h3 id="orgb87cd8e"><span class="section-number-3">1.2</span> pip mirror</h3>
+<div id="outline-container-org2dc1245" class="outline-3">
+<h3 id="org2dc1245"><span class="section-number-3">1.2</span> pip mirror</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>ustc mirror: <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></li>
@@ -519,12 +497,12 @@ url. Thus I'm using conda mirror <a href="https://mirrors.tuna.tsinghua.edu.cn/h
 </div>
 </div>
 
-<div id="outline-container-org3672172" class="outline-2">
-<h2 id="org3672172"><span class="section-number-2">2</span> Language</h2>
+<div id="outline-container-org3dd7905" class="outline-2">
+<h2 id="org3dd7905"><span class="section-number-2">2</span> Language</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgc48382a" class="outline-3">
-<h3 id="orgc48382a"><span class="section-number-3">2.1</span> data type</h3>
+<div id="outline-container-org21a971e" class="outline-3">
+<h3 id="org21a971e"><span class="section-number-3">2.1</span> data type</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>type(obj): get the type of obj</li>
@@ -558,8 +536,8 @@ Boolean:
 </ul>
 </div>
 
-<div id="outline-container-org35e3531" class="outline-4">
-<h4 id="org35e3531"><span class="section-number-4">2.1.1</span> conversion</h4>
+<div id="outline-container-org695d94e" class="outline-4">
+<h4 id="org695d94e"><span class="section-number-4">2.1.1</span> conversion</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li><code>chr()</code>: ASCII to char</li>
@@ -580,8 +558,8 @@ Boolean:
 </div>
 </div>
 
-<div id="outline-container-org14d98a7" class="outline-3">
-<h3 id="org14d98a7"><span class="section-number-3">2.2</span> Scoping</h3>
+<div id="outline-container-orgff5b7e5" class="outline-3">
+<h3 id="orgff5b7e5"><span class="section-number-3">2.2</span> Scoping</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 There're four levels:
@@ -628,8 +606,8 @@ outer()
 </div>
 </div>
 
-<div id="outline-container-org04b6d71" class="outline-3">
-<h3 id="org04b6d71"><span class="section-number-3">2.3</span> Conditional</h3>
+<div id="outline-container-org9cd5cdd" class="outline-3">
+<h3 id="org9cd5cdd"><span class="section-number-3">2.3</span> Conditional</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 If else or:
@@ -643,8 +621,8 @@ If else or:
 </div>
 </div>
 
-<div id="outline-container-org847a00b" class="outline-3">
-<h3 id="org847a00b"><span class="section-number-3">2.4</span> Loop</h3>
+<div id="outline-container-orgc491eeb" class="outline-3">
+<h3 id="orgc491eeb"><span class="section-number-3">2.4</span> Loop</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>len(s): length</li>
@@ -656,12 +634,12 @@ If else or:
 </div>
 
 
-<div id="outline-container-orgb33df91" class="outline-3">
-<h3 id="orgb33df91"><span class="section-number-3">2.5</span> Function</h3>
+<div id="outline-container-org7abf834" class="outline-3">
+<h3 id="org7abf834"><span class="section-number-3">2.5</span> Function</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
-<div id="outline-container-org66fa611" class="outline-4">
-<h4 id="org66fa611"><span class="section-number-4">2.5.1</span> Function def and call</h4>
+<div id="outline-container-org8ea658a" class="outline-4">
+<h4 id="org8ea658a"><span class="section-number-4">2.5.1</span> Function def and call</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 The default value of an argument is evaluated once at the function
@@ -695,8 +673,8 @@ a <span class="org-comment-delimiter"># </span><span class="org-comment">=&gt; [
 </div>
 </div>
 
-<div id="outline-container-org9da505b" class="outline-4">
-<h4 id="org9da505b"><span class="section-number-4">2.5.2</span> Lambda</h4>
+<div id="outline-container-orgf88becd" class="outline-4">
+<h4 id="orgf88becd"><span class="section-number-4">2.5.2</span> Lambda</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">lambda</span> x : x+2
@@ -713,8 +691,8 @@ of the list, and return a list containing the results.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0a480f3" class="outline-4">
-<h4 id="org0a480f3"><span class="section-number-4">2.5.3</span> variadic parameter</h4>
+<div id="outline-container-orgb7c6e60" class="outline-4">
+<h4 id="orgb7c6e60"><span class="section-number-4">2.5.3</span> variadic parameter</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <p>
 use <code>*args</code> syntax, and <code>args</code> will be a <i>tuple</i>:
@@ -770,8 +748,8 @@ first,*<span class="org-variable-name">l</span>,<span class="org-variable-name">
 </div>
 </div>
 
-<div id="outline-container-org43e4b4c" class="outline-3">
-<h3 id="org43e4b4c"><span class="section-number-3">2.6</span> Meta Programming</h3>
+<div id="outline-container-orga2325f8" class="outline-3">
+<h3 id="orga2325f8"><span class="section-number-3">2.6</span> Meta Programming</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 Basically <code>eval</code> (return value) and <code>exec</code> (no return value), with
@@ -795,8 +773,8 @@ names bound by current namespace.
 </div>
 
 
-<div id="outline-container-org5681770" class="outline-3">
-<h3 id="org5681770"><span class="section-number-3">2.7</span> Exception</h3>
+<div id="outline-container-orgf81ce1e" class="outline-3">
+<h3 id="orgf81ce1e"><span class="section-number-3">2.7</span> Exception</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 To give a quick feel:
@@ -818,8 +796,8 @@ To give a quick feel:
 </div>
 </div>
 
-<div id="outline-container-org6937f9b" class="outline-4">
-<h4 id="org6937f9b"><span class="section-number-4">2.7.1</span> Built-in exceptions</h4>
+<div id="outline-container-org0f88faa" class="outline-4">
+<h4 id="org0f88faa"><span class="section-number-4">2.7.1</span> Built-in exceptions</h4>
 <div class="outline-text-4" id="text-2-7-1">
 <pre class="example">
 BaseException
@@ -878,8 +856,8 @@ BaseException
 </div>
 
 
-<div id="outline-container-org4e509da" class="outline-3">
-<h3 id="org4e509da"><span class="section-number-3">2.8</span> Module</h3>
+<div id="outline-container-org7c356a9" class="outline-3">
+<h3 id="org7c356a9"><span class="section-number-3">2.8</span> Module</h3>
 <div class="outline-text-3" id="text-2-8">
 <p>
 Exposing API: the following only expose <code>foo</code> but not <code>bar</code>.
@@ -894,8 +872,8 @@ Exposing API: the following only expose <code>foo</code> but not <code>bar</code
 </div>
 </div>
 
-<div id="outline-container-org234d74b" class="outline-4">
-<h4 id="org234d74b"><span class="section-number-4">2.8.1</span> importing</h4>
+<div id="outline-container-org323f06d" class="outline-4">
+<h4 id="org323f06d"><span class="section-number-4">2.8.1</span> importing</h4>
 <div class="outline-text-4" id="text-2-8-1">
 <p>
 The local structure directory must contain the <code>__init__.py</code> file to be able to import.
@@ -994,19 +972,19 @@ from p2.yyy import foo
 
 
 
-<div id="outline-container-org1baa8af" class="outline-2">
-<h2 id="org1baa8af"><span class="section-number-2">3</span> Collections</h2>
+<div id="outline-container-org1aa7b29" class="outline-2">
+<h2 id="org1aa7b29"><span class="section-number-2">3</span> Collections</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb9afb6b" class="outline-3">
-<h3 id="orgb9afb6b"><span class="section-number-3">3.1</span> List</h3>
+<div id="outline-container-org5d4eaa6" class="outline-3">
+<h3 id="org5d4eaa6"><span class="section-number-3">3.1</span> List</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-orgd0011dc" class="outline-4">
-<h4 id="orgd0011dc"><span class="section-number-4">3.1.1</span> <span class="todo TODO">TODO</span> tuple</h4>
+<div id="outline-container-org05c6426" class="outline-4">
+<h4 id="org05c6426"><span class="section-number-4">3.1.1</span> <span class="todo TODO">TODO</span> tuple</h4>
 </div>
-<div id="outline-container-org9f0c875" class="outline-4">
-<h4 id="org9f0c875"><span class="section-number-4">3.1.2</span> <span class="todo TODO">TODO</span> sorted</h4>
+<div id="outline-container-orge30b3c8" class="outline-4">
+<h4 id="orge30b3c8"><span class="section-number-4">3.1.2</span> <span class="todo TODO">TODO</span> sorted</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 sort a dictionary by value:
@@ -1019,8 +997,8 @@ sort a dictionary by value:
 </div>
 </div>
 
-<div id="outline-container-orgd67e05b" class="outline-4">
-<h4 id="orgd67e05b"><span class="section-number-4">3.1.3</span> Slicing</h4>
+<div id="outline-container-orgbcd10a2" class="outline-4">
+<h4 id="orgbcd10a2"><span class="section-number-4">3.1.3</span> Slicing</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 The slicing syntax is <code>l[start:end:step]</code>.
@@ -1053,8 +1031,8 @@ Also, assign to a new variable only assign the reference:
 </div>
 </div>
 
-<div id="outline-container-org9ac7027" class="outline-4">
-<h4 id="org9ac7027"><span class="section-number-4">3.1.4</span> create a list</h4>
+<div id="outline-container-org6109fb5" class="outline-4">
+<h4 id="org6109fb5"><span class="section-number-4">3.1.4</span> create a list</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <ul class="org-ul">
 <li><code>range(stop)</code></li>
@@ -1081,8 +1059,8 @@ list comprehension
 </div>
 
 
-<div id="outline-container-org41736f7" class="outline-4">
-<h4 id="org41736f7"><span class="section-number-4">3.1.5</span> Modify a list</h4>
+<div id="outline-container-org09602fe" class="outline-4">
+<h4 id="org09602fe"><span class="section-number-4">3.1.5</span> Modify a list</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <ul class="org-ul">
 <li>list.append</li>
@@ -1091,8 +1069,8 @@ list comprehension
 </div>
 </div>
 
-<div id="outline-container-orgae18b2f" class="outline-4">
-<h4 id="orgae18b2f"><span class="section-number-4">3.1.6</span> List object model</h4>
+<div id="outline-container-orgb0fac36" class="outline-4">
+<h4 id="orgb0fac36"><span class="section-number-4">3.1.6</span> List object model</h4>
 <div class="outline-text-4" id="text-3-1-6">
 <p>
 Lists are mutable.  The behavior of slicing is a bit confusing. If the
@@ -1174,12 +1152,12 @@ fairly safe to use string.
 </div>
 
 
-<div id="outline-container-org022f4ec" class="outline-3">
-<h3 id="org022f4ec"><span class="section-number-3">3.2</span> String</h3>
+<div id="outline-container-orga7f4df5" class="outline-3">
+<h3 id="orga7f4df5"><span class="section-number-3">3.2</span> String</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org8c2732b" class="outline-4">
-<h4 id="org8c2732b"><span class="section-number-4">3.2.1</span> Concatenation</h4>
+<div id="outline-container-orge6d8f51" class="outline-4">
+<h4 id="orge6d8f51"><span class="section-number-4">3.2.1</span> Concatenation</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>concatenate two strings directly by <code>+</code>.</li>
@@ -1189,8 +1167,8 @@ fairly safe to use string.
 </div>
 </div>
 
-<div id="outline-container-orgb72a80a" class="outline-4">
-<h4 id="orgb72a80a"><span class="section-number-4">3.2.2</span> split</h4>
+<div id="outline-container-orgc0da037" class="outline-4">
+<h4 id="orgc0da037"><span class="section-number-4">3.2.2</span> split</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <dl class="org-dl">
 <dt><code>str.split(sep=None)</code></dt><dd>default by white space</dd>
@@ -1203,8 +1181,8 @@ fairly safe to use string.
 </div>
 </div>
 
-<div id="outline-container-org5cc4ca7" class="outline-4">
-<h4 id="org5cc4ca7"><span class="section-number-4">3.2.3</span> Slicing</h4>
+<div id="outline-container-orga7a8713" class="outline-4">
+<h4 id="orga7a8713"><span class="section-number-4">3.2.3</span> Slicing</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 String is an immutable object. It can use slicing. E.g. reversing a
@@ -1237,8 +1215,8 @@ first and then reverse it.
 </div>
 </div>
 
-<div id="outline-container-org4536677" class="outline-3">
-<h3 id="org4536677"><span class="section-number-3">3.3</span> Dictionary</h3>
+<div id="outline-container-orgdc8e2b5" class="outline-3">
+<h3 id="orgdc8e2b5"><span class="section-number-3">3.3</span> Dictionary</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Create:
@@ -1268,8 +1246,8 @@ z.update(y)
 </div>
 </div>
 
-<div id="outline-container-org3dc2fe4" class="outline-4">
-<h4 id="org3dc2fe4"><span class="section-number-4">3.3.1</span> Set</h4>
+<div id="outline-container-orgf5c3068" class="outline-4">
+<h4 id="orgf5c3068"><span class="section-number-4">3.3.1</span> Set</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-variable-name">s</span> = <span class="org-builtin">set</span>()
@@ -1286,16 +1264,16 @@ s.add(x)
 
 
 
-<div id="outline-container-org3d20820" class="outline-2">
-<h2 id="org3d20820"><span class="section-number-2">4</span> Standard Library</h2>
+<div id="outline-container-org07a9e3a" class="outline-2">
+<h2 id="org07a9e3a"><span class="section-number-2">4</span> Standard Library</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgcf8cb14" class="outline-3">
-<h3 id="orgcf8cb14"><span class="section-number-3">4.1</span> Operating System</h3>
+<div id="outline-container-org0802d7b" class="outline-3">
+<h3 id="org0802d7b"><span class="section-number-3">4.1</span> Operating System</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-orgdc54578" class="outline-4">
-<h4 id="orgdc54578"><span class="section-number-4">4.1.1</span> Env</h4>
+<div id="outline-container-org752ce55" class="outline-4">
+<h4 id="org752ce55"><span class="section-number-4">4.1.1</span> Env</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>os.environ['HOME']</li>
@@ -1306,8 +1284,8 @@ s.add(x)
 </div>
 </div>
 
-<div id="outline-container-org50aabc6" class="outline-4">
-<h4 id="org50aabc6"><span class="section-number-4">4.1.2</span> Shell command</h4>
+<div id="outline-container-org405a31a" class="outline-4">
+<h4 id="org405a31a"><span class="section-number-4">4.1.2</span> Shell command</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <dl class="org-dl">
 <dt><code>os.system</code></dt><dd>simply run command</dd>
@@ -1345,8 +1323,8 @@ p.stdout.read()
 </div>
 </div>
 </div>
-<div id="outline-container-orge5f6bb6" class="outline-4">
-<h4 id="orge5f6bb6"><span class="section-number-4">4.1.3</span> Process</h4>
+<div id="outline-container-orga85a2db" class="outline-4">
+<h4 id="orga85a2db"><span class="section-number-4">4.1.3</span> Process</h4>
 <div class="outline-text-4" id="text-4-1-3">
 <ul class="org-ul">
 <li>os.abort()</li>
@@ -1378,12 +1356,12 @@ p.stdout.read()
 </div>
 </div>
 
-<div id="outline-container-orgef9e0e4" class="outline-3">
-<h3 id="orgef9e0e4"><span class="section-number-3">4.2</span> IO</h3>
+<div id="outline-container-org67f30cd" class="outline-3">
+<h3 id="org67f30cd"><span class="section-number-3">4.2</span> IO</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-orgb976c99" class="outline-4">
-<h4 id="orgb976c99"><span class="section-number-4">4.2.1</span> File IO</h4>
+<div id="outline-container-org516fa87" class="outline-4">
+<h4 id="org516fa87"><span class="section-number-4">4.2.1</span> File IO</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <p>
 Reading:
@@ -1440,8 +1418,8 @@ Other IO:
 </div>
 </div>
 
-<div id="outline-container-orga716053" class="outline-4">
-<h4 id="orga716053"><span class="section-number-4">4.2.2</span> Printing</h4>
+<div id="outline-container-org34cc250" class="outline-4">
+<h4 id="org34cc250"><span class="section-number-4">4.2.2</span> Printing</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>pprint.pprint(object, stream=None): pretty print</li>
@@ -1464,8 +1442,8 @@ read from stdin:
 </div>
 </div>
 
-<div id="outline-container-org68bd6cc" class="outline-4">
-<h4 id="org68bd6cc"><span class="section-number-4">4.2.3</span> redirect stdout</h4>
+<div id="outline-container-org1ae6de4" class="outline-4">
+<h4 id="org1ae6de4"><span class="section-number-4">4.2.3</span> redirect stdout</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">from</span> contextlib <span class="org-keyword">import</span> redirect_stdout
@@ -1504,12 +1482,12 @@ It can also be a predefined handle, like <code>sys.stderr</code>:
 </div>
 
 
-<div id="outline-container-orgd87e172" class="outline-3">
-<h3 id="orgd87e172"><span class="section-number-3">4.3</span> File System</h3>
+<div id="outline-container-orgeaaea94" class="outline-3">
+<h3 id="orgeaaea94"><span class="section-number-3">4.3</span> File System</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-org8bd43fa" class="outline-4">
-<h4 id="org8bd43fa"><span class="section-number-4">4.3.1</span> os.walk</h4>
+<div id="outline-container-org6ba95b0" class="outline-4">
+<h4 id="org6ba95b0"><span class="section-number-4">4.3.1</span> os.walk</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> os
@@ -1528,8 +1506,8 @@ It can also be a predefined handle, like <code>sys.stderr</code>:
 </div>
 </div>
 
-<div id="outline-container-org99e8275" class="outline-4">
-<h4 id="org99e8275"><span class="section-number-4">4.3.2</span> FS Operations</h4>
+<div id="outline-container-org5dbd6c8" class="outline-4">
+<h4 id="org5dbd6c8"><span class="section-number-4">4.3.2</span> FS Operations</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>os.getcwd(): current working directory</li>
@@ -1555,8 +1533,8 @@ it yields 3-tuple (dirpath, dirnames, filenames). E.g. <code>for root,dirs,files
 </div>
 </div>
 
-<div id="outline-container-org1970c20" class="outline-4">
-<h4 id="org1970c20"><span class="section-number-4">4.3.3</span> shutil</h4>
+<div id="outline-container-org80f5e75" class="outline-4">
+<h4 id="org80f5e75"><span class="section-number-4">4.3.3</span> shutil</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>copy(src,dst)</li>
@@ -1571,8 +1549,8 @@ popen family is deprecated. Use subprocess.
 </div>
 </div>
 
-<div id="outline-container-org23c9980" class="outline-4">
-<h4 id="org23c9980"><span class="section-number-4">4.3.4</span> os.path</h4>
+<div id="outline-container-org0a0992a" class="outline-4">
+<h4 id="org0a0992a"><span class="section-number-4">4.3.4</span> os.path</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <p>
 If parameter is not listed, it means a single path.
@@ -1602,8 +1580,8 @@ path. normpath(join(os.getcwd(), path))</li>
 </div>
 </div>
 
-<div id="outline-container-orgac0db8d" class="outline-4">
-<h4 id="orgac0db8d"><span class="section-number-4">4.3.5</span> pathlib</h4>
+<div id="outline-container-orge15c130" class="outline-4">
+<h4 id="orge15c130"><span class="section-number-4">4.3.5</span> pathlib</h4>
 <div class="outline-text-4" id="text-4-3-5">
 <p>
 Object-oriented filesystem paths.
@@ -1753,8 +1731,8 @@ shell pattern, e.g. <code>p.glob('*/*.py')</code></li>
 </div>
 </div>
 
-<div id="outline-container-orgb57d1ec" class="outline-4">
-<h4 id="orgb57d1ec"><span class="section-number-4">4.3.6</span> <span class="todo TODO">TODO</span> tempfile</h4>
+<div id="outline-container-org67beb3e" class="outline-4">
+<h4 id="org67beb3e"><span class="section-number-4">4.3.6</span> <span class="todo TODO">TODO</span> tempfile</h4>
 <div class="outline-text-4" id="text-4-3-6">
 <ul class="org-ul">
 <li><code>mkstemp</code> creates temp file, but this file is opened. The return value is the
@@ -1775,8 +1753,8 @@ file descriptor (int) of the opened file, the same as that gets returned by
 
 
 
-<div id="outline-container-orgae8c350" class="outline-3">
-<h3 id="orgae8c350"><span class="section-number-3">4.4</span> unittest</h3>
+<div id="outline-container-orgd4cb2cc" class="outline-3">
+<h3 id="orgd4cb2cc"><span class="section-number-3">4.4</span> unittest</h3>
 <div class="outline-text-3" id="text-4-4">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">MyTest</span>(unittest.TestCase):
@@ -1793,8 +1771,8 @@ the file must be named <code>test_xxx.py</code>, and run the <code>python -m uni
 </div>
 </div>
 
-<div id="outline-container-org27cd475" class="outline-3">
-<h3 id="org27cd475"><span class="section-number-3">4.5</span> time</h3>
+<div id="outline-container-org05942f1" class="outline-3">
+<h3 id="org05942f1"><span class="section-number-3">4.5</span> time</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 Create time object:
@@ -1834,8 +1812,8 @@ localtime() and strptime().  Time to format string:
 </ul>
 </div>
 
-<div id="outline-container-org66d9852" class="outline-4">
-<h4 id="org66d9852"><span class="section-number-4">4.5.1</span> datetime</h4>
+<div id="outline-container-orgf3b1238" class="outline-4">
+<h4 id="orgf3b1238"><span class="section-number-4">4.5.1</span> datetime</h4>
 <div class="outline-text-4" id="text-4-5-1">
 <ul class="org-ul">
 <li><code>date</code> has year, month, day</li>
@@ -1862,8 +1840,8 @@ delta.days
 </div>
 </div>
 
-<div id="outline-container-org1432e6e" class="outline-3">
-<h3 id="org1432e6e"><span class="section-number-3">4.6</span> csv</h3>
+<div id="outline-container-orgb5f46d3" class="outline-3">
+<h3 id="orgb5f46d3"><span class="section-number-3">4.6</span> csv</h3>
 <div class="outline-text-3" id="text-4-6">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> csv
@@ -1882,8 +1860,8 @@ delta.days
 </div>
 </div>
 
-<div id="outline-container-org55d9e69" class="outline-3">
-<h3 id="org55d9e69"><span class="section-number-3">4.7</span> Json</h3>
+<div id="outline-container-org12bca49" class="outline-3">
+<h3 id="org12bca49"><span class="section-number-3">4.7</span> Json</h3>
 <div class="outline-text-3" id="text-4-7">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> json
@@ -1897,8 +1875,8 @@ json.load(fp)
 </div>
 </div>
 
-<div id="outline-container-org0f3c465" class="outline-3">
-<h3 id="org0f3c465"><span class="section-number-3">4.8</span> argparse</h3>
+<div id="outline-container-org9c9b9d7" class="outline-3">
+<h3 id="org9c9b9d7"><span class="section-number-3">4.8</span> argparse</h3>
 <div class="outline-text-3" id="text-4-8">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> argparse
@@ -1959,8 +1937,8 @@ can use <code>parser.parse_args(['-f', '1', 'bar'])</code>.
 </div>
 
 
-<div id="outline-container-orga9810fa" class="outline-3">
-<h3 id="orga9810fa"><span class="section-number-3">4.9</span> Regular Expression</h3>
+<div id="outline-container-org1f1ffcd" class="outline-3">
+<h3 id="org1f1ffcd"><span class="section-number-3">4.9</span> Regular Expression</h3>
 <div class="outline-text-3" id="text-4-9">
 <p>
 construction
@@ -2004,12 +1982,12 @@ re.search(<span class="org-string">"pattern"</span>, <span class="org-string">"s
 </div>
 </div>
 
-<div id="outline-container-org7319319" class="outline-3">
-<h3 id="org7319319"><span class="section-number-3">4.10</span> Concurrent programming</h3>
+<div id="outline-container-org1b06186" class="outline-3">
+<h3 id="org1b06186"><span class="section-number-3">4.10</span> Concurrent programming</h3>
 <div class="outline-text-3" id="text-4-10">
 </div>
-<div id="outline-container-orgeb4f6eb" class="outline-4">
-<h4 id="orgeb4f6eb"><span class="section-number-4">4.10.1</span> threading</h4>
+<div id="outline-container-org79936b4" class="outline-4">
+<h4 id="org79936b4"><span class="section-number-4">4.10.1</span> threading</h4>
 <div class="outline-text-4" id="text-4-10-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">from</span> threading <span class="org-keyword">import</span> Thread
@@ -2066,8 +2044,8 @@ thread. The thread terminate when <code>run</code> terminate</li>
 </div>
 </div>
 
-<div id="outline-container-org531574b" class="outline-4">
-<h4 id="org531574b"><span class="section-number-4">4.10.2</span> Thread Sync</h4>
+<div id="outline-container-orga975ab0" class="outline-4">
+<h4 id="orga975ab0"><span class="section-number-4">4.10.2</span> Thread Sync</h4>
 <div class="outline-text-4" id="text-4-10-2">
 <p>
 class threading.Lock
@@ -2158,8 +2136,8 @@ and do things simultaneously.</li>
 </ul>
 </div>
 
-<div id="outline-container-orga0fe756" class="outline-5">
-<h5 id="orga0fe756"><span class="section-number-5">4.10.2.1</span> Using with statement</h5>
+<div id="outline-container-org4bfce27" class="outline-5">
+<h5 id="org4bfce27"><span class="section-number-5">4.10.2.1</span> Using with statement</h5>
 <div class="outline-text-5" id="text-4-10-2-1">
 <p>
 Lock, RLock, Condition, Semaphore can be used.
@@ -2186,8 +2164,8 @@ is equivalent to:
 </div>
 </div>
 
-<div id="outline-container-org3fc7f35" class="outline-4">
-<h4 id="org3fc7f35"><span class="section-number-4">4.10.3</span> multiprocessing</h4>
+<div id="outline-container-orge3a65e4" class="outline-4">
+<h4 id="orge3a65e4"><span class="section-number-4">4.10.3</span> multiprocessing</h4>
 <div class="outline-text-4" id="text-4-10-3">
 <p>
 This provide multiprocessing.Process class, having similar API with
@@ -2198,8 +2176,8 @@ sharing of memory of course).
 </div>
 </div>
 
-<div id="outline-container-org8fea3ee" class="outline-4">
-<h4 id="org8fea3ee"><span class="section-number-4">4.10.4</span> subprocess</h4>
+<div id="outline-container-org072564c" class="outline-4">
+<h4 id="org072564c"><span class="section-number-4">4.10.4</span> subprocess</h4>
 <div class="outline-text-4" id="text-4-10-4">
 <ul class="org-ul">
 <li>subprocess.run(args, *, stdin=None, input=None, stdout=None,
@@ -2309,12 +2287,12 @@ stdout, stderr should be set to PIPE.
 
 
 
-<div id="outline-container-org2af3e92" class="outline-2">
-<h2 id="org2af3e92"><span class="section-number-2">5</span> Third party libraries</h2>
+<div id="outline-container-orgd1cac5f" class="outline-2">
+<h2 id="orgd1cac5f"><span class="section-number-2">5</span> Third party libraries</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgfd394d6" class="outline-3">
-<h3 id="orgfd394d6"><span class="section-number-3">5.1</span> urllib</h3>
+<div id="outline-container-orgc871cc2" class="outline-3">
+<h3 id="orgc871cc2"><span class="section-number-3">5.1</span> urllib</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">from</span> urllib <span class="org-keyword">import</span> request
@@ -2332,8 +2310,8 @@ stdout, stderr should be set to PIPE.
 </div>
 </div>
 
-<div id="outline-container-org41a9aa7" class="outline-4">
-<h4 id="org41a9aa7"><span class="section-number-4">5.1.1</span> urllib.request</h4>
+<div id="outline-container-org0e1693b" class="outline-4">
+<h4 id="org0e1693b"><span class="section-number-4">5.1.1</span> urllib.request</h4>
 <div class="outline-text-4" id="text-5-1-1">
 <p>
 package urllib.request
@@ -2390,8 +2368,8 @@ methods:
 </div>
 </div>
 
-<div id="outline-container-org0bc2092" class="outline-4">
-<h4 id="org0bc2092"><span class="section-number-4">5.1.2</span> urllib.parse</h4>
+<div id="outline-container-orgce7ccce" class="outline-4">
+<h4 id="orgce7ccce"><span class="section-number-4">5.1.2</span> urllib.parse</h4>
 <div class="outline-text-4" id="text-5-1-2">
 <ul class="org-ul">
 <li>quote(string)</li>
@@ -2405,8 +2383,8 @@ methods:
 </div>
 
 
-<div id="outline-container-org906608a" class="outline-3">
-<h3 id="org906608a"><span class="section-number-3">5.2</span> XML</h3>
+<div id="outline-container-orgbe56383" class="outline-3">
+<h3 id="orgbe56383"><span class="section-number-3">5.2</span> XML</h3>
 <div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> xml.etree.ElementTree <span class="org-keyword">as</span> ET
@@ -2430,8 +2408,8 @@ APIs
 </ul>
 </div>
 </div>
-<div id="outline-container-org36c1870" class="outline-3">
-<h3 id="org36c1870"><span class="section-number-3">5.3</span> Requests</h3>
+<div id="outline-container-orgef30665" class="outline-3">
+<h3 id="orgef30665"><span class="section-number-3">5.3</span> Requests</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 <a href="http://docs.python-requests.org/en/master/">http://docs.python-requests.org/en/master/</a>
@@ -2439,8 +2417,8 @@ APIs
 </div>
 </div>
 
-<div id="outline-container-org8ef72ef" class="outline-3">
-<h3 id="org8ef72ef"><span class="section-number-3">5.4</span> BeautifulSoup</h3>
+<div id="outline-container-org5d4f44c" class="outline-3">
+<h3 id="org5d4f44c"><span class="section-number-3">5.4</span> BeautifulSoup</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 The package is called <code>BeautifulSoup4</code>.
@@ -2515,12 +2493,12 @@ has some support for id and class, the <code>select</code> is easier to use.
 
 
 
-<div id="outline-container-org627eea2" class="outline-3">
-<h3 id="org627eea2"><span class="section-number-3">5.5</span> click <a href="http://click.pocoo.org/5/">http://click.pocoo.org/5/</a></h3>
+<div id="outline-container-org058f4a1" class="outline-3">
+<h3 id="org058f4a1"><span class="section-number-3">5.5</span> click <a href="http://click.pocoo.org/5/">http://click.pocoo.org/5/</a></h3>
 </div>
 
-<div id="outline-container-org8710de2" class="outline-3">
-<h3 id="org8710de2"><span class="section-number-3">5.6</span> pandas</h3>
+<div id="outline-container-orge09c442" class="outline-3">
+<h3 id="orge09c442"><span class="section-number-3">5.6</span> pandas</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 Looks like it is a dataframe library
@@ -2528,8 +2506,8 @@ Looks like it is a dataframe library
 </div>
 </div>
 
-<div id="outline-container-orgfc002c0" class="outline-3">
-<h3 id="orgfc002c0"><span class="section-number-3">5.7</span> numpy</h3>
+<div id="outline-container-org659e007" class="outline-3">
+<h3 id="org659e007"><span class="section-number-3">5.7</span> numpy</h3>
 <div class="outline-text-3" id="text-5-7">
 <p>
 C-implementation of multi-dimensional arrays
@@ -2537,8 +2515,8 @@ C-implementation of multi-dimensional arrays
 </div>
 </div>
 
-<div id="outline-container-orgc719613" class="outline-3">
-<h3 id="orgc719613"><span class="section-number-3">5.8</span> scipy</h3>
+<div id="outline-container-org9ce2f52" class="outline-3">
+<h3 id="org9ce2f52"><span class="section-number-3">5.8</span> scipy</h3>
 <div class="outline-text-3" id="text-5-8">
 <p>
 scitific computing algorithms, including:
@@ -2555,8 +2533,8 @@ scitific computing algorithms, including:
 </div>
 </div>
 
-<div id="outline-container-org5f7c329" class="outline-3">
-<h3 id="org5f7c329"><span class="section-number-3">5.9</span> scikit-learn</h3>
+<div id="outline-container-org1aca3d9" class="outline-3">
+<h3 id="org1aca3d9"><span class="section-number-3">5.9</span> scikit-learn</h3>
 <div class="outline-text-3" id="text-5-9">
 <p>
 Learning library.
@@ -2608,8 +2586,8 @@ Other topics
 </div>
 </div>
 
-<div id="outline-container-orgde513f9" class="outline-3">
-<h3 id="orgde513f9"><span class="section-number-3">5.10</span> matplotlib</h3>
+<div id="outline-container-org22bd492" class="outline-3">
+<h3 id="org22bd492"><span class="section-number-3">5.10</span> matplotlib</h3>
 <div class="outline-text-3" id="text-5-10">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
@@ -2626,8 +2604,8 @@ Reference
 </ul>
 </div>
 
-<div id="outline-container-org86ed31a" class="outline-4">
-<h4 id="org86ed31a"><span class="section-number-4">5.10.1</span> type of figures</h4>
+<div id="outline-container-orgff4598a" class="outline-4">
+<h4 id="orgff4598a"><span class="section-number-4">5.10.1</span> type of figures</h4>
 <div class="outline-text-4" id="text-5-10-1">
 <ul class="org-ul">
 <li>plt.bar</li>
@@ -2662,12 +2640,12 @@ plt.show()
 </div>
 </div>
 
-<div id="outline-container-org616777e" class="outline-4">
-<h4 id="org616777e"><span class="section-number-4">5.10.2</span> <span class="todo TODO">TODO</span> plot options</h4>
+<div id="outline-container-org330da02" class="outline-4">
+<h4 id="org330da02"><span class="section-number-4">5.10.2</span> <span class="todo TODO">TODO</span> plot options</h4>
 </div>
 
-<div id="outline-container-orgf04190e" class="outline-4">
-<h4 id="orgf04190e"><span class="section-number-4">5.10.3</span> legends, axis, more settings</h4>
+<div id="outline-container-orgc617e06" class="outline-4">
+<h4 id="orgc617e06"><span class="section-number-4">5.10.3</span> legends, axis, more settings</h4>
 <div class="outline-text-4" id="text-5-10-3">
 <p>
 Texts:
@@ -2693,8 +2671,8 @@ Scale:
 </div>
 </div>
 
-<div id="outline-container-org00d1c3c" class="outline-4">
-<h4 id="org00d1c3c"><span class="section-number-4">5.10.4</span> Subplots</h4>
+<div id="outline-container-orgf1a5a45" class="outline-4">
+<h4 id="orgf1a5a45"><span class="section-number-4">5.10.4</span> Subplots</h4>
 <div class="outline-text-4" id="text-5-10-4">
 <div class="org-src-container">
 <pre class="src src-python">plt.ioff()
@@ -2736,8 +2714,8 @@ plt.show()
 
 
 
-<div id="outline-container-org7aa04e5" class="outline-4">
-<h4 id="org7aa04e5"><span class="section-number-4">5.10.5</span> export to files</h4>
+<div id="outline-container-orgc1dca5f" class="outline-4">
+<h4 id="orgc1dca5f"><span class="section-number-4">5.10.5</span> export to files</h4>
 <div class="outline-text-4" id="text-5-10-5">
 <p>
 Visualize using OS GUI toolkit:
@@ -2761,8 +2739,8 @@ savefig(<span class="org-string">"/tmp/test.png"</span>)
 </div>
 
 
-<div id="outline-container-orgfa760f0" class="outline-3">
-<h3 id="orgfa760f0"><span class="section-number-3">5.11</span> imsave</h3>
+<div id="outline-container-org6746aae" class="outline-3">
+<h3 id="org6746aae"><span class="section-number-3">5.11</span> imsave</h3>
 <div class="outline-text-3" id="text-5-11">
 <p>
 <code>imsave</code> is deprecated, change from
@@ -2785,8 +2763,8 @@ to
 </div>
 
 
-<div id="outline-container-org5d64911" class="outline-3">
-<h3 id="org5d64911"><span class="section-number-3">5.12</span> Nvidia GPU setting</h3>
+<div id="outline-container-org7e1f6b1" class="outline-3">
+<h3 id="org7e1f6b1"><span class="section-number-3">5.12</span> Nvidia GPU setting</h3>
 <div class="outline-text-3" id="text-5-12">
 <p>
 Select visible GPU in a multi-GPU setting:
