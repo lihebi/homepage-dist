@@ -193,50 +193,28 @@
 </style>
 <link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -250,15 +228,24 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1e981e6">1. Rationale</a></li>
-<li><a href="#org2a47fef">2. Implementation</a></li>
-<li><a href="#org1b235f6">3. The Language</a>
+<li><a href="#orgbb74c9d">1. Zen</a>
 <ul>
-<li><a href="#org4578e51">3.1. Field Accessing with Dot-Notation</a></li>
-<li><a href="#org45a8c51">3.2. Multi-Dimensional Array: Indexing and Slicing</a></li>
-<li><a href="#org9c5ecdb">3.3. Optional Inline Type Annotation</a></li>
-<li><a href="#org38871cd">3.4. Multi-Dispatch Generic Functions by Default</a></li>
-<li><a href="#org2c9476e">3.5. function defs, default and keyword arguments</a></li>
+<li><a href="#org229b028">1.1. The essense of programming</a></li>
+<li><a href="#orgb4c6247">1.2. Rationale</a></li>
+<li><a href="#org68d9f4e">1.3. Implementation</a>
+<ul>
+<li><a href="#org1c2ee91">1.3.1. UPDATE 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbe1320a">2. The Language</a>
+<ul>
+<li><a href="#orgf2b434b">2.1. Field Accessing with Dot-Notation</a></li>
+<li><a href="#org0aaaf31">2.2. Multi-Dimensional Array: Indexing and Slicing</a></li>
+<li><a href="#org8dca38f">2.3. Optional Inline Type Annotation</a></li>
+<li><a href="#orgb4654be">2.4. Multi-Dispatch Generic Functions by Default</a></li>
+<li><a href="#org8913a01">2.5. function defs, default and keyword arguments</a></li>
 </ul>
 </li>
 </ul>
@@ -271,10 +258,91 @@ when it makes sense, Julia-like optional static typing and multi-dispatching.
 </p>
 </blockquote>
 
-
-<div id="outline-container-org1e981e6" class="outline-2">
-<h2 id="org1e981e6"><span class="section-number-2">1</span> Rationale</h2>
+<div id="outline-container-orgbb74c9d" class="outline-2">
+<h2 id="orgbb74c9d"><span class="section-number-2">1</span> Zen</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org229b028" class="outline-3">
+<h3 id="org229b028"><span class="section-number-3">1.1</span> The essense of programming</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The most important 4 aspects of programming in my opinion are:
+</p>
+<ol class="org-ol">
+<li>awareness of purely functional programming, i.e. write side effect free
+functions</li>
+<li>interactive development driven by REPL</li>
+<li>multiple dispatch. The gradual typing is useful for annotation purpose as
+well as enabling multiple dispatching, and typing should be annotated
+natually, right after the variable and inside function def (instead of before
+as in typed racket)</li>
+<li>syntactic abstraction in the form of DSLs. The zen of Python states that
+there should be one way to do one thing, the obvious way. Well, that way is
+the best language for the domain, which is not very obvious to support in Python.</li>
+</ol>
+
+<p>
+I didn't write serious Haskell and OCaml, but I did not find that sophisticated
+typing very necessary, and Monads and Lazyness did not manifest loud enough to me.
+</p>
+
+<p>
+1 and 2 are operational techniques, while 3 and 4 are features of
+language. Although almost all new languages provide meta-programming (the basic
+of syntactic abstraction) of varing levels, racket provides the most
+comprehensive syntactic abstraction toolkit, far beyond all others, and I think
+it is not very possible to achieve the same level of support on non-lispy
+languages. E.g. it is not very natural to create DSLs using Julia.
+</p>
+
+<p>
+However, racket does not have proper and natural multiple dispatch. The
+Haskell-style typing annotation in <a href="https://docs.racket-lang.org/ts-reference/index.html">typed racket</a> is not as natural, the typing
+did not appear at the best location. The <a href="https://docs.racket-lang.org/reference/struct-generics.html">racket/generics</a> library provides single
+dispatch, and the usage is quite cumbersome: users should just define the
+function without worrying about the gen:XXX interface and fallback
+implementation staff. The <a href="https://docs.racket-lang.org/multimethod/index.html">multimethod</a> package has multiple dispatch. However,
+the typing annotation is even weirder, and there's no proper typing system and
+dispatching strategy in this little package.
+</p>
+
+<p>
+Modern languages all have a proper module system. However, all languages are
+based on files, except the <a href="https://www.unisonweb.org/">unison</a> language. But the hash is not too useful other
+than the fact that the renaming is painless. OK, back to the module and file, my
+core idea is that there should not be file at all! And making the module and
+file system collaborate is most likely the most confusing thing in a language's
+module system. In BISP, you just write function defs under some module
+namespace. One of the reason for uisng a file system was that Unix has it, and
+there's only one way to write code: to open a file in an (CMD-based) text
+editor. BISP will provide some better way to write your program, a visual way
+with some features such as proper server/client separation. Another issue is
+that inside a file, existing languages typically do not distinguish internal
+functions and external APIs very well. Not to say that I want a system that have
+(HEBI: internal helper functions and APIs at arbitrary granularity).
+</p>
+
+<p>
+One more thing, I would love to use BISP on microcontrollers too. This would
+require some thinking regarding racket's backend to satisfy the small memory
+footprint as well as a proper and native REPL and front-end interface, the bisp
+notebook maybe?. Besides microcontrollers, I would want to extend the usage
+landscape to all low-level scenarios, e.g. the once used to be C, to remove the
+\#ifdefs (i.e. ir-elegant machine-dependence check) and \#defines
+(i.e. macros-done-wrong).
+</p>
+
+<p>
+If everything goes well, I should provide a (HEBI: serverless cloud computing
+infra)! To abstract over the OS/VM/container and language runtime.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgb4c6247" class="outline-3">
+<h3 id="orgb4c6247"><span class="section-number-3">1.2</span> Rationale</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 Parenthesis is a good thing, as always, because:
 </p>
@@ -320,9 +388,9 @@ afore-mentioned cons.
 </div>
 
 
-<div id="outline-container-org2a47fef" class="outline-2">
-<h2 id="org2a47fef"><span class="section-number-2">2</span> Implementation</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org68d9f4e" class="outline-3">
+<h3 id="org68d9f4e"><span class="section-number-3">1.3</span> Implementation</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 The semantic is mostly identical to that of Julia. Thus, it is probably best to
 implement the syntax atop Julia or Julia's IR.
@@ -358,26 +426,66 @@ fundation.</li>
 <li>access to all those Julia libraries, thus this might be the first lisp-for-statistics</li>
 </ul>
 </div>
+
+<div id="outline-container-org1c2ee91" class="outline-4">
+<h4 id="org1c2ee91"><span class="section-number-4">1.3.1</span> UPDATE 1</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+I found syntactic abstraction harder to reimplement than multiple dispatch, thus
+it seems quite easy to implement the rough BISP on top of racket, and I should
+be able to use all racket's amazing libraries. However, naive multiple
+dispatching might produce inefficient code, thus I probably need to look into
+optimization at some point.
+</p>
+
+<p>
+And I still want to use Julia's library and all other language's libraries. But
+instead of native foreign function interface, I prefer something that I coined
+(HEBI: "source-level FFI"). This is a HUGE idea. For Julia, I will need to
+implement a syntactic expander for Julia's macros, and a Julia syntac
+transformer to load Julia's code directly into racket. Julia code might make
+base library calls or C FFIs. In this case, I would need to map Julia base
+library call to racket, and make corresponding C native FFI. I'm not sure how
+possible it is to map the entire Julia base library.
+</p>
+
+<p>
+Actually, I don't need to really implement the subtyping and union type.  That
+is needed, but not urgently useful, I can live without it for now.  This will
+make the dispatching much simpler, because the ordering of methods based on
+specificity is easier, I just need to order all custom types before non-typed
+ones. And I need to properly mix the primitive types and user-defined
+types. Most likely I need to have a wrapper name (via syntax) for each of the
+primitive types. See <a href="https://docs.racket-lang.org/ts-reference/type-ref.html">https://docs.racket-lang.org/ts-reference/type-ref.html</a> for
+a list.
+</p>
+
+<p>
+Importantly, the struct field access should be converted to generic methods.
+</p>
+</div>
+</div>
+</div>
 </div>
 
 
-<div id="outline-container-org1b235f6" class="outline-2">
-<h2 id="org1b235f6"><span class="section-number-2">3</span> The Language</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgbe1320a" class="outline-2">
+<h2 id="orgbe1320a"><span class="section-number-2">2</span> The Language</h2>
+<div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org4578e51" class="outline-3">
-<h3 id="org4578e51"><span class="section-number-3">3.1</span> Field Accessing with Dot-Notation</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgf2b434b" class="outline-3">
+<h3 id="orgf2b434b"><span class="section-number-3">2.1</span> Field Accessing with Dot-Notation</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Prior art: cubersome struct field accessing, the dot-notation is missing
 </p>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span class="org-comment-delimiter">;; </span><span class="org-comment">struct</span>
-(<span class="org-keyword">struct</span> Rect w h)
-(<span class="org-keyword">let</span> ([<span class="org-variable-name">r</span> (Rect <span class="org-racket-selfeval">2</span> <span class="org-racket-selfeval">3</span>)])
-  <span class="org-comment-delimiter">;; </span><span class="org-comment">field accessing is cubersome</span>
-  (<span class="org-builtin">*</span> (Rect-w r)
+<pre class="src src-racket">;; struct
+(struct Rect w h)
+(let ([r (Rect 2 3)])
+  ;; field accessing is cubersome
+  (* (Rect-w r)
      (Rect-h r)))
 </pre>
 </div>
@@ -413,18 +521,18 @@ Instead, Bisp uses dot-notation:
 </div>
 </div>
 
-<div id="outline-container-org45a8c51" class="outline-3">
-<h3 id="org45a8c51"><span class="section-number-3">3.2</span> Multi-Dimensional Array: Indexing and Slicing</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-org0aaaf31" class="outline-3">
+<h3 id="org0aaaf31"><span class="section-number-3">2.2</span> Multi-Dimensional Array: Indexing and Slicing</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 Prior art: hard to do array indexing and slicing, e.g. the racket way:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span class="org-comment-delimiter">;; </span><span class="org-comment">array indexing and slicing</span>
-(array-ref arr #(<span class="org-racket-selfeval">2</span> <span class="org-racket-selfeval">3</span>))
-(array-set! brr #(<span class="org-racket-selfeval">2</span> <span class="org-racket-selfeval">3</span>) <span class="org-racket-selfeval">10</span>)
-(array-slice-ref arr (<span class="org-builtin">list</span> (::) (:: <span class="org-racket-selfeval">#f</span> <span class="org-racket-selfeval">#f</span> <span class="org-racket-selfeval">-1</span>)))
+<pre class="src src-racket">;; array indexing and slicing
+(array-ref arr #(2 3))
+(array-set! brr #(2 3) 10)
+(array-slice-ref arr (list (::) (:: #f #f -1)))
 </pre>
 </div>
 
@@ -449,9 +557,9 @@ arr[:, 0:1]
 </div>
 </div>
 
-<div id="outline-container-org9c5ecdb" class="outline-3">
-<h3 id="org9c5ecdb"><span class="section-number-3">3.3</span> Optional Inline Type Annotation</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-org8dca38f" class="outline-3">
+<h3 id="org8dca38f"><span class="section-number-3">2.3</span> Optional Inline Type Annotation</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 Previous lisp is hard to do inline type annotations.  Prior art: typed racket,
 contracts, clojure specs.
@@ -462,16 +570,16 @@ For example, typed racket:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span class="org-comment-delimiter">;; </span><span class="org-comment">outline annotation</span>
-(<span class="org-builtin">:</span> distance (<span class="org-builtin">-&gt;</span> pt pt <span class="org-type">Real</span>))
-(<span class="org-keyword">define</span> (<span class="org-function-name">distance</span> p1 p2)
-  (<span class="org-builtin">sqrt</span> (<span class="org-builtin">+</span> (<span class="org-builtin">sqr</span> (<span class="org-builtin">-</span> (pt-x p2) (pt-x p1)))
-           (<span class="org-builtin">sqr</span> (<span class="org-builtin">-</span> (pt-y p2) (pt-y p1))))))
+<pre class="src src-racket">;; outline annotation
+(: distance (-&gt; pt pt Real))
+(define (distance p1 p2)
+  (sqrt (+ (sqr (- (pt-x p2) (pt-x p1)))
+           (sqr (- (pt-y p2) (pt-y p1))))))
 
-<span class="org-comment-delimiter">;; </span><span class="org-comment">inline annotations</span>
-(<span class="org-keyword">let</span> ([<span class="org-variable-name">x</span> <span class="org-builtin">:</span> <span class="org-type">Number</span> <span class="org-racket-selfeval">7</span>])
-  (<span class="org-builtin">add1</span> x))
-(<span class="org-keyword">lambda</span> ([x <span class="org-builtin">:</span> <span class="org-type">Number</span>] [y <span class="org-builtin">:</span> <span class="org-type">String</span>]) (<span class="org-builtin">+</span> x <span class="org-racket-selfeval">5</span>))
+;; inline annotations
+(let ([x : Number 7])
+  (add1 x))
+(lambda ([x : Number] [y : String]) (+ x 5))
 </pre>
 </div>
 
@@ -512,9 +620,9 @@ Support parametric types
 </div>
 </div>
 
-<div id="outline-container-org38871cd" class="outline-3">
-<h3 id="org38871cd"><span class="section-number-3">3.4</span> Multi-Dispatch Generic Functions by Default</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-orgb4654be" class="outline-3">
+<h3 id="orgb4654be"><span class="section-number-3">2.4</span> Multi-Dispatch Generic Functions by Default</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
 ALL functions are generic methods. You define the same name multiple times
 (instead of define <code>foobar-number</code>, <code>foobar-string</code>), and they are dispatched
@@ -536,9 +644,9 @@ foo
 </div>
 </div>
 
-<div id="outline-container-org2c9476e" class="outline-3">
-<h3 id="org2c9476e"><span class="section-number-3">3.5</span> function defs, default and keyword arguments</h3>
-<div class="outline-text-3" id="text-3-5">
+<div id="outline-container-org8913a01" class="outline-3">
+<h3 id="org8913a01"><span class="section-number-3">2.5</span> function defs, default and keyword arguments</h3>
+<div class="outline-text-3" id="text-2-5">
 <p>
 Bisp is lisp-1, i.e. unified namespace for functions and variables. Functions
 are first-class, the following defs are equivalent:

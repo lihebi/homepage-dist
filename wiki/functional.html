@@ -193,50 +193,28 @@
 </style>
 <link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -272,50 +250,50 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfbcbe49">1. References</a></li>
-<li><a href="#org9502750">2. <span class="todo TODO">TODO</span> Haskell</a>
+<li><a href="#org426d61d">1. References</a></li>
+<li><a href="#orgfc14280">2. <span class="todo TODO">TODO</span> Haskell</a>
 <ul>
-<li><a href="#org72a3f0a">2.1. Tmp</a>
+<li><a href="#orgbd7e3d7">2.1. Tmp</a>
 <ul>
-<li><a href="#org41f9414">2.1.1. operators</a></li>
+<li><a href="#orgeb7ebbd">2.1.1. operators</a></li>
 </ul>
 </li>
-<li><a href="#org3b4ba8b">2.2. references</a></li>
-<li><a href="#org3b6be1f">2.3. layout</a></li>
-<li><a href="#org137973f">2.4. lexical staff</a>
+<li><a href="#orgbf50894">2.2. references</a></li>
+<li><a href="#org69809a5">2.3. layout</a></li>
+<li><a href="#org0503860">2.4. lexical staff</a>
 <ul>
-<li><a href="#org0acc8d4">2.4.1. fixity declaration</a></li>
+<li><a href="#org9e1abb0">2.4.1. fixity declaration</a></li>
 </ul>
 </li>
-<li><a href="#org3065e9d">2.5. decl</a></li>
-<li><a href="#org3bff44f">2.6. do expression</a></li>
-<li><a href="#orgd798de0">2.7. list comprehension</a></li>
-<li><a href="#org7fc82bd">2.8. function and lambda</a></li>
-<li><a href="#org718b9c7">2.9. let binding</a></li>
-<li><a href="#org4f00d6d">2.10. conditional</a></li>
-<li><a href="#org661e994">2.11. case expression</a></li>
+<li><a href="#org01f7688">2.5. decl</a></li>
+<li><a href="#orga30aebf">2.6. do expression</a></li>
+<li><a href="#org4c33a3d">2.7. list comprehension</a></li>
+<li><a href="#orgb293d81">2.8. function and lambda</a></li>
+<li><a href="#orgb873060">2.9. let binding</a></li>
+<li><a href="#orgf46105b">2.10. conditional</a></li>
+<li><a href="#org940b179">2.11. case expression</a></li>
 </ul>
 </li>
-<li><a href="#org98398b2">3. Expression</a></li>
-<li><a href="#orgc2b148f">4. What is a Function?</a>
+<li><a href="#orgf465a19">3. Expression</a></li>
+<li><a href="#org5d6313b">4. What is a Function?</a>
 <ul>
-<li><a href="#org14b4a3c">4.1. Composition</a></li>
-<li><a href="#org6a6c452">4.2. Strictness</a></li>
+<li><a href="#orgcaaddf2">4.1. Composition</a></li>
+<li><a href="#orge7b9c9f">4.2. Strictness</a></li>
 </ul>
 </li>
-<li><a href="#org71743ff">5. Type</a>
+<li><a href="#org5678daf">5. Type</a>
 <ul>
-<li><a href="#org120f260">5.1. Type inference</a></li>
-<li><a href="#org62ec5ee">5.2. List</a></li>
+<li><a href="#orgcb1ece0">5.1. Type inference</a></li>
+<li><a href="#org05a7002">5.2. List</a></li>
 </ul>
 </li>
-<li><a href="#org0d8e22a">6. Recursion</a></li>
+<li><a href="#orgcd445a5">6. Recursion</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgfbcbe49" class="outline-2">
-<h2 id="orgfbcbe49"><span class="section-number-2">1</span> References</h2>
+<div id="outline-container-org426d61d" class="outline-2">
+<h2 id="org426d61d"><span class="section-number-2">1</span> References</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>introduction to functional programming <a class='org-ref-reference' href="#1988-Book-Bird-Introduction">1988-Book-Bird-Introduction</a></li>
@@ -329,12 +307,12 @@ combining other types.  Algebraic data type contains product type and sum type.<
 </div>
 </div>
 
-<div id="outline-container-org9502750" class="outline-2">
-<h2 id="org9502750"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Haskell</h2>
+<div id="outline-container-orgfc14280" class="outline-2">
+<h2 id="orgfc14280"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Haskell</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org72a3f0a" class="outline-3">
-<h3 id="org72a3f0a"><span class="section-number-3">2.1</span> Tmp</h3>
+<div id="outline-container-orgbd7e3d7" class="outline-3">
+<h3 id="orgbd7e3d7"><span class="section-number-3">2.1</span> Tmp</h3>
 <div class="outline-text-3" id="text-2-1">
 <dl class="org-dl">
 <dt>referentially transparent</dt><dd>we can replace any expression by its
@@ -346,8 +324,8 @@ About Applicative and its relation with Monad
 </p>
 </div>
 
-<div id="outline-container-org41f9414" class="outline-4">
-<h4 id="org41f9414"><span class="section-number-4">2.1.1</span> operators</h4>
+<div id="outline-container-orgeb7ebbd" class="outline-4">
+<h4 id="orgeb7ebbd"><span class="section-number-4">2.1.1</span> operators</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 Use <a href="https://hoogle.haskell.org/">Hoogle</a>
@@ -356,7 +334,7 @@ to search for operator symbols!
 </div>
 
 <ol class="org-ol">
-<li><a id="orga6b6ad3"></a>list difference <code>(\\)</code><br />
+<li><a id="orgc2b84f2"></a>list difference <code>(\\)</code><br />
 <div class="outline-text-5" id="text-2-1-1-1">
 <p>
 The <code>(\\)</code> function is list difference (non-associative).  The result
@@ -365,7 +343,7 @@ of <code>xs \\ ys</code> is a smaller <code>xs</code>, with <code>ys</code> remo
 </div>
 </li>
 
-<li><a id="org8057b4f"></a>strictness declaration<br />
+<li><a id="orgb3f74df"></a>strictness declaration<br />
 <div class="outline-text-5" id="text-2-1-1-2">
 <p>
 From <a href="https://stackoverflow.com/questions/993112/what-does-the-exclamation-mark-mean-in-a-haskell-declaration">a stackoverflow question</a>
@@ -378,7 +356,7 @@ From <a href="https://stackoverflow.com/questions/993112/what-does-the-exclamati
 </div>
 </li>
 
-<li><a id="org011c360"></a>infix operator <code>(+)</code> and <code>``</code><br />
+<li><a id="orgd205325"></a>infix operator <code>(+)</code> and <code>``</code><br />
 <div class="outline-text-5" id="text-2-1-1-3">
 <p>
 Haskell functions ar typically used using prefix notation. However,
@@ -396,7 +374,7 @@ parentheses.
 </li>
 
 
-<li><a id="org1a13770"></a>as-pattern<br />
+<li><a id="org0058759"></a>as-pattern<br />
 <div class="outline-text-5" id="text-2-1-1-4">
 <div class="org-src-container">
 <pre class="src src-haskell"><span class="org-haskell-definition">f</span> (x<span class="org-haskell-constructor">:</span>xs) <span class="org-haskell-operator">=</span> x<span class="org-haskell-constructor">:</span>x<span class="org-haskell-constructor">:</span>xs
@@ -406,7 +384,7 @@ parentheses.
 </div>
 </li>
 
-<li><a id="org4028e36"></a>tilde<br />
+<li><a id="org02119d9"></a>tilde<br />
 <div class="outline-text-5" id="text-2-1-1-5">
 <p>
 When using patten matching, a tilde makes two things:
@@ -424,7 +402,7 @@ match. If not matching, it will result in runtime error.</li>
 </div>
 </li>
 
-<li><a id="org8065669"></a>function composition<br />
+<li><a id="org36148fe"></a>function composition<br />
 <div class="outline-text-5" id="text-2-1-1-6">
 <div class="org-src-container">
 <pre class="src src-haskell">(f <span class="org-haskell-operator">.</span> g) x <span class="org-haskell-operator">=</span> f (g x)
@@ -437,7 +415,7 @@ It has precedence 9.
 </div>
 </li>
 
-<li><a id="org74f38a1"></a>dollar operator<br />
+<li><a id="org67d274d"></a>dollar operator<br />
 <div class="outline-text-5" id="text-2-1-1-7">
 <div class="org-src-container">
 <pre class="src src-haskell">(<span class="org-haskell-definition">$</span>) <span class="org-haskell-operator">::</span> (a <span class="org-haskell-operator">-&gt;</span> b) <span class="org-haskell-operator">-&gt;</span> a <span class="org-haskell-operator">-&gt;</span> b
@@ -456,7 +434,7 @@ operator associativity. Also commonly used to separate large arguments.
 </div>
 </li>
 
-<li><a id="org2f35b92"></a>Lexical syntax:<br />
+<li><a id="orgb8fab51"></a>Lexical syntax:<br />
 <div class="outline-text-5" id="text-2-1-1-8">
 <dl class="org-dl">
 <dt><code>=&gt;</code></dt><dd>context or class inheritance</dd>
@@ -464,7 +442,7 @@ operator associativity. Also commonly used to separate large arguments.
 </div>
 </li>
 
-<li><a id="org9501b7c"></a>Defined in Functor:<br />
+<li><a id="orgbacbb91"></a>Defined in Functor:<br />
 <div class="outline-text-5" id="text-2-1-1-9">
 <ul class="org-ul">
 <li>&lt;$&gt;: fmap</li>
@@ -472,7 +450,7 @@ operator associativity. Also commonly used to separate large arguments.
 </div>
 </li>
 
-<li><a id="org546e4be"></a>Defined in Applicative:<br />
+<li><a id="org1663363"></a>Defined in Applicative:<br />
 <div class="outline-text-5" id="text-2-1-1-10">
 <ul class="org-ul">
 <li>&lt;*&gt;: used with fmap</li>
@@ -481,7 +459,7 @@ operator associativity. Also commonly used to separate large arguments.
 </div>
 
 <ol class="org-ol">
-<li><a id="org876cd43"></a>(2008) Applicative programming with effects<br />
+<li><a id="orgcc7dc45"></a>(2008) Applicative programming with effects<br />
 <div class="outline-text-6" id="text-2-1-1-10-1">
 <p>
 Applicative type class has the following methods:
@@ -499,7 +477,7 @@ Applicative type class has the following methods:
 </ol>
 </li>
 
-<li><a id="org6a269c2"></a>Defined in Alternative<br />
+<li><a id="orgf264ca3"></a>Defined in Alternative<br />
 <div class="outline-text-5" id="text-2-1-1-11">
 <dl class="org-dl">
 <dt><code>&lt;|&gt;</code></dt><dd><code>Nothing &lt;|&gt; Just a = Just a</code></dd>
@@ -510,8 +488,8 @@ Applicative type class has the following methods:
 </div>
 </div>
 
-<div id="outline-container-org3b4ba8b" class="outline-3">
-<h3 id="org3b4ba8b"><span class="section-number-3">2.2</span> references</h3>
+<div id="outline-container-orgbf50894" class="outline-3">
+<h3 id="orgbf50894"><span class="section-number-3">2.2</span> references</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>Haskell language report 2010 <a href="https://www.haskell.org/onlinereport/haskell2010/">https://www.haskell.org/onlinereport/haskell2010/</a></li>
@@ -522,8 +500,8 @@ Applicative type class has the following methods:
 </div>
 
 
-<div id="outline-container-org3b6be1f" class="outline-3">
-<h3 id="org3b6be1f"><span class="section-number-3">2.3</span> layout</h3>
+<div id="outline-container-org69809a5" class="outline-3">
+<h3 id="org69809a5"><span class="section-number-3">2.3</span> layout</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Layout is optional:
@@ -584,8 +562,8 @@ indented to the left of an earlier implicit open brace.
 </div>
 </div>
 
-<div id="outline-container-org137973f" class="outline-3">
-<h3 id="org137973f"><span class="section-number-3">2.4</span> lexical staff</h3>
+<div id="outline-container-org0503860" class="outline-3">
+<h3 id="org0503860"><span class="section-number-3">2.4</span> lexical staff</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 precedence and associative:
@@ -610,8 +588,8 @@ possible.
 </blockquote>
 </div>
 
-<div id="outline-container-org0acc8d4" class="outline-4">
-<h4 id="org0acc8d4"><span class="section-number-4">2.4.1</span> fixity declaration</h4>
+<div id="outline-container-org9e1abb0" class="outline-4">
+<h4 id="org9e1abb0"><span class="section-number-4">2.4.1</span> fixity declaration</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 Determines the binding precedence of an operator. A fixity declaration
@@ -635,8 +613,8 @@ There is a table for all operators and their precedence levels.
 </div>
 </div>
 
-<div id="outline-container-org3065e9d" class="outline-3">
-<h3 id="org3065e9d"><span class="section-number-3">2.5</span> decl</h3>
+<div id="outline-container-org01f7688" class="outline-3">
+<h3 id="org01f7688"><span class="section-number-3">2.5</span> decl</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 var :: type
@@ -644,8 +622,8 @@ var :: type
 </div>
 </div>
 
-<div id="outline-container-org3bff44f" class="outline-3">
-<h3 id="org3bff44f"><span class="section-number-3">2.6</span> do expression</h3>
+<div id="outline-container-orga30aebf" class="outline-3">
+<h3 id="orga30aebf"><span class="section-number-3">2.6</span> do expression</h3>
 <div class="outline-text-3" id="text-2-6">
 <div class="org-src-container">
 <pre class="src src-haskell"><span class="org-haskell-keyword">do</span>
@@ -665,8 +643,8 @@ var :: type
 
 
 
-<div id="outline-container-orgd798de0" class="outline-3">
-<h3 id="orgd798de0"><span class="section-number-3">2.7</span> list comprehension</h3>
+<div id="outline-container-org4c33a3d" class="outline-3">
+<h3 id="org4c33a3d"><span class="section-number-3">2.7</span> list comprehension</h3>
 <div class="outline-text-3" id="text-2-7">
 <div class="org-src-container">
 <pre class="src src-haskell">[x <span class="org-haskell-operator">|</span> xs <span class="org-haskell-operator">&lt;-</span> [[(1,2),(3,4)],
@@ -688,8 +666,8 @@ being pattern.
 </div>
 </div>
 
-<div id="outline-container-org7fc82bd" class="outline-3">
-<h3 id="org7fc82bd"><span class="section-number-3">2.8</span> function and lambda</h3>
+<div id="outline-container-orgb293d81" class="outline-3">
+<h3 id="orgb293d81"><span class="section-number-3">2.8</span> function and lambda</h3>
 <div class="outline-text-3" id="text-2-8">
 <div class="org-src-container">
 <pre class="src src-haskell"><span class="org-haskell-definition">double</span> x <span class="org-haskell-operator">=</span> x <span class="org-haskell-operator">*</span> x
@@ -715,8 +693,8 @@ function
 </div>
 </div>
 
-<div id="outline-container-org718b9c7" class="outline-3">
-<h3 id="org718b9c7"><span class="section-number-3">2.9</span> let binding</h3>
+<div id="outline-container-orgb873060" class="outline-3">
+<h3 id="orgb873060"><span class="section-number-3">2.9</span> let binding</h3>
 <div class="outline-text-3" id="text-2-9">
 <div class="org-src-container">
 <pre class="src src-haskell"><span class="org-haskell-keyword">let</span> x, y <span class="org-haskell-operator">=</span> 5,10 <span class="org-haskell-keyword">in</span> x <span class="org-haskell-operator">+</span> y <span class="org-haskell-operator">+</span> 1
@@ -725,8 +703,8 @@ function
 </div>
 </div>
 
-<div id="outline-container-org4f00d6d" class="outline-3">
-<h3 id="org4f00d6d"><span class="section-number-3">2.10</span> conditional</h3>
+<div id="outline-container-orgf46105b" class="outline-3">
+<h3 id="orgf46105b"><span class="section-number-3">2.10</span> conditional</h3>
 <div class="outline-text-3" id="text-2-10">
 <div class="org-src-container">
 <pre class="src src-haskell"><span class="org-haskell-keyword">if</span> e1 <span class="org-haskell-keyword">then</span> e2 <span class="org-haskell-keyword">else</span> e3
@@ -735,8 +713,8 @@ function
 </div>
 </div>
 
-<div id="outline-container-org661e994" class="outline-3">
-<h3 id="org661e994"><span class="section-number-3">2.11</span> case expression</h3>
+<div id="outline-container-org940b179" class="outline-3">
+<h3 id="org940b179"><span class="section-number-3">2.11</span> case expression</h3>
 <div class="outline-text-3" id="text-2-11">
 <div class="org-src-container">
 <pre class="src src-haskell"><span class="org-haskell-keyword">case</span> exp <span class="org-haskell-keyword">of</span> {
@@ -764,8 +742,8 @@ function
 
 
 
-<div id="outline-container-org98398b2" class="outline-2">
-<h2 id="org98398b2"><span class="section-number-2">3</span> Expression</h2>
+<div id="outline-container-orgf465a19" class="outline-2">
+<h2 id="orgf465a19"><span class="section-number-2">3</span> Expression</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 An expression can be <i>reduced</i> to an simpler equivalent form.  We say
@@ -884,8 +862,8 @@ foldl' (op) a (x:xs) = strict (foldl' (op)) (a op x) xs
 
 
 
-<div id="outline-container-orgc2b148f" class="outline-2">
-<h2 id="orgc2b148f"><span class="section-number-2">4</span> What is a Function?</h2>
+<div id="outline-container-org5d6313b" class="outline-2">
+<h2 id="org5d6313b"><span class="section-number-2">4</span> What is a Function?</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>currying: replacing structured arguments by a sequence of simple
@@ -894,8 +872,8 @@ i.e. <code>f x y</code> means <code>((f x) y)</code>.</li>
 </ul>
 </div>
 
-<div id="outline-container-org14b4a3c" class="outline-3">
-<h3 id="org14b4a3c"><span class="section-number-3">4.1</span> Composition</h3>
+<div id="outline-container-orgcaaddf2" class="outline-3">
+<h3 id="orgcaaddf2"><span class="section-number-3">4.1</span> Composition</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Functional composition has the definition of
@@ -925,8 +903,8 @@ brackets
 </div>
 </div>
 
-<div id="outline-container-org6a6c452" class="outline-3">
-<h3 id="org6a6c452"><span class="section-number-3">4.2</span> Strictness</h3>
+<div id="outline-container-orge7b9c9f" class="outline-3">
+<h3 id="orge7b9c9f"><span class="section-number-3">4.2</span> Strictness</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 The special value \(\bot\) is polymorphic: \(\bot\) is a value of every
@@ -987,8 +965,8 @@ for the evaluation.
 </div>
 </div>
 
-<div id="outline-container-org71743ff" class="outline-2">
-<h2 id="org71743ff"><span class="section-number-2">5</span> Type</h2>
+<div id="outline-container-org5678daf" class="outline-2">
+<h2 id="org5678daf"><span class="section-number-2">5</span> Type</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Strong-typing: the type of an expression depends only on the type of
@@ -1014,8 +992,8 @@ are not defined, but operations are, is called abstract type.</li>
 </ul>
 </div>
 
-<div id="outline-container-org120f260" class="outline-3">
-<h3 id="org120f260"><span class="section-number-3">5.1</span> Type inference</h3>
+<div id="outline-container-orgcb1ece0" class="outline-3">
+<h3 id="orgcb1ece0"><span class="section-number-3">5.1</span> Type inference</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Three basic rules
@@ -1072,8 +1050,8 @@ generic:
 </div>
 </div>
 
-<div id="outline-container-org62ec5ee" class="outline-3">
-<h3 id="org62ec5ee"><span class="section-number-3">5.2</span> List</h3>
+<div id="outline-container-org05a7002" class="outline-3">
+<h3 id="org05a7002"><span class="section-number-3">5.2</span> List</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 List itself is defined as a recursive type.
@@ -1171,8 +1149,8 @@ marshalling, and <i>reduce</i> does folding.
 </div>
 </div>
 
-<div id="outline-container-org0d8e22a" class="outline-2">
-<h2 id="org0d8e22a"><span class="section-number-2">6</span> Recursion</h2>
+<div id="outline-container-orgcd445a5" class="outline-2">
+<h2 id="orgcd445a5"><span class="section-number-2">6</span> Recursion</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Functions are often defined recursively. In this section, we see some

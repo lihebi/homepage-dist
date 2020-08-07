@@ -193,50 +193,28 @@
 </style>
 <link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -250,16 +228,16 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdec407a">1. XPath</a></li>
-<li><a href="#orgd43a5b6">2. CSV</a></li>
-<li><a href="#orgfe18e0c">3. SQL</a>
+<li><a href="#org866b6a9">1. XPath</a></li>
+<li><a href="#org5883e9b">2. CSV</a></li>
+<li><a href="#org36a5c57">3. SQL</a>
 <ul>
-<li><a href="#org85de99e">3.1. Emacs Babels</a></li>
-<li><a href="#org0f49026">3.2. Basic Statements</a></li>
-<li><a href="#orgf7c85c3">3.3. SQLite</a>
+<li><a href="#orgb78be54">3.1. Emacs Babels</a></li>
+<li><a href="#orgc60dc68">3.2. Basic Statements</a></li>
+<li><a href="#org99cbcec">3.3. SQLite</a>
 <ul>
-<li><a href="#org5a69d64">3.3.1. C interface</a></li>
-<li><a href="#org8059726">3.3.2. Python interface</a></li>
+<li><a href="#org6a666cd">3.3.1. C interface</a></li>
+<li><a href="#org8760b94">3.3.2. Python interface</a></li>
 </ul>
 </li>
 </ul>
@@ -269,8 +247,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgdec407a" class="outline-2">
-<h2 id="orgdec407a"><span class="section-number-2">1</span> XPath</h2>
+<div id="outline-container-org866b6a9" class="outline-2">
+<h2 id="org866b6a9"><span class="section-number-2">1</span> XPath</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>tag</li>
@@ -309,8 +287,8 @@ or:
 </div>
 </div>
 
-<div id="outline-container-orgd43a5b6" class="outline-2">
-<h2 id="orgd43a5b6"><span class="section-number-2">2</span> CSV</h2>
+<div id="outline-container-org5883e9b" class="outline-2">
+<h2 id="org5883e9b"><span class="section-number-2">2</span> CSV</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>fields/columns separated by the comma character</li>
@@ -322,12 +300,12 @@ or:
 </div>
 </div>
 
-<div id="outline-container-orgfe18e0c" class="outline-2">
-<h2 id="orgfe18e0c"><span class="section-number-2">3</span> SQL</h2>
+<div id="outline-container-org36a5c57" class="outline-2">
+<h2 id="org36a5c57"><span class="section-number-2">3</span> SQL</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org85de99e" class="outline-3">
-<h3 id="org85de99e"><span class="section-number-3">3.1</span> Emacs Babels</h3>
+<div id="outline-container-orgb78be54" class="outline-3">
+<h3 id="orgb78be54"><span class="section-number-3">3.1</span> Emacs Babels</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 There're two babels: <code>sqlite</code> and <code>sql</code>. The SQL babel works for a RDBMS like MySQL.
@@ -365,20 +343,20 @@ The following is an example.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sqlite" id="org3f47417"><span class="org-keyword">create</span> <span class="org-keyword">table</span> <span class="org-function-name">greeting</span>(one <span class="org-type">varchar</span>(10), two <span class="org-type">varchar</span>(10));
+<pre class="src src-sqlite" id="org6657afd"><span class="org-keyword">create</span> <span class="org-keyword">table</span> <span class="org-function-name">greeting</span>(one <span class="org-type">varchar</span>(10), two <span class="org-type">varchar</span>(10));
 <span class="org-keyword">insert</span> <span class="org-keyword">into</span> greeting <span class="org-keyword">values</span>(<span class="org-string">'Hello'</span>, <span class="org-string">'world!'</span>);
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-sqlite" id="org7ade753"><span class="org-keyword">select</span> * <span class="org-keyword">from</span> greeting;
+<pre class="src src-sqlite" id="org89e07c7"><span class="org-keyword">select</span> * <span class="org-keyword">from</span> greeting;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0f49026" class="outline-3">
-<h3 id="org0f49026"><span class="section-number-3">3.2</span> Basic Statements</h3>
+<div id="outline-container-orgc60dc68" class="outline-3">
+<h3 id="orgc60dc68"><span class="section-number-3">3.2</span> Basic Statements</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 create &amp; insert &amp; delete
@@ -428,8 +406,8 @@ Aliasing
 </div>
 </div>
 
-<div id="outline-container-orgf7c85c3" class="outline-3">
-<h3 id="orgf7c85c3"><span class="section-number-3">3.3</span> SQLite</h3>
+<div id="outline-container-org99cbcec" class="outline-3">
+<h3 id="org99cbcec"><span class="section-number-3">3.3</span> SQLite</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 This is a file-based database.
@@ -448,8 +426,8 @@ There's no statements like <code>show tables;</code> in MySQL.</li>
 </ul>
 </div>
 
-<div id="outline-container-org5a69d64" class="outline-4">
-<h4 id="org5a69d64"><span class="section-number-4">3.3.1</span> C interface</h4>
+<div id="outline-container-org6a666cd" class="outline-4">
+<h4 id="org6a666cd"><span class="section-number-4">3.3.1</span> C interface</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>#include &lt;sqlite3.h&gt;</li>
@@ -507,8 +485,8 @@ Query
 </div>
 </div>
 
-<div id="outline-container-org8059726" class="outline-4">
-<h4 id="org8059726"><span class="section-number-4">3.3.2</span> Python interface</h4>
+<div id="outline-container-org8760b94" class="outline-4">
+<h4 id="org8760b94"><span class="section-number-4">3.3.2</span> Python interface</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> sqlite3

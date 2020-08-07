@@ -193,50 +193,28 @@
 </style>
 <link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/org.css" /><link rel="stylesheet" type="text/css" href="/home/hebi/git/homepage/assets/hebi.css" /><link rel="stylesheet" type="text/css" href="/assets/org.css" /><link rel="stylesheet" type="text/css" href="/assets/hebi.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -272,92 +250,92 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb12e02c">1. random tricks</a>
+<li><a href="#orgbda5727">1. random tricks</a>
 <ul>
-<li><a href="#orgda24e23">1.1. string functions</a></li>
+<li><a href="#org2cac11a">1.1. string functions</a></li>
 </ul>
 </li>
-<li><a href="#orgaece143">2. <span class="priority">[A]</span> approaches</a>
+<li><a href="#orgc0115d2">2. <span class="priority">[A]</span> approaches</a>
 <ul>
-<li><a href="#org90bb21a">2.1. <span class="todo TODO">TODO</span> dynamic programming</a>
+<li><a href="#org060252a">2.1. <span class="todo TODO">TODO</span> dynamic programming</a>
 <ul>
-<li><a href="#orgd11c4d0">2.1.1. (extra-state DP)</a></li>
-<li><a href="#orgeacf2f1">2.1.2. complement's DP</a></li>
-<li><a href="#orgb240491">2.1.3. complement's DP</a></li>
-<li><a href="#org5e72612">2.1.4. Palindromic</a></li>
-<li><a href="#orgbbf2f75">2.1.5. nested DP</a></li>
-<li><a href="#org6b7558a">2.1.6. FROM take 1 TO how many to take</a></li>
-<li><a href="#org362f049">2.1.7. Other (easy) DP problems</a>
+<li><a href="#org50f212b">2.1.1. (extra-state DP)</a></li>
+<li><a href="#orgb0863e6">2.1.2. complement's DP</a></li>
+<li><a href="#org9be45f8">2.1.3. complement's DP</a></li>
+<li><a href="#org2de656c">2.1.4. Palindromic</a></li>
+<li><a href="#org30dc6b0">2.1.5. nested DP</a></li>
+<li><a href="#orga68e184">2.1.6. FROM take 1 TO how many to take</a></li>
+<li><a href="#orgd38503d">2.1.7. Other (easy) DP problems</a>
 <ul>
-<li><a href="#org78e5e2c">2.1.7.1. (5391) build-array-where-you-can-find-the-maximum-exactly-k-comparisons</a></li>
-<li><a href="#org1a8e552">2.1.7.2. (920) number of playlists</a></li>
-<li><a href="#orgc6944e9">2.1.7.3. 1386. Cinema Seat Allocation</a></li>
+<li><a href="#org0c34516">2.1.7.1. (5391) build-array-where-you-can-find-the-maximum-exactly-k-comparisons</a></li>
+<li><a href="#orga8a35d9">2.1.7.2. (920) number of playlists</a></li>
+<li><a href="#org6edc7e1">2.1.7.3. 1386. Cinema Seat Allocation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org9163df3">2.2. <span class="todo TODO">TODO</span> recursion</a></li>
-<li><a href="#org6fc76ef">2.3. <span class="todo TODO">TODO</span> divide and conquer</a></li>
+<li><a href="#orgae700d5">2.2. <span class="todo TODO">TODO</span> recursion</a></li>
+<li><a href="#orgbd81d0d">2.3. <span class="todo TODO">TODO</span> divide and conquer</a></li>
 </ul>
 </li>
-<li><a href="#orgfd04f1b">3. <span class="priority">[A]</span> special problems</a>
+<li><a href="#orga03861a">3. <span class="priority">[A]</span> special problems</a>
 <ul>
-<li><a href="#org1472849">3.1. Number theory</a>
+<li><a href="#org776496a">3.1. Number theory</a>
 <ul>
-<li><a href="#org6e300d9">3.1.1. 1363. Largest Multiple of Three</a></li>
+<li><a href="#orgf7f9c0e">3.1.1. 1363. Largest Multiple of Three</a></li>
 </ul>
 </li>
-<li><a href="#orgd92665a">3.2. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> bit manipulation</a></li>
-<li><a href="#org31877a0">3.3. <span class="todo TODO">TODO</span> union find (29)</a></li>
-<li><a href="#org490f743">3.4. <span class="todo TODO">TODO</span> two pointers</a></li>
-<li><a href="#org799db16">3.5. <span class="todo TODO">TODO</span> sliding window</a></li>
+<li><a href="#org2d42705">3.2. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> bit manipulation</a></li>
+<li><a href="#org44f846a">3.3. <span class="todo TODO">TODO</span> union find (29)</a></li>
+<li><a href="#org075ff85">3.4. <span class="todo TODO">TODO</span> two pointers</a></li>
+<li><a href="#orge7ea90c">3.5. <span class="todo TODO">TODO</span> sliding window</a></li>
 </ul>
 </li>
-<li><a href="#org9a25b45">4. data structures</a>
+<li><a href="#org12fa56e">4. data structures</a>
 <ul>
-<li><a href="#org64c2fc1">4.1. linear</a>
+<li><a href="#orgb46ef8d">4.1. linear</a>
 <ul>
-<li><a href="#orgc8f903c">4.1.1. stack</a></li>
-<li><a href="#org486df7c">4.1.2. linked list</a></li>
-<li><a href="#org8621d09">4.1.3. queue</a></li>
+<li><a href="#org63967ac">4.1.1. stack</a></li>
+<li><a href="#org36795bf">4.1.2. linked list</a></li>
+<li><a href="#org2554f61">4.1.3. queue</a></li>
 </ul>
 </li>
-<li><a href="#org23c83df">4.2. hash table</a>
+<li><a href="#orge231ce5">4.2. hash table</a>
 <ul>
-<li><a href="#org9bfeddd">4.2.1. ordered map</a></li>
+<li><a href="#org79a30a1">4.2.1. ordered map</a></li>
 </ul>
 </li>
-<li><a href="#org9a149de">4.3. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> tree</a>
+<li><a href="#org5baadec">4.3. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> tree</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgdf711ce">4.3.0.1. balanced binary search tree</a></li>
-<li><a href="#org8517a24">4.3.0.2. 1361. Validate Binary Tree Nodes</a></li>
+<li><a href="#orgf42d0a4">4.3.0.1. balanced binary search tree</a></li>
+<li><a href="#org91e8bd8">4.3.0.2. 1361. Validate Binary Tree Nodes</a></li>
 </ul>
 </li>
-<li><a href="#org1d537f2">4.3.1. trie</a></li>
-<li><a href="#org519c057">4.3.2. heap</a></li>
-<li><a href="#orga1e3bfa">4.3.3. segment tree</a></li>
+<li><a href="#orgbaad74e">4.3.1. trie</a></li>
+<li><a href="#org935a920">4.3.2. heap</a></li>
+<li><a href="#orgaee87b5">4.3.3. segment tree</a></li>
 </ul>
 </li>
-<li><a href="#orgc2df350">4.4. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</a></li>
+<li><a href="#org05c7dd1">4.4. <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</a></li>
 </ul>
 </li>
-<li><a href="#orga031912">5. Tricky problems</a>
+<li><a href="#orgda10384">5. Tricky problems</a>
 <ul>
-<li><a href="#orge4d9a85">5.1. 466. Count The Repetitions (ultra large but repetitive subsequence finding)</a></li>
-<li><a href="#orgb4878ba">5.2. 1366. Rank Teams by Votes</a></li>
-<li><a href="#orgf8088b9">5.3. 1371. Find the Longest Substring Containing Vowels in Even Counts</a></li>
-<li><a href="#orgd7e3f94">5.4. 5359. Maximum Performance of a Team</a></li>
-<li><a href="#orga455201">5.5. 1392. Longest Happy Prefix</a></li>
+<li><a href="#org362e517">5.1. 466. Count The Repetitions (ultra large but repetitive subsequence finding)</a></li>
+<li><a href="#orgdc8f64d">5.2. 1366. Rank Teams by Votes</a></li>
+<li><a href="#org7a0ae4c">5.3. 1371. Find the Longest Substring Containing Vowels in Even Counts</a></li>
+<li><a href="#orgd551e52">5.4. 5359. Maximum Performance of a Team</a></li>
+<li><a href="#orgfb5f1f2">5.5. 1392. Longest Happy Prefix</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb12e02c" class="outline-2">
-<h2 id="orgb12e02c"><span class="section-number-2">1</span> random tricks</h2>
+<div id="outline-container-orgbda5727" class="outline-2">
+<h2 id="orgbda5727"><span class="section-number-2">1</span> random tricks</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 integer to binary string: <code>bin(324)</code>
@@ -410,8 +388,8 @@ c[<span class="org-string">'key'</span>]
 </div>
 </div>
 
-<div id="outline-container-orgda24e23" class="outline-3">
-<h3 id="orgda24e23"><span class="section-number-3">1.1</span> string functions</h3>
+<div id="outline-container-org2cac11a" class="outline-3">
+<h3 id="org2cac11a"><span class="section-number-3">1.1</span> string functions</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-doc">'hello'</span>.count(<span class="org-doc">'l'</span>)
@@ -423,16 +401,16 @@ c[<span class="org-string">'key'</span>]
 </div>
 
 
-<div id="outline-container-orgaece143" class="outline-2">
-<h2 id="orgaece143"><span class="section-number-2">2</span> <span class="priority">[A]</span> approaches</h2>
+<div id="outline-container-orgc0115d2" class="outline-2">
+<h2 id="orgc0115d2"><span class="section-number-2">2</span> <span class="priority">[A]</span> approaches</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org90bb21a" class="outline-3">
-<h3 id="org90bb21a"><span class="section-number-3">2.1</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/dynamic-programming/">dynamic programming</a></h3>
+<div id="outline-container-org060252a" class="outline-3">
+<h3 id="org060252a"><span class="section-number-3">2.1</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/dynamic-programming/">dynamic programming</a></h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-orgd11c4d0" class="outline-4">
-<h4 id="orgd11c4d0"><span class="section-number-4">2.1.1</span> (extra-state DP)</h4>
+<div id="outline-container-org50f212b" class="outline-4">
+<h4 id="org50f212b"><span class="section-number-4">2.1.1</span> (extra-state DP)</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 <a href="https://leetcode.com/problems/remove-boxes/">546 remove-boxes</a>
@@ -544,8 +522,8 @@ Some tests:
 </div>
 </div>
 
-<div id="outline-container-orgeacf2f1" class="outline-4">
-<h4 id="orgeacf2f1"><span class="section-number-4">2.1.2</span> complement's DP</h4>
+<div id="outline-container-orgb0863e6" class="outline-4">
+<h4 id="orgb0863e6"><span class="section-number-4">2.1.2</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 <a href="https://leetcode.com/problems/burst-balloons/">312 burst-balloons</a>
@@ -594,8 +572,8 @@ maxCoins([3,1,5,8])
 </div>
 </div>
 
-<div id="outline-container-orgb240491" class="outline-4">
-<h4 id="orgb240491"><span class="section-number-4">2.1.3</span> complement's DP</h4>
+<div id="outline-container-org9be45f8" class="outline-4">
+<h4 id="org9be45f8"><span class="section-number-4">2.1.3</span> complement's DP</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 <a href="https://leetcode.com/problems/super-egg-drop/">887 egg drop</a>
@@ -653,8 +631,8 @@ Solution().superEggDrop(2,2)    <span class="org-comment-delimiter"># </span><sp
 </div>
 </div>
 
-<div id="outline-container-org5e72612" class="outline-4">
-<h4 id="org5e72612"><span class="section-number-4">2.1.4</span> Palindromic</h4>
+<div id="outline-container-org2de656c" class="outline-4">
+<h4 id="org2de656c"><span class="section-number-4">2.1.4</span> Palindromic</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <p>
 <a href="https://leetcode.com/problems/count-different-palindromic-subsequences/">730. Count Different Palindromic Subsequences</a>
@@ -738,8 +716,8 @@ infinite loop!
 </div>
 </div>
 
-<div id="outline-container-orgbbf2f75" class="outline-4">
-<h4 id="orgbbf2f75"><span class="section-number-4">2.1.5</span> nested DP</h4>
+<div id="outline-container-org30dc6b0" class="outline-4">
+<h4 id="org30dc6b0"><span class="section-number-4">2.1.5</span> nested DP</h4>
 <div class="outline-text-4" id="text-2-1-5">
 <p>
 <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/">188. Best Time to Buy and Sell Stock IV</a>
@@ -813,8 +791,8 @@ DP, so it is "nested DP"</li>
 </div>
 </div>
 
-<div id="outline-container-org6b7558a" class="outline-4">
-<h4 id="org6b7558a"><span class="section-number-4">2.1.6</span> FROM take 1 TO how many to take</h4>
+<div id="outline-container-orga68e184" class="outline-4">
+<h4 id="orga68e184"><span class="section-number-4">2.1.6</span> FROM take 1 TO how many to take</h4>
 <div class="outline-text-4" id="text-2-1-6">
 <p>
 <a href="https://leetcode.com/problems/pizza-with-3n-slices/">1388. Pizza With 3n Slices</a>
@@ -852,12 +830,12 @@ same time)</li>
 
 
 
-<div id="outline-container-org362f049" class="outline-4">
-<h4 id="org362f049"><span class="section-number-4">2.1.7</span> Other (easy) DP problems</h4>
+<div id="outline-container-orgd38503d" class="outline-4">
+<h4 id="orgd38503d"><span class="section-number-4">2.1.7</span> Other (easy) DP problems</h4>
 <div class="outline-text-4" id="text-2-1-7">
 </div>
-<div id="outline-container-org78e5e2c" class="outline-5">
-<h5 id="org78e5e2c"><span class="section-number-5">2.1.7.1</span> (5391) build-array-where-you-can-find-the-maximum-exactly-k-comparisons</h5>
+<div id="outline-container-org0c34516" class="outline-5">
+<h5 id="org0c34516"><span class="section-number-5">2.1.7.1</span> (5391) build-array-where-you-can-find-the-maximum-exactly-k-comparisons</h5>
 <div class="outline-text-5" id="text-2-1-7-1">
 <p>
 <a href="https://leetcode-cn.com/contest/weekly-contest-185/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/">https://leetcode-cn.com/contest/weekly-contest-185/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/</a>
@@ -904,8 +882,8 @@ Some tricks:
 
 
 
-<div id="outline-container-org1a8e552" class="outline-5">
-<h5 id="org1a8e552"><span class="section-number-5">2.1.7.2</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h5>
+<div id="outline-container-orga8a35d9" class="outline-5">
+<h5 id="orga8a35d9"><span class="section-number-5">2.1.7.2</span> <a href="https://leetcode.com/problems/number-of-music-playlists/">(920) number of playlists</a></h5>
 <div class="outline-text-5" id="text-2-1-7-2">
 <p>
 The second requirement is ambigious. Other than that, the DP equation is pretty
@@ -950,8 +928,8 @@ Solution().numMusicPlaylists(25, 28, 5)  <span class="org-comment-delimiter"># <
 </div>
 </div>
 
-<div id="outline-container-orgc6944e9" class="outline-5">
-<h5 id="orgc6944e9"><span class="section-number-5">2.1.7.3</span> <a href="https://leetcode.com/contest/biweekly-contest-22/problems/cinema-seat-allocation/">1386. Cinema Seat Allocation</a></h5>
+<div id="outline-container-org6edc7e1" class="outline-5">
+<h5 id="org6edc7e1"><span class="section-number-5">2.1.7.3</span> <a href="https://leetcode.com/contest/biweekly-contest-22/problems/cinema-seat-allocation/">1386. Cinema Seat Allocation</a></h5>
 <div class="outline-text-5" id="text-2-1-7-3">
 <p>
 This is not hard but worth looking at:
@@ -997,24 +975,24 @@ computation instead of putting inside loop</li>
 
 
 
-<div id="outline-container-org9163df3" class="outline-3">
-<h3 id="org9163df3"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/recursion/">recursion</a></h3>
+<div id="outline-container-orgae700d5" class="outline-3">
+<h3 id="orgae700d5"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/recursion/">recursion</a></h3>
 </div>
-<div id="outline-container-org6fc76ef" class="outline-3">
-<h3 id="org6fc76ef"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/divide-and-conquer/">divide and conquer</a></h3>
+<div id="outline-container-orgbd81d0d" class="outline-3">
+<h3 id="orgbd81d0d"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/divide-and-conquer/">divide and conquer</a></h3>
 </div>
 </div>
 
-<div id="outline-container-orgfd04f1b" class="outline-2">
-<h2 id="orgfd04f1b"><span class="section-number-2">3</span> <span class="priority">[A]</span> special problems</h2>
+<div id="outline-container-orga03861a" class="outline-2">
+<h2 id="orga03861a"><span class="section-number-2">3</span> <span class="priority">[A]</span> special problems</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org1472849" class="outline-3">
-<h3 id="org1472849"><span class="section-number-3">3.1</span> Number theory</h3>
+<div id="outline-container-org776496a" class="outline-3">
+<h3 id="org776496a"><span class="section-number-3">3.1</span> Number theory</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org6e300d9" class="outline-4">
-<h4 id="org6e300d9"><span class="section-number-4">3.1.1</span> <a href="https://leetcode.com/problems/largest-multiple-of-three/">1363. Largest Multiple of Three</a></h4>
+<div id="outline-container-orgf7f9c0e" class="outline-4">
+<h4 id="orgf7f9c0e"><span class="section-number-4">3.1.1</span> <a href="https://leetcode.com/problems/largest-multiple-of-three/">1363. Largest Multiple of Three</a></h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 A typical mod-of-3 problem. The trick is to <code>reduce_147</code> (1 mod 3) or
@@ -1073,13 +1051,13 @@ A typical mod-of-3 problem. The trick is to <code>reduce_147</code> (1 mod 3) or
 </div>
 
 
-<div id="outline-container-orgd92665a" class="outline-3">
-<h3 id="orgd92665a"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> <a href="https://leetcode.com/tag/bit-manipulation/">bit manipulation</a></h3>
+<div id="outline-container-org2d42705" class="outline-3">
+<h3 id="org2d42705"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> <a href="https://leetcode.com/tag/bit-manipulation/">bit manipulation</a></h3>
 </div>
 
 
-<div id="outline-container-org31877a0" class="outline-3">
-<h3 id="org31877a0"><span class="section-number-3">3.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/union-find/">union find (29)</a></h3>
+<div id="outline-container-org44f846a" class="outline-3">
+<h3 id="org44f846a"><span class="section-number-3">3.3</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/union-find/">union find (29)</a></h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 This looks interesting
@@ -1087,8 +1065,8 @@ This looks interesting
 </div>
 </div>
 
-<div id="outline-container-org490f743" class="outline-3">
-<h3 id="org490f743"><span class="section-number-3">3.4</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/two-pointers/">two pointers</a></h3>
+<div id="outline-container-org075ff85" class="outline-3">
+<h3 id="org075ff85"><span class="section-number-3">3.4</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/two-pointers/">two pointers</a></h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 (HEBI: ??) but looks interesting
@@ -1096,8 +1074,8 @@ This looks interesting
 </div>
 </div>
 
-<div id="outline-container-org799db16" class="outline-3">
-<h3 id="org799db16"><span class="section-number-3">3.5</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/sliding-window/">sliding window</a></h3>
+<div id="outline-container-orge7ea90c" class="outline-3">
+<h3 id="orge7ea90c"><span class="section-number-3">3.5</span> <span class="todo TODO">TODO</span> <a href="https://leetcode.com/tag/sliding-window/">sliding window</a></h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 Looks like sequence matching
@@ -1108,40 +1086,40 @@ Looks like sequence matching
 
 
 
-<div id="outline-container-org9a25b45" class="outline-2">
-<h2 id="org9a25b45"><span class="section-number-2">4</span> data structures</h2>
+<div id="outline-container-org12fa56e" class="outline-2">
+<h2 id="org12fa56e"><span class="section-number-2">4</span> data structures</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org64c2fc1" class="outline-3">
-<h3 id="org64c2fc1"><span class="section-number-3">4.1</span> linear</h3>
+<div id="outline-container-orgb46ef8d" class="outline-3">
+<h3 id="orgb46ef8d"><span class="section-number-3">4.1</span> linear</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-orgc8f903c" class="outline-4">
-<h4 id="orgc8f903c"><span class="section-number-4">4.1.1</span> stack</h4>
+<div id="outline-container-org63967ac" class="outline-4">
+<h4 id="org63967ac"><span class="section-number-4">4.1.1</span> stack</h4>
 </div>
-<div id="outline-container-org486df7c" class="outline-4">
-<h4 id="org486df7c"><span class="section-number-4">4.1.2</span> linked list</h4>
+<div id="outline-container-org36795bf" class="outline-4">
+<h4 id="org36795bf"><span class="section-number-4">4.1.2</span> linked list</h4>
 </div>
-<div id="outline-container-org8621d09" class="outline-4">
-<h4 id="org8621d09"><span class="section-number-4">4.1.3</span> queue</h4>
+<div id="outline-container-org2554f61" class="outline-4">
+<h4 id="org2554f61"><span class="section-number-4">4.1.3</span> queue</h4>
 </div>
 </div>
 
-<div id="outline-container-org23c83df" class="outline-3">
-<h3 id="org23c83df"><span class="section-number-3">4.2</span> hash table</h3>
+<div id="outline-container-orge231ce5" class="outline-3">
+<h3 id="orge231ce5"><span class="section-number-3">4.2</span> hash table</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-org9bfeddd" class="outline-4">
-<h4 id="org9bfeddd"><span class="section-number-4">4.2.1</span> ordered map</h4>
+<div id="outline-container-org79a30a1" class="outline-4">
+<h4 id="org79a30a1"><span class="section-number-4">4.2.1</span> ordered map</h4>
 </div>
 </div>
 
-<div id="outline-container-org9a149de" class="outline-3">
-<h3 id="org9a149de"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> tree</h3>
+<div id="outline-container-org5baadec" class="outline-3">
+<h3 id="org5baadec"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> tree</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-orgdf711ce" class="outline-5">
-<h5 id="orgdf711ce"><span class="section-number-5">4.3.0.1</span> balanced binary search tree</h5>
+<div id="outline-container-orgf42d0a4" class="outline-5">
+<h5 id="orgf42d0a4"><span class="section-number-5">4.3.0.1</span> balanced binary search tree</h5>
 <div class="outline-text-5" id="text-4-3-0-1">
 <p>
 e.g. <a href="https://leetcode.com/problems/balance-a-binary-search-tree/">1382. Balance a Binary Search Tree</a>. You first sort the array. Then, pick
@@ -1180,8 +1158,8 @@ the middle as root and recursively solve the left and right.
 
 
 
-<div id="outline-container-org8517a24" class="outline-5">
-<h5 id="org8517a24"><span class="section-number-5">4.3.0.2</span> <a href="https://leetcode.com/problems/validate-binary-tree-nodes/">1361. Validate Binary Tree Nodes</a></h5>
+<div id="outline-container-org91e8bd8" class="outline-5">
+<h5 id="org91e8bd8"><span class="section-number-5">4.3.0.2</span> <a href="https://leetcode.com/problems/validate-binary-tree-nodes/">1361. Validate Binary Tree Nodes</a></h5>
 <div class="outline-text-5" id="text-4-3-0-2">
 <p>
 This is a pretty typical problem. The tree is valid if there's no (not
@@ -1235,28 +1213,28 @@ and record two sets:
 
 
 
-<div id="outline-container-org1d537f2" class="outline-4">
-<h4 id="org1d537f2"><span class="section-number-4">4.3.1</span> trie</h4>
+<div id="outline-container-orgbaad74e" class="outline-4">
+<h4 id="orgbaad74e"><span class="section-number-4">4.3.1</span> trie</h4>
 </div>
-<div id="outline-container-org519c057" class="outline-4">
-<h4 id="org519c057"><span class="section-number-4">4.3.2</span> heap</h4>
+<div id="outline-container-org935a920" class="outline-4">
+<h4 id="org935a920"><span class="section-number-4">4.3.2</span> heap</h4>
 </div>
-<div id="outline-container-orga1e3bfa" class="outline-4">
-<h4 id="orga1e3bfa"><span class="section-number-4">4.3.3</span> segment tree</h4>
-</div>
-</div>
-
-<div id="outline-container-orgc2df350" class="outline-3">
-<h3 id="orgc2df350"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</h3>
+<div id="outline-container-orgaee87b5" class="outline-4">
+<h4 id="orgaee87b5"><span class="section-number-4">4.3.3</span> segment tree</h4>
 </div>
 </div>
 
-<div id="outline-container-orga031912" class="outline-2">
-<h2 id="orga031912"><span class="section-number-2">5</span> Tricky problems</h2>
+<div id="outline-container-org05c7dd1" class="outline-3">
+<h3 id="org05c7dd1"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> <span class="priority">[A]</span> graph</h3>
+</div>
+</div>
+
+<div id="outline-container-orgda10384" class="outline-2">
+<h2 id="orgda10384"><span class="section-number-2">5</span> Tricky problems</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orge4d9a85" class="outline-3">
-<h3 id="orge4d9a85"><span class="section-number-3">5.1</span> <a href="https://leetcode.com/problems/count-the-repetitions/">466. Count The Repetitions</a> (ultra large but repetitive subsequence finding)</h3>
+<div id="outline-container-org362e517" class="outline-3">
+<h3 id="org362e517"><span class="section-number-3">5.1</span> <a href="https://leetcode.com/problems/count-the-repetitions/">466. Count The Repetitions</a> (ultra large but repetitive subsequence finding)</h3>
 <div class="outline-text-3" id="text-5-1">
 <blockquote>
 <p>
@@ -1511,8 +1489,8 @@ Some tests:
 </div>
 
 
-<div id="outline-container-orgb4878ba" class="outline-3">
-<h3 id="orgb4878ba"><span class="section-number-3">5.2</span> <a href="https://leetcode.com/contest/weekly-contest-178/problems/rank-teams-by-votes/">1366. Rank Teams by Votes</a></h3>
+<div id="outline-container-orgdc8f64d" class="outline-3">
+<h3 id="orgdc8f64d"><span class="section-number-3">5.2</span> <a href="https://leetcode.com/contest/weekly-contest-178/problems/rank-teams-by-votes/">1366. Rank Teams by Votes</a></h3>
 <div class="outline-text-3" id="text-5-2">
 <ol class="org-ol">
 <li>use defaultdict</li>
@@ -1589,8 +1567,8 @@ And compare to my code:
 
 
 
-<div id="outline-container-orgf8088b9" class="outline-3">
-<h3 id="orgf8088b9"><span class="section-number-3">5.3</span> <a href="https://leetcode.com/contest/biweekly-contest-21/problems/find-the-longest-substring-containing-vowels-in-even-counts/">1371. Find the Longest Substring Containing Vowels in Even Counts</a></h3>
+<div id="outline-container-org7a0ae4c" class="outline-3">
+<h3 id="org7a0ae4c"><span class="section-number-3">5.3</span> <a href="https://leetcode.com/contest/biweekly-contest-21/problems/find-the-longest-substring-containing-vowels-in-even-counts/">1371. Find the Longest Substring Containing Vowels in Even Counts</a></h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 <a href="https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/discuss/531850/Python-solution-in-O(n)-time-and-O(1)-space-explained">this post</a>
@@ -1709,8 +1687,8 @@ My bad solution using deque and divide and conquer:
 </div>
 </div>
 
-<div id="outline-container-orgd7e3f94" class="outline-3">
-<h3 id="orgd7e3f94"><span class="section-number-3">5.4</span> <a href="https://leetcode.com/contest/weekly-contest-180/problems/maximum-performance-of-a-team/">5359. Maximum Performance of a Team</a></h3>
+<div id="outline-container-orgd551e52" class="outline-3">
+<h3 id="orgd551e52"><span class="section-number-3">5.4</span> <a href="https://leetcode.com/contest/weekly-contest-180/problems/maximum-performance-of-a-team/">5359. Maximum Performance of a Team</a></h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 See <a href="https://leetcode.com/problems/maximum-performance-of-a-team/discuss/539711/Python-Heap">this post</a>. The idea is to first order engineers by efficiency then by
@@ -1751,8 +1729,8 @@ Another point is keep an eye on the <a href="https://docs.python.org/3.8/library
 </div>
 
 
-<div id="outline-container-orga455201" class="outline-3">
-<h3 id="orga455201"><span class="section-number-3">5.5</span> <a href="https://leetcode.com/problems/longest-happy-prefix/">1392. Longest Happy Prefix</a></h3>
+<div id="outline-container-orgfb5f1f2" class="outline-3">
+<h3 id="orgfb5f1f2"><span class="section-number-3">5.5</span> <a href="https://leetcode.com/problems/longest-happy-prefix/">1392. Longest Happy Prefix</a></h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 This seems to be just KMP (TODO).
