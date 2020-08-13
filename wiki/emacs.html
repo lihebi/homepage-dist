@@ -262,8 +262,8 @@
 <li><a href="#orgebd3d94">2.1. Jupyterlab editor experience</a>
 <ul>
 <li><a href="#org86814c7">2.1.1. Use jupyter Emacs bindings with Chrome</a></li>
-<li><a href="#org4cbbe47">2.1.2. syntax highlight for racket in editor</a></li>
-<li><a href="#org6eb7580">2.1.3. auto-completion</a></li>
+<li><a href="#org4cbbe47">2.1.2. <span class="todo TODO">TODO</span> syntax highlight for racket in editor</a></li>
+<li><a href="#org21746de">2.1.3. <span class="todo TODO">TODO</span> auto indent</a></li>
 <li><a href="#orgf29cc27">2.1.4. doc accessibility</a></li>
 <li><a href="#org88da8ac">2.1.5. lab extensions</a></li>
 </ul>
@@ -573,13 +573,54 @@ so much cleaner than org-mode.</li>
 </div>
 <div id="outline-container-org86814c7" class="outline-4">
 <h4 id="org86814c7"><span class="section-number-4">2.1.1</span> Use jupyter Emacs bindings with Chrome</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Ctrl-n: this can be solved by running chrome in app mode</li>
+<li class="on"><code>[X]</code> ctrl-p: this can be solved by adding some custom shortcuts:</li>
+</ul>
+
+<pre class="example">
+{"shortcuts": [
+    {
+            "command": "apputils:print",
+            "keys":["Accel P"],
+            "selector": "body",
+            "disabled": true
+        },
+        {
+            "command": "documentsearch:start",
+            "keys": [
+                "Accel F"
+                    ],
+            "selector": ".jp-mod-searchable",
+            "disabled": true
+        },
+    
+]}
+</pre>
 </div>
+</div>
+
 <div id="outline-container-org4cbbe47" class="outline-4">
-<h4 id="org4cbbe47"><span class="section-number-4">2.1.2</span> syntax highlight for racket in editor</h4>
+<h4 id="org4cbbe47"><span class="section-number-4">2.1.2</span> <span class="todo TODO">TODO</span> syntax highlight for racket in editor</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+How to tell the editor to use scheme syntax for .rkt files?
+</p>
 </div>
-<div id="outline-container-org6eb7580" class="outline-4">
-<h4 id="org6eb7580"><span class="section-number-4">2.1.3</span> auto-completion</h4>
 </div>
+<div id="outline-container-org21746de" class="outline-4">
+<h4 id="org21746de"><span class="section-number-4">2.1.3</span> <span class="todo TODO">TODO</span> auto indent</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> no auto-reindent functionality, and I rely on that a lot. This is going to
+be too hard. I'm turning to just use SSH+Emacs + jupyter notebook for simple
+high-level visualization. Also the boards should be written in notebooks, and
+I'll be manually indenting them probably.</li>
+</ul>
+</div>
+</div>
+
 <div id="outline-container-orgf29cc27" class="outline-4">
 <h4 id="orgf29cc27"><span class="section-number-4">2.1.4</span> doc accessibility</h4>
 </div>
@@ -639,7 +680,6 @@ Follow <a href="https://jupyterhub.readthedocs.io/en/latest/installation-guide-h
 </p>
 </div>
 </div>
-
 
 
 <div id="outline-container-org1e39d36" class="outline-3">
